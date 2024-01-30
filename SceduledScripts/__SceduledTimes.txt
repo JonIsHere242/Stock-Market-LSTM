@@ -1,0 +1,1 @@
+SceduledScripts/TickerCikMappingDownloader.py Downloads and saves tickers,names,CIKs in parquet and csv every saturday

@@ -1,0 +1,7 @@
+2024-01-30 19:01:22,032 - ERROR - Failed to download file: Status code 403
+2024-01-30 19:08:59,072 - ERROR - Error occurred: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2024-01-30 19:19:05,765 - INFO - File downloaded and saved successfully in CSV and Parquet formats.
