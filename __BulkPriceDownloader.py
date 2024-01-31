@@ -74,3 +74,6 @@ if __name__ == "__main__":
         fetch_and_save_stock_data(tickers, DATA_DIRECTORY, max_downloads=MAX_DOWNLOADS,start_date=START_DATE, rate_limit=RATE_LIMIT)
     except Exception as e:
         logging.error(f"Error reading tickers file: {e}")
+
+
+
