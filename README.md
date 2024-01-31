@@ -1,35 +1,40 @@
+# Stock Market LSTM - Work in Progress
 
-# Stock market LSTM
+This project, currently under active development, is designed for comprehensive stock market analysis and prediction using technical indicators and a Long Short-Term Memory (LSTM) neural network model. The primary objective is to predict the percent change in stock prices based on historical data. This README outlines the main components of the project and future enhancements.
 
-This code is designed for stock market analysis and prediction using a range of technical indicators and a Long Short-Term Memory (LSTM) neural network model. The primary goal is to predict the percent change of stock prices based on historical data. Here's a summary of its main components:
+## Current Features
 
+- **Data Fetching and Preprocessing**: Utilizes Yahoo Finance to fetch historical stock data. Preprocessing includes calculating various technical indicators (like ATR, moving averages, VWAP, RSI, MACD) and merging macroeconomic data. Data is scaled and cleaned using various techniques.
 
+- **Technical Indicators Calculation**: Computes a range of indicators, focusing on volatility, moving averages, and price change percentages. Absolute price data in dollars is dropped to ensure the model's applicability to various stocks.
 
-## Features
-
-Data Fetching and Preprocessing: It uses Yahoo Finance to fetch historical stock data. The data is then preprocessed by calculating various technical indicators such as Average True Range (ATR), moving averages, volume-weighted average price (VWAP), RSI, MACD, and more. It also includes functions to merge macroeconomic data from a specified directory and to scale and clean the data using various scalers.
-
-Technical Indicators Calculation: A comprehensive set of indicators is computed, including volatility measures, moving averages, price change percentages, high/low percent ranges, and psychological levels. These indicators serve as features for the predictive model.
-
-Important note, before any indicators are used for price prediction it will drop any columns containing data that is related to the absolute price in dollars instead using values that are precentage based so it should work with any stock that has some degree of change. Avoiding the common pitfall of simply using the last closing price as a prediction.
-
-```py
+    ```py
     df = df.drop(['Open', 'High', 'Low', 'Close', 'Adj Close',"VWAP","200DAY_ATR-","200DAY_ATR", 'Volume', 'atr', '200ma', '14ma'], axis=1)
+    ```
 
+- **LSTM Model for Prediction**: A Sequential LSTM model predicts the percent change in stock closing price. The model incorporates LSTM, dropout, and dense layers, optimizing using callbacks like Early Stopping and ReduceLROnPlateau.
 
-```
+- **Training and Validation**: The model is trained on a split dataset, with performance monitored using Mean Absolute Percentage Error (MAPE) for both training and validation sets.
 
-LSTM Model for Prediction: A Sequential LSTM model is built and trained to predict the percent change in the stock's closing price. The model includes layers for LSTM, dropout, and dense operations, and uses Mean Absolute Percentage Error (MAPE) as the loss metric. Various callbacks like Early Stopping and ReduceLROnPlateau are used to optimize training.
+- **Post-Prediction Analysis**: Performance visualization using Plotly, including prediction error histograms and scaling back data for interpretability.
 
-Training and Validation: The dataset is split into training and test sets, and the model is trained using the training set. The training process involves monitoring MAPE for both training and validation datasets.
+- **Utility Functions**: Includes functions for data normalization, outlier handling, and error calculation.
 
-Post-Prediction Analysis: After predictions are made, the code plots various graphs to visualize the performance of the model against actual data using Plotly. It also includes a histogram of prediction errors and scales back the data to its original form for better interpretability.
+- **Execution Flow**: The main function manages data fetching, indicator computation, scaling, prediction, and result plotting, saving predictions and error metrics to CSV files.
 
-Utility Functions: Several utility functions are included for data normalization, outlier handling, and error calculation.
+## Upcoming Enhancements
 
-Execution Flow: The main function orchestrates the execution by fetching data, computing indicators, scaling, predicting, and plotting the results. It concludes by saving the predictions and associated error metrics to a CSV file.
+- **Modularization**: Transitioning the existing code in "LSTM_Example" into separate, modular files for better maintainability and scalability.
 
-This script is a comprehensive tool for quantitative analysts, traders, or enthusiasts looking to understand and predict stock market movements using machine learning and technical analysis.
+- **Automation**: Implementing scheduling capabilities to enable automatic execution of various components of the project.
+
+- **Trading Interface Integration**: Integrating a trading interface to facilitate actual trading based on model predictions.
+
+- **Backtesting Feature**: Incorporating a backtesting mechanism to evaluate the model's performance on historical data.
+
+## Authors
+
+- [@JonIsHere242](https://github.com/JonIsHere242)
 ## Authors
 
 - [@JonIsHere242](https://github.com/JonIsHere242)
