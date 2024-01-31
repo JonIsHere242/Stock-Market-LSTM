@@ -35,7 +35,4 @@ This project, currently under active development, is designed for comprehensive 
 ## Authors
 
 - [@JonIsHere242](https://github.com/JonIsHere242)
-## Authors
-
-- [@JonIsHere242](https://github.com/JonIsHere242)
 
