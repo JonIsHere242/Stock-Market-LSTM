@@ -1,0 +1,42 @@
+2024-01-30 18:22:53,590 - INFO - Data for ETN downloaded and saved to Data/PriceData\ETN.csv
+2024-01-30 18:22:53,590 - INFO - Waiting 0.33 seconds before next download.
+2024-01-30 18:22:54,344 - INFO - Data for CSLLY downloaded and saved to Data/PriceData\CSLLY.csv
+2024-01-30 18:22:54,344 - INFO - Waiting 0.64 seconds before next download.
+2024-01-30 18:22:55,509 - INFO - Data for MMC downloaded and saved to Data/PriceData\MMC.csv
+2024-01-30 18:22:55,509 - INFO - Waiting 0.53 seconds before next download.
+2024-01-30 18:22:56,538 - INFO - Data for ADI downloaded and saved to Data/PriceData\ADI.csv
+2024-01-30 18:22:56,538 - INFO - Waiting 0.56 seconds before next download.
+2024-01-30 18:22:57,589 - INFO - Data for CB downloaded and saved to Data/PriceData\CB.csv
+2024-01-30 18:22:57,589 - INFO - Waiting 0.56 seconds before next download.
+2024-01-30 18:22:58,544 - INFO - Data for ZTS downloaded and saved to Data/PriceData\ZTS.csv
+2024-01-30 18:22:58,544 - INFO - Waiting 0.67 seconds before next download.
+2024-01-30 18:22:59,731 - INFO - Data for MU downloaded and saved to Data/PriceData\MU.csv
+2024-01-30 18:22:59,731 - INFO - Waiting 0.54 seconds before next download.
+2024-01-30 18:23:00,596 - INFO - Data for ABNB downloaded and saved to Data/PriceData\ABNB.csv
+2024-01-30 18:23:00,596 - INFO - Waiting 0.73 seconds before next download.
+2024-01-30 18:23:01,897 - INFO - Data for CI downloaded and saved to Data/PriceData\CI.csv
+2024-01-30 18:23:01,897 - INFO - Waiting 0.49 seconds before next download.
+2024-01-30 18:23:02,854 - INFO - Data for EQNR downloaded and saved to Data/PriceData\EQNR.csv
+2024-01-30 18:23:02,854 - INFO - Waiting 0.60 seconds before next download.
+2024-01-30 18:23:03,914 - INFO - Data for BSX downloaded and saved to Data/PriceData\BSX.csv
+2024-01-30 18:23:03,914 - INFO - Waiting 0.59 seconds before next download.
+2024-01-30 18:23:05,015 - INFO - Data for IBN downloaded and saved to Data/PriceData\IBN.csv
+2024-01-30 18:23:05,015 - INFO - Waiting 0.55 seconds before next download.
+2024-01-30 18:23:06,095 - INFO - Data for GSK downloaded and saved to Data/PriceData\GSK.csv
+2024-01-30 18:23:06,095 - INFO - Waiting 0.52 seconds before next download.
+2024-01-30 18:23:07,401 - INFO - Data for FI downloaded and saved to Data/PriceData\FI.csv
+2024-01-30 18:23:07,401 - INFO - Waiting 0.28 seconds before next download.
+2024-01-30 18:23:08,114 - INFO - Data for MELI downloaded and saved to Data/PriceData\MELI.csv
+2024-01-30 18:23:08,114 - INFO - Waiting 0.63 seconds before next download.
+2024-01-30 18:23:09,391 - INFO - Data for TOELY downloaded and saved to Data/PriceData\TOELY.csv
+2024-01-30 18:23:09,391 - INFO - Waiting 0.41 seconds before next download.
+2024-01-30 18:23:10,429 - INFO - Data for CNI downloaded and saved to Data/PriceData\CNI.csv
+2024-01-30 18:23:10,429 - INFO - Waiting 0.44 seconds before next download.
+2024-01-30 18:23:11,398 - INFO - Data for DEO downloaded and saved to Data/PriceData\DEO.csv
+2024-01-30 18:23:11,398 - INFO - Waiting 0.53 seconds before next download.
+2024-01-30 18:23:12,718 - INFO - Data for BNPQY downloaded and saved to Data/PriceData\BNPQY.csv
+2024-01-30 18:23:12,718 - INFO - Waiting 0.27 seconds before next download.
+2024-01-30 18:23:13,763 - INFO - Data for ABBNY downloaded and saved to Data/PriceData\ABBNY.csv
+2024-01-30 18:23:13,764 - INFO - Waiting 0.28 seconds before next download.
+2024-01-30 18:23:14,050 - INFO - Maximum number of downloads reached.
+2024-01-30 18:23:14,050 - INFO - Total number of tickers: 1.4099167297501891
