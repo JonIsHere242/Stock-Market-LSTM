@@ -1,8 +1,19 @@
-2024-02-01 11:25:18,941 INFO:Loaded 14 files from Data/ScaledData...
-2024-02-01 11:25:18,952 INFO:Splitting data into features and target...
-2024-02-01 11:25:20,752 INFO:Shape of Features (X_array): (96893, 45)
-2024-02-01 11:25:20,752 INFO:Shape of Target (y_array): (96893,)
-2024-02-01 11:25:20,759 INFO:Initializing the Adaptive Random Forest Classifier...
-2024-02-01 11:25:20,759 INFO:Training the model...
-2024-02-01 11:25:20,759 INFO:Training completed in 0.00 seconds.
-2024-02-01 11:25:20,760 INFO:Model trained successfully
+2024-02-01 20:52:01,484 INFO:Starting data loading and processing
+2024-02-01 20:52:01,918 INFO:Loaded 14 files from Data/ScaledData...
+2024-02-01 20:52:01,934 INFO:Splitting data into training and testing sets
+2024-02-01 20:52:01,956 INFO:Starting model training
+2024-02-01 21:07:17,051 INFO:Model trained successfully
+2024-02-01 21:07:17,051 INFO:Making predictions and calculating confidence
+2024-02-01 21:22:41,968 INFO:Starting data loading and processing
+2024-02-01 21:22:42,362 INFO:Loaded 14 files from Data/ScaledData...
+2024-02-01 21:22:42,377 INFO:Splitting data into training and testing sets
+2024-02-01 21:22:42,403 INFO:Starting model training
+2024-02-01 21:22:42,403 INFO:Starting model fit
+2024-02-01 21:37:51,867 INFO:Ending model fit
+2024-02-01 21:37:51,867 INFO:Model trained successfully
+2024-02-01 21:37:51,867 INFO:Making predictions and calculating confidence
+2024-02-01 21:37:53,729 INFO:Model trained successfully
+2024-02-01 21:58:35,171 INFO:Loaded 14 files from Data/ScaledData...
+2024-02-01 21:58:35,226 INFO:Starting model fit
+2024-02-01 22:13:30,267 INFO:Ending model fit
+2024-02-01 22:13:30,267 INFO:Model trained successfully

@@ -8,6 +8,7 @@ from datetime import datetime
 # Configuration
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_FILE = 'Data/TickerCikData/TickerCIKs.csv'
+TICKERS_CIK_BACKUP_FILE = "Data/TickerCikData/TickerCIKsBackup.csv"
 LOG_DIRECTORY = 'Data/PriceData'
 LOG_FILE = "Data/PriceData/_Price_Data_download.log"
 START_DATE = '1990-01-01'
@@ -75,5 +76,6 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error(f"Error reading tickers file: {e}")
 
-
-
+        
+    logging.info("Bulk historical data has been downloade")
+    print("Bulk historical data has been downloaded")
