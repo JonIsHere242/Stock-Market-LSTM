@@ -61,6 +61,113 @@ def indicators(df):
     df['VWAP%_from_high'] = ((df['VWAP'] - close.cummax()) / close.cummax()) * 100
     obv_condition = df['Close'] > close_shift_1
     df['OBV'] = np.where(obv_condition, volume, -volume).cumsum()
+
+
+
+    close_shift_1 = close.shift(1)
+    low_shift_1 = low.shift(1)
+    high_shift_1 = high.shift(1)
+    pct_change_close = close.pct_change()
+
+    # Consolidating rolling operations
+    rolling_20 = df['Close'].rolling(window=20)
+    rolling_14 = df['Close'].rolling(window=14)
+    rolling_7 = df['Close'].rolling(window=7)
+    rolling_30 = df['Close'].rolling(window=30)
+    rolling_500 = df['Close'].rolling(window=500)
+    
+    df['percent_change_Close'] = pct_change_close
+    df['pct_change_std'] = rolling_20.std()
+
+    # Replacing loop for shifts with direct assignments
+    df['percent_change_Close_lag_1'] = pct_change_close.shift(1)  # Lag by 1 period
+    df['percent_change_Close_lag_2'] = pct_change_close.shift(2)  # Lag by 2 periods
+    df['percent_change_Close_lag_3'] = pct_change_close.shift(3)  # Lag by 3 periods
+
+
+    df['percent_change_Close_7'] = rolling_7.mean()
+    df['percent_change_Close_30'] = rolling_30.mean()
+    df['percent_change_Close>std'] = (pct_change_close > df['pct_change_std']).astype(int)
+    df['percent_change_Close<std'] = (pct_change_close < df['pct_change_std']).astype(int)
+
+    # Merged rolling std calculations
+    df['pct_change_std_rolling'] = rolling_14.mean()
+    df['pct_change_std_rolling'] = rolling_20.mean()
+
+    threshold_multiplier = 0.65
+    abnormal_pct_change_threshold = rolling_20.mean() + threshold_multiplier * df['pct_change_std']
+    df['days_since_abnormal_pct_change'] = (pct_change_close > abnormal_pct_change_threshold).cumsum()
+
+
+
+    # VWAP Divergence
+    typical_price = (df['High'] + df['Low'] + df['Close']) / 3
+    vwap = (typical_price * df['Volume']).cumsum() / df['Volume'].cumsum()
+    df['VWAP_Divergence'] = df['Close'] - vwap
+
+    # RSI Calculation
+    delta = df['Close'].diff()
+    gain = np.where(delta > 0, delta, 0)
+    loss = np.where(delta < 0, -delta, 0)
+    avg_gain = pd.Series(gain).rolling(window=14).mean()
+    avg_loss = pd.Series(loss).rolling(window=14).mean()
+    rs = avg_gain / avg_loss
+    df['RSI'] = 100 - (100 / (1 + rs))
+
+    # RSI Divergence
+    # Note: Actual divergence calculation may depend on further rules (e.g., comparing local maxima of price with RSI)
+    df['RSI_Divergence'] = df['Close'] - df['RSI']
+
+    # Elder’s Force Index
+    df['EFI'] = df['Close'].diff() * df['Volume']
+
+
+
+    ##direction flipper
+    df['direction_flipper'] = (pct_change_close > 0).astype(int)
+    df['direction_flipper_count5'] = df['direction_flipper'].rolling(window=5).sum()
+    df['direction_flipper_count_10'] = df['direction_flipper'].rolling(window=10).sum()
+    df['direction_flipper_count_14'] = df['direction_flipper'].rolling(window=14).sum()
+    ##drop the direction flipper too correlated
+    df = df.drop(columns=['direction_flipper'])
+
+
+
+    # ATR calculation streamlined
+    df['ATR'] = rolling_14.apply(lambda x: np.mean(np.abs(np.diff(x))))
+    keltner_central = df['Close'].ewm(span=20).mean()
+    keltner_range = df['ATR'] * 1.5
+    df['KC_UPPER%'] = ((keltner_central + keltner_range) - df['Close']) / df['Close'] * 100
+    df['KC_LOWER%'] = (df['Close'] - (keltner_central - keltner_range)) / df['Close'] * 100
+
+    # RSI and Bollinger Bands calculations
+    delta = df['Close'].diff()
+    gain = delta.clip(lower=0).rolling(window=14).mean()
+    loss = (-delta).clip(lower=0).rolling(window=14).mean()
+    rs = gain / loss
+    df['RSI'] = 100 - (100 / (1 + rs))
+    rolling_mean = rolling_20.mean()
+    rolling_std = rolling_20.std()
+    df['B%'] = (df['Close'] - (rolling_mean - 2 * rolling_std)) / (4 * rolling_std)
+
+    # Streak calculations streamlined
+    positive_streak = (pct_change_close > 0).astype(int).cumsum()
+    negative_streak = (pct_change_close < 0).astype(int).cumsum()
+    df['positive_streak'] = positive_streak - positive_streak.where(pct_change_close <= 0).ffill().fillna(0)
+    df['negative_streak'] = negative_streak - negative_streak.where(pct_change_close >= 0).ffill().fillna(0)
+
+    # Gap calculations streamlined
+    gap_threshold_percent = 0.5 if pct_change_close.std() > 1 else 0
+    df['is_gap_up'] = (df['Low'] - high_shift_1) / close_shift_1 * 100 > gap_threshold_percent
+    df['is_gap_down'] = (df['High'] - low_shift_1) / close_shift_1 * 100 < -gap_threshold_percent
+    df['move_from_gap%'] = np.where(df['is_gap_up'], (df['Close'] - low_shift_1) / low_shift_1 * 100,
+                                    np.where(df['is_gap_down'], (df['Close'] - high_shift_1) / high_shift_1 * 100, 0))
+    df['VPT'] = df['Volume'] * ((df['Close'] - close_shift_1) / close_shift_1)
+
+    # Dropping unnecessary columns
+    columns_to_drop = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'VWAP', '200DAY_ATR-', '200DAY_ATR', 'Close_change', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
+    columns_to_drop = [col for col in columns_to_drop if col in df.columns]
+    df = df.drop(columns_to_drop, axis=1)
     df = df.round(8)
     return df
 
