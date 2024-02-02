@@ -2,6 +2,7 @@ import os
 import time
 import numpy as np
 import pandas as pd
+import argparse
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.utils.validation import check_array, check_is_fitted
@@ -10,8 +11,8 @@ from tqdm import tqdm
 
 def setup_logging():
     """Configure logging settings for the application."""
-    logging.basicConfig(level=logging.INFO, filename='Data/ModelData/TrainingErrors.log', filemode='a', 
-                        format='%(name)s - %(levelname)s - %(message)s')
+    ##change the format of the log file to include the time of the log
+    logging.basicConfig(level=logging.INFO, filename='Data/ModelData/TrainingErrors.log', filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("V================(NEW ENTRY)================V")
 
 def ensure_directory_exists(path):
@@ -36,6 +37,11 @@ def load_and_process_data(folder_path, target_column, shift_steps=1):
     processed_files = 0
     for filename in tqdm(os.listdir(folder_path), desc="Loading Data"):
         if filename.endswith(".csv"):
+
+            if sum(1 for line in open(os.path.join(folder_path, filename))) < 100:
+                logging.warning(f"File {filename} has less than 100 rows of data. Skipping...")
+                continue
+
             total_files += 1
             try:
                 file_path = os.path.join(folder_path, filename)
@@ -62,6 +68,9 @@ def load_and_process_data(folder_path, target_column, shift_steps=1):
         logging.info("100% of files processed successfully.")
     
     combined_data = pd.concat(all_data, ignore_index=True)
+
+    logging.info(f"Shape of the combined dataframe: {combined_data.shape}")
+
     X = combined_data.drop(columns=[target_column])
     y = combined_data[target_column]
     return X, y
@@ -102,21 +111,29 @@ def train_random_forest(X, y):
         X = check_array(X)
         y = np.ravel(y)  # Ensuring y is a 1D array
 
-        rf_model = RandomForestRegressor()
+        # Configure the Random Forest Regressor with additional settings
+        rf_model = RandomForestRegressor(
+            n_estimators=25,       # Adjust the number of trees
+            max_depth=None,         # Adjust the maximum depth of the tree
+            min_samples_split=2,    # Minimum number of samples required to split a node
+            min_samples_leaf=1,     # Minimum number of samples required at each leaf node
+            n_jobs=-1,              # Use all available cores
+            random_state=None       # Random state for reproducibility
+        )
+
         logging.info("Starting model training")
-
         start_time = time.time()  # Start time
-
         rf_model.fit(X, y)
-
-        end_time = time.time()  # End time
+        end_time = time.time()    # End time
         elapsed_time = end_time - start_time  # Calculate elapsed time
 
         logging.info(f"Model training completed in {elapsed_time:.2f} seconds")
+        print(f"Model training completed in {elapsed_time:.2f} seconds")
         return rf_model
     except Exception as e:
         logging.error(f"Error in train_random_forest: {e}")
         return None
+
 
 
 
@@ -145,35 +162,87 @@ def enhance_dataset_with_predictions(model, data, feature_columns, target_column
 
 
 
+def process_and_save_individual_files(model, folder_path, output_folder, target_column, feature_columns):
+    """
+    Process individual files, make predictions using the trained model, and save the modified files.
+    """
+    ensure_directory_exists(output_folder)
 
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".csv"):
+            try:
+                file_path = os.path.join(folder_path, filename)
+                data = pd.read_csv(file_path)
+
+                # Preprocess the data
+                X = data[feature_columns]
+
+                # Make predictions
+                predictions = model.predict(X)
+                data['RF_Predictions'] = predictions
+
+                # Save the modified file
+                output_file_path = os.path.join(output_folder, filename)
+                data.to_csv(output_file_path, index=False)
+                logging.info(f"Predictions added and saved for file: {filename}")
+            except Exception as e:
+                logging.error(f"Error processing file {filename}: {e}")
+
+
+
+
+def get_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(description="Run the Random Forest model.")
+    parser.add_argument("--mode", choices=["train", "predict", "both"], default="both", help="Mode: train = train the model, predict = produce predictions, both = both.")
+    return parser.parse_args()
 def main():
-    """
-    Main function to execute the data loading, processing, and model training.
-    """
+    args = get_args()
+    mode = args.mode
+
     config = {
         "folder_path": 'Data/ScaledData',
         "target_column": 'percent_change_Close',
         "output_path": 'Data/ModelData/EnhancedDataset.csv',
-        "random_state": 42
+        "prediction_folder_path": 'Data/ScaledData',
+        "output_folder": 'Data/individualPredictedFiles',
+        "random_state": 3301
     }
 
     try:
-        X, y = load_and_process_data(config['folder_path'], config['target_column'])
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config["random_state"])
-        model = train_random_forest(X_train, y_train)
+        model = None
 
-        if model:
-            logging.info("Model trained successfully")
+        if mode in ["train", "both"]:
+            X, y = load_and_process_data(config['folder_path'], config['target_column'])
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config["random_state"])
+            model = train_random_forest(X_train, y_train)
 
-            ensure_directory_exists(os.path.dirname(config['output_path']))
+            if model:
+                logging.info("Model trained successfully")
+                ensure_directory_exists(os.path.dirname(config['output_path']))
+                enhanced_data = enhance_dataset_with_predictions(model, pd.concat([X, y], axis=1), X.columns.tolist(), config['target_column'])
+                enhanced_data.to_csv(config['output_path'], index=False)
+                logging.info(f"Enhanced dataset saved to {config['output_path']}")
+            else:
+                logging.error("Model training failed")
 
-            enhanced_data = enhance_dataset_with_predictions(model, pd.concat([X, y], axis=1), X.columns.tolist(), config['target_column'])
-            enhanced_data.to_csv(config['output_path'], index=False)
-            logging.info(f"Enhanced dataset saved to {config['output_path']}")
-        else:
-            logging.error("Model training failed")
+        if mode in ["predict", "both"]:
+            if mode == "predict" and not os.path.exists(config['output_path']):
+                raise FileNotFoundError("Model file not found. Please train the model first.")
+
+            # If model is None, it means mode is "predict" and model needs to be loaded here.
+            # Example: model = load_model_function(config['output_path'])
+
+            # Ensure that the model is loaded
+            if model is None:
+                raise Exception("Model is not loaded. Unable to proceed with predictions.")
+
+            process_and_save_individual_files(model, config['prediction_folder_path'], config['output_folder'], config['target_column'], X.columns.tolist())
+
     except Exception as e:
         logging.error(f"An error occurred: {e}")
+
+# ... [Rest of your functions like setup_logging, load_and_process_data, etc.] ...
 
 if __name__ == "__main__":
     setup_logging()
