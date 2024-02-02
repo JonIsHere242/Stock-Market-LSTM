@@ -1,0 +1,32 @@
+root - INFO - ================(NEW ENTRY)================
+root - INFO - Loaded 14 files from Data/ScaledData...
+root - INFO - Processed 14 files.
+root - INFO - 100% of files processed successfully.
+root - INFO - Starting model training
+root - INFO - Model training completed in 0.00 seconds
+root - ERROR - An error occurred: 'RandomForestRegressor' object has no attribute 'estimators_'
+root - INFO - V================(NEW ENTRY)================V
+root - INFO - Loaded 14 files from Data/ScaledData...
+root - INFO - Processed 14 files.
+root - INFO - 100% of files processed successfully.
+root - INFO - Starting model training
+root - INFO - Model training completed in 0.00 seconds
+root - ERROR - An error occurred: 'RandomForestRegressor' object has no attribute 'estimators_'
+root - INFO - V================(NEW ENTRY)================V
+root - INFO - Loaded 14 files from Data/ScaledData...
+root - INFO - Processed 14 files.
+root - INFO - 100% of files processed successfully.
+root - INFO - Starting model training
+root - INFO - Model training completed in 915.75 seconds
+root - INFO - Model trained successfully
+root - ERROR - An error occurred: name 'ensure_directory_exists' is not defined
+root - INFO - V================(NEW ENTRY)================V
+root - INFO - Loaded 14 files from Data/ScaledData...
+root - INFO - Processed 14 files.
+root - INFO - 100% of files processed successfully.
+root - INFO - Starting model training
+root - INFO - Model training completed in 895.47 seconds
+root - INFO - Model trained successfully
+root - INFO - Enhancing dataset with predictions
+root - INFO - Dataset enhancement completed
+root - INFO - Enhanced dataset saved to Data/ModelData/EnhancedDataset.csv
