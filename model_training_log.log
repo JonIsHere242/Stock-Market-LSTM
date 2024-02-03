@@ -1,0 +1,4 @@
+2024-02-02 23:22:51,229 - INFO - Training completed. Number of epochs trained: 16
+2024-02-02 23:22:51,666 - INFO - MAPE: 111.51329040527344
+2024-02-02 23:24:17,803 - INFO - Training completed. Number of epochs trained: 9
+2024-02-02 23:24:18,234 - INFO - MAPE: 117.6340560913086

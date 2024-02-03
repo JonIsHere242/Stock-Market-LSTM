@@ -20,14 +20,31 @@ import plotly.express as px
 import argparse
 import os
 
+
+
+import logging
+from datetime import datetime
+
+# Setup logging
+logging.basicConfig(filename='Data/ModelData/LSTMTrainingErrors.log', filemode='a', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+
+
+
 config = {
     "directory_path": 'Data/individualPredictedFiles',  # Default directory containing files
     "target_column": "percent_change_Close",           # Replace with your actual target column name
     "sequence_length": 50,
     "model_save_path": "D:/LSTM/Stock-Market-LSTM/Data/ModelData/lstm_model.h5",
-    "lstm_predicted_data_path": "Data/LSTMpredictedData"
+    "lstm_predicted_data_path": "Data/LSTMpredictedData",
+    "Lstm_logging_path": "Data/ModelData/LSTMTrainingErrors.log"
 
 }
+
+
+
+
+
 
 def get_args():
     parser = argparse.ArgumentParser(description="Run LSTM model on stock market data.")
@@ -57,7 +74,7 @@ def create_sequences(data, target_column, sequence_length=50):
     return np.array(sequences), add_jitter(output_array)  # Add jitter to output
 
 # LSTM model creation
-def create_lstm_model(input_shape):
+def create_lstm_model(input_shape, learning_rate=0.01):
     model = Sequential()
     model.add(LSTM(units=50, return_sequences=True, input_shape=input_shape))
     model.add(Dropout(0.2))
@@ -67,20 +84,37 @@ def create_lstm_model(input_shape):
     model.add(Dropout(0.1))
     model.add(Dense(units=1))
 
-    model.compile(optimizer='adam', loss='mean_absolute_percentage_error')  # Using MAPE as loss function
+    optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
+    model.compile(optimizer=optimizer, loss='mean_absolute_percentage_error')  # Using MAPE as loss function
     return model
 
-# Training and evaluation
-def train_and_evaluate_model(model, X_train, y_train, X_test, y_test):
-    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
-    history = model.fit(X_train, y_train, epochs=100, batch_size=256, validation_split=0.1, callbacks=[early_stopping])
-    
-    predictions = model.predict(X_test)
-    mape = MeanAbsolutePercentageError()
-    mape.update_state(y_test, predictions)
-    print(f'MAPE: {mape.result().numpy()}')
 
-    return history
+
+
+
+def train_and_evaluate_model(model, X_train, y_train, X_test, y_test):
+    try:
+        early_stopping = EarlyStopping(monitor='val_loss', patience=4, restore_best_weights=True)
+        history = model.fit(X_train, y_train, epochs=100, batch_size=8, validation_split=0.2, callbacks=[early_stopping])
+
+        epochs_trained = len(history.history['loss'])
+        logging.info(f'Training completed. Number of epochs trained: {epochs_trained}')
+
+        predictions = model.predict(X_test)
+        mape = MeanAbsolutePercentageError()
+        mape.update_state(y_test, predictions)
+        mape_value = mape.result().numpy()
+        logging.info(f'MAPE: {mape_value}')
+        print(f'MAPE: {mape_value}')
+
+        return history, mape_value, epochs_trained
+    except Exception as e:
+        logging.error(f'Error during training and evaluation: {e}')
+        raise
+
+
+
+
 
 def plot_loss(history, title, window_size=5):
     training_loss = pd.Series(history.history['loss']).rolling(window=window_size).mean()
@@ -145,12 +179,12 @@ def main():
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-        model = create_lstm_model((config["sequence_length"], X.shape[2]))
-        history = train_and_evaluate_model(model, X_train, y_train, X_test, y_test)
+        model = create_lstm_model((config["sequence_length"], X.shape[2]), learning_rate=0.01)  # Example with learning rate of 0.01
+        training_history, mape_value, epochs_trained = train_and_evaluate_model(model, X_train, y_train, X_test, y_test)
 
         predictions = model.predict(X_test)
 
-        plot_loss(history, f"Training and Validation Loss for {os.path.basename(file_path)}")
+        plot_loss(training_history, f"Training and Validation Loss for {os.path.basename(file_path)}")
         save_and_plot_data_with_predictions(data, predictions, file_path, config, config['sequence_length'])
 
 
