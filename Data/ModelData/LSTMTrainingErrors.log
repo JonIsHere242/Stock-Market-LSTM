@@ -26,3 +26,19 @@
 2024-02-02 23:42:46,163 - INFO - MAPE: 203.0851593017578
 2024-02-02 23:43:04,007 - INFO - Training completed. Number of epochs trained: 5
 2024-02-02 23:43:04,404 - INFO - MAPE: 115.24298095703125
+2024-02-02 23:46:04,420 - INFO - Training completed. Number of epochs trained: 7
+2024-02-02 23:46:04,842 - INFO - MAPE: 116.84332275390625
+2024-02-02 23:46:30,837 - INFO - Training completed. Number of epochs trained: 6
+2024-02-02 23:46:31,231 - INFO - MAPE: 172.51329040527344
+2024-02-02 23:47:05,091 - INFO - Training completed. Number of epochs trained: 8
+2024-02-02 23:47:05,510 - INFO - MAPE: 107.7419662475586
+2024-02-02 23:47:44,045 - INFO - Training completed. Number of epochs trained: 12
+2024-02-02 23:47:44,427 - INFO - MAPE: 100.74537658691406
+2024-02-02 23:54:21,267 - INFO - Training completed. Number of epochs trained: 9
+2024-02-02 23:54:21,685 - INFO - MAPE: 6167.576171875
+2024-02-02 23:55:16,332 - INFO - Training completed. Number of epochs trained: 11
+2024-02-02 23:55:16,730 - INFO - MAPE: 2178.250244140625
+2024-02-02 23:55:51,703 - INFO - Training completed. Number of epochs trained: 7
+2024-02-02 23:55:52,102 - INFO - MAPE: 786763.25
+2024-02-02 23:56:26,847 - INFO - Training completed. Number of epochs trained: 9
+2024-02-02 23:56:27,228 - INFO - MAPE: 12767.810546875
