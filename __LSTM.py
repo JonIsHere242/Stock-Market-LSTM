@@ -329,7 +329,6 @@ def log_statistics(model, X_sample, start_time, predictions, y_test, analysis_re
     # Log the standard statistics
     logger.info(f"Minimum Error: {analysis_results['min_error']}")
     logger.info(f"Predictions form a straight line: {analysis_results['straight_line']}")
-    logger.info(f"Low Error Streaks: {analysis_results['low_error_streaks']}")
     logger.info(f"Average Error: {avg_error}")
     logger.info(f"Max Error: {max_error}")
     logger.info(f"Min Error: {min_error}")
@@ -371,7 +370,7 @@ def analyze_predictions(predictions, y_test, low_error_threshold=0.05):
     if predictions.shape != y_test.shape:
         raise ValueError(f"Shape mismatch: adjusted_predictions shape {predictions.shape}, y_test shape {y_test.shape}")
 
-
+    
 
 
     results = {}
@@ -396,63 +395,61 @@ def analyze_predictions(predictions, y_test, low_error_threshold=0.05):
     results['straight_line'] = straight_line
 
 
-
-    # Calculate low error streaks
+    #calculate the number and size of streaks
     low_errors = errors < low_error_threshold
     streaks = []
     current_streak = 0
+    streak_sizes = {}
+
     for is_low_error in low_errors:
         if is_low_error:
             current_streak += 1
         elif current_streak > 0:
             streaks.append(current_streak)
+            streak_sizes[current_streak] = streak_sizes.get(current_streak, 0) + 1
             current_streak = 0
+
     if current_streak > 0:
         streaks.append(current_streak)
+        streak_sizes[current_streak] = streak_sizes.get(current_streak, 0) + 1
+
     results['low_error_streaks'] = streaks
+
+    # Logging streak sizes
+    for size, count in streak_sizes.items():
+        logging.info(f"{count} of streaks of size {size}")
+
+
+
 
     return results
 
 
 
-
+def calculate_mape(y_true, y_pred):
+    """
+    Calculate the Mean Absolute Percentage Error (MAPE).
+    :param y_true: Actual values.
+    :param y_pred: Predicted values.
+    :return: MAPE value.
+    """
+    mape = MeanAbsolutePercentageError()
+    mape.update_state(y_true, y_pred)
+    return mape.result().numpy()
 
 
 
 def train_and_evaluate_model(model, X_train, y_train, X_test, y_test):
     try:
-        early_stopping = EarlyStopping(monitor='val_loss', patience=4, restore_best_weights=True)
-        history = model.fit(X_train, y_train, epochs=100, batch_size=16, validation_split=0.2, callbacks=[early_stopping])
-
-        epochs_trained = len(history.history['loss'])
-        logging.info(f'Training completed. Number of epochs trained: {epochs_trained}')
-
         predictions = model.predict(X_test)
-        mape = MeanAbsolutePercentageError()
-        mape.update_state(y_test, predictions)
-        mape_value = mape.result().numpy()
-        logging.info(f'MAPE: {mape_value}')
-        print(f'MAPE: {mape_value}')
-
+        mape_value = calculate_mape(y_test, predictions)  # Calculate MAPE
+        logging.info(f'MAPE value: {mape_value}')
         return history, mape_value, epochs_trained
     except Exception as e:
         logging.error(f'Error during training and evaluation: {e}')
         raise
 
 
-
-
-
-def plot_loss(history, title, window_size=5):
-    training_loss = pd.Series(history.history['loss']).rolling(window=window_size).mean()
-    validation_loss = pd.Series(history.history['val_loss']).rolling(window=window_size).mean()
-
-    if training_loss.dropna().iloc[-1] < 50:  # Plot only if final average training loss is less than 100
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(y=training_loss, mode='lines', name='Smoothed Training Loss'))
-        fig.add_trace(go.Scatter(y=validation_loss, mode='lines', name='Smoothed Validation Loss'))
-        fig.update_layout(title=title, xaxis_title='Epoch', yaxis_title='Loss')
-        fig.show()
 
 
 def transform_target(data, target_column, shift_value=0.00000001):
@@ -782,9 +779,20 @@ def main():
 
 
 
-        # Adjust the predictions
+        # Before adjusting predictions
         predictions = np.nan_to_num(predictions)
+        PreAjustedMape = calculate_mape(y_test, predictions)
+        logging.info(f"MAPE before adjustments: {PreAjustedMape:.2f}%")
+        
+        # Adjusting predictions
         predictions = adjust_predictions(predictions, data[config['target_column']], window_size=10)
+        PostAjustedMape = calculate_mape(y_test, predictions)
+        logging.info(f"MAPE after adjustments: {PostAjustedMape:.2f}%")
+        
+        # Improvement calculation
+        AjustedImprovment = PreAjustedMape - PostAjustedMape
+        logging.info(f"Improvement in MAPE due to adjustments: {AjustedImprovment:.2f}%")
+        
 
         # Use adjusted_predictions instead of predictions for further analysis and plotting
         analysis_results = analyze_predictions(predictions, y_test)

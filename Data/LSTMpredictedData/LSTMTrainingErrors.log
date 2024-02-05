@@ -938,8 +938,8 @@
 2024-02-04 22:50:29,270 - INFO - Stop Loss Hits: 18 (51.43%)
 2024-02-04 22:50:29,270 - INFO - Take Profit Hits: 17 (48.57%)
 2024-02-04 22:50:29,270 - INFO - End of Day Exits: 0 (0.00%)
-2024-02-04 22:50:29,270 - INFO - Average Percentage Gain for Take Profit Trades: 93.49%
-2024-02-04 22:50:29,270 - INFO - Average Percentage Loss for Stop Loss Trades: -19.24%
+2024-02-04 22:50:29,270 - INFO - Average Percentage Gain for Take Profit Trades: 0.9349%
+2024-02-04 22:50:29,270 - INFO - Average Percentage Loss for Stop Loss Trades: -0.1924%
 2024-02-04 22:50:29,270 - INFO - Average Percentage Gain for End of Day Exits: 0.00%
 2024-02-04 22:50:29,270 - INFO - Overall P/L per year: 2.607144818336338
 2024-02-04 22:50:29,270 - INFO - Simulation complete. Overall P/L: 12.430494044567899
