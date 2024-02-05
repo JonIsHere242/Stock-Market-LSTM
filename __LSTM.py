@@ -511,8 +511,8 @@ def plot_cumulative_performance(trade_results, initial_investment=1000, smp500_a
     # Calculate cumulative P/L for the trading strategy
     cumulative_pl_strategy = [initial_investment]
     for pl in trade_results:
-        cumulative_pl_strategy.append(cumulative_pl_strategy[-1] * (1 + pl*0.01))
-        print(cumulative_pl_strategy[-1] * (1 + pl*0.01))
+        cumulative_pl_strategy.append(cumulative_pl_strategy[-1] * (1 + pl))
+        print(cumulative_pl_strategy[-1] * (1 + pl))
 
     x = np.array(range(len(cumulative_pl_strategy)))
     y = np.array(cumulative_pl_strategy)
@@ -612,9 +612,9 @@ def simulate_trading(predictions, actual_values, close_threshold=0.10, take_prof
 
             # Long position if predicted move is positive, else short position
             if predicted_move > 0:
-                trade_profit_loss = calculate_profit_loss(actual_move, take_profit_target, stop_loss_target, is_long=True)
+                trade_profit_loss*0.01 = calculate_profit_loss(actual_move, take_profit_target, stop_loss_target, is_long=True)
             else:
-                trade_profit_loss = calculate_profit_loss(-actual_move, take_profit_target, stop_loss_target, is_long=False)
+                trade_profit_loss*0.01 = calculate_profit_loss(-actual_move, take_profit_target, stop_loss_target, is_long=False)
 
             # Classify trade and append to respective lists
             classify_and_log_trade(trade_profit_loss, take_profit_target, stop_loss_target, take_profit_pl, stop_loss_pl, end_of_day_pl)
