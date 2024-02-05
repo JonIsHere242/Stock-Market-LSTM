@@ -1,478 +1,945 @@
-
-2024-02-03 00:56:44,313 - INFO - V==================== Creating LSTM Model ====================V
-2024-02-03 00:56:44,313 - INFO - Input Shape: (50, 47)
-2024-02-03 00:56:44,406 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
-2024-02-03 00:56:44,499 - INFO - Added LSTM layer with 141 units
-2024-02-03 00:56:44,581 - INFO - Added LSTM layer with 94 units
-2024-02-03 00:56:44,663 - INFO - Added LSTM layer with 47 units
-2024-02-03 00:56:44,748 - INFO - Added final LSTM layer with 47 units
-2024-02-03 00:56:44,756 - INFO - Added Dense layers
-2024-02-03 00:56:44,756 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
-2024-02-03 00:56:44,759 - INFO - Model compilation complete.
-2024-02-03 00:57:14,508 - INFO - Training completed. Number of epochs trained: 5
-2024-02-03 00:57:15,415 - INFO - MAPE: 4172.92041015625
-2024-02-03 00:57:15,726 - INFO - Model Summary:
-Model: "sequential_1"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- lstm_5 (LSTM)               (None, 50, 188)           177472    
-                                                                 
- dropout_6 (Dropout)         (None, 50, 188)           0         
-                                                                 
- lstm_6 (LSTM)               (None, 50, 141)           186120    
-                                                                 
- dropout_7 (Dropout)         (None, 50, 141)           0         
-                                                                 
- lstm_7 (LSTM)               (None, 50, 94)            88736     
-                                                                 
- dropout_8 (Dropout)         (None, 50, 94)            0         
-                                                                 
- lstm_8 (LSTM)               (None, 50, 47)            26696     
-                                                                 
- dropout_9 (Dropout)         (None, 50, 47)            0         
-                                                                 
- lstm_9 (LSTM)               (None, 47)                17860     
-                                                                 
- dropout_10 (Dropout)        (None, 47)                0         
-                                                                 
- dense_2 (Dense)             (None, 24)                1152      
-                                                                 
- dropout_11 (Dropout)        (None, 24)                0         
-                                                                 
- dense_3 (Dense)             (None, 1)                 25        
-                                                                 
-=================================================================
-Total params: 498,061
-Trainable params: 498,061
-Non-trainable params: 0
-_________________________________________________________________
-2024-02-03 00:57:15,727 - INFO - Data Skewness:
-ATR%                             NaN
-14ma%                            NaN
-200ma%                           NaN
-14ma-200ma                       NaN
-14ma%_change                     NaN
-14ma%_count                      NaN
-200ma%_count                     NaN
-14ma_crossover                   NaN
-200ma_crossover                  NaN
-200DAY_ATR%                      NaN
-200DAY_ATR-%                     NaN
-percent_from_high                NaN
-new_high                         NaN
-days_since_high                  NaN
-percent_range                    NaN
-VWAP_std14                       NaN
-VWAP_std200                      NaN
-VWAP%                            NaN
-VWAP%_from_high                  NaN
-percent_change_Close             NaN
-pct_change_std                   NaN
-percent_change_Close_lag_1       NaN
-percent_change_Close_lag_2       NaN
-percent_change_Close_lag_3       NaN
-percent_change_Close_7           NaN
-percent_change_Close_30          NaN
-percent_change_Close>std         NaN
-percent_change_Close<std         NaN
-pct_change_std_rolling           NaN
-days_since_abnormal_pct_change   NaN
-VWAP_Divergence                  NaN
-RSI                              NaN
-RSI_Divergence                   NaN
-EFI                              NaN
-direction_flipper_count5         NaN
-direction_flipper_count_10       NaN
-direction_flipper_count_14       NaN
-KC_UPPER%                        NaN
-KC_LOWER%                        NaN
-B%                               NaN
-positive_streak                  NaN
-negative_streak                  NaN
-is_gap_up                        NaN
-is_gap_down                      NaN
-move_from_gap%                   NaN
-VPT                              NaN
-RF_Predictions                   NaN
-dtype: float64
-2024-02-03 00:57:15,728 - INFO - Data Kurtosis:
-ATR%                             NaN
-14ma%                            NaN
-200ma%                           NaN
-14ma-200ma                       NaN
-14ma%_change                     NaN
-14ma%_count                      NaN
-200ma%_count                     NaN
-14ma_crossover                   NaN
-200ma_crossover                  NaN
-200DAY_ATR%                      NaN
-200DAY_ATR-%                     NaN
-percent_from_high                NaN
-new_high                         NaN
-days_since_high                  NaN
-percent_range                    NaN
-VWAP_std14                       NaN
-VWAP_std200                      NaN
-VWAP%                            NaN
-VWAP%_from_high                  NaN
-percent_change_Close             NaN
-pct_change_std                   NaN
-percent_change_Close_lag_1       NaN
-percent_change_Close_lag_2       NaN
-percent_change_Close_lag_3       NaN
-percent_change_Close_7           NaN
-percent_change_Close_30          NaN
-percent_change_Close>std         NaN
-percent_change_Close<std         NaN
-pct_change_std_rolling           NaN
-days_since_abnormal_pct_change   NaN
-VWAP_Divergence                  NaN
-RSI                              NaN
-RSI_Divergence                   NaN
-EFI                              NaN
-direction_flipper_count5         NaN
-direction_flipper_count_10       NaN
-direction_flipper_count_14       NaN
-KC_UPPER%                        NaN
-KC_LOWER%                        NaN
-B%                               NaN
-positive_streak                  NaN
-negative_streak                  NaN
-is_gap_up                        NaN
-is_gap_down                      NaN
-move_from_gap%                   NaN
-VPT                              NaN
-RF_Predictions                   NaN
-dtype: float64
-2024-02-03 00:57:15,728 - INFO - Prediction Distribution: Mean: 3.8857409954071045, Std: 3.7565174102783203
-2024-02-03 00:57:15,728 - INFO - Memory Usage: 2949.65625 MB
-2024-02-03 00:57:15,728 - INFO - Computation Time: 0.003000020980834961 seconds
-2024-02-03 00:57:15,728 - INFO - Minimum Error: 0.003904544182397496
-2024-02-03 00:57:15,728 - INFO - Predictions form a straight line: False
-2024-02-03 00:57:15,728 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1]
-2024-02-03 00:57:15,728 - INFO - Average Error: 3.847577933488518
-2024-02-03 00:57:15,728 - INFO - Max Error: 32.331141307516795
-2024-02-03 00:57:15,728 - INFO - Min Error: -12.344465033707472
-2024-02-03 00:57:15,728 - INFO - Max Real Value: 3.2810094336282467
-2024-02-03 00:57:15,728 - INFO - Max Predicted Value: 30.24114227294922
-2024-02-03 00:57:15,728 - INFO - Real Mean: 0.038163090760670135, Real Median: -0.009465809203334119, Real Std Dev: 1.0009522907482336
-2024-02-03 00:57:15,728 - INFO - Predicted Mean: 3.8857409954071045, Predicted Median: 3.794135570526123, Predicted Std Dev: 3.7565174102783203
-2024-02-03 00:57:16,691 - INFO - V==================== Creating LSTM Model ====================V
-2024-02-03 00:57:16,691 - INFO - Input Shape: (50, 47)
-2024-02-03 00:57:16,785 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
-2024-02-03 00:57:16,873 - INFO - Added LSTM layer with 141 units
-2024-02-03 00:57:16,964 - INFO - Added LSTM layer with 94 units
-2024-02-03 00:57:17,045 - INFO - Added LSTM layer with 47 units
-2024-02-03 00:57:17,127 - INFO - Added final LSTM layer with 47 units
-2024-02-03 00:57:17,135 - INFO - Added Dense layers
-2024-02-03 00:57:17,135 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
-2024-02-03 00:57:17,137 - INFO - Model compilation complete.
-2024-02-03 00:57:59,488 - INFO - Training completed. Number of epochs trained: 7
-2024-02-03 00:58:00,426 - INFO - MAPE: 1458404.75
-2024-02-03 00:58:00,748 - INFO - Model Summary:
-Model: "sequential_2"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- lstm_10 (LSTM)              (None, 50, 188)           177472    
-                                                                 
- dropout_12 (Dropout)        (None, 50, 188)           0         
-                                                                 
- lstm_11 (LSTM)              (None, 50, 141)           186120    
-                                                                 
- dropout_13 (Dropout)        (None, 50, 141)           0         
-                                                                 
- lstm_12 (LSTM)              (None, 50, 94)            88736     
-                                                                 
- dropout_14 (Dropout)        (None, 50, 94)            0         
-                                                                 
- lstm_13 (LSTM)              (None, 50, 47)            26696     
-                                                                 
- dropout_15 (Dropout)        (None, 50, 47)            0         
-                                                                 
- lstm_14 (LSTM)              (None, 47)                17860     
-                                                                 
- dropout_16 (Dropout)        (None, 47)                0         
-                                                                 
- dense_4 (Dense)             (None, 24)                1152      
-                                                                 
- dropout_17 (Dropout)        (None, 24)                0         
-                                                                 
- dense_5 (Dense)             (None, 1)                 25        
-                                                                 
-=================================================================
-Total params: 498,061
-Trainable params: 498,061
-Non-trainable params: 0
-_________________________________________________________________
-2024-02-03 00:58:00,750 - INFO - Data Skewness:
-ATR%                             NaN
-14ma%                            NaN
-200ma%                           NaN
-14ma-200ma                       NaN
-14ma%_change                     NaN
-14ma%_count                      NaN
-200ma%_count                     NaN
-14ma_crossover                   NaN
-200ma_crossover                  NaN
-200DAY_ATR%                      NaN
-200DAY_ATR-%                     NaN
-percent_from_high                NaN
-new_high                         NaN
-days_since_high                  NaN
-percent_range                    NaN
-VWAP_std14                       NaN
-VWAP_std200                      NaN
-VWAP%                            NaN
-VWAP%_from_high                  NaN
-percent_change_Close             NaN
-pct_change_std                   NaN
-percent_change_Close_lag_1       NaN
-percent_change_Close_lag_2       NaN
-percent_change_Close_lag_3       NaN
-percent_change_Close_7           NaN
-percent_change_Close_30          NaN
-percent_change_Close>std         NaN
-percent_change_Close<std         NaN
-pct_change_std_rolling           NaN
-days_since_abnormal_pct_change   NaN
-VWAP_Divergence                  NaN
-RSI                              NaN
-RSI_Divergence                   NaN
-EFI                              NaN
-direction_flipper_count5         NaN
-direction_flipper_count_10       NaN
-direction_flipper_count_14       NaN
-KC_UPPER%                        NaN
-KC_LOWER%                        NaN
-B%                               NaN
-positive_streak                  NaN
-negative_streak                  NaN
-is_gap_up                        NaN
-is_gap_down                      NaN
-move_from_gap%                   NaN
-VPT                              NaN
-RF_Predictions                   NaN
-dtype: float64
-2024-02-03 00:58:00,750 - INFO - Data Kurtosis:
-ATR%                             NaN
-14ma%                            NaN
-200ma%                           NaN
-14ma-200ma                       NaN
-14ma%_change                     NaN
-14ma%_count                      NaN
-200ma%_count                     NaN
-14ma_crossover                   NaN
-200ma_crossover                  NaN
-200DAY_ATR%                      NaN
-200DAY_ATR-%                     NaN
-percent_from_high                NaN
-new_high                         NaN
-days_since_high                  NaN
-percent_range                    NaN
-VWAP_std14                       NaN
-VWAP_std200                      NaN
-VWAP%                            NaN
-VWAP%_from_high                  NaN
-percent_change_Close             NaN
-pct_change_std                   NaN
-percent_change_Close_lag_1       NaN
-percent_change_Close_lag_2       NaN
-percent_change_Close_lag_3       NaN
-percent_change_Close_7           NaN
-percent_change_Close_30          NaN
-percent_change_Close>std         NaN
-percent_change_Close<std         NaN
-pct_change_std_rolling           NaN
-days_since_abnormal_pct_change   NaN
-VWAP_Divergence                  NaN
-RSI                              NaN
-RSI_Divergence                   NaN
-EFI                              NaN
-direction_flipper_count5         NaN
-direction_flipper_count_10       NaN
-direction_flipper_count_14       NaN
-KC_UPPER%                        NaN
-KC_LOWER%                        NaN
-B%                               NaN
-positive_streak                  NaN
-negative_streak                  NaN
-is_gap_up                        NaN
-is_gap_down                      NaN
-move_from_gap%                   NaN
-VPT                              NaN
-RF_Predictions                   NaN
-dtype: float64
-2024-02-03 00:58:00,750 - INFO - Prediction Distribution: Mean: 0.9824895262718201, Std: 9.317157889654482e-08
-2024-02-03 00:58:00,750 - INFO - Memory Usage: 2993.8125 MB
-2024-02-03 00:58:00,750 - INFO - Computation Time: 0.002009868621826172 seconds
-2024-02-03 00:58:00,750 - INFO - Minimum Error: 8.507475987284963e-05
-2024-02-03 00:58:00,750 - INFO - Predictions form a straight line: True
-2024-02-03 00:58:00,750 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1]
-2024-02-03 00:58:00,750 - INFO - Average Error: 0.937856611110929
-2024-02-03 00:58:00,750 - INFO - Max Error: 3.609498927955356
-2024-02-03 00:58:00,750 - INFO - Min Error: -1.9555203590342352
-2024-02-03 00:58:00,750 - INFO - Max Real Value: 2.9380098257014104
-2024-02-03 00:58:00,750 - INFO - Max Predicted Value: 0.9824904203414917
-2024-02-03 00:58:00,750 - INFO - Real Mean: 0.04463286170177507, Real Median: -4.400401828292988e-07, Real Std Dev: 0.8870190274510307
-2024-02-03 00:58:00,750 - INFO - Predicted Mean: 0.9824895262718201, Predicted Median: 0.9824894666671753, Predicted Std Dev: 9.317157889654482e-08
-2024-02-03 00:58:01,605 - INFO - V==================== Creating LSTM Model ====================V
-2024-02-03 00:58:01,605 - INFO - Input Shape: (50, 47)
-2024-02-03 00:58:01,693 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
-2024-02-03 00:58:01,778 - INFO - Added LSTM layer with 141 units
-2024-02-03 00:58:01,862 - INFO - Added LSTM layer with 94 units
-2024-02-03 00:58:01,942 - INFO - Added LSTM layer with 47 units
-2024-02-03 00:58:02,025 - INFO - Added final LSTM layer with 47 units
-2024-02-03 00:58:02,033 - INFO - Added Dense layers
-2024-02-03 00:58:02,033 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
-2024-02-03 00:58:02,036 - INFO - Model compilation complete.
-2024-02-03 00:58:26,593 - INFO - Training completed. Number of epochs trained: 5
-2024-02-03 00:58:27,622 - INFO - MAPE: 223.69215393066406
-2024-02-03 00:58:27,877 - INFO - Model Summary:
-Model: "sequential_3"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- lstm_15 (LSTM)              (None, 50, 188)           177472    
-                                                                 
- dropout_18 (Dropout)        (None, 50, 188)           0         
-                                                                 
- lstm_16 (LSTM)              (None, 50, 141)           186120    
-                                                                 
- dropout_19 (Dropout)        (None, 50, 141)           0         
-                                                                 
- lstm_17 (LSTM)              (None, 50, 94)            88736     
-                                                                 
- dropout_20 (Dropout)        (None, 50, 94)            0         
-                                                                 
- lstm_18 (LSTM)              (None, 50, 47)            26696     
-                                                                 
- dropout_21 (Dropout)        (None, 50, 47)            0         
-                                                                 
- lstm_19 (LSTM)              (None, 47)                17860     
-                                                                 
- dropout_22 (Dropout)        (None, 47)                0         
-                                                                 
- dense_6 (Dense)             (None, 24)                1152      
-                                                                 
- dropout_23 (Dropout)        (None, 24)                0         
-                                                                 
- dense_7 (Dense)             (None, 1)                 25        
-                                                                 
-=================================================================
-Total params: 498,061
-Trainable params: 498,061
-Non-trainable params: 0
-_________________________________________________________________
-2024-02-03 00:58:27,878 - INFO - Data Skewness:
-ATR%                             NaN
-14ma%                            NaN
-200ma%                           NaN
-14ma-200ma                       NaN
-14ma%_change                     NaN
-14ma%_count                      NaN
-200ma%_count                     NaN
-14ma_crossover                   NaN
-200ma_crossover                  NaN
-200DAY_ATR%                      NaN
-200DAY_ATR-%                     NaN
-percent_from_high                NaN
-new_high                         NaN
-days_since_high                  NaN
-percent_range                    NaN
-VWAP_std14                       NaN
-VWAP_std200                      NaN
-VWAP%                            NaN
-VWAP%_from_high                  NaN
-percent_change_Close             NaN
-pct_change_std                   NaN
-percent_change_Close_lag_1       NaN
-percent_change_Close_lag_2       NaN
-percent_change_Close_lag_3       NaN
-percent_change_Close_7           NaN
-percent_change_Close_30          NaN
-percent_change_Close>std         NaN
-percent_change_Close<std         NaN
-pct_change_std_rolling           NaN
-days_since_abnormal_pct_change   NaN
-VWAP_Divergence                  NaN
-RSI                              NaN
-RSI_Divergence                   NaN
-EFI                              NaN
-direction_flipper_count5         NaN
-direction_flipper_count_10       NaN
-direction_flipper_count_14       NaN
-KC_UPPER%                        NaN
-KC_LOWER%                        NaN
-B%                               NaN
-positive_streak                  NaN
-negative_streak                  NaN
-is_gap_up                        NaN
-is_gap_down                      NaN
-move_from_gap%                   NaN
-VPT                              NaN
-RF_Predictions                   NaN
-dtype: float64
-2024-02-03 00:58:27,878 - INFO - Data Kurtosis:
-ATR%                             NaN
-14ma%                            NaN
-200ma%                           NaN
-14ma-200ma                       NaN
-14ma%_change                     NaN
-14ma%_count                      NaN
-200ma%_count                     NaN
-14ma_crossover                   NaN
-200ma_crossover                  NaN
-200DAY_ATR%                      NaN
-200DAY_ATR-%                     NaN
-percent_from_high                NaN
-new_high                         NaN
-days_since_high                  NaN
-percent_range                    NaN
-VWAP_std14                       NaN
-VWAP_std200                      NaN
-VWAP%                            NaN
-VWAP%_from_high                  NaN
-percent_change_Close             NaN
-pct_change_std                   NaN
-percent_change_Close_lag_1       NaN
-percent_change_Close_lag_2       NaN
-percent_change_Close_lag_3       NaN
-percent_change_Close_7           NaN
-percent_change_Close_30          NaN
-percent_change_Close>std         NaN
-percent_change_Close<std         NaN
-pct_change_std_rolling           NaN
-days_since_abnormal_pct_change   NaN
-VWAP_Divergence                  NaN
-RSI                              NaN
-RSI_Divergence                   NaN
-EFI                              NaN
-direction_flipper_count5         NaN
-direction_flipper_count_10       NaN
-direction_flipper_count_14       NaN
-KC_UPPER%                        NaN
-KC_LOWER%                        NaN
-B%                               NaN
-positive_streak                  NaN
-negative_streak                  NaN
-is_gap_up                        NaN
-is_gap_down                      NaN
-move_from_gap%                   NaN
-VPT                              NaN
-RF_Predictions                   NaN
-dtype: float64
-2024-02-03 00:58:27,878 - INFO - Prediction Distribution: Mean: -0.17302998900413513, Std: 0.03374623507261276
-2024-02-03 00:58:27,878 - INFO - Memory Usage: 2867.76171875 MB
-2024-02-03 00:58:27,878 - INFO - Computation Time: 0.0020029544830322266 seconds
-2024-02-03 00:58:27,878 - INFO - Minimum Error: 7.300725498432525e-05
-2024-02-03 00:58:27,878 - INFO - Predictions form a straight line: True
-2024-02-03 00:58:27,878 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-02-03 00:58:27,878 - INFO - Average Error: -0.22991659078189647
-2024-02-03 00:58:27,878 - INFO - Max Error: 3.2499417738585485
-2024-02-03 00:58:27,878 - INFO - Min Error: -4.061125775871817
-2024-02-03 00:58:27,878 - INFO - Max Real Value: 3.8890075889211335
-2024-02-03 00:58:27,878 - INFO - Max Predicted Value: -0.16605591773986816
-2024-02-03 00:58:27,878 - INFO - Real Mean: 0.056886617783952466, Real Median: 0.01276399097743845, Real Std Dev: 1.1092034977061398
-2024-02-03 00:58:27,878 - INFO - Predicted Mean: -0.17302998900413513, Predicted Median: -0.1721181869506836, Predicted Std Dev: 0.03374623507261276
+2024-02-04 22:10:56,438 - INFO - Training completed. Number of epochs trained: 6
+2024-02-04 22:10:57,402 - INFO - MAPE: 2965.28564453125
+2024-02-04 22:10:57,735 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:10:57,735 - WARNING - Model is overconfident
+2024-02-04 22:10:57,735 - WARNING - Model is overconfident
+2024-02-04 22:10:57,856 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:10:57,857 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:10:57,861 - INFO - Slope correctness: 50.70%
+2024-02-04 22:10:57,861 - INFO - Direction correctness: 50.09%
+2024-02-04 22:10:57,861 - INFO - Accuracy after close prediction (next 3 predictions): 0.70%
+2024-02-04 22:10:57,868 - INFO - Number of unique values in predictions: 1705
+2024-02-04 22:10:57,868 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:10:57,869 - INFO - Mean Squared Error: 2.0242515756619825
+2024-02-04 22:10:57,869 - INFO - R-squared: -1.02040297639111
+2024-02-04 22:10:57,869 - INFO - Prediction Distribution: Mean: 0.04977048560976982, Std: 0.98497474193573
+2024-02-04 22:10:57,869 - INFO - Memory Usage: 2930.21875 MB
+2024-02-04 22:10:57,869 - INFO - Computation Time: 0.012924432754516602 seconds
+2024-02-04 22:10:57,869 - INFO - Minimum Error: 0.0011004912184440219
+2024-02-04 22:10:57,869 - INFO - Predictions form a straight line: False
+2024-02-04 22:10:57,869 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:10:57,869 - INFO - Average Error: 0.011607455643720895
+2024-02-04 22:10:57,869 - INFO - Max Error: 7.335230465321068
+2024-02-04 22:10:57,869 - INFO - Min Error: -7.428713389246851
+2024-02-04 22:10:57,869 - INFO - Max Real Value: 3.281006234414733
+2024-02-04 22:10:57,869 - INFO - Max Predicted Value: 4.733237266540527
+2024-02-04 22:10:57,869 - INFO - Real Mean: 0.03816302690279831, Real Median: -0.00946784517026628, Real Std Dev: 1.0009519804444336
+2024-02-04 22:10:57,869 - INFO - Predicted Mean: 0.04977048560976982, Predicted Median: -0.017745990306138992, Predicted Std Dev: 0.98497474193573
+2024-02-04 22:10:58,482 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,483 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,484 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,485 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,486 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,486 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,486 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,486 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:10:58,486 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,486 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:10:58,486 - INFO - Total Trades: 66
+2024-02-04 22:10:58,486 - INFO - Overall P/L: 19.52515758608992
+2024-02-04 22:10:58,486 - INFO - Stop Loss Hits: 30 (45.45%)
+2024-02-04 22:10:58,486 - INFO - Take Profit Hits: 36 (54.55%)
+2024-02-04 22:10:58,486 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:10:58,486 - INFO - Average P/L for Take Profit Trades: 0.6891061118901094
+2024-02-04 22:10:58,486 - INFO - Average P/L for Stop Loss Trades: -0.1760887480651339
+2024-02-04 22:10:58,486 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:10:58,486 - INFO - Overall P/L per year: 3.202720635093836
+2024-02-04 22:10:58,486 - INFO - Simulation complete. Overall P/L: 19.52515758608992
+2024-02-04 22:10:59,297 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:10:59,297 - INFO - Input Shape: (50, 47)
+2024-02-04 22:10:59,399 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:10:59,486 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:10:59,571 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:10:59,657 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:10:59,742 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:10:59,751 - INFO - Added Dense layers
+2024-02-04 22:10:59,751 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:10:59,754 - INFO - Model compilation complete.
+2024-02-04 22:11:39,750 - INFO - Training completed. Number of epochs trained: 7
+2024-02-04 22:11:40,652 - INFO - MAPE: 2544695.0
+2024-02-04 22:11:40,971 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:11:40,971 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:11:41,544 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:11:41,544 - INFO - Input Shape: (50, 47)
+2024-02-04 22:11:41,651 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:11:41,738 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:11:41,819 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:11:41,901 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:11:41,982 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:11:41,991 - INFO - Added Dense layers
+2024-02-04 22:11:41,991 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:11:41,993 - INFO - Model compilation complete.
+2024-02-04 22:12:11,655 - INFO - Training completed. Number of epochs trained: 6
+2024-02-04 22:12:12,689 - INFO - MAPE: 480.230712890625
+2024-02-04 22:12:12,934 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:12:12,934 - WARNING - Model is overconfident
+2024-02-04 22:12:12,934 - WARNING - Model is overconfident
+2024-02-04 22:12:12,934 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:20:39,350 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:20:39,351 - INFO - Input Shape: (50, 47)
+2024-02-04 22:20:40,022 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:20:40,109 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:20:40,192 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:20:40,272 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:20:40,352 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:20:40,364 - INFO - Added Dense layers
+2024-02-04 22:20:40,364 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:20:40,368 - INFO - Model compilation complete.
+2024-02-04 22:21:09,144 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:21:10,042 - INFO - MAPE: 468.15069580078125
+2024-02-04 22:21:10,343 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:21:10,343 - WARNING - Model is overconfident
+2024-02-04 22:21:10,343 - WARNING - Model is overconfident
+2024-02-04 22:21:10,343 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:21:11,117 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:21:11,117 - INFO - Input Shape: (50, 47)
+2024-02-04 22:21:11,213 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:21:11,298 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:21:11,379 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:21:11,462 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:21:11,553 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:21:11,563 - INFO - Added Dense layers
+2024-02-04 22:21:11,563 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:21:11,566 - INFO - Model compilation complete.
+2024-02-04 22:21:40,464 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:21:41,359 - INFO - MAPE: 1752.5885009765625
+2024-02-04 22:21:41,665 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:21:41,665 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:21:42,427 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:21:42,427 - INFO - Input Shape: (50, 47)
+2024-02-04 22:21:42,526 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:21:42,610 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:21:42,693 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:21:42,777 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:21:42,858 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:21:42,866 - INFO - Added Dense layers
+2024-02-04 22:21:42,866 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:21:42,868 - INFO - Model compilation complete.
+2024-02-04 22:22:11,945 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:22:12,840 - INFO - MAPE: 1946774.0
+2024-02-04 22:22:13,143 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:22:13,143 - WARNING - Model is overconfident
+2024-02-04 22:22:13,144 - WARNING - Model is overconfident
+2024-02-04 22:22:13,144 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:22:13,692 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:22:13,692 - INFO - Input Shape: (50, 47)
+2024-02-04 22:22:13,786 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:22:13,871 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:22:13,950 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:22:14,032 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:22:14,116 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:22:14,124 - INFO - Added Dense layers
+2024-02-04 22:22:14,124 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:22:14,127 - INFO - Model compilation complete.
+2024-02-04 22:22:37,564 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:22:38,399 - INFO - MAPE: 1771.274169921875
+2024-02-04 22:22:38,640 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:22:38,640 - WARNING - Model is overconfident
+2024-02-04 22:22:38,640 - WARNING - Model is overconfident
+2024-02-04 22:22:38,728 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:22:38,729 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:22:38,732 - INFO - Slope correctness: 51.95%
+2024-02-04 22:22:38,732 - INFO - Direction correctness: 50.34%
+2024-02-04 22:22:38,732 - INFO - Accuracy after close prediction (next 3 predictions): 0.00%
+2024-02-04 22:22:38,737 - INFO - Number of unique values in predictions: 1323
+2024-02-04 22:22:38,737 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:22:38,737 - INFO - Mean Squared Error: 3.279296279502613
+2024-02-04 22:22:38,737 - INFO - R-squared: -1.6653716460003016
+2024-02-04 22:22:38,737 - INFO - Prediction Distribution: Mean: 0.0668872520327568, Std: 1.4554990530014038
+2024-02-04 22:22:38,737 - INFO - Memory Usage: 2902.4609375 MB
+2024-02-04 22:22:38,737 - INFO - Computation Time: 0.009510993957519531 seconds
+2024-02-04 22:22:38,737 - INFO - Minimum Error: 0.0008354702516290557
+2024-02-04 22:22:38,737 - INFO - Predictions form a straight line: False
+2024-02-04 22:22:38,737 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:22:38,737 - INFO - Average Error: 0.010000527403374655
+2024-02-04 22:22:38,738 - INFO - Max Error: 5.699550236996412
+2024-02-04 22:22:38,738 - INFO - Min Error: -6.347064207859726
+2024-02-04 22:22:38,738 - INFO - Max Real Value: 3.889008614407329
+2024-02-04 22:22:38,738 - INFO - Max Predicted Value: 3.8889999389648438
+2024-02-04 22:22:38,738 - INFO - Real Mean: 0.056886729480412984, Real Median: 0.012759185452551685, Real Std Dev: 1.1092040367310907
+2024-02-04 22:22:38,738 - INFO - Predicted Mean: 0.0668872520327568, Predicted Median: -0.006319989915937185, Predicted Std Dev: 1.4554990530014038
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,232 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,234 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:22:39,235 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,235 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:22:39,235 - INFO - Total Trades: 35
+2024-02-04 22:22:39,235 - INFO - Overall P/L: 12.430496818952783
+2024-02-04 22:22:39,235 - INFO - Stop Loss Hits: 18 (51.43%)
+2024-02-04 22:22:39,235 - INFO - Take Profit Hits: 17 (48.57%)
+2024-02-04 22:22:39,235 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:22:39,235 - INFO - Average P/L for Take Profit Trades: 0.9348966343223477
+2024-02-04 22:22:39,235 - INFO - Average P/L for Stop Loss Trades: -0.19237477580706278
+2024-02-04 22:22:39,235 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:22:39,235 - INFO - Overall P/L per year: 2.607145400229797
+2024-02-04 22:22:39,235 - INFO - Simulation complete. Overall P/L: 12.430496818952783
+2024-02-04 22:24:54,714 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:24:54,715 - INFO - Input Shape: (50, 47)
+2024-02-04 22:24:55,382 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:24:55,471 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:24:55,555 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:24:55,645 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:24:55,727 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:24:55,737 - INFO - Added Dense layers
+2024-02-04 22:24:55,738 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:24:55,743 - INFO - Model compilation complete.
+2024-02-04 22:25:31,329 - INFO - Training completed. Number of epochs trained: 6
+2024-02-04 22:25:32,265 - INFO - MAPE: 3280.9375
+2024-02-04 22:25:32,573 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:25:32,573 - WARNING - Model is overconfident
+2024-02-04 22:25:32,573 - WARNING - Model is overconfident
+2024-02-04 22:25:32,687 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:25:32,688 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:25:32,692 - INFO - Slope correctness: 50.29%
+2024-02-04 22:25:32,692 - INFO - Direction correctness: 49.97%
+2024-02-04 22:25:32,692 - INFO - Accuracy after close prediction (next 3 predictions): 0.00%
+2024-02-04 22:25:32,698 - INFO - Number of unique values in predictions: 1689
+2024-02-04 22:25:32,698 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:25:32,699 - INFO - Mean Squared Error: 1.56032109072459
+2024-02-04 22:25:32,699 - INFO - R-squared: -0.8722617853894485
+2024-02-04 22:25:32,699 - INFO - Prediction Distribution: Mean: 0.011489124037325382, Std: 0.8622468113899231
+2024-02-04 22:25:32,699 - INFO - Memory Usage: 2666.96484375 MB
+2024-02-04 22:25:32,699 - INFO - Computation Time: 0.012501955032348633 seconds
+2024-02-04 22:25:32,699 - INFO - Minimum Error: 0.00013485886528873808
+2024-02-04 22:25:32,699 - INFO - Predictions form a straight line: False
+2024-02-04 22:25:32,699 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:25:32,699 - INFO - Average Error: -0.005664122365210166
+2024-02-04 22:25:32,699 - INFO - Max Error: 10.624758998573691
+2024-02-04 22:25:32,699 - INFO - Min Error: -4.5718254584521185
+2024-02-04 22:25:32,699 - INFO - Max Real Value: 2.9700089071395643
+2024-02-04 22:25:32,699 - INFO - Max Predicted Value: 10.685169219970703
+2024-02-04 22:25:32,699 - INFO - Real Mean: 0.017153244803359353, Real Median: 0.0003534552968800781, Real Std Dev: 0.9129010422543054
+2024-02-04 22:25:32,699 - INFO - Predicted Mean: 0.011489124037325382, Predicted Median: -0.004279990214854479, Predicted Std Dev: 0.8622468113899231
+2024-02-04 22:25:33,296 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,297 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,298 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:25:33,299 - INFO - Total Trades: 44
+2024-02-04 22:25:33,299 - INFO - Overall P/L: 9.523511019148684
+2024-02-04 22:25:33,299 - INFO - Stop Loss Hits: 22 (50.00%)
+2024-02-04 22:25:33,299 - INFO - Take Profit Hits: 22 (50.00%)
+2024-02-04 22:25:33,299 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:25:33,299 - INFO - Average P/L for Take Profit Trades: 0.5963907489292665
+2024-02-04 22:25:33,299 - INFO - Average P/L for Stop Loss Trades: -0.16350388442250816
+2024-02-04 22:25:33,300 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:25:33,300 - INFO - Overall P/L per year: 1.56214591995409
+2024-02-04 22:25:33,300 - INFO - Simulation complete. Overall P/L: 9.523511019148684
+2024-02-04 22:25:34,122 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:25:34,122 - INFO - Input Shape: (50, 47)
+2024-02-04 22:25:34,219 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:25:34,304 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:25:34,387 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:25:34,469 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:25:34,552 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:25:34,562 - INFO - Added Dense layers
+2024-02-04 22:25:34,562 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:25:34,566 - INFO - Model compilation complete.
+2024-02-04 22:26:05,147 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:26:06,087 - INFO - MAPE: 5303.72314453125
+2024-02-04 22:26:06,399 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:26:06,511 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:26:06,511 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:26:06,515 - INFO - Slope correctness: 50.76%
+2024-02-04 22:26:06,515 - INFO - Direction correctness: 50.38%
+2024-02-04 22:26:06,515 - INFO - Accuracy after close prediction (next 3 predictions): 0.70%
+2024-02-04 22:26:06,522 - INFO - Number of unique values in predictions: 1705
+2024-02-04 22:26:06,522 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:26:06,523 - INFO - Mean Squared Error: 2.068902923605317
+2024-02-04 22:26:06,523 - INFO - R-squared: -1.064968548693793
+2024-02-04 22:26:06,523 - INFO - Prediction Distribution: Mean: 0.018458068370819092, Std: 1.0115453004837036
+2024-02-04 22:26:06,523 - INFO - Memory Usage: 2945.98828125 MB
+2024-02-04 22:26:06,523 - INFO - Computation Time: 0.011853218078613281 seconds
+2024-02-04 22:26:06,523 - INFO - Minimum Error: 0.0011035480162852052
+2024-02-04 22:26:06,523 - INFO - Predictions form a straight line: False
+2024-02-04 22:26:06,523 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:26:06,523 - INFO - Average Error: -0.019704985042636843
+2024-02-04 22:26:06,523 - INFO - Max Error: 4.954798660789679
+2024-02-04 22:26:06,523 - INFO - Min Error: -12.17607959337357
+2024-02-04 22:26:06,523 - INFO - Max Real Value: 3.2810094090026825
+2024-02-04 22:26:06,523 - INFO - Max Predicted Value: 4.894162654876709
+2024-02-04 22:26:06,523 - INFO - Real Mean: 0.03816305184512265, Real Median: -0.009468648660933984, Real Std Dev: 1.0009521943229254
+2024-02-04 22:26:06,523 - INFO - Predicted Mean: 0.018458068370819092, Predicted Median: -0.030499989166855812, Predicted Std Dev: 1.0115453004837036
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,797 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,798 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,799 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,800 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:26:06,800 - INFO - Total Trades: 66
+2024-02-04 22:26:06,800 - INFO - Overall P/L: 19.52514395342182
+2024-02-04 22:26:06,800 - INFO - Stop Loss Hits: 30 (45.45%)
+2024-02-04 22:26:06,800 - INFO - Take Profit Hits: 36 (54.55%)
+2024-02-04 22:26:06,800 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:26:06,800 - INFO - Average P/L for Take Profit Trades: 0.6891057332048844
+2024-02-04 22:26:06,800 - INFO - Average P/L for Stop Loss Trades: -0.1760887480651339
+2024-02-04 22:26:06,800 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:26:06,800 - INFO - Overall P/L per year: 3.2027183989209784
+2024-02-04 22:26:06,800 - INFO - Simulation complete. Overall P/L: 19.52514395342182
+2024-02-04 22:26:07,614 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:26:07,614 - INFO - Input Shape: (50, 47)
+2024-02-04 22:26:07,716 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:26:07,807 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:26:07,888 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:26:07,968 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:26:08,054 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:26:08,063 - INFO - Added Dense layers
+2024-02-04 22:26:08,063 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:26:08,065 - INFO - Model compilation complete.
+2024-02-04 22:27:45,971 - INFO - Training completed. Number of epochs trained: 18
+2024-02-04 22:27:46,876 - INFO - MAPE: 133989.421875
+2024-02-04 22:27:47,187 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:27:47,187 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:27:47,750 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:27:47,750 - INFO - Input Shape: (50, 47)
+2024-02-04 22:27:47,849 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:27:47,934 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:27:48,016 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:27:48,100 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:27:48,183 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:27:48,192 - INFO - Added Dense layers
+2024-02-04 22:27:48,192 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:27:48,194 - INFO - Model compilation complete.
+2024-02-04 22:28:40,478 - INFO - Training completed. Number of epochs trained: 12
+2024-02-04 22:28:41,319 - INFO - MAPE: 1760.0555419921875
+2024-02-04 22:28:41,559 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:28:41,647 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:28:41,647 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:28:41,650 - INFO - Slope correctness: 51.65%
+2024-02-04 22:28:41,650 - INFO - Direction correctness: 50.19%
+2024-02-04 22:28:41,651 - INFO - Accuracy after close prediction (next 3 predictions): 0.00%
+2024-02-04 22:28:41,656 - INFO - Number of unique values in predictions: 1323
+2024-02-04 22:28:41,656 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:28:41,656 - INFO - Mean Squared Error: 3.271983860923169
+2024-02-04 22:28:41,656 - INFO - R-squared: -1.6594297208555586
+2024-02-04 22:28:41,657 - INFO - Prediction Distribution: Mean: 0.05929907038807869, Std: 1.4487820863723755
+2024-02-04 22:28:41,657 - INFO - Memory Usage: 2947.40625 MB
+2024-02-04 22:28:41,657 - INFO - Computation Time: 0.00955963134765625 seconds
+2024-02-04 22:28:41,657 - INFO - Minimum Error: 0.0008373089747849005
+2024-02-04 22:28:41,657 - INFO - Predictions form a straight line: False
+2024-02-04 22:28:41,657 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:28:41,657 - INFO - Average Error: 0.002412357182953918
+2024-02-04 22:28:41,657 - INFO - Max Error: 5.699567628118025
+2024-02-04 22:28:41,657 - INFO - Min Error: -6.347059848346197
+2024-02-04 22:28:41,657 - INFO - Max Real Value: 3.889009929088415
+2024-02-04 22:28:41,657 - INFO - Max Predicted Value: 3.8889999389648438
+2024-02-04 22:28:41,657 - INFO - Real Mean: 0.05688671599957211, Real Median: 0.012755002556409975, Real Std Dev: 1.1092037200277929
+2024-02-04 22:28:41,657 - INFO - Predicted Mean: 0.05929907038807869, Predicted Median: -0.010499989613890648, Predicted Std Dev: 1.4487820863723755
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,898 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,899 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,900 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:28:41,900 - INFO - Total Trades: 36
+2024-02-04 22:28:41,900 - INFO - Overall P/L: 12.133453926543803
+2024-02-04 22:28:41,900 - INFO - Stop Loss Hits: 19 (52.78%)
+2024-02-04 22:28:41,900 - INFO - Take Profit Hits: 17 (47.22%)
+2024-02-04 22:28:41,900 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:28:41,900 - INFO - Average P/L for Take Profit Trades: 0.9348964563246109
+2024-02-04 22:28:41,900 - INFO - Average P/L for Stop Loss Trades: -0.19788346478813573
+2024-02-04 22:28:41,900 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:28:41,900 - INFO - Overall P/L per year: 2.544844269237651
+2024-02-04 22:28:41,900 - INFO - Simulation complete. Overall P/L: 12.133453926543803
+2024-02-04 22:33:02,822 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:33:02,822 - INFO - Input Shape: (50, 47)
+2024-02-04 22:33:03,511 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:33:03,600 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:33:03,687 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:33:03,775 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:33:03,858 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:33:03,870 - INFO - Added Dense layers
+2024-02-04 22:33:03,870 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:33:03,875 - INFO - Model compilation complete.
+2024-02-04 22:33:38,895 - INFO - Training completed. Number of epochs trained: 6
+2024-02-04 22:33:39,814 - INFO - MAPE: 587.9737548828125
+2024-02-04 22:33:40,120 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:33:40,121 - WARNING - Model is overconfident
+2024-02-04 22:33:40,121 - WARNING - Model is overconfident
+2024-02-04 22:33:40,121 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:33:40,888 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:33:40,888 - INFO - Input Shape: (50, 47)
+2024-02-04 22:33:40,988 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:33:41,073 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:33:41,154 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:33:41,236 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:33:41,319 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:33:41,329 - INFO - Added Dense layers
+2024-02-04 22:33:41,329 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:33:41,331 - INFO - Model compilation complete.
+2024-02-04 22:34:26,709 - INFO - Training completed. Number of epochs trained: 8
+2024-02-04 22:34:27,610 - INFO - MAPE: 2581.459228515625
+2024-02-04 22:34:27,929 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:34:27,929 - WARNING - Model is overconfident
+2024-02-04 22:34:27,929 - WARNING - Model is overconfident
+2024-02-04 22:34:28,042 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:34:28,043 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:34:28,047 - INFO - Slope correctness: 50.82%
+2024-02-04 22:34:28,047 - INFO - Direction correctness: 50.21%
+2024-02-04 22:34:28,048 - INFO - Accuracy after close prediction (next 3 predictions): 0.70%
+2024-02-04 22:34:28,053 - INFO - Number of unique values in predictions: 1705
+2024-02-04 22:34:28,054 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:34:28,055 - INFO - Mean Squared Error: 1.99866455620056
+2024-02-04 22:34:28,055 - INFO - R-squared: -0.9948632340719137
+2024-02-04 22:34:28,055 - INFO - Prediction Distribution: Mean: 0.04920655116438866, Std: 0.9720887541770935
+2024-02-04 22:34:28,055 - INFO - Memory Usage: 2916.6875 MB
+2024-02-04 22:34:28,055 - INFO - Computation Time: 0.01300954818725586 seconds
+2024-02-04 22:34:28,055 - INFO - Minimum Error: 0.0010990572692838319
+2024-02-04 22:34:28,055 - INFO - Predictions form a straight line: False
+2024-02-04 22:34:28,055 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:34:28,055 - INFO - Average Error: 0.01104357220197772
+2024-02-04 22:34:28,055 - INFO - Max Error: 6.60101579338336
+2024-02-04 22:34:28,055 - INFO - Min Error: -4.623097985688857
+2024-02-04 22:34:28,055 - INFO - Max Real Value: 3.281009899429859
+2024-02-04 22:34:28,055 - INFO - Max Predicted Value: 6.267841815948486
+2024-02-04 22:34:28,055 - INFO - Real Mean: 0.038162971036859915, Real Median: -0.009464308603960511, Real Std Dev: 1.0009523241693332
+2024-02-04 22:34:28,055 - INFO - Predicted Mean: 0.04920655116438866, Predicted Median: -0.018619989976286888, Predicted Std Dev: 0.9720887541770935
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,583 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,585 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:34:28,586 - INFO - Total Trades: 66
+2024-02-04 22:34:28,586 - INFO - Overall P/L: 19.525151084682633
+2024-02-04 22:34:28,586 - INFO - Stop Loss Hits: 30 (45.45%)
+2024-02-04 22:34:28,586 - INFO - Take Profit Hits: 36 (54.55%)
+2024-02-04 22:34:28,587 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:34:28,587 - INFO - Average P/L for Take Profit Trades: 0.6891059312954625
+2024-02-04 22:34:28,587 - INFO - Average P/L for Stop Loss Trades: -0.1760887480651339
+2024-02-04 22:34:28,587 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:34:28,587 - INFO - Overall P/L per year: 3.2027195686649894
+2024-02-04 22:34:28,587 - INFO - Simulation complete. Overall P/L: 19.525151084682633
+2024-02-04 22:39:39,133 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:39:39,133 - INFO - Input Shape: (50, 47)
+2024-02-04 22:39:39,790 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:39:39,878 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:39:39,963 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:39:40,048 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:39:40,129 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:39:40,141 - INFO - Added Dense layers
+2024-02-04 22:39:40,141 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:39:40,145 - INFO - Model compilation complete.
+2024-02-04 22:40:20,711 - INFO - Training completed. Number of epochs trained: 7
+2024-02-04 22:40:21,752 - INFO - MAPE: 673.9782104492188
+2024-02-04 22:40:22,109 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:40:22,109 - WARNING - Model is overconfident
+2024-02-04 22:40:22,109 - WARNING - Model is overconfident
+2024-02-04 22:40:22,109 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:40:22,897 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:40:22,897 - INFO - Input Shape: (50, 47)
+2024-02-04 22:40:23,000 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:40:23,087 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:40:23,173 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:40:23,260 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:40:23,347 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:40:23,360 - INFO - Added Dense layers
+2024-02-04 22:40:23,360 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:40:23,362 - INFO - Model compilation complete.
+2024-02-04 22:41:27,159 - INFO - Training completed. Number of epochs trained: 10
+2024-02-04 22:41:28,058 - INFO - MAPE: 129.3448944091797
+2024-02-04 22:41:28,369 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:41:28,369 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:41:29,170 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:41:29,170 - INFO - Input Shape: (50, 47)
+2024-02-04 22:41:29,270 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:41:29,355 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:41:29,437 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:41:29,522 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:41:29,605 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:41:29,615 - INFO - Added Dense layers
+2024-02-04 22:41:29,615 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:41:29,617 - INFO - Model compilation complete.
+2024-02-04 22:42:00,951 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:42:01,883 - INFO - MAPE: 4834521.5
+2024-02-04 22:42:02,210 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:42:02,328 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:42:02,328 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:42:02,332 - INFO - Slope correctness: 49.30%
+2024-02-04 22:42:02,332 - INFO - Direction correctness: 49.38%
+2024-02-04 22:42:02,333 - INFO - Accuracy after close prediction (next 3 predictions): 0.59%
+2024-02-04 22:42:02,340 - INFO - Number of unique values in predictions: 1690
+2024-02-04 22:42:02,340 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:42:02,340 - INFO - Mean Squared Error: 1.1800694765241233
+2024-02-04 22:42:02,340 - INFO - R-squared: -0.4998292593115672
+2024-02-04 22:42:02,340 - INFO - Prediction Distribution: Mean: 0.022862693294882774, Std: 0.6308000087738037
+2024-02-04 22:42:02,340 - INFO - Memory Usage: 3061.3984375 MB
+2024-02-04 22:42:02,340 - INFO - Computation Time: 0.012019872665405273 seconds
+2024-02-04 22:42:02,340 - INFO - Minimum Error: 0.001301722437400954
+2024-02-04 22:42:02,340 - INFO - Predictions form a straight line: False
+2024-02-04 22:42:02,340 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:42:02,340 - INFO - Average Error: -0.02176982484572299
+2024-02-04 22:42:02,341 - INFO - Max Error: 3.533539921833311
+2024-02-04 22:42:02,341 - INFO - Min Error: -4.422993627479209
+2024-02-04 22:42:02,341 - INFO - Max Real Value: 2.938007807761589
+2024-02-04 22:42:02,341 - INFO - Max Predicted Value: 2.2453999519348145
+2024-02-04 22:42:02,341 - INFO - Real Mean: 0.044632518145042, Real Median: 1.6215718852122464e-06, Real Std Dev: 0.8870189083787395
+2024-02-04 22:42:02,341 - INFO - Predicted Mean: 0.022862693294882774, Predicted Median: -0.004359989892691374, Predicted Std Dev: 0.6308000087738037
+2024-02-04 22:42:02,893 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,894 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,895 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,896 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:42:02,896 - INFO - Total Trades: 37
+2024-02-04 22:42:02,896 - INFO - Overall P/L: 7.471433258983673
+2024-02-04 22:42:02,896 - INFO - Stop Loss Hits: 17 (45.95%)
+2024-02-04 22:42:02,896 - INFO - Take Profit Hits: 20 (54.05%)
+2024-02-04 22:42:02,896 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:42:02,896 - INFO - Average P/L for Take Profit Trades: 0.4926923124769421
+2024-02-04 22:42:02,896 - INFO - Average P/L for Stop Loss Trades: -0.1401419406208922
+2024-02-04 22:42:02,896 - INFO - Average P/L for End of Day Exits: 0
+2024-02-04 22:42:02,896 - INFO - Overall P/L per year: 1.2255426552521549
+2024-02-04 22:42:02,896 - INFO - Simulation complete. Overall P/L: 7.471433258983673
+2024-02-04 22:42:03,523 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:42:03,523 - INFO - Input Shape: (50, 47)
+2024-02-04 22:42:03,623 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:42:03,709 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:42:03,795 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:42:03,875 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:42:03,959 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:42:03,973 - INFO - Added Dense layers
+2024-02-04 22:42:03,973 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:42:03,975 - INFO - Model compilation complete.
+2024-02-04 22:42:36,326 - INFO - Training completed. Number of epochs trained: 7
+2024-02-04 22:42:37,329 - INFO - MAPE: 301.869384765625
+2024-02-04 22:42:37,573 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:42:37,573 - WARNING - Model is overconfident
+2024-02-04 22:42:37,573 - WARNING - Model is overconfident
+2024-02-04 22:42:37,573 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:46:41,797 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:46:41,798 - INFO - Input Shape: (50, 47)
+2024-02-04 22:46:42,465 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:46:42,554 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:46:42,642 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:46:42,730 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:46:42,812 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:46:42,824 - INFO - Added Dense layers
+2024-02-04 22:46:42,824 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:46:42,828 - INFO - Model compilation complete.
+2024-02-04 22:47:36,664 - INFO - Training completed. Number of epochs trained: 9
+2024-02-04 22:47:37,626 - INFO - MAPE: 353.2327575683594
+2024-02-04 22:47:37,949 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:47:37,949 - WARNING - Model is overconfident
+2024-02-04 22:47:37,949 - WARNING - Model is overconfident
+2024-02-04 22:47:37,949 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:47:38,738 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:47:38,738 - INFO - Input Shape: (50, 47)
+2024-02-04 22:47:38,838 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:47:38,927 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:47:39,013 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:47:39,105 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:47:39,192 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:47:39,203 - INFO - Added Dense layers
+2024-02-04 22:47:39,203 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:47:39,205 - INFO - Model compilation complete.
+2024-02-04 22:49:11,638 - INFO - Training completed. Number of epochs trained: 14
+2024-02-04 22:49:12,612 - INFO - MAPE: 211.12030029296875
+2024-02-04 22:49:12,972 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:49:12,972 - WARNING - Model is overconfident
+2024-02-04 22:49:12,972 - WARNING - Model is overconfident
+2024-02-04 22:49:12,972 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:49:13,762 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:49:13,762 - INFO - Input Shape: (50, 47)
+2024-02-04 22:49:13,865 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:49:13,953 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:49:14,040 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:49:14,141 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:49:14,227 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:49:14,240 - INFO - Added Dense layers
+2024-02-04 22:49:14,240 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:49:14,242 - INFO - Model compilation complete.
+2024-02-04 22:49:59,546 - INFO - Training completed. Number of epochs trained: 7
+2024-02-04 22:50:00,500 - INFO - MAPE: 494168.6875
+2024-02-04 22:50:00,822 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:50:00,822 - WARNING - Model is overconfident
+2024-02-04 22:50:00,822 - WARNING - Model is overconfident
+2024-02-04 22:50:00,822 - WARNING - Predictions form a straight line. Skipping further analysis.
+2024-02-04 22:50:01,392 - INFO - V==================== Creating LSTM Model ====================V
+2024-02-04 22:50:01,392 - INFO - Input Shape: (50, 47)
+2024-02-04 22:50:01,492 - INFO - Added LSTM layer with 188 units and input shape (50, 47)
+2024-02-04 22:50:01,580 - INFO - Added LSTM layer with 141 units
+2024-02-04 22:50:01,665 - INFO - Added LSTM layer with 94 units
+2024-02-04 22:50:01,748 - INFO - Added LSTM layer with 47 units
+2024-02-04 22:50:01,834 - INFO - Added final LSTM layer with 47 units
+2024-02-04 22:50:01,843 - INFO - Added Dense layers
+2024-02-04 22:50:01,843 - INFO - Hyperparameters - Learning Rate: 0.4, Clipnorm: 0.82
+2024-02-04 22:50:01,845 - INFO - Model compilation complete.
+2024-02-04 22:50:27,522 - INFO - Training completed. Number of epochs trained: 5
+2024-02-04 22:50:28,399 - INFO - MAPE: 4767.07470703125
+2024-02-04 22:50:28,654 - INFO - Standard Deviation of Predictions: 0.0
+2024-02-04 22:50:28,654 - WARNING - Model is overconfident
+2024-02-04 22:50:28,654 - WARNING - Model is overconfident
+2024-02-04 22:50:28,748 - INFO - Percentage of NaN values in predictions: 0.00%
+2024-02-04 22:50:28,749 - INFO - Percentage of NaN values in predictions after replacement: 0.00%
+2024-02-04 22:50:28,751 - INFO - Slope correctness: 51.65%
+2024-02-04 22:50:28,751 - INFO - Direction correctness: 50.19%
+2024-02-04 22:50:28,752 - INFO - Accuracy after close prediction (next 3 predictions): 0.00%
+2024-02-04 22:50:28,756 - INFO - Number of unique values in predictions: 1323
+2024-02-04 22:50:28,756 - INFO - Number of values that are the same in predictions: 0
+2024-02-04 22:50:28,757 - INFO - Mean Squared Error: 3.4375632922465957
+2024-02-04 22:50:28,757 - INFO - R-squared: -1.7940105107903759
+2024-02-04 22:50:28,757 - INFO - Prediction Distribution: Mean: 0.08131925016641617, Std: 1.5001965761184692
+2024-02-04 22:50:28,757 - INFO - Memory Usage: 2919.78125 MB
+2024-02-04 22:50:28,757 - INFO - Computation Time: 0.009500980377197266 seconds
+2024-02-04 22:50:28,757 - INFO - Minimum Error: 0.0008429389769851192
+2024-02-04 22:50:28,757 - INFO - Predictions form a straight line: False
+2024-02-04 22:50:28,757 - INFO - Low Error Streaks: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-02-04 22:50:28,757 - INFO - Average Error: 0.024432397727396304
+2024-02-04 22:50:28,757 - INFO - Max Error: 7.502836935580181
+2024-02-04 22:50:28,757 - INFO - Min Error: -7.990638590534889
+2024-02-04 22:50:28,757 - INFO - Max Real Value: 3.8890091120903634
+2024-02-04 22:50:28,757 - INFO - Max Predicted Value: 7.369532108306885
+2024-02-04 22:50:28,757 - INFO - Real Mean: 0.05688685183187254, Real Median: 0.012760033527379642, Real Std Dev: 1.1092037617758133
+2024-02-04 22:50:28,757 - INFO - Predicted Mean: 0.08131925016641617, Predicted Median: -0.006319989915937185, Predicted Std Dev: 1.5001965761184692
+2024-02-04 22:50:29,268 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,269 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Stop Loss Hit
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Exiting Trade: Partial Take Profit Hit, Remaining Exited End of Day
+2024-02-04 22:50:29,270 - INFO - Total Trades: 35
+2024-02-04 22:50:29,270 - INFO - Overall P/L: 12.430494044567899
+2024-02-04 22:50:29,270 - INFO - Stop Loss Hits: 18 (51.43%)
+2024-02-04 22:50:29,270 - INFO - Take Profit Hits: 17 (48.57%)
+2024-02-04 22:50:29,270 - INFO - End of Day Exits: 0 (0.00%)
+2024-02-04 22:50:29,270 - INFO - Average Percentage Gain for Take Profit Trades: 93.49%
+2024-02-04 22:50:29,270 - INFO - Average Percentage Loss for Stop Loss Trades: -19.24%
+2024-02-04 22:50:29,270 - INFO - Average Percentage Gain for End of Day Exits: 0.00%
+2024-02-04 22:50:29,270 - INFO - Overall P/L per year: 2.607144818336338
+2024-02-04 22:50:29,270 - INFO - Simulation complete. Overall P/L: 12.430494044567899
