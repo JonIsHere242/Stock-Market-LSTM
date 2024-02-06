@@ -20,6 +20,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.metrics import MeanAbsolutePercentageError
+from tensorflow.keras.callbacks import ModelCheckpoint
 ##import monte carlo dropout
 
 
@@ -68,7 +69,7 @@ def get_args():
     return parser.parse_args()
 
 
-def add_jitter(data, jitter_amount=0.00001):
+def add_jitter(data, jitter_amount=0.0000001):
     """Add a small random amount to the data to avoid zero values."""
     jitter = np.random.uniform(-jitter_amount, jitter_amount, data.shape)
     return data + jitter
@@ -102,7 +103,6 @@ def create_sequences(data, target_column, sequence_length=50):
 
 def create_lstm_model(input_shape):
     logging.info("V==================== Creating LSTM Model ====================V")
-    logging.info(f"Input Shape: {input_shape}")
 
     model = Sequential()
 
@@ -130,8 +130,8 @@ def create_lstm_model(input_shape):
     logging.info("Added Dense layers")
 
     # Hyperparameters
-    learning_rate = 0.40
-    clipnorm = 0.82
+    learning_rate = 0.01
+    clipnorm = 0.95
     logging.info(f"Hyperparameters - Learning Rate: {learning_rate}, Clipnorm: {clipnorm}")
 
     # Compile settings
@@ -438,13 +438,20 @@ def calculate_mape(y_true, y_pred):
     return mape.result().numpy()
 
 
-
-def train_and_evaluate_model(model, X_train, y_train, X_test, y_test):
+def train_and_evaluate_model(model, X_train, y_train, X_test, y_test, batch_size=32, epochs=100, patience=3, verbose=1, additional_callbacks=[]):
     try:
-        predictions = model.predict(X_test)
-        mape_value = calculate_mape(y_test, predictions)  # Calculate MAPE
-        logging.info(f'MAPE value: {mape_value}')
-        return history, mape_value, epochs_trained
+        callbacks = [
+            EarlyStopping(monitor='val_loss', patience=patience, restore_best_weights=True),
+            ModelCheckpoint(filepath='best_model.h5', monitor='val_loss', save_best_only=True)
+        ] + additional_callbacks
+
+        history = model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.1, verbose=verbose, callbacks=callbacks)
+
+
+        epochs_trained = len(history.history['loss'])
+        val_loss = history.history['val_loss'][-1]  # Last validation loss
+
+        return history, epochs_trained, val_loss
     except Exception as e:
         logging.error(f'Error during training and evaluation: {e}')
         raise
@@ -509,7 +516,6 @@ def plot_cumulative_performance(trade_results, initial_investment=1000, smp500_a
     cumulative_pl_strategy = [initial_investment]
     for pl in trade_results:
         cumulative_pl_strategy.append(cumulative_pl_strategy[-1] * (1 + pl))
-        print(cumulative_pl_strategy[-1] * (1 + pl))
 
     x = np.array(range(len(cumulative_pl_strategy)))
     y = np.array(cumulative_pl_strategy)
@@ -609,9 +615,15 @@ def simulate_trading(predictions, actual_values, close_threshold=0.10, take_prof
 
             # Long position if predicted move is positive, else short position
             if predicted_move > 0:
-                trade_profit_loss*0.01 = calculate_profit_loss(actual_move, take_profit_target, stop_loss_target, is_long=True)
+                trade_profit_loss = calculate_profit_loss(actual_move, take_profit_target, stop_loss_target, is_long=True)
             else:
-                trade_profit_loss*0.01 = calculate_profit_loss(-actual_move, take_profit_target, stop_loss_target, is_long=False)
+                trade_profit_loss = calculate_profit_loss(-actual_move, take_profit_target, stop_loss_target, is_long=False)
+            
+
+            if trade_profit_loss != 0:
+                trade_profit_loss*=0.01
+            
+
 
             # Classify trade and append to respective lists
             classify_and_log_trade(trade_profit_loss, take_profit_target, stop_loss_target, take_profit_pl, stop_loss_pl, end_of_day_pl)
@@ -695,6 +707,15 @@ def log_final_statistics(total_trades, total_profit_loss, stop_loss_hits, take_p
     :param end_of_day_pl: List of end of day exit trade results (as percentages).
     :param predictions: Array of predictions for calculating P/L per year.
     """
+
+    if total_trades == 0:
+        logging.warning("No trades were made. Skipping final statistics.")
+        return
+
+
+
+
+
     logging.info(f"Total Trades: {total_trades}")
     logging.info(f"Overall P/L: {total_profit_loss}")
     logging.info(f"Stop Loss Hits: {stop_loss_hits} ({stop_loss_hits/total_trades*100:.2f}%)")
@@ -750,8 +771,12 @@ def main():
         X, y = create_sequences(data, config['target_column'], config['sequence_length'])
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=3301)
         model = create_lstm_model((config["sequence_length"], X.shape[2]))
-        training_history, mape_value, epochs_trained = train_and_evaluate_model(model, X_train, y_train, X_test, y_test)
+        training_history, epochs_trained, val_loss = train_and_evaluate_model(model, X_train, y_train, X_test, y_test)
+        logging.info(f"Training on {os.path.basename(file_path)} complete. Epochs trained: {epochs_trained}, Validation Loss: {val_loss}")
 
+        ##get the percentage of the files in the file paths folder to say "has completed 47% of files trained"
+        percentage_completed = (file_paths.index(file_path) / len(file_paths)) * 100
+        logging.info(f"Percentage of files trained: {percentage_completed:.2f}%")
 
         mean_predictions, std_predictions = predict_with_uncertainty(model, X_test, n_iter=1)
         logging.info(f"Standard Deviation of Predictions: {np.mean(std_predictions)}")
@@ -760,14 +785,6 @@ def main():
             logging.warning("Model is overconfident")
 
         predictions = mean_predictions.flatten()
-
-
-
-        if np.mean(std_predictions) < 0.0001 and np.mean(mean_predictions) > 0.1:
-            logging.warning("Model is overconfident")
-
-
-
 
         predictions = predictions.flatten()  # Flatten the predictions
 
@@ -785,7 +802,7 @@ def main():
         logging.info(f"MAPE before adjustments: {PreAjustedMape:.2f}%")
         
         # Adjusting predictions
-        predictions = adjust_predictions(predictions, data[config['target_column']], window_size=10)
+        predictions = adjust_predictions(predictions, data[config['target_column']], window_size=20)
         PostAjustedMape = calculate_mape(y_test, predictions)
         logging.info(f"MAPE after adjustments: {PostAjustedMape:.2f}%")
         
@@ -799,12 +816,17 @@ def main():
         log_statistics(model, data.sample(1), time.time(), predictions, y_test, analysis_results, logging)
 
 
-
-        save_and_plot_data_with_predictions(data, predictions, file_path, config, config['sequence_length'])
-
         trade_results, overall_pl = simulate_trading(predictions, y_test)
-        logging.info(f"Simulation complete. Overall P/L: {overall_pl}")
-        plot_cumulative_performance(trade_results)
+
+        if overall_pl < 0.07:
+            logging.warning("Overall P/L is less than the S&P 500 average of 7%")
+        else :
+            logging.info("Overall P/L is greater than the S&P 500 average of 7%")
+            save_and_plot_data_with_predictions(data, predictions, file_path, config, config['sequence_length'])
+            plot_cumulative_performance(trade_results)
+
+
+
 
 if __name__ == "__main__":
     main()
