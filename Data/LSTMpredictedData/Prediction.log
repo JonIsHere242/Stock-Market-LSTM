@@ -1,0 +1,682 @@
+2024-02-06 20:04:10,102 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:04:10,103 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:04:10,323 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:04:10,324 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:04:10,581 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:04:10,581 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:04:10,839 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:04:10,840 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:04:11,111 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:04:11,111 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:04:11,194 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:04:11,195 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:04:11,219 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:04:11,219 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:04:11,470 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:04:11,471 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:04:11,712 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:04:11,712 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:04:11,944 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:04:11,944 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:04:12,211 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:04:12,211 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:04:12,518 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:04:12,518 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:04:12,755 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:04:12,756 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:04:13,090 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:04:13,090 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:04:13,090 - INFO - Processing complete.
+2024-02-06 20:06:25,890 - ERROR - Error processing file Data/LSTMpredictedData/AMZN_modified.csv: Input contains NaN.
+2024-02-06 20:06:25,890 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:06:25,919 - ERROR - Error processing file Data/LSTMpredictedData/ABBNY_modified.csv: Input contains NaN.
+2024-02-06 20:06:25,919 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:06:25,948 - ERROR - Error processing file Data/LSTMpredictedData/AMT_modified.csv: Input contains NaN.
+2024-02-06 20:06:25,948 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:06:25,983 - ERROR - Error processing file Data/LSTMpredictedData/ADI_modified.csv: Input contains NaN.
+2024-02-06 20:06:25,983 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:06:26,020 - ERROR - Error processing file Data/LSTMpredictedData/ABT_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,021 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:06:26,034 - ERROR - Error processing file Data/LSTMpredictedData/ABBV_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,035 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:06:26,040 - ERROR - Error processing file Data/LSTMpredictedData/ABNB_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,041 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:06:26,076 - ERROR - Error processing file Data/LSTMpredictedData/AAPL_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,076 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:06:26,111 - ERROR - Error processing file Data/LSTMpredictedData/AMAT_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,111 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:06:26,134 - ERROR - Error processing file Data/LSTMpredictedData/ACN_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,134 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:06:26,166 - ERROR - Error processing file Data/LSTMpredictedData/AMGN_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,166 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:06:26,209 - ERROR - Error processing file Data/LSTMpredictedData/ADP_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,209 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:06:26,242 - ERROR - Error processing file Data/LSTMpredictedData/ADBE_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,242 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:06:26,277 - ERROR - Error processing file Data/LSTMpredictedData/AMD_modified.csv: Input contains NaN.
+2024-02-06 20:06:26,277 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:06:26,277 - INFO - Processing complete.
+2024-02-06 20:08:03,657 - ERROR - Error processing file Data/LSTMpredictedData/AMZN_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,657 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:08:03,689 - ERROR - Error processing file Data/LSTMpredictedData/ABBNY_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,689 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:08:03,717 - ERROR - Error processing file Data/LSTMpredictedData/AMT_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,717 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:08:03,753 - ERROR - Error processing file Data/LSTMpredictedData/ADI_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,753 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:08:03,790 - ERROR - Error processing file Data/LSTMpredictedData/ABT_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,790 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:08:03,805 - ERROR - Error processing file Data/LSTMpredictedData/ABBV_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,805 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:08:03,812 - ERROR - Error processing file Data/LSTMpredictedData/ABNB_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,812 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:08:03,845 - ERROR - Error processing file Data/LSTMpredictedData/AAPL_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,845 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:08:03,882 - ERROR - Error processing file Data/LSTMpredictedData/AMAT_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,882 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:08:03,907 - ERROR - Error processing file Data/LSTMpredictedData/ACN_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,908 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:08:03,940 - ERROR - Error processing file Data/LSTMpredictedData/AMGN_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,941 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:08:03,975 - ERROR - Error processing file Data/LSTMpredictedData/ADP_modified.csv: Input contains NaN.
+2024-02-06 20:08:03,975 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:08:04,007 - ERROR - Error processing file Data/LSTMpredictedData/ADBE_modified.csv: Input contains NaN.
+2024-02-06 20:08:04,007 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:08:04,042 - ERROR - Error processing file Data/LSTMpredictedData/AMD_modified.csv: Input contains NaN.
+2024-02-06 20:08:04,042 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:08:04,042 - INFO - Processing complete.
+2024-02-06 20:09:50,923 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:50,923 - INFO - Error before ajustment: nan
+2024-02-06 20:09:50,923 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:50,923 - INFO - Error after ajustment: nan
+2024-02-06 20:09:51,103 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:09:51,104 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:09:51,127 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,127 - INFO - Error before ajustment: nan
+2024-02-06 20:09:51,128 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,128 - INFO - Error after ajustment: nan
+2024-02-06 20:09:51,274 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:09:51,274 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:09:51,300 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,300 - INFO - Error before ajustment: nan
+2024-02-06 20:09:51,301 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,301 - INFO - Error after ajustment: nan
+2024-02-06 20:09:51,470 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:09:51,470 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:09:51,501 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,501 - INFO - Error before ajustment: nan
+2024-02-06 20:09:51,501 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,502 - INFO - Error after ajustment: nan
+2024-02-06 20:09:51,711 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:09:51,711 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:09:51,741 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,742 - INFO - Error before ajustment: nan
+2024-02-06 20:09:51,742 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:51,742 - INFO - Error after ajustment: nan
+2024-02-06 20:09:51,994 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:09:51,994 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:09:52,016 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,016 - INFO - Error before ajustment: nan
+2024-02-06 20:09:52,017 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,017 - INFO - Error after ajustment: nan
+2024-02-06 20:09:52,156 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:09:52,156 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:09:52,162 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,162 - INFO - Error before ajustment: nan
+2024-02-06 20:09:52,162 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,162 - INFO - Error after ajustment: nan
+2024-02-06 20:09:52,182 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:09:52,183 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:09:52,213 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,213 - INFO - Error before ajustment: nan
+2024-02-06 20:09:52,213 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,213 - INFO - Error after ajustment: nan
+2024-02-06 20:09:52,521 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:09:52,522 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:09:52,561 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,562 - INFO - Error before ajustment: nan
+2024-02-06 20:09:52,562 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,562 - INFO - Error after ajustment: nan
+2024-02-06 20:09:52,784 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:09:52,784 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:09:52,805 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,805 - INFO - Error before ajustment: nan
+2024-02-06 20:09:52,805 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,806 - INFO - Error after ajustment: nan
+2024-02-06 20:09:52,943 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:09:52,943 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:09:52,973 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,973 - INFO - Error before ajustment: nan
+2024-02-06 20:09:52,973 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:52,973 - INFO - Error after ajustment: nan
+2024-02-06 20:09:53,210 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:09:53,210 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:09:53,241 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:53,241 - INFO - Error before ajustment: nan
+2024-02-06 20:09:53,242 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:53,242 - INFO - Error after ajustment: nan
+2024-02-06 20:09:53,454 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:09:53,454 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:09:53,485 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:53,485 - INFO - Error before ajustment: nan
+2024-02-06 20:09:53,485 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:53,485 - INFO - Error after ajustment: nan
+2024-02-06 20:09:53,698 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:09:53,699 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:09:53,729 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:53,729 - INFO - Error before ajustment: nan
+2024-02-06 20:09:53,729 - WARNING - No valid data available for error calculation.
+2024-02-06 20:09:53,729 - INFO - Error after ajustment: nan
+2024-02-06 20:09:53,942 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:09:53,942 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:09:53,942 - INFO - Processing complete.
+2024-02-06 20:12:09,749 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:09,749 - INFO - Error before ajustment: nan
+2024-02-06 20:12:09,749 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:09,750 - INFO - Error after ajustment: nan
+2024-02-06 20:12:09,933 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:12:09,933 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:12:09,958 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:09,958 - INFO - Error before ajustment: nan
+2024-02-06 20:12:09,958 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:09,959 - INFO - Error after ajustment: nan
+2024-02-06 20:12:10,108 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:12:10,108 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:12:10,134 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,134 - INFO - Error before ajustment: nan
+2024-02-06 20:12:10,134 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,134 - INFO - Error after ajustment: nan
+2024-02-06 20:12:10,298 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:12:10,298 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:12:10,329 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,330 - INFO - Error before ajustment: nan
+2024-02-06 20:12:10,330 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,330 - INFO - Error after ajustment: nan
+2024-02-06 20:12:10,597 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:12:10,597 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:12:10,630 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,630 - INFO - Error before ajustment: nan
+2024-02-06 20:12:10,631 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,631 - INFO - Error after ajustment: nan
+2024-02-06 20:12:10,904 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:12:10,905 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:12:10,917 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,918 - INFO - Error before ajustment: nan
+2024-02-06 20:12:10,918 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,918 - INFO - Error after ajustment: nan
+2024-02-06 20:12:10,988 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:12:10,988 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:12:10,994 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,994 - INFO - Error before ajustment: nan
+2024-02-06 20:12:10,994 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:10,994 - INFO - Error after ajustment: nan
+2024-02-06 20:12:11,013 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:12:11,013 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:12:11,044 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,044 - INFO - Error before ajustment: nan
+2024-02-06 20:12:11,044 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,044 - INFO - Error after ajustment: nan
+2024-02-06 20:12:11,256 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:12:11,257 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:12:11,287 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,287 - INFO - Error before ajustment: nan
+2024-02-06 20:12:11,288 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,288 - INFO - Error after ajustment: nan
+2024-02-06 20:12:11,516 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:12:11,516 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:12:11,540 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,540 - INFO - Error before ajustment: nan
+2024-02-06 20:12:11,540 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,540 - INFO - Error after ajustment: nan
+2024-02-06 20:12:11,691 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:12:11,691 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:12:11,726 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,726 - INFO - Error before ajustment: nan
+2024-02-06 20:12:11,726 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,726 - INFO - Error after ajustment: nan
+2024-02-06 20:12:11,944 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:12:11,944 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:12:11,987 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,987 - INFO - Error before ajustment: nan
+2024-02-06 20:12:11,987 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:11,987 - INFO - Error after ajustment: nan
+2024-02-06 20:12:12,205 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:12:12,205 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:12:12,235 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:12,235 - INFO - Error before ajustment: nan
+2024-02-06 20:12:12,236 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:12,236 - INFO - Error after ajustment: nan
+2024-02-06 20:12:12,445 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:12:12,446 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:12:12,477 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:12,477 - INFO - Error before ajustment: nan
+2024-02-06 20:12:12,477 - WARNING - No valid data available for error calculation.
+2024-02-06 20:12:12,477 - INFO - Error after ajustment: nan
+2024-02-06 20:12:12,701 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:12:12,702 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:12:12,702 - INFO - Processing complete.
+2024-02-06 20:14:56,954 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:56,955 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,191 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:14:57,192 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:14:57,223 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,223 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,371 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:14:57,372 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:14:57,401 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,401 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,604 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:14:57,604 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:14:57,648 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,649 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,910 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:14:57,910 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:14:57,941 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:57,941 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,155 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:14:58,156 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:14:58,168 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,168 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,246 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:14:58,247 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:14:58,253 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,253 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,273 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:14:58,273 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:14:58,304 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,305 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,517 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:14:58,517 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:14:58,548 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,548 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,766 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:14:58,766 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:14:58,788 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,788 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,932 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:14:58,932 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:14:58,961 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:58,962 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,172 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:14:59,172 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:14:59,202 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,202 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,488 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:14:59,488 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:14:59,518 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,519 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,725 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:14:59,725 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:14:59,757 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,757 - WARNING - No valid data available for error calculation.
+2024-02-06 20:14:59,967 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:14:59,967 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:14:59,967 - INFO - Processing complete.
+2024-02-06 20:15:46,519 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:46,519 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:46,519 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:46,520 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:46,698 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:15:46,698 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:15:46,722 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:46,723 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:46,723 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:46,723 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:46,877 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:15:46,877 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:15:46,903 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:46,904 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:46,904 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:46,904 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,079 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:15:47,079 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:15:47,111 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:47,111 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:47,111 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,112 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,333 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:15:47,334 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:15:47,365 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:47,365 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:47,365 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,365 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,579 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:15:47,580 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:15:47,592 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:47,592 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:47,592 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,592 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,665 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:15:47,665 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:15:47,672 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:47,672 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:47,672 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,672 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,692 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:15:47,693 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:15:47,724 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:47,725 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:47,725 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,725 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,940 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:15:47,941 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:15:47,971 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:47,971 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:47,971 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:47,971 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:48,233 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:15:48,233 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:15:48,268 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:48,268 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:48,268 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:48,269 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:48,423 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:15:48,423 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:15:48,455 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:48,455 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:48,455 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:48,456 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:48,771 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:15:48,771 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:15:48,801 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:48,801 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:48,801 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:48,802 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:49,010 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:15:49,010 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:15:49,041 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:49,041 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:49,041 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:49,042 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:49,269 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:15:49,270 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:15:49,300 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:15:49,300 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:15:49,300 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:49,301 - WARNING - No valid data available for error calculation.
+2024-02-06 20:15:49,509 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:15:49,509 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:15:49,509 - INFO - Processing complete.
+2024-02-06 20:17:14,290 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:14,291 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:14,291 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,291 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,501 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:17:14,501 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:17:14,524 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:14,525 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:14,525 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,525 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,673 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:17:14,673 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:17:14,697 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:14,697 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:14,697 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,698 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,857 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:17:14,858 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:17:14,887 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:14,888 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:14,888 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:14,888 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,165 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:17:15,165 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:17:15,195 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:15,195 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:15,195 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,196 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,429 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:17:15,430 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:17:15,446 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:15,446 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:15,446 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,446 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,524 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:17:15,525 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:17:15,533 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:15,533 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:15,533 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,533 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,552 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:17:15,553 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:17:15,584 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:15,584 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:15,584 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,585 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,795 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:17:15,795 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:17:15,826 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:15,826 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:15,826 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:15,826 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,066 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:17:16,066 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:17:16,088 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:16,088 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:16,088 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,088 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,253 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:17:16,253 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:17:16,286 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:16,286 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:16,286 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,287 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,555 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:17:16,555 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:17:16,586 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:16,586 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:16,586 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,587 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,811 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:17:16,811 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:17:16,844 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:16,844 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:16,844 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:16,844 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:17,060 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:17:17,060 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:17:17,092 - INFO - Percentage of Nan values in the target column: 100.0%
+2024-02-06 20:17:17,093 - INFO - Percentage of Nan values in the predicted column: 100.0%
+2024-02-06 20:17:17,093 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:17,093 - WARNING - No valid data available for error calculation.
+2024-02-06 20:17:17,316 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:17:17,316 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:17:17,316 - INFO - Processing complete.
+2024-02-06 20:23:39,375 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:39,375 - INFO - Percentage of Nan values in the predicted column: 80.13688439220354%
+2024-02-06 20:23:39,377 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:39,377 - INFO - Error before adjustment: 406.34320176054
+2024-02-06 20:23:39,377 - INFO - Error after adjustment: nan
+2024-02-06 20:23:39,549 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:23:39,549 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:23:39,572 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:39,572 - INFO - Percentage of Nan values in the predicted column: 80.17076145669976%
+2024-02-06 20:23:39,574 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:39,574 - INFO - Error before adjustment: 106.77128512329556
+2024-02-06 20:23:39,574 - INFO - Error after adjustment: nan
+2024-02-06 20:23:39,716 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:23:39,716 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:23:39,741 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:39,741 - INFO - Percentage of Nan values in the predicted column: 80.14717154683429%
+2024-02-06 20:23:39,742 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:39,743 - INFO - Error before adjustment: 100.6302022949364
+2024-02-06 20:23:39,743 - INFO - Error after adjustment: nan
+2024-02-06 20:23:39,915 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:23:39,916 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:23:39,965 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:39,966 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:39,968 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:39,968 - INFO - Error before adjustment: 530.2090212815098
+2024-02-06 20:23:39,968 - INFO - Error after adjustment: nan
+2024-02-06 20:23:40,228 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:23:40,229 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:23:40,257 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:40,257 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:40,259 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:40,259 - INFO - Error before adjustment: 506.385101234238
+2024-02-06 20:23:40,259 - INFO - Error after adjustment: nan
+2024-02-06 20:23:40,465 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:23:40,465 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:23:40,477 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:40,477 - INFO - Percentage of Nan values in the predicted column: 80.34433285509326%
+2024-02-06 20:23:40,478 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:40,478 - INFO - Error before adjustment: 101.8137289336946
+2024-02-06 20:23:40,478 - INFO - Error after adjustment: nan
+2024-02-06 20:23:40,545 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:23:40,545 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:23:40,550 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:40,550 - INFO - Percentage of Nan values in the predicted column: 81.21827411167513%
+2024-02-06 20:23:40,551 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:40,551 - INFO - Error before adjustment: 121.78284726551142
+2024-02-06 20:23:40,551 - INFO - Error after adjustment: nan
+2024-02-06 20:23:40,569 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:23:40,569 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:23:40,597 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:40,597 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:40,599 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:40,599 - INFO - Error before adjustment: 500.44102932049225
+2024-02-06 20:23:40,599 - INFO - Error after adjustment: nan
+2024-02-06 20:23:40,809 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:23:40,809 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:23:40,838 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:40,838 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:40,840 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:40,840 - INFO - Error before adjustment: 1060.6783238179116
+2024-02-06 20:23:40,840 - INFO - Error after adjustment: nan
+2024-02-06 20:23:41,043 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:23:41,044 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:23:41,064 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:41,065 - INFO - Percentage of Nan values in the predicted column: 80.16937191249119%
+2024-02-06 20:23:41,066 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:41,066 - INFO - Error before adjustment: 120.09972041743917
+2024-02-06 20:23:41,066 - INFO - Error after adjustment: nan
+2024-02-06 20:23:41,225 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:23:41,225 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:23:41,254 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:41,254 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:41,255 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:41,255 - INFO - Error before adjustment: 552.6909492875552
+2024-02-06 20:23:41,255 - INFO - Error after adjustment: nan
+2024-02-06 20:23:41,465 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:23:41,465 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:23:41,494 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:41,495 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:41,496 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:41,496 - INFO - Error before adjustment: 110.13499774849046
+2024-02-06 20:23:41,496 - INFO - Error after adjustment: nan
+2024-02-06 20:23:41,710 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:23:41,710 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:23:41,739 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:41,739 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:41,740 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:41,740 - INFO - Error before adjustment: 565.6813446459045
+2024-02-06 20:23:41,740 - INFO - Error after adjustment: nan
+2024-02-06 20:23:41,943 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:23:41,943 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:23:41,972 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:23:41,972 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:23:41,974 - WARNING - No valid data available for error calculation.
+2024-02-06 20:23:41,974 - INFO - Error before adjustment: 633120069.0653083
+2024-02-06 20:23:41,974 - INFO - Error after adjustment: nan
+2024-02-06 20:23:42,255 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:23:42,255 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:23:42,255 - INFO - Processing complete.
+2024-02-06 20:35:23,728 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:23,729 - INFO - Percentage of Nan values in the predicted column: 80.13688439220354%
+2024-02-06 20:35:23,730 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:23,731 - INFO - Error before adjustment: 406.34320176054
+2024-02-06 20:35:23,731 - INFO - Error after adjustment: nan
+2024-02-06 20:35:23,916 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-06 20:35:23,916 - INFO - Percentage of files processed: 6.25%
+2024-02-06 20:35:23,938 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:23,939 - INFO - Percentage of Nan values in the predicted column: 80.17076145669976%
+2024-02-06 20:35:23,940 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:23,940 - INFO - Error before adjustment: 106.77128512329556
+2024-02-06 20:35:23,940 - INFO - Error after adjustment: nan
+2024-02-06 20:35:24,087 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-06 20:35:24,087 - INFO - Percentage of files processed: 12.5%
+2024-02-06 20:35:24,118 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:24,118 - INFO - Percentage of Nan values in the predicted column: 80.14717154683429%
+2024-02-06 20:35:24,120 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:24,120 - INFO - Error before adjustment: 100.6302022949364
+2024-02-06 20:35:24,120 - INFO - Error after adjustment: nan
+2024-02-06 20:35:24,359 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-06 20:35:24,360 - INFO - Percentage of files processed: 18.75%
+2024-02-06 20:35:24,390 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:24,390 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:24,392 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:24,392 - INFO - Error before adjustment: 530.2090212815098
+2024-02-06 20:35:24,392 - INFO - Error after adjustment: nan
+2024-02-06 20:35:24,610 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-06 20:35:24,610 - INFO - Percentage of files processed: 25.0%
+2024-02-06 20:35:24,638 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:24,638 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:24,640 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:24,640 - INFO - Error before adjustment: 506.385101234238
+2024-02-06 20:35:24,640 - INFO - Error after adjustment: nan
+2024-02-06 20:35:24,860 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-06 20:35:24,860 - INFO - Percentage of files processed: 31.25%
+2024-02-06 20:35:24,872 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:24,872 - INFO - Percentage of Nan values in the predicted column: 80.34433285509326%
+2024-02-06 20:35:24,873 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:24,873 - INFO - Error before adjustment: 101.8137289336946
+2024-02-06 20:35:24,873 - INFO - Error after adjustment: nan
+2024-02-06 20:35:24,942 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-06 20:35:24,942 - INFO - Percentage of files processed: 37.5%
+2024-02-06 20:35:24,947 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:24,947 - INFO - Percentage of Nan values in the predicted column: 81.21827411167513%
+2024-02-06 20:35:24,948 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:24,948 - INFO - Error before adjustment: 121.78284726551142
+2024-02-06 20:35:24,948 - INFO - Error after adjustment: nan
+2024-02-06 20:35:24,967 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-06 20:35:24,967 - INFO - Percentage of files processed: 43.75%
+2024-02-06 20:35:24,995 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:24,995 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:24,996 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:24,996 - INFO - Error before adjustment: 500.44102932049225
+2024-02-06 20:35:24,996 - INFO - Error after adjustment: nan
+2024-02-06 20:35:25,201 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-06 20:35:25,202 - INFO - Percentage of files processed: 50.0%
+2024-02-06 20:35:25,230 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:25,231 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:25,232 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:25,232 - INFO - Error before adjustment: 1060.6783238179116
+2024-02-06 20:35:25,232 - INFO - Error after adjustment: nan
+2024-02-06 20:35:25,448 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-06 20:35:25,448 - INFO - Percentage of files processed: 56.25%
+2024-02-06 20:35:25,469 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:25,469 - INFO - Percentage of Nan values in the predicted column: 80.16937191249119%
+2024-02-06 20:35:25,470 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:25,470 - INFO - Error before adjustment: 120.09972041743917
+2024-02-06 20:35:25,470 - INFO - Error after adjustment: nan
+2024-02-06 20:35:25,612 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-06 20:35:25,613 - INFO - Percentage of files processed: 62.5%
+2024-02-06 20:35:25,642 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:25,643 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:25,644 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:25,644 - INFO - Error before adjustment: 552.6909492875552
+2024-02-06 20:35:25,644 - INFO - Error after adjustment: nan
+2024-02-06 20:35:25,857 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-06 20:35:25,857 - INFO - Percentage of files processed: 68.75%
+2024-02-06 20:35:25,892 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:25,892 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:25,894 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:25,894 - INFO - Error before adjustment: 110.13499774849046
+2024-02-06 20:35:25,894 - INFO - Error after adjustment: nan
+2024-02-06 20:35:26,099 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-06 20:35:26,099 - INFO - Percentage of files processed: 75.0%
+2024-02-06 20:35:26,127 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:26,127 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:26,129 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:26,129 - INFO - Error before adjustment: 565.6813446459045
+2024-02-06 20:35:26,129 - INFO - Error after adjustment: nan
+2024-02-06 20:35:26,441 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-06 20:35:26,442 - INFO - Percentage of files processed: 81.25%
+2024-02-06 20:35:26,473 - INFO - Percentage of Nan values in the target column: 0.0%
+2024-02-06 20:35:26,473 - INFO - Percentage of Nan values in the predicted column: 80.11648223645894%
+2024-02-06 20:35:26,474 - WARNING - No valid data available for error calculation.
+2024-02-06 20:35:26,474 - INFO - Error before adjustment: 633120069.0653083
+2024-02-06 20:35:26,474 - INFO - Error after adjustment: nan
+2024-02-06 20:35:26,683 - INFO - File processed and saved: Data/LSTMpredictedData/AMD_modified.csv
+2024-02-06 20:35:26,684 - INFO - Percentage of files processed: 87.5%
+2024-02-06 20:35:26,684 - INFO - Processing complete.
