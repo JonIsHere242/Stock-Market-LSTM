@@ -43,108 +43,103 @@ def calculate_best_fit_slope(data, window_size):
     else:
         return 0  # No clear trend
 
-
-
 def adjust_predictions(predictions, data, window_size=5):
     """
-    Adjust predictions based on specific criteria.
+    Further refined adjustment of predictions considering smoothing, dynamic thresholds, recent error trends, 
+    and conditional adjustments based on model confidence (if available).
     """
+    valid_data = data[~np.isnan(data)]
 
-    data = data[~np.isnan(data)]
-    if len(data) < window_size:
+    if len(valid_data) < window_size:
         logging.warning("Insufficient data for making adjustments.")
         return predictions
 
+    # Basic stats
+    long_term_mean = np.mean(valid_data)
+    recent_mean = np.mean(valid_data[-window_size:])
+    recent_std = np.std(valid_data[-window_size:])
+    max_abs_value = np.max(np.abs(valid_data))
 
     adjusted_predictions = predictions.copy()
-    long_term_mean = np.mean(data)
-    recent_mean = np.mean(data[-window_size:])
-    recent_std = np.std(data[-window_size:])
-    trend_adjustment_factor = 0.001
 
-    # Extreme Value Normalization
-    lower_quantile = np.percentile(adjusted_predictions, 5)
-    upper_quantile = np.percentile(adjusted_predictions, 95)
-    adjusted_predictions = np.clip(adjusted_predictions, lower_quantile, upper_quantile)
-
-    # Momentum-Based Adjustment
-    if np.sign(recent_mean - long_term_mean) == np.sign(adjusted_predictions[-1]):
-        momentum_factor = 0.05  # Adjust this factor as needed
-        adjusted_predictions *= (1 + momentum_factor * np.sign(recent_mean - long_term_mean))
-
-    # Mean Reversion Adjustment
-    if abs(recent_mean - long_term_mean) > recent_std:  # Significant deviation from the mean
-        reversion_factor = 0.03  # Adjust this factor as needed
+    # Dynamic Threshold for Mean Reversion
+    dynamic_threshold = recent_std * 1.5  # Adjust multiplier as needed
+    if abs(recent_mean - long_term_mean) > dynamic_threshold:
+        reversion_factor = 0.03  # Adjust as needed
         adjusted_predictions += reversion_factor * (long_term_mean - recent_mean)
 
+    # Limiting Extreme Predictions Dynamically
+    dynamic_max_abs_value = max_abs_value * 1.1  # Adjust multiplier as needed
+    adjusted_predictions = np.clip(adjusted_predictions, -dynamic_max_abs_value, dynamic_max_abs_value)
+
     # Volatility Scaling
-    volatility_factor = max(0, 1 - recent_std / np.std(data))  # Scaling down if recent volatility is high
+    volatility_factor = max(0, 1 - recent_std / np.std(valid_data))
     adjusted_predictions *= volatility_factor
 
-    # Trend Alignment Adjustment
-    recent_trend = np.sign(recent_mean - np.mean(data[-2 * window_size:-window_size]))
-    adjusted_predictions += trend_adjustment_factor * recent_trend * adjusted_predictions
+    # Conditional Adjustments (if model confidence data is available)
+    # This would depend on additional data from your model (like confidence intervals)
+
+    ##log the number of times the prediction is within 10% of the actual value in absolute terms
+    logging.info(f"Prediction is within 10%: {np.sum(np.abs(predictions) <= 0.1 * np.abs(valid_data))}")
 
 
-
-    trend_slope = calculate_best_fit_slope(data, window_size)
-    trend_adjustment = 0.002  # Adjust this factor as needed
-    if trend_slope > 0:  # Positive trend
-        adjusted_predictions += trend_adjustment * np.abs(adjusted_predictions)
-    elif trend_slope < 0:  # Negative trend
-        adjusted_predictions -= trend_adjustment * np.abs(adjusted_predictions)
 
     return adjusted_predictions
 
 
 
-##make a new function that will get the amount of error in the ppredictions vs the acutal data
-
-
-
-
-
 
 def calculate_mean_percentage_error(target_data, predictions):
-    """
-    Calculate the mean percentage error between the target data and predictions,
-    considering only the non-NaN values in the predictions.
-    """
-    # Ensure that target_data and predictions have the same length
     if len(target_data) != len(predictions):
         logging.warning("Target data and predictions arrays have different lengths.")
         return np.nan
-
-    # Filter out NaN values from predictions and corresponding values in target_data
+    
     valid_indices = ~np.isnan(predictions)
     filtered_target_data = target_data[valid_indices]
     filtered_predictions = predictions[valid_indices]
 
-    # Check if there's enough data for error calculation
     if len(filtered_target_data) == 0 or len(filtered_predictions) == 0:
-        logging.warning("No valid data available for error calculation.")
+        logging.warning("No valid data available for error calculation. Number of valid data points: {}".format(len(filtered_predictions)))
         return np.nan
 
-    # Calculate mean percentage error
     percentage_errors = np.abs((filtered_target_data - filtered_predictions) / filtered_target_data) * 100
     mean_error = np.mean(percentage_errors)
 
+    if np.isnan(mean_error):
+        logging.warning("Predictions are Nan")
     return mean_error
 
 
 
 
 class MyTradingStrategy(Strategy):
-    """
-    Define your trading strategy class here inheriting from Strategy.
-    """
     def init(self):
         # Initialization logic
-        pass
+        self.predicted_values = self.data.predicted  # Assuming 'predicted' is a column in your data
+        self.real_values = self.data.Close  # Assuming 'Close' is the real closing value
 
     def next(self):
         # Logic for each step in the backtesting
-        pass
+        if len(self.predicted_values) < 2:
+            return  # Not enough data for comparison
+
+        # Calculate the accuracy of the previous prediction
+        previous_prediction_accuracy = abs(self.predicted_values[-2] - self.real_values[-2]) / self.real_values[-2]
+
+        # Check if the previous prediction was accurate within 10%
+        if previous_prediction_accuracy <= 0.1:
+            # Calculate the accuracy of the current prediction
+            current_prediction_accuracy = abs(self.predicted_values[-1] - self.real_values[-1]) / self.real_values[-1]
+
+            # Make a trade if the current prediction is also accurate within 10%
+            if current_prediction_accuracy <= 0.1:
+                # Implement the logic for trading. For example:
+                # Buy if the prediction is positive, sell if negative
+                if self.predicted_values[-1] > 0:
+                    self.buy()
+                else:
+                    self.sell()
+
 
 
 
@@ -174,14 +169,12 @@ def main():
                     predictions = data[prediction_column].values
                     target_data = data[target_column].values
 
-                    # Calculate the percentage of NaN values
-                    percentage_of_nan_in_target = np.mean(data[target_column].isna()) * 100
-                    percentage_of_nan_in_prediction = np.mean(data[prediction_column].isna()) * 100
-                    logging.info(f"Percentage of Nan values in the target column: {percentage_of_nan_in_target}%")
-                    logging.info(f"Percentage of Nan values in the predicted column: {percentage_of_nan_in_prediction}%")
-
                     # Apply adjustments
-                    adjusted_predictions = adjust_predictions(predictions, target_data, window_size)
+                    adjusted_predictions = adjust_predictions(predictions, target_data)
+
+
+                    ##log the shape of the ajusted predictions 
+                    logging.info(f"Shape of the adjusted predictions: {adjusted_predictions.shape}")
 
                     # Error calculation before and after adjustment
                     error_before = calculate_mean_percentage_error(target_data, predictions)
@@ -203,7 +196,7 @@ def main():
                 logging.warning(f"Skipped non-CSV file: {file_path}")
 
         except Exception as e:
-            logging.error(f"Error processing file {file_path}: {e}")
+            logging.info(f"Error processing file {file_path}: {e}")
 
         # Calculate and log the percentage of files processed
         percentage = round((File_processed / len(os.listdir(directory_path))) * 100, 2)
