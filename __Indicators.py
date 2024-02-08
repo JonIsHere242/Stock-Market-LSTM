@@ -7,6 +7,17 @@ import logging
 logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
+CONFIG = {
+    'input_directory': 'Data/PriceData',
+    'output_directory': 'Data/IndicatorData',
+    'log_file': 'Data/IndicatorData/_IndicatorData.log',
+    'log_lines_to_read': 500,
+    'core_count_division': True, 
+}
+
+
+
+
 ##===========================(Indicators)===========================##
 ##===========================(Indicators)===========================##
 ##===========================(Indicators)===========================##
@@ -23,11 +34,28 @@ def squash_col_outliers(df, col_name=None, num_std_dev=3):
         df[col] = df[col].clip(lower=lower_bound, upper=upper_bound)
     return df
 
+
+def interpolate_columns(df, Interpolation_Window=200):
+    for column in df.columns:
+        non_nan_percentage = df[column].notna().mean()
+        if non_nan_percentage > 0.8:
+            df[column].iloc[:Interpolation_Window] = df[column].iloc[:Interpolation_Window].bfill()
+    return df
+
+
 def indicators(df):
+    df['Close'] = df['Close'].bfill()
+    df['High'] = df['High'].bfill()
+    df['Low'] = df['Low'].bfill()
+    df['Volume'] = df['Volume'].bfill()
+
+
     close = df['Close']
     high = df['High']
     low = df['Low']
     volume = df['Volume']
+
+
     close_shift_1 = close.shift(1)
     true_range = np.maximum(high - low, np.maximum(np.abs(high - close_shift_1), np.abs(close_shift_1 - low)))
     window = 14
@@ -62,7 +90,16 @@ def indicators(df):
     obv_condition = df['Close'] > close_shift_1
     df['OBV'] = np.where(obv_condition, volume, -volume).cumsum()
 
-
+    # Start of Weighted Close Price Change Velocity
+    close = df['Close']
+    window = 10
+    price_change = close.diff()
+    price_change = close.diff().fillna(0)
+    weights = np.linspace(1, 0, window)
+    weights /= np.sum(weights)
+    weighted_velocity = price_change.rolling(window=window).apply(lambda x: np.dot(x, weights), raw=True)
+    df['Weighted_Close_Change_Velocity'] = weighted_velocity
+    # End of Weighted Close Price Change Velocity
 
     close_shift_1 = close.shift(1)
     low_shift_1 = low.shift(1)
@@ -74,7 +111,6 @@ def indicators(df):
     rolling_14 = df['Close'].rolling(window=14)
     rolling_7 = df['Close'].rolling(window=7)
     rolling_30 = df['Close'].rolling(window=30)
-    rolling_500 = df['Close'].rolling(window=500)
     
     df['percent_change_Close'] = pct_change_close
     df['pct_change_std'] = rolling_20.std()
@@ -83,6 +119,11 @@ def indicators(df):
     df['percent_change_Close_lag_1'] = pct_change_close.shift(1)  # Lag by 1 period
     df['percent_change_Close_lag_2'] = pct_change_close.shift(2)  # Lag by 2 periods
     df['percent_change_Close_lag_3'] = pct_change_close.shift(3)  # Lag by 3 periods
+    df['percent_change_Close_lag_4'] = pct_change_close.shift(4)  # Lag by 4 periods
+    df['percent_change_Close_lag_5'] = pct_change_close.shift(5)  # Lag by 5 periods
+    ##get the cumulative diffrence in the percent change in closing price lagged by 1 to 5 periods
+    df['percent_change_Close_lag_1-5'] = df['percent_change_Close_lag_1'] + df['percent_change_Close_lag_2'] + df['percent_change_Close_lag_3'] + df['percent_change_Close_lag_4'] + df['percent_change_Close_lag_5']
+
 
 
     df['percent_change_Close_7'] = rolling_7.mean()
@@ -113,10 +154,12 @@ def indicators(df):
     avg_loss = pd.Series(loss).rolling(window=14).mean()
     rs = avg_gain / avg_loss
     df['RSI'] = 100 - (100 / (1 + rs))
+    df['RSI_overbought'] = (df['RSI'] > 70).astype(int)
+    df['RSI_oversold'] = (df['RSI'] < 30).astype(int)
+    df['RSI_very_overbought'] = (df['RSI'] > 90).astype(int)
+    df['RSI_very_oversold'] = (df['RSI'] < 10).astype(int)
 
-    # RSI Divergence
-    # Note: Actual divergence calculation may depend on further rules (e.g., comparing local maxima of price with RSI)
-    df['RSI_Divergence'] = df['Close'] - df['RSI']
+
 
     # Elder’s Force Index
     df['EFI'] = df['Close'].diff() * df['Volume']
@@ -165,8 +208,11 @@ def indicators(df):
     df['VPT'] = df['Volume'] * ((df['Close'] - close_shift_1) / close_shift_1)
 
     # Dropping unnecessary columns
-    columns_to_drop = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'VWAP', '200DAY_ATR-', '200DAY_ATR', 'Close_change', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
+    columns_to_drop = ['Open', 'High', 'Low', 'Adj Close', 'VWAP', '200DAY_ATR-', '200DAY_ATR', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
+    df = interpolate_columns(df, Interpolation_Window=210)
+    df = df.replace({True: 1, False: 0})
+    df = df.iloc[200:]
     df = df.drop(columns_to_drop, axis=1)
     df = df.round(8)
     return df
@@ -194,9 +240,6 @@ def process_file(file_path, output_dir):
     else:
         return f"Skipped {file_path}: Unsupported file format"
 
-    ##multithreaded processing of each df here
-    ##start a timer here called timer_filename
-
     try:
 
         df = indicators(df)
@@ -210,10 +253,6 @@ def process_file(file_path, output_dir):
         else:
             df.to_parquet(new_file_path, index=False)
         
-
-
-
-
         logging.info(f"Time taken to process {file_path}: {time.time() - Timer:.2f} seconds")
     except Exception as e:
         logging.error(f"Error processing {file_path}: {e}")
@@ -229,36 +268,28 @@ def process_files(input_dir, output_dir):
     Processes all files in the specified input directory and saves the processed files in the output directory.
     """
     file_paths = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith('.csv') or f.endswith('.parquet')]
-
     with ThreadPoolExecutor() as executor:
         list(executor.map(lambda file: process_file(file, output_dir), file_paths))
 
 
-
-
 if __name__ == "__main__":
-    INPUT_DIRECTORY = 'Data/PriceData'  # Directory containing the original files
-    OUTPUT_DIRECTORY = 'Data/IndicatorData'  # Directory where modified files will be saved
-
-    os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
-    process_files(INPUT_DIRECTORY, OUTPUT_DIRECTORY)
+    os.makedirs(CONFIG['output_directory'], exist_ok=True)
+    process_files(CONFIG['input_directory'], CONFIG['output_directory'])
     
-    LOG_FILE = 'Data/IndicatorData/_IndicatorData.log'
     try:
-        with open(LOG_FILE, 'r') as f:
-            lines = f.readlines()[-500:]
+        with open(CONFIG['log_file'], 'r') as f:
+            lines = f.readlines()[-CONFIG['log_lines_to_read']:]
         time_taken = []
         for line in lines:
             if 'Time taken to process' in line:
                 time_taken.append(float(line.split(':')[-1].strip().split(' ')[0]))
-        average_time_taken = sum(time_taken)/len(time_taken)
 
-        ##dvide the average time take by the core count used so that we get a real average time taken
-        average_time_taken = average_time_taken / os.cpu_count()
+        average_time_taken = sum(time_taken) / len(time_taken)
+        if CONFIG['core_count_division']:
+            average_time_taken /= os.cpu_count()
 
-        print(f"Average time taken to process each file: {average_time_taken:.2f} seconds")
+        logging.info(f"Average time taken to process each file: {average_time_taken:.2f} seconds")
     except Exception as e:
         print(f"Error reading log file: {e}")
         logging.error(f"Error reading log file: {e}")
-        pass
 

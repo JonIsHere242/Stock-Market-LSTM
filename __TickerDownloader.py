@@ -8,20 +8,23 @@ import argparse
 import os
 import sys
 
+# Configuration
+CONFIG = {
+    "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "csv_file_path": "Data/TickerCikData/TickerCIKs.csv",
+    "parquet_file_path": "Data/TickerCikData/TickerCIKs.parquet",
+    "log_file": "Data/TickerCikData/TickerCIK.log",
+    "user_agent": "PersonalTesting Masamunex9000@gmail.com"
+}
+
 def setup_logging():
     """Set up logging configuration."""
-    log_file = "Data/TickerCikData/TickerCIK.log"
-    logging.basicConfig(filename=log_file, level=logging.INFO, 
+    logging.basicConfig(filename=CONFIG["log_file"], level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
-def download_and_convert_ticker_cik_file(url, csv_save_path, parquet_save_path):
+def download_and_convert_ticker_cik_file():
     """
     Download ticker and CIK data from SEC and save in both CSV and Parquet formats.
-
-    Args:
-        url (str): URL to download the data from.
-        csv_save_path (str): Path to save the CSV file.
-        parquet_save_path (str): Path to save the Parquet file.
     """
     try:
         session = requests.Session()
@@ -29,18 +32,18 @@ def download_and_convert_ticker_cik_file(url, csv_save_path, parquet_save_path):
         session.mount('https://', HTTPAdapter(max_retries=retries))
 
         headers = {
-            'User-Agent': 'PersonalTesting Masamunex9000@gmail.com',
+            'User-Agent': CONFIG["user_agent"],
             'Accept-Encoding': 'gzip, deflate',
             'Host': 'www.sec.gov'
         }
 
-        response = session.get(url, headers=headers)
+        response = session.get(CONFIG["url"], headers=headers)
         response.raise_for_status()
 
         json_data = response.json()
         df = pd.DataFrame(json_data['data'], columns=json_data['fields'])
-        df.to_csv(csv_save_path, index=False)
-        df.to_parquet(parquet_save_path, index=False)
+        df.to_csv(CONFIG["csv_file_path"], index=False)
+        df.to_parquet(CONFIG["parquet_file_path"], index=False)
 
         logging.info("File downloaded and saved successfully in CSV and Parquet formats.")
     except requests.exceptions.HTTPError as e:
@@ -71,14 +74,10 @@ if __name__ == "__main__":
                         help="Download the file immediately without waiting for the scheduled time.")
     args = parser.parse_args()
 
-    csv_file_path = "Data/TickerCikData/TickerCIKs.csv"
-    parquet_file_path = "Data/TickerCikData/TickerCIKs.parquet"
-    url = "https://www.sec.gov/files/company_tickers_exchange.json"
-
     if args.immediate_download or datetime.date.today().weekday() == 5:  # 5 represents Saturday
-        if is_file_recent(csv_file_path):
-            time_since_last_mod = datetime.datetime.now() - datetime.datetime.fromtimestamp(os.path.getmtime(csv_file_path))
+        if is_file_recent(CONFIG["csv_file_path"]):
+            time_since_last_mod = datetime.datetime.now() - datetime.datetime.fromtimestamp(os.path.getmtime(CONFIG["csv_file_path"]))
             logging.info(f"File already downloaded today. Exiting...File last modified {time_since_last_mod} ago")
             sys.exit(0)
 
-        download_and_convert_ticker_cik_file(url, csv_file_path, parquet_file_path)
+        download_and_convert_ticker_cik_file()
