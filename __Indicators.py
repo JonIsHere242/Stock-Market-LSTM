@@ -3,6 +3,7 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 import time
+from scipy.stats import linregress
 import logging
 logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -43,6 +44,61 @@ def interpolate_columns(df, Interpolation_Window=200):
     return df
 
 
+def find_best_fit_line(x, y):
+    """
+    Compute the slope and intercept for the line of best fit.
+    """
+    try:
+        slope, intercept, _, _, _ = linregress(x, y)
+        return slope, intercept
+    except ValueError:  # Handle any mathematical errors
+        return np.nan, np.nan
+    
+
+    
+def find_levels(df, window_size):
+    """
+    Function to find the top 10 highest and lowest levels in a rolling window and calculate the distance
+    of the current closing price from the line of best fit for each.
+    """
+    def calculate_level_distance(rolling_window):
+        # Handle incomplete window
+        if len(rolling_window) < window_size:
+            return np.nan, np.nan
+
+        # Find top 10 highest and lowest levels
+        high_levels = np.argsort(rolling_window)[-10:]
+        low_levels = np.argsort(rolling_window)[:10]
+
+        # Calculate lines of best fit
+        high_slope, high_intercept = find_best_fit_line(high_levels, rolling_window[high_levels])
+        low_slope, low_intercept = find_best_fit_line(low_levels, rolling_window[low_levels])
+
+        # Current position (last index in the rolling window)
+        current_position = len(rolling_window) - 1
+
+        # Calculate distance from high and low lines
+        high_line_value = high_slope * current_position + high_intercept
+        low_line_value = low_slope * current_position + low_intercept
+
+        # Return the distance from high and low lines separately
+        distance_from_high = abs(rolling_window[-1] - high_line_value)
+        distance_from_low = abs(rolling_window[-1] - low_line_value)
+
+        return distance_from_high, distance_from_low
+
+    # Apply the function to the rolling window of the closing price
+    distances = df['Close'].rolling(window=window_size).apply(calculate_level_distance, raw=True)
+
+    # Split the tuple results into separate columns
+    df['Distance_From_High'] = [dist[0] for dist in distances]
+    df['Distance_From_Low'] = [dist[1] for dist in distances]
+
+    return df
+
+
+
+
 def indicators(df):
     df['Close'] = df['Close'].bfill()
     df['High'] = df['High'].bfill()
@@ -55,6 +111,8 @@ def indicators(df):
     low = df['Low']
     volume = df['Volume']
 
+    window_size = 30  # Example window size
+    df = find_levels(df, window_size)
 
     close_shift_1 = close.shift(1)
     true_range = np.maximum(high - low, np.maximum(np.abs(high - close_shift_1), np.abs(close_shift_1 - low)))
@@ -182,16 +240,6 @@ def indicators(df):
     keltner_range = df['ATR'] * 1.5
     df['KC_UPPER%'] = ((keltner_central + keltner_range) - df['Close']) / df['Close'] * 100
     df['KC_LOWER%'] = (df['Close'] - (keltner_central - keltner_range)) / df['Close'] * 100
-
-    # RSI and Bollinger Bands calculations
-    delta = df['Close'].diff()
-    gain = delta.clip(lower=0).rolling(window=14).mean()
-    loss = (-delta).clip(lower=0).rolling(window=14).mean()
-    rs = gain / loss
-    df['RSI'] = 100 - (100 / (1 + rs))
-    rolling_mean = rolling_20.mean()
-    rolling_std = rolling_20.std()
-    df['B%'] = (df['Close'] - (rolling_mean - 2 * rolling_std)) / (4 * rolling_std)
 
     # Streak calculations streamlined
     positive_streak = (pct_change_close > 0).astype(int).cumsum()
