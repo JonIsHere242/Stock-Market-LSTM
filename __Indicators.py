@@ -5,7 +5,10 @@ import numpy as np
 import time
 from scipy.stats import linregress
 import logging
-logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log',
+                    level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 CONFIG = {
@@ -55,7 +58,7 @@ def find_best_fit_line(x, y):
         return np.nan, np.nan
     
 
-    
+
 def find_levels(df, window_size):
     """
     Function to find the top 10 highest and lowest levels in a rolling window and calculate the distance
@@ -111,8 +114,11 @@ def indicators(df):
     low = df['Low']
     volume = df['Volume']
 
-    window_size = 30  # Example window size
-    df = find_levels(df, window_size)
+
+
+    ##Renable this when not testing
+    ##window_size = 30  # Example window size
+    ##df = find_levels(df, window_size)
 
     close_shift_1 = close.shift(1)
     true_range = np.maximum(high - low, np.maximum(np.abs(high - close_shift_1), np.abs(close_shift_1 - low)))
@@ -175,13 +181,9 @@ def indicators(df):
 
     # Replacing loop for shifts with direct assignments
     df['percent_change_Close_lag_1'] = pct_change_close.shift(1)  # Lag by 1 period
-    df['percent_change_Close_lag_2'] = pct_change_close.shift(2)  # Lag by 2 periods
     df['percent_change_Close_lag_3'] = pct_change_close.shift(3)  # Lag by 3 periods
-    df['percent_change_Close_lag_4'] = pct_change_close.shift(4)  # Lag by 4 periods
     df['percent_change_Close_lag_5'] = pct_change_close.shift(5)  # Lag by 5 periods
-    ##get the cumulative diffrence in the percent change in closing price lagged by 1 to 5 periods
-    df['percent_change_Close_lag_1-5'] = df['percent_change_Close_lag_1'] + df['percent_change_Close_lag_2'] + df['percent_change_Close_lag_3'] + df['percent_change_Close_lag_4'] + df['percent_change_Close_lag_5']
-
+    df['percent_change_Close_lag_10'] = pct_change_close.shift(10)  # Lag by 10 periods
 
 
     df['percent_change_Close_7'] = rolling_7.mean()
@@ -246,6 +248,12 @@ def indicators(df):
     negative_streak = (pct_change_close < 0).astype(int).cumsum()
     df['positive_streak'] = positive_streak - positive_streak.where(pct_change_close <= 0).ffill().fillna(0)
     df['negative_streak'] = negative_streak - negative_streak.where(pct_change_close >= 0).ffill().fillna(0)
+
+    ##get the maximum postitoive value in a rolling window of 60
+    df['positive_streak_max'] = df['positive_streak'].rolling(window=60).max()
+    df['negative_streak_max'] = df['negative_streak'].rolling(window=60).max()
+
+
 
     # Gap calculations streamlined
     gap_threshold_percent = 0.5 if pct_change_close.std() > 1 else 0
@@ -319,25 +327,44 @@ def process_files(input_dir, output_dir):
     with ThreadPoolExecutor() as executor:
         list(executor.map(lambda file: process_file(file, output_dir), file_paths))
 
+def clear_output_directory(output_dir):
+    """
+    Remove existing files in the output directory.
+    """
+    for file in os.listdir(output_dir):
+        if file.endswith('.csv') or file.endswith('.parquet'):
+            os.remove(os.path.join(output_dir, file))
 
+def calculate_average_processing_time(log_file, core_count_division):
+    """
+    Calculate and log the average time taken to process each file.
+    """
+    try:
+        with open(log_file, 'r') as f:
+            lines = f.readlines()[-CONFIG['log_lines_to_read']:]
+        time_taken = [float(line.split(':')[-1].strip().split(' ')[0]) for line in lines if 'Time taken to process' in line]
+        average_time = sum(time_taken) / len(time_taken)
+        if core_count_division:
+            average_time /= os.cpu_count()
+        return average_time
+    except Exception as e:
+        logging.error(f"Error reading log file: {e}")
+        raise
+
+
+
+
+
+##===========================(Main)===========================##
+##===========================(Main)===========================##
+##===========================(Main)===========================##
 if __name__ == "__main__":
     os.makedirs(CONFIG['output_directory'], exist_ok=True)
+    clear_output_directory(CONFIG['output_directory'])
     process_files(CONFIG['input_directory'], CONFIG['output_directory'])
-    
+
     try:
-        with open(CONFIG['log_file'], 'r') as f:
-            lines = f.readlines()[-CONFIG['log_lines_to_read']:]
-        time_taken = []
-        for line in lines:
-            if 'Time taken to process' in line:
-                time_taken.append(float(line.split(':')[-1].strip().split(' ')[0]))
-
-        average_time_taken = sum(time_taken) / len(time_taken)
-        if CONFIG['core_count_division']:
-            average_time_taken /= os.cpu_count()
-
+        average_time_taken = calculate_average_processing_time(CONFIG['log_file'], CONFIG['core_count_division'])
         logging.info(f"Average time taken to process each file: {average_time_taken:.2f} seconds")
     except Exception as e:
-        print(f"Error reading log file: {e}")
-        logging.error(f"Error reading log file: {e}")
-
+        print(f"Error calculating average processing time: {e}")
