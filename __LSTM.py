@@ -109,6 +109,8 @@ def create_lstm_model(input_shape):
         model.add(Dropout(dropout_rate))
         logging.info(f"Added LSTM layer with {units} units")
 
+
+
     # Final LSTM layer without return_sequences
     model.add(LSTM(input_shape[1], return_sequences=False))
     model.add(Dropout(0.2))

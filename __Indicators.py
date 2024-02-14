@@ -100,6 +100,92 @@ def find_levels(df, window_size):
     return df
 
 
+def calculate_apz(data, ema_period=20, atr_period=14, atr_multiplier=None, volatility_factor=0.1):
+    # Calculate EMA
+    data['EMA'] = data['Close'].ewm(span=ema_period, adjust=False).mean()
+    close = data['Close']
+    # Calculate ATR
+    high_low = data['High'] - data['Low']
+    high_close = (data['High'] - data['Close'].shift()).abs()
+    low_close = (data['Low'] - data['Close'].shift()).abs()
+    tr = pd.concat([high_low, high_close, low_close], axis=1).max(axis=1)
+    data['ATR'] = tr.rolling(window=atr_period).mean()
+
+    # Dynamic ATR Multiplier
+    if atr_multiplier is None:
+        atr_multiplier = volatility_factor * data['Close'].rolling(window=atr_period).std()
+
+    # Calculate APZ Bounds
+    data['APZ_Upper'] = data['EMA'] + (data['ATR'] * atr_multiplier)
+    data['APZ_Lower'] = data['EMA'] - (data['ATR'] * atr_multiplier)
+
+    # Optional: Capping extreme values (implementation depends on specific requirements)
+    data['APZ_Upper%'] = ((data['APZ_Upper'] - close) / close) * 100
+    data['APZ_Lower%'] = ((close - data['APZ_Lower']) / close) * 100
+    ##drop the upper and lower apz columns
+    data = data.drop(columns=['APZ_Upper', 'APZ_Lower'])
+    return data
+
+
+
+
+def calculate_vama(df, price_col='Close', min_period=10, max_period=30):
+    # Replace infinite values with NaN
+    df.replace([np.inf, -np.inf], np.nan, inplace=True)
+
+    # Calculate normalized volatility
+    volatility = df[price_col].pct_change().rolling(window=21).std()
+    normalized_vol = (volatility - volatility.min()) / (volatility.max() - volatility.min())
+
+    # Determine window size (ensure it's within a reasonable range and is an integer)
+    window_size = (normalized_vol * (max_period - min_period) + min_period).clip(min_period, max_period).round().astype(int)
+
+    # Calculate VAMA with error handling
+    try:
+        vama = df[price_col].rolling(window=window_size, min_periods=min_period).mean()
+    except Exception as e:
+        logging.error(f"Error in VAMA calculation: {e}")
+        vama = pd.Series(index=df.index)
+
+    return vama
+
+
+
+
+
+def add_vama_changes(df, vama, periods):
+    for period in periods:
+        label = f'VAMA_pct_change_{period}_days'
+        df[label] = vama.pct_change(periods=period)
+
+    return df
+
+def calculate_cumulative_streaks(df, window_size=20):
+    # Calculate daily percentage change
+    pct_change = df['Close'].pct_change() * 100
+    close = df['Close']
+    # Identify where the sign changes (positive to negative and vice versa)
+    sign_change = pct_change.mul(pct_change.shift(1)) <= 0
+
+    # Create streak counter that resets at every sign change
+    streak_counter = sign_change.cumsum()
+
+    # Group by streaks and sum the percentage changes within each streak
+    streak_sums = pct_change.groupby(streak_counter).cumsum()
+
+    # Assign positive and negative streaks
+    df['positive_streak_cumulative'] = np.where(pct_change > 0, streak_sums, 0)
+    df['negative_streak_cumulative'] = np.where(pct_change < 0, streak_sums, 0)
+
+    # Apply rolling window
+    df['positive_streak_cumulative'] = df['positive_streak_cumulative'].rolling(window=window_size, min_periods=1).max()
+    df['negative_streak_cumulative'] = df['negative_streak_cumulative'].rolling(window=window_size, min_periods=1).min()
+ 
+
+    return df
+
+
+
 
 
 def indicators(df):
@@ -113,7 +199,18 @@ def indicators(df):
     high = df['High']
     low = df['Low']
     volume = df['Volume']
+    calculate_apz(df)
 
+
+
+
+    calculate_cumulative_streaks(df)
+
+
+    ##df['VAMA'] = calculate_vama(df)
+    ##periods = [63, 10, 3]  # Approx 3 months, 2 weeks, 3 days in trading days
+    ##df = add_vama_changes(df, df['VAMA'], periods)
+    ##df.drop(columns=['VAMA'], inplace=True)
 
 
     ##Renable this when not testing
@@ -264,7 +361,7 @@ def indicators(df):
     df['VPT'] = df['Volume'] * ((df['Close'] - close_shift_1) / close_shift_1)
 
     # Dropping unnecessary columns
-    columns_to_drop = ['Open', 'High', 'Low', 'Adj Close', 'VWAP', '200DAY_ATR-', '200DAY_ATR', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
+    columns_to_drop = ['Open', 'High', 'Low', 'Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
     df = interpolate_columns(df, Interpolation_Window=210)
     df = df.replace({True: 1, False: 0})

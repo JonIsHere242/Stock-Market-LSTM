@@ -1,445 +1,592 @@
-2024-02-09 00:39:15,713 - INFO - Time taken to process Data/PriceData/WFC.csv: 28.45 seconds
-2024-02-09 00:39:15,716 - INFO - Time taken to process Data/PriceData/NVO.csv: 28.51 seconds
-2024-02-09 00:39:15,737 - INFO - Time taken to process Data/PriceData/BHP.csv: 28.52 seconds
-2024-02-09 00:39:15,827 - INFO - Time taken to process Data/PriceData/T.csv: 28.56 seconds
-2024-02-09 00:39:15,996 - INFO - Time taken to process Data/PriceData/ADI.csv: 28.79 seconds
-2024-02-09 00:39:16,060 - INFO - Time taken to process Data/PriceData/FI.csv: 28.82 seconds
-2024-02-09 00:39:26,148 - INFO - Time taken to process Data/PriceData/ABBV.csv: 10.43 seconds
-2024-02-09 00:39:35,404 - INFO - Time taken to process Data/PriceData/HDB.csv: 19.41 seconds
-2024-02-09 00:39:36,160 - INFO - Time taken to process Data/PriceData/META.csv: 10.01 seconds
-2024-02-09 00:39:42,290 - INFO - Time taken to process Data/PriceData/LIN.csv: 26.23 seconds
-2024-02-09 00:39:42,710 - INFO - Time taken to process Data/PriceData/QCOM.csv: 26.87 seconds
-2024-02-09 00:39:43,539 - INFO - Time taken to process Data/PriceData/TM.csv: 27.82 seconds
-2024-02-09 00:39:43,720 - INFO - Time taken to process Data/PriceData/TMO.csv: 27.98 seconds
-2024-02-09 00:39:46,719 - INFO - Time taken to process Data/PriceData/ABNB.csv: 4.01 seconds
-2024-02-09 00:39:57,860 - INFO - Time taken to process Data/PriceData/FMX.csv: 22.46 seconds
-2024-02-09 00:40:00,557 - INFO - Time taken to process Data/PriceData/SHEL.csv: 24.40 seconds
-2024-02-09 00:40:10,910 - INFO - Time taken to process Data/PriceData/C.csv: 28.62 seconds
-2024-02-09 00:40:11,038 - INFO - Time taken to process Data/PriceData/ETN.csv: 27.49 seconds
-2024-02-09 00:40:12,091 - INFO - Time taken to process Data/PriceData/HD.csv: 28.37 seconds
-2024-02-09 00:40:15,237 - INFO - Time taken to process Data/PriceData/VZ.csv: 28.52 seconds
-2024-02-09 00:40:26,519 - INFO - Time taken to process Data/PriceData/ABT.csv: 28.65 seconds
-2024-02-09 00:40:28,897 - INFO - Time taken to process Data/PriceData/LMT.csv: 28.33 seconds
-2024-02-09 00:40:39,274 - INFO - Time taken to process Data/PriceData/RY.csv: 24.04 seconds
-2024-02-09 00:40:39,283 - INFO - Time taken to process Data/PriceData/MU.csv: 28.37 seconds
-2024-02-09 00:40:39,411 - INFO - Time taken to process Data/PriceData/CVS.csv: 28.37 seconds
-2024-02-09 00:40:39,861 - INFO - Time taken to process Data/PriceData/BMY.csv: 27.77 seconds
-2024-02-09 00:40:49,731 - INFO - Time taken to process Data/PriceData/ISRG.csv: 20.83 seconds
-2024-02-09 00:40:51,336 - INFO - Time taken to process Data/PriceData/NOW.csv: 11.47 seconds
-2024-02-09 00:40:54,177 - INFO - Time taken to process Data/PriceData/REGN.csv: 27.66 seconds
-2024-02-09 00:41:05,846 - INFO - Time taken to process Data/PriceData/WMT.csv: 26.43 seconds
-2024-02-09 00:41:06,844 - INFO - Time taken to process Data/PriceData/DIS.csv: 27.55 seconds
-2024-02-09 00:41:06,847 - INFO - Time taken to process Data/PriceData/MSFT.csv: 27.57 seconds
-2024-02-09 00:41:17,398 - INFO - Time taken to process Data/PriceData/AXP.csv: 27.67 seconds
-2024-02-09 00:41:19,943 - INFO - Time taken to process Data/PriceData/TXN.csv: 28.61 seconds
-2024-02-09 00:41:22,914 - INFO - Time taken to process Data/PriceData/PG.csv: 28.73 seconds
-2024-02-09 00:41:26,501 - INFO - Time taken to process Data/PriceData/GS.csv: 20.65 seconds
-2024-02-09 00:41:27,843 - INFO - Time taken to process Data/PriceData/ZTS.csv: 10.43 seconds
-2024-02-09 00:41:35,220 - INFO - Time taken to process Data/PriceData/INTC.csv: 28.37 seconds
-2024-02-09 00:41:35,472 - INFO - Time taken to process Data/PriceData/COST.csv: 28.62 seconds
-2024-02-09 00:41:38,894 - INFO - Time taken to process Data/PriceData/PANW.csv: 11.05 seconds
-2024-02-09 00:41:46,189 - INFO - Time taken to process Data/PriceData/CB.csv: 26.24 seconds
-2024-02-09 00:41:51,462 - INFO - Time taken to process Data/PriceData/TJX.csv: 28.55 seconds
-2024-02-09 00:41:55,466 - INFO - Time taken to process Data/PriceData/GE.csv: 28.96 seconds
-2024-02-09 00:42:03,098 - INFO - Time taken to process Data/PriceData/SONY.csv: 27.62 seconds
-2024-02-09 00:42:03,319 - INFO - Time taken to process Data/PriceData/UL.csv: 28.10 seconds
-2024-02-09 00:42:07,123 - INFO - Time taken to process Data/PriceData/SCHW.csv: 28.23 seconds
-2024-02-09 00:42:07,357 - INFO - Time taken to process Data/PriceData/NVDA.csv: 21.17 seconds
-2024-02-09 00:42:15,757 - INFO - Time taken to process Data/PriceData/EQNR.csv: 20.29 seconds
-2024-02-09 00:42:16,336 - INFO - Time taken to process Data/PriceData/AVGO.csv: 13.00 seconds
-2024-02-09 00:42:18,144 - INFO - Time taken to process Data/PriceData/TTE.csv: 26.68 seconds
-2024-02-09 00:42:26,907 - INFO - Time taken to process Data/PriceData/PBR.csv: 19.55 seconds
-2024-02-09 00:42:28,518 - INFO - Time taken to process Data/PriceData/LTMAY.csv: 21.39 seconds
-2024-02-09 00:42:29,887 - INFO - Time taken to process Data/PriceData/RIO.csv: 26.79 seconds
-2024-02-09 00:42:39,925 - INFO - Time taken to process Data/PriceData/BKNG.csv: 21.78 seconds
-2024-02-09 00:42:42,650 - INFO - Time taken to process Data/PriceData/BSX.csv: 26.31 seconds
-2024-02-09 00:42:43,742 - INFO - Time taken to process Data/PriceData/LOW.csv: 27.98 seconds
-2024-02-09 00:42:47,695 - INFO - Time taken to process Data/PriceData/BLK.csv: 20.79 seconds
-2024-02-09 00:42:49,417 - INFO - Time taken to process Data/PriceData/MDLZ.csv: 19.53 seconds
-2024-02-09 00:42:51,351 - INFO - Time taken to process Data/PriceData/CNI.csv: 22.83 seconds
-2024-02-09 00:42:58,004 - INFO - Time taken to process Data/PriceData/BNPQY.csv: 18.07 seconds
-2024-02-09 00:43:04,447 - INFO - Time taken to process Data/PriceData/EADSY.csv: 15.03 seconds
-2024-02-09 00:43:05,763 - INFO - Time taken to process Data/PriceData/TD.csv: 23.11 seconds
-2024-02-09 00:43:12,312 - INFO - Time taken to process Data/PriceData/BP.csv: 28.57 seconds
-2024-02-09 00:43:13,254 - INFO - Time taken to process Data/PriceData/TSM.csv: 21.90 seconds
-2024-02-09 00:43:15,743 - INFO - Time taken to process Data/PriceData/IBM.csv: 28.05 seconds
-2024-02-09 00:43:22,817 - INFO - Time taken to process Data/PriceData/ASML.csv: 24.81 seconds
-2024-02-09 00:43:25,436 - INFO - Time taken to process Data/PriceData/HSBC.csv: 20.98 seconds
-2024-02-09 00:43:30,426 - INFO - Time taken to process Data/PriceData/PM.csv: 14.66 seconds
-2024-02-09 00:43:34,374 - INFO - Time taken to process Data/PriceData/NKE.csv: 28.60 seconds
-2024-02-09 00:43:40,701 - INFO - Time taken to process Data/PriceData/AMD.csv: 28.39 seconds
-2024-02-09 00:43:41,269 - INFO - Time taken to process Data/PriceData/SPGI.csv: 28.01 seconds
-2024-02-09 00:43:46,544 - INFO - Time taken to process Data/PriceData/MA.csv: 16.12 seconds
-2024-02-09 00:43:50,508 - INFO - Time taken to process Data/PriceData/DHR.csv: 27.69 seconds
-2024-02-09 00:43:53,336 - INFO - Time taken to process Data/PriceData/BA.csv: 27.90 seconds
-2024-02-09 00:44:03,764 - INFO - Time taken to process Data/PriceData/PFE.csv: 29.39 seconds
-2024-02-09 00:44:05,596 - INFO - Time taken to process Data/PriceData/BX.csv: 15.08 seconds
-2024-02-09 00:44:07,670 - INFO - Time taken to process Data/PriceData/VRTX.csv: 26.97 seconds
-2024-02-09 00:44:08,683 - INFO - Time taken to process Data/PriceData/NVS.csv: 22.14 seconds
-2024-02-09 00:44:10,380 - INFO - Time taken to process Data/PriceData/COP.csv: 29.11 seconds
-2024-02-09 00:44:18,527 - INFO - Time taken to process Data/PriceData/V.csv: 14.76 seconds
-2024-02-09 00:44:21,275 - INFO - Time taken to process Data/PriceData/JNJ.csv: 27.94 seconds
-2024-02-09 00:44:22,512 - INFO - Time taken to process Data/PriceData/CSLLY.csv: 12.13 seconds
-2024-02-09 00:44:27,689 - INFO - Time taken to process Data/PriceData/PLD.csv: 22.09 seconds
-2024-02-09 00:44:33,150 - INFO - Time taken to process Data/PriceData/AZN.csv: 25.48 seconds
-2024-02-09 00:44:36,801 - INFO - Time taken to process Data/PriceData/PGR.csv: 28.11 seconds
-2024-02-09 00:44:46,594 - INFO - Time taken to process Data/PriceData/CI.csv: 28.07 seconds
-2024-02-09 00:44:48,049 - INFO - Time taken to process Data/PriceData/INTU.csv: 25.54 seconds
-2024-02-09 00:44:49,061 - INFO - Time taken to process Data/PriceData/ORCL.csv: 27.76 seconds
-2024-02-09 00:44:57,150 - INFO - Time taken to process Data/PriceData/XOM.csv: 29.46 seconds
-2024-02-09 00:45:00,929 - INFO - Time taken to process Data/PriceData/LRCX.csv: 27.78 seconds
-2024-02-09 00:45:05,329 - INFO - Time taken to process Data/PriceData/MRK.csv: 28.53 seconds
-2024-02-09 00:45:05,892 - INFO - Time taken to process Data/PriceData/UBER.csv: 4.96 seconds
-2024-02-09 00:45:06,639 - INFO - Time taken to process Data/PriceData/NFLX.csv: 18.59 seconds
-2024-02-09 00:45:07,648 - INFO - Time taken to process Data/PriceData/QQQ.csv: 21.05 seconds
-2024-02-09 00:45:11,710 - INFO - Time taken to process Data/PriceData/AMT.csv: 22.65 seconds
-2024-02-09 00:45:15,662 - INFO - Time taken to process Data/PriceData/BABA.csv: 9.02 seconds
-2024-02-09 00:45:16,426 - INFO - Time taken to process Data/PriceData/ACN.csv: 19.27 seconds
-2024-02-09 00:45:29,845 - INFO - Time taken to process Data/PriceData/SAP.csv: 24.51 seconds
-2024-02-09 00:45:31,289 - INFO - Time taken to process Data/PriceData/ABBNY.csv: 19.58 seconds
-2024-02-09 00:45:31,712 - INFO - Time taken to process Data/PriceData/TMUS.csv: 15.28 seconds
-2024-02-09 00:45:33,186 - INFO - Time taken to process Data/PriceData/AMAT.csv: 27.29 seconds
-2024-02-09 00:45:33,955 - INFO - Time taken to process Data/PriceData/ELV.csv: 18.29 seconds
-2024-02-09 00:45:35,278 - INFO - Time taken to process Data/PriceData/AMGN.csv: 27.63 seconds
-2024-02-09 00:45:53,305 - INFO - Time taken to process Data/PriceData/AMZN.csv: 23.46 seconds
-2024-02-09 00:46:00,037 - INFO - Time taken to process Data/PriceData/CAT.csv: 28.74 seconds
-2024-02-09 00:46:00,508 - INFO - Time taken to process Data/PriceData/MDT.csv: 28.80 seconds
-2024-02-09 00:46:01,126 - INFO - Time taken to process Data/PriceData/NEE.csv: 27.94 seconds
-2024-02-09 00:46:02,463 - INFO - Time taken to process Data/PriceData/CVX.csv: 28.50 seconds
-2024-02-09 00:46:03,186 - INFO - Time taken to process Data/PriceData/LLY.csv: 27.91 seconds
-2024-02-09 00:46:11,666 - INFO - Time taken to process Data/PriceData/CRM.csv: 18.36 seconds
-2024-02-09 00:46:17,970 - INFO - Time taken to process Data/PriceData/SNY.csv: 17.93 seconds
-2024-02-09 00:46:19,830 - INFO - Time taken to process Data/PriceData/UBS.csv: 19.32 seconds
-2024-02-09 00:46:28,589 - INFO - Time taken to process Data/PriceData/ADP.csv: 27.46 seconds
-2024-02-09 00:46:31,392 - INFO - Time taken to process Data/PriceData/CSCO.csv: 28.92 seconds
-2024-02-09 00:46:32,255 - INFO - Time taken to process Data/PriceData/UNH.csv: 29.06 seconds
-2024-02-09 00:46:38,990 - INFO - Time taken to process Data/PriceData/GILD.csv: 27.32 seconds
-2024-02-09 00:46:44,129 - INFO - Time taken to process Data/PriceData/LVMUY.csv: 15.54 seconds
-2024-02-09 00:46:46,594 - INFO - Time taken to process Data/PriceData/GSK.csv: 28.62 seconds
-2024-02-09 00:46:47,900 - INFO - Time taken to process Data/PriceData/DE.csv: 28.07 seconds
-2024-02-09 00:46:48,812 - INFO - Time taken to process Data/PriceData/GOOGL.csv: 17.41 seconds
-2024-02-09 00:46:56,816 - INFO - Time taken to process Data/PriceData/TSLA.csv: 12.69 seconds
-2024-02-09 00:47:01,136 - INFO - Time taken to process Data/PriceData/PEP.csv: 28.88 seconds
-2024-02-09 00:47:07,996 - INFO - Time taken to process Data/PriceData/UNP.csv: 29.00 seconds
-2024-02-09 00:47:14,235 - INFO - Time taken to process Data/PriceData/KO.csv: 27.64 seconds
-2024-02-09 00:47:16,563 - INFO - Time taken to process Data/PriceData/MCD.csv: 28.66 seconds
-2024-02-09 00:47:16,624 - INFO - Time taken to process Data/PriceData/ADBE.csv: 27.81 seconds
-2024-02-09 00:47:22,136 - INFO - Time taken to process Data/PriceData/SPY.csv: 25.32 seconds
-2024-02-09 00:47:27,998 - INFO - Time taken to process Data/PriceData/MUFG.csv: 20.00 seconds
-2024-02-09 00:47:28,394 - INFO - Time taken to process Data/PriceData/DEO.csv: 27.26 seconds
-2024-02-09 00:47:29,465 - INFO - Time taken to process Data/PriceData/RTNTF.csv: 12.90 seconds
-2024-02-09 00:47:35,340 - INFO - Time taken to process Data/PriceData/PDD.csv: 5.87 seconds
-2024-02-09 00:47:37,873 - INFO - Time taken to process Data/PriceData/IBN.csv: 21.25 seconds
-2024-02-09 00:47:42,735 - INFO - Time taken to process Data/PriceData/AAPL.csv: 28.50 seconds
-2024-02-09 00:47:50,369 - INFO - Time taken to process Data/PriceData/TOELY.csv: 12.49 seconds
-2024-02-09 00:47:51,098 - INFO - Time taken to process Data/PriceData/HON.csv: 28.96 seconds
-2024-02-09 00:47:53,589 - INFO - Time taken to process Data/PriceData/MS.csv: 25.19 seconds
-2024-02-09 00:47:55,410 - INFO - Time taken to process Data/PriceData/MMC.csv: 27.41 seconds
-2024-02-09 00:47:55,784 - INFO - Time taken to process Data/PriceData/UPS.csv: 20.44 seconds
-2024-02-09 00:48:04,635 - INFO - Time taken to process Data/PriceData/SHOP.csv: 8.84 seconds
-2024-02-09 00:48:07,789 - INFO - Time taken to process Data/PriceData/MELI.csv: 14.19 seconds
-2024-02-09 00:48:10,541 - INFO - Time taken to process Data/PriceData/SYK.csv: 27.80 seconds
-2024-02-09 00:48:18,898 - INFO - Time taken to process Data/PriceData/CMCSA.csv: 27.80 seconds
-2024-02-09 00:48:19,059 - INFO - Time taken to process Data/PriceData/JPM.csv: 28.69 seconds
-2024-02-09 00:48:20,297 - INFO - Time taken to process Data/PriceData/SBUX.csv: 24.89 seconds
-2024-02-09 00:48:28,361 - INFO - Time taken to process Data/PriceData/RTX.csv: 23.72 seconds
-2024-02-09 00:48:28,552 - INFO - Time taken to process Data/PriceData/BUD.csv: 9.65 seconds
-2024-02-09 00:48:29,105 - INFO - Time taken to process Data/PriceData/BAC.csv: 21.31 seconds
-2024-02-09 00:48:29,220 - INFO - Time taken to process Data/PriceData/BRK-B.csv: 18.67 seconds
-2024-02-09 00:48:29,222 - INFO - Average time taken to process each file: 11.73 seconds
-2024-02-09 01:45:18,285 - INFO - Time taken to process Data/PriceData/NVO.csv: 6.25 seconds
-2024-02-09 01:45:18,770 - INFO - Time taken to process Data/PriceData/FI.csv: 6.74 seconds
-2024-02-09 01:45:18,785 - INFO - Time taken to process Data/PriceData/WFC.csv: 6.75 seconds
-2024-02-09 01:45:19,171 - INFO - Time taken to process Data/PriceData/ADI.csv: 7.14 seconds
-2024-02-09 01:45:19,258 - INFO - Time taken to process Data/PriceData/BHP.csv: 7.22 seconds
-2024-02-09 01:45:20,225 - INFO - Time taken to process Data/PriceData/T.csv: 8.18 seconds
-2024-02-09 01:45:22,530 - INFO - Time taken to process Data/PriceData/ABBV.csv: 3.76 seconds
-2024-02-09 01:45:24,875 - INFO - Time taken to process Data/PriceData/META.csv: 2.34 seconds
-2024-02-09 01:45:24,886 - INFO - Time taken to process Data/PriceData/TMO.csv: 6.10 seconds
-2024-02-09 01:45:24,938 - INFO - Time taken to process Data/PriceData/HDB.csv: 5.67 seconds
-2024-02-09 01:45:25,045 - INFO - Time taken to process Data/PriceData/TM.csv: 6.76 seconds
-2024-02-09 01:45:25,137 - INFO - Time taken to process Data/PriceData/QCOM.csv: 5.97 seconds
-2024-02-09 01:45:26,305 - INFO - Time taken to process Data/PriceData/LIN.csv: 6.07 seconds
-2024-02-09 01:45:27,863 - INFO - Time taken to process Data/PriceData/ABNB.csv: 2.82 seconds
-2024-02-09 01:45:30,778 - INFO - Time taken to process Data/PriceData/FMX.csv: 5.90 seconds
-2024-02-09 01:45:30,958 - INFO - Time taken to process Data/PriceData/SHEL.csv: 6.07 seconds
-2024-02-09 01:45:32,493 - INFO - Time taken to process Data/PriceData/HD.csv: 6.19 seconds
-2024-02-09 01:45:32,807 - INFO - Time taken to process Data/PriceData/C.csv: 7.87 seconds
-2024-02-09 01:45:32,876 - INFO - Time taken to process Data/PriceData/ETN.csv: 7.73 seconds
-2024-02-09 01:45:34,234 - INFO - Time taken to process Data/PriceData/VZ.csv: 6.37 seconds
-2024-02-09 01:45:37,194 - INFO - Time taken to process Data/PriceData/ABT.csv: 6.41 seconds
-2024-02-09 01:45:37,363 - INFO - Time taken to process Data/PriceData/LMT.csv: 6.40 seconds
-2024-02-09 01:45:38,875 - INFO - Time taken to process Data/PriceData/MU.csv: 6.38 seconds
-2024-02-09 01:45:39,546 - INFO - Time taken to process Data/PriceData/CVS.csv: 6.74 seconds
-2024-02-09 01:45:39,634 - INFO - Time taken to process Data/PriceData/BMY.csv: 6.75 seconds
-2024-02-09 01:45:39,744 - INFO - Time taken to process Data/PriceData/RY.csv: 5.50 seconds
-2024-02-09 01:45:43,007 - INFO - Time taken to process Data/PriceData/ISRG.csv: 5.64 seconds
-2024-02-09 01:45:43,260 - INFO - Time taken to process Data/PriceData/NOW.csv: 3.52 seconds
-2024-02-09 01:45:43,989 - INFO - Time taken to process Data/PriceData/REGN.csv: 6.79 seconds
-2024-02-09 01:45:44,898 - INFO - Time taken to process Data/PriceData/MSFT.csv: 6.02 seconds
-2024-02-09 01:45:46,821 - INFO - Time taken to process Data/PriceData/WMT.csv: 7.19 seconds
-2024-02-09 01:45:46,902 - INFO - Time taken to process Data/PriceData/DIS.csv: 7.35 seconds
-2024-02-09 01:45:49,203 - INFO - Time taken to process Data/PriceData/AXP.csv: 6.19 seconds
-2024-02-09 01:45:50,022 - INFO - Time taken to process Data/PriceData/TXN.csv: 6.76 seconds
-2024-02-09 01:45:50,206 - INFO - Time taken to process Data/PriceData/GS.csv: 5.31 seconds
-2024-02-09 01:45:50,350 - INFO - Time taken to process Data/PriceData/PG.csv: 6.36 seconds
-2024-02-09 01:45:52,875 - INFO - Time taken to process Data/PriceData/ZTS.csv: 3.67 seconds
-2024-02-09 01:45:54,132 - INFO - Time taken to process Data/PriceData/COST.csv: 7.22 seconds
-2024-02-09 01:45:54,193 - INFO - Time taken to process Data/PriceData/INTC.csv: 7.37 seconds
-2024-02-09 01:45:56,210 - INFO - Time taken to process Data/PriceData/CB.csv: 6.19 seconds
-2024-02-09 01:45:56,383 - INFO - Time taken to process Data/PriceData/PANW.csv: 3.51 seconds
-2024-02-09 01:45:56,603 - INFO - Time taken to process Data/PriceData/TJX.csv: 6.39 seconds
-2024-02-09 01:45:58,524 - INFO - Time taken to process Data/PriceData/GE.csv: 8.17 seconds
-2024-02-09 01:46:00,335 - INFO - Time taken to process Data/PriceData/UL.csv: 6.20 seconds
-2024-02-09 01:46:01,085 - INFO - Time taken to process Data/PriceData/SONY.csv: 6.89 seconds
-2024-02-09 01:46:02,283 - INFO - Time taken to process Data/PriceData/NVDA.csv: 5.90 seconds
-2024-02-09 01:46:02,841 - INFO - Time taken to process Data/PriceData/SCHW.csv: 6.63 seconds
-2024-02-09 01:46:02,931 - INFO - Time taken to process Data/PriceData/TTE.csv: 6.33 seconds
-2024-02-09 01:46:04,308 - INFO - Time taken to process Data/PriceData/EQNR.csv: 5.78 seconds
-2024-02-09 01:46:04,847 - INFO - Time taken to process Data/PriceData/AVGO.csv: 3.75 seconds
-2024-02-09 01:46:06,537 - INFO - Time taken to process Data/PriceData/RIO.csv: 6.20 seconds
-2024-02-09 01:46:07,953 - INFO - Time taken to process Data/PriceData/PBR.csv: 5.11 seconds
-2024-02-09 01:46:09,109 - INFO - Time taken to process Data/PriceData/LTMAY.csv: 6.82 seconds
-2024-02-09 01:46:09,631 - INFO - Time taken to process Data/PriceData/BKNG.csv: 4.78 seconds
-2024-02-09 01:46:09,915 - INFO - Time taken to process Data/PriceData/LOW.csv: 6.98 seconds
-2024-02-09 01:46:09,989 - INFO - Time taken to process Data/PriceData/BSX.csv: 5.66 seconds
-2024-02-09 01:46:11,653 - INFO - Time taken to process Data/PriceData/BLK.csv: 5.11 seconds
-2024-02-09 01:46:13,609 - INFO - Time taken to process Data/PriceData/CNI.csv: 5.66 seconds
-2024-02-09 01:46:14,693 - INFO - Time taken to process Data/PriceData/BNPQY.csv: 5.06 seconds
-2024-02-09 01:46:14,772 - INFO - Time taken to process Data/PriceData/MDLZ.csv: 5.66 seconds
-2024-02-09 01:46:15,222 - INFO - Time taken to process Data/PriceData/TD.csv: 5.30 seconds
-2024-02-09 01:46:16,000 - INFO - Time taken to process Data/PriceData/BP.csv: 6.01 seconds
-2024-02-09 01:46:17,814 - INFO - Time taken to process Data/PriceData/IBM.csv: 6.15 seconds
-2024-02-09 01:46:18,211 - INFO - Time taken to process Data/PriceData/EADSY.csv: 4.60 seconds
-2024-02-09 01:46:20,815 - INFO - Time taken to process Data/PriceData/HSBC.csv: 5.59 seconds
-2024-02-09 01:46:20,853 - INFO - Time taken to process Data/PriceData/TSM.csv: 6.16 seconds
-2024-02-09 01:46:21,181 - INFO - Time taken to process Data/PriceData/ASML.csv: 6.40 seconds
-2024-02-09 01:46:22,524 - INFO - Time taken to process Data/PriceData/NKE.csv: 6.52 seconds
-2024-02-09 01:46:24,316 - INFO - Time taken to process Data/PriceData/AMD.csv: 6.50 seconds
-2024-02-09 01:46:24,585 - INFO - Time taken to process Data/PriceData/SPGI.csv: 6.37 seconds
-2024-02-09 01:46:24,629 - INFO - Time taken to process Data/PriceData/PM.csv: 3.81 seconds
-2024-02-09 01:46:26,363 - INFO - Time taken to process Data/PriceData/MA.csv: 5.18 seconds
-2024-02-09 01:46:27,403 - INFO - Time taken to process Data/PriceData/DHR.csv: 6.55 seconds
-2024-02-09 01:46:29,086 - INFO - Time taken to process Data/PriceData/PFE.csv: 6.56 seconds
-2024-02-09 01:46:29,797 - INFO - Time taken to process Data/PriceData/BX.csv: 3.43 seconds
-2024-02-09 01:46:30,848 - INFO - Time taken to process Data/PriceData/NVS.csv: 6.21 seconds
-2024-02-09 01:46:31,170 - INFO - Time taken to process Data/PriceData/VRTX.csv: 6.85 seconds
-2024-02-09 01:46:31,587 - INFO - Time taken to process Data/PriceData/COP.csv: 7.00 seconds
-2024-02-09 01:46:33,272 - INFO - Time taken to process Data/PriceData/JNJ.csv: 5.87 seconds
-2024-02-09 01:46:33,592 - INFO - Time taken to process Data/PriceData/V.csv: 4.50 seconds
-2024-02-09 01:46:35,583 - INFO - Time taken to process Data/PriceData/PLD.csv: 5.79 seconds
-2024-02-09 01:46:35,680 - INFO - Time taken to process Data/PriceData/CSLLY.csv: 4.09 seconds
-2024-02-09 01:46:36,676 - INFO - Time taken to process Data/PriceData/AZN.csv: 5.83 seconds
-2024-02-09 01:46:38,047 - INFO - Time taken to process Data/PriceData/PGR.csv: 6.88 seconds
-2024-02-09 01:46:40,067 - INFO - Time taken to process Data/PriceData/ORCL.csv: 6.47 seconds
-2024-02-09 01:46:40,368 - INFO - Time taken to process Data/PriceData/CI.csv: 7.09 seconds
-2024-02-09 01:46:41,657 - INFO - Time taken to process Data/PriceData/INTU.csv: 6.07 seconds
-2024-02-09 01:46:42,491 - INFO - Time taken to process Data/PriceData/XOM.csv: 6.81 seconds
-2024-02-09 01:46:42,954 - INFO - Time taken to process Data/PriceData/LRCX.csv: 6.27 seconds
-2024-02-09 01:46:44,366 - INFO - Time taken to process Data/PriceData/MRK.csv: 6.31 seconds
-2024-02-09 01:46:45,356 - INFO - Time taken to process Data/PriceData/UBER.csv: 2.39 seconds
-2024-02-09 01:46:45,386 - INFO - Time taken to process Data/PriceData/QQQ.csv: 5.31 seconds
-2024-02-09 01:46:45,553 - INFO - Time taken to process Data/PriceData/NFLX.csv: 5.15 seconds
-2024-02-09 01:46:46,565 - INFO - Time taken to process Data/PriceData/AMT.csv: 4.91 seconds
-2024-02-09 01:46:47,730 - INFO - Time taken to process Data/PriceData/ACN.csv: 5.23 seconds
-2024-02-09 01:46:48,576 - INFO - Time taken to process Data/PriceData/BABA.csv: 3.19 seconds
-2024-02-09 01:46:50,175 - INFO - Time taken to process Data/PriceData/SAP.csv: 5.81 seconds
-2024-02-09 01:46:51,288 - INFO - Time taken to process Data/PriceData/ABBNY.csv: 4.72 seconds
-2024-02-09 01:46:51,838 - INFO - Time taken to process Data/PriceData/ELV.csv: 4.11 seconds
-2024-02-09 01:46:51,918 - INFO - Time taken to process Data/PriceData/AMAT.csv: 6.56 seconds
-2024-02-09 01:46:52,701 - INFO - Time taken to process Data/PriceData/TMUS.csv: 4.12 seconds
-2024-02-09 01:46:53,141 - INFO - Time taken to process Data/PriceData/AMGN.csv: 7.58 seconds
-2024-02-09 01:46:55,939 - INFO - Time taken to process Data/PriceData/AMZN.csv: 5.76 seconds
-2024-02-09 01:46:57,793 - INFO - Time taken to process Data/PriceData/CAT.csv: 6.50 seconds
-2024-02-09 01:46:59,013 - INFO - Time taken to process Data/PriceData/NEE.csv: 7.09 seconds
-2024-02-09 01:46:59,015 - INFO - Time taken to process Data/PriceData/MDT.csv: 7.17 seconds
-2024-02-09 01:46:59,236 - INFO - Time taken to process Data/PriceData/CVX.csv: 6.53 seconds
-2024-02-09 01:46:59,276 - INFO - Time taken to process Data/PriceData/LLY.csv: 6.12 seconds
-2024-02-09 01:46:59,725 - INFO - Time taken to process Data/PriceData/CRM.csv: 3.78 seconds
-2024-02-09 01:47:02,711 - INFO - Time taken to process Data/PriceData/SNY.csv: 4.92 seconds
-2024-02-09 01:47:05,140 - INFO - Time taken to process Data/PriceData/UBS.csv: 6.13 seconds
-2024-02-09 01:47:05,701 - INFO - Time taken to process Data/PriceData/CSCO.csv: 6.46 seconds
-2024-02-09 01:47:05,948 - INFO - Time taken to process Data/PriceData/UNH.csv: 6.67 seconds
-2024-02-09 01:47:06,098 - INFO - Time taken to process Data/PriceData/ADP.csv: 7.08 seconds
-2024-02-09 01:47:06,303 - INFO - Time taken to process Data/PriceData/GILD.csv: 6.56 seconds
-2024-02-09 01:47:09,240 - INFO - Time taken to process Data/PriceData/GSK.csv: 6.53 seconds
-2024-02-09 01:47:10,477 - INFO - Time taken to process Data/PriceData/LVMUY.csv: 4.77 seconds
-2024-02-09 01:47:10,739 - INFO - Time taken to process Data/PriceData/GOOGL.csv: 4.79 seconds
-2024-02-09 01:47:11,623 - INFO - Time taken to process Data/PriceData/DE.csv: 6.48 seconds
-2024-02-09 01:47:12,438 - INFO - Time taken to process Data/PriceData/PEP.csv: 6.34 seconds
-2024-02-09 01:47:12,973 - INFO - Time taken to process Data/PriceData/UNP.csv: 6.67 seconds
-2024-02-09 01:47:13,472 - INFO - Time taken to process Data/PriceData/TSLA.csv: 4.23 seconds
-2024-02-09 01:47:17,130 - INFO - Time taken to process Data/PriceData/MCD.csv: 6.39 seconds
-2024-02-09 01:47:17,207 - INFO - Time taken to process Data/PriceData/KO.csv: 6.73 seconds
-2024-02-09 01:47:18,051 - INFO - Time taken to process Data/PriceData/SPY.csv: 5.61 seconds
-2024-02-09 01:47:18,340 - INFO - Time taken to process Data/PriceData/ADBE.csv: 6.72 seconds
-2024-02-09 01:47:18,700 - INFO - Time taken to process Data/PriceData/MUFG.csv: 5.23 seconds
-2024-02-09 01:47:20,432 - INFO - Time taken to process Data/PriceData/DEO.csv: 7.44 seconds
-2024-02-09 01:47:21,504 - INFO - Time taken to process Data/PriceData/RTNTF.csv: 4.30 seconds
-2024-02-09 01:47:23,482 - INFO - Time taken to process Data/PriceData/IBN.csv: 5.43 seconds
-2024-02-09 01:47:23,548 - INFO - Time taken to process Data/PriceData/PDD.csv: 2.04 seconds
-2024-02-09 01:47:23,764 - INFO - Time taken to process Data/PriceData/AAPL.csv: 6.63 seconds
-2024-02-09 01:47:25,460 - INFO - Time taken to process Data/PriceData/HON.csv: 7.12 seconds
-2024-02-09 01:47:25,499 - INFO - Time taken to process Data/PriceData/MMC.csv: 6.80 seconds
-2024-02-09 01:47:27,121 - INFO - Time taken to process Data/PriceData/MS.csv: 6.69 seconds
-2024-02-09 01:47:28,298 - INFO - Time taken to process Data/PriceData/TOELY.csv: 4.73 seconds
-2024-02-09 01:47:29,035 - INFO - Time taken to process Data/PriceData/UPS.csv: 5.55 seconds
-2024-02-09 01:47:30,373 - INFO - Time taken to process Data/PriceData/MELI.csv: 3.25 seconds
-2024-02-09 01:47:30,687 - INFO - Time taken to process Data/PriceData/SYK.csv: 6.92 seconds
-2024-02-09 01:47:31,838 - INFO - Time taken to process Data/PriceData/JPM.csv: 6.38 seconds
-2024-02-09 01:47:32,225 - INFO - Time taken to process Data/PriceData/CMCSA.csv: 6.73 seconds
-2024-02-09 01:47:32,333 - INFO - Time taken to process Data/PriceData/SHOP.csv: 3.28 seconds
-2024-02-09 01:47:33,779 - INFO - Time taken to process Data/PriceData/SBUX.csv: 5.48 seconds
-2024-02-09 01:47:34,816 - INFO - Time taken to process Data/PriceData/BUD.csv: 2.59 seconds
-2024-02-09 01:47:35,165 - INFO - Time taken to process Data/PriceData/BRK-B.csv: 3.32 seconds
-2024-02-09 01:47:35,275 - INFO - Time taken to process Data/PriceData/RTX.csv: 4.90 seconds
-2024-02-09 01:47:35,277 - INFO - Time taken to process Data/PriceData/BAC.csv: 4.58 seconds
-2024-02-09 01:47:35,279 - INFO - Average time taken to process each file: 7.33 seconds
-2024-02-09 01:50:00,407 - INFO - Time taken to process Data/PriceData/NVO.csv: 6.29 seconds
-2024-02-09 01:50:00,642 - INFO - Time taken to process Data/PriceData/FI.csv: 6.52 seconds
-2024-02-09 01:50:00,800 - INFO - Time taken to process Data/PriceData/ADI.csv: 6.69 seconds
-2024-02-09 01:50:00,830 - INFO - Time taken to process Data/PriceData/WFC.csv: 6.71 seconds
-2024-02-09 01:50:00,865 - INFO - Time taken to process Data/PriceData/BHP.csv: 6.75 seconds
-2024-02-09 01:50:01,293 - INFO - Time taken to process Data/PriceData/T.csv: 7.16 seconds
-2024-02-09 01:50:04,831 - INFO - Time taken to process Data/PriceData/ABBV.csv: 4.19 seconds
-2024-02-09 01:50:05,969 - INFO - Time taken to process Data/PriceData/HDB.csv: 5.10 seconds
-2024-02-09 01:50:07,088 - INFO - Time taken to process Data/PriceData/TM.csv: 6.68 seconds
-2024-02-09 01:50:07,684 - INFO - Time taken to process Data/PriceData/META.csv: 2.85 seconds
-2024-02-09 01:50:08,191 - INFO - Time taken to process Data/PriceData/TMO.csv: 7.39 seconds
-2024-02-09 01:50:09,254 - INFO - Time taken to process Data/PriceData/QCOM.csv: 8.40 seconds
-2024-02-09 01:50:09,307 - INFO - Time taken to process Data/PriceData/LIN.csv: 8.01 seconds
-2024-02-09 01:50:11,265 - INFO - Time taken to process Data/PriceData/ABNB.csv: 3.07 seconds
-2024-02-09 01:50:11,451 - INFO - Time taken to process Data/PriceData/FMX.csv: 5.48 seconds
-2024-02-09 01:50:14,024 - INFO - Time taken to process Data/PriceData/SHEL.csv: 6.93 seconds
-2024-02-09 01:50:15,301 - INFO - Time taken to process Data/PriceData/C.csv: 7.62 seconds
-2024-02-09 01:50:16,618 - INFO - Time taken to process Data/PriceData/ETN.csv: 7.36 seconds
-2024-02-09 01:50:16,689 - INFO - Time taken to process Data/PriceData/HD.csv: 7.38 seconds
-2024-02-09 01:50:19,814 - INFO - Time taken to process Data/PriceData/VZ.csv: 8.55 seconds
-2024-02-09 01:50:19,861 - INFO - Time taken to process Data/PriceData/ABT.csv: 8.41 seconds
-2024-02-09 01:50:25,479 - INFO - Time taken to process Data/PriceData/LMT.csv: 11.45 seconds
-2024-02-09 01:50:25,872 - INFO - Time taken to process Data/PriceData/MU.csv: 10.57 seconds
-2024-02-09 01:50:27,952 - INFO - Time taken to process Data/PriceData/BMY.csv: 11.26 seconds
-2024-02-09 01:50:28,584 - INFO - Time taken to process Data/PriceData/CVS.csv: 11.97 seconds
-2024-02-09 01:50:28,928 - INFO - Time taken to process Data/PriceData/RY.csv: 9.10 seconds
-2024-02-09 01:50:30,851 - INFO - Time taken to process Data/PriceData/REGN.csv: 10.97 seconds
-2024-02-09 01:50:32,747 - INFO - Time taken to process Data/PriceData/ISRG.csv: 7.27 seconds
-2024-02-09 01:50:34,308 - INFO - Time taken to process Data/PriceData/NOW.csv: 5.38 seconds
-2024-02-09 01:50:35,418 - INFO - Time taken to process Data/PriceData/MSFT.csv: 9.52 seconds
-2024-02-09 01:50:38,103 - INFO - Time taken to process Data/PriceData/DIS.csv: 10.15 seconds
-2024-02-09 01:50:38,468 - INFO - Time taken to process Data/PriceData/WMT.csv: 9.88 seconds
-2024-02-09 01:50:38,672 - INFO - Time taken to process Data/PriceData/AXP.csv: 7.81 seconds
-2024-02-09 01:50:39,482 - INFO - Time taken to process Data/PriceData/TXN.csv: 6.68 seconds
-2024-02-09 01:50:40,830 - INFO - Time taken to process Data/PriceData/PG.csv: 6.52 seconds
-2024-02-09 01:50:41,684 - INFO - Time taken to process Data/PriceData/GS.csv: 6.26 seconds
-2024-02-09 01:50:43,440 - INFO - Time taken to process Data/PriceData/ZTS.csv: 4.75 seconds
-2024-02-09 01:50:44,556 - INFO - Time taken to process Data/PriceData/INTC.csv: 6.45 seconds
-2024-02-09 01:50:45,682 - INFO - Time taken to process Data/PriceData/CB.csv: 6.20 seconds
-2024-02-09 01:50:46,137 - INFO - Time taken to process Data/PriceData/COST.csv: 7.67 seconds
-2024-02-09 01:50:46,488 - INFO - Time taken to process Data/PriceData/PANW.csv: 3.04 seconds
-2024-02-09 01:50:47,532 - INFO - Time taken to process Data/PriceData/TJX.csv: 6.70 seconds
-2024-02-09 01:50:48,811 - INFO - Time taken to process Data/PriceData/GE.csv: 7.12 seconds
-2024-02-09 01:50:51,424 - INFO - Time taken to process Data/PriceData/UL.csv: 6.87 seconds
-2024-02-09 01:50:51,891 - INFO - Time taken to process Data/PriceData/SONY.csv: 6.21 seconds
-2024-02-09 01:50:52,424 - INFO - Time taken to process Data/PriceData/NVDA.csv: 5.94 seconds
-2024-02-09 01:50:53,080 - INFO - Time taken to process Data/PriceData/EQNR.csv: 4.27 seconds
-2024-02-09 01:50:53,594 - INFO - Time taken to process Data/PriceData/TTE.csv: 6.05 seconds
-2024-02-09 01:50:54,037 - INFO - Time taken to process Data/PriceData/SCHW.csv: 7.89 seconds
-2024-02-09 01:50:56,407 - INFO - Time taken to process Data/PriceData/AVGO.csv: 4.51 seconds
-2024-02-09 01:50:58,403 - INFO - Time taken to process Data/PriceData/PBR.csv: 5.32 seconds
-2024-02-09 01:50:58,445 - INFO - Time taken to process Data/PriceData/LTMAY.csv: 6.02 seconds
-2024-02-09 01:50:58,644 - INFO - Time taken to process Data/PriceData/RIO.csv: 7.22 seconds
-2024-02-09 01:51:00,514 - INFO - Time taken to process Data/PriceData/BSX.csv: 6.47 seconds
-2024-02-09 01:51:00,706 - INFO - Time taken to process Data/PriceData/LOW.csv: 7.09 seconds
-2024-02-09 01:51:01,274 - INFO - Time taken to process Data/PriceData/BKNG.csv: 4.87 seconds
-2024-02-09 01:51:03,526 - INFO - Time taken to process Data/PriceData/BLK.csv: 5.12 seconds
-2024-02-09 01:51:04,112 - INFO - Time taken to process Data/PriceData/MDLZ.csv: 5.47 seconds
-2024-02-09 01:51:04,655 - INFO - Time taken to process Data/PriceData/CNI.csv: 6.21 seconds
-2024-02-09 01:51:04,842 - INFO - Time taken to process Data/PriceData/BNPQY.csv: 4.33 seconds
-2024-02-09 01:51:06,603 - INFO - Time taken to process Data/PriceData/TD.csv: 5.89 seconds
-2024-02-09 01:51:07,826 - INFO - Time taken to process Data/PriceData/BP.csv: 6.55 seconds
-2024-02-09 01:51:08,816 - INFO - Time taken to process Data/PriceData/EADSY.csv: 4.69 seconds
-2024-02-09 01:51:10,560 - INFO - Time taken to process Data/PriceData/IBM.csv: 7.03 seconds
-2024-02-09 01:51:10,939 - INFO - Time taken to process Data/PriceData/TSM.csv: 6.28 seconds
-2024-02-09 01:51:11,050 - INFO - Time taken to process Data/PriceData/ASML.csv: 6.21 seconds
-2024-02-09 01:51:11,116 - INFO - Time taken to process Data/PriceData/HSBC.csv: 4.51 seconds
-2024-02-09 01:51:13,992 - INFO - Time taken to process Data/PriceData/NKE.csv: 6.16 seconds
-2024-02-09 01:51:14,506 - INFO - Time taken to process Data/PriceData/AMD.csv: 5.69 seconds
-2024-02-09 01:51:14,614 - INFO - Time taken to process Data/PriceData/PM.csv: 3.67 seconds
-2024-02-09 01:51:15,874 - INFO - Time taken to process Data/PriceData/MA.csv: 4.76 seconds
-2024-02-09 01:51:18,121 - INFO - Time taken to process Data/PriceData/SPGI.csv: 7.55 seconds
-2024-02-09 01:51:18,520 - INFO - Time taken to process Data/PriceData/DHR.csv: 7.47 seconds
-2024-02-09 01:51:20,933 - INFO - Time taken to process Data/PriceData/PFE.csv: 6.94 seconds
-2024-02-09 01:51:21,636 - INFO - Time taken to process Data/PriceData/VRTX.csv: 7.13 seconds
-2024-02-09 01:51:21,786 - INFO - Time taken to process Data/PriceData/BX.csv: 3.65 seconds
-2024-02-09 01:51:21,890 - INFO - Time taken to process Data/PriceData/NVS.csv: 6.02 seconds
-2024-02-09 01:51:21,943 - INFO - Time taken to process Data/PriceData/COP.csv: 7.33 seconds
-2024-02-09 01:51:24,817 - INFO - Time taken to process Data/PriceData/V.csv: 3.88 seconds
-2024-02-09 01:51:24,929 - INFO - Time taken to process Data/PriceData/JNJ.csv: 6.41 seconds
-2024-02-09 01:51:26,253 - INFO - Time taken to process Data/PriceData/PLD.csv: 4.62 seconds
-2024-02-09 01:51:26,660 - INFO - Time taken to process Data/PriceData/CSLLY.csv: 4.72 seconds
-2024-02-09 01:51:29,010 - INFO - Time taken to process Data/PriceData/AZN.csv: 7.22 seconds
-2024-02-09 01:51:29,149 - INFO - Time taken to process Data/PriceData/PGR.csv: 7.26 seconds
-2024-02-09 01:51:32,356 - INFO - Time taken to process Data/PriceData/INTU.csv: 6.10 seconds
-2024-02-09 01:51:32,412 - INFO - Time taken to process Data/PriceData/CI.csv: 7.59 seconds
-2024-02-09 01:51:32,556 - INFO - Time taken to process Data/PriceData/ORCL.csv: 7.63 seconds
-2024-02-09 01:51:32,742 - INFO - Time taken to process Data/PriceData/XOM.csv: 6.08 seconds
-2024-02-09 01:51:34,938 - INFO - Time taken to process Data/PriceData/LRCX.csv: 5.93 seconds
-2024-02-09 01:51:35,475 - INFO - Time taken to process Data/PriceData/MRK.csv: 6.32 seconds
-2024-02-09 01:51:36,980 - INFO - Time taken to process Data/PriceData/UBER.csv: 2.04 seconds
-2024-02-09 01:51:38,254 - INFO - Time taken to process Data/PriceData/NFLX.csv: 5.84 seconds
-2024-02-09 01:51:38,654 - INFO - Time taken to process Data/PriceData/ACN.csv: 5.91 seconds
-2024-02-09 01:51:38,721 - INFO - Time taken to process Data/PriceData/QQQ.csv: 6.36 seconds
-2024-02-09 01:51:38,797 - INFO - Time taken to process Data/PriceData/AMT.csv: 6.24 seconds
-2024-02-09 01:51:41,223 - INFO - Time taken to process Data/PriceData/SAP.csv: 5.75 seconds
-2024-02-09 01:51:41,968 - INFO - Time taken to process Data/PriceData/BABA.csv: 3.71 seconds
-2024-02-09 01:51:44,280 - INFO - Time taken to process Data/PriceData/ELV.csv: 5.48 seconds
-2024-02-09 01:51:44,283 - INFO - Time taken to process Data/PriceData/AMAT.csv: 7.30 seconds
-2024-02-09 01:51:44,321 - INFO - Time taken to process Data/PriceData/ABBNY.csv: 5.59 seconds
-2024-02-09 01:51:44,491 - INFO - Time taken to process Data/PriceData/TMUS.csv: 3.26 seconds
-2024-02-09 01:51:44,657 - INFO - Time taken to process Data/PriceData/AMGN.csv: 5.99 seconds
-2024-02-09 01:51:47,603 - INFO - Time taken to process Data/PriceData/AMZN.csv: 5.63 seconds
-2024-02-09 01:51:50,196 - INFO - Time taken to process Data/PriceData/CAT.csv: 5.92 seconds
-2024-02-09 01:51:51,643 - INFO - Time taken to process Data/PriceData/MDT.csv: 7.36 seconds
-2024-02-09 01:51:51,772 - INFO - Time taken to process Data/PriceData/NEE.csv: 7.45 seconds
-2024-02-09 01:51:51,846 - INFO - Time taken to process Data/PriceData/CRM.csv: 4.24 seconds
-2024-02-09 01:51:52,117 - INFO - Time taken to process Data/PriceData/LLY.csv: 7.46 seconds
-2024-02-09 01:51:52,563 - INFO - Time taken to process Data/PriceData/CVX.csv: 8.07 seconds
-2024-02-09 01:51:55,940 - INFO - Time taken to process Data/PriceData/SNY.csv: 5.74 seconds
-2024-02-09 01:51:56,970 - INFO - Time taken to process Data/PriceData/UBS.csv: 5.33 seconds
-2024-02-09 01:51:59,324 - INFO - Time taken to process Data/PriceData/UNH.csv: 7.20 seconds
-2024-02-09 01:51:59,395 - INFO - Time taken to process Data/PriceData/GILD.csv: 6.83 seconds
-2024-02-09 01:51:59,437 - INFO - Time taken to process Data/PriceData/CSCO.csv: 7.59 seconds
-2024-02-09 01:51:59,489 - INFO - Time taken to process Data/PriceData/ADP.csv: 7.71 seconds
-2024-02-09 01:52:02,451 - INFO - Time taken to process Data/PriceData/GSK.csv: 6.51 seconds
-2024-02-09 01:52:03,274 - INFO - Time taken to process Data/PriceData/DE.csv: 6.30 seconds
-2024-02-09 01:52:03,354 - INFO - Time taken to process Data/PriceData/LVMUY.csv: 4.03 seconds
-2024-02-09 01:52:04,246 - INFO - Time taken to process Data/PriceData/GOOGL.csv: 4.85 seconds
-2024-02-09 01:52:06,460 - INFO - Time taken to process Data/PriceData/TSLA.csv: 4.01 seconds
-2024-02-09 01:52:06,709 - INFO - Time taken to process Data/PriceData/UNP.csv: 7.22 seconds
-2024-02-09 01:52:06,768 - INFO - Time taken to process Data/PriceData/PEP.csv: 7.32 seconds
-2024-02-09 01:52:09,905 - INFO - Time taken to process Data/PriceData/KO.csv: 6.63 seconds
-2024-02-09 01:52:10,101 - INFO - Time taken to process Data/PriceData/MCD.csv: 6.74 seconds
-2024-02-09 01:52:10,391 - INFO - Time taken to process Data/PriceData/ADBE.csv: 6.14 seconds
-2024-02-09 01:52:12,335 - INFO - Time taken to process Data/PriceData/SPY.csv: 5.87 seconds
-2024-02-09 01:52:12,504 - INFO - Time taken to process Data/PriceData/MUFG.csv: 5.74 seconds
-2024-02-09 01:52:13,454 - INFO - Time taken to process Data/PriceData/DEO.csv: 6.74 seconds
-2024-02-09 01:52:14,560 - INFO - Time taken to process Data/PriceData/RTNTF.csv: 4.46 seconds
-2024-02-09 01:52:16,623 - INFO - Time taken to process Data/PriceData/PDD.csv: 2.06 seconds
-2024-02-09 01:52:16,740 - INFO - Time taken to process Data/PriceData/IBN.csv: 6.35 seconds
-2024-02-09 01:52:18,044 - INFO - Time taken to process Data/PriceData/AAPL.csv: 8.14 seconds
-2024-02-09 01:52:18,923 - INFO - Time taken to process Data/PriceData/MS.csv: 5.47 seconds
-2024-02-09 01:52:19,105 - INFO - Time taken to process Data/PriceData/MMC.csv: 6.60 seconds
-2024-02-09 01:52:19,181 - INFO - Time taken to process Data/PriceData/HON.csv: 6.84 seconds
-2024-02-09 01:52:22,109 - INFO - Time taken to process Data/PriceData/TOELY.csv: 5.36 seconds
-2024-02-09 01:52:22,553 - INFO - Time taken to process Data/PriceData/UPS.csv: 5.92 seconds
-2024-02-09 01:52:22,862 - INFO - Time taken to process Data/PriceData/MELI.csv: 3.68 seconds
-2024-02-09 01:52:24,864 - INFO - Time taken to process Data/PriceData/SYK.csv: 6.82 seconds
-2024-02-09 01:52:25,432 - INFO - Time taken to process Data/PriceData/JPM.csv: 6.51 seconds
-2024-02-09 01:52:25,872 - INFO - Time taken to process Data/PriceData/SHOP.csv: 3.32 seconds
-2024-02-09 01:52:26,148 - INFO - Time taken to process Data/PriceData/CMCSA.csv: 7.04 seconds
-2024-02-09 01:52:28,813 - INFO - Time taken to process Data/PriceData/BUD.csv: 2.93 seconds
-2024-02-09 01:52:28,859 - INFO - Time taken to process Data/PriceData/SBUX.csv: 6.75 seconds
-2024-02-09 01:52:28,945 - INFO - Time taken to process Data/PriceData/RTX.csv: 6.08 seconds
-2024-02-09 01:52:29,182 - INFO - Time taken to process Data/PriceData/BAC.csv: 4.31 seconds
-2024-02-09 01:52:29,277 - INFO - Time taken to process Data/PriceData/BRK-B.csv: 3.84 seconds
-2024-02-09 01:52:29,281 - INFO - Average time taken to process each file: 5.94 seconds
+2024-02-14 17:48:33,024 - INFO - Time taken to process Data/PriceData/FI.csv: 7.03 seconds
+2024-02-14 17:48:33,385 - INFO - Time taken to process Data/PriceData/BHP.csv: 7.39 seconds
+2024-02-14 17:48:33,388 - INFO - Time taken to process Data/PriceData/WFC.csv: 7.39 seconds
+2024-02-14 17:48:33,411 - INFO - Time taken to process Data/PriceData/NVO.csv: 7.42 seconds
+2024-02-14 17:48:33,425 - INFO - Time taken to process Data/PriceData/ADI.csv: 7.43 seconds
+2024-02-14 17:48:33,437 - INFO - Time taken to process Data/PriceData/T.csv: 7.44 seconds
+2024-02-14 17:48:37,790 - INFO - Time taken to process Data/PriceData/ABBV.csv: 4.40 seconds
+2024-02-14 17:48:39,282 - INFO - Time taken to process Data/PriceData/TM.csv: 6.25 seconds
+2024-02-14 17:48:39,571 - INFO - Time taken to process Data/PriceData/HDB.csv: 6.14 seconds
+2024-02-14 17:48:40,285 - INFO - Time taken to process Data/PriceData/QCOM.csv: 6.87 seconds
+2024-02-14 17:48:40,317 - INFO - Time taken to process Data/PriceData/LIN.csv: 6.88 seconds
+2024-02-14 17:48:41,535 - INFO - Time taken to process Data/PriceData/TMO.csv: 8.14 seconds
+2024-02-14 17:48:42,137 - INFO - Time taken to process Data/PriceData/META.csv: 4.35 seconds
+2024-02-14 17:48:43,464 - INFO - Time taken to process Data/PriceData/ABNB.csv: 3.14 seconds
+2024-02-14 17:48:45,747 - INFO - Time taken to process Data/PriceData/FMX.csv: 6.46 seconds
+2024-02-14 17:48:46,465 - INFO - Time taken to process Data/PriceData/SHEL.csv: 6.89 seconds
+2024-02-14 17:48:47,056 - INFO - Time taken to process Data/PriceData/C.csv: 6.77 seconds
+2024-02-14 17:48:48,948 - INFO - Time taken to process Data/PriceData/ETN.csv: 7.41 seconds
+2024-02-14 17:48:49,097 - INFO - Time taken to process Data/PriceData/HD.csv: 6.96 seconds
+2024-02-14 17:48:50,818 - INFO - Time taken to process Data/PriceData/VZ.csv: 7.35 seconds
+2024-02-14 17:48:52,834 - INFO - Time taken to process Data/PriceData/ABT.csv: 7.08 seconds
+2024-02-14 17:48:53,528 - INFO - Time taken to process Data/PriceData/LMT.csv: 7.06 seconds
+2024-02-14 17:48:54,482 - INFO - Time taken to process Data/PriceData/MU.csv: 7.41 seconds
+2024-02-14 17:48:56,237 - INFO - Time taken to process Data/PriceData/BMY.csv: 7.14 seconds
+2024-02-14 17:48:56,300 - INFO - Time taken to process Data/PriceData/CVS.csv: 7.35 seconds
+2024-02-14 17:48:56,614 - INFO - Time taken to process Data/PriceData/RY.csv: 5.80 seconds
+2024-02-14 17:48:59,603 - INFO - Time taken to process Data/PriceData/ISRG.csv: 6.07 seconds
+2024-02-14 17:48:59,692 - INFO - Time taken to process Data/PriceData/NOW.csv: 3.08 seconds
+2024-02-14 17:48:59,903 - INFO - Time taken to process Data/PriceData/REGN.csv: 7.06 seconds
+2024-02-14 17:49:01,765 - INFO - Time taken to process Data/PriceData/MSFT.csv: 7.28 seconds
+2024-02-14 17:49:03,587 - INFO - Time taken to process Data/PriceData/WMT.csv: 7.28 seconds
+2024-02-14 17:49:04,026 - INFO - Time taken to process Data/PriceData/DIS.csv: 7.79 seconds
+2024-02-14 17:49:06,666 - INFO - Time taken to process Data/PriceData/GS.csv: 4.90 seconds
+2024-02-14 17:49:06,781 - INFO - Time taken to process Data/PriceData/TXN.csv: 7.09 seconds
+2024-02-14 17:49:07,028 - INFO - Time taken to process Data/PriceData/PG.csv: 7.12 seconds
+2024-02-14 17:49:07,117 - INFO - Time taken to process Data/PriceData/AXP.csv: 7.51 seconds
+2024-02-14 17:49:10,442 - INFO - Time taken to process Data/PriceData/ZTS.csv: 3.78 seconds
+2024-02-14 17:49:11,013 - INFO - Time taken to process Data/PriceData/COST.csv: 6.99 seconds
+2024-02-14 17:49:11,208 - INFO - Time taken to process Data/PriceData/INTC.csv: 7.62 seconds
+2024-02-14 17:49:12,125 - INFO - Time taken to process Data/PriceData/CB.csv: 5.34 seconds
+2024-02-14 17:49:14,665 - INFO - Time taken to process Data/PriceData/PANW.csv: 4.20 seconds
+2024-02-14 17:49:14,701 - INFO - Time taken to process Data/PriceData/GE.csv: 7.57 seconds
+2024-02-14 17:49:14,714 - INFO - Time taken to process Data/PriceData/TJX.csv: 7.68 seconds
+2024-02-14 17:49:17,847 - INFO - Time taken to process Data/PriceData/UL.csv: 6.83 seconds
+2024-02-14 17:49:18,111 - INFO - Time taken to process Data/PriceData/SONY.csv: 6.90 seconds
+2024-02-14 17:49:18,379 - INFO - Time taken to process Data/PriceData/SCHW.csv: 6.25 seconds
+2024-02-14 17:49:20,914 - INFO - Time taken to process Data/PriceData/EQNR.csv: 6.20 seconds
+2024-02-14 17:49:21,309 - INFO - Time taken to process Data/PriceData/NVDA.csv: 6.64 seconds
+2024-02-14 17:49:22,089 - INFO - Time taken to process Data/PriceData/TTE.csv: 7.38 seconds
+2024-02-14 17:49:22,756 - INFO - Time taken to process Data/PriceData/AVGO.csv: 4.64 seconds
+2024-02-14 17:49:24,809 - INFO - Time taken to process Data/PriceData/LTMAY.csv: 6.43 seconds
+2024-02-14 17:49:25,425 - INFO - Time taken to process Data/PriceData/RIO.csv: 7.58 seconds
+2024-02-14 17:49:26,169 - INFO - Time taken to process Data/PriceData/PBR.csv: 5.25 seconds
+2024-02-14 17:49:28,145 - INFO - Time taken to process Data/PriceData/LOW.csv: 6.84 seconds
+2024-02-14 17:49:28,458 - INFO - Time taken to process Data/PriceData/BSX.csv: 6.36 seconds
+2024-02-14 17:49:28,506 - INFO - Time taken to process Data/PriceData/BKNG.csv: 5.75 seconds
+2024-02-14 17:49:30,289 - INFO - Time taken to process Data/PriceData/BLK.csv: 5.48 seconds
+2024-02-14 17:49:31,864 - INFO - Time taken to process Data/PriceData/MDLZ.csv: 5.68 seconds
+2024-02-14 17:49:32,022 - INFO - Time taken to process Data/PriceData/CNI.csv: 6.60 seconds
+2024-02-14 17:49:33,311 - INFO - Time taken to process Data/PriceData/BNPQY.csv: 5.17 seconds
+2024-02-14 17:49:34,581 - INFO - Time taken to process Data/PriceData/TD.csv: 6.12 seconds
+2024-02-14 17:49:35,905 - INFO - Time taken to process Data/PriceData/BP.csv: 7.40 seconds
+2024-02-14 17:49:36,193 - INFO - Time taken to process Data/PriceData/EADSY.csv: 4.33 seconds
+2024-02-14 17:49:36,706 - INFO - Time taken to process Data/PriceData/IBM.csv: 6.41 seconds
+2024-02-14 17:49:38,239 - INFO - Time taken to process Data/PriceData/TSM.csv: 6.21 seconds
+2024-02-14 17:49:39,768 - INFO - Time taken to process Data/PriceData/ASML.csv: 6.46 seconds
+2024-02-14 17:49:40,049 - INFO - Time taken to process Data/PriceData/HSBC.csv: 5.47 seconds
+2024-02-14 17:49:42,357 - INFO - Time taken to process Data/PriceData/PM.csv: 4.11 seconds
+2024-02-14 17:49:42,691 - INFO - Time taken to process Data/PriceData/NKE.csv: 6.78 seconds
+2024-02-14 17:49:43,323 - INFO - Time taken to process Data/PriceData/SPGI.csv: 6.62 seconds
+2024-02-14 17:49:43,769 - INFO - Time taken to process Data/PriceData/AMD.csv: 7.58 seconds
+2024-02-14 17:49:44,708 - INFO - Time taken to process Data/PriceData/MA.csv: 4.66 seconds
+2024-02-14 17:49:46,903 - INFO - Time taken to process Data/PriceData/DHR.csv: 7.13 seconds
+2024-02-14 17:49:48,951 - INFO - Time taken to process Data/PriceData/VRTX.csv: 6.25 seconds
+2024-02-14 17:49:49,071 - INFO - Time taken to process Data/PriceData/PFE.csv: 6.71 seconds
+2024-02-14 17:49:49,173 - INFO - Time taken to process Data/PriceData/BX.csv: 4.47 seconds
+2024-02-14 17:49:50,587 - INFO - Time taken to process Data/PriceData/NVS.csv: 6.81 seconds
+2024-02-14 17:49:51,085 - INFO - Time taken to process Data/PriceData/COP.csv: 7.75 seconds
+2024-02-14 17:49:53,153 - INFO - Time taken to process Data/PriceData/JNJ.csv: 6.25 seconds
+2024-02-14 17:49:53,492 - INFO - Time taken to process Data/PriceData/V.csv: 4.54 seconds
+2024-02-14 17:49:55,509 - INFO - Time taken to process Data/PriceData/CSLLY.csv: 4.42 seconds
+2024-02-14 17:49:56,596 - INFO - Time taken to process Data/PriceData/PLD.csv: 7.52 seconds
+2024-02-14 17:49:56,991 - INFO - Time taken to process Data/PriceData/AZN.csv: 7.81 seconds
+2024-02-14 17:49:57,257 - INFO - Time taken to process Data/PriceData/PGR.csv: 6.65 seconds
+2024-02-14 17:50:00,124 - INFO - Time taken to process Data/PriceData/CI.csv: 6.97 seconds
+2024-02-14 17:50:01,432 - INFO - Time taken to process Data/PriceData/ORCL.csv: 7.94 seconds
+2024-02-14 17:50:02,532 - INFO - Time taken to process Data/PriceData/INTU.csv: 7.02 seconds
+2024-02-14 17:50:03,036 - INFO - Time taken to process Data/PriceData/XOM.csv: 6.44 seconds
+2024-02-14 17:50:03,834 - INFO - Time taken to process Data/PriceData/LRCX.csv: 6.84 seconds
+2024-02-14 17:50:04,596 - INFO - Time taken to process Data/PriceData/MRK.csv: 7.34 seconds
+2024-02-14 17:50:05,758 - INFO - Time taken to process Data/PriceData/QQQ.csv: 5.63 seconds
+2024-02-14 17:50:06,121 - INFO - Time taken to process Data/PriceData/UBER.csv: 2.28 seconds
+2024-02-14 17:50:06,992 - INFO - Time taken to process Data/PriceData/NFLX.csv: 5.56 seconds
+2024-02-14 17:50:08,296 - INFO - Time taken to process Data/PriceData/AMT.csv: 5.76 seconds
+2024-02-14 17:50:08,396 - INFO - Time taken to process Data/PriceData/ACN.csv: 5.36 seconds
+2024-02-14 17:50:09,945 - INFO - Time taken to process Data/PriceData/BABA.csv: 3.82 seconds
+2024-02-14 17:50:11,264 - INFO - Time taken to process Data/PriceData/SAP.csv: 6.66 seconds
+2024-02-14 17:50:12,676 - INFO - Time taken to process Data/PriceData/ABBNY.csv: 4.38 seconds
+2024-02-14 17:50:12,804 - INFO - Time taken to process Data/PriceData/AMAT.csv: 7.05 seconds
+2024-02-14 17:50:13,323 - INFO - Time taken to process Data/PriceData/ELV.csv: 4.93 seconds
+2024-02-14 17:50:13,509 - INFO - Time taken to process Data/PriceData/AMGN.csv: 6.51 seconds
+2024-02-14 17:50:14,264 - INFO - Time taken to process Data/PriceData/TMUS.csv: 4.32 seconds
+2024-02-14 17:50:17,549 - INFO - Time taken to process Data/PriceData/AMZN.csv: 6.28 seconds
+2024-02-14 17:50:19,599 - INFO - Time taken to process Data/PriceData/CAT.csv: 6.92 seconds
+2024-02-14 17:50:19,732 - INFO - Time taken to process Data/PriceData/MDT.csv: 6.92 seconds
+2024-02-14 17:50:20,256 - INFO - Time taken to process Data/PriceData/NEE.csv: 6.93 seconds
+2024-02-14 17:50:20,613 - INFO - Time taken to process Data/PriceData/CVX.csv: 7.09 seconds
+2024-02-14 17:50:21,511 - INFO - Time taken to process Data/PriceData/LLY.csv: 7.25 seconds
+2024-02-14 17:50:23,331 - INFO - Time taken to process Data/PriceData/CRM.csv: 5.78 seconds
+2024-02-14 17:50:25,262 - INFO - Time taken to process Data/PriceData/SNY.csv: 5.66 seconds
+2024-02-14 17:50:25,619 - INFO - Time taken to process Data/PriceData/UBS.csv: 5.88 seconds
+2024-02-14 17:50:28,379 - INFO - Time taken to process Data/PriceData/CSCO.csv: 7.77 seconds
+2024-02-14 17:50:28,410 - INFO - Time taken to process Data/PriceData/UNH.csv: 6.88 seconds
+2024-02-14 17:50:28,469 - INFO - Time taken to process Data/PriceData/ADP.csv: 8.21 seconds
+2024-02-14 17:50:28,647 - INFO - Time taken to process Data/PriceData/GILD.csv: 5.31 seconds
+2024-02-14 17:50:32,274 - INFO - Time taken to process Data/PriceData/GSK.csv: 7.01 seconds
+2024-02-14 17:50:33,118 - INFO - Time taken to process Data/PriceData/LVMUY.csv: 4.74 seconds
+2024-02-14 17:50:33,310 - INFO - Time taken to process Data/PriceData/GOOGL.csv: 4.90 seconds
+2024-02-14 17:50:33,432 - INFO - Time taken to process Data/PriceData/DE.csv: 7.81 seconds
+2024-02-14 17:50:35,492 - INFO - Time taken to process Data/PriceData/PEP.csv: 7.02 seconds
+2024-02-14 17:50:35,961 - INFO - Time taken to process Data/PriceData/UNP.csv: 7.31 seconds
+2024-02-14 17:50:37,217 - INFO - Time taken to process Data/PriceData/TSLA.csv: 4.94 seconds
+2024-02-14 17:50:39,947 - INFO - Time taken to process Data/PriceData/MCD.csv: 6.63 seconds
+2024-02-14 17:50:40,038 - INFO - Time taken to process Data/PriceData/ADBE.csv: 6.60 seconds
+2024-02-14 17:50:40,053 - INFO - Time taken to process Data/PriceData/KO.csv: 6.93 seconds
+2024-02-14 17:50:41,889 - INFO - Time taken to process Data/PriceData/SPY.csv: 6.39 seconds
+2024-02-14 17:50:42,315 - INFO - Time taken to process Data/PriceData/DEO.csv: 6.34 seconds
+2024-02-14 17:50:43,164 - INFO - Time taken to process Data/PriceData/MUFG.csv: 5.95 seconds
+2024-02-14 17:50:44,498 - INFO - Time taken to process Data/PriceData/RTNTF.csv: 4.46 seconds
+2024-02-14 17:50:45,984 - INFO - Time taken to process Data/PriceData/IBN.csv: 5.93 seconds
+2024-02-14 17:50:46,347 - INFO - Time taken to process Data/PriceData/PDD.csv: 1.85 seconds
+2024-02-14 17:50:47,461 - INFO - Time taken to process Data/PriceData/AAPL.csv: 7.51 seconds
+2024-02-14 17:50:49,051 - INFO - Time taken to process Data/PriceData/HON.csv: 7.16 seconds
+2024-02-14 17:50:49,312 - INFO - Time taken to process Data/PriceData/MMC.csv: 6.99 seconds
+2024-02-14 17:50:49,450 - INFO - Time taken to process Data/PriceData/MS.csv: 6.29 seconds
+2024-02-14 17:50:51,467 - INFO - Time taken to process Data/PriceData/TOELY.csv: 5.12 seconds
+2024-02-14 17:50:52,641 - INFO - Time taken to process Data/PriceData/UPS.csv: 6.66 seconds
+2024-02-14 17:50:54,010 - INFO - Time taken to process Data/PriceData/MELI.csv: 4.56 seconds
+2024-02-14 17:50:54,182 - INFO - Time taken to process Data/PriceData/SYK.csv: 6.72 seconds
+2024-02-14 17:50:55,635 - INFO - Time taken to process Data/PriceData/JPM.csv: 6.58 seconds
+2024-02-14 17:50:56,087 - INFO - Time taken to process Data/PriceData/SHOP.csv: 3.44 seconds
+2024-02-14 17:50:56,932 - INFO - Time taken to process Data/PriceData/CMCSA.csv: 7.62 seconds
+2024-02-14 17:50:57,835 - INFO - Time taken to process Data/PriceData/SBUX.csv: 6.37 seconds
+2024-02-14 17:50:59,054 - INFO - Time taken to process Data/PriceData/RTX.csv: 5.04 seconds
+2024-02-14 17:50:59,096 - INFO - Time taken to process Data/PriceData/BUD.csv: 3.01 seconds
+2024-02-14 17:50:59,171 - INFO - Time taken to process Data/PriceData/BAC.csv: 4.99 seconds
+2024-02-14 17:50:59,250 - INFO - Time taken to process Data/PriceData/BRK-B.csv: 3.61 seconds
+2024-02-14 17:50:59,252 - INFO - Average time taken to process each file: 3.11 seconds
+2024-02-14 17:54:23,148 - INFO - Time taken to process Data/PriceData/ADI.csv: 7.27 seconds
+2024-02-14 17:54:23,215 - INFO - Time taken to process Data/PriceData/WFC.csv: 7.34 seconds
+2024-02-14 17:54:23,270 - INFO - Time taken to process Data/PriceData/T.csv: 7.37 seconds
+2024-02-14 17:54:23,294 - INFO - Time taken to process Data/PriceData/FI.csv: 7.42 seconds
+2024-02-14 17:54:23,435 - INFO - Time taken to process Data/PriceData/NVO.csv: 7.56 seconds
+2024-02-14 17:54:23,450 - INFO - Time taken to process Data/PriceData/BHP.csv: 7.58 seconds
+2024-02-14 17:54:27,487 - INFO - Time taken to process Data/PriceData/ABBV.csv: 4.27 seconds
+2024-02-14 17:54:29,850 - INFO - Time taken to process Data/PriceData/HDB.csv: 6.41 seconds
+2024-02-14 17:54:31,364 - INFO - Time taken to process Data/PriceData/META.csv: 3.88 seconds
+2024-02-14 17:54:31,464 - INFO - Time taken to process Data/PriceData/TM.csv: 8.31 seconds
+2024-02-14 17:54:31,754 - INFO - Time taken to process Data/PriceData/LIN.csv: 8.30 seconds
+2024-02-14 17:54:31,988 - INFO - Time taken to process Data/PriceData/TMO.csv: 8.71 seconds
+2024-02-14 17:54:32,046 - INFO - Time taken to process Data/PriceData/QCOM.csv: 8.75 seconds
+2024-02-14 17:54:34,997 - INFO - Time taken to process Data/PriceData/ABNB.csv: 3.24 seconds
+2024-02-14 17:54:37,176 - INFO - Time taken to process Data/PriceData/FMX.csv: 7.33 seconds
+2024-02-14 17:54:38,428 - INFO - Time taken to process Data/PriceData/SHEL.csv: 7.06 seconds
+2024-02-14 17:54:39,223 - INFO - Time taken to process Data/PriceData/C.csv: 7.76 seconds
+2024-02-14 17:54:39,951 - INFO - Time taken to process Data/PriceData/ETN.csv: 7.96 seconds
+2024-02-14 17:54:40,005 - INFO - Time taken to process Data/PriceData/HD.csv: 7.96 seconds
+2024-02-14 17:54:42,577 - INFO - Time taken to process Data/PriceData/VZ.csv: 7.58 seconds
+2024-02-14 17:54:44,227 - INFO - Time taken to process Data/PriceData/ABT.csv: 7.04 seconds
+2024-02-14 17:54:45,761 - INFO - Time taken to process Data/PriceData/LMT.csv: 7.33 seconds
+2024-02-14 17:54:46,845 - INFO - Time taken to process Data/PriceData/MU.csv: 7.62 seconds
+2024-02-14 17:54:47,500 - INFO - Time taken to process Data/PriceData/CVS.csv: 7.55 seconds
+2024-02-14 17:54:47,641 - INFO - Time taken to process Data/PriceData/BMY.csv: 7.63 seconds
+2024-02-14 17:54:48,375 - INFO - Time taken to process Data/PriceData/RY.csv: 5.80 seconds
+2024-02-14 17:54:50,702 - INFO - Time taken to process Data/PriceData/REGN.csv: 6.47 seconds
+2024-02-14 17:54:51,430 - INFO - Time taken to process Data/PriceData/ISRG.csv: 5.67 seconds
+2024-02-14 17:54:52,616 - INFO - Time taken to process Data/PriceData/NOW.csv: 4.24 seconds
+2024-02-14 17:54:54,727 - INFO - Time taken to process Data/PriceData/MSFT.csv: 7.88 seconds
+2024-02-14 17:54:55,650 - INFO - Time taken to process Data/PriceData/DIS.csv: 8.15 seconds
+2024-02-14 17:54:55,788 - INFO - Time taken to process Data/PriceData/WMT.csv: 8.14 seconds
+2024-02-14 17:54:58,276 - INFO - Time taken to process Data/PriceData/AXP.csv: 7.57 seconds
+2024-02-14 17:54:59,664 - INFO - Time taken to process Data/PriceData/TXN.csv: 8.23 seconds
+2024-02-14 17:55:00,123 - INFO - Time taken to process Data/PriceData/PG.csv: 7.51 seconds
+2024-02-14 17:55:02,126 - INFO - Time taken to process Data/PriceData/GS.csv: 7.40 seconds
+2024-02-14 17:55:02,166 - INFO - Time taken to process Data/PriceData/ZTS.csv: 3.88 seconds
+2024-02-14 17:55:04,578 - INFO - Time taken to process Data/PriceData/INTC.csv: 8.93 seconds
+2024-02-14 17:55:05,000 - INFO - Time taken to process Data/PriceData/COST.csv: 9.21 seconds
+2024-02-14 17:55:06,726 - INFO - Time taken to process Data/PriceData/PANW.csv: 4.56 seconds
+2024-02-14 17:55:06,899 - INFO - Time taken to process Data/PriceData/CB.csv: 7.24 seconds
+2024-02-14 17:55:07,751 - INFO - Time taken to process Data/PriceData/TJX.csv: 7.63 seconds
+2024-02-14 17:55:09,773 - INFO - Time taken to process Data/PriceData/GE.csv: 7.65 seconds
+2024-02-14 17:55:11,591 - INFO - Time taken to process Data/PriceData/UL.csv: 7.01 seconds
+2024-02-14 17:55:12,905 - INFO - Time taken to process Data/PriceData/SONY.csv: 7.90 seconds
+2024-02-14 17:55:13,233 - INFO - Time taken to process Data/PriceData/NVDA.csv: 6.33 seconds
+2024-02-14 17:55:13,743 - INFO - Time taken to process Data/PriceData/SCHW.csv: 7.01 seconds
+2024-02-14 17:55:14,489 - INFO - Time taken to process Data/PriceData/TTE.csv: 6.73 seconds
+2024-02-14 17:55:15,044 - INFO - Time taken to process Data/PriceData/EQNR.csv: 5.27 seconds
+2024-02-14 17:55:17,647 - INFO - Time taken to process Data/PriceData/AVGO.csv: 4.74 seconds
+2024-02-14 17:55:18,971 - INFO - Time taken to process Data/PriceData/RIO.csv: 7.38 seconds
+2024-02-14 17:55:20,135 - INFO - Time taken to process Data/PriceData/PBR.csv: 6.39 seconds
+2024-02-14 17:55:20,389 - INFO - Time taken to process Data/PriceData/LTMAY.csv: 7.15 seconds
+2024-02-14 17:55:22,477 - INFO - Time taken to process Data/PriceData/BSX.csv: 7.43 seconds
+2024-02-14 17:55:22,498 - INFO - Time taken to process Data/PriceData/LOW.csv: 8.01 seconds
+2024-02-14 17:55:25,712 - INFO - Time taken to process Data/PriceData/BLK.csv: 6.74 seconds
+2024-02-14 17:55:25,886 - INFO - Time taken to process Data/PriceData/BKNG.csv: 8.24 seconds
+2024-02-14 17:55:27,020 - INFO - Time taken to process Data/PriceData/MDLZ.csv: 6.62 seconds
+2024-02-14 17:55:27,368 - INFO - Time taken to process Data/PriceData/CNI.csv: 7.23 seconds
+2024-02-14 17:55:28,084 - INFO - Time taken to process Data/PriceData/BNPQY.csv: 5.60 seconds
+2024-02-14 17:55:29,354 - INFO - Time taken to process Data/PriceData/TD.csv: 6.86 seconds
+2024-02-14 17:55:32,446 - INFO - Time taken to process Data/PriceData/EADSY.csv: 5.43 seconds
+2024-02-14 17:55:33,757 - INFO - Time taken to process Data/PriceData/TSM.csv: 6.39 seconds
+2024-02-14 17:55:33,877 - INFO - Time taken to process Data/PriceData/ASML.csv: 5.79 seconds
+2024-02-14 17:55:33,928 - INFO - Time taken to process Data/PriceData/BP.csv: 8.21 seconds
+2024-02-14 17:55:34,116 - INFO - Time taken to process Data/PriceData/HSBC.csv: 4.76 seconds
+2024-02-14 17:55:34,207 - INFO - Time taken to process Data/PriceData/IBM.csv: 8.32 seconds
+2024-02-14 17:55:38,633 - INFO - Time taken to process Data/PriceData/PM.csv: 4.70 seconds
+2024-02-14 17:55:39,003 - INFO - Time taken to process Data/PriceData/MA.csv: 4.79 seconds
+2024-02-14 17:55:39,209 - INFO - Time taken to process Data/PriceData/NKE.csv: 6.76 seconds
+2024-02-14 17:55:41,363 - INFO - Time taken to process Data/PriceData/AMD.csv: 7.60 seconds
+2024-02-14 17:55:41,685 - INFO - Time taken to process Data/PriceData/SPGI.csv: 7.81 seconds
+2024-02-14 17:55:42,124 - INFO - Time taken to process Data/PriceData/DHR.csv: 8.01 seconds
+2024-02-14 17:55:45,685 - INFO - Time taken to process Data/PriceData/BX.csv: 3.99 seconds
+2024-02-14 17:55:46,041 - INFO - Time taken to process Data/PriceData/PFE.csv: 7.41 seconds
+2024-02-14 17:55:46,057 - INFO - Time taken to process Data/PriceData/VRTX.csv: 7.05 seconds
+2024-02-14 17:55:46,561 - INFO - Time taken to process Data/PriceData/NVS.csv: 5.19 seconds
+2024-02-14 17:55:46,600 - INFO - Time taken to process Data/PriceData/COP.csv: 7.39 seconds
+2024-02-14 17:55:49,001 - INFO - Time taken to process Data/PriceData/JNJ.csv: 6.87 seconds
+2024-02-14 17:55:50,412 - INFO - Time taken to process Data/PriceData/V.csv: 4.72 seconds
+2024-02-14 17:55:51,728 - INFO - Time taken to process Data/PriceData/CSLLY.csv: 5.13 seconds
+2024-02-14 17:55:52,560 - INFO - Time taken to process Data/PriceData/PLD.csv: 6.51 seconds
+2024-02-14 17:55:54,346 - INFO - Time taken to process Data/PriceData/AZN.csv: 8.28 seconds
+2024-02-14 17:55:54,609 - INFO - Time taken to process Data/PriceData/PGR.csv: 8.05 seconds
+2024-02-14 17:55:56,231 - INFO - Time taken to process Data/PriceData/CI.csv: 7.23 seconds
+2024-02-14 17:55:57,384 - INFO - Time taken to process Data/PriceData/ORCL.csv: 6.97 seconds
+2024-02-14 17:55:58,902 - INFO - Time taken to process Data/PriceData/INTU.csv: 7.17 seconds
+2024-02-14 17:56:00,074 - INFO - Time taken to process Data/PriceData/XOM.csv: 7.51 seconds
+2024-02-14 17:56:01,550 - INFO - Time taken to process Data/PriceData/LRCX.csv: 7.20 seconds
+2024-02-14 17:56:01,612 - INFO - Time taken to process Data/PriceData/QQQ.csv: 5.38 seconds
+2024-02-14 17:56:02,052 - INFO - Time taken to process Data/PriceData/MRK.csv: 7.44 seconds
+2024-02-14 17:56:02,148 - INFO - Time taken to process Data/PriceData/NFLX.csv: 4.76 seconds
+2024-02-14 17:56:04,383 - INFO - Time taken to process Data/PriceData/UBER.csv: 2.83 seconds
+2024-02-14 17:56:04,971 - INFO - Time taken to process Data/PriceData/AMT.csv: 6.07 seconds
+2024-02-14 17:56:05,774 - INFO - Time taken to process Data/PriceData/ACN.csv: 5.70 seconds
+2024-02-14 17:56:06,450 - INFO - Time taken to process Data/PriceData/BABA.csv: 4.30 seconds
+2024-02-14 17:56:07,471 - INFO - Time taken to process Data/PriceData/SAP.csv: 5.86 seconds
+2024-02-14 17:56:09,134 - INFO - Time taken to process Data/PriceData/AMAT.csv: 7.06 seconds
+2024-02-14 17:56:10,984 - INFO - Time taken to process Data/PriceData/ELV.csv: 5.21 seconds
+2024-02-14 17:56:11,060 - INFO - Time taken to process Data/PriceData/TMUS.csv: 4.61 seconds
+2024-02-14 17:56:11,093 - INFO - Time taken to process Data/PriceData/ABBNY.csv: 6.12 seconds
+2024-02-14 17:56:11,467 - INFO - Time taken to process Data/PriceData/AMGN.csv: 7.08 seconds
+2024-02-14 17:56:14,209 - INFO - Time taken to process Data/PriceData/AMZN.csv: 6.73 seconds
+2024-02-14 17:56:16,211 - INFO - Time taken to process Data/PriceData/CAT.csv: 7.08 seconds
+2024-02-14 17:56:17,939 - INFO - Time taken to process Data/PriceData/MDT.csv: 6.95 seconds
+2024-02-14 17:56:18,249 - INFO - Time taken to process Data/PriceData/CRM.csv: 4.04 seconds
+2024-02-14 17:56:18,309 - INFO - Time taken to process Data/PriceData/NEE.csv: 7.25 seconds
+2024-02-14 17:56:18,413 - INFO - Time taken to process Data/PriceData/CVX.csv: 7.32 seconds
+2024-02-14 17:56:18,842 - INFO - Time taken to process Data/PriceData/LLY.csv: 7.38 seconds
+2024-02-14 17:56:21,980 - INFO - Time taken to process Data/PriceData/SNY.csv: 5.77 seconds
+2024-02-14 17:56:24,198 - INFO - Time taken to process Data/PriceData/UBS.csv: 6.25 seconds
+2024-02-14 17:56:25,909 - INFO - Time taken to process Data/PriceData/ADP.csv: 7.66 seconds
+2024-02-14 17:56:26,039 - INFO - Time taken to process Data/PriceData/CSCO.csv: 7.73 seconds
+2024-02-14 17:56:26,091 - INFO - Time taken to process Data/PriceData/GILD.csv: 7.22 seconds
+2024-02-14 17:56:26,202 - INFO - Time taken to process Data/PriceData/UNH.csv: 7.79 seconds
+2024-02-14 17:56:28,529 - INFO - Time taken to process Data/PriceData/GSK.csv: 6.55 seconds
+2024-02-14 17:56:30,458 - INFO - Time taken to process Data/PriceData/LVMUY.csv: 4.55 seconds
+2024-02-14 17:56:31,201 - INFO - Time taken to process Data/PriceData/GOOGL.csv: 5.16 seconds
+2024-02-14 17:56:31,507 - INFO - Time taken to process Data/PriceData/DE.csv: 7.30 seconds
+2024-02-14 17:56:31,892 - INFO - Time taken to process Data/PriceData/TSLA.csv: 3.36 seconds
+2024-02-14 17:56:34,169 - INFO - Time taken to process Data/PriceData/UNP.csv: 7.96 seconds
+2024-02-14 17:56:34,175 - INFO - Time taken to process Data/PriceData/PEP.csv: 8.08 seconds
+2024-02-14 17:56:37,339 - INFO - Time taken to process Data/PriceData/KO.csv: 6.88 seconds
+2024-02-14 17:56:38,839 - INFO - Time taken to process Data/PriceData/MCD.csv: 7.63 seconds
+2024-02-14 17:56:39,050 - INFO - Time taken to process Data/PriceData/ADBE.csv: 7.54 seconds
+2024-02-14 17:56:39,074 - INFO - Time taken to process Data/PriceData/SPY.csv: 7.18 seconds
+2024-02-14 17:56:39,289 - INFO - Time taken to process Data/PriceData/MUFG.csv: 5.11 seconds
+2024-02-14 17:56:41,886 - INFO - Time taken to process Data/PriceData/DEO.csv: 7.72 seconds
+2024-02-14 17:56:43,737 - INFO - Time taken to process Data/PriceData/RTNTF.csv: 4.90 seconds
+2024-02-14 17:56:44,561 - INFO - Time taken to process Data/PriceData/AAPL.csv: 7.22 seconds
+2024-02-14 17:56:44,786 - INFO - Time taken to process Data/PriceData/IBN.csv: 5.74 seconds
+2024-02-14 17:56:46,200 - INFO - Time taken to process Data/PriceData/PDD.csv: 2.46 seconds
+2024-02-14 17:56:46,300 - INFO - Time taken to process Data/PriceData/HON.csv: 7.23 seconds
+2024-02-14 17:56:46,482 - INFO - Time taken to process Data/PriceData/MMC.csv: 7.19 seconds
+2024-02-14 17:56:48,161 - INFO - Time taken to process Data/PriceData/MS.csv: 6.27 seconds
+2024-02-14 17:56:50,076 - INFO - Time taken to process Data/PriceData/TOELY.csv: 5.29 seconds
+2024-02-14 17:56:50,495 - INFO - Time taken to process Data/PriceData/UPS.csv: 5.93 seconds
+2024-02-14 17:56:52,240 - INFO - Time taken to process Data/PriceData/MELI.csv: 4.07 seconds
+2024-02-14 17:56:53,492 - INFO - Time taken to process Data/PriceData/SYK.csv: 7.29 seconds
+2024-02-14 17:56:53,895 - INFO - Time taken to process Data/PriceData/JPM.csv: 7.59 seconds
+2024-02-14 17:56:53,897 - INFO - Time taken to process Data/PriceData/CMCSA.csv: 7.41 seconds
+2024-02-14 17:56:54,765 - INFO - Time taken to process Data/PriceData/SHOP.csv: 4.27 seconds
+2024-02-14 17:56:56,475 - INFO - Time taken to process Data/PriceData/SBUX.csv: 6.40 seconds
+2024-02-14 17:56:57,021 - INFO - Time taken to process Data/PriceData/RTX.csv: 4.78 seconds
+2024-02-14 17:56:57,340 - INFO - Time taken to process Data/PriceData/BUD.csv: 3.44 seconds
+2024-02-14 17:56:57,899 - INFO - Time taken to process Data/PriceData/BRK-B.csv: 4.00 seconds
+2024-02-14 17:56:57,918 - INFO - Time taken to process Data/PriceData/BAC.csv: 4.42 seconds
+2024-02-14 17:56:57,919 - INFO - Average time taken to process each file: 3.20 seconds
+2024-02-14 18:11:42,715 - ERROR - Error processing Data/PriceData/FI.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,718 - ERROR - Error processing Data/PriceData/WFC.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,721 - ERROR - Error processing Data/PriceData/ADI.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,730 - ERROR - Error processing Data/PriceData/NVO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,732 - ERROR - Error processing Data/PriceData/BHP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,737 - ERROR - Error processing Data/PriceData/T.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,759 - ERROR - Error processing Data/PriceData/ABBV.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,829 - ERROR - Error processing Data/PriceData/LIN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,835 - ERROR - Error processing Data/PriceData/META.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,838 - ERROR - Error processing Data/PriceData/TMO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,839 - ERROR - Error processing Data/PriceData/HDB.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,839 - ERROR - Error processing Data/PriceData/TM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,843 - ERROR - Error processing Data/PriceData/QCOM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,876 - ERROR - Error processing Data/PriceData/ABNB.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,925 - ERROR - Error processing Data/PriceData/C.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,960 - ERROR - Error processing Data/PriceData/FMX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,973 - ERROR - Error processing Data/PriceData/HD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,976 - ERROR - Error processing Data/PriceData/SHEL.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:42,997 - ERROR - Error processing Data/PriceData/ETN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,013 - ERROR - Error processing Data/PriceData/ABT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,018 - ERROR - Error processing Data/PriceData/VZ.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,105 - ERROR - Error processing Data/PriceData/REGN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,109 - ERROR - Error processing Data/PriceData/CVS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,120 - ERROR - Error processing Data/PriceData/RY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,124 - ERROR - Error processing Data/PriceData/LMT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,144 - ERROR - Error processing Data/PriceData/BMY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,146 - ERROR - Error processing Data/PriceData/MU.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,215 - ERROR - Error processing Data/PriceData/NOW.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,222 - ERROR - Error processing Data/PriceData/ISRG.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,223 - ERROR - Error processing Data/PriceData/DIS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,236 - ERROR - Error processing Data/PriceData/MSFT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,252 - ERROR - Error processing Data/PriceData/WMT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,269 - ERROR - Error processing Data/PriceData/AXP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,280 - ERROR - Error processing Data/PriceData/GS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,315 - ERROR - Error processing Data/PriceData/PG.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,321 - ERROR - Error processing Data/PriceData/TXN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,324 - ERROR - Error processing Data/PriceData/INTC.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,338 - ERROR - Error processing Data/PriceData/ZTS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,343 - ERROR - Error processing Data/PriceData/COST.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,349 - ERROR - Error processing Data/PriceData/CB.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,379 - ERROR - Error processing Data/PriceData/PANW.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,382 - ERROR - Error processing Data/PriceData/TJX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,421 - ERROR - Error processing Data/PriceData/GE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,422 - ERROR - Error processing Data/PriceData/SONY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,426 - ERROR - Error processing Data/PriceData/SCHW.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,447 - ERROR - Error processing Data/PriceData/UL.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,452 - ERROR - Error processing Data/PriceData/NVDA.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,454 - ERROR - Error processing Data/PriceData/TTE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,491 - ERROR - Error processing Data/PriceData/EQNR.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,508 - ERROR - Error processing Data/PriceData/RIO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,511 - ERROR - Error processing Data/PriceData/AVGO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,527 - ERROR - Error processing Data/PriceData/PBR.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,531 - ERROR - Error processing Data/PriceData/LOW.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,539 - ERROR - Error processing Data/PriceData/LTMAY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,563 - ERROR - Error processing Data/PriceData/BSX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,577 - ERROR - Error processing Data/PriceData/BKNG.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,591 - ERROR - Error processing Data/PriceData/BLK.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,596 - ERROR - Error processing Data/PriceData/MDLZ.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,599 - ERROR - Error processing Data/PriceData/CNI.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,632 - ERROR - Error processing Data/PriceData/BNPQY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,649 - ERROR - Error processing Data/PriceData/TD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,654 - ERROR - Error processing Data/PriceData/EADSY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,682 - ERROR - Error processing Data/PriceData/TSM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,687 - ERROR - Error processing Data/PriceData/IBM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,697 - ERROR - Error processing Data/PriceData/BP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,721 - ERROR - Error processing Data/PriceData/ASML.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,732 - ERROR - Error processing Data/PriceData/HSBC.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,743 - ERROR - Error processing Data/PriceData/PM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,748 - ERROR - Error processing Data/PriceData/AMD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,753 - ERROR - Error processing Data/PriceData/SPGI.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,758 - ERROR - Error processing Data/PriceData/NKE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,816 - ERROR - Error processing Data/PriceData/MA.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,827 - ERROR - Error processing Data/PriceData/VRTX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,830 - ERROR - Error processing Data/PriceData/NVS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,836 - ERROR - Error processing Data/PriceData/PFE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,837 - ERROR - Error processing Data/PriceData/COP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,843 - ERROR - Error processing Data/PriceData/DHR.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,894 - ERROR - Error processing Data/PriceData/BX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,900 - ERROR - Error processing Data/PriceData/V.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,900 - ERROR - Error processing Data/PriceData/JNJ.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,906 - ERROR - Error processing Data/PriceData/PLD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,908 - ERROR - Error processing Data/PriceData/AZN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,931 - ERROR - Error processing Data/PriceData/CSLLY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,952 - ERROR - Error processing Data/PriceData/PGR.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,981 - ERROR - Error processing Data/PriceData/XOM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:43,996 - ERROR - Error processing Data/PriceData/INTU.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,010 - ERROR - Error processing Data/PriceData/CI.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,020 - ERROR - Error processing Data/PriceData/ORCL.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,025 - ERROR - Error processing Data/PriceData/LRCX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,030 - ERROR - Error processing Data/PriceData/QQQ.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,041 - ERROR - Error processing Data/PriceData/MRK.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,078 - ERROR - Error processing Data/PriceData/UBER.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,082 - ERROR - Error processing Data/PriceData/NFLX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,085 - ERROR - Error processing Data/PriceData/ACN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,088 - ERROR - Error processing Data/PriceData/SAP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,091 - ERROR - Error processing Data/PriceData/AMT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,122 - ERROR - Error processing Data/PriceData/BABA.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,122 - ERROR - Error processing Data/PriceData/AMAT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,168 - ERROR - Error processing Data/PriceData/AMGN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,175 - ERROR - Error processing Data/PriceData/TMUS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,177 - ERROR - Error processing Data/PriceData/ABBNY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,178 - ERROR - Error processing Data/PriceData/ELV.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,191 - ERROR - Error processing Data/PriceData/AMZN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,200 - ERROR - Error processing Data/PriceData/CAT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,245 - ERROR - Error processing Data/PriceData/MDT.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,250 - ERROR - Error processing Data/PriceData/NEE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,255 - ERROR - Error processing Data/PriceData/CRM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,262 - ERROR - Error processing Data/PriceData/LLY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,269 - ERROR - Error processing Data/PriceData/SNY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,285 - ERROR - Error processing Data/PriceData/CVX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,331 - ERROR - Error processing Data/PriceData/ADP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,342 - ERROR - Error processing Data/PriceData/UBS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,340 - ERROR - Error processing Data/PriceData/GSK.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,344 - ERROR - Error processing Data/PriceData/GILD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,349 - ERROR - Error processing Data/PriceData/UNH.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,354 - ERROR - Error processing Data/PriceData/CSCO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,403 - ERROR - Error processing Data/PriceData/LVMUY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,410 - ERROR - Error processing Data/PriceData/TSLA.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,418 - ERROR - Error processing Data/PriceData/UNP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,421 - ERROR - Error processing Data/PriceData/DE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,421 - ERROR - Error processing Data/PriceData/GOOGL.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,431 - ERROR - Error processing Data/PriceData/PEP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,490 - ERROR - Error processing Data/PriceData/MCD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,495 - ERROR - Error processing Data/PriceData/ADBE.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,503 - ERROR - Error processing Data/PriceData/KO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,509 - ERROR - Error processing Data/PriceData/MUFG.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,510 - ERROR - Error processing Data/PriceData/SPY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,538 - ERROR - Error processing Data/PriceData/DEO.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,549 - ERROR - Error processing Data/PriceData/IBN.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,555 - ERROR - Error processing Data/PriceData/RTNTF.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,588 - ERROR - Error processing Data/PriceData/PDD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,593 - ERROR - Error processing Data/PriceData/AAPL.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,607 - ERROR - Error processing Data/PriceData/HON.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,616 - ERROR - Error processing Data/PriceData/MS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,621 - ERROR - Error processing Data/PriceData/MMC.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,623 - ERROR - Error processing Data/PriceData/UPS.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,626 - ERROR - Error processing Data/PriceData/TOELY.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,677 - ERROR - Error processing Data/PriceData/JPM.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,692 - ERROR - Error processing Data/PriceData/SYK.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,693 - ERROR - Error processing Data/PriceData/SHOP.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,698 - ERROR - Error processing Data/PriceData/MELI.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,707 - ERROR - Error processing Data/PriceData/CMCSA.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,704 - ERROR - Error processing Data/PriceData/SBUX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,745 - ERROR - Error processing Data/PriceData/BRK-B.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,752 - ERROR - Error processing Data/PriceData/BAC.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,754 - ERROR - Error processing Data/PriceData/RTX.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,754 - ERROR - Error processing Data/PriceData/BUD.csv: local variable 'df' referenced before assignment
+2024-02-14 18:11:44,756 - INFO - Average time taken to process each file: 3.20 seconds
+2024-02-14 18:14:27,871 - INFO - Time taken to process Data/PriceData/ADI.csv: 7.05 seconds
+2024-02-14 18:14:28,206 - INFO - Time taken to process Data/PriceData/FI.csv: 7.38 seconds
+2024-02-14 18:14:28,258 - INFO - Time taken to process Data/PriceData/WFC.csv: 7.43 seconds
+2024-02-14 18:14:28,327 - INFO - Time taken to process Data/PriceData/NVO.csv: 7.50 seconds
+2024-02-14 18:14:28,427 - INFO - Time taken to process Data/PriceData/T.csv: 7.60 seconds
+2024-02-14 18:14:28,539 - INFO - Time taken to process Data/PriceData/BHP.csv: 7.71 seconds
+2024-02-14 18:14:32,697 - INFO - Time taken to process Data/PriceData/ABBV.csv: 4.49 seconds
+2024-02-14 18:14:35,238 - INFO - Time taken to process Data/PriceData/META.csv: 2.54 seconds
+2024-02-14 18:14:35,454 - INFO - Time taken to process Data/PriceData/HDB.csv: 7.02 seconds
+2024-02-14 18:14:35,641 - INFO - Time taken to process Data/PriceData/LIN.csv: 7.10 seconds
+2024-02-14 18:14:36,171 - INFO - Time taken to process Data/PriceData/QCOM.csv: 7.84 seconds
+2024-02-14 18:14:36,399 - INFO - Time taken to process Data/PriceData/TMO.csv: 8.14 seconds
+2024-02-14 18:14:36,981 - INFO - Time taken to process Data/PriceData/TM.csv: 9.11 seconds
+2024-02-14 18:14:39,659 - INFO - Time taken to process Data/PriceData/ABNB.csv: 3.49 seconds
+2024-02-14 18:14:42,047 - INFO - Time taken to process Data/PriceData/FMX.csv: 6.81 seconds
+2024-02-14 18:14:42,366 - INFO - Time taken to process Data/PriceData/SHEL.csv: 6.91 seconds
+2024-02-14 18:14:43,478 - INFO - Time taken to process Data/PriceData/C.csv: 7.83 seconds
+2024-02-14 18:14:44,606 - INFO - Time taken to process Data/PriceData/ETN.csv: 8.21 seconds
+2024-02-14 18:14:44,632 - INFO - Time taken to process Data/PriceData/HD.csv: 7.65 seconds
+2024-02-14 18:14:47,642 - INFO - Time taken to process Data/PriceData/VZ.csv: 7.98 seconds
+2024-02-14 18:14:49,006 - INFO - Time taken to process Data/PriceData/ABT.csv: 6.96 seconds
+2024-02-14 18:14:50,841 - INFO - Time taken to process Data/PriceData/LMT.csv: 8.47 seconds
+2024-02-14 18:14:51,065 - INFO - Time taken to process Data/PriceData/MU.csv: 7.59 seconds
+2024-02-14 18:14:53,044 - INFO - Time taken to process Data/PriceData/CVS.csv: 8.42 seconds
+2024-02-14 18:14:53,079 - INFO - Time taken to process Data/PriceData/BMY.csv: 8.44 seconds
+2024-02-14 18:14:54,518 - INFO - Time taken to process Data/PriceData/RY.csv: 6.87 seconds
+2024-02-14 18:14:55,883 - INFO - Time taken to process Data/PriceData/REGN.csv: 6.88 seconds
+2024-02-14 18:14:56,234 - INFO - Time taken to process Data/PriceData/ISRG.csv: 5.39 seconds
+2024-02-14 18:14:58,313 - INFO - Time taken to process Data/PriceData/MSFT.csv: 7.25 seconds
+2024-02-14 18:14:58,597 - INFO - Time taken to process Data/PriceData/NOW.csv: 4.08 seconds
+2024-02-14 18:15:00,685 - INFO - Time taken to process Data/PriceData/WMT.csv: 7.60 seconds
+2024-02-14 18:15:00,876 - INFO - Time taken to process Data/PriceData/DIS.csv: 7.83 seconds
+2024-02-14 18:15:02,564 - INFO - Time taken to process Data/PriceData/AXP.csv: 6.68 seconds
+2024-02-14 18:15:03,858 - INFO - Time taken to process Data/PriceData/TXN.csv: 7.62 seconds
+2024-02-14 18:15:05,062 - INFO - Time taken to process Data/PriceData/GS.csv: 6.46 seconds
+2024-02-14 18:15:05,368 - INFO - Time taken to process Data/PriceData/PG.csv: 7.05 seconds
+2024-02-14 18:15:06,182 - INFO - Time taken to process Data/PriceData/ZTS.csv: 3.62 seconds
+2024-02-14 18:15:08,759 - INFO - Time taken to process Data/PriceData/INTC.csv: 8.07 seconds
+2024-02-14 18:15:08,840 - INFO - Time taken to process Data/PriceData/COST.csv: 7.96 seconds
+2024-02-14 18:15:09,496 - INFO - Time taken to process Data/PriceData/CB.csv: 5.63 seconds
+2024-02-14 18:15:11,194 - INFO - Time taken to process Data/PriceData/PANW.csv: 4.99 seconds
+2024-02-14 18:15:13,427 - INFO - Time taken to process Data/PriceData/TJX.csv: 8.36 seconds
+2024-02-14 18:15:13,433 - INFO - Time taken to process Data/PriceData/GE.csv: 8.06 seconds
+2024-02-14 18:15:16,670 - INFO - Time taken to process Data/PriceData/SONY.csv: 7.83 seconds
+2024-02-14 18:15:16,679 - INFO - Time taken to process Data/PriceData/UL.csv: 7.92 seconds
+2024-02-14 18:15:16,738 - INFO - Time taken to process Data/PriceData/NVDA.csv: 5.54 seconds
+2024-02-14 18:15:17,043 - INFO - Time taken to process Data/PriceData/SCHW.csv: 7.55 seconds
+2024-02-14 18:15:19,040 - INFO - Time taken to process Data/PriceData/EQNR.csv: 5.61 seconds
+2024-02-14 18:15:21,725 - INFO - Time taken to process Data/PriceData/AVGO.csv: 5.04 seconds
+2024-02-14 18:15:22,036 - INFO - Time taken to process Data/PriceData/TTE.csv: 8.61 seconds
+2024-02-14 18:15:23,377 - INFO - Time taken to process Data/PriceData/LTMAY.csv: 6.64 seconds
+2024-02-14 18:15:23,449 - INFO - Time taken to process Data/PriceData/PBR.csv: 6.40 seconds
+2024-02-14 18:15:24,748 - INFO - Time taken to process Data/PriceData/RIO.csv: 8.07 seconds
+2024-02-14 18:15:28,132 - INFO - Time taken to process Data/PriceData/LOW.csv: 9.09 seconds
+2024-02-14 18:15:29,059 - INFO - Time taken to process Data/PriceData/BKNG.csv: 7.02 seconds
+2024-02-14 18:15:29,377 - INFO - Time taken to process Data/PriceData/BLK.csv: 5.99 seconds
+2024-02-14 18:15:29,491 - INFO - Time taken to process Data/PriceData/BSX.csv: 7.76 seconds
+2024-02-14 18:15:29,650 - INFO - Time taken to process Data/PriceData/MDLZ.csv: 4.90 seconds
+2024-02-14 18:15:29,820 - INFO - Time taken to process Data/PriceData/CNI.csv: 6.37 seconds
+2024-02-14 18:15:33,598 - INFO - Time taken to process Data/PriceData/BNPQY.csv: 5.46 seconds
+2024-02-14 18:15:34,109 - INFO - Time taken to process Data/PriceData/TD.csv: 5.04 seconds
+2024-02-14 18:15:35,856 - INFO - Time taken to process Data/PriceData/EADSY.csv: 6.20 seconds
+2024-02-14 18:15:37,184 - INFO - Time taken to process Data/PriceData/TSM.csv: 7.34 seconds
+2024-02-14 18:15:37,645 - INFO - Time taken to process Data/PriceData/BP.csv: 8.27 seconds
+2024-02-14 18:15:37,667 - INFO - Time taken to process Data/PriceData/IBM.csv: 8.17 seconds
+2024-02-14 18:15:39,598 - INFO - Time taken to process Data/PriceData/ASML.csv: 6.00 seconds
+2024-02-14 18:15:40,321 - INFO - Time taken to process Data/PriceData/HSBC.csv: 6.21 seconds
+2024-02-14 18:15:42,474 - INFO - Time taken to process Data/PriceData/PM.csv: 4.80 seconds
+2024-02-14 18:15:43,719 - INFO - Time taken to process Data/PriceData/NKE.csv: 7.86 seconds
+2024-02-14 18:15:44,107 - INFO - Time taken to process Data/PriceData/AMD.csv: 6.92 seconds
+2024-02-14 18:15:44,925 - INFO - Time taken to process Data/PriceData/MA.csv: 4.59 seconds
+2024-02-14 18:15:44,997 - INFO - Time taken to process Data/PriceData/SPGI.csv: 7.35 seconds
+2024-02-14 18:15:47,235 - INFO - Time taken to process Data/PriceData/DHR.csv: 7.64 seconds
+2024-02-14 18:15:49,662 - INFO - Time taken to process Data/PriceData/BX.csv: 4.66 seconds
+2024-02-14 18:15:49,736 - INFO - Time taken to process Data/PriceData/PFE.csv: 7.26 seconds
+2024-02-14 18:15:50,113 - INFO - Time taken to process Data/PriceData/VRTX.csv: 6.39 seconds
+2024-02-14 18:15:51,425 - INFO - Time taken to process Data/PriceData/NVS.csv: 6.50 seconds
+2024-02-14 18:15:51,772 - INFO - Time taken to process Data/PriceData/COP.csv: 7.66 seconds
+2024-02-14 18:15:54,100 - INFO - Time taken to process Data/PriceData/JNJ.csv: 6.86 seconds
+2024-02-14 18:15:54,197 - INFO - Time taken to process Data/PriceData/V.csv: 4.53 seconds
+2024-02-14 18:15:56,419 - INFO - Time taken to process Data/PriceData/CSLLY.csv: 4.64 seconds
+2024-02-14 18:15:56,759 - INFO - Time taken to process Data/PriceData/PLD.csv: 7.02 seconds
+2024-02-14 18:15:57,754 - INFO - Time taken to process Data/PriceData/AZN.csv: 7.63 seconds
+2024-02-14 18:15:58,690 - INFO - Time taken to process Data/PriceData/PGR.csv: 7.26 seconds
+2024-02-14 18:16:02,148 - INFO - Time taken to process Data/PriceData/CI.csv: 8.05 seconds
+2024-02-14 18:16:02,241 - INFO - Time taken to process Data/PriceData/ORCL.csv: 8.04 seconds
+2024-02-14 18:16:02,481 - INFO - Time taken to process Data/PriceData/INTU.csv: 6.06 seconds
+2024-02-14 18:16:03,936 - INFO - Time taken to process Data/PriceData/XOM.csv: 7.17 seconds
+2024-02-14 18:16:05,996 - INFO - Time taken to process Data/PriceData/LRCX.csv: 8.24 seconds
+2024-02-14 18:16:06,154 - INFO - Time taken to process Data/PriceData/MRK.csv: 7.46 seconds
+2024-02-14 18:16:07,602 - INFO - Time taken to process Data/PriceData/QQQ.csv: 5.45 seconds
+2024-02-14 18:16:07,685 - INFO - Time taken to process Data/PriceData/NFLX.csv: 5.44 seconds
+2024-02-14 18:16:08,936 - INFO - Time taken to process Data/PriceData/UBER.csv: 2.94 seconds
+2024-02-14 18:16:09,319 - INFO - Time taken to process Data/PriceData/AMT.csv: 6.83 seconds
+2024-02-14 18:16:10,083 - INFO - Time taken to process Data/PriceData/ACN.csv: 6.14 seconds
+2024-02-14 18:16:11,996 - INFO - Time taken to process Data/PriceData/BABA.csv: 4.31 seconds
+2024-02-14 18:16:12,753 - INFO - Time taken to process Data/PriceData/SAP.csv: 6.59 seconds
+2024-02-14 18:16:14,293 - INFO - Time taken to process Data/PriceData/AMAT.csv: 6.69 seconds
+2024-02-14 18:16:15,107 - INFO - Time taken to process Data/PriceData/ELV.csv: 5.02 seconds
+2024-02-14 18:16:15,189 - INFO - Time taken to process Data/PriceData/ABBNY.csv: 5.87 seconds
+2024-02-14 18:16:16,159 - INFO - Time taken to process Data/PriceData/TMUS.csv: 4.16 seconds
+2024-02-14 18:16:16,744 - INFO - Time taken to process Data/PriceData/AMGN.csv: 7.81 seconds
+2024-02-14 18:16:20,414 - INFO - Time taken to process Data/PriceData/AMZN.csv: 7.66 seconds
+2024-02-14 18:16:22,535 - INFO - Time taken to process Data/PriceData/CAT.csv: 8.24 seconds
+2024-02-14 18:16:25,154 - INFO - Time taken to process Data/PriceData/NEE.csv: 9.97 seconds
+2024-02-14 18:16:25,307 - INFO - Time taken to process Data/PriceData/MDT.csv: 10.20 seconds
+2024-02-14 18:16:25,556 - INFO - Time taken to process Data/PriceData/CRM.csv: 5.13 seconds
+2024-02-14 18:16:25,677 - INFO - Time taken to process Data/PriceData/CVX.csv: 9.50 seconds
+2024-02-14 18:16:27,910 - INFO - Time taken to process Data/PriceData/LLY.csv: 11.15 seconds
+2024-02-14 18:16:28,524 - INFO - Time taken to process Data/PriceData/SNY.csv: 5.99 seconds
+2024-02-14 18:16:32,404 - INFO - Time taken to process Data/PriceData/UBS.csv: 7.25 seconds
+2024-02-14 18:16:34,775 - INFO - Time taken to process Data/PriceData/ADP.csv: 9.46 seconds
+2024-02-14 18:16:35,645 - INFO - Time taken to process Data/PriceData/CSCO.csv: 10.09 seconds
+2024-02-14 18:16:35,693 - INFO - Time taken to process Data/PriceData/UNH.csv: 10.02 seconds
+2024-02-14 18:16:36,963 - INFO - Time taken to process Data/PriceData/GILD.csv: 9.05 seconds
+2024-02-14 18:16:37,328 - INFO - Time taken to process Data/PriceData/GSK.csv: 8.80 seconds
+2024-02-14 18:16:41,473 - INFO - Time taken to process Data/PriceData/LVMUY.csv: 6.70 seconds
+2024-02-14 18:16:41,885 - INFO - Time taken to process Data/PriceData/TSLA.csv: 4.56 seconds
+2024-02-14 18:16:41,920 - INFO - Time taken to process Data/PriceData/GOOGL.csv: 6.27 seconds
+2024-02-14 18:16:44,468 - INFO - Time taken to process Data/PriceData/DE.csv: 12.06 seconds
+2024-02-14 18:16:46,016 - INFO - Time taken to process Data/PriceData/PEP.csv: 10.32 seconds
+2024-02-14 18:16:46,477 - INFO - Time taken to process Data/PriceData/UNP.csv: 9.51 seconds
+2024-02-14 18:16:50,738 - INFO - Time taken to process Data/PriceData/KO.csv: 9.26 seconds
+2024-02-14 18:16:51,964 - INFO - Time taken to process Data/PriceData/ADBE.csv: 10.04 seconds
+2024-02-14 18:16:51,989 - INFO - Time taken to process Data/PriceData/MCD.csv: 10.10 seconds
+2024-02-14 18:16:52,046 - INFO - Time taken to process Data/PriceData/MUFG.csv: 5.56 seconds
+2024-02-14 18:16:52,277 - INFO - Time taken to process Data/PriceData/SPY.csv: 7.79 seconds
+2024-02-14 18:16:53,303 - INFO - Time taken to process Data/PriceData/DEO.csv: 7.28 seconds
+2024-02-14 18:16:56,391 - INFO - Time taken to process Data/PriceData/RTNTF.csv: 4.42 seconds
+2024-02-14 18:16:57,108 - INFO - Time taken to process Data/PriceData/AAPL.csv: 6.37 seconds
+2024-02-14 18:16:58,492 - INFO - Time taken to process Data/PriceData/PDD.csv: 2.10 seconds
+2024-02-14 18:16:59,226 - INFO - Time taken to process Data/PriceData/IBN.csv: 7.24 seconds
+2024-02-14 18:16:59,999 - INFO - Time taken to process Data/PriceData/MS.csv: 6.70 seconds
+2024-02-14 18:17:00,389 - INFO - Time taken to process Data/PriceData/HON.csv: 8.34 seconds
+2024-02-14 18:17:00,602 - INFO - Time taken to process Data/PriceData/MMC.csv: 8.32 seconds
+2024-02-14 18:17:03,155 - INFO - Time taken to process Data/PriceData/UPS.csv: 6.04 seconds
+2024-02-14 18:17:03,249 - INFO - Time taken to process Data/PriceData/TOELY.csv: 4.76 seconds
+2024-02-14 18:17:05,377 - INFO - Time taken to process Data/PriceData/MELI.csv: 4.76 seconds
+2024-02-14 18:17:06,287 - INFO - Time taken to process Data/PriceData/SHOP.csv: 3.04 seconds
+2024-02-14 18:17:06,573 - INFO - Time taken to process Data/PriceData/SYK.csv: 7.35 seconds
+2024-02-14 18:17:06,865 - INFO - Time taken to process Data/PriceData/JPM.csv: 6.86 seconds
+2024-02-14 18:17:08,504 - INFO - Time taken to process Data/PriceData/CMCSA.csv: 8.11 seconds
+2024-02-14 18:17:09,194 - INFO - Time taken to process Data/PriceData/SBUX.csv: 6.04 seconds
+2024-02-14 18:17:09,881 - INFO - Time taken to process Data/PriceData/RTX.csv: 4.50 seconds
+2024-02-14 18:17:10,213 - INFO - Time taken to process Data/PriceData/BUD.csv: 3.35 seconds
+2024-02-14 18:17:10,675 - INFO - Time taken to process Data/PriceData/BRK-B.csv: 4.08 seconds
+2024-02-14 18:17:10,760 - INFO - Time taken to process Data/PriceData/BAC.csv: 4.46 seconds
+2024-02-14 18:17:10,762 - INFO - Average time taken to process each file: 3.30 seconds
