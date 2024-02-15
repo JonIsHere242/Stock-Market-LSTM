@@ -8,7 +8,6 @@ import argparse
 import os
 import sys
 
-# Configuration
 CONFIG = {
     "url": "https://www.sec.gov/files/company_tickers_exchange.json",
     "csv_file_path": "Data/TickerCikData/TickerCIKs.csv",
