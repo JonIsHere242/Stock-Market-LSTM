@@ -76,9 +76,6 @@ def load_and_process_data(folder_path, target_column, shift_steps=1):
     return X, y
 
 
-
-
-
 def predict_with_confidence(model, X):
     """
     Make predictions with a confidence measure.
@@ -109,11 +106,10 @@ def train_random_forest(X, y):
     """
     try:
         X = check_array(X)
-        y = np.ravel(y)  # Ensuring y is a 1D array
+        y = np.ravel(y) 
 
-        # Configure the Random Forest Regressor with additional settings
         rf_model = RandomForestRegressor(
-            n_estimators=25,       # Adjust the number of trees
+            n_estimators=25,        # Adjust the number of trees
             max_depth=None,         # Adjust the maximum depth of the tree
             min_samples_split=2,    # Minimum number of samples required to split a node
             min_samples_leaf=1,     # Minimum number of samples required at each leaf node
@@ -133,8 +129,6 @@ def train_random_forest(X, y):
     except Exception as e:
         logging.error(f"Error in train_random_forest: {e}")
         return None
-
-
 
 
 
@@ -174,14 +168,11 @@ def process_and_save_individual_files(model, folder_path, output_folder, target_
                 file_path = os.path.join(folder_path, filename)
                 data = pd.read_csv(file_path)
 
-                # Preprocess the data
                 X = data[feature_columns]
 
-                # Make predictions
                 predictions = model.predict(X)
                 data['RF_Predictions'] = predictions
 
-                # Save the modified file
                 output_file_path = os.path.join(output_folder, filename)
                 data.to_csv(output_file_path, index=False)
                 logging.info(f"Predictions added and saved for file: {filename}")
@@ -242,7 +233,6 @@ def main():
     except Exception as e:
         logging.error(f"An error occurred: {e}")
 
-# ... [Rest of your functions like setup_logging, load_and_process_data, etc.] ...
 
 if __name__ == "__main__":
     setup_logging()
