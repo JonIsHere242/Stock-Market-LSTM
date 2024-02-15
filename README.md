@@ -1,38 +1,49 @@
-# Stock Market LSTM - Work in Progress
+# Stock Market Analysis and Prediction Using LSTM and Random Forest
 
-This project, currently under active development, is designed for comprehensive stock market analysis and prediction using technical indicators and a Long Short-Term Memory (LSTM) neural network model. The primary objective is to predict the percent change in stock prices based on historical data. This README outlines the main components of the project and future enhancements.
+This project provides a comprehensive approach to stock market analysis and prediction. It utilizes a combination of machine learning models, including Random Forest and Long Short-Term Memory (LSTM) neural networks, to predict stock price movements based on historical data. The workflow encompasses data fetching, preprocessing, indicator calculations, machine learning model training, and trading signal generation.
 
-## Current Features
+## Project Components
 
-- **Data Fetching and Preprocessing**: Utilizes Yahoo Finance to fetch historical stock data. Preprocessing includes calculating various technical indicators (like ATR, moving averages, VWAP, RSI, MACD) and merging macroeconomic data. Data is scaled and cleaned using various techniques.
+### Data Collection and Preprocessing
+- **SEC Ticker Download**: Fetches a list of tickers from the SEC.
+- **Historical Data Retrieval**: Downloads historical daily stock prices back to 1990 using Yahoo Finance.
+- **Data Preprocessing**: Includes scaling and cleaning of the data, calculation of various technical indicators, and data normalization.
 
-- **Technical Indicators Calculation**: Computes a range of indicators, focusing on volatility, moving averages, and price change percentages. Absolute price data in dollars is dropped to ensure the model's applicability to various stocks.
+### Indicator Calculations
+- Extensive calculations of technical indicators such as ATR, moving averages, VWAP, RSI, MACD, and others.
+- Utilizes Python libraries like Pandas and NumPy for efficient data manipulation and calculations.
 
-    ```py
-    df = df.drop(['Open', 'High', 'Low', 'Close', 'Adj Close',"VWAP","200DAY_ATR-","200DAY_ATR", 'Volume', 'atr', '200ma', '14ma'], axis=1)
-    ```
+### Machine Learning Models
+- **Random Forest**: A Random Forest Regressor is used to predict stock price movements.
+- **LSTM Neural Network**: Employs an LSTM model for predicting stock prices, incorporating features like Monte Carlo Dropout for better generalization.
 
-- **LSTM Model for Prediction**: A Sequential LSTM model predicts the percent change in stock closing price. The model incorporates LSTM, dropout, and dense layers, optimizing using callbacks like Early Stopping and ReduceLROnPlateau.
+### Trading Signal Generation
+- Generates trading signals based on the LSTM's predictions of future stock prices.
+- Includes validations to ensure the model's predictive power.
 
-- **Training and Validation**: The model is trained on a split dataset, with performance monitored using Mean Absolute Percentage Error (MAPE) for both training and validation sets.
-
-- **Post-Prediction Analysis**: Performance visualization using Plotly, including prediction error histograms and scaling back data for interpretability.
-
-- **Utility Functions**: Includes functions for data normalization, outlier handling, and error calculation.
-
-- **Execution Flow**: The main function manages data fetching, indicator computation, scaling, prediction, and result plotting, saving predictions and error metrics to CSV files.
+### Modular Codebase
+- The code has been modularized into separate files for better maintainability and scalability.
+- Includes utilities for logging, error handling, and file processing.
 
 ## Upcoming Enhancements
 
-- **Modularization**: Transitioning the existing code in "LSTM_Example" into separate, modular files for better maintainability and scalability.
+### Advanced Trading Interface
+- Integration of a sophisticated trading interface for executing trades based on model predictions, including setting stop losses and take profits.
 
-- **Automation**: Implementing scheduling capabilities to enable automatic execution of various components of the project.
+### Real-Time Market Adaptation
+- Implementing a real-time news scanner to adapt trading strategies in response to market-affecting events and news.
 
-- **Trading Interface Integration**: Integrating a trading interface to facilitate actual trading based on model predictions.
+### Model Optimization and Diversification
+- Continuous optimization of individual stock predictors.
+- Expansion of the LSTM model repository, feeding in the latest year's data for accurate next-day predictions.
 
-- **Backtesting Feature**: Incorporating a backtesting mechanism to evaluate the model's performance on historical data.
+### Automated Workflow
+- Full automation of the data fetching, processing, and trading signal generation processes.
+- Implementation of scheduling capabilities for automatic execution and updates.
+
+### Backtesting and Performance Analysis
+- Enhanced backtesting features to rigorously evaluate model performance over historical data.
+- Detailed performance analysis and visualization tools.
 
 ## Authors
-
 - [@JonIsHere242](https://github.com/JonIsHere242)
-
