@@ -43,49 +43,50 @@ def calculate_best_fit_slope(data, window_size):
     else:
         return 0  # No clear trend
 
-def adjust_predictions(predictions, data, window_size=5):
+
+def adjust_predictions(predictions, data, base_window_size=5):
     """
-    Further refined adjustment of predictions considering smoothing, dynamic thresholds, recent error trends, 
-    and conditional adjustments based on model confidence (if available).
+    Adjust predictions using a rolling window approach. The window size is dynamic, 
+    based on recent volatility. Predictions are capped at the 90th percentile of 
+    historical values within the rolling window.
+
+    Parameters:
+    predictions (np.array): Array of predicted values.
+    data (np.array): Array of actual historical values.
+    base_window_size (int): Base size of the rolling window.
+
+    Returns:
+    np.array: Adjusted predictions.
     """
     valid_data = data[~np.isnan(data)]
 
-    if len(valid_data) < window_size:
+    if len(valid_data) < base_window_size:
         logging.warning("Insufficient data for making adjustments.")
         return predictions
 
-    # Basic stats
-    long_term_mean = np.mean(valid_data)
-    recent_mean = np.mean(valid_data[-window_size:])
-    recent_std = np.std(valid_data[-window_size:])
-    max_abs_value = np.max(np.abs(valid_data))
-
     adjusted_predictions = predictions.copy()
+    rolling_window_size = base_window_size
 
-    # Dynamic Threshold for Mean Reversion
-    dynamic_threshold = recent_std * 1.5  # Adjust multiplier as needed
-    if abs(recent_mean - long_term_mean) > dynamic_threshold:
-        reversion_factor = 0.03  # Adjust as needed
-        adjusted_predictions += reversion_factor * (long_term_mean - recent_mean)
+    for i in range(len(predictions)):
+        # Adjust the rolling window size based on recent volatility
+        if i >= base_window_size:
+            recent_std = np.std(valid_data[i-base_window_size:i])
+            # Scale the window size based on volatility (this factor can be adjusted)
+            rolling_window_size = min(len(valid_data), max(base_window_size, int(base_window_size * (1 + recent_std))))
 
-    # Limiting Extreme Predictions Dynamically
-    dynamic_max_abs_value = max_abs_value * 1.1  # Adjust multiplier as needed
-    adjusted_predictions = np.clip(adjusted_predictions, -dynamic_max_abs_value, dynamic_max_abs_value)
+        # Calculate the 90th percentile in the rolling window
+        if i >= rolling_window_size:
+            rolling_window_data = valid_data[i-rolling_window_size:i]
+            cap_positive = np.percentile(rolling_window_data, 90)
+            cap_negative = np.percentile(rolling_window_data, 10)
 
-    # Volatility Scaling
-    volatility_factor = max(0, 1 - recent_std / np.std(valid_data))
-    adjusted_predictions *= volatility_factor
-
-    # Conditional Adjustments (if model confidence data is available)
-    # This would depend on additional data from your model (like confidence intervals)
+            # Cap the prediction
+            adjusted_predictions[i] = min(max(adjusted_predictions[i], cap_negative), cap_positive)
 
     ##log the number of times the prediction is within 10% of the actual value in absolute terms
-    logging.info(f"Prediction is within 10%: {np.sum(np.abs(predictions) <= 0.1 * np.abs(valid_data))}")
-
-
+    logging.info(f"Prediction is within 10%: {np.sum(np.abs(predictions - valid_data) <= 0.1 * np.abs(valid_data))}")
 
     return adjusted_predictions
-
 
 
 
@@ -108,6 +109,70 @@ def calculate_mean_percentage_error(target_data, predictions):
     if np.isnan(mean_error):
         logging.warning("Predictions are Nan")
     return mean_error
+
+
+def calculate_average_days_between_trades(actual_values, predictions):
+    trade_dates = []
+    successful_trade = False
+
+    for i in range(1, len(predictions)):  # Start from the second element
+        if abs((predictions[i-1] - actual_values[i-1]) / actual_values[i-1]) <= 0.1:
+            successful_trade = True
+
+        if successful_trade:
+            trade_dates.append(i)  # Assuming each index represents a day
+            successful_trade = False
+
+    if len(trade_dates) > 1:
+        intervals = [trade_dates[i] - trade_dates[i-1] for i in range(1, len(trade_dates))]
+        average_interval = sum(intervals) / len(intervals)
+        return average_interval
+    else:
+        return None
+
+
+
+def log_trade_outcomes_and_percentages(actual_values, predictions):
+    successful_trade = False
+    trade_wins = 0
+    trade_losses = 0
+    total_trades = 0
+    total_win_percentage = 0
+    total_loss_percentage = 0
+
+    for i in range(1, len(predictions)):  # Start from the second element
+        # Check if the previous prediction was within 10%
+        if abs((predictions[i-1] - actual_values[i-1]) / actual_values[i-1]) <= 0.1:
+            successful_trade = True
+
+        if successful_trade:
+            # Determine the direction of the prediction and the actual change
+            predicted_change = predictions[i] - predictions[i-1]
+            actual_change = actual_values[i] - actual_values[i-1]
+
+            # Determine if the trade is a win or a loss
+            if (predicted_change > 0 and actual_change > 0) or (predicted_change < 0 and actual_change < 0):
+                trade_wins += 1
+                # Calculate the percentage change correctly
+                win_percentage = (actual_change / actual_values[i-1])
+                total_win_percentage += abs(win_percentage)
+            else:
+                trade_losses += 1
+                # Calculate the percentage change correctly
+                loss_percentage = (actual_change / actual_values[i-1])
+                total_loss_percentage += abs(loss_percentage)
+
+            total_trades += 1
+            successful_trade = False  # Reset for the next trade
+
+    # Calculate and log the percentage of winning trades and average win/loss percentages
+    if total_trades > 0:
+        win_percentage = (trade_wins / total_trades) * 100
+        mean_win_percentage = total_win_percentage / trade_wins if trade_wins > 0 else 0
+        mean_loss_percentage = total_loss_percentage / trade_losses if trade_losses > 0 else 0
+        logging.info(f"Total Trades: {total_trades}, Wins: {trade_wins}, Losses: {trade_losses}, Win Percentage: {win_percentage:.2f}%, Mean Win Percentage: {mean_win_percentage:.2f}%, Mean Loss Percentage: {mean_loss_percentage:.2f}%")
+    else:
+        logging.info("No trades were executed.")
 
 
 
@@ -141,6 +206,29 @@ class MyTradingStrategy(Strategy):
                     self.sell()
 
 
+def evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percentage, average_days_between_trades):
+    """
+    Evaluates the trading model based on specified criteria.
+
+    Parameters:
+    win_percentage (float): The win percentage of the model.
+    mean_win_percentage (float): The average percentage of winning trades.
+    mean_loss_percentage (float): The average percentage of losing trades.
+    average_days_between_trades (float): The average number of days between trades.
+
+    Returns:
+    bool: True if the model meets the criteria, False otherwise.
+    """
+    # Criteria
+    high_win_rate = win_percentage > 60
+    profitable = mean_win_percentage > mean_loss_percentage
+    frequent_trades = average_days_between_trades <= 60
+
+    # Evaluate criteria
+    if high_win_rate and profitable and frequent_trades:
+        return True
+    else:
+        return False
 
 
 def main():
@@ -171,11 +259,26 @@ def main():
 
                     # Apply adjustments
                     adjusted_predictions = adjust_predictions(predictions, target_data)
+                    log_trade_outcomes_and_percentages(target_data, adjusted_predictions)
 
 
-                    ##log the shape of the ajusted predictions 
-                    logging.info(f"Shape of the adjusted predictions: {adjusted_predictions.shape}")
+                    win_percentage = 60  # Example value
+                    mean_win_percentage = 1.0  # Example value
+                    mean_loss_percentage = 1.0  # Example value
+                    average_days_between_trades = 44.54  # Example value
 
+
+
+                    average_days_between_trades = calculate_average_days_between_trades(target_data, predictions)
+                    if average_days_between_trades is not None:
+                        logging.info(f"Average number of days between trades: {average_days_between_trades:.2f} days")
+                        meets_criteria = evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percentage, average_days_between_trades)
+                        if meets_criteria:
+                            logging.info(f"The trading model for {filename} meets the criteria.")
+                        else:
+                            logging.info(f"The trading model for {filename} does not meet the criteria.")
+                    else:
+                        logging.info("Not enough trades to calculate average interval.")
                     # Error calculation before and after adjustment
                     error_before = calculate_mean_percentage_error(target_data, predictions)
                     error_after = calculate_mean_percentage_error(target_data, adjusted_predictions)

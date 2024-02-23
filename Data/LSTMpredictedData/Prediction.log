@@ -1,342 +1,100 @@
-2024-02-07 00:14:05,647 - INFO - Number of predictions adjusted: 6721
-2024-02-07 00:14:05,647 - INFO - Shape of the adjusted predictions: (6721,)
-2024-02-07 00:14:05,647 - INFO - Error before adjustment: 406.34320176054
-2024-02-07 00:14:05,647 - INFO - Error after adjustment: 304.1910074609057
-2024-02-07 00:14:05,859 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
-2024-02-07 00:14:05,861 - INFO - Percentage of files processed: 6.67%
-2024-02-07 00:14:05,885 - INFO - Number of predictions adjusted: 5739
-2024-02-07 00:14:05,885 - INFO - Shape of the adjusted predictions: (5739,)
-2024-02-07 00:14:05,886 - INFO - Error before adjustment: 106.77128512329556
-2024-02-07 00:14:05,886 - INFO - Error after adjustment: 106.9104741772073
-2024-02-07 00:14:06,073 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
-2024-02-07 00:14:06,073 - INFO - Percentage of files processed: 13.33%
-2024-02-07 00:14:06,097 - INFO - Number of predictions adjusted: 6523
-2024-02-07 00:14:06,097 - INFO - Shape of the adjusted predictions: (6523,)
-2024-02-07 00:14:06,097 - INFO - Error before adjustment: 100.6302022949364
-2024-02-07 00:14:06,098 - INFO - Error after adjustment: 99.90788473427178
-2024-02-07 00:14:06,272 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
-2024-02-07 00:14:06,272 - INFO - Percentage of files processed: 20.0%
-2024-02-07 00:14:06,304 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:06,305 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:06,305 - INFO - Error before adjustment: 530.2090212815098
-2024-02-07 00:14:06,305 - INFO - Error after adjustment: 313.9456822497218
-2024-02-07 00:14:06,584 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
-2024-02-07 00:14:06,584 - INFO - Percentage of files processed: 26.67%
-2024-02-07 00:14:06,617 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:06,617 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:06,617 - INFO - Error before adjustment: 506.385101234238
-2024-02-07 00:14:06,617 - INFO - Error after adjustment: 100.0
-2024-02-07 00:14:06,840 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
-2024-02-07 00:14:06,841 - INFO - Percentage of files processed: 33.33%
-2024-02-07 00:14:06,856 - INFO - Number of predictions adjusted: 2788
-2024-02-07 00:14:06,856 - INFO - Shape of the adjusted predictions: (2788,)
-2024-02-07 00:14:06,857 - INFO - Error before adjustment: 101.8137289336946
-2024-02-07 00:14:06,857 - INFO - Error after adjustment: 99.98961847964873
-2024-02-07 00:14:06,933 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
-2024-02-07 00:14:06,933 - INFO - Percentage of files processed: 40.0%
-2024-02-07 00:14:06,940 - INFO - Number of predictions adjusted: 788
-2024-02-07 00:14:06,940 - INFO - Shape of the adjusted predictions: (788,)
-2024-02-07 00:14:06,940 - INFO - Error before adjustment: 121.78284726551142
-2024-02-07 00:14:06,940 - INFO - Error after adjustment: 100.05207731845186
-2024-02-07 00:14:06,959 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
-2024-02-07 00:14:06,960 - INFO - Percentage of files processed: 46.67%
-2024-02-07 00:14:06,989 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:06,989 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:06,989 - INFO - Error before adjustment: 500.44102932049225
-2024-02-07 00:14:06,989 - INFO - Error after adjustment: 384.31973833354846
-2024-02-07 00:14:07,215 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
-2024-02-07 00:14:07,215 - INFO - Percentage of files processed: 53.33%
-2024-02-07 00:14:07,266 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:07,266 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:07,267 - INFO - Error before adjustment: 1060.6783238179116
-2024-02-07 00:14:07,267 - INFO - Error after adjustment: 193.46783752533324
-2024-02-07 00:14:07,531 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
-2024-02-07 00:14:07,531 - INFO - Percentage of files processed: 60.0%
-2024-02-07 00:14:07,556 - INFO - Number of predictions adjusted: 5668
-2024-02-07 00:14:07,556 - INFO - Shape of the adjusted predictions: (5668,)
-2024-02-07 00:14:07,556 - INFO - Error before adjustment: 120.09972041743917
-2024-02-07 00:14:07,556 - INFO - Error after adjustment: 113.19248916844519
-2024-02-07 00:14:07,702 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
-2024-02-07 00:14:07,702 - INFO - Percentage of files processed: 66.67%
-2024-02-07 00:14:07,735 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:07,735 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:07,736 - INFO - Error before adjustment: 552.6909492875552
-2024-02-07 00:14:07,736 - INFO - Error after adjustment: 327.6920688157715
-2024-02-07 00:14:08,020 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
-2024-02-07 00:14:08,021 - INFO - Percentage of files processed: 73.33%
-2024-02-07 00:14:08,056 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:08,056 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:08,056 - INFO - Error before adjustment: 110.13499774849046
-2024-02-07 00:14:08,056 - INFO - Error after adjustment: 104.39178383898779
-2024-02-07 00:14:08,273 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
-2024-02-07 00:14:08,273 - INFO - Percentage of files processed: 80.0%
-2024-02-07 00:14:08,309 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:14:08,309 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:14:08,309 - INFO - Error before adjustment: 565.6813446459045
-2024-02-07 00:14:08,309 - INFO - Error after adjustment: 264.2940413694898
-2024-02-07 00:14:08,536 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
-2024-02-07 00:14:08,536 - INFO - Percentage of files processed: 86.67%
-2024-02-07 00:14:08,536 - INFO - Processing complete.
-2024-02-07 00:21:07,269 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 149
-2024-02-07 00:21:07,269 - INFO - Number of predictions adjusted: 6721
-2024-02-07 00:21:07,269 - INFO - Shape of the adjusted predictions: (6721,)
-2024-02-07 00:21:07,270 - INFO - Error before adjustment: 406.34320176054
-2024-02-07 00:21:07,270 - INFO - Error after adjustment: 304.1910074609057
-2024-02-07 00:21:07,504 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
-2024-02-07 00:21:07,504 - INFO - Percentage of files processed: 6.67%
-2024-02-07 00:21:07,540 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 981
-2024-02-07 00:21:07,542 - INFO - Number of predictions adjusted: 5739
-2024-02-07 00:21:07,542 - INFO - Shape of the adjusted predictions: (5739,)
-2024-02-07 00:21:07,542 - INFO - Error before adjustment: 106.77128512329556
-2024-02-07 00:21:07,542 - INFO - Error after adjustment: 106.9104741772073
-2024-02-07 00:21:07,796 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
-2024-02-07 00:21:07,800 - INFO - Percentage of files processed: 13.33%
-2024-02-07 00:21:07,838 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1129
-2024-02-07 00:21:07,838 - INFO - Number of predictions adjusted: 6523
-2024-02-07 00:21:07,839 - INFO - Shape of the adjusted predictions: (6523,)
-2024-02-07 00:21:07,839 - INFO - Error before adjustment: 100.6302022949364
-2024-02-07 00:21:07,839 - INFO - Error after adjustment: 99.90788473427178
-2024-02-07 00:21:08,051 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
-2024-02-07 00:21:08,051 - INFO - Percentage of files processed: 20.0%
-2024-02-07 00:21:08,097 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1425
-2024-02-07 00:21:08,097 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:08,097 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:08,097 - INFO - Error before adjustment: 530.2090212815098
-2024-02-07 00:21:08,097 - INFO - Error after adjustment: 313.9456822497218
-2024-02-07 00:21:08,705 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
-2024-02-07 00:21:08,705 - INFO - Percentage of files processed: 26.67%
-2024-02-07 00:21:08,736 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1530
-2024-02-07 00:21:08,737 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:08,737 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:08,737 - INFO - Error before adjustment: 506.385101234238
-2024-02-07 00:21:08,737 - INFO - Error after adjustment: 100.0
-2024-02-07 00:21:08,985 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
-2024-02-07 00:21:08,985 - INFO - Percentage of files processed: 33.33%
-2024-02-07 00:21:09,001 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 426
-2024-02-07 00:21:09,001 - INFO - Number of predictions adjusted: 2788
-2024-02-07 00:21:09,001 - INFO - Shape of the adjusted predictions: (2788,)
-2024-02-07 00:21:09,002 - INFO - Error before adjustment: 101.8137289336946
-2024-02-07 00:21:09,002 - INFO - Error after adjustment: 99.98961847964873
-2024-02-07 00:21:09,095 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
-2024-02-07 00:21:09,095 - INFO - Percentage of files processed: 40.0%
-2024-02-07 00:21:09,102 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 52
-2024-02-07 00:21:09,102 - INFO - Number of predictions adjusted: 788
-2024-02-07 00:21:09,102 - INFO - Shape of the adjusted predictions: (788,)
-2024-02-07 00:21:09,102 - INFO - Error before adjustment: 121.78284726551142
-2024-02-07 00:21:09,102 - INFO - Error after adjustment: 100.05207731845186
-2024-02-07 00:21:09,132 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
-2024-02-07 00:21:09,132 - INFO - Percentage of files processed: 46.67%
-2024-02-07 00:21:09,181 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 159
-2024-02-07 00:21:09,181 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:09,181 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:09,181 - INFO - Error before adjustment: 500.44102932049225
-2024-02-07 00:21:09,181 - INFO - Error after adjustment: 384.31973833354846
-2024-02-07 00:21:09,474 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
-2024-02-07 00:21:09,474 - INFO - Percentage of files processed: 53.33%
-2024-02-07 00:21:09,509 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1463
-2024-02-07 00:21:09,509 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:09,509 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:09,509 - INFO - Error before adjustment: 1060.6783238179116
-2024-02-07 00:21:09,509 - INFO - Error after adjustment: 193.46783752533324
-2024-02-07 00:21:09,841 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
-2024-02-07 00:21:09,842 - INFO - Percentage of files processed: 60.0%
-2024-02-07 00:21:09,867 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 926
-2024-02-07 00:21:09,868 - INFO - Number of predictions adjusted: 5668
-2024-02-07 00:21:09,868 - INFO - Shape of the adjusted predictions: (5668,)
-2024-02-07 00:21:09,868 - INFO - Error before adjustment: 120.09972041743917
-2024-02-07 00:21:09,868 - INFO - Error after adjustment: 113.19248916844519
-2024-02-07 00:21:10,037 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
-2024-02-07 00:21:10,037 - INFO - Percentage of files processed: 66.67%
-2024-02-07 00:21:10,070 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1536
-2024-02-07 00:21:10,070 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:10,070 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:10,071 - INFO - Error before adjustment: 552.6909492875552
-2024-02-07 00:21:10,071 - INFO - Error after adjustment: 327.6920688157715
-2024-02-07 00:21:10,306 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
-2024-02-07 00:21:10,306 - INFO - Percentage of files processed: 73.33%
-2024-02-07 00:21:10,341 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1280
-2024-02-07 00:21:10,341 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:10,341 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:10,342 - INFO - Error before adjustment: 110.13499774849046
-2024-02-07 00:21:10,342 - INFO - Error after adjustment: 104.39178383898779
-2024-02-07 00:21:10,574 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
-2024-02-07 00:21:10,574 - INFO - Percentage of files processed: 80.0%
-2024-02-07 00:21:10,611 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 144
-2024-02-07 00:21:10,611 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:21:10,611 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:21:10,611 - INFO - Error before adjustment: 565.6813446459045
-2024-02-07 00:21:10,611 - INFO - Error after adjustment: 264.2940413694898
-2024-02-07 00:21:10,923 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
-2024-02-07 00:21:10,923 - INFO - Percentage of files processed: 86.67%
-2024-02-07 00:21:10,923 - INFO - Processing complete.
-2024-02-07 00:22:30,588 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 149
-2024-02-07 00:22:30,588 - INFO - Number of predictions adjusted: 6721
-2024-02-07 00:22:30,589 - INFO - Shape of the adjusted predictions: (6721,)
-2024-02-07 00:22:30,589 - INFO - Error before adjustment: 406.34320176054
-2024-02-07 00:22:30,589 - INFO - Error after adjustment: 304.1910074609057
-2024-02-07 00:22:30,791 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
-2024-02-07 00:22:30,791 - INFO - Percentage of files processed: 6.67%
-2024-02-07 00:22:30,822 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 981
-2024-02-07 00:22:30,822 - INFO - Number of predictions adjusted: 5739
-2024-02-07 00:22:30,822 - INFO - Shape of the adjusted predictions: (5739,)
-2024-02-07 00:22:30,822 - INFO - Error before adjustment: 106.77128512329556
-2024-02-07 00:22:30,822 - INFO - Error after adjustment: 106.9104741772073
-2024-02-07 00:22:31,001 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
-2024-02-07 00:22:31,001 - INFO - Percentage of files processed: 13.33%
-2024-02-07 00:22:31,028 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1129
-2024-02-07 00:22:31,029 - INFO - Number of predictions adjusted: 6523
-2024-02-07 00:22:31,029 - INFO - Shape of the adjusted predictions: (6523,)
-2024-02-07 00:22:31,029 - INFO - Error before adjustment: 100.6302022949364
-2024-02-07 00:22:31,029 - INFO - Error after adjustment: 99.90788473427178
-2024-02-07 00:22:31,242 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
-2024-02-07 00:22:31,242 - INFO - Percentage of files processed: 20.0%
-2024-02-07 00:22:31,307 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1425
-2024-02-07 00:22:31,308 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:31,308 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:31,308 - INFO - Error before adjustment: 530.2090212815098
-2024-02-07 00:22:31,308 - INFO - Error after adjustment: 313.9456822497218
-2024-02-07 00:22:31,656 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
-2024-02-07 00:22:31,656 - INFO - Percentage of files processed: 26.67%
-2024-02-07 00:22:31,692 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1530
-2024-02-07 00:22:31,693 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:31,693 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:31,693 - INFO - Error before adjustment: 506.385101234238
-2024-02-07 00:22:31,693 - INFO - Error after adjustment: 100.0
-2024-02-07 00:22:31,974 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
-2024-02-07 00:22:31,974 - INFO - Percentage of files processed: 33.33%
-2024-02-07 00:22:31,988 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 426
-2024-02-07 00:22:31,989 - INFO - Number of predictions adjusted: 2788
-2024-02-07 00:22:31,989 - INFO - Shape of the adjusted predictions: (2788,)
-2024-02-07 00:22:31,989 - INFO - Error before adjustment: 101.8137289336946
-2024-02-07 00:22:31,989 - INFO - Error after adjustment: 99.98961847964873
-2024-02-07 00:22:32,064 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
-2024-02-07 00:22:32,064 - INFO - Percentage of files processed: 40.0%
-2024-02-07 00:22:32,071 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 52
-2024-02-07 00:22:32,071 - INFO - Number of predictions adjusted: 788
-2024-02-07 00:22:32,071 - INFO - Shape of the adjusted predictions: (788,)
-2024-02-07 00:22:32,071 - INFO - Error before adjustment: 121.78284726551142
-2024-02-07 00:22:32,071 - INFO - Error after adjustment: 100.05207731845186
-2024-02-07 00:22:32,092 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
-2024-02-07 00:22:32,093 - INFO - Percentage of files processed: 46.67%
-2024-02-07 00:22:32,125 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 159
-2024-02-07 00:22:32,126 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:32,126 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:32,127 - INFO - Error before adjustment: 500.44102932049225
-2024-02-07 00:22:32,127 - INFO - Error after adjustment: 384.31973833354846
-2024-02-07 00:22:32,357 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
-2024-02-07 00:22:32,357 - INFO - Percentage of files processed: 53.33%
-2024-02-07 00:22:32,392 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1463
-2024-02-07 00:22:32,392 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:32,392 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:32,392 - INFO - Error before adjustment: 1060.6783238179116
-2024-02-07 00:22:32,392 - INFO - Error after adjustment: 193.46783752533324
-2024-02-07 00:22:32,621 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
-2024-02-07 00:22:32,621 - INFO - Percentage of files processed: 60.0%
-2024-02-07 00:22:32,646 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 926
-2024-02-07 00:22:32,646 - INFO - Number of predictions adjusted: 5668
-2024-02-07 00:22:32,647 - INFO - Shape of the adjusted predictions: (5668,)
-2024-02-07 00:22:32,647 - INFO - Error before adjustment: 120.09972041743917
-2024-02-07 00:22:32,647 - INFO - Error after adjustment: 113.19248916844519
-2024-02-07 00:22:32,805 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
-2024-02-07 00:22:32,805 - INFO - Percentage of files processed: 66.67%
-2024-02-07 00:22:32,839 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1536
-2024-02-07 00:22:32,839 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:32,839 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:32,839 - INFO - Error before adjustment: 552.6909492875552
-2024-02-07 00:22:32,839 - INFO - Error after adjustment: 327.6920688157715
-2024-02-07 00:22:33,076 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
-2024-02-07 00:22:33,076 - INFO - Percentage of files processed: 73.33%
-2024-02-07 00:22:33,113 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 1280
-2024-02-07 00:22:33,113 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:33,113 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:33,114 - INFO - Error before adjustment: 110.13499774849046
-2024-02-07 00:22:33,114 - INFO - Error after adjustment: 104.39178383898779
-2024-02-07 00:22:33,341 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
-2024-02-07 00:22:33,341 - INFO - Percentage of files processed: 80.0%
-2024-02-07 00:22:33,376 - INFO - Number of times the prediction is within 10% of the actual value in absolute terms: 144
-2024-02-07 00:22:33,376 - INFO - Number of predictions adjusted: 8585
-2024-02-07 00:22:33,376 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:22:33,376 - INFO - Error before adjustment: 565.6813446459045
-2024-02-07 00:22:33,376 - INFO - Error after adjustment: 264.2940413694898
-2024-02-07 00:22:33,602 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
-2024-02-07 00:22:33,602 - INFO - Percentage of files processed: 86.67%
-2024-02-07 00:22:33,602 - INFO - Processing complete.
-2024-02-07 00:24:53,179 - INFO - Prediction is within 10%: 149
-2024-02-07 00:24:53,179 - INFO - Shape of the adjusted predictions: (6721,)
-2024-02-07 00:24:53,179 - INFO - Error before adjustment: 406.34320176054
-2024-02-07 00:24:53,179 - INFO - Error after adjustment: 304.1910074609057
-2024-02-07 00:24:53,376 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
-2024-02-07 00:24:53,376 - INFO - Percentage of files processed: 6.67%
-2024-02-07 00:24:53,403 - INFO - Prediction is within 10%: 981
-2024-02-07 00:24:53,403 - INFO - Shape of the adjusted predictions: (5739,)
-2024-02-07 00:24:53,403 - INFO - Error before adjustment: 106.77128512329556
-2024-02-07 00:24:53,404 - INFO - Error after adjustment: 106.9104741772073
-2024-02-07 00:24:53,580 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
-2024-02-07 00:24:53,580 - INFO - Percentage of files processed: 13.33%
-2024-02-07 00:24:53,607 - INFO - Prediction is within 10%: 1129
-2024-02-07 00:24:53,607 - INFO - Shape of the adjusted predictions: (6523,)
-2024-02-07 00:24:53,608 - INFO - Error before adjustment: 100.6302022949364
-2024-02-07 00:24:53,608 - INFO - Error after adjustment: 99.90788473427178
-2024-02-07 00:24:53,812 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
-2024-02-07 00:24:53,812 - INFO - Percentage of files processed: 20.0%
-2024-02-07 00:24:53,859 - INFO - Prediction is within 10%: 1425
-2024-02-07 00:24:53,860 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:53,860 - INFO - Error before adjustment: 530.2090212815098
-2024-02-07 00:24:53,860 - INFO - Error after adjustment: 313.9456822497218
-2024-02-07 00:24:54,225 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
-2024-02-07 00:24:54,225 - INFO - Percentage of files processed: 26.67%
-2024-02-07 00:24:54,258 - INFO - Prediction is within 10%: 1530
-2024-02-07 00:24:54,258 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:54,259 - INFO - Error before adjustment: 506.385101234238
-2024-02-07 00:24:54,259 - INFO - Error after adjustment: 100.0
-2024-02-07 00:24:54,481 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
-2024-02-07 00:24:54,482 - INFO - Percentage of files processed: 33.33%
-2024-02-07 00:24:54,498 - INFO - Prediction is within 10%: 426
-2024-02-07 00:24:54,498 - INFO - Shape of the adjusted predictions: (2788,)
-2024-02-07 00:24:54,498 - INFO - Error before adjustment: 101.8137289336946
-2024-02-07 00:24:54,498 - INFO - Error after adjustment: 99.98961847964873
-2024-02-07 00:24:54,575 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
-2024-02-07 00:24:54,575 - INFO - Percentage of files processed: 40.0%
-2024-02-07 00:24:54,582 - INFO - Prediction is within 10%: 52
-2024-02-07 00:24:54,582 - INFO - Shape of the adjusted predictions: (788,)
-2024-02-07 00:24:54,583 - INFO - Error before adjustment: 121.78284726551142
-2024-02-07 00:24:54,583 - INFO - Error after adjustment: 100.05207731845186
-2024-02-07 00:24:54,606 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
-2024-02-07 00:24:54,606 - INFO - Percentage of files processed: 46.67%
-2024-02-07 00:24:54,653 - INFO - Prediction is within 10%: 159
-2024-02-07 00:24:54,654 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:54,654 - INFO - Error before adjustment: 500.44102932049225
-2024-02-07 00:24:54,654 - INFO - Error after adjustment: 384.31973833354846
-2024-02-07 00:24:54,930 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
-2024-02-07 00:24:54,931 - INFO - Percentage of files processed: 53.33%
-2024-02-07 00:24:54,965 - INFO - Prediction is within 10%: 1463
-2024-02-07 00:24:54,965 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:54,965 - INFO - Error before adjustment: 1060.6783238179116
-2024-02-07 00:24:54,965 - INFO - Error after adjustment: 193.46783752533324
-2024-02-07 00:24:55,200 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
-2024-02-07 00:24:55,200 - INFO - Percentage of files processed: 60.0%
-2024-02-07 00:24:55,225 - INFO - Prediction is within 10%: 926
-2024-02-07 00:24:55,225 - INFO - Shape of the adjusted predictions: (5668,)
-2024-02-07 00:24:55,225 - INFO - Error before adjustment: 120.09972041743917
-2024-02-07 00:24:55,225 - INFO - Error after adjustment: 113.19248916844519
-2024-02-07 00:24:55,387 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
-2024-02-07 00:24:55,387 - INFO - Percentage of files processed: 66.67%
-2024-02-07 00:24:55,418 - INFO - Prediction is within 10%: 1536
-2024-02-07 00:24:55,419 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:55,419 - INFO - Error before adjustment: 552.6909492875552
-2024-02-07 00:24:55,419 - INFO - Error after adjustment: 327.6920688157715
-2024-02-07 00:24:55,697 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
-2024-02-07 00:24:55,698 - INFO - Percentage of files processed: 73.33%
-2024-02-07 00:24:55,730 - INFO - Prediction is within 10%: 1280
-2024-02-07 00:24:55,730 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:55,730 - INFO - Error before adjustment: 110.13499774849046
-2024-02-07 00:24:55,730 - INFO - Error after adjustment: 104.39178383898779
-2024-02-07 00:24:56,009 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
-2024-02-07 00:24:56,009 - INFO - Percentage of files processed: 80.0%
-2024-02-07 00:24:56,043 - INFO - Prediction is within 10%: 144
-2024-02-07 00:24:56,043 - INFO - Shape of the adjusted predictions: (8585,)
-2024-02-07 00:24:56,043 - INFO - Error before adjustment: 565.6813446459045
-2024-02-07 00:24:56,043 - INFO - Error after adjustment: 264.2940413694898
-2024-02-07 00:24:56,274 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
-2024-02-07 00:24:56,274 - INFO - Percentage of files processed: 86.67%
-2024-02-07 00:24:56,274 - INFO - Processing complete.
+2024-02-23 22:25:37,123 - INFO - Prediction is within 10%: 29
+2024-02-23 22:25:37,127 - INFO - Total Trades: 37, Wins: 26, Losses: 11, Win Percentage: 70.27%, Mean Win Percentage: 1.52%, Mean Loss Percentage: 1.24%
+2024-02-23 22:25:37,130 - INFO - Average number of days between trades: 44.54 days
+2024-02-23 22:25:37,130 - INFO - The trading model for AMZN_modified.csv does not meet the criteria.
+2024-02-23 22:25:37,130 - INFO - Error before adjustment: 406.34320176054
+2024-02-23 22:25:37,130 - INFO - Error after adjustment: 354.3877493861736
+2024-02-23 22:25:37,323 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-23 22:25:37,324 - INFO - Percentage of files processed: 6.67%
+2024-02-23 22:25:38,739 - INFO - Prediction is within 10%: 2
+2024-02-23 22:25:38,744 - INFO - Total Trades: 4, Wins: 2, Losses: 2, Win Percentage: 50.00%, Mean Win Percentage: 26.74%, Mean Loss Percentage: 7.60%
+2024-02-23 22:25:38,750 - INFO - Average number of days between trades: 115.00 days
+2024-02-23 22:25:38,750 - INFO - The trading model for ABBNY_modified.csv does not meet the criteria.
+2024-02-23 22:25:38,750 - INFO - Error before adjustment: 106.77128512329556
+2024-02-23 22:25:38,750 - INFO - Error after adjustment: 106.88618713104778
+2024-02-23 22:25:38,921 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-23 22:25:38,921 - INFO - Percentage of files processed: 13.33%
+2024-02-23 22:25:40,219 - INFO - Prediction is within 10%: 7
+2024-02-23 22:25:40,223 - INFO - Total Trades: 8, Wins: 3, Losses: 5, Win Percentage: 37.50%, Mean Win Percentage: 69.32%, Mean Loss Percentage: 41.87%
+2024-02-23 22:25:40,226 - INFO - Average number of days between trades: 179.33 days
+2024-02-23 22:25:40,226 - INFO - The trading model for AMT_modified.csv does not meet the criteria.
+2024-02-23 22:25:40,227 - INFO - Error before adjustment: 100.6302022949364
+2024-02-23 22:25:40,227 - INFO - Error after adjustment: 100.80618446663391
+2024-02-23 22:25:40,430 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-23 22:25:40,430 - INFO - Percentage of files processed: 20.0%
+2024-02-23 22:25:42,292 - INFO - Prediction is within 10%: 0
+2024-02-23 22:25:42,297 - INFO - Total Trades: 4, Wins: 1, Losses: 3, Win Percentage: 25.00%, Mean Win Percentage: 4832.00%, Mean Loss Percentage: 2164.67%
+2024-02-23 22:25:42,301 - INFO - Not enough trades to calculate average interval.
+2024-02-23 22:25:42,302 - INFO - Error before adjustment: 530.2090212815098
+2024-02-23 22:25:42,302 - INFO - Error after adjustment: 1438.5996272006182
+2024-02-23 22:25:42,538 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-23 22:25:42,539 - INFO - Percentage of files processed: 26.67%
+2024-02-23 22:25:44,425 - INFO - Prediction is within 10%: 0
+2024-02-23 22:25:44,430 - INFO - Total Trades: 3, Wins: 1, Losses: 2, Win Percentage: 33.33%, Mean Win Percentage: 1.00%, Mean Loss Percentage: 1077.99%
+2024-02-23 22:25:44,436 - INFO - Not enough trades to calculate average interval.
+2024-02-23 22:25:44,436 - INFO - Error before adjustment: 506.385101234238
+2024-02-23 22:25:44,436 - INFO - Error after adjustment: 1573.533105564444
+2024-02-23 22:25:44,677 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-23 22:25:44,677 - INFO - Percentage of files processed: 33.33%
+2024-02-23 22:25:45,271 - INFO - Prediction is within 10%: 2
+2024-02-23 22:25:45,272 - INFO - Total Trades: 2, Wins: 1, Losses: 1, Win Percentage: 50.00%, Mean Win Percentage: 12.26%, Mean Loss Percentage: 94.52%
+2024-02-23 22:25:45,274 - INFO - Average number of days between trades: 409.00 days
+2024-02-23 22:25:45,274 - INFO - The trading model for ABBV_modified.csv does not meet the criteria.
+2024-02-23 22:25:45,274 - INFO - Error before adjustment: 101.8137289336946
+2024-02-23 22:25:45,274 - INFO - Error after adjustment: 102.47479384391188
+2024-02-23 22:25:45,346 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-23 22:25:45,346 - INFO - Percentage of files processed: 40.0%
+2024-02-23 22:25:45,516 - INFO - Prediction is within 10%: 6
+2024-02-23 22:25:45,516 - INFO - Total Trades: 5, Wins: 1, Losses: 4, Win Percentage: 20.00%, Mean Win Percentage: 6.05%, Mean Loss Percentage: 6.00%
+2024-02-23 22:25:45,517 - INFO - Average number of days between trades: 26.00 days
+2024-02-23 22:25:45,517 - INFO - The trading model for ABNB_modified.csv does not meet the criteria.
+2024-02-23 22:25:45,517 - INFO - Error before adjustment: 121.78284726551142
+2024-02-23 22:25:45,517 - INFO - Error after adjustment: 117.17737677400648
+2024-02-23 22:25:45,538 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-23 22:25:45,538 - INFO - Percentage of files processed: 46.67%
+2024-02-23 22:25:47,616 - INFO - Prediction is within 10%: 60
+2024-02-23 22:25:47,620 - INFO - Total Trades: 56, Wins: 32, Losses: 24, Win Percentage: 57.14%, Mean Win Percentage: 2.13%, Mean Loss Percentage: 1.57%
+2024-02-23 22:25:47,627 - INFO - Average number of days between trades: 27.58 days
+2024-02-23 22:25:47,627 - INFO - The trading model for AAPL_modified.csv does not meet the criteria.
+2024-02-23 22:25:47,627 - INFO - Error before adjustment: 500.44102932049225
+2024-02-23 22:25:47,627 - INFO - Error after adjustment: 380.67684168022066
+2024-02-23 22:25:47,846 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-23 22:25:47,847 - INFO - Percentage of files processed: 53.33%
+2024-02-23 22:25:49,751 - INFO - Prediction is within 10%: 0
+2024-02-23 22:25:49,756 - INFO - Total Trades: 2, Wins: 2, Losses: 0, Win Percentage: 100.00%, Mean Win Percentage: 1.99%, Mean Loss Percentage: 0.00%
+2024-02-23 22:25:49,760 - INFO - Not enough trades to calculate average interval.
+2024-02-23 22:25:49,760 - INFO - Error before adjustment: 1060.6783238179116
+2024-02-23 22:25:49,760 - INFO - Error after adjustment: 1518.9946090122053
+2024-02-23 22:25:49,993 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-23 22:25:49,993 - INFO - Percentage of files processed: 60.0%
+2024-02-23 22:25:51,139 - INFO - Prediction is within 10%: 1
+2024-02-23 22:25:51,145 - INFO - Total Trades: 1, Wins: 0, Losses: 1, Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 2.95%
+2024-02-23 22:25:51,150 - INFO - Not enough trades to calculate average interval.
+2024-02-23 22:25:51,151 - INFO - Error before adjustment: 120.09972041743917
+2024-02-23 22:25:51,151 - INFO - Error after adjustment: 120.5335877683106
+2024-02-23 22:25:51,322 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-23 22:25:51,322 - INFO - Percentage of files processed: 66.67%
+2024-02-23 22:25:53,173 - INFO - Prediction is within 10%: 0
+2024-02-23 22:25:53,178 - INFO - No trades were executed.
+2024-02-23 22:25:53,183 - INFO - Not enough trades to calculate average interval.
+2024-02-23 22:25:53,183 - INFO - Error before adjustment: 552.6909492875552
+2024-02-23 22:25:53,183 - INFO - Error after adjustment: 615.2011923301096
+2024-02-23 22:25:53,450 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-23 22:25:53,451 - INFO - Percentage of files processed: 73.33%
+2024-02-23 22:25:55,322 - INFO - Prediction is within 10%: 7
+2024-02-23 22:25:55,326 - INFO - Total Trades: 8, Wins: 4, Losses: 4, Win Percentage: 50.00%, Mean Win Percentage: 32.14%, Mean Loss Percentage: 10.75%
+2024-02-23 22:25:55,331 - INFO - Average number of days between trades: 250.00 days
+2024-02-23 22:25:55,331 - INFO - The trading model for ADP_modified.csv does not meet the criteria.
+2024-02-23 22:25:55,331 - INFO - Error before adjustment: 110.13499774849046
+2024-02-23 22:25:55,331 - INFO - Error after adjustment: 111.50502337462139
+2024-02-23 22:25:55,607 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-23 22:25:55,607 - INFO - Percentage of files processed: 80.0%
+2024-02-23 22:25:57,350 - INFO - Prediction is within 10%: 59
+2024-02-23 22:25:57,358 - INFO - Total Trades: 56, Wins: 32, Losses: 24, Win Percentage: 57.14%, Mean Win Percentage: 3.32%, Mean Loss Percentage: 16.70%
+2024-02-23 22:25:57,369 - INFO - Average number of days between trades: 28.38 days
+2024-02-23 22:25:57,369 - INFO - The trading model for ADBE_modified.csv does not meet the criteria.
+2024-02-23 22:25:57,369 - INFO - Error before adjustment: 565.6813446459045
+2024-02-23 22:25:57,369 - INFO - Error after adjustment: 460.82858042928297
+2024-02-23 22:25:57,823 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-23 22:25:57,824 - INFO - Percentage of files processed: 86.67%
+2024-02-23 22:25:57,824 - INFO - Processing complete.
