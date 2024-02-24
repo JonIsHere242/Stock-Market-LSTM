@@ -43,17 +43,17 @@ def calculate_best_fit_slope(data, window_size):
     else:
         return 0  # No clear trend
 
-
-def adjust_predictions(predictions, data, base_window_size=5):
+def adjust_predictions(predictions, data, base_window_size=5, trend_factor=0.1, anomaly_threshold=2.5):
     """
     Adjust predictions using a rolling window approach. The window size is dynamic, 
-    based on recent volatility. Predictions are capped at the 90th percentile of 
-    historical values within the rolling window.
+    based on recent volatility, and adjustments consider trends and potential anomalies.
 
     Parameters:
     predictions (np.array): Array of predicted values.
     data (np.array): Array of actual historical values.
     base_window_size (int): Base size of the rolling window.
+    trend_factor (float): Factor to adjust predictions based on the trend slope.
+    anomaly_threshold (float): Z-score threshold for detecting anomalies.
 
     Returns:
     np.array: Adjusted predictions.
@@ -66,27 +66,35 @@ def adjust_predictions(predictions, data, base_window_size=5):
 
     adjusted_predictions = predictions.copy()
     rolling_window_size = base_window_size
+    mean_data = np.mean(valid_data)
+    std_data = np.std(valid_data)
 
     for i in range(len(predictions)):
         # Adjust the rolling window size based on recent volatility
         if i >= base_window_size:
             recent_std = np.std(valid_data[i-base_window_size:i])
-            # Scale the window size based on volatility (this factor can be adjusted)
             rolling_window_size = min(len(valid_data), max(base_window_size, int(base_window_size * (1 + recent_std))))
 
-        # Calculate the 90th percentile in the rolling window
+        # Calculate trend slope in the rolling window
         if i >= rolling_window_size:
             rolling_window_data = valid_data[i-rolling_window_size:i]
-            cap_positive = np.percentile(rolling_window_data, 90)
-            cap_negative = np.percentile(rolling_window_data, 10)
+            slope = calculate_best_fit_slope(rolling_window_data, rolling_window_size)
 
-            # Cap the prediction
-            adjusted_predictions[i] = min(max(adjusted_predictions[i], cap_negative), cap_positive)
+            # Calculate dynamic bounds based on recent data
+            cap_positive = mean_data + anomaly_threshold * std_data
+            cap_negative = mean_data - anomaly_threshold * std_data
 
-    ##log the number of times the prediction is within 10% of the actual value in absolute terms
-    logging.info(f"Prediction is within 10%: {np.sum(np.abs(predictions - valid_data) <= 0.1 * np.abs(valid_data))}")
+            # Adjust prediction with trend factor and cap with dynamic bounds
+            trend_adjustment = slope * trend_factor
+            adjusted_prediction = predictions[i] + trend_adjustment
+            adjusted_predictions[i] = min(max(adjusted_prediction, cap_negative), cap_positive)
+
+            # Check for anomalies and adjust
+            if abs(adjusted_predictions[i] - mean_data) > anomaly_threshold * std_data:
+                adjusted_predictions[i] = mean_data + np.sign(adjusted_predictions[i] - mean_data) * anomaly_threshold * std_data
 
     return adjusted_predictions
+
 
 
 
@@ -139,40 +147,45 @@ def log_trade_outcomes_and_percentages(actual_values, predictions):
     total_trades = 0
     total_win_percentage = 0
     total_loss_percentage = 0
+    trade_durations = []
+    trade_entries_exits = []
 
-    for i in range(1, len(predictions)):  # Start from the second element
-        # Check if the previous prediction was within 10%
+    for i in range(1, len(predictions)):  
         if abs((predictions[i-1] - actual_values[i-1]) / actual_values[i-1]) <= 0.1:
             successful_trade = True
+            trade_start = i - 1  # Record trade start
 
         if successful_trade:
-            # Determine the direction of the prediction and the actual change
             predicted_change = predictions[i] - predictions[i-1]
             actual_change = actual_values[i] - actual_values[i-1]
 
-            # Determine if the trade is a win or a loss
             if (predicted_change > 0 and actual_change > 0) or (predicted_change < 0 and actual_change < 0):
                 trade_wins += 1
-                # Calculate the percentage change correctly
-                win_percentage = (actual_change / actual_values[i-1])
-                total_win_percentage += abs(win_percentage)
+                win_percentage = abs(actual_change / actual_values[i-1])
+                total_win_percentage += win_percentage
             else:
                 trade_losses += 1
-                # Calculate the percentage change correctly
-                loss_percentage = (actual_change / actual_values[i-1])
-                total_loss_percentage += abs(loss_percentage)
+                loss_percentage = abs(actual_change / actual_values[i-1])
+                total_loss_percentage += loss_percentage
 
             total_trades += 1
-            successful_trade = False  # Reset for the next trade
+            trade_durations.append(i - trade_start)
+            trade_entries_exits.append((trade_start, i))
+            successful_trade = False  
 
-    # Calculate and log the percentage of winning trades and average win/loss percentages
     if total_trades > 0:
         win_percentage = (trade_wins / total_trades) * 100
         mean_win_percentage = total_win_percentage / trade_wins if trade_wins > 0 else 0
         mean_loss_percentage = total_loss_percentage / trade_losses if trade_losses > 0 else 0
-        logging.info(f"Total Trades: {total_trades}, Wins: {trade_wins}, Losses: {trade_losses}, Win Percentage: {win_percentage:.2f}%, Mean Win Percentage: {mean_win_percentage:.2f}%, Mean Loss Percentage: {mean_loss_percentage:.2f}%")
+
+        # Logging detailed information
+        logging.info(f"Total Trades: {total_trades}, Wins: {trade_wins}, Losses: {trade_losses}")
+        logging.info(f"Win Percentage: {win_percentage:.2f}%, Mean Win Percentage: {mean_win_percentage:.2f}%, Mean Loss Percentage: {mean_loss_percentage:.2f}%")
+        logging.info(f"Average Trade Duration: {np.mean(trade_durations)} periods")
+        logging.info(f"Trade Entry and Exit Points: {trade_entries_exits}")
     else:
         logging.info("No trades were executed.")
+
 
 
 
@@ -206,26 +219,29 @@ class MyTradingStrategy(Strategy):
                     self.sell()
 
 
-def evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percentage, average_days_between_trades):
+def evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percentage, average_days_between_trades, min_win_percentage=50, max_loss_percentage=2):
     """
-    Evaluates the trading model based on specified criteria.
+    Evaluates the trading model based on specified criteria including win percentage and loss percentage bounds.
 
     Parameters:
     win_percentage (float): The win percentage of the model.
     mean_win_percentage (float): The average percentage of winning trades.
     mean_loss_percentage (float): The average percentage of losing trades.
     average_days_between_trades (float): The average number of days between trades.
+    min_win_percentage (float): Minimum win percentage for the model to be considered good.
+    max_loss_percentage (float): Maximum loss percentage for the model to be considered good.
 
     Returns:
     bool: True if the model meets the criteria, False otherwise.
     """
     # Criteria
-    high_win_rate = win_percentage > 60
+    sufficient_win_rate = win_percentage >= min_win_percentage
+    acceptable_losses = mean_loss_percentage <= max_loss_percentage
     profitable = mean_win_percentage > mean_loss_percentage
     frequent_trades = average_days_between_trades <= 60
 
     # Evaluate criteria
-    if high_win_rate and profitable and frequent_trades:
+    if sufficient_win_rate and acceptable_losses and profitable and frequent_trades:
         return True
     else:
         return False
@@ -233,7 +249,7 @@ def evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percen
 
 def main():
     directory_path = 'Data/LSTMpredictedData'
-    window_size = 10
+
     target_column = 'percent_change_Close'
     prediction_column = 'LSTM_Predictions'
 
@@ -272,7 +288,7 @@ def main():
                     average_days_between_trades = calculate_average_days_between_trades(target_data, predictions)
                     if average_days_between_trades is not None:
                         logging.info(f"Average number of days between trades: {average_days_between_trades:.2f} days")
-                        meets_criteria = evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percentage, average_days_between_trades)
+                        meets_criteria = evaluate_trading_model(win_percentage, mean_win_percentage, mean_loss_percentage, average_days_between_trades, min_win_percentage=55, max_loss_percentage=1.5)
                         if meets_criteria:
                             logging.info(f"The trading model for {filename} meets the criteria.")
                         else:
@@ -282,8 +298,14 @@ def main():
                     # Error calculation before and after adjustment
                     error_before = calculate_mean_percentage_error(target_data, predictions)
                     error_after = calculate_mean_percentage_error(target_data, adjusted_predictions)
-                    logging.info(f"Error before adjustment: {error_before}")
-                    logging.info(f"Error after adjustment: {error_after}")
+
+                    logging.info(f"Mean percentage error before adjustment: {error_before:.2f}%")
+                    logging.info(f"Mean percentage error after adjustment: {error_after:.2f}%")
+                    ##log the difference in the mean percentage error before and after adjustment
+                    logging.info(f"Difference in mean percentage error: {error_before - error_after:.2f}%")
+                    #if the error is not imporving then add a general error message saying it is not improving the model
+                    if error_before - error_after < 0:
+                        logging.info(f"Error is not improving the model")
 
                     # Update DataFrame with adjusted predictions
                     data['Adjusted_LSTM_Predictions'] = adjusted_predictions

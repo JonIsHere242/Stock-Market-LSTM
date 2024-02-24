@@ -1,100 +1,340 @@
-2024-02-23 22:25:37,123 - INFO - Prediction is within 10%: 29
-2024-02-23 22:25:37,127 - INFO - Total Trades: 37, Wins: 26, Losses: 11, Win Percentage: 70.27%, Mean Win Percentage: 1.52%, Mean Loss Percentage: 1.24%
-2024-02-23 22:25:37,130 - INFO - Average number of days between trades: 44.54 days
-2024-02-23 22:25:37,130 - INFO - The trading model for AMZN_modified.csv does not meet the criteria.
-2024-02-23 22:25:37,130 - INFO - Error before adjustment: 406.34320176054
-2024-02-23 22:25:37,130 - INFO - Error after adjustment: 354.3877493861736
-2024-02-23 22:25:37,323 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
-2024-02-23 22:25:37,324 - INFO - Percentage of files processed: 6.67%
-2024-02-23 22:25:38,739 - INFO - Prediction is within 10%: 2
-2024-02-23 22:25:38,744 - INFO - Total Trades: 4, Wins: 2, Losses: 2, Win Percentage: 50.00%, Mean Win Percentage: 26.74%, Mean Loss Percentage: 7.60%
-2024-02-23 22:25:38,750 - INFO - Average number of days between trades: 115.00 days
-2024-02-23 22:25:38,750 - INFO - The trading model for ABBNY_modified.csv does not meet the criteria.
-2024-02-23 22:25:38,750 - INFO - Error before adjustment: 106.77128512329556
-2024-02-23 22:25:38,750 - INFO - Error after adjustment: 106.88618713104778
-2024-02-23 22:25:38,921 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
-2024-02-23 22:25:38,921 - INFO - Percentage of files processed: 13.33%
-2024-02-23 22:25:40,219 - INFO - Prediction is within 10%: 7
-2024-02-23 22:25:40,223 - INFO - Total Trades: 8, Wins: 3, Losses: 5, Win Percentage: 37.50%, Mean Win Percentage: 69.32%, Mean Loss Percentage: 41.87%
-2024-02-23 22:25:40,226 - INFO - Average number of days between trades: 179.33 days
-2024-02-23 22:25:40,226 - INFO - The trading model for AMT_modified.csv does not meet the criteria.
-2024-02-23 22:25:40,227 - INFO - Error before adjustment: 100.6302022949364
-2024-02-23 22:25:40,227 - INFO - Error after adjustment: 100.80618446663391
-2024-02-23 22:25:40,430 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
-2024-02-23 22:25:40,430 - INFO - Percentage of files processed: 20.0%
-2024-02-23 22:25:42,292 - INFO - Prediction is within 10%: 0
-2024-02-23 22:25:42,297 - INFO - Total Trades: 4, Wins: 1, Losses: 3, Win Percentage: 25.00%, Mean Win Percentage: 4832.00%, Mean Loss Percentage: 2164.67%
-2024-02-23 22:25:42,301 - INFO - Not enough trades to calculate average interval.
-2024-02-23 22:25:42,302 - INFO - Error before adjustment: 530.2090212815098
-2024-02-23 22:25:42,302 - INFO - Error after adjustment: 1438.5996272006182
-2024-02-23 22:25:42,538 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
-2024-02-23 22:25:42,539 - INFO - Percentage of files processed: 26.67%
-2024-02-23 22:25:44,425 - INFO - Prediction is within 10%: 0
-2024-02-23 22:25:44,430 - INFO - Total Trades: 3, Wins: 1, Losses: 2, Win Percentage: 33.33%, Mean Win Percentage: 1.00%, Mean Loss Percentage: 1077.99%
-2024-02-23 22:25:44,436 - INFO - Not enough trades to calculate average interval.
-2024-02-23 22:25:44,436 - INFO - Error before adjustment: 506.385101234238
-2024-02-23 22:25:44,436 - INFO - Error after adjustment: 1573.533105564444
-2024-02-23 22:25:44,677 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
-2024-02-23 22:25:44,677 - INFO - Percentage of files processed: 33.33%
-2024-02-23 22:25:45,271 - INFO - Prediction is within 10%: 2
-2024-02-23 22:25:45,272 - INFO - Total Trades: 2, Wins: 1, Losses: 1, Win Percentage: 50.00%, Mean Win Percentage: 12.26%, Mean Loss Percentage: 94.52%
-2024-02-23 22:25:45,274 - INFO - Average number of days between trades: 409.00 days
-2024-02-23 22:25:45,274 - INFO - The trading model for ABBV_modified.csv does not meet the criteria.
-2024-02-23 22:25:45,274 - INFO - Error before adjustment: 101.8137289336946
-2024-02-23 22:25:45,274 - INFO - Error after adjustment: 102.47479384391188
-2024-02-23 22:25:45,346 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
-2024-02-23 22:25:45,346 - INFO - Percentage of files processed: 40.0%
-2024-02-23 22:25:45,516 - INFO - Prediction is within 10%: 6
-2024-02-23 22:25:45,516 - INFO - Total Trades: 5, Wins: 1, Losses: 4, Win Percentage: 20.00%, Mean Win Percentage: 6.05%, Mean Loss Percentage: 6.00%
-2024-02-23 22:25:45,517 - INFO - Average number of days between trades: 26.00 days
-2024-02-23 22:25:45,517 - INFO - The trading model for ABNB_modified.csv does not meet the criteria.
-2024-02-23 22:25:45,517 - INFO - Error before adjustment: 121.78284726551142
-2024-02-23 22:25:45,517 - INFO - Error after adjustment: 117.17737677400648
-2024-02-23 22:25:45,538 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
-2024-02-23 22:25:45,538 - INFO - Percentage of files processed: 46.67%
-2024-02-23 22:25:47,616 - INFO - Prediction is within 10%: 60
-2024-02-23 22:25:47,620 - INFO - Total Trades: 56, Wins: 32, Losses: 24, Win Percentage: 57.14%, Mean Win Percentage: 2.13%, Mean Loss Percentage: 1.57%
-2024-02-23 22:25:47,627 - INFO - Average number of days between trades: 27.58 days
-2024-02-23 22:25:47,627 - INFO - The trading model for AAPL_modified.csv does not meet the criteria.
-2024-02-23 22:25:47,627 - INFO - Error before adjustment: 500.44102932049225
-2024-02-23 22:25:47,627 - INFO - Error after adjustment: 380.67684168022066
-2024-02-23 22:25:47,846 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
-2024-02-23 22:25:47,847 - INFO - Percentage of files processed: 53.33%
-2024-02-23 22:25:49,751 - INFO - Prediction is within 10%: 0
-2024-02-23 22:25:49,756 - INFO - Total Trades: 2, Wins: 2, Losses: 0, Win Percentage: 100.00%, Mean Win Percentage: 1.99%, Mean Loss Percentage: 0.00%
-2024-02-23 22:25:49,760 - INFO - Not enough trades to calculate average interval.
-2024-02-23 22:25:49,760 - INFO - Error before adjustment: 1060.6783238179116
-2024-02-23 22:25:49,760 - INFO - Error after adjustment: 1518.9946090122053
-2024-02-23 22:25:49,993 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
-2024-02-23 22:25:49,993 - INFO - Percentage of files processed: 60.0%
-2024-02-23 22:25:51,139 - INFO - Prediction is within 10%: 1
-2024-02-23 22:25:51,145 - INFO - Total Trades: 1, Wins: 0, Losses: 1, Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 2.95%
-2024-02-23 22:25:51,150 - INFO - Not enough trades to calculate average interval.
-2024-02-23 22:25:51,151 - INFO - Error before adjustment: 120.09972041743917
-2024-02-23 22:25:51,151 - INFO - Error after adjustment: 120.5335877683106
-2024-02-23 22:25:51,322 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
-2024-02-23 22:25:51,322 - INFO - Percentage of files processed: 66.67%
-2024-02-23 22:25:53,173 - INFO - Prediction is within 10%: 0
-2024-02-23 22:25:53,178 - INFO - No trades were executed.
-2024-02-23 22:25:53,183 - INFO - Not enough trades to calculate average interval.
-2024-02-23 22:25:53,183 - INFO - Error before adjustment: 552.6909492875552
-2024-02-23 22:25:53,183 - INFO - Error after adjustment: 615.2011923301096
-2024-02-23 22:25:53,450 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
-2024-02-23 22:25:53,451 - INFO - Percentage of files processed: 73.33%
-2024-02-23 22:25:55,322 - INFO - Prediction is within 10%: 7
-2024-02-23 22:25:55,326 - INFO - Total Trades: 8, Wins: 4, Losses: 4, Win Percentage: 50.00%, Mean Win Percentage: 32.14%, Mean Loss Percentage: 10.75%
-2024-02-23 22:25:55,331 - INFO - Average number of days between trades: 250.00 days
-2024-02-23 22:25:55,331 - INFO - The trading model for ADP_modified.csv does not meet the criteria.
-2024-02-23 22:25:55,331 - INFO - Error before adjustment: 110.13499774849046
-2024-02-23 22:25:55,331 - INFO - Error after adjustment: 111.50502337462139
-2024-02-23 22:25:55,607 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
-2024-02-23 22:25:55,607 - INFO - Percentage of files processed: 80.0%
-2024-02-23 22:25:57,350 - INFO - Prediction is within 10%: 59
-2024-02-23 22:25:57,358 - INFO - Total Trades: 56, Wins: 32, Losses: 24, Win Percentage: 57.14%, Mean Win Percentage: 3.32%, Mean Loss Percentage: 16.70%
-2024-02-23 22:25:57,369 - INFO - Average number of days between trades: 28.38 days
-2024-02-23 22:25:57,369 - INFO - The trading model for ADBE_modified.csv does not meet the criteria.
-2024-02-23 22:25:57,369 - INFO - Error before adjustment: 565.6813446459045
-2024-02-23 22:25:57,369 - INFO - Error after adjustment: 460.82858042928297
-2024-02-23 22:25:57,823 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
-2024-02-23 22:25:57,824 - INFO - Percentage of files processed: 86.67%
-2024-02-23 22:25:57,824 - INFO - Processing complete.
+2024-02-24 01:06:17,094 - INFO - Total Trades: 45, Wins: 5, Losses: 40
+2024-02-24 01:06:17,095 - INFO - Win Percentage: 11.11%, Mean Win Percentage: 2.77%, Mean Loss Percentage: 0.61%
+2024-02-24 01:06:17,095 - INFO - Trade Performance (Gains/Losses): [-0.03, 6.848537398080174, -0.03, -0.03, -1.2668393235388897, -0.03, -0.03, -0.03, -0.03, -0.03, 3.3109921346376474, -0.03, -0.03, -0.8131443403755716, -0.03, -0.03, -0.03, -0.03, -0.4236966864805374, 1.2006420449386674, -0.03, 0.39741286238802437, -0.03, -0.03, -0.03, -0.03, -1.1203389735564493, -0.03, -0.03, -8.919804505491568, -5.567112750871515, -2.2354409131826882, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, 2.100401589555007, -2.059294313802526, -1.1302658928851823, -0.03, -0.03]
+2024-02-24 01:06:17,095 - INFO - Cumulative Performance: -10.607951670585399
+2024-02-24 01:06:17,100 - INFO - Average number of days between trades: 44.54 days
+2024-02-24 01:06:17,100 - INFO - The trading model for AMZN_modified.csv does not meet the criteria.
+2024-02-24 01:06:17,100 - INFO - Mean percentage error before adjustment: 406.34%
+2024-02-24 01:06:17,100 - INFO - Mean percentage error after adjustment: 396.82%
+2024-02-24 01:06:17,100 - INFO - Difference in mean percentage error: 9.52%
+2024-02-24 01:06:17,281 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-24 01:06:17,281 - INFO - Percentage of files processed: 6.67%
+2024-02-24 01:06:18,386 - INFO - Total Trades: 13, Wins: 1, Losses: 12
+2024-02-24 01:06:18,386 - INFO - Win Percentage: 7.69%, Mean Win Percentage: 5.67%, Mean Loss Percentage: 3.27%
+2024-02-24 01:06:18,386 - INFO - Trade Performance (Gains/Losses): [-0.03, -0.5815478793178835, -0.03, 5.673034207019103, -10.120652945351313, -9.127232142857142, -2.5029212432811403, -0.03, -11.893567251462018, -0.03, -0.0, -0.03, -4.833586626139817]
+2024-02-24 01:06:18,386 - INFO - Cumulative Performance: -33.536473881390215
+2024-02-24 01:06:18,389 - INFO - Average number of days between trades: 115.00 days
+2024-02-24 01:06:18,389 - INFO - The trading model for ABBNY_modified.csv does not meet the criteria.
+2024-02-24 01:06:18,389 - INFO - Mean percentage error before adjustment: 106.77%
+2024-02-24 01:06:18,389 - INFO - Mean percentage error after adjustment: 166.49%
+2024-02-24 01:06:18,389 - INFO - Difference in mean percentage error: -59.72%
+2024-02-24 01:06:18,389 - INFO - Error is not improving the model
+2024-02-24 01:06:18,553 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-24 01:06:18,553 - INFO - Percentage of files processed: 13.33%
+2024-02-24 01:06:19,951 - INFO - Total Trades: 8, Wins: 2, Losses: 6
+2024-02-24 01:06:19,951 - INFO - Win Percentage: 25.00%, Mean Win Percentage: 9.02%, Mean Loss Percentage: 3.19%
+2024-02-24 01:06:19,952 - INFO - Trade Performance (Gains/Losses): [-0.03, 4.620146314012381, -3.6300294406280664, -4.268209666439755, 13.413663663663662, -0.03, -1.5104608425219113, -9.667593528816989]
+2024-02-24 01:06:19,952 - INFO - Cumulative Performance: -1.1024835007306777
+2024-02-24 01:06:19,957 - INFO - Average number of days between trades: 179.33 days
+2024-02-24 01:06:19,957 - INFO - The trading model for AMT_modified.csv does not meet the criteria.
+2024-02-24 01:06:19,958 - INFO - Mean percentage error before adjustment: 100.63%
+2024-02-24 01:06:19,958 - INFO - Mean percentage error after adjustment: 132.55%
+2024-02-24 01:06:19,958 - INFO - Difference in mean percentage error: -31.92%
+2024-02-24 01:06:19,958 - INFO - Error is not improving the model
+2024-02-24 01:06:20,175 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-24 01:06:20,175 - INFO - Percentage of files processed: 20.0%
+2024-02-24 01:06:21,942 - INFO - Total Trades: 8, Wins: 0, Losses: 8
+2024-02-24 01:06:21,943 - INFO - Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 1.91%
+2024-02-24 01:06:21,943 - INFO - Trade Performance (Gains/Losses): [-1.02295240396231, -0.03, -0.03, -0.03, -14.066220238095239, -0.03, -0.03, -0.03]
+2024-02-24 01:06:21,943 - INFO - Cumulative Performance: -15.269172642057548
+2024-02-24 01:06:21,947 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:06:21,948 - INFO - Mean percentage error before adjustment: 530.21%
+2024-02-24 01:06:21,948 - INFO - Mean percentage error after adjustment: 22878.81%
+2024-02-24 01:06:21,948 - INFO - Difference in mean percentage error: -22348.60%
+2024-02-24 01:06:21,948 - INFO - Error is not improving the model
+2024-02-24 01:06:22,212 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-24 01:06:22,212 - INFO - Percentage of files processed: 26.67%
+2024-02-24 01:06:23,976 - INFO - Total Trades: 15, Wins: 0, Losses: 15
+2024-02-24 01:06:23,976 - INFO - Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 0.22%
+2024-02-24 01:06:23,976 - INFO - Trade Performance (Gains/Losses): [-0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -1.007061592781483, -1.0074856891237343, -0.03, -0.009223390518354555, -0.03, -0.9923287671232877, -0.03, -0.03, -0.03]
+2024-02-24 01:06:23,976 - INFO - Cumulative Performance: -3.3460994395468586
+2024-02-24 01:06:23,981 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:06:23,981 - INFO - Mean percentage error before adjustment: 506.39%
+2024-02-24 01:06:23,981 - INFO - Mean percentage error after adjustment: 12061.73%
+2024-02-24 01:06:23,981 - INFO - Difference in mean percentage error: -11555.35%
+2024-02-24 01:06:23,981 - INFO - Error is not improving the model
+2024-02-24 01:06:24,203 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-24 01:06:24,203 - INFO - Percentage of files processed: 33.33%
+2024-02-24 01:06:24,736 - INFO - Total Trades: 3, Wins: 1, Losses: 2
+2024-02-24 01:06:24,736 - INFO - Win Percentage: 33.33%, Mean Win Percentage: 2.83%, Mean Loss Percentage: 0.03%
+2024-02-24 01:06:24,737 - INFO - Trade Performance (Gains/Losses): [-0.03, 2.832528180354267, -0.03]
+2024-02-24 01:06:24,737 - INFO - Cumulative Performance: 2.7725281803542674
+2024-02-24 01:06:24,738 - INFO - Average number of days between trades: 409.00 days
+2024-02-24 01:06:24,738 - INFO - The trading model for ABBV_modified.csv does not meet the criteria.
+2024-02-24 01:06:24,739 - INFO - Mean percentage error before adjustment: 101.81%
+2024-02-24 01:06:24,739 - INFO - Mean percentage error after adjustment: 133.20%
+2024-02-24 01:06:24,739 - INFO - Difference in mean percentage error: -31.39%
+2024-02-24 01:06:24,739 - INFO - Error is not improving the model
+2024-02-24 01:06:24,811 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-24 01:06:24,811 - INFO - Percentage of files processed: 40.0%
+2024-02-24 01:06:24,958 - INFO - Total Trades: 1, Wins: 0, Losses: 1
+2024-02-24 01:06:24,959 - INFO - Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 0.12%
+2024-02-24 01:06:24,959 - INFO - Trade Performance (Gains/Losses): [-0.12306759624128513]
+2024-02-24 01:06:24,959 - INFO - Cumulative Performance: -0.12306759624128513
+2024-02-24 01:06:24,960 - INFO - Average number of days between trades: 26.00 days
+2024-02-24 01:06:24,960 - INFO - The trading model for ABNB_modified.csv does not meet the criteria.
+2024-02-24 01:06:24,960 - INFO - Mean percentage error before adjustment: 121.78%
+2024-02-24 01:06:24,960 - INFO - Mean percentage error after adjustment: 171.44%
+2024-02-24 01:06:24,960 - INFO - Difference in mean percentage error: -49.66%
+2024-02-24 01:06:24,960 - INFO - Error is not improving the model
+2024-02-24 01:06:24,983 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-24 01:06:24,983 - INFO - Percentage of files processed: 46.67%
+2024-02-24 01:06:26,674 - INFO - Total Trades: 45, Wins: 3, Losses: 42
+2024-02-24 01:06:26,674 - INFO - Win Percentage: 6.67%, Mean Win Percentage: 1.16%, Mean Loss Percentage: 0.20%
+2024-02-24 01:06:26,674 - INFO - Trade Performance (Gains/Losses): [-1.686903521830641, -1.3605683957421706, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, 1.5287957714974931, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.5088056193145815, -0.03, -0.03, -0.03, -0.3215909030001722, -0.01476868353680927, -0.03, -0.03, 0.007585335258701992, -0.03, -0.48119469558843697, -0.03, -0.03, -0.03, -0.6787658596864534, -0.03, -0.03, -0.03, -0.03, -1.605192515783181, -0.03, -0.8796573099531773, -0.03, -0.03, -0.03, -0.03, 1.9571578358714168, -0.03]
+2024-02-24 01:06:26,674 - INFO - Cumulative Performance: -5.033908561808011
+2024-02-24 01:06:26,678 - INFO - Average number of days between trades: 27.58 days
+2024-02-24 01:06:26,678 - INFO - The trading model for AAPL_modified.csv does not meet the criteria.
+2024-02-24 01:06:26,679 - INFO - Mean percentage error before adjustment: 500.44%
+2024-02-24 01:06:26,679 - INFO - Mean percentage error after adjustment: 498.48%
+2024-02-24 01:06:26,679 - INFO - Difference in mean percentage error: 1.96%
+2024-02-24 01:06:26,905 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-24 01:06:26,905 - INFO - Percentage of files processed: 53.33%
+2024-02-24 01:06:28,728 - INFO - Total Trades: 13, Wins: 0, Losses: 13
+2024-02-24 01:06:28,728 - INFO - Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 1.93%
+2024-02-24 01:06:28,729 - INFO - Trade Performance (Gains/Losses): [-1.9848484848484869, -0.03, -3.9433113377324536, -0.03, -4.922696962212893, -1.9756982227058395, -0.03, -4.062953995157385, -4.0309333333333335, -0.03, -0.03, -0.03, -4.021627683434802]
+2024-02-24 01:06:28,729 - INFO - Cumulative Performance: -25.122070019425195
+2024-02-24 01:06:28,733 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:06:28,733 - INFO - Mean percentage error before adjustment: 1060.68%
+2024-02-24 01:06:28,733 - INFO - Mean percentage error after adjustment: 7112.59%
+2024-02-24 01:06:28,734 - INFO - Difference in mean percentage error: -6051.91%
+2024-02-24 01:06:28,734 - INFO - Error is not improving the model
+2024-02-24 01:06:29,136 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-24 01:06:29,136 - INFO - Percentage of files processed: 60.0%
+2024-02-24 01:06:30,248 - INFO - Total Trades: 8, Wins: 1, Losses: 7
+2024-02-24 01:06:30,249 - INFO - Win Percentage: 12.50%, Mean Win Percentage: 2.91%, Mean Loss Percentage: 1.37%
+2024-02-24 01:06:30,249 - INFO - Trade Performance (Gains/Losses): [-8.355022109917877, -0.03, 2.912668726622215, -0.03, -0.03, -0.8651859504132231, -0.23253757736516348, -0.03]
+2024-02-24 01:06:30,249 - INFO - Cumulative Performance: -6.660076911074049
+2024-02-24 01:06:30,254 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:06:30,254 - INFO - Mean percentage error before adjustment: 120.10%
+2024-02-24 01:06:30,254 - INFO - Mean percentage error after adjustment: 182.57%
+2024-02-24 01:06:30,254 - INFO - Difference in mean percentage error: -62.47%
+2024-02-24 01:06:30,254 - INFO - Error is not improving the model
+2024-02-24 01:06:30,398 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-24 01:06:30,398 - INFO - Percentage of files processed: 66.67%
+2024-02-24 01:06:32,060 - INFO - Total Trades: 11, Wins: 1, Losses: 10
+2024-02-24 01:06:32,060 - INFO - Win Percentage: 9.09%, Mean Win Percentage: 5.02%, Mean Loss Percentage: 1.84%
+2024-02-24 01:06:32,060 - INFO - Trade Performance (Gains/Losses): [-0.03, -0.03, -0.03, -0.03, -1.9871420222092342, -3.726101413133834, 5.015992474129828, -0.03, -1.5092230296254892, -0.03, -10.957509881422926]
+2024-02-24 01:06:32,060 - INFO - Cumulative Performance: -13.343983872261655
+2024-02-24 01:06:32,065 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:06:32,065 - INFO - Mean percentage error before adjustment: 552.69%
+2024-02-24 01:06:32,065 - INFO - Mean percentage error after adjustment: 6561.37%
+2024-02-24 01:06:32,065 - INFO - Difference in mean percentage error: -6008.68%
+2024-02-24 01:06:32,065 - INFO - Error is not improving the model
+2024-02-24 01:06:32,334 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-24 01:06:32,334 - INFO - Percentage of files processed: 73.33%
+2024-02-24 01:06:34,089 - INFO - Total Trades: 20, Wins: 1, Losses: 19
+2024-02-24 01:06:34,089 - INFO - Win Percentage: 5.00%, Mean Win Percentage: 3.35%, Mean Loss Percentage: 0.63%
+2024-02-24 01:06:34,089 - INFO - Trade Performance (Gains/Losses): [-0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -3.2938105891126024, -1.0893108298171588, -0.03, -0.03, -0.0022883295194507606, -0.03, -0.03, -0.0, 3.353927625772286, -0.03, -0.03, -5.318385650224216, -1.8896132116471103, -0.03]
+2024-02-24 01:06:34,089 - INFO - Cumulative Performance: -8.629480984548254
+2024-02-24 01:06:34,094 - INFO - Average number of days between trades: 250.00 days
+2024-02-24 01:06:34,094 - INFO - The trading model for ADP_modified.csv does not meet the criteria.
+2024-02-24 01:06:34,094 - INFO - Mean percentage error before adjustment: 110.13%
+2024-02-24 01:06:34,094 - INFO - Mean percentage error after adjustment: 173.34%
+2024-02-24 01:06:34,094 - INFO - Difference in mean percentage error: -63.21%
+2024-02-24 01:06:34,094 - INFO - Error is not improving the model
+2024-02-24 01:06:34,369 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-24 01:06:34,369 - INFO - Percentage of files processed: 80.0%
+2024-02-24 01:06:35,956 - INFO - Total Trades: 56, Wins: 3, Losses: 53
+2024-02-24 01:06:35,956 - INFO - Win Percentage: 5.36%, Mean Win Percentage: 2.47%, Mean Loss Percentage: 0.22%
+2024-02-24 01:06:35,956 - INFO - Trade Performance (Gains/Losses): [-2.9924035237899034, -0.03, -0.03, -0.03, -0.03, -0.07244212044479388, -0.03, -0.13300492517237916, -0.03, -0.620689660268388, -0.03, -0.03, 2.8678039908211086, -0.31944181935806487, -0.03, -0.9753444383561357, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -2.5343034590346467, -0.03, -0.03, -0.03, -0.03, 3.0016070108154476, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -0.03, -2.642947020058343, -0.03, 1.5313892470823445, -0.03]
+2024-02-24 01:06:35,956 - INFO - Cumulative Performance: -4.239776717763749
+2024-02-24 01:06:35,964 - INFO - Average number of days between trades: 28.38 days
+2024-02-24 01:06:35,964 - INFO - The trading model for ADBE_modified.csv does not meet the criteria.
+2024-02-24 01:06:35,964 - INFO - Mean percentage error before adjustment: 565.68%
+2024-02-24 01:06:35,964 - INFO - Mean percentage error after adjustment: 572.46%
+2024-02-24 01:06:35,964 - INFO - Difference in mean percentage error: -6.78%
+2024-02-24 01:06:35,964 - INFO - Error is not improving the model
+2024-02-24 01:06:36,223 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-24 01:06:36,223 - INFO - Percentage of files processed: 86.67%
+2024-02-24 01:06:36,223 - INFO - Processing complete.
+2024-02-24 01:08:56,919 - INFO - Prediction is within 10%: 29
+2024-02-24 01:08:56,919 - INFO - Error processing file Data/LSTMpredictedData/AMZN_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:08:56,919 - INFO - Percentage of files processed: 6.67%
+2024-02-24 01:08:58,122 - INFO - Prediction is within 10%: 2
+2024-02-24 01:08:58,122 - INFO - Error processing file Data/LSTMpredictedData/ABBNY_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:08:58,122 - INFO - Percentage of files processed: 13.33%
+2024-02-24 01:08:59,704 - INFO - Prediction is within 10%: 7
+2024-02-24 01:08:59,704 - INFO - Error processing file Data/LSTMpredictedData/AMT_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:08:59,704 - INFO - Percentage of files processed: 20.0%
+2024-02-24 01:09:01,558 - INFO - Prediction is within 10%: 0
+2024-02-24 01:09:01,558 - INFO - Error processing file Data/LSTMpredictedData/ADI_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:01,558 - INFO - Percentage of files processed: 26.67%
+2024-02-24 01:09:03,533 - INFO - Prediction is within 10%: 0
+2024-02-24 01:09:03,533 - INFO - Error processing file Data/LSTMpredictedData/ABT_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:03,534 - INFO - Percentage of files processed: 33.33%
+2024-02-24 01:09:04,104 - INFO - Prediction is within 10%: 2
+2024-02-24 01:09:04,104 - INFO - Error processing file Data/LSTMpredictedData/ABBV_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:04,104 - INFO - Percentage of files processed: 40.0%
+2024-02-24 01:09:04,326 - INFO - Prediction is within 10%: 6
+2024-02-24 01:09:04,326 - INFO - Error processing file Data/LSTMpredictedData/ABNB_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:04,326 - INFO - Percentage of files processed: 46.67%
+2024-02-24 01:09:06,243 - INFO - Prediction is within 10%: 60
+2024-02-24 01:09:06,243 - INFO - Error processing file Data/LSTMpredictedData/AAPL_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:06,244 - INFO - Percentage of files processed: 53.33%
+2024-02-24 01:09:08,011 - INFO - Prediction is within 10%: 0
+2024-02-24 01:09:08,011 - INFO - Error processing file Data/LSTMpredictedData/AMAT_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:08,011 - INFO - Percentage of files processed: 60.0%
+2024-02-24 01:09:09,200 - INFO - Prediction is within 10%: 1
+2024-02-24 01:09:09,201 - INFO - Error processing file Data/LSTMpredictedData/ACN_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:09,201 - INFO - Percentage of files processed: 66.67%
+2024-02-24 01:09:11,205 - INFO - Prediction is within 10%: 0
+2024-02-24 01:09:11,205 - INFO - Error processing file Data/LSTMpredictedData/AMGN_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:11,205 - INFO - Percentage of files processed: 73.33%
+2024-02-24 01:09:13,205 - INFO - Prediction is within 10%: 7
+2024-02-24 01:09:13,206 - INFO - Error processing file Data/LSTMpredictedData/ADP_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:13,206 - INFO - Percentage of files processed: 80.0%
+2024-02-24 01:09:15,581 - INFO - Prediction is within 10%: 59
+2024-02-24 01:09:15,581 - INFO - Error processing file Data/LSTMpredictedData/ADBE_modified.csv: name 'log_trade_outcomes_and_percentages' is not defined
+2024-02-24 01:09:15,581 - INFO - Percentage of files processed: 86.67%
+2024-02-24 01:09:15,581 - INFO - Processing complete.
+2024-02-24 01:10:31,915 - INFO - Total Trades: 45, Wins: 26, Losses: 19
+2024-02-24 01:10:31,915 - INFO - Win Percentage: 57.78%, Mean Win Percentage: 1.82%, Mean Loss Percentage: 2.53%
+2024-02-24 01:10:31,915 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:31,915 - INFO - Trade Entry and Exit Points: [(85, 86), (144, 145), (167, 168), (237, 238), (246, 247), (252, 253), (261, 262), (297, 298), (462, 463), (553, 554), (589, 590), (592, 593), (605, 606), (621, 622), (715, 716), (780, 781), (781, 782), (804, 805), (805, 806), (819, 820), (836, 837), (870, 871), (905, 906), (927, 928), (987, 988), (990, 991), (997, 998), (1039, 1040), (1051, 1052), (1092, 1093), (1126, 1127), (1131, 1132), (1184, 1185), (1208, 1209), (1218, 1219), (1237, 1238), (1240, 1241), (1256, 1257), (1277, 1278), (1285, 1286), (1306, 1307), (1311, 1312), (1321, 1322), (1332, 1333), (1339, 1340)]
+2024-02-24 01:10:31,921 - INFO - Average number of days between trades: 44.54 days
+2024-02-24 01:10:31,922 - INFO - The trading model for AMZN_modified.csv does not meet the criteria.
+2024-02-24 01:10:31,922 - INFO - Mean percentage error before adjustment: 406.34%
+2024-02-24 01:10:31,922 - INFO - Mean percentage error after adjustment: 396.82%
+2024-02-24 01:10:31,922 - INFO - Difference in mean percentage error: 9.52%
+2024-02-24 01:10:32,206 - INFO - File processed and saved: Data/LSTMpredictedData/AMZN_modified.csv
+2024-02-24 01:10:32,206 - INFO - Percentage of files processed: 6.67%
+2024-02-24 01:10:33,297 - INFO - Total Trades: 13, Wins: 6, Losses: 7
+2024-02-24 01:10:33,297 - INFO - Win Percentage: 46.15%, Mean Win Percentage: 3.42%, Mean Loss Percentage: 5.58%
+2024-02-24 01:10:33,297 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:33,298 - INFO - Trade Entry and Exit Points: [(104, 105), (145, 146), (158, 159), (264, 265), (278, 279), (555, 556), (670, 671), (896, 897), (938, 939), (978, 979), (1115, 1116), (1143, 1144), (1160, 1161)]
+2024-02-24 01:10:33,301 - INFO - Average number of days between trades: 115.00 days
+2024-02-24 01:10:33,301 - INFO - The trading model for ABBNY_modified.csv does not meet the criteria.
+2024-02-24 01:10:33,301 - INFO - Mean percentage error before adjustment: 106.77%
+2024-02-24 01:10:33,301 - INFO - Mean percentage error after adjustment: 166.49%
+2024-02-24 01:10:33,301 - INFO - Difference in mean percentage error: -59.72%
+2024-02-24 01:10:33,301 - INFO - Error is not improving the model
+2024-02-24 01:10:33,532 - INFO - File processed and saved: Data/LSTMpredictedData/ABBNY_modified.csv
+2024-02-24 01:10:33,532 - INFO - Percentage of files processed: 13.33%
+2024-02-24 01:10:34,886 - INFO - Total Trades: 8, Wins: 3, Losses: 5
+2024-02-24 01:10:34,886 - INFO - Win Percentage: 37.50%, Mean Win Percentage: 6.79%, Mean Loss Percentage: 9.18%
+2024-02-24 01:10:34,886 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:34,886 - INFO - Trade Entry and Exit Points: [(75, 76), (271, 272), (306, 307), (378, 379), (818, 819), (864, 865), (917, 918), (1190, 1191)]
+2024-02-24 01:10:34,895 - INFO - Average number of days between trades: 179.33 days
+2024-02-24 01:10:34,895 - INFO - The trading model for AMT_modified.csv does not meet the criteria.
+2024-02-24 01:10:34,895 - INFO - Mean percentage error before adjustment: 100.63%
+2024-02-24 01:10:34,895 - INFO - Mean percentage error after adjustment: 132.55%
+2024-02-24 01:10:34,895 - INFO - Difference in mean percentage error: -31.92%
+2024-02-24 01:10:34,895 - INFO - Error is not improving the model
+2024-02-24 01:10:35,136 - INFO - File processed and saved: Data/LSTMpredictedData/AMT_modified.csv
+2024-02-24 01:10:35,136 - INFO - Percentage of files processed: 20.0%
+2024-02-24 01:10:36,851 - INFO - Total Trades: 8, Wins: 4, Losses: 4
+2024-02-24 01:10:36,851 - INFO - Win Percentage: 50.00%, Mean Win Percentage: 6.02%, Mean Loss Percentage: 7.76%
+2024-02-24 01:10:36,851 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:36,851 - INFO - Trade Entry and Exit Points: [(330, 331), (728, 729), (1231, 1232), (1261, 1262), (1455, 1456), (1501, 1502), (1586, 1587), (1672, 1673)]
+2024-02-24 01:10:36,856 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:10:36,856 - INFO - Mean percentage error before adjustment: 530.21%
+2024-02-24 01:10:36,856 - INFO - Mean percentage error after adjustment: 22878.81%
+2024-02-24 01:10:36,856 - INFO - Difference in mean percentage error: -22348.60%
+2024-02-24 01:10:36,856 - INFO - Error is not improving the model
+2024-02-24 01:10:37,076 - INFO - File processed and saved: Data/LSTMpredictedData/ADI_modified.csv
+2024-02-24 01:10:37,077 - INFO - Percentage of files processed: 26.67%
+2024-02-24 01:10:38,787 - INFO - Total Trades: 15, Wins: 8, Losses: 7
+2024-02-24 01:10:38,787 - INFO - Win Percentage: 53.33%, Mean Win Percentage: 3.81%, Mean Loss Percentage: 2.82%
+2024-02-24 01:10:38,787 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:38,787 - INFO - Trade Entry and Exit Points: [(133, 134), (138, 139), (176, 177), (245, 246), (258, 259), (402, 403), (482, 483), (532, 533), (594, 595), (788, 789), (789, 790), (1382, 1383), (1513, 1514), (1612, 1613), (1615, 1616)]
+2024-02-24 01:10:38,792 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:10:38,792 - INFO - Mean percentage error before adjustment: 506.39%
+2024-02-24 01:10:38,792 - INFO - Mean percentage error after adjustment: 12061.73%
+2024-02-24 01:10:38,792 - INFO - Difference in mean percentage error: -11555.35%
+2024-02-24 01:10:38,792 - INFO - Error is not improving the model
+2024-02-24 01:10:39,014 - INFO - File processed and saved: Data/LSTMpredictedData/ABT_modified.csv
+2024-02-24 01:10:39,014 - INFO - Percentage of files processed: 33.33%
+2024-02-24 01:10:39,552 - INFO - Total Trades: 3, Wins: 3, Losses: 0
+2024-02-24 01:10:39,552 - INFO - Win Percentage: 100.00%, Mean Win Percentage: 2.82%, Mean Loss Percentage: 0.00%
+2024-02-24 01:10:39,552 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:39,552 - INFO - Trade Entry and Exit Points: [(228, 229), (246, 247), (275, 276)]
+2024-02-24 01:10:39,555 - INFO - Average number of days between trades: 409.00 days
+2024-02-24 01:10:39,555 - INFO - The trading model for ABBV_modified.csv does not meet the criteria.
+2024-02-24 01:10:39,555 - INFO - Mean percentage error before adjustment: 101.81%
+2024-02-24 01:10:39,555 - INFO - Mean percentage error after adjustment: 133.20%
+2024-02-24 01:10:39,555 - INFO - Difference in mean percentage error: -31.39%
+2024-02-24 01:10:39,555 - INFO - Error is not improving the model
+2024-02-24 01:10:39,664 - INFO - File processed and saved: Data/LSTMpredictedData/ABBV_modified.csv
+2024-02-24 01:10:39,665 - INFO - Percentage of files processed: 40.0%
+2024-02-24 01:10:39,828 - INFO - Total Trades: 1, Wins: 0, Losses: 1
+2024-02-24 01:10:39,828 - INFO - Win Percentage: 0.00%, Mean Win Percentage: 0.00%, Mean Loss Percentage: 0.12%
+2024-02-24 01:10:39,828 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:39,828 - INFO - Trade Entry and Exit Points: [(122, 123)]
+2024-02-24 01:10:39,829 - INFO - Average number of days between trades: 26.00 days
+2024-02-24 01:10:39,829 - INFO - The trading model for ABNB_modified.csv does not meet the criteria.
+2024-02-24 01:10:39,829 - INFO - Mean percentage error before adjustment: 121.78%
+2024-02-24 01:10:39,829 - INFO - Mean percentage error after adjustment: 171.44%
+2024-02-24 01:10:39,829 - INFO - Difference in mean percentage error: -49.66%
+2024-02-24 01:10:39,829 - INFO - Error is not improving the model
+2024-02-24 01:10:39,849 - INFO - File processed and saved: Data/LSTMpredictedData/ABNB_modified.csv
+2024-02-24 01:10:39,850 - INFO - Percentage of files processed: 46.67%
+2024-02-24 01:10:41,526 - INFO - Total Trades: 45, Wins: 28, Losses: 17
+2024-02-24 01:10:41,526 - INFO - Win Percentage: 62.22%, Mean Win Percentage: 1.77%, Mean Loss Percentage: 1.23%
+2024-02-24 01:10:41,526 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:41,526 - INFO - Trade Entry and Exit Points: [(158, 159), (190, 191), (290, 291), (319, 320), (341, 342), (352, 353), (391, 392), (409, 410), (432, 433), (441, 442), (485, 486), (591, 592), (599, 600), (630, 631), (685, 686), (765, 766), (770, 771), (775, 776), (785, 786), (804, 805), (886, 887), (904, 905), (928, 929), (1046, 1047), (1062, 1063), (1083, 1084), (1089, 1090), (1115, 1116), (1126, 1127), (1136, 1137), (1141, 1142), (1218, 1219), (1304, 1305), (1369, 1370), (1391, 1392), (1408, 1409), (1439, 1440), (1527, 1528), (1567, 1568), (1574, 1575), (1607, 1608), (1631, 1632), (1686, 1687), (1736, 1737), (1744, 1745)]
+2024-02-24 01:10:41,530 - INFO - Average number of days between trades: 27.58 days
+2024-02-24 01:10:41,530 - INFO - The trading model for AAPL_modified.csv does not meet the criteria.
+2024-02-24 01:10:41,531 - INFO - Mean percentage error before adjustment: 500.44%
+2024-02-24 01:10:41,531 - INFO - Mean percentage error after adjustment: 498.48%
+2024-02-24 01:10:41,531 - INFO - Difference in mean percentage error: 1.96%
+2024-02-24 01:10:41,822 - INFO - File processed and saved: Data/LSTMpredictedData/AAPL_modified.csv
+2024-02-24 01:10:41,822 - INFO - Percentage of files processed: 53.33%
+2024-02-24 01:10:43,538 - INFO - Total Trades: 13, Wins: 5, Losses: 8
+2024-02-24 01:10:43,538 - INFO - Win Percentage: 38.46%, Mean Win Percentage: 5.00%, Mean Loss Percentage: 3.87%
+2024-02-24 01:10:43,538 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:43,538 - INFO - Trade Entry and Exit Points: [(269, 270), (435, 436), (450, 451), (603, 604), (631, 632), (715, 716), (921, 922), (984, 985), (1024, 1025), (1124, 1125), (1493, 1494), (1618, 1619), (1740, 1741)]
+2024-02-24 01:10:43,543 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:10:43,543 - INFO - Mean percentage error before adjustment: 1060.68%
+2024-02-24 01:10:43,543 - INFO - Mean percentage error after adjustment: 7112.59%
+2024-02-24 01:10:43,543 - INFO - Difference in mean percentage error: -6051.91%
+2024-02-24 01:10:43,543 - INFO - Error is not improving the model
+2024-02-24 01:10:43,884 - INFO - File processed and saved: Data/LSTMpredictedData/AMAT_modified.csv
+2024-02-24 01:10:43,884 - INFO - Percentage of files processed: 60.0%
+2024-02-24 01:10:45,018 - INFO - Total Trades: 8, Wins: 5, Losses: 3
+2024-02-24 01:10:45,019 - INFO - Win Percentage: 62.50%, Mean Win Percentage: 3.98%, Mean Loss Percentage: 3.15%
+2024-02-24 01:10:45,019 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:45,019 - INFO - Trade Entry and Exit Points: [(171, 172), (262, 263), (318, 319), (320, 321), (721, 722), (923, 924), (956, 957), (1091, 1092)]
+2024-02-24 01:10:45,025 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:10:45,025 - INFO - Mean percentage error before adjustment: 120.10%
+2024-02-24 01:10:45,025 - INFO - Mean percentage error after adjustment: 182.57%
+2024-02-24 01:10:45,025 - INFO - Difference in mean percentage error: -62.47%
+2024-02-24 01:10:45,025 - INFO - Error is not improving the model
+2024-02-24 01:10:45,176 - INFO - File processed and saved: Data/LSTMpredictedData/ACN_modified.csv
+2024-02-24 01:10:45,177 - INFO - Percentage of files processed: 66.67%
+2024-02-24 01:10:46,849 - INFO - Total Trades: 11, Wins: 4, Losses: 7
+2024-02-24 01:10:46,850 - INFO - Win Percentage: 36.36%, Mean Win Percentage: 4.38%, Mean Loss Percentage: 6.36%
+2024-02-24 01:10:46,850 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:46,850 - INFO - Trade Entry and Exit Points: [(115, 116), (126, 127), (409, 410), (542, 543), (755, 756), (1165, 1166), (1237, 1238), (1290, 1291), (1327, 1328), (1484, 1485), (1746, 1747)]
+2024-02-24 01:10:46,858 - INFO - Not enough trades to calculate average interval.
+2024-02-24 01:10:46,858 - INFO - Mean percentage error before adjustment: 552.69%
+2024-02-24 01:10:46,858 - INFO - Mean percentage error after adjustment: 6561.37%
+2024-02-24 01:10:46,858 - INFO - Difference in mean percentage error: -6008.68%
+2024-02-24 01:10:46,858 - INFO - Error is not improving the model
+2024-02-24 01:10:47,129 - INFO - File processed and saved: Data/LSTMpredictedData/AMGN_modified.csv
+2024-02-24 01:10:47,129 - INFO - Percentage of files processed: 73.33%
+2024-02-24 01:10:48,743 - INFO - Total Trades: 20, Wins: 12, Losses: 8
+2024-02-24 01:10:48,744 - INFO - Win Percentage: 60.00%, Mean Win Percentage: 2.40%, Mean Loss Percentage: 3.53%
+2024-02-24 01:10:48,744 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:48,744 - INFO - Trade Entry and Exit Points: [(327, 328), (471, 472), (496, 497), (597, 598), (744, 745), (897, 898), (991, 992), (1040, 1041), (1052, 1053), (1182, 1183), (1254, 1255), (1325, 1326), (1372, 1373), (1389, 1390), (1413, 1414), (1477, 1478), (1534, 1535), (1599, 1600), (1647, 1648), (1697, 1698)]
+2024-02-24 01:10:48,748 - INFO - Average number of days between trades: 250.00 days
+2024-02-24 01:10:48,748 - INFO - The trading model for ADP_modified.csv does not meet the criteria.
+2024-02-24 01:10:48,748 - INFO - Mean percentage error before adjustment: 110.13%
+2024-02-24 01:10:48,749 - INFO - Mean percentage error after adjustment: 173.34%
+2024-02-24 01:10:48,749 - INFO - Difference in mean percentage error: -63.21%
+2024-02-24 01:10:48,749 - INFO - Error is not improving the model
+2024-02-24 01:10:49,012 - INFO - File processed and saved: Data/LSTMpredictedData/ADP_modified.csv
+2024-02-24 01:10:49,012 - INFO - Percentage of files processed: 80.0%
+2024-02-24 01:10:50,766 - INFO - Total Trades: 56, Wins: 38, Losses: 18
+2024-02-24 01:10:50,766 - INFO - Win Percentage: 67.86%, Mean Win Percentage: 1.46%, Mean Loss Percentage: 1.74%
+2024-02-24 01:10:50,767 - INFO - Average Trade Duration: 1.0 periods
+2024-02-24 01:10:50,767 - INFO - Trade Entry and Exit Points: [(65, 66), (100, 101), (106, 107), (154, 155), (236, 237), (262, 263), (301, 302), (315, 316), (321, 322), (345, 346), (368, 369), (379, 380), (439, 440), (468, 469), (493, 494), (494, 495), (509, 510), (511, 512), (617, 618), (620, 621), (627, 628), (662, 663), (667, 668), (715, 716), (741, 742), (761, 762), (777, 778), (809, 810), (844, 845), (847, 848), (876, 877), (900, 901), (932, 933), (948, 949), (954, 955), (974, 975), (1026, 1027), (1108, 1109), (1145, 1146), (1166, 1167), (1211, 1212), (1212, 1213), (1214, 1215), (1252, 1253), (1270, 1271), (1290, 1291), (1357, 1358), (1414, 1415), (1439, 1440), (1457, 1458), (1584, 1585), (1592, 1593), (1627, 1628), (1640, 1641), (1702, 1703), (1703, 1704)]
+2024-02-24 01:10:50,771 - INFO - Average number of days between trades: 28.38 days
+2024-02-24 01:10:50,771 - INFO - The trading model for ADBE_modified.csv does not meet the criteria.
+2024-02-24 01:10:50,771 - INFO - Mean percentage error before adjustment: 565.68%
+2024-02-24 01:10:50,771 - INFO - Mean percentage error after adjustment: 572.46%
+2024-02-24 01:10:50,772 - INFO - Difference in mean percentage error: -6.78%
+2024-02-24 01:10:50,772 - INFO - Error is not improving the model
+2024-02-24 01:10:50,997 - INFO - File processed and saved: Data/LSTMpredictedData/ADBE_modified.csv
+2024-02-24 01:10:50,997 - INFO - Percentage of files processed: 86.67%
+2024-02-24 01:10:50,997 - INFO - Processing complete.
