@@ -2,6 +2,7 @@
 import logging
 import numpy as np
 import os 
+from tqdm import tqdm  # Import the tqdm function specifically
 # ====== Machine Learning Utilities ======
 from sklearn.metrics import mean_absolute_percentage_error
 
@@ -42,18 +43,21 @@ def calculate_best_fit_slope(data, window_size):
         return slope
     else:
         return 0  # No clear trend
+    
 
-def adjust_predictions(predictions, data, base_window_size=5, trend_factor=0.1, anomaly_threshold=2.5):
+
+
+
+def adjust_predictions(predictions, data, base_window_size=30, max_percent_change=5.0):
     """
-    Adjust predictions using a rolling window approach. The window size is dynamic, 
-    based on recent volatility, and adjustments consider trends and potential anomalies.
+    Adjust predictions by capping the maximum change at either a fixed percentage or the maximum real value 
+    seen in a rolling window over the last 30 days.
 
     Parameters:
     predictions (np.array): Array of predicted values.
     data (np.array): Array of actual historical values.
-    base_window_size (int): Base size of the rolling window.
-    trend_factor (float): Factor to adjust predictions based on the trend slope.
-    anomaly_threshold (float): Z-score threshold for detecting anomalies.
+    base_window_size (int): Size of the rolling window for the maximum real value calculation.
+    max_percent_change (int): Maximum percent change allowed for predictions.
 
     Returns:
     np.array: Adjusted predictions.
@@ -65,35 +69,24 @@ def adjust_predictions(predictions, data, base_window_size=5, trend_factor=0.1, 
         return predictions
 
     adjusted_predictions = predictions.copy()
-    rolling_window_size = base_window_size
-    mean_data = np.mean(valid_data)
-    std_data = np.std(valid_data)
 
     for i in range(len(predictions)):
-        # Adjust the rolling window size based on recent volatility
         if i >= base_window_size:
-            recent_std = np.std(valid_data[i-base_window_size:i])
-            rolling_window_size = min(len(valid_data), max(base_window_size, int(base_window_size * (1 + recent_std))))
+            rolling_window_data = valid_data[i-base_window_size:i]
+            max_historical_value = np.max(rolling_window_data)
+            min_historical_value = np.min(rolling_window_data)
 
-        # Calculate trend slope in the rolling window
-        if i >= rolling_window_size:
-            rolling_window_data = valid_data[i-rolling_window_size:i]
-            slope = calculate_best_fit_slope(rolling_window_data, rolling_window_size)
+            # Calculate the maximum and minimum allowed predictions
+            max_allowed_prediction = max_historical_value * (1 + max_percent_change / 100)
+            min_allowed_prediction = min_historical_value * (1 - max_percent_change / 100)
 
-            # Calculate dynamic bounds based on recent data
-            cap_positive = mean_data + anomaly_threshold * std_data
-            cap_negative = mean_data - anomaly_threshold * std_data
-
-            # Adjust prediction with trend factor and cap with dynamic bounds
-            trend_adjustment = slope * trend_factor
-            adjusted_prediction = predictions[i] + trend_adjustment
-            adjusted_predictions[i] = min(max(adjusted_prediction, cap_negative), cap_positive)
-
-            # Check for anomalies and adjust
-            if abs(adjusted_predictions[i] - mean_data) > anomaly_threshold * std_data:
-                adjusted_predictions[i] = mean_data + np.sign(adjusted_predictions[i] - mean_data) * anomaly_threshold * std_data
+            # Cap predictions within the allowed range
+            adjusted_predictions[i] = np.clip(predictions[i], min_allowed_prediction, max_allowed_prediction)
 
     return adjusted_predictions
+
+
+
 
 
 
@@ -140,51 +133,75 @@ def calculate_average_days_between_trades(actual_values, predictions):
 
 
 
-def log_trade_outcomes_and_percentages(actual_values, predictions):
-    successful_trade = False
+def log_trade_outcomes_and_percentages(actual_values, predictions, starting_cash=10000, average_share_cost=100, fee_per_share=0.03, min_percentage_change_for_trade=1.0):
     trade_wins = 0
     trade_losses = 0
     total_trades = 0
-    total_win_percentage = 0
-    total_loss_percentage = 0
-    trade_durations = []
-    trade_entries_exits = []
+    current_cash = starting_cash
+    max_investment_per_trade = 0.33 * current_cash  # 20% of current cash
+    stop_loss_limit = 3.0  # 1% stop loss
 
-    for i in range(1, len(predictions)):  
-        if abs((predictions[i-1] - actual_values[i-1]) / actual_values[i-1]) <= 0.1:
-            successful_trade = True
-            trade_start = i - 1  # Record trade start
+    trade_details = []
 
-        if successful_trade:
-            predicted_change = predictions[i] - predictions[i-1]
-            actual_change = actual_values[i] - actual_values[i-1]
+    for i in range(1, len(predictions)):
+        previous_prediction_accuracy = abs(predictions[i-1] - actual_values[i-1]) / actual_values[i-1]
 
-            if (predicted_change > 0 and actual_change > 0) or (predicted_change < 0 and actual_change < 0):
-                trade_wins += 1
-                win_percentage = abs(actual_change / actual_values[i-1])
-                total_win_percentage += win_percentage
-            else:
-                trade_losses += 1
-                loss_percentage = abs(actual_change / actual_values[i-1])
-                total_loss_percentage += loss_percentage
+        # Check if previous prediction was within 10% of the actual value
+        if previous_prediction_accuracy <= 0.1:
+            predicted_change_percentage = abs((predictions[i] - predictions[i-1]) / predictions[i-1])
 
-            total_trades += 1
-            trade_durations.append(i - trade_start)
-            trade_entries_exits.append((trade_start, i))
-            successful_trade = False  
+            # Proceed only if the predicted change exceeds 1%
+            if predicted_change_percentage > min_percentage_change_for_trade:
+                investment = min(max_investment_per_trade, current_cash)
+                num_shares_traded = investment / average_share_cost
+                total_fee = num_shares_traded * fee_per_share
+
+                actual_change_percentage = (actual_values[i] - actual_values[i-1]) / actual_values[i-1]
+                if actual_change_percentage < -stop_loss_limit:
+                    actual_change_percentage = -stop_loss_limit
+
+                trade_profit_loss = investment * actual_change_percentage / 100 - total_fee
+                current_cash += trade_profit_loss
+
+                if trade_profit_loss > 0:
+                    trade_wins += 1
+                else:
+                    trade_losses += 1
+
+                total_trades += 1
+
+                trade_details.append({
+                    'investment': investment,
+                    'percentage_change': actual_change_percentage,
+                    'trade_profit_loss': trade_profit_loss,
+                    'trade_fee': total_fee,
+                    'new_cash_balance': current_cash
+                })
+
+                max_investment_per_trade = 0.2 * current_cash
+
+    logging.info(f"Starting Cash: {starting_cash}, Ending Cash: {current_cash}")
+    logging.info(f"Total Trades: {total_trades}, Wins: {trade_wins}, Losses: {trade_losses}")
+    logging.info(f"Expected Yearly Return: {((current_cash - starting_cash) / len(actual_values)) * 280:.2f}%")
+
+    ##for trade in trade_details:
+    ##    logging.info(f"Trade Details: {trade}")
 
     if total_trades > 0:
         win_percentage = (trade_wins / total_trades) * 100
-        mean_win_percentage = total_win_percentage / trade_wins if trade_wins > 0 else 0
-        mean_loss_percentage = total_loss_percentage / trade_losses if trade_losses > 0 else 0
-
-        # Logging detailed information
-        logging.info(f"Total Trades: {total_trades}, Wins: {trade_wins}, Losses: {trade_losses}")
-        logging.info(f"Win Percentage: {win_percentage:.2f}%, Mean Win Percentage: {mean_win_percentage:.2f}%, Mean Loss Percentage: {mean_loss_percentage:.2f}%")
-        logging.info(f"Average Trade Duration: {np.mean(trade_durations)} periods")
-        logging.info(f"Trade Entry and Exit Points: {trade_entries_exits}")
+        logging.info(f"Win Percentage: {win_percentage:.2f}%")
     else:
         logging.info("No trades were executed.")
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -257,10 +274,11 @@ def main():
     logging.basicConfig(filename='processing_log.log', filemode='a', 
                         format='%(asctime)s - %(levelname)s - %(message)s', 
                         level=logging.INFO)
+    files_in_directory = os.listdir(directory_path)
     File_processed = 0
 
     # Iterate over files in the directory
-    for filename in os.listdir(directory_path):
+    for filename in tqdm(files_in_directory, desc="Processing files"):
         file_path = os.path.join(directory_path, filename)
 
         try:
@@ -323,8 +341,8 @@ def main():
         except Exception as e:
             logging.info(f"Error processing file {file_path}: {e}")
 
-        # Calculate and log the percentage of files processed
-        percentage = round((File_processed / len(os.listdir(directory_path))) * 100, 2)
+        File_processed += 1
+        percentage = round((File_processed / len(files_in_directory)) * 100, 2)
         logging.info(f"Percentage of files processed: {percentage}%")
 
     logging.info("Processing complete.")
