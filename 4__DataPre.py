@@ -47,41 +47,47 @@ def squash_col_outliers(df, col_name=None, min_quantile=0.01, max_quantile=0.99)
     return df
 
 
-def scale_data(df):
+
+
+def scale_data_with_rolling_window(df, window_size_func):
     """
-    Scales numeric data in the DataFrame using appropriate scalers.
+    Scales numeric data in the DataFrame using a rolling window adjusted for variability.
 
     Parameters:
     df (pd.DataFrame): The DataFrame to scale.
+    window_size_func (function): Function to determine the window size based on column statistics.
 
     Returns:
-    tuple: Scaled DataFrame and dictionary of scalers used.
+    pd.DataFrame: Scaled DataFrame.
     """
-
-
-    df.ffill(inplace=True)
-    df.bfill(inplace=True)
-    scalers = {}
-    df_scaled = pd.DataFrame(index=df.index) 
+    df_scaled = pd.DataFrame(index=df.index)
     for col in df.columns:
-        if col == 'Date':
-            continue
+        if col == 'Date' or not pd.api.types.is_numeric_dtype(df[col]):
+            continue  # Skip non-numeric columns and the Date column
 
-        if col == 'Close':
-            continue
+        window_size = window_size_func(df[col])
 
-        if not pd.api.types.is_numeric_dtype(df[col]):
-            continue
+        # Apply scaling on a rolling basis
+        scaled_values = []
+        for i in range(len(df)):
+            if i < window_size - 1:
+                # Not enough data for a full window, use available data
+                window_data = df[col].iloc[:i+1]
+            else:
+                window_data = df[col].iloc[i-window_size+1:i+1]
 
-        if df[col].dtype == 'bool':
-            df[col] = df[col].astype(int)
-            scaler = MinMaxScaler()
-        else:
-            df[col] = df[col] + 0.00001  # Add a small amount to avoid division by zero
+            # Scale the data in the current window
             scaler = RobustScaler()
-        df_scaled[col] = scaler.fit_transform(df[[col]])  # Scale each column individually
-        scalers[f'scaler_{col}'] = scaler  # Store each scaler with a unique name
-    return df_scaled, scalers
+            scaled_window = scaler.fit_transform(window_data.values.reshape(-1, 1)).flatten()
+            scaled_values.append(scaled_window[-1])  # Append the last scaled value
+
+        df_scaled[col] = scaled_values
+
+    return df_scaled
+
+
+
+
 
 
 def process_file(args):
@@ -124,19 +130,21 @@ def process_file(args):
 
     df = squash_col_outliers(df)
 
-    # Spline interpolate
+
     for col in df.select_dtypes(include=['float64', 'int64']).columns:
-        df[col] = df[col].interpolate(method='spline', order=3)
+        try:
+            # Ensure there are enough non-NaN data points for spline interpolation
+            if df[col].count() >= 5:
+                df[col].interpolate(method='spline', order=3, inplace=True)
+            else:
+                raise ValueError("Not enough data points for spline interpolation.")
+        except Exception as e:
+            logging.warning(f"Spline interpolation failed for column {col} in file {file_path}: {e}")
+            # Use backward fill and forward fill for NaN values
+            df[col].bfill(inplace=True)
+            df[col].ffill(inplace=True)
 
-
-
-
-
-    # Fill remaining NaNs
-    df.ffill(inplace=True)
-    df.bfill(inplace=True)
-
-    df, _ = scale_data(df)
+    df = scale_data_with_rolling_window(df, window_size_based_on_stats)
     for col in df.select_dtypes(include=['float64']).columns:
         df[col] = df[col].round(8).astype('float16')
 
@@ -152,6 +160,27 @@ def process_file(args):
             df.to_parquet(output_path)
     else:
         logging.warning(f"Percentage of missing data in {file_path} is too high. File not saved.")
+
+
+def window_size_based_on_stats(df_col, small_window=10, medium_window=20, large_window=30):
+    # Calculate statistical measures for the column
+    std_dev = df_col.std()
+    percentile_range = df_col.quantile(0.99) - df_col.quantile(0.01)
+
+    # Define thresholds based on statistical measures
+    high_volatility_threshold = 20
+    medium_volatility_threshold = 15 
+
+    # Determine window size based on volatility
+    if std_dev > high_volatility_threshold or percentile_range > high_volatility_threshold:
+        return small_window  # smaller window for high volatility
+    elif std_dev > medium_volatility_threshold or percentile_range > medium_volatility_threshold:
+        return medium_window
+    else:
+        return large_window
+
+
+
 
 
 
@@ -175,7 +204,6 @@ def main(input_dir, output_dir, percent_to_run):
         for file in files_to_remove:
             try:
                 os.remove(file)
-                logging.info(f"Removed existing file: {file}")
             except Exception as e:
                 logging.error(f"Error removing file {file}: {e}")
 
@@ -188,6 +216,10 @@ def main(input_dir, output_dir, percent_to_run):
 
     pool.close()
     pool.join()
+
+
+
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Process a percentage of files from the input directory.")
