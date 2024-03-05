@@ -7,10 +7,38 @@ import scipy.stats as stats
 from scipy.stats import linregress
 import logging
 
+
+
+"""
+This script processes financial market data to calculate various technical indicators and saves the processed data in CSV or Parquet formats. It is designed to handle large datasets efficiently by utilizing multiple cores of the processor.
+
+Features:
+- Processes data files (CSV or Parquet) containing market data like Open, High, Low, Close, Volume, etc.
+- Calculates a comprehensive set of technical indicators including moving averages, ATR, VWAP, RSI, and apoxx 50 others.
+- Implements anomaly detection by squashing outliers and interpolating missing data.
+- Optimized for performance with multithreading and conditional execution based on processor core count.
+- Robust error handling and logging to track process efficiency and diagnose issues.
+- Flexibility in processing multiple files from a specified directory and saving them in a desired format.
+
+Usage:
+- The script reads market data files from a specified input directory, processes each file to compute various indicators, and writes the enhanced data to an output directory.
+- The file format (CSV or Parquet) is preserved during the process.
+- Log information about the process, including processing time and any encountered errors, is saved in a log file.
+- It can be customized for different sets of indicators or processing logic based on specific needs.
+
+Example:
+- To process all files in the 'Data/PriceData' directory and save the processed files in the 'Data/IndicatorData' directory, simply run the script. The process is automated and requires no additional command-line arguments.
+
+Notes:
+- Ensure that the input directory contains valid market data files in supported formats.
+- Modify the CONFIG dictionary to specify paths for input/output directories and log file.
+- The script utilizes multithreading for faster processing, making it suitable for large datasets.
+- Check the log file for detailed information about the processing time and potential errors.
+"""
+
 logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log',
                     level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
-
 
 CONFIG = {
     'input_directory': 'Data/PriceData',
@@ -19,8 +47,6 @@ CONFIG = {
     'log_lines_to_read': 500,
     'core_count_division': True, 
 }
-
-
 
 
 ##===========================(Indicators)===========================##

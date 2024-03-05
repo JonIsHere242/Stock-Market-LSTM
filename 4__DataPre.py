@@ -6,8 +6,33 @@ import logging
 import glob
 import argparse
 
+"""
+This script is designed for scaling and cleaning financial market data. It is particularly useful for preprocessing large datasets for further analysis or machine learning purposes.
 
-# Logging configuration
+Features:
+- Outlier Handling: Utilizes the 'squash_col_outliers' function to control outliers in the data, keeping them within specified quantile thresholds.
+- Dynamic Data Scaling: Employs the 'scale_data_with_rolling_window' function to scale data dynamically. The scaling window size is adjusted based on the variability of the data in each column.
+- File Processing: Processes files in CSV or Parquet format. The 'process_file' function cleans the data, interpolates missing values, applies scaling, and saves the processed data. It efficiently handles files based on their level of missing data.
+- Adaptive Window Sizing: The 'window_size_based_on_stats' function determines the rolling window size for scaling based on the data's statistical characteristics, catering to different volatility levels.
+- Multiprocessing for Efficiency: The script's main function allows batch processing of files, using multiprocessing to improve processing speed and efficiency.
+- Extensive Logging: Integrated logging tracks and records process efficiency and issues, aiding in debugging and performance analysis.
+- Command-Line Interface: The script can be run with a command-line argument to specify the percentage of files to process, offering flexibility for varying processing needs.
+
+Usage:
+- The script processes data files from a specified input directory and saves the scaled and cleaned data to an output directory.
+- It maintains the original file format (CSV or Parquet) while saving the processed data.
+- Users can specify the percentage of files to process in the directory, making it suitable for both full and partial dataset processing.
+
+Example:
+- To process a specified percentage of files in the 'Data/IndicatorData' directory and save them in the 'Data/ScaledData' directory, run the script with the appropriate command-line argument.
+
+Notes:
+- The script is designed to handle valid market data files in CSV or Parquet formats.
+- Configuration settings like input/output directory paths and logging preferences can be adjusted in the CONFIG dictionary.
+- The script is optimized for large datasets, leveraging multiprocessing capabilities of modern processors.
+- For detailed information about the processing activities and any encountered errors, refer to the log file specified in the logging configuration.
+"""
+
 
 logging.basicConfig(
     filename='Data/ScaledData/_ScalingErrors.log',

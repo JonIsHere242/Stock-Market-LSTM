@@ -24,6 +24,10 @@ Use Case:
 Example:
     To run the script immediately, use the following command:
     python 1__TickerDownloader.py --immediate_download
+
+Notes:
+    The correct API useage includes user_agent as "{reason for use} {email}".
+    url": "https://www.sec.gov/files/company_tickers_exchange.json" may be subject to change in the future
 """
 
 
