@@ -579,3 +579,30 @@
 2024-02-15 17:01:44,863 - INFO - Bulk historical data has been downloaded.
 2024-02-15 17:01:44,863 - INFO - Number of files downloaded: 315
 2024-02-15 17:01:44,863 - INFO - Percentage of tickers downloaded: 2.990884922142043%
+2024-03-06 19:58:46,533 - ERROR - Error: 'module' object is not callable
+2024-03-06 19:58:46,536 - INFO - Total time taken: 0.00 seconds
+2024-03-06 20:00:58,453 - ERROR - Error: 'module' object is not callable
+2024-03-06 20:00:58,453 - INFO - Total time taken: 0.00 seconds
+2024-03-06 20:04:32,005 - ERROR - No Ticker CIK file found.
+2024-03-06 20:07:32,446 - INFO - Cleared old data files.
+2024-03-06 20:07:33,256 - INFO - Data for MSFT downloaded and saved to Data/PriceData/MSFT.csv
+2024-03-06 20:07:34,072 - INFO - Data for AAPL downloaded and saved to Data/PriceData/AAPL.csv
+2024-03-06 20:07:35,255 - INFO - Data for NVDA downloaded and saved to Data/PriceData/NVDA.csv
+2024-03-06 20:07:36,361 - INFO - Data for AMZN downloaded and saved to Data/PriceData/AMZN.csv
+2024-03-06 20:07:37,508 - INFO - Data for GOOGL downloaded and saved to Data/PriceData/GOOGL.csv
+2024-03-06 20:07:38,668 - INFO - Data for META downloaded and saved to Data/PriceData/META.csv
+2024-03-06 20:07:39,953 - INFO - Data for BRK-B downloaded and saved to Data/PriceData/BRK-B.csv
+2024-03-06 20:07:41,363 - INFO - Data for LLY downloaded and saved to Data/PriceData/LLY.csv
+2024-03-06 20:07:42,409 - INFO - Data for TSM downloaded and saved to Data/PriceData/TSM.csv
+2024-03-06 20:07:43,534 - INFO - Data for AVGO downloaded and saved to Data/PriceData/AVGO.csv
+2024-03-06 20:07:44,714 - INFO - Data for TSLA downloaded and saved to Data/PriceData/TSLA.csv
+2024-03-06 20:07:46,081 - INFO - Data for V downloaded and saved to Data/PriceData/V.csv
+2024-03-06 20:07:47,333 - INFO - Data for NVO downloaded and saved to Data/PriceData/NVO.csv
+2024-03-06 20:07:48,585 - INFO - Data for JPM downloaded and saved to Data/PriceData/JPM.csv
+2024-03-06 20:07:49,822 - INFO - Data for WMT downloaded and saved to Data/PriceData/WMT.csv
+2024-03-06 20:07:50,922 - INFO - Data for SPY downloaded and saved to Data/PriceData/SPY.csv
+2024-03-06 20:07:52,193 - INFO - Data for UNH downloaded and saved to Data/PriceData/UNH.csv
+2024-03-06 20:07:53,249 - INFO - Data for MA downloaded and saved to Data/PriceData/MA.csv
+2024-03-06 20:07:54,663 - INFO - Data for XOM downloaded and saved to Data/PriceData/XOM.csv
+2024-03-06 20:07:55,982 - INFO - Data for JNJ downloaded and saved to Data/PriceData/JNJ.csv
+2024-03-06 20:07:56,917 - INFO - Data for ASML downloaded and saved to Data/PriceData/ASML.csv

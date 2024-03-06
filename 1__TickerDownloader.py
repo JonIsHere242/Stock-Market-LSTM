@@ -1,12 +1,14 @@
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
 import datetime
 import logging
+import os
+import requests
 import pandas as pd
 import argparse
-import os
 import sys
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+
 
 
 """
@@ -33,8 +35,8 @@ Notes:
 
 CONFIG = {
     "url": "https://www.sec.gov/files/company_tickers_exchange.json",
-    "csv_file_path": "Data/TickerCikData/TickerCIKs.csv",
-    "parquet_file_path": "Data/TickerCikData/TickerCIKs.parquet",
+    "csv_file_path": "Data/TickerCikData/TickerCIKs_{date}.csv",
+    "parquet_file_path": "Data/TickerCikData/TickerCIKs_{date}.parquet",
     "log_file": "Data/TickerCikData/TickerCIK.log",
     "user_agent": "PersonalTesting Masamunex9000@gmail.com"
 }
@@ -49,10 +51,11 @@ def download_and_convert_ticker_cik_file():
     Download ticker and CIK data from SEC and save in both CSV and Parquet formats.
     """
     try:
+        # Insert the current date in the file paths
+        current_date = datetime.datetime.now().strftime("%Y%m%d")
+        csv_file_path = CONFIG["csv_file_path"].format(date=current_date)
+        parquet_file_path = CONFIG["parquet_file_path"].format(date=current_date)
         session = requests.Session()
-        retries = Retry(total=3, backoff_factor=1, status_forcelist=[502, 503, 504])
-        session.mount('https://', HTTPAdapter(max_retries=retries))
-
         headers = {
             'User-Agent': CONFIG["user_agent"],
             'Accept-Encoding': 'gzip, deflate',
@@ -64,8 +67,8 @@ def download_and_convert_ticker_cik_file():
 
         json_data = response.json()
         df = pd.DataFrame(json_data['data'], columns=json_data['fields'])
-        df.to_csv(CONFIG["csv_file_path"], index=False)
-        df.to_parquet(CONFIG["parquet_file_path"], index=False)
+        df.to_csv(csv_file_path, index=False)
+        df.to_parquet(parquet_file_path, index=False)
 
         logging.info("File downloaded and saved successfully in CSV and Parquet formats.")
     except requests.exceptions.HTTPError as e:

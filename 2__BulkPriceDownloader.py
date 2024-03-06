@@ -5,6 +5,7 @@ import logging
 import time
 import argparse
 from datetime import datetime
+import glob
 
 """
 This script is used for downloading stock data from Yahoo Finance.
@@ -22,14 +23,22 @@ Usage Examples:
 
 # Configuration
 DATA_DIRECTORY = 'Data/PriceData'
-TICKERS_CIK_FILE = 'Data/TickerCikData/TickerCIKs.csv'
+TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
 LOG_DIRECTORY = 'Data/PriceData'
 LOG_FILE = "Data/PriceData/_Price_Data_download.log"
 START_DATE = '1990-01-01'
-RATE_LIMIT = 1.0  # seconds between downloads
+RATE_LIMIT = 1.05  # seconds between downloads
 
 os.makedirs(DATA_DIRECTORY, exist_ok=True)
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def find_latest_ticker_cik_file(directory):
+    files = glob.glob(os.path.join(directory, 'TickerCIKs_*.csv'))  # Corrected this line
+    if not files:
+        return None
+    return max(files, key=os.path.getmtime)
+
+
 
 def clear_old_data(data_dir):
     for file in os.listdir(data_dir):
@@ -79,8 +88,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     max_files = None
-
+    TotalTimer = time.time()
     try:
+        TICKERS_CIK_FILE = find_latest_ticker_cik_file(TICKERS_CIK_DIRECTORY)
+        if TICKERS_CIK_FILE is None:
+            logging.error("No Ticker CIK file found.")
+            exit(1)
+
         if args.ClearOldData:
             clear_old_data(DATA_DIRECTORY)
 
@@ -103,3 +117,6 @@ if __name__ == "__main__":
         logging.info(f"Percentage of tickers downloaded: {filecounter/len(tickers)*100}%")
     except Exception as e:
         logging.error(f"Error: {e}")
+    ##log the total time rounded to 2 decimal places
+    TotalTimer = time.time() - TotalTimer
+    logging.info(f"Total time taken: {TotalTimer:.2f} seconds")
