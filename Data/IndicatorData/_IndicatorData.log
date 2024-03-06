@@ -128,3 +128,35 @@
 2024-02-15 17:20:17,534 - INFO - Time taken to process Data/PriceData\WMB.csv: 9.90 seconds
 2024-02-15 17:20:17,572 - INFO - Time taken to process Data/PriceData\XOM.csv: 9.25 seconds
 2024-02-15 17:20:17,577 - INFO - Average time taken to process each file: 0.44 seconds
+2024-03-05 23:53:49,447 - ERROR - Error processing Data/PriceData/WDAY.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:50,518 - ERROR - Error processing Data/PriceData/BHP.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:50,708 - ERROR - Error processing Data/PriceData/WFC.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:51,847 - ERROR - Error processing Data/PriceData/ADI.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:51,896 - ERROR - Error processing Data/PriceData/NVO.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:51,910 - ERROR - Error processing Data/PriceData/FI.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:52,516 - ERROR - Error processing Data/PriceData/DHI.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:52,957 - ERROR - Error processing Data/PriceData/T.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:53,493 - ERROR - Error processing Data/PriceData/HCA.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:53,509 - ERROR - Error processing Data/PriceData/CPRT.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:53,671 - ERROR - Error processing Data/PriceData/CNC.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:53,705 - ERROR - Error processing Data/PriceData/ABBV.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:54,586 - ERROR - Error processing Data/PriceData/TM.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:54,836 - ERROR - Error processing Data/PriceData/TMO.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:54,894 - ERROR - Error processing Data/PriceData/WELL.csv: interpolate_columns() got an unexpected keyword argument 'Interpolation_Window'
+2024-03-05 23:53:54,896 - INFO - Average time taken to process each file: 7.04 seconds
+2024-03-05 23:55:04,814 - INFO - Time taken to process Data/PriceData/WDAY.csv: 4.89 seconds
+2024-03-05 23:55:08,182 - INFO - Time taken to process Data/PriceData/BHP.csv: 8.26 seconds
+2024-03-05 23:55:08,237 - INFO - Time taken to process Data/PriceData/NVO.csv: 8.32 seconds
+2024-03-05 23:55:08,415 - INFO - Time taken to process Data/PriceData/ADI.csv: 8.49 seconds
+2024-03-05 23:55:08,427 - INFO - Time taken to process Data/PriceData/FI.csv: 8.50 seconds
+2024-03-05 23:55:08,438 - INFO - Time taken to process Data/PriceData/WFC.csv: 8.52 seconds
+2024-03-05 23:55:12,142 - INFO - Time taken to process Data/PriceData/DHI.csv: 7.33 seconds
+2024-03-05 23:55:13,057 - INFO - Time taken to process Data/PriceData/HCA.csv: 4.62 seconds
+2024-03-05 23:55:15,010 - INFO - Time taken to process Data/PriceData/CNC.csv: 6.59 seconds
+2024-03-05 23:55:15,737 - INFO - Time taken to process Data/PriceData/CPRT.csv: 7.50 seconds
+2024-03-05 23:55:16,432 - INFO - Time taken to process Data/PriceData/ABBV.csv: 4.29 seconds
+2024-03-05 23:55:16,542 - INFO - Time taken to process Data/PriceData/T.csv: 8.36 seconds
+2024-03-05 23:55:16,705 - INFO - Time taken to process Data/PriceData/TM.csv: 8.28 seconds
+2024-03-05 23:55:17,790 - INFO - Time taken to process Data/PriceData/TMO.csv: 4.73 seconds
+2024-03-05 23:55:17,933 - INFO - Time taken to process Data/PriceData/WELL.csv: 2.92 seconds
+2024-03-05 23:55:17,934 - INFO - Average time taken to process each file: 6.66 seconds

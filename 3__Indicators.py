@@ -6,7 +6,7 @@ import time
 import scipy.stats as stats
 from scipy.stats import linregress
 import logging
-
+import argparse
 
 
 """
@@ -66,12 +66,30 @@ def squash_col_outliers(df, col_name=None, num_std_dev=3):
     return df
 
 
-def interpolate_columns(df, Interpolation_Window=200):
+def interpolate_columns(df, max_gap_fill=50):
+    """
+    Interpolates columns in the DataFrame, limiting the maximum gap to be filled.
+
+    Args:
+    df (pd.DataFrame): DataFrame containing the data.
+    max_gap_fill (int): Maximum number of consecutive NaNs to fill.
+
+    Returns:
+    pd.DataFrame: DataFrame with interpolated columns.
+    """
     for column in df.columns:
-        non_nan_percentage = df[column].notna().mean()
-        if non_nan_percentage > 0.8:
-            df.loc[:Interpolation_Window, column] = df.loc[:Interpolation_Window, column].bfill()
+        # Count consecutive NaNs in the column
+        consec_nan_count = df[column].isna().astype(int).groupby(df[column].notna().astype(int).cumsum()).cumsum()
+
+        # Only interpolate where consecutive NaNs are below the threshold
+        mask = consec_nan_count <= max_gap_fill
+        df.loc[mask, column] = df.loc[mask, column].interpolate(method='linear')
+
+        # Optionally, you can backfill or forward fill remaining NaNs
+        df[column] = df[column].bfill().ffill()
+
     return df
+
 
 
 def find_best_fit_line(x, y):
@@ -390,7 +408,7 @@ def indicators(df):
     # Dropping unnecessary columns
     columns_to_drop = ['Open', 'High', 'Low', 'Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
-    df = interpolate_columns(df, Interpolation_Window=210)
+    df = interpolate_columns(df, max_gap_fill=50)  # updated argument name
     df = df.replace({True: 1, False: 0})
     df = df.iloc[200:]
     df = df.drop(columns_to_drop, axis=1)
@@ -483,9 +501,24 @@ def calculate_average_processing_time(log_file, core_count_division):
 ##===========================(Main)===========================##
 ##===========================(Main)===========================##
 if __name__ == "__main__":
+    # Argument parser setup
+    parser = argparse.ArgumentParser(description="Process financial market data files.")
+    parser.add_argument('--runpercent', type=int, default=100, help="Percentage of files to process from the input directory.")
+    args = parser.parse_args()
+
+    run_percent = args.runpercent
     os.makedirs(CONFIG['output_directory'], exist_ok=True)
     clear_output_directory(CONFIG['output_directory'])
-    process_files(CONFIG['input_directory'], CONFIG['output_directory'])
+
+    # Get all file paths
+    file_paths = [os.path.join(CONFIG['input_directory'], f) for f in os.listdir(CONFIG['input_directory']) if f.endswith('.csv') or f.endswith('.parquet')]
+
+    # Determine the number of files to process based on the percentage
+    files_to_process = file_paths[:int(len(file_paths) * (run_percent / 100))]
+
+    # Process the files using ThreadPoolExecutor
+    with ThreadPoolExecutor() as executor:
+        list(executor.map(lambda file: process_file(file, CONFIG['output_directory']), files_to_process))
 
     try:
         average_time_taken = calculate_average_processing_time(CONFIG['log_file'], CONFIG['core_count_division'])
