@@ -42,3 +42,22 @@
 2024-02-01 23:29:58,665 - INFO - Predictions added and saved for file: AMGN_modified.csv
 2024-02-01 23:29:58,797 - INFO - Predictions added and saved for file: AMT_modified.csv
 2024-02-01 23:29:58,935 - INFO - Predictions added and saved for file: AMZN_modified.csv
+2024-03-05 21:47:42,167 - INFO - V================(NEW ENTRY)================V
+2024-03-05 21:47:42,197 - ERROR - Error processing file FI_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,225 - ERROR - Error processing file TMO_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,235 - ERROR - Error processing file HCA_modified.csv: could not convert string to float: '2011-12-22'
+2024-03-05 21:47:42,263 - ERROR - Error processing file NVO_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,271 - ERROR - Error processing file ABBV_modified.csv: could not convert string to float: '2013-10-17'
+2024-03-05 21:47:42,298 - ERROR - Error processing file BHP_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,324 - ERROR - Error processing file TM_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,348 - ERROR - Error processing file DHI_modified.csv: could not convert string to float: '1993-03-22'
+2024-03-05 21:47:42,376 - ERROR - Error processing file WFC_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,398 - ERROR - Error processing file CPRT_modified.csv: could not convert string to float: '1995-01-03'
+2024-03-05 21:47:42,425 - ERROR - Error processing file ADI_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,452 - ERROR - Error processing file T_modified.csv: could not convert string to float: '1990-10-16'
+2024-03-05 21:47:42,460 - ERROR - Error processing file WDAY_modified.csv: could not convert string to float: '2013-08-02'
+2024-03-05 21:47:42,477 - ERROR - Error processing file CNC_modified.csv: could not convert string to float: '2002-10-01'
+2024-03-05 21:47:42,477 - INFO - Loaded 14 files from Data/ScaledData...
+2024-03-05 21:47:42,477 - INFO - Processed 0 files.
+2024-03-05 21:47:42,477 - WARNING - 0.00% of files processed. Some files may have errors.
+2024-03-05 21:47:42,477 - ERROR - An error occurred: No objects to concatenate

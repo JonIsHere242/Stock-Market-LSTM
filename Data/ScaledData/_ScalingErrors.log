@@ -1,6 +1,67 @@
-2024-02-26 21:18:54,880 - INFO - Percentage of missing data in Data/IndicatorData/ABEV_modified.csv: 0.71%
-2024-02-26 21:34:51,743 - INFO - Percentage of missing data in Data/IndicatorData/ABEV_modified.csv: 0.71%
-2024-02-26 21:37:49,982 - INFO - Percentage of missing data in Data/IndicatorData/ABEV_modified.csv: 0.71%
-2024-02-26 21:39:25,216 - INFO - Percentage of missing data in Data/IndicatorData/ABEV_modified.csv: 0.71%
-2024-02-26 21:53:11,120 - INFO - Percentage of missing data in Data/IndicatorData/ABEV_modified.csv: 0.71%
-2024-02-26 22:01:03,022 - WARNING - Percentage of missing data in Data/IndicatorData/ABEV_modified.csv is too high. File not saved.
+
+2024-03-10 01:19:44,901 - INFO - Logging started at 2024-03-10 01:19:44.901306
+2024-03-10 01:19:44,903 - INFO - Successfully loaded scaling methods.
+2024-03-10 01:19:44,906 - INFO - Files in Data/ScaledData have been cleared.
+2024-03-10 01:19:44,980 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:45,144 - INFO - File FI_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:45,218 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:45,369 - INFO - File WELL_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:45,440 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:45,595 - INFO - File TMO_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:45,649 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:45,704 - INFO - File HCA_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:45,780 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:45,943 - INFO - File NVO_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:45,992 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:46,046 - INFO - File ABBV_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:46,121 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:46,273 - INFO - File BHP_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:46,346 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:46,495 - INFO - File TM_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:46,569 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:46,719 - INFO - File DHI_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:46,790 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:46,938 - INFO - File WFC_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:47,006 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:47,137 - INFO - File CPRT_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:47,210 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:47,367 - INFO - File ADI_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:47,440 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:47,590 - INFO - File T_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:47,639 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:47,689 - INFO - File WDAY_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:19:47,748 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:19:47,849 - INFO - File CNC_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:52,362 - INFO - Logging started at 2024-03-10 01:21:52.362717
+2024-03-10 01:21:52,365 - INFO - Successfully loaded scaling methods.
+2024-03-10 01:21:52,367 - INFO - Files in Data/ScaledData have been cleared.
+2024-03-10 01:21:52,445 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:52,603 - INFO - File FI_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:52,679 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:52,837 - INFO - File WELL_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:52,910 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:53,062 - INFO - File TMO_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:53,120 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:53,182 - INFO - File HCA_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:53,256 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:53,406 - INFO - File NVO_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:53,459 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:53,508 - INFO - File ABBV_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:53,586 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:53,748 - INFO - File BHP_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:53,825 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:53,980 - INFO - File TM_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:54,051 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:54,201 - INFO - File DHI_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:54,272 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:54,421 - INFO - File WFC_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:54,491 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:54,622 - INFO - File CPRT_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:54,697 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:54,853 - INFO - File ADI_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:54,926 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:55,080 - INFO - File T_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:55,129 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:55,178 - INFO - File WDAY_scaled.csv has been saved to Data/ScaledData
+2024-03-10 01:21:55,238 - ERROR - Error in dynamic scaling of dataframe: 'Close'
+2024-03-10 01:21:55,345 - INFO - File CNC_scaled.csv has been saved to Data/ScaledData

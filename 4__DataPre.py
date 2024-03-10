@@ -1,39 +1,22 @@
 import pandas as pd
+import numpy as np
 import os
-from sklearn.preprocessing import RobustScaler, MinMaxScaler
-import multiprocessing
-import logging
 import glob
 import argparse
-
-"""
-This script is designed for scaling and cleaning financial market data. It is particularly useful for preprocessing large datasets for further analysis or machine learning purposes.
-
-Features:
-- Outlier Handling: Utilizes the 'squash_col_outliers' function to control outliers in the data, keeping them within specified quantile thresholds.
-- Dynamic Data Scaling: Employs the 'scale_data_with_rolling_window' function to scale data dynamically. The scaling window size is adjusted based on the variability of the data in each column.
-- File Processing: Processes files in CSV or Parquet format. The 'process_file' function cleans the data, interpolates missing values, applies scaling, and saves the processed data. It efficiently handles files based on their level of missing data.
-- Adaptive Window Sizing: The 'window_size_based_on_stats' function determines the rolling window size for scaling based on the data's statistical characteristics, catering to different volatility levels.
-- Multiprocessing for Efficiency: The script's main function allows batch processing of files, using multiprocessing to improve processing speed and efficiency.
-- Extensive Logging: Integrated logging tracks and records process efficiency and issues, aiding in debugging and performance analysis.
-- Command-Line Interface: The script can be run with a command-line argument to specify the percentage of files to process, offering flexibility for varying processing needs.
-
-Usage:
-- The script processes data files from a specified input directory and saves the scaled and cleaned data to an output directory.
-- It maintains the original file format (CSV or Parquet) while saving the processed data.
-- Users can specify the percentage of files to process in the directory, making it suitable for both full and partial dataset processing.
-
-Example:
-- To process a specified percentage of files in the 'Data/IndicatorData' directory and save them in the 'Data/ScaledData' directory, run the script with the appropriate command-line argument.
-
-Notes:
-- The script is designed to handle valid market data files in CSV or Parquet formats.
-- Configuration settings like input/output directory paths and logging preferences can be adjusted in the CONFIG dictionary.
-- The script is optimized for large datasets, leveraging multiprocessing capabilities of modern processors.
-- For detailed information about the processing activities and any encountered errors, refer to the log file specified in the logging configuration.
-"""
+import logging
+from sklearn.preprocessing import RobustScaler
+import multiprocessing
 
 
+
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+import plotly.graph_objects as go
+from statsmodels.regression.linear_model import OLS
+from statsmodels.tools.tools import add_constant
+
+
+# Setup logging
 logging.basicConfig(
     filename='Data/ScaledData/_ScalingErrors.log',
     filemode='a',
@@ -41,216 +24,154 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-def squash_col_outliers(df, col_name=None, min_quantile=0.01, max_quantile=0.99):
+# Argument parsing
+parser = argparse.ArgumentParser(description='Process files for scaling and cleaning.')
+parser.add_argument('--percentrun', type=int, default=100, help='Percentage of files to process')
+parser.add_argument('--input', type=str, help='Input directory path')
+parser.add_argument('--output', type=str, help='Output directory path')
+parser.add_argument('--singlefile', type=str, help='Path to a single file for processing')
+parser.add_argument('--amountscaled', action='store_true', help='Prints the amount scaled as a percentage')
+args = parser.parse_args()
+
+# Outlier squashing function
+def outlyerSquasher(df, percentile1=0.999, percentile2=0.001):
     """
-    Squashes outliers in a DataFrame based on quantile thresholds.
-
-    Parameters:
-    df (pd.DataFrame): The DataFrame to process.
-    col_name (str, optional): Specific column name to process; if None, process all float64 columns.
-    min_quantile (float): The lower quantile threshold.
-    max_quantile (float): The upper quantile threshold.
-
-    Returns:
-    pd.DataFrame: The DataFrame with outliers squashed.
+    Squashes outliers to specific percentiles in a DataFrame.
     """
-    # Check if col_name is None and process accordingly
-    if col_name is None:
-        for col in df.columns:
-            if df[col].dtype == 'float64':
-
-                q_lo = df[col].quantile(min_quantile)
-                q_hi = df[col].quantile(max_quantile)
-
-                
-                # Applying the quantile thresholds
-                df.loc[df[col] >= q_hi, col] = q_hi
-                df.loc[df[col] <= q_lo, col] = q_lo
-
-    else:
-        logging.warning("Column name provided is not None, but function is not set up to handle specific columns.")
+    for col in df.select_dtypes(include=['float64', 'int64']).columns:
+        lower_quantile = df[col].quantile(percentile2)  # Get the lower quantile
+        upper_quantile = df[col].quantile(percentile1)  # Get the upper quantile
+        df[col] = df[col].clip(lower=lower_quantile, upper=upper_quantile)
     return df
 
 
-
-
-def scale_data_with_rolling_window(df, window_size_func):
-    """
-    Scales numeric data in the DataFrame using a rolling window adjusted for variability.
-
-    Parameters:
-    df (pd.DataFrame): The DataFrame to scale.
-    window_size_func (function): Function to determine the window size based on column statistics.
-
-    Returns:
-    pd.DataFrame: Scaled DataFrame.
-    """
-    df_scaled = pd.DataFrame(index=df.index)
-    for col in df.columns:
-        if col == 'Date' or not pd.api.types.is_numeric_dtype(df[col]):
-            continue  # Skip non-numeric columns and the Date column
-
-        window_size = window_size_func(df[col])
-
-        # Apply scaling on a rolling basis
-        scaled_values = []
-        for i in range(len(df)):
-            if i < window_size - 1:
-                # Not enough data for a full window, use available data
-                window_data = df[col].iloc[:i+1]
-            else:
-                window_data = df[col].iloc[i-window_size+1:i+1]
-
-            # Scale the data in the current window
-            scaler = RobustScaler()
-            scaled_window = scaler.fit_transform(window_data.values.reshape(-1, 1)).flatten()
-            scaled_values.append(scaled_window[-1])  # Append the last scaled value
-
-        df_scaled[col] = scaled_values
-
-    return df_scaled
+# Configuration for input/output directory
+CONFIG = {
+    "input_dir": args.input or "Data/IndicatorData",
+    "output_dir": args.output or "Data/ScaledData"
+}
 
 
 
 
+##define a scaling function that only scales numaric colculmns
+def scale_data(df):
 
 
-def process_file(args):
-    """
-    Process a single file - read, clean, interpolate, scale, and save the data.
 
-    Parameters:
-    args (tuple): Contains file_path and output_dir.
-    """
-    file_path, output_dir = args
-    # Detect file format
-    if file_path.endswith('.csv'):
-        try:
-            df = pd.read_csv(file_path)
-        except Exception as e:
-            logging.error(f"Error reading {file_path}: {e}")
-            return
-    elif file_path.endswith('.parquet'):
-        try:
-            df = pd.read_parquet(file_path)
-        except Exception as e:
-            logging.error(f"Error reading {file_path}: {e}")
-            return
-    else:
-        logging.warning(f"Unsupported file format for {file_path}. Skipping.")
-        return
+    # Separate numeric and non-numeric data
+    df_numeric = df.select_dtypes(include=['float64', 'int64'])
+    df_non_numeric = df.select_dtypes(exclude=['float64', 'int64'])
+
+
+
+
+    # Check if df_numeric is empty
+    if df_numeric.empty:
+        logging.warning(f"DataFrame is empty after selecting numeric columns. Original DF shape: {df.shape}")
+        return df
+    # Scale the numeric data
+    scaler = RobustScaler()
+    scaled_values = scaler.fit_transform(df_numeric)
+    df_scaled = pd.DataFrame(scaled_values, columns=df_numeric.columns)
+
+    # Reintegrate non-numeric data
+    df_final = pd.concat([df_non_numeric, df_scaled], axis=1)
+
+    # Change all numeric columns to float32
+    for col in df_final.select_dtypes(include=['float64', 'int64']):
+        df_final[col] = df_final[col].astype('float32')
+
+    return df_final
+
+
+
+
+def dataValidation(df, file_path):
+    ##ensure the df is longer than 500 rows 
+    if len(df) < 500:
+        logging.warning(f"{file_path} has too few rows. Original DF shape: {df.shape}")
+        return False
     
-
-    ## calculate the percentage of the file that is NaN and log it
-    percent_missing = df.isnull().sum().sum() / (df.shape[0] * df.shape[1]) * 100
-
-
-    if percent_missing > 0:
-        logging.info(f"Percentage of missing data in {file_path}: {percent_missing:.2f}%")
-
-    ##============(Data Interpolation, NaN filling, Scaling)=============#
-    ##============(Data Interpolation, NaN filling, Scaling)=============#
-    ##============(Data Interpolation, NaN filling, Scaling)=============#
-
-
-    df = squash_col_outliers(df)
-
-
-    for col in df.select_dtypes(include=['float64', 'int64']).columns:
-        try:
-            # Ensure there are enough non-NaN data points for spline interpolation
-            if df[col].count() >= 5:
-                df[col].interpolate(method='spline', order=3, inplace=True)
-            else:
-                raise ValueError("Not enough data points for spline interpolation.")
-        except Exception as e:
-            logging.warning(f"Spline interpolation failed for column {col} in file {file_path}: {e}")
-            # Use backward fill and forward fill for NaN values
-            df[col].bfill(inplace=True)
-            df[col].ffill(inplace=True)
-
-    df = scale_data_with_rolling_window(df, window_size_based_on_stats)
-    for col in df.select_dtypes(include=['float64']).columns:
-        df[col] = df[col].round(8).astype('float16')
-
-    #save file if the percent nan is low enough
-    if percent_missing < 0.01:
-
-        # Save processed file
-        file_name = os.path.basename(file_path)
-        output_path = os.path.join(output_dir, file_name)
-        if file_path.endswith('.csv'):
-            df.to_csv(output_path, index=False)
-        elif file_path.endswith('.parquet'):
-            df.to_parquet(output_path)
-    else:
-        logging.warning(f"Percentage of missing data in {file_path} is too high. File not saved.")
-
-
-def window_size_based_on_stats(df_col, small_window=10, medium_window=20, large_window=30):
-    # Calculate statistical measures for the column
-    std_dev = df_col.std()
-    percentile_range = df_col.quantile(0.99) - df_col.quantile(0.01)
-
-    # Define thresholds based on statistical measures
-    high_volatility_threshold = 20
-    medium_volatility_threshold = 15 
-
-    # Determine window size based on volatility
-    if std_dev > high_volatility_threshold or percentile_range > high_volatility_threshold:
-        return small_window  # smaller window for high volatility
-    elif std_dev > medium_volatility_threshold or percentile_range > medium_volatility_threshold:
-        return medium_window
-    else:
-        return large_window
+    ##ensure the df has more than 10 columns
+    if len(df.columns) < 10:
+        logging.warning(f"{file_path} has too few columns. Original DF shape: {df.shape}")
+        return False
+    
+    ##ensure the start and end of the df have unique values 
+    if df.iloc[0].equals(df.iloc[-1]):
+        logging.warning(f"{file_path} has the same start and end values. Original DF shape: {df.shape}")
+        return False
+    ##ensure the df has less then 10% of the values as nan o inf or -inf
+    if df.isna().sum().sum() > len(df)*0.1:
+        logging.warning(f"{file_path} has too many NaN values. Original DF shape: {df.shape}")
+        return False
+    
+    if df.isin([np.inf, -np.inf]).sum().sum() > len(df)*0.1:
+        logging.warning(f"{file_path} has too many inf values. Original DF shape: {df.shape}")
+        return False
 
 
 
 
 
+def has_trend(series, threshold=0.2):
+    if len(series.dropna()) < 2:  # Ensure there are enough data points
+        return False
+    x = np.arange(len(series))
+    x = add_constant(x)
+    model = OLS(series, x).fit()
+    slope = model.params[1]
+    return abs(slope) > threshold
 
-def main(input_dir, output_dir, percent_to_run):
-    """
-    Main function to process a given percentage of files in a directory.
+def detrend_with_poly(data, degree=2):
+    y = data.values
+    x = np.arange(len(y)).reshape(-1, 1)
+    poly = PolynomialFeatures(degree=degree)
+    X_poly = poly.fit_transform(x)
+    model = LinearRegression().fit(X_poly, y)
+    trend = model.predict(X_poly)
+    return y - trend
 
-    Parameters:
-    input_dir (str): Directory containing files to process.
-    output_dir (str): Directory to save processed files.
-    percent_to_run (int): Percentage of files from the input directory to process.
-    """
+def detrend_data(df):
+    for col in df.select_dtypes(include=['float64', 'int64']):
+        if has_trend(df[col]):
+            df[col] = detrend_with_poly(df[col])
+    return df
 
-    # Ensure output directory exists
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    else:
-        # Delete existing CSV and Parquet files in the output directory
-        files_to_remove = glob.glob(os.path.join(output_dir, '*.csv')) + \
-                          glob.glob(os.path.join(output_dir, '*.parquet'))
-        for file in files_to_remove:
-            try:
-                os.remove(file)
-            except Exception as e:
-                logging.error(f"Error removing file {file}: {e}")
+def process_file(file_path):
+    # Read the file
+    df = pd.read_csv(file_path)
+    if dataValidation(df, file_path) == False:
+        return
+    df = outlyerSquasher(df)  # Squash outliers
 
-    all_files = os.listdir(input_dir)
-    num_files_to_process = int(len(all_files) * (percent_to_run / 100)) if percent_to_run else len(all_files)
+    df = detrend_data(df)  # Detrend data
+    df = scale_data(df)  # Scale data
 
-    pool = multiprocessing.Pool(multiprocessing.cpu_count())  # Create a pool of worker processes
-    tasks = [(os.path.join(input_dir, file), output_dir) for file in all_files[:num_files_to_process]]
-    pool.map(process_file, tasks)  # Process each file in the pool
-
-    pool.close()
-    pool.join()
+    df.to_csv(os.path.join(CONFIG["output_dir"], os.path.basename(file_path)), index=False)
 
 
 
+# Main function
+def main():
+
+    ##for all the files in the output that end in csv delete them 
+    files = glob.glob('Data/ScaledData/*.csv')
+    for f in files:
+        os.remove(f)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Process a percentage of files from the input directory.")
-    parser.add_argument('--percenttorun', type=int, help='Percentage of files to process', default=100)
-    args = parser.parse_args()
+    ##get all the files in the input directory that end in csv 
+    input_files = glob.glob(os.path.join(CONFIG["input_dir"], "*.csv"))
 
-    input_dir = 'Data/IndicatorData'
-    output_dir = 'Data/ScaledData'
-    main(input_dir, output_dir, args.percenttorun)
+
+    num_files_to_process = int(len(input_files) * (args.percentrun / 100))
+
+    # Create a pool of worker processes
+    with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
+        # Map the file processing function to each file
+        pool.map(process_file, input_files[:num_files_to_process])
+
+if __name__ == "__main__":
+    main()

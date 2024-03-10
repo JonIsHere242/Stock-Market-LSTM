@@ -15,19 +15,24 @@ def setup_logging():
     logging.basicConfig(level=logging.INFO, filename='Data/ModelData/TrainingErrors.log', filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("V================(NEW ENTRY)================V")
 
+
+
 def ensure_directory_exists(path):
     """Ensure that the directory exists. Create it if it does not."""
     os.makedirs(path, exist_ok=True)
 
-def load_and_process_data(folder_path, target_column, shift_steps=1):
+
+
+def load_and_process_data(folder_path, target_column, shift_steps=1, correlation_threshold=0.95):
     """
     Load data from CSV files in a specified folder, process it by shifting the target column, 
-    and concatenate all data into a single DataFrame.
+    remove highly correlated features, and concatenate all data into a single DataFrame.
 
     Parameters:
     folder_path (str): Path to the folder containing CSV files.
     target_column (str): Name of the target column to be shifted.
     shift_steps (int): Number of steps to shift the target column.
+    correlation_threshold (float): Threshold for removing highly correlated features.
 
     Returns:
     Tuple[pd.DataFrame, pd.Series]: A tuple containing the feature matrix (X) and target vector (y).
@@ -50,8 +55,15 @@ def load_and_process_data(folder_path, target_column, shift_steps=1):
                 if not all(isinstance(x, (int, float)) for x in data[target_column]):
                     raise ValueError(f"Non-numeric data found in {filename}")
 
+                # Shift the target column
                 data[target_column] = data[target_column].shift(-shift_steps)
                 data = data.dropna()
+
+                # Remove highly correlated features
+                correlations = data.corr().abs()
+                high_corr_features = [feature for feature in correlations if correlations[feature][target_column] > correlation_threshold and feature != target_column]
+                data = data.drop(columns=high_corr_features)
+
                 all_data.append(data)
                 processed_files += 1
             except (FileNotFoundError, pd.errors.EmptyDataError, ValueError) as e:
