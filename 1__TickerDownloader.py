@@ -1,3 +1,4 @@
+#!/root/root/miniconda4/envs/tf/bin/python
 import datetime
 import logging
 import os
@@ -46,15 +47,25 @@ def setup_logging():
     logging.basicConfig(filename=CONFIG["log_file"], level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
+
+
+
+def setup_args():
+    parser = argparse.ArgumentParser(description="Download and convert Ticker CIK data.")
+    parser.add_argument("--ImmediateDownload", action='store_true', 
+                        help="Download the file immediately without waiting for the scheduled time.")
+    args = parser.parse_args()
+    return args
+
+
 def download_and_convert_ticker_cik_file():
     """
-    Download ticker and CIK data from SEC and save in both CSV and Parquet formats.
+    Download ticker and CIK data from SEC and save in both CSV.
     """
     try:
         # Insert the current date in the file paths
         current_date = datetime.datetime.now().strftime("%Y%m%d")
         csv_file_path = CONFIG["csv_file_path"].format(date=current_date)
-        parquet_file_path = CONFIG["parquet_file_path"].format(date=current_date)
         session = requests.Session()
         headers = {
             'User-Agent': CONFIG["user_agent"],
@@ -68,9 +79,8 @@ def download_and_convert_ticker_cik_file():
         json_data = response.json()
         df = pd.DataFrame(json_data['data'], columns=json_data['fields'])
         df.to_csv(csv_file_path, index=False)
-        df.to_parquet(parquet_file_path, index=False)
 
-        logging.info("File downloaded and saved successfully in CSV and Parquet formats.")
+        logging.info("File downloaded and saved successfully in CSV.")
     except requests.exceptions.HTTPError as e:
         logging.error(f"HTTP error occurred: {e}")
     except Exception as e:
@@ -93,13 +103,10 @@ def is_file_recent(file_path):
 
 if __name__ == "__main__":
     setup_logging()
+    args = setup_args()
 
-    parser = argparse.ArgumentParser(description="Download and convert Ticker CIK data.")
-    parser.add_argument("--immediate_download", action='store_true', 
-                        help="Download the file immediately without waiting for the scheduled time.")
-    args = parser.parse_args()
 
-    if args.immediate_download or datetime.date.today().weekday() == 5:  # 5 represents Saturday
+    if args.ImmediateDownload or datetime.date.today().weekday() == 5:  # 5 represents Saturday
         if is_file_recent(CONFIG["csv_file_path"]):
             time_since_last_mod = datetime.datetime.now() - datetime.datetime.fromtimestamp(os.path.getmtime(CONFIG["csv_file_path"]))
             logging.info(f"File already downloaded today. Exiting...File last modified {time_since_last_mod} ago")

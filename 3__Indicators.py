@@ -1,3 +1,4 @@
+#!/root/root/miniconda4/envs/tf/bin/python
 import os
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
@@ -7,6 +8,9 @@ import scipy.stats as stats
 from scipy.stats import linregress
 import logging
 import argparse
+import warnings
+
+
 
 
 """
@@ -49,6 +53,11 @@ CONFIG = {
 }
 
 
+
+# Suppress only the relevant warnings from numpy operations:
+warnings.filterwarnings('ignore', 'invalid value encountered in subtract', RuntimeWarning)
+warnings.filterwarnings('ignore', 'invalid value encountered in reduce', RuntimeWarning)
+
 ##===========================(Indicators)===========================##
 ##===========================(Indicators)===========================##
 ##===========================(Indicators)===========================##
@@ -77,18 +86,19 @@ def interpolate_columns(df, max_gap_fill=50):
     Returns:
     pd.DataFrame: DataFrame with interpolated columns.
     """
-    for column in df.columns:
-        # Count consecutive NaNs in the column
-        consec_nan_count = df[column].isna().astype(int).groupby(df[column].notna().astype(int).cumsum()).cumsum()
 
-        # Only interpolate where consecutive NaNs are below the threshold
+
+
+    for column in df.columns:
+        if not np.issubdtype(df[column].dtype, np.number):
+            continue
+        consec_nan_count = df[column].isna().astype(int).groupby(df[column].notna().astype(int).cumsum()).cumsum()
         mask = consec_nan_count <= max_gap_fill
         df.loc[mask, column] = df.loc[mask, column].interpolate(method='linear')
-
-        # Optionally, you can backfill or forward fill remaining NaNs
-        df[column] = df[column].bfill().ffill()
-
+        df[column] = df[column].ffill()
     return df
+
+
 
 
 
@@ -232,12 +242,92 @@ def calculate_cumulative_streaks(df, window_size=20):
 
 
 
+def AtrVolume(df):
+    df['ATR_std'] = df['ATR'].rolling(window=60).std()
+    df['Volume_std'] = df['Volume'].rolling(window=60).std()
+    ATR_threshold_multiplier = 2  # Example value, can be adjusted
+    Volume_threshold_multiplier = 2  # Example value, can be adjusted
+    df['ATR_trigger'] = df['ATR'] > (df['ATR_std'] * ATR_threshold_multiplier)
+    df['Volume_trigger'] = df['Volume'] > (df['Volume_std'] * Volume_threshold_multiplier)
+    df['Oscillator'] = (df['ATR_trigger'] & df['Volume_trigger']).astype(int)
+    reset_points = df['Oscillator'].diff().eq(-1).cumsum()
+    # Calculate the trigger counter
+    df['Trigger_Counter'] = df['Oscillator'].groupby(reset_points).cumsum()
+    return df
+
+
+def ATR_Based_Adaptive_Trend_Channels(df):
+    # 200-day Moving Average
+    df['200MA'] = df['Close'].rolling(window=200).mean()
+
+    # 14-day average ATR
+    df['14Day_Avg_ATR'] = df['ATR'].rolling(window=14).mean()
+
+    # Upper and Lower Bands
+    df['Upper_Band'] = df['200MA'] + df['14Day_Avg_ATR']
+    df['Lower_Band'] = df['200MA'] - df['14Day_Avg_ATR']
+
+    # Percentage Deviation from Bands
+    df['Pct_Deviation_Upper'] = np.where(df['Close'] > df['Upper_Band'],
+                                         (df['Close'] - df['Upper_Band']) / df['Upper_Band'] * 100,
+                                         -((df['Upper_Band'] - df['Close']) / df['Close']) * 100)
+
+    df['Pct_Deviation_Lower'] = np.where(df['Close'] < df['Lower_Band'],
+                                         -((df['Close'] - df['Lower_Band']) / df['Lower_Band']) * 100,
+                                         ((df['Lower_Band'] - df['Close']) / df['Close']) * 100)
+    ##drop the intermediate columns used to calculate the bands
+    df = df.drop(columns=['200MA', '14Day_Avg_ATR', 'Upper_Band', 'Lower_Band'])
+    return df
+
+
+
+
+def imminent_channel_breakout(df, ma_period=200, atr_period=14):
+    # Calculate the moving average and ATR
+    df['200MA'] = df['Close'].rolling(window=ma_period).mean()
+
+
+    
+    df['14DayATR'] = df['ATR'].rolling(window=atr_period).mean()
+
+    # Calculate upper and lower bands
+    df['Upper_Band'] = df['200MA'] + df['14DayATR']
+    df['Lower_Band'] = df['200MA'] - df['14DayATR']
+
+    # Calculate slopes of the bands
+    df['Upper_Band_Slope'] = df['Upper_Band'].diff() / atr_period
+    df['Lower_Band_Slope'] = df['Lower_Band'].diff() / atr_period
+
+    # Calculate closing price momentum
+    df['Close_Momentum'] = df['Close'].diff()
+
+    # Function to calculate breakout score
+    def calculate_breakout_score(row):
+        upper_proximity = 100 * (1 - min(row['Close'] / row['Upper_Band'], 1))
+        lower_proximity = 100 * (1 - min(row['Lower_Band'] / row['Close'], 1))
+
+        slope_strength = 50 * (abs(row['Upper_Band_Slope']) + abs(row['Lower_Band_Slope']))  # Adjust scaling factor as needed
+        momentum_strength = 50 * abs(row['Close_Momentum']) / row['14DayATR']  # Adjust scaling factor as needed
+
+        return min(100, upper_proximity * 0.4 + lower_proximity * 0.4 + slope_strength * 0.1 + momentum_strength * 0.1)
+
+    # Apply the scoring function
+    df['Breakout_Score'] = df.apply(calculate_breakout_score, axis=1)
+
+    # Drop intermediate columns
+    df.drop(['Upper_Band_Slope', 'Lower_Band_Slope', 'Close_Momentum', '14DayATR'], axis=1, inplace=True)
+
+    return df
+
+
+
+
 
 def indicators(df):
-    df['Close'] = df['Close'].bfill()
-    df['High'] = df['High'].bfill()
-    df['Low'] = df['Low'].bfill()
-    df['Volume'] = df['Volume'].bfill()
+    df['Close'] = df['Close'].ffill()
+    df['High'] = df['High'].ffill()
+    df['Low'] = df['Low'].ffill()
+    df['Volume'] = df['Volume'].ffill()
 
 
     close = df['Close']
@@ -250,17 +340,8 @@ def indicators(df):
 
 
     calculate_cumulative_streaks(df)
-
-
-    ##df['VAMA'] = calculate_vama(df)
-    ##periods = [63, 10, 3]  # Approx 3 months, 2 weeks, 3 days in trading days
-    ##df = add_vama_changes(df, df['VAMA'], periods)
-    ##df.drop(columns=['VAMA'], inplace=True)
-
-
-    ##Renable this when not testing
-    ##window_size = 30  # Example window size
-    ##df = find_levels(df, window_size)
+    df = ATR_Based_Adaptive_Trend_Channels(df)
+    df = imminent_channel_breakout(df)
 
     close_shift_1 = close.shift(1)
     true_range = np.maximum(high - low, np.maximum(np.abs(high - close_shift_1), np.abs(close_shift_1 - low)))
@@ -269,6 +350,8 @@ def indicators(df):
     mean_rolled = np.mean(rolled, axis=1)
     df['ATR'] = np.pad(mean_rolled, (window-1, 0), 'constant', constant_values=(np.nan,))
     df['ATR%'] = (df['ATR'] / close) * 100
+    df['ATR%_change'] = df['ATR%'].pct_change()
+    df = AtrVolume(df)
     df['200ma'] = close.rolling(window=200).mean()
     df['14ma'] = close.rolling(window=14).mean()
     df['14ma%'] = ((close - df['14ma']) / df['14ma']) * 100
@@ -276,10 +359,18 @@ def indicators(df):
     df['14ma-200ma'] = df['14ma'] - df['200ma']
     df['14ma%_change'] = df['14ma%'].pct_change()
     df['14ma%_count'] = df['14ma%'].gt(0).rolling(window=14).sum()
+
+
     df['200ma%_count'] = df['200ma%'].gt(0).rolling(window=200).sum()
+
+
+
     df['14ma_crossover'] = (close > df['14ma'])
     df['200ma_crossover'] = (close > df['200ma'])
     df['200DAY_ATR'] = df['200ma'] + df['ATR']
+
+
+
     df['200DAY_ATR-'] = df['200ma'] - df['ATR']
     df['200DAY_ATR%'] = df['200DAY_ATR'] / close
     df['200DAY_ATR-%'] = df['200DAY_ATR-'] / close
@@ -406,16 +497,71 @@ def indicators(df):
     df['VPT'] = df['Volume'] * ((df['Close'] - close_shift_1) / close_shift_1)
 
     # Dropping unnecessary columns
-    columns_to_drop = ['Open', 'High', 'Low', 'Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'Volume', 'ATR', 'OBV', '200ma', '14ma']
+    columns_to_drop = ['Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
     df = interpolate_columns(df, max_gap_fill=50)  # updated argument name
-    df = df.replace({True: 1, False: 0})
     df = df.iloc[200:]
     df = df.drop(columns_to_drop, axis=1)
     df = df.round(8)
     return df
 
 
+
+def clean_and_interpolate_data(df):
+    df.replace([np.inf, -np.inf], np.nan, inplace=True)
+    numeric_cols = df.select_dtypes(include=['number']).columns
+    for col in numeric_cols:
+        df[col] = df[col].interpolate(method='linear', limit_direction='forward', axis=0)
+    df.ffill(inplace=True)
+    return df
+
+
+
+
+def get_rid_of_shitty_nasdaq_reverse_stock_splits(df, file_path):
+    # Check for an empty DataFrame
+    if df.empty:
+        logging.error("Empty DataFrame")
+        return None
+
+    # Check for very high closing prices which might indicate reverse splits
+    if df['Close'].max() > 10000:
+        logging.error("Stock has closing price over $10,000, indicating possible reverse splits.")
+        return None
+
+    # Sample from the first and last 10% of the DataFrame
+    first_10_percent = df.head(int(len(df) * 0.1)).sample(10, random_state=42)  # Consistent sampling
+    last_10_percent = df.tail(int(len(df) * 0.1)).sample(10, random_state=42)  # Consistent sampling
+
+    # Compute sum of the samples
+    first_10_percent_sum = first_10_percent['Close'].sum()
+    last_10_percent_sum = last_10_percent['Close'].sum()
+
+    # Calculate the start-to-end ratio and check for zero to avoid division errors
+    start_to_end_ratio = first_10_percent_sum / last_10_percent_sum if last_10_percent_sum != 0 else float('inf')
+
+    if start_to_end_ratio > 10:
+        logging.error("Stock has a high start-to-end ratio, indicating possible reverse splits.")
+        return None
+
+    return df
+
+
+
+
+def Ensure_relivance(df):
+    ##this function is to check the date in the format of yyy-mm-dd and ensure that the end of the df has a date that is within the last 365 days of the current date so we are not training on irrelevant data
+    if df['Date'].dtype != 'datetime64[ns]':
+        df['Date'] = pd.to_datetime(df['Date'])
+
+    if df['Date'].iloc[-1] < pd.Timestamp.now() - pd.DateOffset(days=365):
+        logging.error("Data is not relevant")
+        ##get the last date in the df for logging 
+        last_date = df['Date'].iloc[-1]
+        logging.error(f"Last date in the df: {last_date}")
+        return None
+
+    return df
 
 
 
@@ -439,12 +585,14 @@ def process_file(file_path, output_dir):
         return f"Skipped {file_path}: Unsupported file format"
 
     try:
-
+        df = get_rid_of_shitty_nasdaq_reverse_stock_splits(df, file_path)
         df = indicators(df)
+        df = Ensure_relivance(df)
         df = squash_col_outliers(df, num_std_dev=3)    
         ##log the time taken to process the file here
         filename = os.path.basename(file_path)
         new_file_path = os.path.join(output_dir, filename.replace('.csv', '_modified.csv').replace('.parquet', '_modified.parquet'))
+        df = clean_and_interpolate_data(df)
 
         if file_path.endswith('.csv'):
             df.to_csv(new_file_path, index=False)
@@ -501,7 +649,6 @@ def calculate_average_processing_time(log_file, core_count_division):
 ##===========================(Main)===========================##
 ##===========================(Main)===========================##
 if __name__ == "__main__":
-    # Argument parser setup
     parser = argparse.ArgumentParser(description="Process financial market data files.")
     parser.add_argument('--runpercent', type=int, default=100, help="Percentage of files to process from the input directory.")
     args = parser.parse_args()

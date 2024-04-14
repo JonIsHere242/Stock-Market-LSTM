@@ -1,5 +1,10 @@
 Column,ScalingMethod,LogTransform,Detrend
-Volume,RobustScaler,True,None
+Date,NoScaling,False,None
+Close,NoScaling,False,None
+Open,NoScaling,False,None
+High,NoScaling,False,None
+Low,NoScaling,False,None
+Volume,NoScaling,False,None
 OBV,RobustScaler,True,None
 VPT,RobustScaler,True,None
 ATR%,RobustScaler,False,None
@@ -32,7 +37,6 @@ negative_streak_max,StandardScaler,False,None
 RSI,MinMaxScaler,False,None
 APZ_Upper,StandardScaler,False,None
 APZ_Lower,StandardScaler,False,None
-percent_change_Close,RobustScaler,False,None
 pct_change_std,RobustScaler,False,None
 pct_change_std_rolling,RobustScaler,False,None
 Weighted_Close_Change_Velocity,RobustScaler,False,None
@@ -43,3 +47,22 @@ KC_UPPER%,RobustScaler,False,None
 KC_LOWER%,RobustScaler,False,None
 VWAP Divergence,RobustScaler,False,None
 move_from_gap%,RobustScaler,False,None
+APZ_Upper,StandardScaler,False,None
+Pct_Deviation_Upper,RobustScaler,False,None
+Pct_Deviation_Lower,RobustScaler,False,None
+200MA,StandardScaler,False,None
+Upper_Band,StandardScaler,False,None
+Lower_Band,StandardScaler,False,None
+Breakout_Score,MinMaxScaler,False,None
+ATR_std,RobustScaler,True,None
+Volume_std,RobustScaler,True,None
+ATR_trigger,MinMaxScaler,False,None
+Volume_trigger,MinMaxScaler,False,None
+Oscillator,MinMaxScaler,False,None
+Trigger_Counter,MinMaxScaler,False,None
+APZ_Upper%,RobustScaler,False,None
+APZ_Lower%,RobustScaler,False,None
+positive_streak_cumulative,RobustScaler,False,None
+negative_streak_cumulative,RobustScaler,False,None
+ATR%_change,RobustScaler,False,None
+14ma%_change,RobustScaler,False,None

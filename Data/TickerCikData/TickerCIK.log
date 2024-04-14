@@ -1,7 +1,6 @@
-2024-01-30 17:26:49,496 - INFO - File downloaded and saved successfully in CSV and Parquet formats.
-2024-01-30 17:30:43,686 - INFO - File already downloaded today. Exiting...File last modified 0:03:54.218655 ago
-2024-01-30 17:38:31,613 - INFO - File already downloaded today. Exiting...File last modified 0:11:42.144942 ago
-2024-02-15 16:52:12,864 - INFO - File already downloaded today. Exiting...File last modified 0:05:36.438766 ago
-2024-02-15 16:52:34,901 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002A05D6D4ED0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /files/company_tickers_exchange.json
-2024-02-15 16:52:35,455 - INFO - File downloaded and saved successfully in CSV and Parquet formats.
-2024-03-06 20:07:18,600 - INFO - File downloaded and saved successfully in CSV and Parquet formats.
+2024-04-04 22:09:27,984 - INFO - File downloaded and saved successfully in CSV and Parquet formats.
+2024-04-04 22:09:42,245 - INFO - File downloaded and saved successfully in CSV and Parquet formats.
+2024-04-08 21:45:48,481 - INFO - File downloaded and saved successfully in CSV.
+2024-04-14 16:10:59,965 - INFO - File downloaded and saved successfully in CSV.
+2024-04-14 16:27:06,511 - INFO - File downloaded and saved successfully in CSV.
+2024-04-14 16:49:32,548 - INFO - File downloaded and saved successfully in CSV.

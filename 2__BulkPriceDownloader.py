@@ -1,3 +1,4 @@
+#!/root/root/miniconda4/envs/tf/bin/python
 import yfinance as yf
 import pandas as pd
 import os
@@ -6,6 +7,7 @@ import time
 import argparse
 from datetime import datetime
 import glob
+from datetime import timedelta
 
 """
 This script is used for downloading stock data from Yahoo Finance.
@@ -16,21 +18,34 @@ Command Line Arguments:
 - --ClearOldData: Clears any existing CSV or Parquet files in the output directory before downloading new data.
 
 Usage Examples:
-- To download data for 30 specific tickers: python __BulkPriceDownloader.py --NumberOfFiles 30
+- To download data for 30 specific tickers: python 2__BulkPriceDownloader.py --NumberOfFiles 30
 - To download data for 2% of the total number of tickers: pyhton 2__BulkPriceDownloader.py --PercentDownload 2
-- To clear old data and download for 2% of tickers: python python 2__BulkPriceDownloader.py --ClearOldData --PercentDownload 2
+- To clear old data and download for 2% of tickers: python 2__BulkPriceDownloader.py --ClearOldData --PercentDownload 2
 """
 
-# Configuration
+
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
 LOG_DIRECTORY = 'Data/PriceData'
 LOG_FILE = "Data/PriceData/_Price_Data_download.log"
-START_DATE = '1990-01-01'
-RATE_LIMIT = 1.05  # seconds between downloads
+START_DATE = '1995-01-01'
+RATE_LIMIT = 1.0  # seconds between downloads
 
 os.makedirs(DATA_DIRECTORY, exist_ok=True)
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+
+def is_data_up_to_date(file_path, days_threshold=100):
+    try:
+        data = pd.read_csv(file_path, parse_dates=['Date'])
+        last_date = data['Date'].max()
+        return (datetime.now() - last_date) <= timedelta(days=days_threshold)
+    except Exception as e:
+        logging.error(f"Error reading file {file_path}: {e}")
+        return False
+
+
 
 def find_latest_ticker_cik_file(directory):
     files = glob.glob(os.path.join(directory, 'TickerCIKs_*.csv'))  # Corrected this line
@@ -46,9 +61,13 @@ def clear_old_data(data_dir):
             os.remove(os.path.join(data_dir, file))
     logging.info("Cleared old data files.")
 
-def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_downloads=None, rate_limit=1.0):
+
+
+
+
+def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_downloads=None, rate_limit=RATE_LIMIT):
     download_count = 0
-    wait_time = rate_limit * 1.05 if max_downloads is not None else rate_limit * 1.15
+    wait_time = rate_limit * 1.05 if max_downloads is not None else rate_limit * 1.10
     max_downloads = max_downloads or len(tickers)
 
     for ticker in tickers:
@@ -57,7 +76,8 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
 
         file_path = os.path.join(data_dir, f"{ticker}.csv")
 
-        if os.path.exists(file_path):
+        # Check if existing data is up to date
+        if os.path.exists(file_path) and is_data_up_to_date(file_path):
             continue
 
         try:
@@ -79,6 +99,14 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
 
         except Exception as e:
             logging.error(f"Error downloading data for {ticker}: {e}")
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download stock data from Yahoo Finance.")

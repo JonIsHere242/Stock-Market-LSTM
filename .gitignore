@@ -1,0 +1,2 @@
+# Ignore model data and large datasets
+Data/ModelData/*
