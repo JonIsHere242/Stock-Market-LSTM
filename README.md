@@ -7,13 +7,19 @@ This project employs sophisticated methods for stock market analysis and predict
 ### Data Collection and Preprocessing
 - **SEC Ticker Download**: Automatically fetches a list of tickers from the SEC.
 - **Historical Data Retrieval**: Downloads historical daily stock prices back to 1990 using Yahoo Finance.
-- **Data Preprocessing**: Involves scaling, cleaning, and normalizing the data, and calculating various technical indicators such as ATR, moving averages, VWAP, RSI, and MACD.
 
 ### Indicator Calculations
+- **Data Preprocessing**: Involves scaling, cleaning, and normalizing the data, and calculating various technical indicators such as ATR, moving averages, VWAP, RSI, and MACD.
 - Comprehensive calculations of technical indicators using Python libraries like Pandas and NumPy.
 
 ### Machine Learning Models
-- **Random Forest**: Utilizes a Random Forest Regressor to predict stock price movements. The predictions are used to generate trading signals, particularly focusing on accuracy during stable market periods.
+- **Hybrid Approach**: The project uses a combination of Random Forest Classifier and Random Forest Regressor models to handle different aspects of market prediction. This dual approach leverages classification for directionality of the market movements and regression for quantifying the changes.
+
+- **Trinary Classification**: The Random Forest Classifier discretizes the target variable into three classes (up, down, stable) based on a dynamic threshold that adapts to volatility, which is crucial for capturing market sentiment more accurately than binary classifications.
+
+- **Dynamic Data Concatenation**: To manage training scalability and effectiveness, the system dynamically concatenates data frames based on a configurable percentage of available data files. This method is crucial for managing memory usage and computational efficiency, especially when dealing with vast datasets.
+
+- **Automated Training Process**: The training pipeline is fully automated, allowing for models to be retrained with new data using scheduled jobs. This ensures that the models are always up-to-date and reflect the most recent market conditions.
 
 ### Trading Signal Generation
 - Generates trading signals based on predictions from the Random Forest model. Signals are refined by historical performance to ensure reliability.
