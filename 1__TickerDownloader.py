@@ -9,31 +9,6 @@ import sys
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-
-
-
-"""
-This script downloads and converts Ticker and CIK (Central Index Key) data from the U.S. Securities and Exchange Commission (SEC) website. 
-The data is saved in both CSV and Parquet formats. The script is designed to be run either on a schedule or immediately based on a command-line argument.
-
-Command-line Arguments:
-    --immediate_download: If this argument is provided, the script will download the file immediately without waiting for the scheduled time. 
-    This is useful for cases where an immediate update of the data is required, bypassing any scheduled checks or conditions.
-
-Use Case:
-    This script is ideal for scenarios where up-to-date Ticker and CIK data is required. It can be scheduled to run at specific intervals (e.g., weekly) 
-    to ensure the data is current. The immediate download option provides flexibility for ad-hoc updates outside the regular schedule.
-
-Example:
-    To run the script immediately, use the following command:
-    python 1__TickerDownloader.py --immediate_download
-
-Notes:
-    The correct API useage includes user_agent as "{reason for use} {email}".
-    url": "https://www.sec.gov/files/company_tickers_exchange.json" may be subject to change in the future
-"""
-
-
 CONFIG = {
     "url": "https://www.sec.gov/files/company_tickers_exchange.json",
     "csv_file_path": "Data/TickerCikData/TickerCIKs_{date}.csv",
@@ -48,8 +23,6 @@ def setup_logging():
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-
-
 def setup_args():
     parser = argparse.ArgumentParser(description="Download and convert Ticker CIK data.")
     parser.add_argument("--ImmediateDownload", action='store_true', 
@@ -59,9 +32,6 @@ def setup_args():
 
 
 def download_and_convert_ticker_cik_file():
-    """
-    Download ticker and CIK data from SEC and save in both CSV.
-    """
     try:
         # Insert the current date in the file paths
         current_date = datetime.datetime.now().strftime("%Y%m%d")

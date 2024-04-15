@@ -10,7 +10,7 @@ import logging
 import argparse
 import warnings
 import traceback
-
+import numba
 
 
 
@@ -64,32 +64,32 @@ warnings.filterwarnings('ignore', 'invalid value encountered in reduce', Runtime
 ##===========================(Indicators)===========================##
 
 def squash_col_outliers(df, col_name=None, num_std_dev=3):
-    columns_to_process = [col_name] if col_name is not None else df.select_dtypes(include=['float64']).columns
+    if col_name:
+        columns_to_process = [col_name]
+    else:
+        columns_to_process = df.select_dtypes(include=['float64']).columns
+
+    # Loop through each column
     for col in columns_to_process:
         if col not in df.columns or df[col].dtype != 'float64':
-            continue  # Skip non-existent or non-float columns
-        mean = df[df[col] != 0][col].mean()
-        std_dev = df[df[col] != 0][col].std()
-        lower_bound = mean - num_std_dev * std_dev
-        upper_bound = mean + num_std_dev * std_dev
-        df[col] = df[col].clip(lower=lower_bound, upper=upper_bound)
+            continue
+        
+        # Create rolling objects for mean and std, avoid calculating on zero values
+        rolled_means = df[col][df[col] != 0].rolling(window=20, min_periods=1).mean()
+        rolled_stds = df[col][df[col] != 0].rolling(window=20, min_periods=1).std()
+
+        # Calculate boundaries
+        lower_bounds = rolled_means - num_std_dev * rolled_stds
+        upper_bounds = rolled_means + num_std_dev * rolled_stds
+
+        # Use 'clip' with 'apply' to apply boundaries for each chunk produced by rolling
+        df[col] = df[col].clip(lower=lower_bounds, upper=upper_bounds)
+        
     return df
 
 
+
 def interpolate_columns(df, max_gap_fill=50):
-    """
-    Interpolates columns in the DataFrame, limiting the maximum gap to be filled.
-
-    Args:
-    df (pd.DataFrame): DataFrame containing the data.
-    max_gap_fill (int): Maximum number of consecutive NaNs to fill.
-
-    Returns:
-    pd.DataFrame: DataFrame with interpolated columns.
-    """
-
-
-
     for column in df.columns:
         if not np.issubdtype(df[column].dtype, np.number):
             continue
@@ -104,9 +104,6 @@ def interpolate_columns(df, max_gap_fill=50):
 
 
 def find_best_fit_line(x, y):
-    """
-    Compute the slope and intercept for the line of best fit.
-    """
     try:
         slope, intercept, _, _, _ = linregress(x, y)
         return slope, intercept
@@ -116,10 +113,7 @@ def find_best_fit_line(x, y):
 
 
 def find_levels(df, window_size):
-    """
-    Function to find the top 10 highest and lowest levels in a rolling window and calculate the distance
-    of the current closing price from the line of best fit for each.
-    """
+
     def calculate_level_distance(rolling_window):
         # Handle incomplete window
         if len(rolling_window) < window_size:
@@ -503,6 +497,8 @@ def clean_and_interpolate_data(df):
 
 
 
+
+
 def DataQualityCheck(df):
     """
     This function checks for signs of reverse stock splits and ensures that the data is recent.
@@ -515,9 +511,23 @@ def DataQualityCheck(df):
     Returns:
     pd.DataFrame or None: Processed DataFrame or None if data is unreliable or outdated.
     """
+
     if df.empty or len(df) < 201:
         logging.error("DataFrame is empty or too short to process.")
         return None
+    
+
+
+    ##if more than 1/3 of the df has a close price below 1 then skip it 
+    if len(df[df['Close'] < 1]) > len(df) / 3:
+        logging.error("More than 1/3 of the data has a close price below 1. Skipping the data.")
+        return None
+    
+    ##if more than 1/3ed of the close data is the same value than skip it assumning heavy interpolation
+    if len(df['Close'].unique()) < len(df) / 2:
+        logging.error("More than 1/3 of the data has the same close price. Skipping the data.")
+        return None
+    
 
     if df['Date'].dtype != 'datetime64[ns]':
         df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
@@ -534,6 +544,8 @@ def DataQualityCheck(df):
         logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
 
+
+
     return df
 
 
@@ -548,17 +560,19 @@ def DataQualityCheck(df):
 ##===========================(File Processing)===========================##
 def process_file(file_path, output_dir):
     if file_path.endswith('.csv'):
-        Timer = time.time()
         df = pd.read_csv(file_path)
     elif file_path.endswith('.parquet'):
-        Timer = time.time()
         df = pd.read_parquet(file_path)
     else:
         return f"Skipped {file_path}: Unsupported file format"
-
     try:
         df = DataQualityCheck(df)
         if df is not None:
+            Timer = time.time()
+            for col in df.columns:
+                if df[col].dtype == 'float64':
+                    df[col] = df[col].astype('float32')
+
             df = indicators(df)
             df = squash_col_outliers(df, num_std_dev=3)
             df = clean_and_interpolate_data(df)
@@ -571,6 +585,8 @@ def process_file(file_path, output_dir):
             else:
                 df.to_parquet(new_file_path, index=False)
         
+
+
     except Exception as e:
         # Log the error and the traceback
         error_message = f"Error processing {file_path}: {e}"
