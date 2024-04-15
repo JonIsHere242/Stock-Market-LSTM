@@ -9,6 +9,7 @@ from scipy.stats import linregress
 import logging
 import argparse
 import warnings
+import traceback
 
 
 
@@ -283,40 +284,24 @@ def ATR_Based_Adaptive_Trend_Channels(df):
 
 
 def imminent_channel_breakout(df, ma_period=200, atr_period=14):
-    # Calculate the moving average and ATR
     df['200MA'] = df['Close'].rolling(window=ma_period).mean()
-
-
-    
     df['14DayATR'] = df['ATR'].rolling(window=atr_period).mean()
-
-    # Calculate upper and lower bands
     df['Upper_Band'] = df['200MA'] + df['14DayATR']
     df['Lower_Band'] = df['200MA'] - df['14DayATR']
-
-    # Calculate slopes of the bands
     df['Upper_Band_Slope'] = df['Upper_Band'].diff() / atr_period
     df['Lower_Band_Slope'] = df['Lower_Band'].diff() / atr_period
-
-    # Calculate closing price momentum
     df['Close_Momentum'] = df['Close'].diff()
-
-    # Function to calculate breakout score
     def calculate_breakout_score(row):
         upper_proximity = 100 * (1 - min(row['Close'] / row['Upper_Band'], 1))
         lower_proximity = 100 * (1 - min(row['Lower_Band'] / row['Close'], 1))
-
-        slope_strength = 50 * (abs(row['Upper_Band_Slope']) + abs(row['Lower_Band_Slope']))  # Adjust scaling factor as needed
-        momentum_strength = 50 * abs(row['Close_Momentum']) / row['14DayATR']  # Adjust scaling factor as needed
-
+        slope_strength = 50 * (abs(row['Upper_Band_Slope']) + abs(row['Lower_Band_Slope']))
+        if row['14DayATR'] == 0:
+            momentum_strength = 0
+        else:
+            momentum_strength = 50 * abs(row['Close_Momentum']) / row['14DayATR']
         return min(100, upper_proximity * 0.4 + lower_proximity * 0.4 + slope_strength * 0.1 + momentum_strength * 0.1)
-
-    # Apply the scoring function
     df['Breakout_Score'] = df.apply(calculate_breakout_score, axis=1)
-
-    # Drop intermediate columns
     df.drop(['Upper_Band_Slope', 'Lower_Band_Slope', 'Close_Momentum', '14DayATR'], axis=1, inplace=True)
-
     return df
 
 
@@ -518,47 +503,35 @@ def clean_and_interpolate_data(df):
 
 
 
-def get_rid_of_shitty_nasdaq_reverse_stock_splits(df, file_path):
-    # Check for an empty DataFrame
-    if df.empty:
-        logging.error("Empty DataFrame")
+def DataQualityCheck(df):
+    """
+    This function checks for signs of reverse stock splits and ensures that the data is recent.
+    It compares the average prices at the beginning and end of the data series for reverse splits.
+    It also checks that the most recent data point is no older than 365 days to ensure relevancy.
+
+    Args:
+    df (pd.DataFrame): DataFrame containing stock price data with a 'Close' and 'Date' column.
+
+    Returns:
+    pd.DataFrame or None: Processed DataFrame or None if data is unreliable or outdated.
+    """
+    if df.empty or len(df) < 201:
+        logging.error("DataFrame is empty or too short to process.")
         return None
 
-    # Check for very high closing prices which might indicate reverse splits
-    if df['Close'].max() > 10000:
-        logging.error("Stock has closing price over $10,000, indicating possible reverse splits.")
-        return None
-
-    # Sample from the first and last 10% of the DataFrame
-    first_10_percent = df.head(int(len(df) * 0.1)).sample(10, random_state=42)  # Consistent sampling
-    last_10_percent = df.tail(int(len(df) * 0.1)).sample(10, random_state=42)  # Consistent sampling
-
-    # Compute sum of the samples
-    first_10_percent_sum = first_10_percent['Close'].sum()
-    last_10_percent_sum = last_10_percent['Close'].sum()
-
-    # Calculate the start-to-end ratio and check for zero to avoid division errors
-    start_to_end_ratio = first_10_percent_sum / last_10_percent_sum if last_10_percent_sum != 0 else float('inf')
-
-    if start_to_end_ratio > 10:
-        logging.error("Stock has a high start-to-end ratio, indicating possible reverse splits.")
-        return None
-
-    return df
-
-
-
-
-def Ensure_relivance(df):
-    ##this function is to check the date in the format of yyy-mm-dd and ensure that the end of the df has a date that is within the last 365 days of the current date so we are not training on irrelevant data
     if df['Date'].dtype != 'datetime64[ns]':
-        df['Date'] = pd.to_datetime(df['Date'])
-
+        df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+        
     if df['Date'].iloc[-1] < pd.Timestamp.now() - pd.DateOffset(days=365):
-        logging.error("Data is not relevant")
-        ##get the last date in the df for logging 
-        last_date = df['Date'].iloc[-1]
-        logging.error(f"Last date in the df: {last_date}")
+        logging.error(f"Data is outdated. Last date in dataset: {df['Date'].iloc[-1]}")
+        return None
+
+    sample_size = max(int(len(df) * 0.02), 1)  # Ensure at least one sample is taken
+    start_mean = df['Close'].head(sample_size).mean()
+    end_mean = df['Close'].tail(sample_size).mean()
+
+    if start_mean > 3000 or (start_mean / max(end_mean, 1e-10) > 20):
+        logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
 
     return df
@@ -569,12 +542,11 @@ def Ensure_relivance(df):
 
 
 
-##===========================(File Processing)===========================##
-##===========================(File Processing)===========================##
-##===========================(File Processing)===========================##
 
+##===========================(File Processing)===========================##
+##===========================(File Processing)===========================##
+##===========================(File Processing)===========================##
 def process_file(file_path, output_dir):
-
     if file_path.endswith('.csv'):
         Timer = time.time()
         df = pd.read_csv(file_path)
@@ -585,24 +557,28 @@ def process_file(file_path, output_dir):
         return f"Skipped {file_path}: Unsupported file format"
 
     try:
-        df = get_rid_of_shitty_nasdaq_reverse_stock_splits(df, file_path)
-        df = indicators(df)
-        df = Ensure_relivance(df)
-        df = squash_col_outliers(df, num_std_dev=3)    
-        ##log the time taken to process the file here
-        filename = os.path.basename(file_path)
-        new_file_path = os.path.join(output_dir, filename.replace('.csv', '_modified.csv').replace('.parquet', '_modified.parquet'))
-        df = clean_and_interpolate_data(df)
+        df = DataQualityCheck(df)
+        if df is not None:
+            df = indicators(df)
+            df = squash_col_outliers(df, num_std_dev=3)
+            df = clean_and_interpolate_data(df)
 
-        if file_path.endswith('.csv'):
-            df.to_csv(new_file_path, index=False)
-        else:
-            df.to_parquet(new_file_path, index=False)
+            filename = os.path.basename(file_path)
+            new_file_path = os.path.join(output_dir, filename.replace('.csv', '_modified.csv').replace('.parquet', '_modified.parquet'))
+
+            if file_path.endswith('.csv'):
+                df.to_csv(new_file_path, index=False)
+            else:
+                df.to_parquet(new_file_path, index=False)
         
-        logging.info(f"Time taken to process {file_path}: {time.time() - Timer:.2f} seconds")
     except Exception as e:
-        logging.error(f"Error processing {file_path}: {e}")
-        return f"Error processing {file_path}: {e}"
+        # Log the error and the traceback
+        error_message = f"Error processing {file_path}: {e}"
+        logging.error(error_message)
+        logging.error("Traceback details:")
+        traceback_info = traceback.format_exc()
+        logging.error(traceback_info)
+        return error_message
 
 
 

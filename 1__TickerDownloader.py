@@ -105,11 +105,5 @@ if __name__ == "__main__":
     setup_logging()
     args = setup_args()
 
-
-    if args.ImmediateDownload or datetime.date.today().weekday() == 5:  # 5 represents Saturday
-        if is_file_recent(CONFIG["csv_file_path"]):
-            time_since_last_mod = datetime.datetime.now() - datetime.datetime.fromtimestamp(os.path.getmtime(CONFIG["csv_file_path"]))
-            logging.info(f"File already downloaded today. Exiting...File last modified {time_since_last_mod} ago")
-            sys.exit(0)
-
+    if args.ImmediateDownload:
         download_and_convert_ticker_cik_file()

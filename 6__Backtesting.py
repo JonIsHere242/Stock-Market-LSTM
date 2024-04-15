@@ -179,7 +179,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 self.sell_trade()
             return
         
-
+        
         
 
         ####Method 1 working with Profit Factor: 1.43
@@ -234,13 +234,8 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         AtrMagnatude = self.data.MagnitudePrediction[0] - self.atr[0]
         ExpectedReturn = PercentageAtr * self.base_max_investment_per_trade
         HighUpProb = np.percentile(self.data.UpProb.get(size=len(self.data.MagnitudePrediction)), 8.0)
-        BuySignal = self.data.UpProb[0] < HighUpProb and AtrMagnatude < 0 and ExpectedReturn > 300 and PercentageAtr > 10.3
-        HoldSignal = self.data.UpProb[0] > HighUpProb*1.10
-
-
-
-
-
+        BuySignal = self.data.UpProb[0] < HighUpProb and AtrMagnatude < 0 and ExpectedReturn > 100 and PercentageAtr > 10.3
+        HoldSignal = self.data.UpProb[0] > HighUpProb*1.15
 
 
         ##==============================[ Strategy Buy/sell ]============================##
@@ -272,10 +267,8 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 self.sell_trade()
                 return
 
-            currentLoss = self.data.close[0] - self.entry_price
             for i in range(1, 9):
                 if self.position_holding_days == i and CurrentProfitPercentage > i*0.5:
-                    print(f"Current Profit: {CurrentProfitPercentage} Current Loss: {currentLoss}")
                     self.sell_trade()            
             
 
@@ -289,6 +282,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         if BuySignal and not self.is_long_position:
             self.dynamic_investment_allocation()
             self.buy_trade()
+            logging.info(f"Filename: {self.filename}, Buy Signal Detected - Price: {self.data.close[0]:.2f}, ATR: {self.atr[0]:.2f}, UpProb: {self.data.UpProb[0]:.2f}, DownProb: {self.data.DownProb[0]:.2f}, UnsureProb: {self.data.UnsureProb[0]:.2f}, MagnitudePrediction: {self.data.MagnitudePrediction[0]:.2f}")
             self.trailing_stop = self.data.close[0] * (1 - self.params.Abs_StopLoss / 100)  # Initialize trailing stop
             return
         

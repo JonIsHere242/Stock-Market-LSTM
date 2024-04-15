@@ -1,0 +1,4 @@
+2024-04-14 19:25:18 INFO: Filename: Data/RFpredictions/CVNA_modified_predictions.csv, Buy Signal Detected - Price: 33.87, ATR: 3.51, UpProb: 0.41, DownProb: 0.15, UnsureProb: 0.44, MagnitudePrediction: 0.05
+2024-04-14 19:25:18 INFO: Filename: Data/RFpredictions/CVNA_modified_predictions.csv, Buy Order Executed - Size: 29, Price: 34.01, Value: 986.29
+2024-04-14 19:25:18 INFO: Filename: Data/RFpredictions/CVNA_modified_predictions.csv, Sell Order Executed - Size: -29, Price: 33.99, Value: 986.29
+2024-04-14 19:25:18 INFO: Filename: Data/RFpredictions/CVNA_modified_predictions.csv, Trade Closed - EntryDate: 2023-10-13, ExitDate: 2023-10-17, Duration: 4 days, PnL: -0.58, Mean Close Price: 26.25, Std Dev Close Price: 16.10

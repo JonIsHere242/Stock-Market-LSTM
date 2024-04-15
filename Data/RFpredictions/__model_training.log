@@ -8,3 +8,30 @@
 2024-04-14 16:54:01,888 - INFO - Total files processed: 52
 2024-04-14 16:54:01,888 - INFO - Total files processed successfully: 52
 2024-04-14 16:54:01,888 - INFO - Total files processed percent successfully: 100.00%
+2024-04-14 19:01:55,603 - INFO - Percentage of files to predict: 100%
+2024-04-14 19:01:55,604 - INFO - Number of files to predict: 1032
+2024-04-14 19:05:59,285 - ERROR - Error processing file KVUE_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-14 19:07:26,479 - ERROR - Error processing file CR_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-14 19:08:41,203 - INFO - Total files processed: 1032
+2024-04-14 19:08:41,203 - INFO - Total files processed successfully: 1030
+2024-04-14 19:08:41,203 - INFO - Total files processed percent successfully: 99.81%
+2024-04-15 01:52:42,802 - INFO - Percentage of files to predict: 100%
+2024-04-15 01:52:42,802 - INFO - Number of files to predict: 7193
+2024-04-15 01:52:52,486 - ERROR - Error processing file SHLT_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 01:53:12,527 - ERROR - Error processing file METCB_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 01:53:24,496 - ERROR - Error processing file HBANL_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 01:53:31,489 - ERROR - Error processing file MLYS_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 01:53:45,724 - ERROR - Error processing file AHTR_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:09:48,017 - ERROR - Error processing file GAINL_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:09:48,397 - ERROR - Error processing file NB_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:10:12,131 - ERROR - Error processing file LANDP_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:10:22,401 - ERROR - Error processing file SFWL_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:10:46,484 - ERROR - Error processing file ICG_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:10:52,682 - ERROR - Error processing file OAKU_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:10:57,200 - ERROR - Error processing file ARBB_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:11:33,810 - ERROR - Error processing file LICN_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:11:39,113 - ERROR - Error processing file GXAI_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:11:42,179 - ERROR - Error processing file SAZ_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:11:56,404 - ERROR - Error processing file CIVIW_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:12:29,751 - ERROR - Error processing file MGRX_modified.csv: 'NoneType' object has no attribute 'to_csv'
+2024-04-15 09:12:40,701 - ERROR - Error processing file EFC-PC_modified.csv: 'NoneType' object has no attribute 'to_csv'

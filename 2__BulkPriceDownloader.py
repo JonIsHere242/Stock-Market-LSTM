@@ -88,8 +88,12 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
                 logging.warning(f"Stock data file is empty: {ticker}")
                 continue
 
+            if len(stock_data) < 201:
+                logging.warning(f"Stock data file has less than 100 records: {ticker}")
+                continue
+
             stock_data.to_csv(file_path)
-            logging.info(f"Data for {ticker} downloaded and saved to {file_path}")
+            ##logging.info(f"Downloaded data for {ticker}.")
 
             download_count += 1
             end_download_time = time.time()
@@ -99,12 +103,6 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
 
         except Exception as e:
             logging.error(f"Error downloading data for {ticker}: {e}")
-
-
-
-
-
-
 
 
 
