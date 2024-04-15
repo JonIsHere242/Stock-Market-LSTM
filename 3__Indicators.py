@@ -10,9 +10,6 @@ import logging
 import argparse
 import warnings
 import traceback
-import numba
-
-
 
 """
 This script processes financial market data to calculate various technical indicators and saves the processed data in CSV or Parquet formats. It is designed to handle large datasets efficiently by utilizing multiple cores of the processor.
@@ -53,9 +50,6 @@ CONFIG = {
     'core_count_division': True, 
 }
 
-
-
-# Suppress only the relevant warnings from numpy operations:
 warnings.filterwarnings('ignore', 'invalid value encountered in subtract', RuntimeWarning)
 warnings.filterwarnings('ignore', 'invalid value encountered in reduce', RuntimeWarning)
 
@@ -73,12 +67,8 @@ def squash_col_outliers(df, col_name=None, num_std_dev=3):
     for col in columns_to_process:
         if col not in df.columns or df[col].dtype != 'float64':
             continue
-        
-        # Create rolling objects for mean and std, avoid calculating on zero values
-        rolled_means = df[col][df[col] != 0].rolling(window=20, min_periods=1).mean()
-        rolled_stds = df[col][df[col] != 0].rolling(window=20, min_periods=1).std()
-
-        # Calculate boundaries
+        rolled_means = df[col][df[col] != 0].rolling(window=282, min_periods=1).mean()
+        rolled_stds = df[col][df[col] != 0].rolling(window=282, min_periods=1).std()
         lower_bounds = rolled_means - num_std_dev * rolled_stds
         upper_bounds = rolled_means + num_std_dev * rolled_stds
 
@@ -86,7 +76,6 @@ def squash_col_outliers(df, col_name=None, num_std_dev=3):
         df[col] = df[col].clip(lower=lower_bounds, upper=upper_bounds)
         
     return df
-
 
 
 def interpolate_columns(df, max_gap_fill=50):
@@ -100,9 +89,6 @@ def interpolate_columns(df, max_gap_fill=50):
     return df
 
 
-
-
-
 def find_best_fit_line(x, y):
     try:
         slope, intercept, _, _, _ = linregress(x, y)
@@ -110,7 +96,6 @@ def find_best_fit_line(x, y):
     except ValueError:  # Handle any mathematical errors
         return np.nan, np.nan
     
-
 
 def find_levels(df, window_size):
 
@@ -140,36 +125,26 @@ def find_levels(df, window_size):
 
         return distance_from_high, distance_from_low
 
-    # Apply the function to the rolling window of the closing price
     distances = df['Close'].rolling(window=window_size).apply(calculate_level_distance, raw=True)
-
-    # Split the tuple results into separate columns
     df['Distance_From_High'] = [dist[0] for dist in distances]
     df['Distance_From_Low'] = [dist[1] for dist in distances]
-
     return df
 
-
 def calculate_apz(data, ema_period=20, atr_period=14, atr_multiplier=None, volatility_factor=0.1):
-    # Calculate EMA
     data['EMA'] = data['Close'].ewm(span=ema_period, adjust=False).mean()
     close = data['Close']
-    # Calculate ATR
     high_low = data['High'] - data['Low']
     high_close = (data['High'] - data['Close'].shift()).abs()
     low_close = (data['Low'] - data['Close'].shift()).abs()
     tr = pd.concat([high_low, high_close, low_close], axis=1).max(axis=1)
     data['ATR'] = tr.rolling(window=atr_period).mean()
 
-    # Dynamic ATR Multiplier
     if atr_multiplier is None:
         atr_multiplier = volatility_factor * data['Close'].rolling(window=atr_period).std()
 
-    # Calculate APZ Bounds
     data['APZ_Upper'] = data['EMA'] + (data['ATR'] * atr_multiplier)
     data['APZ_Lower'] = data['EMA'] - (data['ATR'] * atr_multiplier)
 
-    # Optional: Capping extreme values (implementation depends on specific requirements)
     data['APZ_Upper%'] = ((data['APZ_Upper'] - close) / close) * 100
     data['APZ_Lower%'] = ((close - data['APZ_Lower']) / close) * 100
     ##drop the upper and lower apz columns
@@ -177,20 +152,11 @@ def calculate_apz(data, ema_period=20, atr_period=14, atr_multiplier=None, volat
     return data
 
 
-
-
 def calculate_vama(df, price_col='Close', min_period=10, max_period=30):
-    # Replace infinite values with NaN
     df.replace([np.inf, -np.inf], np.nan, inplace=True)
-
-    # Calculate normalized volatility
     volatility = df[price_col].pct_change().rolling(window=21).std()
     normalized_vol = (volatility - volatility.min()) / (volatility.max() - volatility.min())
-
-    # Determine window size (ensure it's within a reasonable range and is an integer)
     window_size = (normalized_vol * (max_period - min_period) + min_period).clip(min_period, max_period).round().astype(int)
-
-    # Calculate VAMA with error handling
     try:
         vama = df[price_col].rolling(window=window_size, min_periods=min_period).mean()
     except Exception as e:
@@ -199,42 +165,23 @@ def calculate_vama(df, price_col='Close', min_period=10, max_period=30):
 
     return vama
 
-
-
-
-
 def add_vama_changes(df, vama, periods):
     for period in periods:
         label = f'VAMA_pct_change_{period}_days'
         df[label] = vama.pct_change(periods=period)
-
     return df
 
 def calculate_cumulative_streaks(df, window_size=20):
-    # Calculate daily percentage change
     pct_change = df['Close'].pct_change() * 100
     close = df['Close']
-    # Identify where the sign changes (positive to negative and vice versa)
     sign_change = pct_change.mul(pct_change.shift(1)) <= 0
-
-    # Create streak counter that resets at every sign change
     streak_counter = sign_change.cumsum()
-
-    # Group by streaks and sum the percentage changes within each streak
     streak_sums = pct_change.groupby(streak_counter).cumsum()
-
-    # Assign positive and negative streaks
     df['positive_streak_cumulative'] = np.where(pct_change > 0, streak_sums, 0)
     df['negative_streak_cumulative'] = np.where(pct_change < 0, streak_sums, 0)
-
-    # Apply rolling window
     df['positive_streak_cumulative'] = df['positive_streak_cumulative'].rolling(window=window_size, min_periods=1).max()
     df['negative_streak_cumulative'] = df['negative_streak_cumulative'].rolling(window=window_size, min_periods=1).min()
- 
-
     return df
-
-
 
 
 def AtrVolume(df):
@@ -254,14 +201,9 @@ def AtrVolume(df):
 def ATR_Based_Adaptive_Trend_Channels(df):
     # 200-day Moving Average
     df['200MA'] = df['Close'].rolling(window=200).mean()
-
-    # 14-day average ATR
     df['14Day_Avg_ATR'] = df['ATR'].rolling(window=14).mean()
-
-    # Upper and Lower Bands
     df['Upper_Band'] = df['200MA'] + df['14Day_Avg_ATR']
     df['Lower_Band'] = df['200MA'] - df['14Day_Avg_ATR']
-
     # Percentage Deviation from Bands
     df['Pct_Deviation_Upper'] = np.where(df['Close'] > df['Upper_Band'],
                                          (df['Close'] - df['Upper_Band']) / df['Upper_Band'] * 100,
@@ -273,8 +215,6 @@ def ATR_Based_Adaptive_Trend_Channels(df):
     ##drop the intermediate columns used to calculate the bands
     df = df.drop(columns=['200MA', '14Day_Avg_ATR', 'Upper_Band', 'Lower_Band'])
     return df
-
-
 
 
 def imminent_channel_breakout(df, ma_period=200, atr_period=14):
@@ -300,23 +240,17 @@ def imminent_channel_breakout(df, ma_period=200, atr_period=14):
 
 
 
-
-
 def indicators(df):
     df['Close'] = df['Close'].ffill()
     df['High'] = df['High'].ffill()
     df['Low'] = df['Low'].ffill()
     df['Volume'] = df['Volume'].ffill()
 
-
     close = df['Close']
     high = df['High']
     low = df['Low']
     volume = df['Volume']
     calculate_apz(df)
-
-
-
 
     calculate_cumulative_streaks(df)
     df = ATR_Based_Adaptive_Trend_Channels(df)
@@ -338,18 +272,10 @@ def indicators(df):
     df['14ma-200ma'] = df['14ma'] - df['200ma']
     df['14ma%_change'] = df['14ma%'].pct_change()
     df['14ma%_count'] = df['14ma%'].gt(0).rolling(window=14).sum()
-
-
     df['200ma%_count'] = df['200ma%'].gt(0).rolling(window=200).sum()
-
-
-
     df['14ma_crossover'] = (close > df['14ma'])
     df['200ma_crossover'] = (close > df['200ma'])
     df['200DAY_ATR'] = df['200ma'] + df['ATR']
-
-
-
     df['200DAY_ATR-'] = df['200ma'] - df['ATR']
     df['200DAY_ATR%'] = df['200DAY_ATR'] / close
     df['200DAY_ATR-%'] = df['200DAY_ATR-'] / close
@@ -396,8 +322,6 @@ def indicators(df):
     df['percent_change_Close_lag_3'] = pct_change_close.shift(3)  # Lag by 3 periods
     df['percent_change_Close_lag_5'] = pct_change_close.shift(5)  # Lag by 5 periods
     df['percent_change_Close_lag_10'] = pct_change_close.shift(10)  # Lag by 10 periods
-
-
     df['percent_change_Close_7'] = rolling_7.mean()
     df['percent_change_Close_30'] = rolling_30.mean()
     df['percent_change_Close>std'] = (pct_change_close > df['pct_change_std']).astype(int)
@@ -410,8 +334,6 @@ def indicators(df):
     threshold_multiplier = 0.65
     abnormal_pct_change_threshold = rolling_20.mean() + threshold_multiplier * df['pct_change_std']
     df['days_since_abnormal_pct_change'] = (pct_change_close > abnormal_pct_change_threshold).cumsum()
-
-
 
     # VWAP Divergence
     typical_price = (df['High'] + df['Low'] + df['Close']) / 3
@@ -431,12 +353,8 @@ def indicators(df):
     df['RSI_very_overbought'] = (df['RSI'] > 90).astype(int)
     df['RSI_very_oversold'] = (df['RSI'] < 10).astype(int)
 
-
-
     # Elder’s Force Index
     df['EFI'] = df['Close'].diff() * df['Volume']
-
-
 
     ##direction flipper
     df['direction_flipper'] = (pct_change_close > 0).astype(int)
@@ -445,8 +363,6 @@ def indicators(df):
     df['direction_flipper_count_14'] = df['direction_flipper'].rolling(window=14).sum()
     ##drop the direction flipper too correlated
     df = df.drop(columns=['direction_flipper'])
-
-
 
     # ATR calculation streamlined
     df['ATR'] = rolling_14.apply(lambda x: np.mean(np.abs(np.diff(x))))
@@ -465,9 +381,6 @@ def indicators(df):
     df['positive_streak_max'] = df['positive_streak'].rolling(window=60).max()
     df['negative_streak_max'] = df['negative_streak'].rolling(window=60).max()
 
-
-
-    # Gap calculations streamlined
     gap_threshold_percent = 0.5 if pct_change_close.std() > 1 else 0
     df['is_gap_up'] = (df['Low'] - high_shift_1) / close_shift_1 * 100 > gap_threshold_percent
     df['is_gap_down'] = (df['High'] - low_shift_1) / close_shift_1 * 100 < -gap_threshold_percent
@@ -475,7 +388,6 @@ def indicators(df):
                                     np.where(df['is_gap_down'], (df['Close'] - high_shift_1) / high_shift_1 * 100, 0))
     df['VPT'] = df['Volume'] * ((df['Close'] - close_shift_1) / close_shift_1)
 
-    # Dropping unnecessary columns
     columns_to_drop = ['Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
     df = interpolate_columns(df, max_gap_fill=50)  # updated argument name
@@ -496,28 +408,12 @@ def clean_and_interpolate_data(df):
 
 
 
-
-
-
 def DataQualityCheck(df):
-    """
-    This function checks for signs of reverse stock splits and ensures that the data is recent.
-    It compares the average prices at the beginning and end of the data series for reverse splits.
-    It also checks that the most recent data point is no older than 365 days to ensure relevancy.
-
-    Args:
-    df (pd.DataFrame): DataFrame containing stock price data with a 'Close' and 'Date' column.
-
-    Returns:
-    pd.DataFrame or None: Processed DataFrame or None if data is unreliable or outdated.
-    """
 
     if df.empty or len(df) < 201:
         logging.error("DataFrame is empty or too short to process.")
         return None
     
-
-
     ##if more than 1/3 of the df has a close price below 1 then skip it 
     if len(df[df['Close'] < 1]) > len(df) / 3:
         logging.error("More than 1/3 of the data has a close price below 1. Skipping the data.")
@@ -543,22 +439,14 @@ def DataQualityCheck(df):
     if start_mean > 3000 or (start_mean / max(end_mean, 1e-10) > 20):
         logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
-
-
-
     return df
-
-
-
-
-
-
 
 
 ##===========================(File Processing)===========================##
 ##===========================(File Processing)===========================##
 ##===========================(File Processing)===========================##
 def process_file(file_path, output_dir):
+    Timer = time.time()
     if file_path.endswith('.csv'):
         df = pd.read_csv(file_path)
     elif file_path.endswith('.parquet'):
@@ -584,7 +472,6 @@ def process_file(file_path, output_dir):
                 df.to_csv(new_file_path, index=False)
             else:
                 df.to_parquet(new_file_path, index=False)
-        
 
 
     except Exception as e:
@@ -595,10 +482,6 @@ def process_file(file_path, output_dir):
         traceback_info = traceback.format_exc()
         logging.error(traceback_info)
         return error_message
-
-
-
-
 
 
 def process_files(input_dir, output_dir):
@@ -616,25 +499,6 @@ def clear_output_directory(output_dir):
     for file in os.listdir(output_dir):
         if file.endswith('.csv') or file.endswith('.parquet'):
             os.remove(os.path.join(output_dir, file))
-
-def calculate_average_processing_time(log_file, core_count_division):
-    """
-    Calculate and log the average time taken to process each file.
-    """
-    try:
-        with open(log_file, 'r') as f:
-            lines = f.readlines()[-CONFIG['log_lines_to_read']:]
-        time_taken = [float(line.split(':')[-1].strip().split(' ')[0]) for line in lines if 'Time taken to process' in line]
-        average_time = sum(time_taken) / len(time_taken)
-        if core_count_division:
-            average_time /= os.cpu_count()
-        return average_time
-    except Exception as e:
-        logging.error(f"Error reading log file: {e}")
-        raise
-
-
-
 
 
 ##===========================(Main)===========================##
@@ -659,8 +523,4 @@ if __name__ == "__main__":
     with ThreadPoolExecutor() as executor:
         list(executor.map(lambda file: process_file(file, CONFIG['output_directory']), files_to_process))
 
-    try:
-        average_time_taken = calculate_average_processing_time(CONFIG['log_file'], CONFIG['core_count_division'])
-        logging.info(f"Average time taken to process each file: {average_time_taken:.2f} seconds")
-    except Exception as e:
-        print(f"Error calculating average processing time: {e}")
+   
