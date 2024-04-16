@@ -16,7 +16,7 @@ echo "Ticker Downloader completed. Waiting 10 seconds before next step..."
 sleep 10  # Waits for 10 seconds
 
 echo "Running Bulk Price Downloader..."
-/root/root/miniconda4/envs/tf/bin/python ./2__BulkPriceDownloader.py --ClearOldData --PercentDownload 85
+/root/root/miniconda4/envs/tf/bin/python ./2__BulkPriceDownloader.py --ClearOldData --PercentDownload 60
 echo "Bulk Price Downloader completed. Waiting approximately 1 minute before next step..."
 sleep 60  # Corrected to actually wait for approximately 1 minute
 

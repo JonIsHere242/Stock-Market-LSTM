@@ -117,9 +117,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
     params = (
         ('filename', None),  # Add 'filename' parameter
-        ("Abs_StopLoss", 5.0),
-        ("Abs_TakeProfit", 30.0),
-        ("Max_DaysToHold", 7.0),
+        ("Abs_StopLoss", 3.0),
+        ("Abs_TakeProfit", 50.0),
+        ("Max_DaysToHold", 5),
         ("max_investment_per_trade", 20),
         ("cooldown_period", 60),
     )
@@ -224,18 +224,109 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
 
 
+
+
+        ##method 6 Bad profit factor and over all trades but first 4 figure trades based on 5k account value
+        ## Highest Profit trade: 2389.60
+
+
+        ##PercentageAtr = self.atr[0] / self.data.close[0] * 100
+        ##AtrMagnitude = self.data.MagnitudePrediction[0] - self.atr[0]
+        ##ExpectedReturn = PercentageAtr * self.base_max_investment_per_trade
+        ##
+        ### Defining high probability threshold for UpProb
+        ##HighUpProb = np.percentile(self.data.UpProb.get(size=70), 95)  # top 5% high threshold
+        ##LowDownProb = np.percentile(self.data.DownProb.get(size=70), 25)  # bottom 50% low threshold
+        ##LowUnsureProb = np.percentile(self.data.UnsureProb.get(size=70), 50)  # bottom 50% low threshold
+        ##
+        ### Define Buy and Hold signals based on these probabilities
+        ##BuySignal = (self.data.UpProb[0] > HighUpProb and 
+        ##             self.data.DownProb[0] < LowDownProb and 
+        ##             self.data.UnsureProb[0] < LowUnsureProb and 
+        ##             AtrMagnitude < 0 and 
+        ##             ExpectedReturn > 300 and 
+        ##             PercentageAtr > 10.3)
+        ##
+        ##HoldSignal =  HighUpProb and LowDownProb
+
+
+
+
+
         ##===========================[ Strategy Implementation ]========================##
         ##===========================[ Strategy Implementation ]========================##
         ##===========================[ Strategy Implementation ]========================##
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        PercentMove = (self.data.close[0] / self.data.close[-1] - 1) * 100
+        # Adjusting Probability thresholds
+        HighUpProb = np.percentile(self.data.UpProb.get(size=70), 90)  # Top 10% high confidence for upward trend
+        LowDownProb = np.percentile(self.data.DownProb.get(size=70), 10)  # Bottom 20% low confidence for downward trend
+        LowUnsureProb = np.percentile(self.data.UnsureProb.get(size=70), 35)  # Bottom 20% low confidence for uncertainty
+
         PercentageAtr = self.atr[0] / self.data.close[0] * 100
-        AtrMagnatude = self.data.MagnitudePrediction[0] - self.atr[0]
-        ExpectedReturn = PercentageAtr * self.base_max_investment_per_trade
-        HighUpProb = np.percentile(self.data.UpProb.get(size=len(self.data.MagnitudePrediction)), 8.0)
-        BuySignal = self.data.UpProb[0] < HighUpProb and AtrMagnatude < 0 and ExpectedReturn > 100 and PercentageAtr > 10.3
-        HoldSignal = self.data.UpProb[0] > HighUpProb*1.15
+        AtrMagnitude = self.data.MagnitudePrediction[0] - self.atr[0]
+
+        # Hybrid Buy Signal - Combining High UpProb Confidence with ATR considerations
+        BuySignal = (
+            (self.data.UpProb[0] > HighUpProb) and  # High confidence in an upward trend
+            (self.data.DownProb[0] < LowDownProb) and  # Low confidence in a downward trend
+            (self.data.UnsureProb[0] < LowUnsureProb) and  # Low confidence in uncertainty
+            (self.data.UpProb[0] - self.data.DownProb[0] > 0.2) and
+            (AtrMagnitude < 0) and  # Negative ATR Magnitude Filter
+            (PercentMove > -3) and
+            (PercentageAtr > 10.3)  # Significant ATR percentage
+        )
+
+        HoldSignal = (
+            (self.data.UpProb[0] > HighUpProb * 1.15) and  # Sustained high confidence in an upward trend
+            (PercentageAtr < 10)  # Not too volatile
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         ##==============================[ Strategy Buy/sell ]============================##
@@ -249,34 +340,28 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 'Ticker': self.ticker,  # Assuming you have a way to get the ticker
                 'BuySignal': BuySignal,
                 'HoldSignal': HoldSignal,
-                'SignalTime': self.data.datetime.datetime(0),
+                'SignalTime': MatchingDates,
             }
+
+           
             self.trades_data.append(trade_info)
 
 
         if self.is_long_position:
+            #print(f"DownSlope: {DownSlope}")
+            #print(f"UpSlope: {UpSlope}")
+            #print(f"UnsureSlope: {UnsureSlope}")
             self.position_holding_days += 1
             CurrentProfitPercentage = (self.data.close[0] - self.entry_price) / self.entry_price * 100    
-
-            if CurrentProfitPercentage > self.params.Abs_TakeProfit:      
-                print(CurrentProfitPercentage)
-                self.sell_trade()
-                return
 
             if CurrentProfitPercentage < -self.params.Abs_StopLoss:
                 self.sell_trade()
                 return
 
-            for i in range(1, 9):
-                if self.position_holding_days == i and CurrentProfitPercentage > i*0.5:
-                    self.sell_trade()            
-            
 
 
 
-        if self.position_holding_days >= self.MaxDaysToHold:
-            print(self.position_holding_days)
-            self.sell_trade()
+
 
 
         if BuySignal and not self.is_long_position:
@@ -305,6 +390,8 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
             if self.data.close[0] < self.entry_price * (1 - self.params.Abs_TakeProfit / 100):
                 self.sell_trade()
+                print("take profit hit")
+                print(f'CurrentProfitPercentage: {CurrentProfitPercentage}')
                 return
  
 
@@ -336,7 +423,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         # Adjust Scaling Factor based on Market Conditions
         scaling_factor = 1 + 0.2 * max(0, UpProbZ)
         if negative_momentum and high_volatility:
-            scaling_factor *= 0.5  # Reduce the scaling factor by 50% in negative momentum
+            scaling_factor *= 0.7  # Reduce the scaling factor by 50% in negative momentum
         self.params.max_investment_per_trade = self.base_max_investment_per_trade * scaling_factor
 
        
@@ -406,17 +493,18 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             self.total_profit += trade.pnl
 
     def stop(self):
-        
-        if self.is_long_position:
-            self.sell_trade()
+            if self.is_long_position:
+                self.sell_trade()
 
-        if self.data.datetime.date(0) != self.current_date:
-            debug = False
-            if debug:
-                logging.error(f"Last date in the data does not match the current date: {self.current_date}")
-            
-        trades_df = pd.DataFrame(self.trades_data)
-        trades_df.to_csv("__trades_data.csv", index=False)
+            if self.data.datetime.date(0) != self.current_date:
+                debug = False
+                if debug:
+                    logging.error(f"Last date in the data does not match the current date: {self.current_date}")
+
+            # Check if the file exists and write header accordingly
+            file_exists = os.path.isfile("__trades_data.csv")
+            trades_df = pd.DataFrame(self.trades_data)
+            trades_df.to_csv("__trades_data.csv", mode='a', header=not file_exists, index=False)
 
 
 

@@ -71,10 +71,7 @@ def squash_col_outliers(df, col_name=None, num_std_dev=3):
         rolled_stds = df[col][df[col] != 0].rolling(window=282, min_periods=1).std()
         lower_bounds = rolled_means - num_std_dev * rolled_stds
         upper_bounds = rolled_means + num_std_dev * rolled_stds
-
-        # Use 'clip' with 'apply' to apply boundaries for each chunk produced by rolling
         df[col] = df[col].clip(lower=lower_bounds, upper=upper_bounds)
-        
     return df
 
 
@@ -420,8 +417,10 @@ def DataQualityCheck(df):
         return None
     
     ##if more than 1/3ed of the close data is the same value than skip it assumning heavy interpolation
-    if len(df['Close'].unique()) < len(df) / 2:
-        logging.error("More than 1/3 of the data has the same close price. Skipping the data.")
+    if len(df['Close'].unique()) < len(df) / 3:
+
+        percent_same = len(df[df['Close'] == df['Close'].iloc[0]]) / len(df)
+        logging.error(f"Not unique data same percentage: {percent_same}")
         return None
     
 
