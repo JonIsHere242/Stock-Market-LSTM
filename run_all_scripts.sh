@@ -26,7 +26,7 @@ echo "Indicators script completed. Waiting approximately 1 minute before next st
 sleep 60  # Ensures the script waits for approximately 1 minute
 
 echo "Running Predictor script..."
-/root/root/miniconda4/envs/tf/bin/python ./4__Predictor.py --runpercent 100 --predict
+/root/root/miniconda4/envs/tf/bin/python ./4__Predictor.py
 echo "Predictor script completed. Waiting approximately 1 minute before next step..."
 sleep 60  # Ensures the script waits for approximately 1 minute
 

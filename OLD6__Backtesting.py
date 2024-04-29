@@ -113,6 +113,33 @@ def load_data(file_path):
         return None
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class MovingAverageCrossoverStrategy(bt.Strategy):
 
     params = (
@@ -148,6 +175,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.closed_trades = []
         self.position_holding_days = 0
         self.MaxDaysToHold = 7
+        self.trades_data = [{'Date': None, 'Ticker': None, 'BuySignal': None, 'HoldSignal': None, 'SignalTime': None}]
 
 
     def next(self):
@@ -272,6 +300,21 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
 
 
+        ##HighUpProb = np.percentile(self.data.UpProb.get(size=70), 95)  # Top 5% high confidence for upward trend
+        ##MediumUpProb = np.percentile(self.data.UpProb.get(size=70), 50)  # Top 5% high confidence for upward trend
+        ##LowUpProb = np.percentile(self.data.UpProb.get(size=70), 10)  # Top 5% high confidence for upward trend
+        ##MeanUpProb = np.mean(self.data.UpProb.get(size=70))  
+        ##
+        ##HighDownProb = np.percentile(self.data.DownProb.get(size=70), 95)  # Top 5% high confidence for upward trend
+        ##MediumDownProb = np.percentile(self.data.DownProb.get(size=70), 50)  # Top 5% high confidence for upward trend
+        ##LowDownProb = np.percentile(self.data.DownProb.get(size=70), 10)  # Top 5% high confidence for upward trend
+        ##MeanDownProb = np.mean(self.data.DownProb.get(size=70))
+        ##
+        ##HighUnsureProb = np.percentile(self.data.UnsureProb.get(size=70), 95)  # Top 5% high confidence for upward trend
+        ##MediumUnsureProb = np.percentile(self.data.UnsureProb.get(size=70), 50)  # Top 5% high confidence for upward trend
+        ##LowUnsureProb = np.percentile(self.data.UnsureProb.get(size=70), 10)  # Top 5% high confidence for upward trend
+        ##MeanUnsureProb = np.mean(self.data.UnsureProb.get(size=70))
+
 
 
 
@@ -299,7 +342,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             (self.data.UnsureProb[0] < LowUnsureProb) and  # Low confidence in uncertainty
             (self.data.UpProb[0] - self.data.DownProb[0] > 0.2) and
             (AtrMagnitude < 0) and  # Negative ATR Magnitude Filter
-            (PercentMove > -3) and
+            (PercentMove > -2) and
             (PercentageAtr > 10.3)  # Significant ATR percentage
         )
 
@@ -333,18 +376,22 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ##==============================[ Strategy Buy/sell ]============================##
         ##==============================[ Strategy Buy/sell ]============================##
 
-        MatchingDates = self.data.datetime.date(0) == self.current_date
-
-        if BuySignal or HoldSignal and MatchingDates:
+        current_date = datetime.now().date()
+        signal_date = self.data.datetime.date(0)
+        
+        # Assuming you have a valid BuySignal or HoldSignal calculation here
+        if BuySignal or HoldSignal:
             trade_info = {
-                'Ticker': self.ticker,  # Assuming you have a way to get the ticker
+                'Date': self.data.datetime.date(0).isoformat(),  # Use date from data feed
+                'Ticker': self.ticker,
                 'BuySignal': BuySignal,
                 'HoldSignal': HoldSignal,
-                'SignalTime': MatchingDates,
+                'SignalTime': self.data.datetime.datetime(0).isoformat(),
             }
-
-           
             self.trades_data.append(trade_info)
+
+
+
 
 
         if self.is_long_position:
@@ -493,18 +540,46 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             self.total_profit += trade.pnl
 
     def stop(self):
-            if self.is_long_position:
-                self.sell_trade()
+        # Convert trade data to DataFrame
+        trades_df = pd.DataFrame(self.trades_data)
+        today_str = datetime.now().date().isoformat()
 
-            if self.data.datetime.date(0) != self.current_date:
-                debug = False
-                if debug:
-                    logging.error(f"Last date in the data does not match the current date: {self.current_date}")
+        # Filter rows for today only
+        today_trades = trades_df[trades_df['Date'] == today_str]
 
-            # Check if the file exists and write header accordingly
-            file_exists = os.path.isfile("__trades_data.csv")
-            trades_df = pd.DataFrame(self.trades_data)
-            trades_df.to_csv("__trades_data.csv", mode='a', header=not file_exists, index=False)
+        # Save to CSV
+        self.save_trades_to_csv(today_trades, today_str)
+
+
+
+    def save_trades_to_csv(self, trades_df, date_str):
+        filename = "active_trades.csv"  # Keep a constant filename
+        if not os.path.exists(filename):  # Check if file doesn't exist to write headers
+            trades_df.to_csv(filename, mode='a', index=False, header=True)
+        else:
+            trades_df.to_csv(filename, mode='a', index=False, header=False)  # Append without headers
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

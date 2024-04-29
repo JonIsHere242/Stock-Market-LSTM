@@ -18,7 +18,7 @@ FINAL_DATA_DIRECTORY = "Data/RFpredictions"
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
 LOG_FILE = "Data/PriceData/_Price_Data_download.log"
-START_DATE = '2010-01-01'
+START_DATE = '2020-01-01'
 RATE_LIMIT = 1.0  # seconds between downloads
 
 os.makedirs(DATA_DIRECTORY, exist_ok=True)
