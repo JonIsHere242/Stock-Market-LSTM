@@ -111,7 +111,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ('take_profit_percent', 100.0),
         ('position_timeout', 14),
         ('trailing_stop_percent', 3.5),
-        ('rolling_period', 14),
+        ('rolling_period', 8),
     )
 
     def __init__(self):
