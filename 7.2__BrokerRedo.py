@@ -4,27 +4,16 @@ import time
 import logging
 import argparse
 import random
-from joblib import dump, load
 import pandas as pd
 import numpy as np
 from backtrader.feeds import PandasData
-from tqdm import tqdm
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-import ta  # Technical Analysis library for financial indicators
-import feature_engine  # Advanced feature engineering techniques
-import backtrader as bt  # For backtesting trading strategies
-import quantstats as qs  # Extends pyfolio for comprehensive analytics
-from scipy.optimize import minimize  # For numerical optimization
-import optuna  # For advanced hyperparameter optimization
+import backtrader as bt
 import logging
 from argparse import ArgumentParser
 import matplotlib.pyplot as plt
-import seaborn as sns
 from datetime import datetime
-import warnings
 from datetime import datetime, timedelta
-from tabulate import tabulate
-
+from tqdm import tqdm
 
 def LoggingSetup():
     loggerfile = "__BrokerLog.log"
@@ -258,7 +247,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
                         PercantageList = []
 
-                        for i in range(1, 90):
+                        for i in range(1, 80):
                             percentageChange = ((d.close[-i] - d.close[-i-1]) / d.close[-i-1]) * 100
                             if percentageChange < 0:
                                 PercantageList.append(percentageChange)
@@ -306,7 +295,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 if self.buying_status.get(d._name, False):  # Check if there's an ongoing buying process
                     continue  # Skip if already trying to buy this stock
 
-                if self.open_positions >= self.params.max_positions:
+                if self.open_positions > self.params.max_positions:
                     continue  # Limit number of open positions
                 else:
                     current_position = self.getposition(d)
@@ -465,20 +454,22 @@ def main():
 
     # Check if we are running a percentage test
     if args.BrokerTest > 0:
-        for file_path in select_random_files('Data/RFpredictions', args.BrokerTest):
+        file_paths = select_random_files('Data/RFpredictions', args.BrokerTest)
+        for file_path in tqdm(file_paths, desc="Loading Random Files"):
             load_and_add_data(cerebro, file_path, FailedFileCounter)
             if FailedFileCounter > 0:
                 logging.info(f"Failed to load {FailedFileCounter} files.")
+
     # Check if RunTickers is specified
     elif args.RunTickers > 0:
-        # Load the CSV with ticker information
         df_tickers = pd.read_csv('TradingModelStats.csv')
         tickers = df_tickers['Ticker'].tolist()
-        
-        # Load data for specified tickers
-        load_ticker_data(cerebro, 'Data/RFpredictions', tickers, FailedFileCounter)
-        if FailedFileCounter > 0:
-            logging.info(f"Failed to load {FailedFileCounter} files.")
+        file_names = os.listdir('Data/RFpredictions')
+        for file_name in tqdm([f for f in file_names if f.endswith('.csv') and f.split('.')[0].lower() in tickers], desc="Loading Ticker Files"):
+            file_path = os.path.join('Data/RFpredictions', file_name)
+            load_and_add_data(cerebro, file_path, FailedFileCounter)
+            if FailedFileCounter > 0:
+                logging.info(f"Failed to load {FailedFileCounter} files.")
 
 
 
@@ -555,31 +546,8 @@ def main():
         percent_profitable = 0
 
 
-
-
-    #print(f"====================== ADVANCED ===================")
-    #print(f"{'Initial Starting Cash:':<30}${cerebro.broker.startingcash:.2f}")
-    #print(f"{'Final Portfolio Value:':<30}${cerebro.broker.getvalue():.2f}")
-    #print(f"{'Max Drawdown Days:':<30}{drawdown.max.len:.2f}")
-    #print(f"{'Max Drawdown percentage:':<30}{drawdown.max.drawdown:.2f}%")
-    #print(f"{'Total Trades:':<30}{trade_stats.total.closed}")
-    #print(f"{'Percentage Profitable Trades:':<30}{percent_profitable:.2f}%")
-    #print(f"{'Average Profitable Trade:':<30}${trade_stats.won.pnl.average:.2f}")
-    #print(f"{'Average Unprofitable Trade:':<30}${trade_stats.lost.pnl.average:.2f}")
-    #print(f"{'Largest Winning Trade:':<30}${trade_stats.won.pnl.max:.2f}")
-    #print(f"{'Largest Losing Trade:':<30}${trade_stats.lost.pnl.max:.2f}")
-    #print(f"{'Sharpe Ratio:':<30}{sharpe_ratio['sharperatio']:.2f}")
-    #print(f"{'SQN:':<30}{sqn_value:.2f}")
-    #print(f"{'SQN Description:':<30}{description}")
-    #print(f"{'Profit Factor:':<30}{trade_stats.won.pnl.total / trade_stats.lost.pnl.total:.2f}")
-    #print(f"{'Percentage Gain:':<30}{PercentGain:.2f}%")
-
-
-    print(f"====================== ADVANCED ===================")
     print(f"{'Initial Starting Cash:':<30}${cerebro.broker.startingcash:.2f}")
     print(colorize_output(cerebro.broker.getvalue(), 'Final Portfolio Value:', 10000, 5400))
-    #print(colorize_output((trade_stats.won.pnl.total -trade_stats.lost.pnl.total)), 'Total Profit:', 5000, 1.0)
-
     print(colorize_output(drawdown.max.len, 'Max Drawdown Days:', 15, 90, reverse=True))
     print(colorize_output(drawdown.max.drawdown, 'Max Drawdown percentage:', 5, 15, reverse=True))
     print(f"{'Total Trades:':<30}{trade_stats.total.closed}")
@@ -589,12 +557,9 @@ def main():
     print(colorize_output(trade_stats.won.pnl.max, 'Largest Winning Trade:', 400, 100))
     print(colorize_output(trade_stats.lost.pnl.max, 'Largest Losing Trade:', -50, -200, reverse=True))
     print(colorize_output(sharpe_ratio['sharperatio'], 'Sharpe Ratio:', 2.0, 0.5))
-    print(colorize_output(sqn_value, 'SQN:', 7, 0))
+    print(colorize_output(sqn_value, 'SQN:', 5.0, 2.0))
     print(f"{'SQN Description:':<30}{description}")
     print(colorize_output(PercentGain, 'Percentage Gain:', 100, 10))
-
-
-
 
     if args.BrokerTest < 1.0:
         plt.style.use('dark_background')
@@ -604,7 +569,7 @@ def main():
 
         cerebro.plot(style='candlestick',
                      iplot=False,
-                     start=datetime.now().date() - pd.DateOffset(days=282),
+                     start=datetime.now().date() - pd.DateOffset(days=252),
                      end=datetime.now().date(),
                      width=20,
                      height=10,
