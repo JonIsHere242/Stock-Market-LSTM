@@ -19,6 +19,9 @@ import pstats
 from concurrent.futures import ProcessPoolExecutor
 
 
+
+
+
 """
 This script processes financial market data to calculate various technical indicators and saves the processed data in CSV or Parquet formats. It is designed to handle large datasets efficiently by utilizing multiple cores of the processor.
 
@@ -45,6 +48,10 @@ Notes:
 - The script utilizes multithreading for faster processing, making it suitable for large datasets.
 - Check the log file for detailed information about the processing time and potential errors.
 """
+
+
+
+
 
 logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log',
                     level=logging.INFO,
@@ -670,7 +677,12 @@ def indicators(df):
     df = df.iloc[200:]
     df = df.drop(columns_to_drop, axis=1)
     df = df.round(8)
-    print(f"Indicators calculated in {time.time() - Timer:.2f} seconds")
+
+    ##make a random number between 1 and 100
+    TimerFlag = True
+    if TimerFlag:
+        print(f"Indicators calculated in {time.time() - Timer:.2f} seconds")
+
     return df
 
 
@@ -704,6 +716,9 @@ def clean_and_interpolate_data(df):
     df.ffill(inplace=True)
     return df
 
+
+
+
 def validate_columns(df, required_columns):
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
@@ -712,11 +727,20 @@ def validate_columns(df, required_columns):
     return True
 
 
+
+
+
 def DataQualityCheck(df):
     if df.empty or len(df) < 201:
         logging.error("DataFrame is empty or too short to process.")
         return None
     
+
+    ##check to see if there is some variance between the open high low and close prices ensuring that the data is not flat
+    if df[['Open', 'High', 'Low', 'Close']].std().sum() < 0.01:
+        logging.error("Data is flat. Variance in Open, High, Low, Close prices is too low.")
+        return None
+ 
     ##if more than 1/3 of the df has a close price below 1 then skip it 
     if len(df[df['Close'] < 1]) > len(df) / 3:
         logging.error("More than 1/3 of the data has a close price below 1. Skipping the data.")
@@ -737,6 +761,9 @@ def DataQualityCheck(df):
         logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
     return df
+
+
+
 
 
 def process_file(file_path, output_dir):
@@ -779,7 +806,10 @@ def SaveData(df, file_path, output_dir):
         df.to_csv(output_file, index=False)
     elif file_path.endswith('.parquet'):
         df.to_parquet(output_file, index=False)
-    logging.info(f"Processed {file_path} and saved to {output_file}")
+
+
+
+    ##logging.info(f"Processed {file_path} and saved to {output_file}")
 
 
 

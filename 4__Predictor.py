@@ -25,7 +25,7 @@ config = {
     "file_selection_percentage": args.runpercent,  # Updated to use command line argument
     "target_column": "percent_change_Close",
     "n_estimators": 256,
-    "max_depth": 15,
+    "max_depth": 25,
     "random_state": 3301,
     "verbose": 2
 }

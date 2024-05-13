@@ -22,14 +22,12 @@ def setup_logging():
     logging.basicConfig(filename=CONFIG["log_file"], level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
-
 def setup_args():
     parser = argparse.ArgumentParser(description="Download and convert Ticker CIK data.")
     parser.add_argument("--ImmediateDownload", action='store_true', 
                         help="Download the file immediately without waiting for the scheduled time.")
     args = parser.parse_args()
     return args
-
 
 def download_and_convert_ticker_cik_file():
     try:

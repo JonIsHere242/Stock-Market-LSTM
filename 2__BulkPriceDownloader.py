@@ -18,7 +18,7 @@ FINAL_DATA_DIRECTORY = "Data/RFpredictions"
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
 LOG_FILE = "Data/PriceData/_Price_Data_download.log"
-START_DATE = '2020-01-01'
+START_DATE = '2010-01-01'
 RATE_LIMIT = 1.0  # seconds between downloads
 
 os.makedirs(DATA_DIRECTORY, exist_ok=True)
@@ -50,6 +50,7 @@ def clear_old_data(data_dir):
 def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_downloads=None, rate_limit=RATE_LIMIT):
     download_count = 0
     wait_time = rate_limit
+    Timer = time.time()
     for ticker in tickers:
         if max_downloads and download_count >= max_downloads:
             break
@@ -58,9 +59,24 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
             try:
                 stock_data = yf.download(ticker, start=start_date, progress=False)
                 if not stock_data.empty:
+
+                    ##ensure the dataframe is longer than 282 rows
+                    if len(stock_data) < 282:
+                        logging.warning(f"Data for {ticker} is too short. Skipping.")
+                        continue
+
+                    stock_data = stock_data.round(5)
+
+                    if stock_data['Close'].max() > 100000000000000:
+                        logging.warning(f"Data for {ticker} has a close price that is too high. Skipping.")
+                        continue
+
                     stock_data.to_csv(file_path)
-                    logging.info(f"Downloaded data for {ticker}.")
                     download_count += 1
+                    ##check if the download counte is devisaible by 100 and if so print 
+                    if download_count % 100 == 0:
+                        logging.info(f"Downloaded data for {download_count} tickers taking {time.time() - Timer} seconds")
+
                 time.sleep(wait_time)
             except Exception as e:
                 logging.error(f"Error downloading data for {ticker}: {e}")
