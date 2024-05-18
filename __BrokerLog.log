@@ -1,833 +1,1190 @@
-2024-05-12 20:32:04 - ====================== New Entry ===================
-2024-05-12 20:32:04 - Max Drawdown: 5.53%
-2024-05-12 20:32:04 - Total Trades: 124
-2024-05-12 20:32:04 - Profitable Trades: 48
-2024-05-12 20:32:04 - Sharpe Ratio: 4.69
-2024-05-12 20:32:04 - SQN: 2.33
-2024-05-12 20:32:04 - Profit Factor: -3.70
-2024-05-12 20:32:04 - Average Trade: 34.10
-2024-05-12 20:32:04 - Average Winning Trade: 120.72
-2024-05-12 20:32:04 - Average Losing Trade: -20.60
-2024-05-12 20:32:04 - Largest Winning Trade: 1473.78
-2024-05-12 20:32:04 - Largest Losing Trade: -104.67
-2024-05-12 20:32:04 - Time taken: 7.12 seconds
-2024-05-12 20:32:04 - Inital Portfolio funding: $5000.00
-2024-05-12 20:32:04 - Final Portfolio Value: $9342.88
-2024-05-12 20:32:04 - Percentage Gain: 86.86%
-2024-05-12 20:32:04 - Cash: $5303.67
-2024-05-12 20:37:01 - ====================== New Entry ===================
-2024-05-12 20:37:01 - Max Drawdown: 10.39%
-2024-05-12 20:37:01 - Total Trades: 155
-2024-05-12 20:37:01 - Profitable Trades: 46
-2024-05-12 20:37:01 - Sharpe Ratio: 0.19
-2024-05-12 20:37:01 - SQN: 1.14
-2024-05-12 20:37:01 - Profit Factor: -1.33
-2024-05-12 20:37:01 - Average Trade: 4.15
-2024-05-12 20:37:01 - Average Winning Trade: 56.17
-2024-05-12 20:37:01 - Average Losing Trade: -17.80
-2024-05-12 20:37:01 - Largest Winning Trade: 223.03
-2024-05-12 20:37:01 - Largest Losing Trade: -86.70
-2024-05-12 20:37:01 - Time taken: 6.78 seconds
-2024-05-12 20:37:01 - Inital Portfolio funding: $5000.00
-2024-05-12 20:37:01 - Final Portfolio Value: $5643.83
-2024-05-12 20:37:01 - Percentage Gain: 12.88%
-2024-05-12 20:37:01 - Cash: $5643.83
-2024-05-12 20:43:13 - ====================== New Entry ===================
-2024-05-12 20:43:13 - Max Drawdown: 10.90%
-2024-05-12 20:43:13 - Total Trades: 164
-2024-05-12 20:43:13 - Profitable Trades: 50
-2024-05-12 20:43:13 - Sharpe Ratio: 1.09
-2024-05-12 20:43:13 - SQN: 1.58
-2024-05-12 20:43:13 - Profit Factor: -2.96
-2024-05-12 20:43:13 - Average Trade: 33.54
-2024-05-12 20:43:13 - Average Winning Trade: 165.99
-2024-05-12 20:43:13 - Average Losing Trade: -24.56
-2024-05-12 20:43:13 - Largest Winning Trade: 3279.12
-2024-05-12 20:43:13 - Largest Losing Trade: -216.23
-2024-05-12 20:43:13 - Time taken: 8.40 seconds
-2024-05-12 20:43:13 - Inital Portfolio funding: $5000.00
-2024-05-12 20:43:13 - Final Portfolio Value: $10504.80
-2024-05-12 20:43:13 - Percentage Gain: 110.10%
-2024-05-12 20:43:13 - Cash: $9048.80
-2024-05-12 20:44:09 - ====================== New Entry ===================
-2024-05-12 20:44:09 - Max Drawdown: 8.41%
-2024-05-12 20:44:09 - Total Trades: 166
-2024-05-12 20:44:09 - Profitable Trades: 56
-2024-05-12 20:44:09 - Sharpe Ratio: 1.77
-2024-05-12 20:44:09 - SQN: 1.95
-2024-05-12 20:44:09 - Profit Factor: -3.38
-2024-05-12 20:44:09 - Average Trade: 46.93
-2024-05-12 20:44:09 - Average Winning Trade: 197.48
-2024-05-12 20:44:09 - Average Losing Trade: -29.71
-2024-05-12 20:44:09 - Largest Winning Trade: 3579.98
-2024-05-12 20:44:09 - Largest Losing Trade: -236.15
-2024-05-12 20:44:09 - Time taken: 6.81 seconds
-2024-05-12 20:44:09 - Inital Portfolio funding: $5000.00
-2024-05-12 20:44:09 - Final Portfolio Value: $13186.65
-2024-05-12 20:44:09 - Percentage Gain: 163.73%
-2024-05-12 20:44:09 - Cash: $11007.87
-2024-05-12 20:45:37 - ====================== New Entry ===================
-2024-05-12 20:45:37 - Max Drawdown: 12.38%
-2024-05-12 20:45:37 - Total Trades: 139
-2024-05-12 20:45:37 - Profitable Trades: 61
-2024-05-12 20:45:37 - Sharpe Ratio: 1.88
-2024-05-12 20:45:37 - SQN: 2.52
-2024-05-12 20:45:37 - Profit Factor: -3.14
-2024-05-12 20:45:37 - Average Trade: 24.33
-2024-05-12 20:45:37 - Average Winning Trade: 81.38
-2024-05-12 20:45:37 - Average Losing Trade: -20.29
-2024-05-12 20:45:37 - Largest Winning Trade: 1089.00
-2024-05-12 20:45:37 - Largest Losing Trade: -82.80
-2024-05-12 20:45:37 - Time taken: 6.91 seconds
-2024-05-12 20:45:37 - Inital Portfolio funding: $5000.00
-2024-05-12 20:45:37 - Final Portfolio Value: $8381.69
-2024-05-12 20:45:37 - Percentage Gain: 67.63%
-2024-05-12 20:45:37 - Cash: $8381.69
-2024-05-12 20:46:18 - ====================== New Entry ===================
-2024-05-12 20:46:18 - Max Drawdown: 7.42%
-2024-05-12 20:46:18 - Total Trades: 129
-2024-05-12 20:46:18 - Profitable Trades: 51
-2024-05-12 20:46:18 - Sharpe Ratio: 0.70
-2024-05-12 20:46:18 - SQN: 2.52
-2024-05-12 20:46:18 - Profit Factor: -2.05
-2024-05-12 20:46:18 - Average Trade: 14.18
-2024-05-12 20:46:18 - Average Winning Trade: 69.99
-2024-05-12 20:46:18 - Average Losing Trade: -22.32
-2024-05-12 20:46:18 - Largest Winning Trade: 406.85
-2024-05-12 20:46:18 - Largest Losing Trade: -90.03
-2024-05-12 20:46:18 - Time taken: 6.68 seconds
-2024-05-12 20:46:18 - Inital Portfolio funding: $5000.00
-2024-05-12 20:46:18 - Final Portfolio Value: $6869.74
-2024-05-12 20:46:18 - Percentage Gain: 37.39%
-2024-05-12 20:46:18 - Cash: $3675.02
-2024-05-12 20:46:56 - ====================== New Entry ===================
-2024-05-12 20:46:56 - Max Drawdown: 7.28%
-2024-05-12 20:46:56 - Total Trades: 86
-2024-05-12 20:46:56 - Profitable Trades: 52
-2024-05-12 20:46:56 - Sharpe Ratio: 0.81
-2024-05-12 20:46:56 - SQN: 2.51
-2024-05-12 20:46:56 - Profit Factor: -2.33
-2024-05-12 20:46:56 - Average Trade: 25.34
-2024-05-12 20:46:56 - Average Winning Trade: 73.49
-2024-05-12 20:46:56 - Average Losing Trade: -48.31
-2024-05-12 20:46:56 - Largest Winning Trade: 422.82
-2024-05-12 20:46:56 - Largest Losing Trade: -115.54
-2024-05-12 20:46:56 - Time taken: 6.36 seconds
-2024-05-12 20:46:56 - Inital Portfolio funding: $5000.00
-2024-05-12 20:46:56 - Final Portfolio Value: $7179.17
-2024-05-12 20:46:56 - Percentage Gain: 43.58%
-2024-05-12 20:46:56 - Cash: $7179.17
-2024-05-12 20:47:05 - ====================== New Entry ===================
-2024-05-12 20:47:05 - Max Drawdown: 12.84%
-2024-05-12 20:47:05 - Total Trades: 93
-2024-05-12 20:47:05 - Profitable Trades: 48
-2024-05-12 20:47:05 - Sharpe Ratio: 4.47
-2024-05-12 20:47:05 - SQN: 2.37
-2024-05-12 20:47:05 - Profit Factor: -2.23
-2024-05-12 20:47:05 - Average Trade: 27.15
-2024-05-12 20:47:05 - Average Winning Trade: 95.23
-2024-05-12 20:47:05 - Average Losing Trade: -45.48
-2024-05-12 20:47:05 - Largest Winning Trade: 699.72
-2024-05-12 20:47:05 - Largest Losing Trade: -109.21
-2024-05-12 20:47:05 - Time taken: 6.25 seconds
-2024-05-12 20:47:05 - Inital Portfolio funding: $5000.00
-2024-05-12 20:47:05 - Final Portfolio Value: $7605.96
-2024-05-12 20:47:05 - Percentage Gain: 52.12%
-2024-05-12 20:47:05 - Cash: $6407.46
-2024-05-12 20:47:14 - ====================== New Entry ===================
-2024-05-12 20:47:14 - Max Drawdown: 10.12%
-2024-05-12 20:47:14 - Total Trades: 90
-2024-05-12 20:47:14 - Profitable Trades: 54
-2024-05-12 20:47:14 - Sharpe Ratio: 1.96
-2024-05-12 20:47:14 - SQN: 2.45
-2024-05-12 20:47:14 - Profit Factor: -2.01
-2024-05-12 20:47:14 - Average Trade: 21.45
-2024-05-12 20:47:14 - Average Winning Trade: 71.10
-2024-05-12 20:47:14 - Average Losing Trade: -53.02
-2024-05-12 20:47:14 - Largest Winning Trade: 261.80
-2024-05-12 20:47:14 - Largest Losing Trade: -234.36
-2024-05-12 20:47:14 - Time taken: 6.33 seconds
-2024-05-12 20:47:14 - Inital Portfolio funding: $5000.00
-2024-05-12 20:47:14 - Final Portfolio Value: $7019.48
-2024-05-12 20:47:14 - Percentage Gain: 40.39%
-2024-05-12 20:47:14 - Cash: $5914.25
-2024-05-12 20:47:24 - ====================== New Entry ===================
-2024-05-12 20:47:24 - Max Drawdown: 14.97%
-2024-05-12 20:47:24 - Total Trades: 89
-2024-05-12 20:47:24 - Profitable Trades: 47
-2024-05-12 20:47:24 - Sharpe Ratio: 2.11
-2024-05-12 20:47:24 - SQN: 1.83
-2024-05-12 20:47:24 - Profit Factor: -1.66
-2024-05-12 20:47:24 - Average Trade: 11.80
-2024-05-12 20:47:24 - Average Winning Trade: 56.44
-2024-05-12 20:47:24 - Average Losing Trade: -38.15
-2024-05-12 20:47:24 - Largest Winning Trade: 216.15
-2024-05-12 20:47:24 - Largest Losing Trade: -91.80
-2024-05-12 20:47:24 - Time taken: 6.43 seconds
-2024-05-12 20:47:24 - Inital Portfolio funding: $5000.00
-2024-05-12 20:47:24 - Final Portfolio Value: $6050.95
-2024-05-12 20:47:24 - Percentage Gain: 21.02%
-2024-05-12 20:47:24 - Cash: $5151.31
-2024-05-12 20:48:07 - ====================== New Entry ===================
-2024-05-12 20:48:07 - Max Drawdown: 6.59%
-2024-05-12 20:48:07 - Total Trades: 98
-2024-05-12 20:48:07 - Profitable Trades: 57
-2024-05-12 20:48:07 - Sharpe Ratio: 1.92
-2024-05-12 20:48:07 - SQN: 2.93
-2024-05-12 20:48:07 - Profit Factor: -2.28
-2024-05-12 20:48:07 - Average Trade: 21.86
-2024-05-12 20:48:07 - Average Winning Trade: 66.87
-2024-05-12 20:48:07 - Average Losing Trade: -40.71
-2024-05-12 20:48:07 - Largest Winning Trade: 260.67
-2024-05-12 20:48:07 - Largest Losing Trade: -127.45
-2024-05-12 20:48:07 - Time taken: 20.83 seconds
-2024-05-12 20:48:07 - Inital Portfolio funding: $5000.00
-2024-05-12 20:48:07 - Final Portfolio Value: $7142.54
-2024-05-12 20:48:07 - Percentage Gain: 42.85%
-2024-05-12 20:48:07 - Cash: $7142.54
-2024-05-12 20:57:14 - ====================== New Entry ===================
-2024-05-12 20:57:14 - Max Drawdown: 5.77%
-2024-05-12 20:57:14 - Total Trades: 151
-2024-05-12 20:57:14 - Profitable Trades: 56
-2024-05-12 20:57:14 - Sharpe Ratio: 3.44
-2024-05-12 20:57:14 - SQN: 2.18
-2024-05-12 20:57:14 - Profit Factor: -2.18
-2024-05-12 20:57:14 - Average Trade: 14.63
-2024-05-12 20:57:14 - Average Winning Trade: 72.81
-2024-05-12 20:57:14 - Average Losing Trade: -19.67
-2024-05-12 20:57:14 - Largest Winning Trade: 679.71
-2024-05-12 20:57:14 - Largest Losing Trade: -88.32
-2024-05-12 20:57:14 - Time taken: 20.75 seconds
-2024-05-12 20:57:14 - Inital Portfolio funding: $5000.00
-2024-05-12 20:57:14 - Final Portfolio Value: $7352.94
-2024-05-12 20:57:14 - Percentage Gain: 47.06%
-2024-05-12 20:57:14 - Cash: $6128.42
-2024-05-12 21:00:34 - ====================== New Entry ===================
-2024-05-12 21:00:34 - Max Drawdown: 14.18%
-2024-05-12 21:00:34 - Total Trades: 163
-2024-05-12 21:00:34 - Profitable Trades: 63
-2024-05-12 21:00:34 - Sharpe Ratio: 4.38
-2024-05-12 21:00:34 - SQN: 2.95
-2024-05-12 21:00:34 - Profit Factor: -2.65
-2024-05-12 21:00:34 - Average Trade: 21.74
-2024-05-12 21:00:34 - Average Winning Trade: 90.40
-2024-05-12 21:00:34 - Average Losing Trade: -21.51
-2024-05-12 21:00:34 - Largest Winning Trade: 741.41
-2024-05-12 21:00:34 - Largest Losing Trade: -211.31
-2024-05-12 21:00:34 - Time taken: 29.65 seconds
-2024-05-12 21:00:34 - Inital Portfolio funding: $5000.00
-2024-05-12 21:00:34 - Final Portfolio Value: $8791.86
-2024-05-12 21:00:34 - Percentage Gain: 75.84%
-2024-05-12 21:00:34 - Cash: $4779.29
-2024-05-12 21:46:21 - ====================== New Entry ===================
-2024-05-12 21:46:21 - Max Drawdown: 6.18%
-2024-05-12 21:46:21 - Total Trades: 166
-2024-05-12 21:46:21 - Profitable Trades: 70
-2024-05-12 21:46:21 - Sharpe Ratio: 1.47
-2024-05-12 21:46:21 - SQN: 3.21
-2024-05-12 21:46:21 - Profit Factor: -2.40
-2024-05-12 21:46:21 - Average Trade: 20.04
-2024-05-12 21:46:21 - Average Winning Trade: 81.49
-2024-05-12 21:46:21 - Average Losing Trade: -24.76
-2024-05-12 21:46:21 - Largest Winning Trade: 424.70
-2024-05-12 21:46:21 - Largest Losing Trade: -102.82
-2024-05-12 21:46:21 - Time taken: 14.50 seconds
-2024-05-12 21:46:21 - Inital Portfolio funding: $5000.00
-2024-05-12 21:46:21 - Final Portfolio Value: $8749.86
-2024-05-12 21:46:21 - Percentage Gain: 75.00%
-2024-05-12 21:46:21 - Cash: $4024.79
-2024-05-12 21:50:33 - ====================== New Entry ===================
-2024-05-12 21:50:33 - Max Drawdown: 1.47%
-2024-05-12 21:50:33 - Total Trades: 18
-2024-05-12 21:50:33 - Profitable Trades: 5
-2024-05-12 21:50:33 - Sharpe Ratio: -12.24
-2024-05-12 21:50:33 - SQN: 0.98
-2024-05-12 21:50:33 - Profit Factor: -1.87
-2024-05-12 21:50:33 - Average Trade: 6.23
-2024-05-12 21:50:33 - Average Winning Trade: 48.38
-2024-05-12 21:50:33 - Average Losing Trade: -9.98
-2024-05-12 21:50:33 - Largest Winning Trade: 57.72
-2024-05-12 21:50:33 - Largest Losing Trade: -20.10
-2024-05-12 21:50:33 - Time taken: 0.31 seconds
-2024-05-12 21:50:33 - Inital Portfolio funding: $5000.00
-2024-05-12 21:50:33 - Final Portfolio Value: $5112.22
-2024-05-12 21:50:33 - Percentage Gain: 2.24%
-2024-05-12 21:50:33 - Cash: $5112.22
-2024-05-12 21:52:01 - ====================== New Entry ===================
-2024-05-12 21:52:01 - Max Drawdown: 6.58%
-2024-05-12 21:52:01 - Total Trades: 143
-2024-05-12 21:52:01 - Profitable Trades: 65
-2024-05-12 21:52:01 - Sharpe Ratio: 4.10
-2024-05-12 21:52:01 - SQN: 3.85
-2024-05-12 21:52:01 - Profit Factor: -3.02
-2024-05-12 21:52:01 - Average Trade: 22.00
-2024-05-12 21:52:01 - Average Winning Trade: 72.40
-2024-05-12 21:52:01 - Average Losing Trade: -19.99
-2024-05-12 21:52:01 - Largest Winning Trade: 378.42
-2024-05-12 21:52:01 - Largest Losing Trade: -61.77
-2024-05-12 21:52:01 - Time taken: 19.32 seconds
-2024-05-12 21:52:01 - Inital Portfolio funding: $5000.00
-2024-05-12 21:52:01 - Final Portfolio Value: $8290.93
-2024-05-12 21:52:01 - Percentage Gain: 65.82%
-2024-05-12 21:52:01 - Cash: $3202.03
-2024-05-12 21:55:01 - ====================== New Entry ===================
-2024-05-12 21:55:01 - Max Drawdown: 6.79%
-2024-05-12 21:55:01 - Total Trades: 159
-2024-05-12 21:55:01 - Profitable Trades: 58
-2024-05-12 21:55:01 - Sharpe Ratio: 1.35
-2024-05-12 21:55:01 - SQN: 2.47
-2024-05-12 21:55:01 - Profit Factor: -2.09
-2024-05-12 21:55:01 - Average Trade: 15.08
-2024-05-12 21:55:01 - Average Winning Trade: 79.19
-2024-05-12 21:55:01 - Average Losing Trade: -21.73
-2024-05-12 21:55:01 - Largest Winning Trade: 532.14
-2024-05-12 21:55:01 - Largest Losing Trade: -163.02
-2024-05-12 21:55:01 - Time taken: 21.55 seconds
-2024-05-12 21:55:01 - Inital Portfolio funding: $5000.00
-2024-05-12 21:55:01 - Final Portfolio Value: $7412.82
-2024-05-12 21:55:01 - Percentage Gain: 48.26%
-2024-05-12 21:55:01 - Cash: $5249.77
-2024-05-12 21:56:04 - ====================== New Entry ===================
-2024-05-12 21:56:04 - Max Drawdown: 9.87%
-2024-05-12 21:56:04 - Total Trades: 169
-2024-05-12 21:56:04 - Profitable Trades: 68
-2024-05-12 21:56:04 - Sharpe Ratio: 2.17
-2024-05-12 21:56:04 - SQN: 2.38
-2024-05-12 21:56:04 - Profit Factor: -2.61
-2024-05-12 21:56:04 - Average Trade: 21.54
-2024-05-12 21:56:04 - Average Winning Trade: 86.77
-2024-05-12 21:56:04 - Average Losing Trade: -22.38
-2024-05-12 21:56:04 - Largest Winning Trade: 1291.08
-2024-05-12 21:56:04 - Largest Losing Trade: -189.00
-2024-05-12 21:56:04 - Time taken: 23.32 seconds
-2024-05-12 21:56:04 - Inital Portfolio funding: $5000.00
-2024-05-12 21:56:04 - Final Portfolio Value: $8635.00
-2024-05-12 21:56:04 - Percentage Gain: 72.70%
-2024-05-12 21:56:04 - Cash: $4614.83
-2024-05-12 21:56:55 - ====================== New Entry ===================
-2024-05-12 21:56:55 - Max Drawdown: 10.36%
-2024-05-12 21:56:55 - Total Trades: 195
-2024-05-12 21:56:55 - Profitable Trades: 79
-2024-05-12 21:56:55 - Sharpe Ratio: 1.40
-2024-05-12 21:56:55 - SQN: 2.54
-2024-05-12 21:56:55 - Profit Factor: -1.85
-2024-05-12 21:56:55 - Average Trade: 12.10
-2024-05-12 21:56:55 - Average Winning Trade: 64.92
-2024-05-12 21:56:55 - Average Losing Trade: -23.88
-2024-05-12 21:56:55 - Largest Winning Trade: 438.58
-2024-05-12 21:56:55 - Largest Losing Trade: -208.54
-2024-05-12 21:56:55 - Time taken: 23.76 seconds
-2024-05-12 21:56:55 - Inital Portfolio funding: $5000.00
-2024-05-12 21:56:55 - Final Portfolio Value: $7158.37
-2024-05-12 21:56:55 - Percentage Gain: 43.17%
-2024-05-12 21:56:55 - Cash: $8217.45
-2024-05-12 21:57:39 - ====================== New Entry ===================
-2024-05-12 21:57:39 - Max Drawdown: 11.47%
-2024-05-12 21:57:39 - Total Trades: 194
-2024-05-12 21:57:39 - Profitable Trades: 72
-2024-05-12 21:57:39 - Sharpe Ratio: 3.56
-2024-05-12 21:57:39 - SQN: 2.56
-2024-05-12 21:57:39 - Profit Factor: -1.94
-2024-05-12 21:57:39 - Average Trade: 11.34
-2024-05-12 21:57:39 - Average Winning Trade: 63.16
-2024-05-12 21:57:39 - Average Losing Trade: -19.24
-2024-05-12 21:57:39 - Largest Winning Trade: 341.32
-2024-05-12 21:57:39 - Largest Losing Trade: -174.30
-2024-05-12 21:57:39 - Time taken: 24.36 seconds
-2024-05-12 21:57:39 - Inital Portfolio funding: $5000.00
-2024-05-12 21:57:39 - Final Portfolio Value: $6913.59
-2024-05-12 21:57:39 - Percentage Gain: 38.27%
-2024-05-12 21:57:39 - Cash: $7825.08
-2024-05-12 21:58:12 - ====================== New Entry ===================
-2024-05-12 21:58:12 - Max Drawdown: 14.00%
-2024-05-12 21:58:12 - Total Trades: 200
-2024-05-12 21:58:12 - Profitable Trades: 62
-2024-05-12 21:58:12 - Sharpe Ratio: 2.08
-2024-05-12 21:58:12 - SQN: 2.71
-2024-05-12 21:58:12 - Profit Factor: -2.13
-2024-05-12 21:58:12 - Average Trade: 15.43
-2024-05-12 21:58:12 - Average Winning Trade: 93.68
-2024-05-12 21:58:12 - Average Losing Trade: -19.72
-2024-05-12 21:58:12 - Largest Winning Trade: 526.43
-2024-05-12 21:58:12 - Largest Losing Trade: -144.69
-2024-05-12 21:58:12 - Time taken: 24.24 seconds
-2024-05-12 21:58:12 - Inital Portfolio funding: $5000.00
-2024-05-12 21:58:12 - Final Portfolio Value: $8490.41
-2024-05-12 21:58:12 - Percentage Gain: 69.81%
-2024-05-12 21:58:12 - Cash: $4101.65
-2024-05-12 22:00:55 - ====================== New Entry ===================
-2024-05-12 22:00:55 - Max Drawdown: 6.53%
-2024-05-12 22:00:55 - Total Trades: 183
-2024-05-12 22:00:55 - Profitable Trades: 78
-2024-05-12 22:00:55 - Sharpe Ratio: 5.95
-2024-05-12 22:00:55 - SQN: 3.83
-2024-05-12 22:00:55 - Profit Factor: -3.35
-2024-05-12 22:00:55 - Average Trade: 27.96
-2024-05-12 22:00:55 - Average Winning Trade: 93.54
-2024-05-12 22:00:55 - Average Losing Trade: -20.76
-2024-05-12 22:00:55 - Largest Winning Trade: 595.15
-2024-05-12 22:00:55 - Largest Losing Trade: -113.56
-2024-05-12 22:00:55 - Time taken: 22.67 seconds
-2024-05-12 22:00:55 - Inital Portfolio funding: $5000.00
-2024-05-12 22:00:55 - Final Portfolio Value: $10345.47
-2024-05-12 22:00:55 - Percentage Gain: 106.91%
-2024-05-12 22:00:55 - Cash: $4974.22
-2024-05-12 22:02:27 - ====================== New Entry ===================
-2024-05-12 22:02:27 - Max Drawdown: 11.12%
-2024-05-12 22:02:27 - Total Trades: 137
-2024-05-12 22:02:27 - Profitable Trades: 56
-2024-05-12 22:02:27 - Sharpe Ratio: 0.68
-2024-05-12 22:02:27 - SQN: 1.97
-2024-05-12 22:02:27 - Profit Factor: -1.81
-2024-05-12 22:02:27 - Average Trade: 14.73
-2024-05-12 22:02:27 - Average Winning Trade: 80.61
-2024-05-12 22:02:27 - Average Losing Trade: -30.81
-2024-05-12 22:02:27 - Largest Winning Trade: 545.19
-2024-05-12 22:02:27 - Largest Losing Trade: -275.37
-2024-05-12 22:02:27 - Time taken: 20.47 seconds
-2024-05-12 22:02:27 - Inital Portfolio funding: $5000.00
-2024-05-12 22:02:27 - Final Portfolio Value: $7091.89
-2024-05-12 22:02:27 - Percentage Gain: 41.84%
-2024-05-12 22:02:27 - Cash: $1671.50
-2024-05-12 22:03:14 - ====================== New Entry ===================
-2024-05-12 22:03:14 - Max Drawdown: 10.21%
-2024-05-12 22:03:14 - Total Trades: 175
-2024-05-12 22:03:14 - Profitable Trades: 66
-2024-05-12 22:03:14 - Sharpe Ratio: 1.11
-2024-05-12 22:03:14 - SQN: 3.20
-2024-05-12 22:03:14 - Profit Factor: -2.33
-2024-05-12 22:03:14 - Average Trade: 16.86
-2024-05-12 22:03:14 - Average Winning Trade: 78.41
-2024-05-12 22:03:14 - Average Losing Trade: -20.42
-2024-05-12 22:03:14 - Largest Winning Trade: 387.11
-2024-05-12 22:03:14 - Largest Losing Trade: -95.45
-2024-05-12 22:03:14 - Time taken: 22.32 seconds
-2024-05-12 22:03:14 - Inital Portfolio funding: $5000.00
-2024-05-12 22:03:14 - Final Portfolio Value: $7650.73
-2024-05-12 22:03:14 - Percentage Gain: 53.01%
-2024-05-12 22:03:14 - Cash: $9933.57
-2024-05-12 22:05:12 - ====================== New Entry ===================
-2024-05-12 22:05:12 - Max Drawdown: 11.92%
-2024-05-12 22:05:12 - Total Trades: 220
-2024-05-12 22:05:12 - Profitable Trades: 78
-2024-05-12 22:05:12 - Sharpe Ratio: 4.88
-2024-05-12 22:05:12 - SQN: 2.99
-2024-05-12 22:05:12 - Profit Factor: -2.36
-2024-05-12 22:05:12 - Average Trade: 22.49
-2024-05-12 22:05:12 - Average Winning Trade: 110.11
-2024-05-12 22:05:12 - Average Losing Trade: -25.64
-2024-05-12 22:05:12 - Largest Winning Trade: 782.76
-2024-05-12 22:05:12 - Largest Losing Trade: -389.21
-2024-05-12 22:05:12 - Time taken: 22.81 seconds
-2024-05-12 22:05:12 - Inital Portfolio funding: $5000.00
-2024-05-12 22:05:12 - Final Portfolio Value: $10314.29
-2024-05-12 22:05:12 - Percentage Gain: 106.29%
-2024-05-12 22:05:12 - Cash: $12467.69
-2024-05-12 22:05:42 - ====================== New Entry ===================
-2024-05-12 22:05:42 - Max Drawdown: 10.72%
-2024-05-12 22:05:42 - Total Trades: 166
-2024-05-12 22:05:42 - Profitable Trades: 66
-2024-05-12 22:05:42 - Sharpe Ratio: 3.76
-2024-05-12 22:05:42 - SQN: 3.68
-2024-05-12 22:05:42 - Profit Factor: -3.38
-2024-05-12 22:05:42 - Average Trade: 24.88
-2024-05-12 22:05:42 - Average Winning Trade: 88.90
-2024-05-12 22:05:42 - Average Losing Trade: -17.36
-2024-05-12 22:05:42 - Largest Winning Trade: 663.12
-2024-05-12 22:05:42 - Largest Losing Trade: -53.52
-2024-05-12 22:05:42 - Time taken: 21.02 seconds
-2024-05-12 22:05:42 - Inital Portfolio funding: $5000.00
-2024-05-12 22:05:42 - Final Portfolio Value: $8887.66
-2024-05-12 22:05:42 - Percentage Gain: 77.75%
-2024-05-12 22:05:42 - Cash: $10048.60
-2024-05-12 22:07:07 - ====================== New Entry ===================
-2024-05-12 22:07:07 - Max Drawdown: 23.12%
-2024-05-12 22:07:07 - Total Trades: 223
-2024-05-12 22:07:07 - Profitable Trades: 81
-2024-05-12 22:07:07 - Sharpe Ratio: 2.87
-2024-05-12 22:07:07 - SQN: 2.61
-2024-05-12 22:07:07 - Profit Factor: -1.97
-2024-05-12 22:07:07 - Average Trade: 13.54
-2024-05-12 22:07:07 - Average Winning Trade: 75.69
-2024-05-12 22:07:07 - Average Losing Trade: -21.92
-2024-05-12 22:07:07 - Largest Winning Trade: 467.49
-2024-05-12 22:07:07 - Largest Losing Trade: -104.55
-2024-05-12 22:07:07 - Time taken: 21.77 seconds
-2024-05-12 22:07:07 - Inital Portfolio funding: $5000.00
-2024-05-12 22:07:07 - Final Portfolio Value: $6735.39
-2024-05-12 22:07:07 - Percentage Gain: 34.71%
-2024-05-12 22:07:07 - Cash: $6239.34
-2024-05-12 22:07:39 - ====================== New Entry ===================
-2024-05-12 22:07:39 - Max Drawdown: 13.22%
-2024-05-12 22:07:39 - Total Trades: 196
-2024-05-12 22:07:39 - Profitable Trades: 82
-2024-05-12 22:07:39 - Sharpe Ratio: 12.52
-2024-05-12 22:07:39 - SQN: 3.04
-2024-05-12 22:07:39 - Profit Factor: -2.44
-2024-05-12 22:07:39 - Average Trade: 22.75
-2024-05-12 22:07:39 - Average Winning Trade: 92.28
-2024-05-12 22:07:39 - Average Losing Trade: -27.25
-2024-05-12 22:07:39 - Largest Winning Trade: 571.50
-2024-05-12 22:07:39 - Largest Losing Trade: -823.86
-2024-05-12 22:07:39 - Time taken: 21.80 seconds
-2024-05-12 22:07:39 - Inital Portfolio funding: $5000.00
-2024-05-12 22:07:39 - Final Portfolio Value: $9202.58
-2024-05-12 22:07:39 - Percentage Gain: 84.05%
-2024-05-12 22:07:39 - Cash: $10535.74
-2024-05-12 22:15:17 - ====================== New Entry ===================
-2024-05-12 22:15:17 - Max Drawdown: 12.11%
-2024-05-12 22:15:17 - Total Trades: 185
-2024-05-12 22:15:17 - Profitable Trades: 68
-2024-05-12 22:15:17 - Sharpe Ratio: 24.69
-2024-05-12 22:15:17 - SQN: 2.65
-2024-05-12 22:15:17 - Profit Factor: -2.05
-2024-05-12 22:15:17 - Average Trade: 14.42
-2024-05-12 22:15:17 - Average Winning Trade: 76.58
-2024-05-12 22:15:17 - Average Losing Trade: -21.71
-2024-05-12 22:15:17 - Largest Winning Trade: 537.93
-2024-05-12 22:15:17 - Largest Losing Trade: -191.10
-2024-05-12 22:15:17 - Time taken: 21.68 seconds
-2024-05-12 22:15:17 - Inital Portfolio funding: $5000.00
-2024-05-12 22:15:17 - Final Portfolio Value: $7021.37
-2024-05-12 22:15:17 - Percentage Gain: 40.43%
-2024-05-12 22:15:17 - Cash: $7514.19
-2024-05-12 22:19:13 - ====================== New Entry ===================
-2024-05-12 22:19:13 - Max Drawdown: 10.36%
-2024-05-12 22:19:13 - Total Trades: 216
-2024-05-12 22:19:13 - Profitable Trades: 71
-2024-05-12 22:19:13 - Sharpe Ratio: 7.03
-2024-05-12 22:19:13 - SQN: 2.19
-2024-05-12 22:19:13 - Profit Factor: -2.20
-2024-05-12 22:19:13 - Average Trade: 15.36
-2024-05-12 22:19:13 - Average Winning Trade: 85.77
-2024-05-12 22:19:13 - Average Losing Trade: -19.12
-2024-05-12 22:19:13 - Largest Winning Trade: 1221.57
-2024-05-12 22:19:13 - Largest Losing Trade: -101.92
-2024-05-12 22:19:13 - Time taken: 22.56 seconds
-2024-05-12 22:19:13 - Inital Portfolio funding: $5000.00
-2024-05-12 22:19:13 - Final Portfolio Value: $8343.52
-2024-05-12 22:19:13 - Percentage Gain: 66.87%
-2024-05-12 22:19:13 - Cash: $5918.69
-2024-05-12 22:21:51 - ====================== New Entry ===================
-2024-05-12 22:21:51 - Max Drawdown: 15.69%
-2024-05-12 22:21:51 - Total Trades: 202
-2024-05-12 22:21:51 - Profitable Trades: 69
-2024-05-12 22:21:51 - Sharpe Ratio: 150.79
-2024-05-12 22:21:51 - SQN: 2.57
-2024-05-12 22:21:51 - Profit Factor: -2.06
-2024-05-12 22:21:51 - Average Trade: 16.36
-2024-05-12 22:21:51 - Average Winning Trade: 92.90
-2024-05-12 22:21:51 - Average Losing Trade: -23.34
-2024-05-12 22:21:51 - Largest Winning Trade: 528.70
-2024-05-12 22:21:51 - Largest Losing Trade: -146.57
-2024-05-12 22:21:51 - Time taken: 22.63 seconds
-2024-05-12 22:21:51 - Inital Portfolio funding: $5000.00
-2024-05-12 22:21:51 - Final Portfolio Value: $7667.97
-2024-05-12 22:21:51 - Percentage Gain: 53.36%
-2024-05-12 22:21:51 - Cash: $5209.57
-2024-05-12 22:23:24 - ====================== New Entry ===================
-2024-05-12 22:23:24 - Max Drawdown: 7.84%
-2024-05-12 22:23:24 - Total Trades: 171
-2024-05-12 22:23:24 - Profitable Trades: 63
-2024-05-12 22:23:24 - Sharpe Ratio: 2.82
-2024-05-12 22:23:24 - SQN: 2.73
-2024-05-12 22:23:24 - Profit Factor: -2.68
-2024-05-12 22:23:24 - Average Trade: 18.57
-2024-05-12 22:23:24 - Average Winning Trade: 80.46
-2024-05-12 22:23:24 - Average Losing Trade: -17.54
-2024-05-12 22:23:24 - Largest Winning Trade: 663.12
-2024-05-12 22:23:24 - Largest Losing Trade: -92.58
-2024-05-12 22:23:24 - Time taken: 21.87 seconds
-2024-05-12 22:23:24 - Inital Portfolio funding: $5000.00
-2024-05-12 22:23:24 - Final Portfolio Value: $8338.95
-2024-05-12 22:23:24 - Percentage Gain: 66.78%
-2024-05-12 22:23:24 - Cash: $5521.55
-2024-05-12 22:24:00 - ====================== New Entry ===================
-2024-05-12 22:24:00 - Max Drawdown: 8.40%
-2024-05-12 22:24:00 - Total Trades: 186
-2024-05-12 22:24:00 - Profitable Trades: 67
-2024-05-12 22:24:00 - Sharpe Ratio: 0.92
-2024-05-12 22:24:00 - SQN: 2.33
-2024-05-12 22:24:00 - Profit Factor: -1.91
-2024-05-12 22:24:00 - Average Trade: 14.53
-2024-05-12 22:24:00 - Average Winning Trade: 84.51
-2024-05-12 22:24:00 - Average Losing Trade: -24.87
-2024-05-12 22:24:00 - Largest Winning Trade: 432.83
-2024-05-12 22:24:00 - Largest Losing Trade: -218.08
-2024-05-12 22:24:00 - Time taken: 21.26 seconds
-2024-05-12 22:24:00 - Inital Portfolio funding: $5000.00
-2024-05-12 22:24:00 - Final Portfolio Value: $7728.45
-2024-05-12 22:24:00 - Percentage Gain: 54.57%
-2024-05-12 22:24:00 - Cash: $4487.83
-2024-05-12 22:24:48 - ====================== New Entry ===================
-2024-05-12 22:24:48 - Max Drawdown: 10.34%
-2024-05-12 22:24:48 - Total Trades: 160
-2024-05-12 22:24:48 - Profitable Trades: 59
-2024-05-12 22:24:48 - Sharpe Ratio: 1.57
-2024-05-12 22:24:48 - SQN: 2.45
-2024-05-12 22:24:48 - Profit Factor: -2.13
-2024-05-12 22:24:48 - Average Trade: 18.01
-2024-05-12 22:24:48 - Average Winning Trade: 91.87
-2024-05-12 22:24:48 - Average Losing Trade: -25.14
-2024-05-12 22:24:48 - Largest Winning Trade: 537.21
-2024-05-12 22:24:48 - Largest Losing Trade: -239.54
-2024-05-12 22:24:48 - Time taken: 20.48 seconds
-2024-05-12 22:24:48 - Inital Portfolio funding: $5000.00
-2024-05-12 22:24:48 - Final Portfolio Value: $8165.51
-2024-05-12 22:24:48 - Percentage Gain: 63.31%
-2024-05-12 22:24:48 - Cash: $6647.88
-2024-05-12 22:28:46 - ====================== New Entry ===================
-2024-05-12 22:28:46 - Max Drawdown: 17.65%
-2024-05-12 22:28:46 - Total Trades: 175
-2024-05-12 22:28:46 - Profitable Trades: 58
-2024-05-12 22:28:46 - Sharpe Ratio: 8.96
-2024-05-12 22:28:46 - SQN: 0.80
-2024-05-12 22:28:46 - Profit Factor: -1.41
-2024-05-12 22:28:46 - Average Trade: 5.81
-2024-05-12 22:28:46 - Average Winning Trade: 60.11
-2024-05-12 22:28:46 - Average Losing Trade: -21.11
-2024-05-12 22:28:46 - Largest Winning Trade: 1084.02
-2024-05-12 22:28:46 - Largest Losing Trade: -324.34
-2024-05-12 22:28:46 - Time taken: 21.59 seconds
-2024-05-12 22:28:46 - Inital Portfolio funding: $5000.00
-2024-05-12 22:28:46 - Final Portfolio Value: $6132.26
-2024-05-12 22:28:46 - Percentage Gain: 22.65%
-2024-05-12 22:28:46 - Cash: $3296.44
-2024-05-12 22:29:23 - ====================== New Entry ===================
-2024-05-12 22:29:23 - Max Drawdown: 9.12%
-2024-05-12 22:29:23 - Total Trades: 202
-2024-05-12 22:29:23 - Profitable Trades: 71
-2024-05-12 22:29:23 - Sharpe Ratio: 5.20
-2024-05-12 22:29:23 - SQN: 1.94
-2024-05-12 22:29:23 - Profit Factor: -2.10
-2024-05-12 22:29:23 - Average Trade: 12.98
-2024-05-12 22:29:23 - Average Winning Trade: 70.62
-2024-05-12 22:29:23 - Average Losing Trade: -18.26
-2024-05-12 22:29:23 - Largest Winning Trade: 992.63
-2024-05-12 22:29:23 - Largest Losing Trade: -104.17
-2024-05-12 22:29:23 - Time taken: 22.23 seconds
-2024-05-12 22:29:23 - Inital Portfolio funding: $5000.00
-2024-05-12 22:29:23 - Final Portfolio Value: $8315.84
-2024-05-12 22:29:23 - Percentage Gain: 66.32%
-2024-05-12 22:29:23 - Cash: $3678.78
-2024-05-12 22:29:55 - ====================== New Entry ===================
-2024-05-12 22:29:55 - Max Drawdown: 11.13%
-2024-05-12 22:29:55 - Total Trades: 209
-2024-05-12 22:29:55 - Profitable Trades: 78
-2024-05-12 22:29:55 - Sharpe Ratio: 1.59
-2024-05-12 22:29:55 - SQN: 2.68
-2024-05-12 22:29:55 - Profit Factor: -2.08
-2024-05-12 22:29:55 - Average Trade: 21.14
-2024-05-12 22:29:55 - Average Winning Trade: 109.07
-2024-05-12 22:29:55 - Average Losing Trade: -31.22
-2024-05-12 22:29:55 - Largest Winning Trade: 710.15
-2024-05-12 22:29:55 - Largest Losing Trade: -249.73
-2024-05-12 22:29:55 - Time taken: 22.22 seconds
-2024-05-12 22:29:55 - Inital Portfolio funding: $5000.00
-2024-05-12 22:29:55 - Final Portfolio Value: $8979.90
-2024-05-12 22:29:55 - Percentage Gain: 79.60%
-2024-05-12 22:29:55 - Cash: $9547.80
-2024-05-12 22:38:55 - ====================== New Entry ===================
-2024-05-12 22:38:55 - Max Drawdown: 6.82%
-2024-05-12 22:38:55 - Total Trades: 183
-2024-05-12 22:38:55 - Profitable Trades: 70
-2024-05-12 22:38:55 - Sharpe Ratio: 1.41
-2024-05-12 22:38:55 - SQN: 2.64
-2024-05-12 22:38:55 - Profit Factor: -4.76
-2024-05-12 22:38:55 - Average Trade: 66.70
-2024-05-12 22:38:55 - Average Winning Trade: 220.69
-2024-05-12 22:38:55 - Average Losing Trade: -28.69
-2024-05-12 22:38:55 - Largest Winning Trade: 3931.11
-2024-05-12 22:38:55 - Largest Losing Trade: -155.52
-2024-05-12 22:38:55 - Time taken: 42.09 seconds
-2024-05-12 22:38:55 - Inital Portfolio funding: $5000.00
-2024-05-12 22:38:55 - Final Portfolio Value: $17509.56
-2024-05-12 22:38:55 - Percentage Gain: 250.19%
-2024-05-12 22:38:55 - Cash: $9770.31
-2024-05-12 22:42:48 - ====================== New Entry ===================
-2024-05-12 22:42:48 - Max Drawdown: 7.71%
-2024-05-12 22:42:48 - Total Trades: 229
-2024-05-12 22:42:48 - Profitable Trades: 66
-2024-05-12 22:42:48 - Sharpe Ratio: 5.61
-2024-05-12 22:42:48 - SQN: 2.06
-2024-05-12 22:42:48 - Profit Factor: -1.89
-2024-05-12 22:42:48 - Average Trade: 11.74
-2024-05-12 22:42:48 - Average Winning Trade: 86.73
-2024-05-12 22:42:48 - Average Losing Trade: -18.62
-2024-05-12 22:42:48 - Largest Winning Trade: 951.22
-2024-05-12 22:42:48 - Largest Losing Trade: -188.58
-2024-05-12 22:42:48 - Time taken: 34.32 seconds
-2024-05-12 22:42:48 - Inital Portfolio funding: $5000.00
-2024-05-12 22:42:48 - Final Portfolio Value: $7807.09
-2024-05-12 22:42:48 - Percentage Gain: 56.14%
-2024-05-12 22:42:48 - Cash: $6324.90
-2024-05-12 22:43:39 - ====================== New Entry ===================
-2024-05-12 22:43:39 - Max Drawdown: 9.17%
-2024-05-12 22:43:39 - Total Trades: 177
-2024-05-12 22:43:39 - Profitable Trades: 61
-2024-05-12 22:43:39 - Sharpe Ratio: 3.21
-2024-05-12 22:43:39 - SQN: 2.88
-2024-05-12 22:43:39 - Profit Factor: -2.59
-2024-05-12 22:43:39 - Average Trade: 22.35
-2024-05-12 22:43:39 - Average Winning Trade: 105.61
-2024-05-12 22:43:39 - Average Losing Trade: -21.44
-2024-05-12 22:43:39 - Largest Winning Trade: 672.29
-2024-05-12 22:43:39 - Largest Losing Trade: -144.30
-2024-05-12 22:43:39 - Time taken: 34.25 seconds
-2024-05-12 22:43:39 - Inital Portfolio funding: $5000.00
-2024-05-12 22:43:39 - Final Portfolio Value: $8987.48
-2024-05-12 22:43:39 - Percentage Gain: 79.75%
-2024-05-12 22:43:39 - Cash: $5032.58
-2024-05-12 23:25:09 - ====================== New Entry ===================
-2024-05-12 23:25:09 - Max Drawdown: 10.70%
-2024-05-12 23:25:09 - Total Trades: 173
-2024-05-12 23:25:09 - Profitable Trades: 69
-2024-05-12 23:25:09 - Sharpe Ratio: 23.51
-2024-05-12 23:25:09 - SQN: 2.52
-2024-05-12 23:25:09 - Profit Factor: -3.03
-2024-05-12 23:25:09 - Average Trade: 30.14
-2024-05-12 23:25:09 - Average Winning Trade: 112.72
-2024-05-12 23:25:09 - Average Losing Trade: -24.64
-2024-05-12 23:25:09 - Largest Winning Trade: 1763.00
-2024-05-12 23:25:09 - Largest Losing Trade: -175.57
-2024-05-12 23:25:09 - Time taken: 21.18 seconds
-2024-05-12 23:25:09 - Inital Portfolio funding: $5000.00
-2024-05-12 23:25:09 - Final Portfolio Value: $10138.43
-2024-05-12 23:25:09 - Percentage Gain: 102.77%
-2024-05-12 23:25:09 - Cash: $11011.07
-2024-05-12 23:26:50 - ====================== New Entry ===================
-2024-05-12 23:26:50 - Max Drawdown: 8.69%
-2024-05-12 23:26:50 - Total Trades: 190
-2024-05-12 23:26:50 - Profitable Trades: 63
-2024-05-12 23:26:50 - Sharpe Ratio: 3.35
-2024-05-12 23:26:50 - SQN: 2.15
-2024-05-12 23:26:50 - Profit Factor: -2.11
-2024-05-12 23:26:50 - Average Trade: 14.75
-2024-05-12 23:26:50 - Average Winning Trade: 84.65
-2024-05-12 23:26:50 - Average Losing Trade: -19.93
-2024-05-12 23:26:50 - Largest Winning Trade: 951.22
-2024-05-12 23:26:50 - Largest Losing Trade: -316.08
-2024-05-12 23:26:50 - Time taken: 41.51 seconds
-2024-05-12 23:26:50 - Inital Portfolio funding: $5000.00
-2024-05-12 23:26:50 - Final Portfolio Value: $7801.72
-2024-05-12 23:26:50 - Percentage Gain: 56.03%
-2024-05-12 23:26:50 - Cash: $3930.36
-2024-05-12 23:27:10 - ====================== New Entry ===================
-2024-05-12 23:27:10 - Max Drawdown: 7.33%
-2024-05-12 23:27:10 - Total Trades: 159
-2024-05-12 23:27:10 - Profitable Trades: 70
-2024-05-12 23:27:10 - Sharpe Ratio: 4.68
-2024-05-12 23:27:10 - SQN: 3.54
-2024-05-12 23:27:10 - Profit Factor: -3.00
-2024-05-12 23:27:10 - Average Trade: 22.80
-2024-05-12 23:27:10 - Average Winning Trade: 77.65
-2024-05-12 23:27:10 - Average Losing Trade: -20.34
-2024-05-12 23:27:10 - Largest Winning Trade: 557.08
-2024-05-12 23:27:10 - Largest Losing Trade: -93.14
-2024-05-12 23:27:10 - Time taken: 10.38 seconds
-2024-05-12 23:27:10 - Inital Portfolio funding: $5000.00
-2024-05-12 23:27:10 - Final Portfolio Value: $8704.38
-2024-05-12 23:27:10 - Percentage Gain: 74.09%
-2024-05-12 23:27:10 - Cash: $6061.89
-2024-05-12 23:27:41 - ====================== New Entry ===================
-2024-05-12 23:27:41 - Max Drawdown: 4.93%
-2024-05-12 23:27:41 - Total Trades: 148
-2024-05-12 23:27:41 - Profitable Trades: 59
-2024-05-12 23:27:41 - Sharpe Ratio: 3.06
-2024-05-12 23:27:41 - SQN: 2.11
-2024-05-12 23:27:41 - Profit Factor: -5.61
-2024-05-12 23:27:41 - Average Trade: 66.09
-2024-05-12 23:27:41 - Average Winning Trade: 201.76
-2024-05-12 23:27:41 - Average Losing Trade: -23.85
-2024-05-12 23:27:41 - Largest Winning Trade: 4005.82
-2024-05-12 23:27:41 - Largest Losing Trade: -160.41
-2024-05-12 23:27:41 - Time taken: 10.64 seconds
-2024-05-12 23:27:41 - Inital Portfolio funding: $5000.00
-2024-05-12 23:27:41 - Final Portfolio Value: $15279.17
-2024-05-12 23:27:41 - Percentage Gain: 205.58%
-2024-05-12 23:27:41 - Cash: $11408.69
-2024-05-13 00:05:09 - ====================== New Entry ===================
-2024-05-13 00:05:09 - Max Drawdown: 6.97%
-2024-05-13 00:05:09 - Total Trades: 183
-2024-05-13 00:05:09 - Profitable Trades: 68
-2024-05-13 00:05:09 - Sharpe Ratio: 1.93
-2024-05-13 00:05:09 - SQN: 3.30
-2024-05-13 00:05:09 - Profit Factor: -2.72
-2024-05-13 00:05:09 - Average Trade: 22.75
-2024-05-13 00:05:09 - Average Winning Trade: 96.77
-2024-05-13 00:05:09 - Average Losing Trade: -21.02
-2024-05-13 00:05:09 - Largest Winning Trade: 577.21
-2024-05-13 00:05:09 - Largest Losing Trade: -72.40
-2024-05-13 00:05:09 - Time taken: 20.18 seconds
-2024-05-13 00:05:09 - Inital Portfolio funding: $5000.00
-2024-05-13 00:05:09 - Final Portfolio Value: $9269.62
-2024-05-13 00:05:09 - Percentage Gain: 85.39%
-2024-05-13 00:05:09 - Cash: $10036.53
-2024-05-13 00:06:32 - ====================== New Entry ===================
-2024-05-13 00:06:32 - Max Drawdown: 10.11%
-2024-05-13 00:06:32 - Total Trades: 190
-2024-05-13 00:06:32 - Profitable Trades: 71
-2024-05-13 00:06:32 - Sharpe Ratio: 11.10
-2024-05-13 00:06:32 - SQN: 2.96
-2024-05-13 00:06:32 - Profit Factor: -2.28
-2024-05-13 00:06:32 - Average Trade: 21.49
-2024-05-13 00:06:32 - Average Winning Trade: 102.48
-2024-05-13 00:06:32 - Average Losing Trade: -26.83
-2024-05-13 00:06:32 - Largest Winning Trade: 477.92
-2024-05-13 00:06:32 - Largest Losing Trade: -294.97
-2024-05-13 00:06:32 - Time taken: 30.12 seconds
-2024-05-13 00:06:32 - Inital Portfolio funding: $5000.00
-2024-05-13 00:06:32 - Final Portfolio Value: $8808.23
-2024-05-13 00:06:32 - Percentage Gain: 76.16%
-2024-05-13 00:06:32 - Cash: $8778.70
-2024-05-13 00:11:26 - ====================== New Entry ===================
-2024-05-13 00:11:26 - Max Drawdown: 5.46%
-2024-05-13 00:11:26 - Total Trades: 172
-2024-05-13 00:11:26 - Profitable Trades: 68
-2024-05-13 00:11:26 - Sharpe Ratio: 9.79
-2024-05-13 00:11:26 - SQN: 3.42
-2024-05-13 00:11:26 - Profit Factor: -2.88
-2024-05-13 00:11:26 - Average Trade: 22.02
-2024-05-13 00:11:26 - Average Winning Trade: 85.29
-2024-05-13 00:11:26 - Average Losing Trade: -19.34
-2024-05-13 00:11:26 - Largest Winning Trade: 491.49
-2024-05-13 00:11:26 - Largest Losing Trade: -125.24
-2024-05-13 00:11:26 - Time taken: 10.55 seconds
-2024-05-13 00:11:26 - Inital Portfolio funding: $5000.00
-2024-05-13 00:11:26 - Final Portfolio Value: $8720.35
-2024-05-13 00:11:26 - Percentage Gain: 74.41%
-2024-05-13 00:11:26 - Cash: $6639.12
-2024-05-13 00:18:10 - ====================== New Entry ===================
-2024-05-13 00:18:10 - Max Drawdown: 16.66%
-2024-05-13 00:18:10 - Total Trades: 228
-2024-05-13 00:18:10 - Profitable Trades: 68
-2024-05-13 00:18:10 - Sharpe Ratio: 1.71
-2024-05-13 00:18:10 - SQN: 1.87
-2024-05-13 00:18:10 - Profit Factor: -1.76
-2024-05-13 00:18:10 - Average Trade: 10.95
-2024-05-13 00:18:10 - Average Winning Trade: 84.95
-2024-05-13 00:18:10 - Average Losing Trade: -20.49
-2024-05-13 00:18:10 - Largest Winning Trade: 837.68
-2024-05-13 00:18:10 - Largest Losing Trade: -172.66
-2024-05-13 00:18:10 - Time taken: 33.50 seconds
-2024-05-13 00:18:10 - Inital Portfolio funding: $5000.00
-2024-05-13 00:18:10 - Final Portfolio Value: $7528.37
-2024-05-13 00:18:10 - Percentage Gain: 50.57%
-2024-05-13 00:18:10 - Cash: $6900.01
-2024-05-13 00:18:52 - ====================== New Entry ===================
-2024-05-13 00:18:52 - Max Drawdown: 9.07%
-2024-05-13 00:18:52 - Total Trades: 181
-2024-05-13 00:18:52 - Profitable Trades: 66
-2024-05-13 00:18:52 - Sharpe Ratio: 2.96
-2024-05-13 00:18:52 - SQN: 2.78
-2024-05-13 00:18:52 - Profit Factor: -2.08
-2024-05-13 00:18:52 - Average Trade: 16.00
-2024-05-13 00:18:52 - Average Winning Trade: 84.64
-2024-05-13 00:18:52 - Average Losing Trade: -23.38
-2024-05-13 00:18:52 - Largest Winning Trade: 385.44
-2024-05-13 00:18:52 - Largest Losing Trade: -229.00
-2024-05-13 00:18:52 - Time taken: 32.46 seconds
-2024-05-13 00:18:52 - Inital Portfolio funding: $5000.00
-2024-05-13 00:18:52 - Final Portfolio Value: $7961.13
-2024-05-13 00:18:52 - Percentage Gain: 59.22%
-2024-05-13 00:18:52 - Cash: $5497.51
+2024-05-15 18:50:48 - ====================== New Entry ===================
+2024-05-15 18:50:48 - Max Drawdown: 9.20%
+2024-05-15 18:50:48 - Total Trades: 90
+2024-05-15 18:50:48 - Profitable Trades: 31
+2024-05-15 18:50:48 - Sharpe Ratio: 1.26
+2024-05-15 18:50:48 - SQN: 1.74
+2024-05-15 18:50:48 - Profit Factor: -1.99
+2024-05-15 18:50:48 - Average Trade: 13.59
+2024-05-15 18:50:48 - Average Winning Trade: 79.21
+2024-05-15 18:50:48 - Average Losing Trade: -20.89
+2024-05-15 18:50:48 - Largest Winning Trade: 332.41
+2024-05-15 18:50:48 - Largest Losing Trade: -325.84
+2024-05-15 18:50:48 - Time taken: 5.26 seconds
+2024-05-15 18:50:48 - Inital Portfolio funding: $5000.00
+2024-05-15 18:50:48 - Final Portfolio Value: $6573.02
+2024-05-15 18:50:48 - Percentage Gain: 31.46%
+2024-05-15 18:50:48 - Cash: $2655.85
+2024-05-15 18:50:56 - ====================== New Entry ===================
+2024-05-15 18:50:56 - Max Drawdown: 6.55%
+2024-05-15 18:50:56 - Total Trades: 55
+2024-05-15 18:50:56 - Profitable Trades: 19
+2024-05-15 18:50:56 - Sharpe Ratio: 1.47
+2024-05-15 18:50:56 - SQN: 1.46
+2024-05-15 18:50:56 - Profit Factor: -1.80
+2024-05-15 18:50:56 - Average Trade: 10.73
+2024-05-15 18:50:56 - Average Winning Trade: 69.70
+2024-05-15 18:50:56 - Average Losing Trade: -20.39
+2024-05-15 18:50:56 - Largest Winning Trade: 195.83
+2024-05-15 18:50:56 - Largest Losing Trade: -88.32
+2024-05-15 18:50:56 - Time taken: 5.38 seconds
+2024-05-15 18:50:56 - Inital Portfolio funding: $5000.00
+2024-05-15 18:50:56 - Final Portfolio Value: $6042.30
+2024-05-15 18:50:56 - Percentage Gain: 20.85%
+2024-05-15 18:50:56 - Cash: $1200.72
+2024-05-15 18:51:19 - ====================== New Entry ===================
+2024-05-15 18:51:19 - Max Drawdown: 5.67%
+2024-05-15 18:51:19 - Total Trades: 135
+2024-05-15 18:51:19 - Profitable Trades: 55
+2024-05-15 18:51:19 - Sharpe Ratio: 3.12
+2024-05-15 18:51:19 - SQN: 2.57
+2024-05-15 18:51:19 - Profit Factor: -2.52
+2024-05-15 18:51:19 - Average Trade: 20.57
+2024-05-15 18:51:19 - Average Winning Trade: 83.59
+2024-05-15 18:51:19 - Average Losing Trade: -22.76
+2024-05-15 18:51:19 - Largest Winning Trade: 642.18
+2024-05-15 18:51:19 - Largest Losing Trade: -112.79
+2024-05-15 18:51:19 - Time taken: 18.76 seconds
+2024-05-15 18:51:19 - Inital Portfolio funding: $5000.00
+2024-05-15 18:51:19 - Final Portfolio Value: $7775.92
+2024-05-15 18:51:19 - Percentage Gain: 55.52%
+2024-05-15 18:51:19 - Cash: $4221.66
+2024-05-15 18:52:11 - ====================== New Entry ===================
+2024-05-15 18:52:11 - Max Drawdown: 4.66%
+2024-05-15 18:52:11 - Total Trades: 166
+2024-05-15 18:52:11 - Profitable Trades: 76
+2024-05-15 18:52:11 - Sharpe Ratio: 9.51
+2024-05-15 18:52:11 - SQN: 3.19
+2024-05-15 18:52:11 - Profit Factor: -2.39
+2024-05-15 18:52:11 - Average Trade: 14.72
+2024-05-15 18:52:11 - Average Winning Trade: 55.34
+2024-05-15 18:52:11 - Average Losing Trade: -19.59
+2024-05-15 18:52:11 - Largest Winning Trade: 309.98
+2024-05-15 18:52:11 - Largest Losing Trade: -120.20
+2024-05-15 18:52:11 - Time taken: 36.74 seconds
+2024-05-15 18:52:11 - Inital Portfolio funding: $5000.00
+2024-05-15 18:52:11 - Final Portfolio Value: $7928.67
+2024-05-15 18:52:11 - Percentage Gain: 58.57%
+2024-05-15 18:52:11 - Cash: $595.33
+2024-05-15 18:52:44 - ====================== New Entry ===================
+2024-05-15 18:52:44 - Max Drawdown: 7.11%
+2024-05-15 18:52:44 - Total Trades: 179
+2024-05-15 18:52:44 - Profitable Trades: 70
+2024-05-15 18:52:44 - Sharpe Ratio: 8.99
+2024-05-15 18:52:44 - SQN: 3.36
+2024-05-15 18:52:44 - Profit Factor: -2.49
+2024-05-15 18:52:44 - Average Trade: 15.41
+2024-05-15 18:52:44 - Average Winning Trade: 65.89
+2024-05-15 18:52:44 - Average Losing Trade: -17.01
+2024-05-15 18:52:44 - Largest Winning Trade: 355.01
+2024-05-15 18:52:44 - Largest Losing Trade: -252.80
+2024-05-15 18:52:44 - Time taken: 27.06 seconds
+2024-05-15 18:52:44 - Inital Portfolio funding: $5000.00
+2024-05-15 18:52:44 - Final Portfolio Value: $7741.13
+2024-05-15 18:52:44 - Percentage Gain: 54.82%
+2024-05-15 18:52:44 - Cash: $798.79
+2024-05-15 18:53:10 - ====================== New Entry ===================
+2024-05-15 18:53:10 - Max Drawdown: 3.96%
+2024-05-15 18:53:10 - Total Trades: 115
+2024-05-15 18:53:10 - Profitable Trades: 56
+2024-05-15 18:53:10 - Sharpe Ratio: 2.25
+2024-05-15 18:53:10 - SQN: 3.53
+2024-05-15 18:53:10 - Profit Factor: -5.03
+2024-05-15 18:53:10 - Average Trade: 43.82
+2024-05-15 18:53:10 - Average Winning Trade: 112.31
+2024-05-15 18:53:10 - Average Losing Trade: -21.18
+2024-05-15 18:53:10 - Largest Winning Trade: 999.43
+2024-05-15 18:53:10 - Largest Losing Trade: -65.24
+2024-05-15 18:53:10 - Time taken: 18.13 seconds
+2024-05-15 18:53:10 - Inital Portfolio funding: $5000.00
+2024-05-15 18:53:10 - Final Portfolio Value: $10270.17
+2024-05-15 18:53:10 - Percentage Gain: 105.40%
+2024-05-15 18:53:10 - Cash: $4107.03
+2024-05-15 18:54:24 - ====================== New Entry ===================
+2024-05-15 18:54:24 - Max Drawdown: 9.04%
+2024-05-15 18:54:24 - Total Trades: 142
+2024-05-15 18:54:24 - Profitable Trades: 55
+2024-05-15 18:54:24 - Sharpe Ratio: 0.68
+2024-05-15 18:54:24 - SQN: 2.03
+2024-05-15 18:54:24 - Profit Factor: -1.86
+2024-05-15 18:54:24 - Average Trade: 8.91
+2024-05-15 18:54:24 - Average Winning Trade: 49.84
+2024-05-15 18:54:24 - Average Losing Trade: -16.97
+2024-05-15 18:54:24 - Largest Winning Trade: 351.00
+2024-05-15 18:54:24 - Largest Losing Trade: -158.33
+2024-05-15 18:54:24 - Time taken: 18.39 seconds
+2024-05-15 18:54:24 - Inital Portfolio funding: $5000.00
+2024-05-15 18:54:24 - Final Portfolio Value: $6284.92
+2024-05-15 18:54:24 - Percentage Gain: 25.70%
+2024-05-15 18:54:24 - Cash: $4357.06
+2024-05-15 18:54:43 - ====================== New Entry ===================
+2024-05-15 18:54:43 - Max Drawdown: 4.40%
+2024-05-15 18:54:43 - Total Trades: 130
+2024-05-15 18:54:43 - Profitable Trades: 61
+2024-05-15 18:54:43 - Sharpe Ratio: 1.51
+2024-05-15 18:54:43 - SQN: 3.60
+2024-05-15 18:54:43 - Profit Factor: -3.96
+2024-05-15 18:54:43 - Average Trade: 31.86
+2024-05-15 18:54:43 - Average Winning Trade: 90.86
+2024-05-15 18:54:43 - Average Losing Trade: -20.29
+2024-05-15 18:54:43 - Largest Winning Trade: 893.20
+2024-05-15 18:54:43 - Largest Losing Trade: -75.60
+2024-05-15 18:54:43 - Time taken: 17.30 seconds
+2024-05-15 18:54:43 - Inital Portfolio funding: $5000.00
+2024-05-15 18:54:43 - Final Portfolio Value: $9078.95
+2024-05-15 18:54:43 - Percentage Gain: 81.58%
+2024-05-15 18:54:43 - Cash: $6070.81
+2024-05-15 19:05:41 - ====================== New Entry ===================
+2024-05-15 19:05:41 - Max Drawdown: 8.03%
+2024-05-15 19:05:41 - Total Trades: 67
+2024-05-15 19:05:41 - Profitable Trades: 22
+2024-05-15 19:05:41 - Sharpe Ratio: -0.00
+2024-05-15 19:05:41 - SQN: 1.43
+2024-05-15 19:05:41 - Profit Factor: -1.81
+2024-05-15 19:05:41 - Average Trade: 8.09
+2024-05-15 19:05:41 - Average Winning Trade: 54.96
+2024-05-15 19:05:41 - Average Losing Trade: -14.83
+2024-05-15 19:05:41 - Largest Winning Trade: 170.19
+2024-05-15 19:05:41 - Largest Losing Trade: -92.57
+2024-05-15 19:05:41 - Time taken: 18.88 seconds
+2024-05-15 19:05:41 - Inital Portfolio funding: $5000.00
+2024-05-15 19:05:41 - Final Portfolio Value: $5506.40
+2024-05-15 19:05:41 - Percentage Gain: 10.13%
+2024-05-15 19:05:41 - Cash: $5477.84
+2024-05-15 19:06:19 - ====================== New Entry ===================
+2024-05-15 19:06:19 - Max Drawdown: 7.22%
+2024-05-15 19:06:19 - Total Trades: 126
+2024-05-15 19:06:19 - Profitable Trades: 55
+2024-05-15 19:06:19 - Sharpe Ratio: 2.87
+2024-05-15 19:06:19 - SQN: 2.68
+2024-05-15 19:06:19 - Profit Factor: -3.38
+2024-05-15 19:06:19 - Average Trade: 25.72
+2024-05-15 19:06:19 - Average Winning Trade: 83.68
+2024-05-15 19:06:19 - Average Losing Trade: -19.17
+2024-05-15 19:06:19 - Largest Winning Trade: 1014.44
+2024-05-15 19:06:19 - Largest Losing Trade: -67.68
+2024-05-15 19:06:19 - Time taken: 18.49 seconds
+2024-05-15 19:06:19 - Inital Portfolio funding: $5000.00
+2024-05-15 19:06:19 - Final Portfolio Value: $8494.25
+2024-05-15 19:06:19 - Percentage Gain: 69.88%
+2024-05-15 19:06:19 - Cash: $2432.88
+2024-05-15 19:06:41 - ====================== New Entry ===================
+2024-05-15 19:06:41 - Max Drawdown: 9.23%
+2024-05-15 19:06:41 - Total Trades: 134
+2024-05-15 19:06:41 - Profitable Trades: 50
+2024-05-15 19:06:41 - Sharpe Ratio: 1.80
+2024-05-15 19:06:41 - SQN: 2.06
+2024-05-15 19:06:41 - Profit Factor: -1.87
+2024-05-15 19:06:41 - Average Trade: 11.96
+2024-05-15 19:06:41 - Average Winning Trade: 68.77
+2024-05-15 19:06:41 - Average Losing Trade: -21.85
+2024-05-15 19:06:41 - Largest Winning Trade: 360.84
+2024-05-15 19:06:41 - Largest Losing Trade: -82.39
+2024-05-15 19:06:41 - Time taken: 20.17 seconds
+2024-05-15 19:06:41 - Inital Portfolio funding: $5000.00
+2024-05-15 19:06:41 - Final Portfolio Value: $6743.38
+2024-05-15 19:06:41 - Percentage Gain: 34.87%
+2024-05-15 19:06:41 - Cash: $3638.52
+2024-05-15 19:07:42 - ====================== New Entry ===================
+2024-05-15 19:07:42 - Max Drawdown: 7.31%
+2024-05-15 19:07:42 - Total Trades: 158
+2024-05-15 19:07:42 - Profitable Trades: 65
+2024-05-15 19:07:42 - Sharpe Ratio: 2.07
+2024-05-15 19:07:42 - SQN: 2.97
+2024-05-15 19:07:42 - Profit Factor: -2.51
+2024-05-15 19:07:42 - Average Trade: 21.29
+2024-05-15 19:07:42 - Average Winning Trade: 85.98
+2024-05-15 19:07:42 - Average Losing Trade: -23.92
+2024-05-15 19:07:42 - Largest Winning Trade: 558.92
+2024-05-15 19:07:42 - Largest Losing Trade: -263.83
+2024-05-15 19:07:42 - Time taken: 47.66 seconds
+2024-05-15 19:07:42 - Inital Portfolio funding: $5000.00
+2024-05-15 19:07:42 - Final Portfolio Value: $8251.58
+2024-05-15 19:07:42 - Percentage Gain: 65.03%
+2024-05-15 19:07:42 - Cash: $975.76
+2024-05-15 19:21:37 - ====================== New Entry ===================
+2024-05-15 19:21:37 - Max Drawdown: 5.64%
+2024-05-15 19:21:37 - Total Trades: 180
+2024-05-15 19:21:37 - Profitable Trades: 89
+2024-05-15 19:21:37 - Sharpe Ratio: 8.84
+2024-05-15 19:21:37 - SQN: 4.57
+2024-05-15 19:21:37 - Profit Factor: -4.45
+2024-05-15 19:21:37 - Average Trade: 48.60
+2024-05-15 19:21:37 - Average Winning Trade: 126.74
+2024-05-15 19:21:37 - Average Losing Trade: -27.83
+2024-05-15 19:21:37 - Largest Winning Trade: 817.38
+2024-05-15 19:21:37 - Largest Losing Trade: -304.37
+2024-05-15 19:21:37 - Time taken: 91.89 seconds
+2024-05-15 19:21:37 - Inital Portfolio funding: $5000.00
+2024-05-15 19:21:37 - Final Portfolio Value: $13903.51
+2024-05-15 19:21:37 - Percentage Gain: 178.07%
+2024-05-15 19:21:37 - Cash: $6435.80
+2024-05-15 19:50:42 - ====================== New Entry ===================
+2024-05-15 19:50:42 - Max Drawdown: 5.72%
+2024-05-15 19:50:42 - Total Trades: 184
+2024-05-15 19:50:42 - Profitable Trades: 82
+2024-05-15 19:50:42 - Sharpe Ratio: 4.39
+2024-05-15 19:50:42 - SQN: 3.22
+2024-05-15 19:50:42 - Profit Factor: -2.59
+2024-05-15 19:50:42 - Average Trade: 21.33
+2024-05-15 19:50:42 - Average Winning Trade: 77.88
+2024-05-15 19:50:42 - Average Losing Trade: -24.14
+2024-05-15 19:50:42 - Largest Winning Trade: 554.09
+2024-05-15 19:50:42 - Largest Losing Trade: -124.50
+2024-05-15 19:50:42 - Time taken: 90.01 seconds
+2024-05-15 19:50:42 - Inital Portfolio funding: $5000.00
+2024-05-15 19:50:42 - Final Portfolio Value: $9585.46
+2024-05-15 19:50:42 - Percentage Gain: 91.71%
+2024-05-15 19:50:42 - Cash: $4781.56
+2024-05-15 19:52:40 - ====================== New Entry ===================
+2024-05-15 19:52:40 - Max Drawdown: 6.58%
+2024-05-15 19:52:40 - Total Trades: 198
+2024-05-15 19:52:40 - Profitable Trades: 87
+2024-05-15 19:52:40 - Sharpe Ratio: 1.92
+2024-05-15 19:52:40 - SQN: 3.24
+2024-05-15 19:52:40 - Profit Factor: -2.83
+2024-05-15 19:52:40 - Average Trade: 29.17
+2024-05-15 19:52:40 - Average Winning Trade: 102.74
+2024-05-15 19:52:40 - Average Losing Trade: -28.50
+2024-05-15 19:52:40 - Largest Winning Trade: 1038.45
+2024-05-15 19:52:40 - Largest Losing Trade: -344.64
+2024-05-15 19:52:40 - Time taken: 62.57 seconds
+2024-05-15 19:52:40 - Inital Portfolio funding: $5000.00
+2024-05-15 19:52:40 - Final Portfolio Value: $11014.99
+2024-05-15 19:52:40 - Percentage Gain: 120.30%
+2024-05-15 19:52:40 - Cash: $4370.10
+2024-05-15 20:05:39 - ====================== New Entry ===================
+2024-05-15 20:05:39 - Max Drawdown: 4.62%
+2024-05-15 20:05:39 - Total Trades: 159
+2024-05-15 20:05:39 - Profitable Trades: 76
+2024-05-15 20:05:39 - Sharpe Ratio: 8.25
+2024-05-15 20:05:39 - SQN: 3.74
+2024-05-15 20:05:39 - Profit Factor: -3.32
+2024-05-15 20:05:39 - Average Trade: 26.88
+2024-05-15 20:05:39 - Average Winning Trade: 80.50
+2024-05-15 20:05:39 - Average Losing Trade: -22.22
+2024-05-15 20:05:39 - Largest Winning Trade: 570.74
+2024-05-15 20:05:39 - Largest Losing Trade: -111.24
+2024-05-15 20:05:39 - Time taken: 44.80 seconds
+2024-05-15 20:05:39 - Inital Portfolio funding: $5000.00
+2024-05-15 20:05:39 - Final Portfolio Value: $9175.19
+2024-05-15 20:05:39 - Percentage Gain: 83.50%
+2024-05-15 20:05:39 - Cash: $6933.17
+2024-05-15 21:16:09 - ====================== New Entry ===================
+2024-05-15 21:16:09 - Max Drawdown: 7.07%
+2024-05-15 21:16:09 - Total Trades: 188
+2024-05-15 21:16:09 - Profitable Trades: 88
+2024-05-15 21:16:09 - Sharpe Ratio: 3.16
+2024-05-15 21:16:09 - SQN: 3.39
+2024-05-15 21:16:09 - Profit Factor: -2.48
+2024-05-15 21:16:09 - Average Trade: 18.20
+2024-05-15 21:16:09 - Average Winning Trade: 65.15
+2024-05-15 21:16:09 - Average Losing Trade: -23.11
+2024-05-15 21:16:09 - Largest Winning Trade: 472.00
+2024-05-15 21:16:09 - Largest Losing Trade: -343.80
+2024-05-15 21:16:09 - Time taken: 50.93 seconds
+2024-05-15 21:16:09 - Inital Portfolio funding: $5000.00
+2024-05-15 21:16:09 - Final Portfolio Value: $8503.43
+2024-05-15 21:16:09 - Percentage Gain: 70.07%
+2024-05-15 21:16:09 - Cash: $3404.44
+2024-05-15 21:17:50 - ====================== New Entry ===================
+2024-05-15 21:17:50 - Max Drawdown: 5.80%
+2024-05-15 21:17:50 - Total Trades: 224
+2024-05-15 21:17:50 - Profitable Trades: 84
+2024-05-15 21:17:50 - Sharpe Ratio: 2.63
+2024-05-15 21:17:50 - SQN: 3.05
+2024-05-15 21:17:50 - Profit Factor: -2.25
+2024-05-15 21:17:50 - Average Trade: 20.05
+2024-05-15 21:17:50 - Average Winning Trade: 96.18
+2024-05-15 21:17:50 - Average Losing Trade: -25.62
+2024-05-15 21:17:50 - Largest Winning Trade: 582.60
+2024-05-15 21:17:50 - Largest Losing Trade: -350.68
+2024-05-15 21:17:50 - Time taken: 94.57 seconds
+2024-05-15 21:17:50 - Inital Portfolio funding: $5000.00
+2024-05-15 21:17:50 - Final Portfolio Value: $9331.05
+2024-05-15 21:17:50 - Percentage Gain: 86.62%
+2024-05-15 21:17:50 - Cash: $2283.60
+2024-05-15 21:19:27 - ====================== New Entry ===================
+2024-05-15 21:19:27 - Max Drawdown: 4.29%
+2024-05-15 21:19:27 - Total Trades: 201
+2024-05-15 21:19:27 - Profitable Trades: 80
+2024-05-15 21:19:27 - Sharpe Ratio: 3.77
+2024-05-15 21:19:27 - SQN: 3.41
+2024-05-15 21:19:27 - Profit Factor: -2.58
+2024-05-15 21:19:27 - Average Trade: 22.42
+2024-05-15 21:19:27 - Average Winning Trade: 91.95
+2024-05-15 21:19:27 - Average Losing Trade: -23.55
+2024-05-15 21:19:27 - Largest Winning Trade: 641.53
+2024-05-15 21:19:27 - Largest Losing Trade: -108.24
+2024-05-15 21:19:27 - Time taken: 90.36 seconds
+2024-05-15 21:19:27 - Inital Portfolio funding: $5000.00
+2024-05-15 21:19:27 - Final Portfolio Value: $9948.10
+2024-05-15 21:19:27 - Percentage Gain: 98.96%
+2024-05-15 21:19:27 - Cash: $6705.60
+2024-05-15 21:24:27 - ====================== New Entry ===================
+2024-05-15 21:24:27 - Max Drawdown: 7.05%
+2024-05-15 21:24:27 - Total Trades: 216
+2024-05-15 21:24:27 - Profitable Trades: 87
+2024-05-15 21:24:27 - Sharpe Ratio: 2.54
+2024-05-15 21:24:27 - SQN: 3.37
+2024-05-15 21:24:27 - Profit Factor: -2.65
+2024-05-15 21:24:27 - Average Trade: 17.82
+2024-05-15 21:24:27 - Average Winning Trade: 71.04
+2024-05-15 21:24:27 - Average Losing Trade: -18.08
+2024-05-15 21:24:27 - Largest Winning Trade: 654.69
+2024-05-15 21:24:27 - Largest Losing Trade: -112.79
+2024-05-15 21:24:27 - Time taken: 125.76 seconds
+2024-05-15 21:24:27 - Inital Portfolio funding: $5000.00
+2024-05-15 21:24:27 - Final Portfolio Value: $8986.28
+2024-05-15 21:24:27 - Percentage Gain: 79.73%
+2024-05-15 21:24:27 - Cash: $2309.87
+2024-05-15 22:06:21 - ====================== New Entry ===================
+2024-05-15 22:06:21 - Max Drawdown: 8.81%
+2024-05-15 22:06:21 - Total Trades: 209
+2024-05-15 22:06:21 - Profitable Trades: 92
+2024-05-15 22:06:21 - Sharpe Ratio: 6.20
+2024-05-15 22:06:21 - SQN: 3.74
+2024-05-15 22:06:21 - Profit Factor: -4.04
+2024-05-15 22:06:21 - Average Trade: 41.91
+2024-05-15 22:06:21 - Average Winning Trade: 126.54
+2024-05-15 22:06:21 - Average Losing Trade: -24.64
+2024-05-15 22:06:21 - Largest Winning Trade: 1251.54
+2024-05-15 22:06:21 - Largest Losing Trade: -153.36
+2024-05-15 22:06:21 - Time taken: 91.52 seconds
+2024-05-15 22:06:21 - Inital Portfolio funding: $5000.00
+2024-05-15 22:06:21 - Final Portfolio Value: $13710.66
+2024-05-15 22:06:21 - Percentage Gain: 174.21%
+2024-05-15 22:06:21 - Cash: $5507.56
+2024-05-16 12:51:06 - ====================== New Entry ===================
+2024-05-16 12:51:06 - Max Drawdown: 5.25%
+2024-05-16 12:51:06 - Total Trades: 218
+2024-05-16 12:51:06 - Profitable Trades: 90
+2024-05-16 12:51:06 - Sharpe Ratio: 2.77
+2024-05-16 12:51:06 - SQN: 3.30
+2024-05-16 12:51:06 - Profit Factor: -2.59
+2024-05-16 12:51:06 - Average Trade: 20.33
+2024-05-16 12:51:06 - Average Winning Trade: 80.17
+2024-05-16 12:51:06 - Average Losing Trade: -21.74
+2024-05-16 12:51:06 - Largest Winning Trade: 610.56
+2024-05-16 12:51:06 - Largest Losing Trade: -113.30
+2024-05-16 12:51:06 - Time taken: 93.12 seconds
+2024-05-16 12:51:06 - Inital Portfolio funding: $5000.00
+2024-05-16 12:51:06 - Final Portfolio Value: $9441.11
+2024-05-16 12:51:06 - Percentage Gain: 88.82%
+2024-05-16 12:51:06 - Cash: $870.12
+2024-05-16 12:52:50 - ====================== New Entry ===================
+2024-05-16 12:52:50 - Max Drawdown: 5.73%
+2024-05-16 12:52:50 - Total Trades: 230
+2024-05-16 12:52:50 - Profitable Trades: 93
+2024-05-16 12:52:50 - Sharpe Ratio: 5.25
+2024-05-16 12:52:50 - SQN: 3.37
+2024-05-16 12:52:50 - Profit Factor: -2.77
+2024-05-16 12:52:50 - Average Trade: 29.26
+2024-05-16 12:52:50 - Average Winning Trade: 113.31
+2024-05-16 12:52:50 - Average Losing Trade: -27.79
+2024-05-16 12:52:50 - Largest Winning Trade: 1245.54
+2024-05-16 12:52:50 - Largest Losing Trade: -270.13
+2024-05-16 12:52:50 - Time taken: 93.51 seconds
+2024-05-16 12:52:50 - Inital Portfolio funding: $5000.00
+2024-05-16 12:52:50 - Final Portfolio Value: $11510.00
+2024-05-16 12:52:50 - Percentage Gain: 130.20%
+2024-05-16 12:52:50 - Cash: $176.55
+2024-05-16 13:06:16 - ====================== New Entry ===================
+2024-05-16 13:06:16 - Max Drawdown: 6.40%
+2024-05-16 13:06:16 - Total Trades: 217
+2024-05-16 13:06:16 - Profitable Trades: 93
+2024-05-16 13:06:16 - Sharpe Ratio: 1.77
+2024-05-16 13:06:16 - SQN: 3.15
+2024-05-16 13:06:16 - Profit Factor: -3.03
+2024-05-16 13:06:16 - Average Trade: 21.92
+2024-05-16 13:06:16 - Average Winning Trade: 76.31
+2024-05-16 13:06:16 - Average Losing Trade: -18.88
+2024-05-16 13:06:16 - Largest Winning Trade: 1065.46
+2024-05-16 13:06:16 - Largest Losing Trade: -96.85
+2024-05-16 13:06:16 - Time taken: 85.95 seconds
+2024-05-16 13:06:16 - Inital Portfolio funding: $5000.00
+2024-05-16 13:06:16 - Final Portfolio Value: $10144.94
+2024-05-16 13:06:16 - Percentage Gain: 102.90%
+2024-05-16 13:06:16 - Cash: $1220.01
+2024-05-16 14:14:38 - ====================== New Entry ===================
+2024-05-16 14:14:38 - Max Drawdown: 9.76%
+2024-05-16 14:14:38 - Total Trades: 173
+2024-05-16 14:14:38 - Profitable Trades: 66
+2024-05-16 14:14:38 - Sharpe Ratio: 2.71
+2024-05-16 14:14:38 - SQN: 3.00
+2024-05-16 14:14:38 - Profit Factor: -2.36
+2024-05-16 14:14:38 - Average Trade: 16.66
+2024-05-16 14:14:38 - Average Winning Trade: 75.79
+2024-05-16 14:14:38 - Average Losing Trade: -19.82
+2024-05-16 14:14:38 - Largest Winning Trade: 501.51
+2024-05-16 14:14:38 - Largest Losing Trade: -109.02
+2024-05-16 14:14:38 - Time taken: 90.59 seconds
+2024-05-16 14:14:38 - Inital Portfolio funding: $5000.00
+2024-05-16 14:14:38 - Final Portfolio Value: $8648.28
+2024-05-16 14:14:38 - Percentage Gain: 72.97%
+2024-05-16 14:14:38 - Cash: $4110.81
+2024-05-16 14:19:22 - ====================== New Entry ===================
+2024-05-16 14:19:22 - Max Drawdown: 10.36%
+2024-05-16 14:19:22 - Total Trades: 169
+2024-05-16 14:19:22 - Profitable Trades: 62
+2024-05-16 14:19:22 - Sharpe Ratio: 1.15
+2024-05-16 14:19:22 - SQN: 1.59
+2024-05-16 14:19:22 - Profit Factor: -1.57
+2024-05-16 14:19:22 - Average Trade: 6.89
+2024-05-16 14:19:22 - Average Winning Trade: 52.01
+2024-05-16 14:19:22 - Average Losing Trade: -19.25
+2024-05-16 14:19:22 - Largest Winning Trade: 439.71
+2024-05-16 14:19:22 - Largest Losing Trade: -136.97
+2024-05-16 14:19:22 - Time taken: 54.05 seconds
+2024-05-16 14:19:22 - Inital Portfolio funding: $5000.00
+2024-05-16 14:19:22 - Final Portfolio Value: $6207.30
+2024-05-16 14:19:22 - Percentage Gain: 24.15%
+2024-05-16 14:19:22 - Cash: $2167.98
+2024-05-16 14:21:04 - ====================== New Entry ===================
+2024-05-16 14:21:04 - Max Drawdown: 5.88%
+2024-05-16 14:21:04 - Total Trades: 216
+2024-05-16 14:21:04 - Profitable Trades: 95
+2024-05-16 14:21:04 - Sharpe Ratio: 2.82
+2024-05-16 14:21:04 - SQN: 2.95
+2024-05-16 14:21:04 - Profit Factor: -3.55
+2024-05-16 14:21:04 - Average Trade: 35.85
+2024-05-16 14:21:04 - Average Winning Trade: 113.43
+2024-05-16 14:21:04 - Average Losing Trade: -25.06
+2024-05-16 14:21:04 - Largest Winning Trade: 1973.16
+2024-05-16 14:21:04 - Largest Losing Trade: -143.30
+2024-05-16 14:21:04 - Time taken: 91.34 seconds
+2024-05-16 14:21:04 - Inital Portfolio funding: $5000.00
+2024-05-16 14:21:04 - Final Portfolio Value: $13403.69
+2024-05-16 14:21:04 - Percentage Gain: 168.07%
+2024-05-16 14:21:04 - Cash: $3384.60
+2024-05-16 14:24:07 - ====================== New Entry ===================
+2024-05-16 14:24:07 - Max Drawdown: 5.36%
+2024-05-16 14:24:07 - Total Trades: 214
+2024-05-16 14:24:07 - Profitable Trades: 84
+2024-05-16 14:24:07 - Sharpe Ratio: 40.67
+2024-05-16 14:24:07 - SQN: 3.10
+2024-05-16 14:24:07 - Profit Factor: -2.63
+2024-05-16 14:24:07 - Average Trade: 26.35
+2024-05-16 14:24:07 - Average Winning Trade: 108.43
+2024-05-16 14:24:07 - Average Losing Trade: -26.68
+2024-05-16 14:24:07 - Largest Winning Trade: 1152.50
+2024-05-16 14:24:07 - Largest Losing Trade: -151.80
+2024-05-16 14:24:07 - Time taken: 93.51 seconds
+2024-05-16 14:24:07 - Inital Portfolio funding: $5000.00
+2024-05-16 14:24:07 - Final Portfolio Value: $10979.52
+2024-05-16 14:24:07 - Percentage Gain: 119.59%
+2024-05-16 14:24:07 - Cash: $5673.44
+2024-05-16 14:33:57 - ====================== New Entry ===================
+2024-05-16 14:33:57 - Max Drawdown: 5.91%
+2024-05-16 14:33:57 - Total Trades: 188
+2024-05-16 14:33:57 - Profitable Trades: 85
+2024-05-16 14:33:57 - Sharpe Ratio: 4.83
+2024-05-16 14:33:57 - SQN: 2.97
+2024-05-16 14:33:57 - Profit Factor: -2.79
+2024-05-16 14:33:57 - Average Trade: 24.91
+2024-05-16 14:33:57 - Average Winning Trade: 85.86
+2024-05-16 14:33:57 - Average Losing Trade: -25.39
+2024-05-16 14:33:57 - Largest Winning Trade: 1149.50
+2024-05-16 14:33:57 - Largest Losing Trade: -139.25
+2024-05-16 14:33:57 - Time taken: 88.43 seconds
+2024-05-16 14:33:57 - Inital Portfolio funding: $5000.00
+2024-05-16 14:33:57 - Final Portfolio Value: $9780.76
+2024-05-16 14:33:57 - Percentage Gain: 95.62%
+2024-05-16 14:33:57 - Cash: $2846.99
+2024-05-16 14:40:11 - ====================== New Entry ===================
+2024-05-16 14:40:11 - Max Drawdown: 6.47%
+2024-05-16 14:40:11 - Total Trades: 220
+2024-05-16 14:40:11 - Profitable Trades: 88
+2024-05-16 14:40:11 - Sharpe Ratio: 31.70
+2024-05-16 14:40:11 - SQN: 2.71
+2024-05-16 14:40:11 - Profit Factor: -2.34
+2024-05-16 14:40:11 - Average Trade: 20.45
+2024-05-16 14:40:11 - Average Winning Trade: 89.22
+2024-05-16 14:40:11 - Average Losing Trade: -25.39
+2024-05-16 14:40:11 - Largest Winning Trade: 954.97
+2024-05-16 14:40:11 - Largest Losing Trade: -387.72
+2024-05-16 14:40:11 - Time taken: 87.14 seconds
+2024-05-16 14:40:11 - Inital Portfolio funding: $5000.00
+2024-05-16 14:40:11 - Final Portfolio Value: $9908.69
+2024-05-16 14:40:11 - Percentage Gain: 98.17%
+2024-05-16 14:40:11 - Cash: $1368.39
+2024-05-16 14:42:27 - ====================== New Entry ===================
+2024-05-16 14:42:27 - Max Drawdown: 8.98%
+2024-05-16 14:42:27 - Total Trades: 210
+2024-05-16 14:42:27 - Profitable Trades: 103
+2024-05-16 14:42:27 - Sharpe Ratio: 6.61
+2024-05-16 14:42:27 - SQN: 3.47
+2024-05-16 14:42:27 - Profit Factor: -2.58
+2024-05-16 14:42:27 - Average Trade: 21.53
+2024-05-16 14:42:27 - Average Winning Trade: 71.77
+2024-05-16 14:42:27 - Average Losing Trade: -26.83
+2024-05-16 14:42:27 - Largest Winning Trade: 647.36
+2024-05-16 14:42:27 - Largest Losing Trade: -241.59
+2024-05-16 14:42:27 - Time taken: 90.24 seconds
+2024-05-16 14:42:27 - Inital Portfolio funding: $5000.00
+2024-05-16 14:42:27 - Final Portfolio Value: $9593.90
+2024-05-16 14:42:27 - Percentage Gain: 91.88%
+2024-05-16 14:42:27 - Cash: $2566.21
+2024-05-16 14:43:59 - ====================== New Entry ===================
+2024-05-16 14:43:59 - Max Drawdown: 9.77%
+2024-05-16 14:43:59 - Total Trades: 193
+2024-05-16 14:43:59 - Profitable Trades: 84
+2024-05-16 14:43:59 - Sharpe Ratio: 3.47
+2024-05-16 14:43:59 - SQN: 2.72
+2024-05-16 14:43:59 - Profit Factor: -2.66
+2024-05-16 14:43:59 - Average Trade: 23.82
+2024-05-16 14:43:59 - Average Winning Trade: 87.62
+2024-05-16 14:43:59 - Average Losing Trade: -25.34
+2024-05-16 14:43:59 - Largest Winning Trade: 1163.98
+2024-05-16 14:43:59 - Largest Losing Trade: -339.26
+2024-05-16 14:43:59 - Time taken: 87.46 seconds
+2024-05-16 14:43:59 - Inital Portfolio funding: $5000.00
+2024-05-16 14:43:59 - Final Portfolio Value: $9758.26
+2024-05-16 14:43:59 - Percentage Gain: 95.17%
+2024-05-16 14:43:59 - Cash: $3688.55
+2024-05-16 14:48:42 - ====================== New Entry ===================
+2024-05-16 14:48:42 - Max Drawdown: 5.42%
+2024-05-16 14:48:42 - Total Trades: 190
+2024-05-16 14:48:42 - Profitable Trades: 79
+2024-05-16 14:48:42 - Sharpe Ratio: 3.11
+2024-05-16 14:48:42 - SQN: 3.38
+2024-05-16 14:48:42 - Profit Factor: -2.71
+2024-05-16 14:48:42 - Average Trade: 23.49
+2024-05-16 14:48:42 - Average Winning Trade: 89.59
+2024-05-16 14:48:42 - Average Losing Trade: -23.55
+2024-05-16 14:48:42 - Largest Winning Trade: 593.85
+2024-05-16 14:48:42 - Largest Losing Trade: -132.86
+2024-05-16 14:48:42 - Time taken: 90.41 seconds
+2024-05-16 14:48:42 - Inital Portfolio funding: $5000.00
+2024-05-16 14:48:42 - Final Portfolio Value: $9707.62
+2024-05-16 14:48:42 - Percentage Gain: 94.15%
+2024-05-16 14:48:42 - Cash: $459.15
+2024-05-16 14:56:26 - ====================== New Entry ===================
+2024-05-16 14:56:26 - Max Drawdown: 6.21%
+2024-05-16 14:56:26 - Total Trades: 227
+2024-05-16 14:56:26 - Profitable Trades: 98
+2024-05-16 14:56:26 - Sharpe Ratio: 2.03
+2024-05-16 14:56:26 - SQN: 3.52
+2024-05-16 14:56:26 - Profit Factor: -3.16
+2024-05-16 14:56:26 - Average Trade: 32.68
+2024-05-16 14:56:26 - Average Winning Trade: 110.81
+2024-05-16 14:56:26 - Average Losing Trade: -26.68
+2024-05-16 14:56:26 - Largest Winning Trade: 1128.26
+2024-05-16 14:56:26 - Largest Losing Trade: -250.04
+2024-05-16 14:56:26 - Time taken: 182.60 seconds
+2024-05-16 14:56:26 - Inital Portfolio funding: $5000.00
+2024-05-16 14:56:26 - Final Portfolio Value: $12219.82
+2024-05-16 14:56:26 - Percentage Gain: 144.40%
+2024-05-16 14:56:26 - Cash: $371.55
+2024-05-16 15:07:56 - ====================== New Entry ===================
+2024-05-16 15:07:56 - Max Drawdown: 5.52%
+2024-05-16 15:07:56 - Total Trades: 231
+2024-05-16 15:07:56 - Profitable Trades: 94
+2024-05-16 15:07:56 - Sharpe Ratio: 16.12
+2024-05-16 15:07:56 - SQN: 3.50
+2024-05-16 15:07:56 - Profit Factor: -2.90
+2024-05-16 15:07:56 - Average Trade: 30.25
+2024-05-16 15:07:56 - Average Winning Trade: 113.42
+2024-05-16 15:07:56 - Average Losing Trade: -26.82
+2024-05-16 15:07:56 - Largest Winning Trade: 1131.49
+2024-05-16 15:07:56 - Largest Losing Trade: -163.86
+2024-05-16 15:07:56 - Time taken: 178.72 seconds
+2024-05-16 15:07:56 - Inital Portfolio funding: $5000.00
+2024-05-16 15:07:56 - Final Portfolio Value: $11716.82
+2024-05-16 15:07:56 - Percentage Gain: 134.34%
+2024-05-16 15:07:56 - Cash: $5122.99
+2024-05-16 15:11:16 - ====================== New Entry ===================
+2024-05-16 15:11:16 - Max Drawdown: 9.87%
+2024-05-16 15:11:16 - Total Trades: 182
+2024-05-16 15:11:16 - Profitable Trades: 76
+2024-05-16 15:11:16 - Sharpe Ratio: 70.72
+2024-05-16 15:11:16 - SQN: 3.02
+2024-05-16 15:11:16 - Profit Factor: -2.67
+2024-05-16 15:11:16 - Average Trade: 21.70
+2024-05-16 15:11:16 - Average Winning Trade: 83.15
+2024-05-16 15:11:16 - Average Losing Trade: -22.35
+2024-05-16 15:11:16 - Largest Winning Trade: 611.32
+2024-05-16 15:11:16 - Largest Losing Trade: -122.16
+2024-05-16 15:11:16 - Time taken: 180.29 seconds
+2024-05-16 15:11:16 - Inital Portfolio funding: $5000.00
+2024-05-16 15:11:16 - Final Portfolio Value: $9139.03
+2024-05-16 15:11:16 - Percentage Gain: 82.78%
+2024-05-16 15:11:16 - Cash: $3532.12
+2024-05-16 15:12:14 - ====================== New Entry ===================
+2024-05-16 15:12:14 - Max Drawdown: 7.97%
+2024-05-16 15:12:14 - Total Trades: 152
+2024-05-16 15:12:14 - Profitable Trades: 70
+2024-05-16 15:12:14 - Sharpe Ratio: 2.16
+2024-05-16 15:12:14 - SQN: 2.91
+2024-05-16 15:12:14 - Profit Factor: -2.67
+2024-05-16 15:12:14 - Average Trade: 25.04
+2024-05-16 15:12:14 - Average Winning Trade: 86.85
+2024-05-16 15:12:14 - Average Losing Trade: -27.72
+2024-05-16 15:12:14 - Largest Winning Trade: 629.60
+2024-05-16 15:12:14 - Largest Losing Trade: -172.84
+2024-05-16 15:12:14 - Time taken: 37.05 seconds
+2024-05-16 15:12:14 - Inital Portfolio funding: $5000.00
+2024-05-16 15:12:14 - Final Portfolio Value: $9102.08
+2024-05-16 15:12:14 - Percentage Gain: 82.04%
+2024-05-16 15:12:14 - Cash: $4684.27
+2024-05-16 15:12:55 - ====================== New Entry ===================
+2024-05-16 15:12:55 - Max Drawdown: 6.09%
+2024-05-16 15:12:55 - Total Trades: 153
+2024-05-16 15:12:55 - Profitable Trades: 68
+2024-05-16 15:12:55 - Sharpe Ratio: 4.64
+2024-05-16 15:12:55 - SQN: 2.58
+2024-05-16 15:12:55 - Profit Factor: -2.12
+2024-05-16 15:12:55 - Average Trade: 13.54
+2024-05-16 15:12:55 - Average Winning Trade: 57.64
+2024-05-16 15:12:55 - Average Losing Trade: -21.73
+2024-05-16 15:12:55 - Largest Winning Trade: 422.75
+2024-05-16 15:12:55 - Largest Losing Trade: -145.12
+2024-05-16 15:12:55 - Time taken: 37.39 seconds
+2024-05-16 15:12:55 - Inital Portfolio funding: $5000.00
+2024-05-16 15:12:55 - Final Portfolio Value: $7269.67
+2024-05-16 15:12:55 - Percentage Gain: 45.39%
+2024-05-16 15:12:55 - Cash: $2362.56
+2024-05-16 15:13:34 - ====================== New Entry ===================
+2024-05-16 15:13:34 - Max Drawdown: 8.66%
+2024-05-16 15:13:34 - Total Trades: 151
+2024-05-16 15:13:34 - Profitable Trades: 55
+2024-05-16 15:13:34 - Sharpe Ratio: 20.57
+2024-05-16 15:13:34 - SQN: 2.45
+2024-05-16 15:13:34 - Profit Factor: -2.31
+2024-05-16 15:13:34 - Average Trade: 17.61
+2024-05-16 15:13:34 - Average Winning Trade: 85.33
+2024-05-16 15:13:34 - Average Losing Trade: -21.19
+2024-05-16 15:13:34 - Largest Winning Trade: 524.67
+2024-05-16 15:13:34 - Largest Losing Trade: -109.74
+2024-05-16 15:13:34 - Time taken: 35.56 seconds
+2024-05-16 15:13:34 - Inital Portfolio funding: $5000.00
+2024-05-16 15:13:34 - Final Portfolio Value: $8021.99
+2024-05-16 15:13:34 - Percentage Gain: 60.44%
+2024-05-16 15:13:34 - Cash: $754.13
+2024-05-16 15:27:38 - ====================== New Entry ===================
+2024-05-16 15:27:38 - Max Drawdown: 9.89%
+2024-05-16 15:27:38 - Total Trades: 165
+2024-05-16 15:27:38 - Profitable Trades: 64
+2024-05-16 15:27:38 - Sharpe Ratio: 2.10
+2024-05-16 15:27:38 - SQN: 2.33
+2024-05-16 15:27:38 - Profit Factor: -2.10
+2024-05-16 15:27:38 - Average Trade: 14.12
+2024-05-16 15:27:38 - Average Winning Trade: 69.48
+2024-05-16 15:27:38 - Average Losing Trade: -20.96
+2024-05-16 15:27:38 - Largest Winning Trade: 579.63
+2024-05-16 15:27:38 - Largest Losing Trade: -140.23
+2024-05-16 15:27:38 - Time taken: 37.57 seconds
+2024-05-16 15:27:38 - Inital Portfolio funding: $5000.00
+2024-05-16 15:27:38 - Final Portfolio Value: $7951.42
+2024-05-16 15:27:38 - Percentage Gain: 59.03%
+2024-05-16 15:27:38 - Cash: $3944.38
+2024-05-16 15:37:00 - ====================== New Entry ===================
+2024-05-16 15:37:00 - Max Drawdown: 5.08%
+2024-05-16 15:37:00 - Total Trades: 146
+2024-05-16 15:37:00 - Profitable Trades: 66
+2024-05-16 15:37:00 - Sharpe Ratio: 2.53
+2024-05-16 15:37:00 - SQN: 3.52
+2024-05-16 15:37:00 - Profit Factor: -3.14
+2024-05-16 15:37:00 - Average Trade: 19.77
+2024-05-16 15:37:00 - Average Winning Trade: 64.15
+2024-05-16 15:37:00 - Average Losing Trade: -16.85
+2024-05-16 15:37:00 - Largest Winning Trade: 472.01
+2024-05-16 15:37:00 - Largest Losing Trade: -81.78
+2024-05-16 15:37:00 - Time taken: 36.73 seconds
+2024-05-16 15:37:00 - Inital Portfolio funding: $5000.00
+2024-05-16 15:37:00 - Final Portfolio Value: $8017.11
+2024-05-16 15:37:00 - Percentage Gain: 60.34%
+2024-05-16 15:37:00 - Cash: $2968.65
+2024-05-16 15:37:44 - ====================== New Entry ===================
+2024-05-16 15:37:44 - Max Drawdown: 9.20%
+2024-05-16 15:37:44 - Total Trades: 170
+2024-05-16 15:37:44 - Profitable Trades: 63
+2024-05-16 15:37:44 - Sharpe Ratio: 1.38
+2024-05-16 15:37:44 - SQN: 2.29
+2024-05-16 15:37:44 - Profit Factor: -2.03
+2024-05-16 15:37:44 - Average Trade: 11.83
+2024-05-16 15:37:44 - Average Winning Trade: 62.96
+2024-05-16 15:37:44 - Average Losing Trade: -18.27
+2024-05-16 15:37:44 - Largest Winning Trade: 504.57
+2024-05-16 15:37:44 - Largest Losing Trade: -96.12
+2024-05-16 15:37:44 - Time taken: 39.66 seconds
+2024-05-16 15:37:44 - Inital Portfolio funding: $5000.00
+2024-05-16 15:37:44 - Final Portfolio Value: $7573.78
+2024-05-16 15:37:44 - Percentage Gain: 51.48%
+2024-05-16 15:37:44 - Cash: $2370.53
+2024-05-16 15:49:21 - ====================== New Entry ===================
+2024-05-16 15:49:21 - Max Drawdown: 6.91%
+2024-05-16 15:49:21 - Total Trades: 168
+2024-05-16 15:49:21 - Profitable Trades: 68
+2024-05-16 15:49:21 - Sharpe Ratio: 21.30
+2024-05-16 15:49:21 - SQN: 2.67
+2024-05-16 15:49:21 - Profit Factor: -4.18
+2024-05-16 15:49:21 - Average Trade: 35.21
+2024-05-16 15:49:21 - Average Winning Trade: 114.37
+2024-05-16 15:49:21 - Average Losing Trade: -18.62
+2024-05-16 15:49:21 - Largest Winning Trade: 1605.50
+2024-05-16 15:49:21 - Largest Losing Trade: -143.80
+2024-05-16 15:49:21 - Time taken: 94.11 seconds
+2024-05-16 15:49:21 - Inital Portfolio funding: $5000.00
+2024-05-16 15:49:21 - Final Portfolio Value: $10996.34
+2024-05-16 15:49:21 - Percentage Gain: 119.93%
+2024-05-16 15:49:21 - Cash: $3605.64
+2024-05-16 18:14:33 - ====================== New Entry ===================
+2024-05-16 18:14:33 - Max Drawdown: 12.67%
+2024-05-16 18:14:33 - Total Trades: 174
+2024-05-16 18:14:33 - Profitable Trades: 77
+2024-05-16 18:14:33 - Sharpe Ratio: 1.54
+2024-05-16 18:14:33 - SQN: 3.13
+2024-05-16 18:14:33 - Profit Factor: -2.44
+2024-05-16 18:14:33 - Average Trade: 23.06
+2024-05-16 18:14:33 - Average Winning Trade: 88.26
+2024-05-16 18:14:33 - Average Losing Trade: -28.69
+2024-05-16 18:14:33 - Largest Winning Trade: 585.20
+2024-05-16 18:14:33 - Largest Losing Trade: -386.96
+2024-05-16 18:14:33 - Time taken: 133.63 seconds
+2024-05-16 18:14:33 - Inital Portfolio funding: $5000.00
+2024-05-16 18:14:33 - Final Portfolio Value: $8922.96
+2024-05-16 18:14:33 - Percentage Gain: 78.46%
+2024-05-16 18:14:33 - Cash: $3411.71
+2024-05-16 18:19:41 - ====================== New Entry ===================
+2024-05-16 18:19:41 - Max Drawdown: 5.19%
+2024-05-16 18:19:41 - Total Trades: 190
+2024-05-16 18:19:41 - Profitable Trades: 79
+2024-05-16 18:19:41 - Sharpe Ratio: 28.35
+2024-05-16 18:19:41 - SQN: 3.25
+2024-05-16 18:19:41 - Profit Factor: -3.42
+2024-05-16 18:19:41 - Average Trade: 28.07
+2024-05-16 18:19:41 - Average Winning Trade: 95.44
+2024-05-16 18:19:41 - Average Losing Trade: -19.88
+2024-05-16 18:19:41 - Largest Winning Trade: 893.23
+2024-05-16 18:19:41 - Largest Losing Trade: -140.27
+2024-05-16 18:19:41 - Time taken: 135.61 seconds
+2024-05-16 18:19:41 - Inital Portfolio funding: $5000.00
+2024-05-16 18:19:41 - Final Portfolio Value: $10553.14
+2024-05-16 18:19:41 - Percentage Gain: 111.06%
+2024-05-16 18:19:41 - Cash: $2042.58
+2024-05-16 19:19:40 - ====================== New Entry ===================
+2024-05-16 19:19:40 - Max Drawdown: 13.07%
+2024-05-16 19:19:40 - Total Trades: 163
+2024-05-16 19:19:40 - Profitable Trades: 66
+2024-05-16 19:19:40 - Sharpe Ratio: 2.37
+2024-05-16 19:19:40 - SQN: 1.69
+2024-05-16 19:19:40 - Profit Factor: -1.60
+2024-05-16 19:19:40 - Average Trade: 6.91
+2024-05-16 19:19:40 - Average Winning Trade: 45.73
+2024-05-16 19:19:40 - Average Losing Trade: -19.50
+2024-05-16 19:19:40 - Largest Winning Trade: 381.70
+2024-05-16 19:19:40 - Largest Losing Trade: -145.12
+2024-05-16 19:19:40 - Time taken: 62.25 seconds
+2024-05-16 19:19:40 - Inital Portfolio funding: $5000.00
+2024-05-16 19:19:40 - Final Portfolio Value: $6290.58
+2024-05-16 19:19:40 - Percentage Gain: 25.81%
+2024-05-16 19:19:40 - Cash: $2546.58
+2024-05-16 19:26:53 - ====================== New Entry ===================
+2024-05-16 19:26:53 - Max Drawdown: 7.83%
+2024-05-16 19:26:53 - Total Trades: 192
+2024-05-16 19:26:53 - Profitable Trades: 88
+2024-05-16 19:26:53 - Sharpe Ratio: 7.55
+2024-05-16 19:26:53 - SQN: 3.58
+2024-05-16 19:26:53 - Profit Factor: -3.69
+2024-05-16 19:26:53 - Average Trade: 36.87
+2024-05-16 19:26:53 - Average Winning Trade: 110.29
+2024-05-16 19:26:53 - Average Losing Trade: -25.26
+2024-05-16 19:26:53 - Largest Winning Trade: 1278.55
+2024-05-16 19:26:53 - Largest Losing Trade: -121.77
+2024-05-16 19:26:53 - Time taken: 66.03 seconds
+2024-05-16 19:26:53 - Inital Portfolio funding: $5000.00
+2024-05-16 19:26:53 - Final Portfolio Value: $12138.96
+2024-05-16 19:26:53 - Percentage Gain: 142.78%
+2024-05-16 19:26:53 - Cash: $1342.18
+2024-05-16 23:23:09 - ====================== New Entry ===================
+2024-05-16 23:23:09 - Max Drawdown: 6.48%
+2024-05-16 23:23:09 - Total Trades: 121
+2024-05-16 23:23:09 - Profitable Trades: 45
+2024-05-16 23:23:09 - Sharpe Ratio: 3.07
+2024-05-16 23:23:09 - SQN: 1.58
+2024-05-16 23:23:09 - Profit Factor: -2.08
+2024-05-16 23:23:09 - Average Trade: 13.84
+2024-05-16 23:23:09 - Average Winning Trade: 71.67
+2024-05-16 23:23:09 - Average Losing Trade: -20.40
+2024-05-16 23:23:09 - Largest Winning Trade: 906.39
+2024-05-16 23:23:09 - Largest Losing Trade: -109.31
+2024-05-16 23:23:09 - Time taken: 19.43 seconds
+2024-05-16 23:23:09 - Inital Portfolio funding: $5000.00
+2024-05-16 23:23:09 - Final Portfolio Value: $6701.08
+2024-05-16 23:23:09 - Percentage Gain: 34.02%
+2024-05-16 23:23:09 - Cash: $2671.20
+2024-05-16 23:24:51 - ====================== New Entry ===================
+2024-05-16 23:24:51 - Max Drawdown: 8.64%
+2024-05-16 23:24:51 - Total Trades: 200
+2024-05-16 23:24:51 - Profitable Trades: 84
+2024-05-16 23:24:51 - Sharpe Ratio: 9.26
+2024-05-16 23:24:51 - SQN: 2.70
+2024-05-16 23:24:51 - Profit Factor: -2.53
+2024-05-16 23:24:51 - Average Trade: 21.64
+2024-05-16 23:24:51 - Average Winning Trade: 85.08
+2024-05-16 23:24:51 - Average Losing Trade: -24.30
+2024-05-16 23:24:51 - Largest Winning Trade: 1021.87
+2024-05-16 23:24:51 - Largest Losing Trade: -350.68
+2024-05-16 23:24:51 - Time taken: 96.81 seconds
+2024-05-16 23:24:51 - Inital Portfolio funding: $5000.00
+2024-05-16 23:24:51 - Final Portfolio Value: $9520.14
+2024-05-16 23:24:51 - Percentage Gain: 90.40%
+2024-05-16 23:24:51 - Cash: $2852.92
+2024-05-17 19:53:21 - ====================== New Entry ===================
+2024-05-17 19:53:21 - Max Drawdown: 7.02%
+2024-05-17 19:53:21 - Total Trades: 211
+2024-05-17 19:53:21 - Profitable Trades: 85
+2024-05-17 19:53:21 - Sharpe Ratio: 3.23
+2024-05-17 19:53:21 - SQN: 2.39
+2024-05-17 19:53:21 - Profit Factor: -1.79
+2024-05-17 19:53:21 - Average Trade: 10.23
+2024-05-17 19:53:21 - Average Winning Trade: 57.46
+2024-05-17 19:53:21 - Average Losing Trade: -21.63
+2024-05-17 19:53:21 - Largest Winning Trade: 364.55
+2024-05-17 19:53:21 - Largest Losing Trade: -350.68
+2024-05-17 19:53:21 - Time taken: 95.64 seconds
+2024-05-17 19:53:21 - Inital Portfolio funding: $5000.00
+2024-05-17 19:53:21 - Final Portfolio Value: $7641.14
+2024-05-17 19:53:21 - Percentage Gain: 52.82%
+2024-05-17 19:53:21 - Cash: $3544.86
+2024-05-17 20:00:43 - ====================== New Entry ===================
+2024-05-17 20:00:43 - Max Drawdown: 9.11%
+2024-05-17 20:00:43 - Total Trades: 181
+2024-05-17 20:00:43 - Profitable Trades: 71
+2024-05-17 20:00:43 - Sharpe Ratio: 2.71
+2024-05-17 20:00:43 - SQN: 2.67
+2024-05-17 20:00:43 - Profit Factor: -2.39
+2024-05-17 20:00:43 - Average Trade: 21.79
+2024-05-17 20:00:43 - Average Winning Trade: 95.38
+2024-05-17 20:00:43 - Average Losing Trade: -25.72
+2024-05-17 20:00:43 - Largest Winning Trade: 651.01
+2024-05-17 20:00:43 - Largest Losing Trade: -389.98
+2024-05-17 20:00:43 - Time taken: 91.31 seconds
+2024-05-17 20:00:43 - Inital Portfolio funding: $5000.00
+2024-05-17 20:00:43 - Final Portfolio Value: $9127.50
+2024-05-17 20:00:43 - Percentage Gain: 82.55%
+2024-05-17 20:00:43 - Cash: $2531.86
+2024-05-17 20:17:39 - ====================== New Entry ===================
+2024-05-17 20:17:39 - Max Drawdown: 6.33%
+2024-05-17 20:17:39 - Total Trades: 175
+2024-05-17 20:17:39 - Profitable Trades: 76
+2024-05-17 20:17:39 - Sharpe Ratio: 6.92
+2024-05-17 20:17:39 - SQN: 2.51
+2024-05-17 20:17:39 - Profit Factor: -2.23
+2024-05-17 20:17:39 - Average Trade: 14.79
+2024-05-17 20:17:39 - Average Winning Trade: 61.71
+2024-05-17 20:17:39 - Average Losing Trade: -21.24
+2024-05-17 20:17:39 - Largest Winning Trade: 512.32
+2024-05-17 20:17:39 - Largest Losing Trade: -338.59
+2024-05-17 20:17:39 - Time taken: 89.64 seconds
+2024-05-17 20:17:39 - Inital Portfolio funding: $5000.00
+2024-05-17 20:17:39 - Final Portfolio Value: $7850.48
+2024-05-17 20:17:39 - Percentage Gain: 57.01%
+2024-05-17 20:17:39 - Cash: $3303.68
+2024-05-17 20:19:18 - ====================== New Entry ===================
+2024-05-17 20:19:18 - Max Drawdown: 7.77%
+2024-05-17 20:19:18 - Total Trades: 196
+2024-05-17 20:19:18 - Profitable Trades: 77
+2024-05-17 20:19:18 - Sharpe Ratio: 1.20
+2024-05-17 20:19:18 - SQN: 2.35
+2024-05-17 20:19:18 - Profit Factor: -1.86
+2024-05-17 20:19:18 - Average Trade: 12.43
+2024-05-17 20:19:18 - Average Winning Trade: 68.50
+2024-05-17 20:19:18 - Average Losing Trade: -23.86
+2024-05-17 20:19:18 - Largest Winning Trade: 521.93
+2024-05-17 20:19:18 - Largest Losing Trade: -380.91
+2024-05-17 20:19:18 - Time taken: 91.31 seconds
+2024-05-17 20:19:18 - Inital Portfolio funding: $5000.00
+2024-05-17 20:19:18 - Final Portfolio Value: $7906.05
+2024-05-17 20:19:18 - Percentage Gain: 58.12%
+2024-05-17 20:19:18 - Cash: $1026.74
+2024-05-17 20:20:52 - ====================== New Entry ===================
+2024-05-17 20:20:52 - Max Drawdown: 9.12%
+2024-05-17 20:20:52 - Total Trades: 205
+2024-05-17 20:20:52 - Profitable Trades: 81
+2024-05-17 20:20:52 - Sharpe Ratio: 15.00
+2024-05-17 20:20:52 - SQN: 2.52
+2024-05-17 20:20:52 - Profit Factor: -3.80
+2024-05-17 20:20:52 - Average Trade: 40.39
+2024-05-17 20:20:52 - Average Winning Trade: 138.74
+2024-05-17 20:20:52 - Average Losing Trade: -23.85
+2024-05-17 20:20:52 - Largest Winning Trade: 2479.12
+2024-05-17 20:20:52 - Largest Losing Trade: -141.83
+2024-05-17 20:20:52 - Time taken: 90.60 seconds
+2024-05-17 20:20:52 - Inital Portfolio funding: $5000.00
+2024-05-17 20:20:52 - Final Portfolio Value: $13499.02
+2024-05-17 20:20:52 - Percentage Gain: 169.98%
+2024-05-17 20:20:52 - Cash: $3335.86
+2024-05-17 20:51:11 - ====================== New Entry ===================
+2024-05-17 20:51:11 - Max Drawdown: 10.84%
+2024-05-17 20:51:11 - Total Trades: 187
+2024-05-17 20:51:11 - Profitable Trades: 72
+2024-05-17 20:51:11 - Sharpe Ratio: 2.16
+2024-05-17 20:51:11 - SQN: 2.86
+2024-05-17 20:51:11 - Profit Factor: -2.80
+2024-05-17 20:51:11 - Average Trade: 21.74
+2024-05-17 20:51:11 - Average Winning Trade: 87.91
+2024-05-17 20:51:11 - Average Losing Trade: -19.69
+2024-05-17 20:51:11 - Largest Winning Trade: 921.40
+2024-05-17 20:51:11 - Largest Losing Trade: -104.42
+2024-05-17 20:51:11 - Time taken: 88.23 seconds
+2024-05-17 20:51:11 - Inital Portfolio funding: $5000.00
+2024-05-17 20:51:11 - Final Portfolio Value: $9136.81
+2024-05-17 20:51:11 - Percentage Gain: 82.74%
+2024-05-17 20:51:11 - Cash: $2155.03
+2024-05-17 20:52:49 - ====================== New Entry ===================
+2024-05-17 20:52:49 - Max Drawdown: 11.19%
+2024-05-17 20:52:49 - Total Trades: 174
+2024-05-17 20:52:49 - Profitable Trades: 72
+2024-05-17 20:52:49 - Sharpe Ratio: 7.32
+2024-05-17 20:52:49 - SQN: 3.07
+2024-05-17 20:52:49 - Profit Factor: -2.21
+2024-05-17 20:52:49 - Average Trade: 15.81
+2024-05-17 20:52:49 - Average Winning Trade: 69.77
+2024-05-17 20:52:49 - Average Losing Trade: -22.28
+2024-05-17 20:52:49 - Largest Winning Trade: 407.33
+2024-05-17 20:52:49 - Largest Losing Trade: -109.89
+2024-05-17 20:52:49 - Time taken: 88.52 seconds
+2024-05-17 20:52:49 - Inital Portfolio funding: $5000.00
+2024-05-17 20:52:49 - Final Portfolio Value: $7818.80
+2024-05-17 20:52:49 - Percentage Gain: 56.38%
+2024-05-17 20:52:49 - Cash: $761.95
+2024-05-17 20:54:24 - ====================== New Entry ===================
+2024-05-17 20:54:24 - Max Drawdown: 10.04%
+2024-05-17 20:54:24 - Total Trades: 184
+2024-05-17 20:54:24 - Profitable Trades: 83
+2024-05-17 20:54:24 - Sharpe Ratio: 1.77
+2024-05-17 20:54:24 - SQN: 3.18
+2024-05-17 20:54:24 - Profit Factor: -3.19
+2024-05-17 20:54:24 - Average Trade: 25.34
+2024-05-17 20:54:24 - Average Winning Trade: 81.86
+2024-05-17 20:54:24 - Average Losing Trade: -21.11
+2024-05-17 20:54:24 - Largest Winning Trade: 1035.45
+2024-05-17 20:54:24 - Largest Losing Trade: -141.86
+2024-05-17 20:54:24 - Time taken: 90.94 seconds
+2024-05-17 20:54:24 - Inital Portfolio funding: $5000.00
+2024-05-17 20:54:24 - Final Portfolio Value: $9837.87
+2024-05-17 20:54:24 - Percentage Gain: 96.76%
+2024-05-17 20:54:24 - Cash: $3559.46
+2024-05-17 21:06:22 - ====================== New Entry ===================
+2024-05-17 21:06:22 - Max Drawdown: 4.62%
+2024-05-17 21:06:22 - Total Trades: 208
+2024-05-17 21:06:22 - Profitable Trades: 82
+2024-05-17 21:06:22 - Sharpe Ratio: 3.59
+2024-05-17 21:06:22 - SQN: 2.97
+2024-05-17 21:06:22 - Profit Factor: -2.06
+2024-05-17 21:06:22 - Average Trade: 12.10
+2024-05-17 21:06:22 - Average Winning Trade: 59.77
+2024-05-17 21:06:22 - Average Losing Trade: -18.92
+2024-05-17 21:06:22 - Largest Winning Trade: 455.58
+2024-05-17 21:06:22 - Largest Losing Trade: -80.91
+2024-05-17 21:06:22 - Time taken: 62.61 seconds
+2024-05-17 21:06:22 - Inital Portfolio funding: $5000.00
+2024-05-17 21:06:22 - Final Portfolio Value: $7906.31
+2024-05-17 21:06:22 - Percentage Gain: 58.13%
+2024-05-17 21:06:22 - Cash: $2149.19
+2024-05-17 21:07:54 - ====================== New Entry ===================
+2024-05-17 21:07:54 - Max Drawdown: 5.66%
+2024-05-17 21:07:54 - Total Trades: 192
+2024-05-17 21:07:54 - Profitable Trades: 78
+2024-05-17 21:07:54 - Sharpe Ratio: 3.31
+2024-05-17 21:07:54 - SQN: 3.45
+2024-05-17 21:07:54 - Profit Factor: -2.82
+2024-05-17 21:07:54 - Average Trade: 23.64
+2024-05-17 21:07:54 - Average Winning Trade: 90.21
+2024-05-17 21:07:54 - Average Losing Trade: -21.92
+2024-05-17 21:07:54 - Largest Winning Trade: 585.20
+2024-05-17 21:07:54 - Largest Losing Trade: -92.31
+2024-05-17 21:07:54 - Time taken: 63.67 seconds
+2024-05-17 21:07:54 - Inital Portfolio funding: $5000.00
+2024-05-17 21:07:54 - Final Portfolio Value: $9472.47
+2024-05-17 21:07:54 - Percentage Gain: 89.45%
+2024-05-17 21:07:54 - Cash: $5086.70
+2024-05-17 21:10:09 - ====================== New Entry ===================
+2024-05-17 21:10:09 - Max Drawdown: 6.75%
+2024-05-17 21:10:09 - Total Trades: 167
+2024-05-17 21:10:09 - Profitable Trades: 71
+2024-05-17 21:10:09 - Sharpe Ratio: 2.22
+2024-05-17 21:10:09 - SQN: 3.15
+2024-05-17 21:10:09 - Profit Factor: -2.78
+2024-05-17 21:10:09 - Average Trade: 19.80
+2024-05-17 21:10:09 - Average Winning Trade: 72.82
+2024-05-17 21:10:09 - Average Losing Trade: -19.41
+2024-05-17 21:10:09 - Largest Winning Trade: 712.22
+2024-05-17 21:10:09 - Largest Losing Trade: -126.75
+2024-05-17 21:10:09 - Time taken: 66.84 seconds
+2024-05-17 21:10:09 - Inital Portfolio funding: $5000.00
+2024-05-17 21:10:09 - Final Portfolio Value: $8235.57
+2024-05-17 21:10:09 - Percentage Gain: 64.71%
+2024-05-17 21:10:09 - Cash: $3675.61
+2024-05-17 21:11:42 - ====================== New Entry ===================
+2024-05-17 21:11:42 - Max Drawdown: 6.16%
+2024-05-17 21:11:42 - Total Trades: 90
+2024-05-17 21:11:42 - Profitable Trades: 30
+2024-05-17 21:11:42 - Sharpe Ratio: 0.06
+2024-05-17 21:11:42 - SQN: 1.38
+2024-05-17 21:11:42 - Profit Factor: -1.57
+2024-05-17 21:11:42 - Average Trade: 6.29
+2024-05-17 21:11:42 - Average Winning Trade: 52.00
+2024-05-17 21:11:42 - Average Losing Trade: -16.56
+2024-05-17 21:11:42 - Largest Winning Trade: 262.40
+2024-05-17 21:11:42 - Largest Losing Trade: -58.33
+2024-05-17 21:11:42 - Time taken: 18.26 seconds
+2024-05-17 21:11:42 - Inital Portfolio funding: $5000.00
+2024-05-17 21:11:42 - Final Portfolio Value: $5533.20
+2024-05-17 21:11:42 - Percentage Gain: 10.66%
+2024-05-17 21:11:42 - Cash: $4627.52
+2024-05-17 21:13:34 - ====================== New Entry ===================
+2024-05-17 21:13:34 - Max Drawdown: 10.72%
+2024-05-17 21:13:34 - Total Trades: 184
+2024-05-17 21:13:34 - Profitable Trades: 69
+2024-05-17 21:13:34 - Sharpe Ratio: 2.01
+2024-05-17 21:13:34 - SQN: 2.72
+2024-05-17 21:13:34 - Profit Factor: -2.23
+2024-05-17 21:13:34 - Average Trade: 13.49
+2024-05-17 21:13:34 - Average Winning Trade: 65.30
+2024-05-17 21:13:34 - Average Losing Trade: -17.60
+2024-05-17 21:13:34 - Largest Winning Trade: 488.91
+2024-05-17 21:13:34 - Largest Losing Trade: -88.20
+2024-05-17 21:13:34 - Time taken: 91.11 seconds
+2024-05-17 21:13:34 - Inital Portfolio funding: $5000.00
+2024-05-17 21:13:34 - Final Portfolio Value: $7686.48
+2024-05-17 21:13:34 - Percentage Gain: 53.73%
+2024-05-17 21:13:34 - Cash: $1112.32
+2024-05-17 21:15:15 - ====================== New Entry ===================
+2024-05-17 21:15:15 - Max Drawdown: 10.58%
+2024-05-17 21:15:15 - Total Trades: 180
+2024-05-17 21:15:15 - Profitable Trades: 68
+2024-05-17 21:15:15 - Sharpe Ratio: 8.73
+2024-05-17 21:15:15 - SQN: 2.20
+2024-05-17 21:15:15 - Profit Factor: -2.25
+2024-05-17 21:15:15 - Average Trade: 17.76
+2024-05-17 21:15:15 - Average Winning Trade: 84.54
+2024-05-17 21:15:15 - Average Losing Trade: -22.79
+2024-05-17 21:15:15 - Largest Winning Trade: 1011.44
+2024-05-17 21:15:15 - Largest Losing Trade: -338.59
+2024-05-17 21:15:15 - Time taken: 87.20 seconds
+2024-05-17 21:15:15 - Inital Portfolio funding: $5000.00
+2024-05-17 21:15:15 - Final Portfolio Value: $8207.78
+2024-05-17 21:15:15 - Percentage Gain: 64.16%
+2024-05-17 21:15:15 - Cash: $2299.81
+2024-05-17 21:19:41 - ====================== New Entry ===================
+2024-05-17 21:19:41 - Max Drawdown: 0.89%
+2024-05-17 21:19:41 - Total Trades: 11
+2024-05-17 21:19:41 - Profitable Trades: 4
+2024-05-17 21:19:41 - Sharpe Ratio: -26.65
+2024-05-17 21:19:41 - SQN: 0.72
+2024-05-17 21:19:41 - Profit Factor: -2.35
+2024-05-17 21:19:41 - Average Trade: 5.08
+2024-05-17 21:19:41 - Average Winning Trade: 24.29
+2024-05-17 21:19:41 - Average Losing Trade: -5.90
+2024-05-17 21:19:41 - Largest Winning Trade: 74.32
+2024-05-17 21:19:41 - Largest Losing Trade: -15.28
+2024-05-17 21:19:41 - Time taken: 0.35 seconds
+2024-05-17 21:19:41 - Inital Portfolio funding: $5000.00
+2024-05-17 21:19:41 - Final Portfolio Value: $5102.79
+2024-05-17 21:19:41 - Percentage Gain: 2.06%
+2024-05-17 21:19:41 - Cash: $4379.97
+2024-05-17 21:20:22 - ====================== New Entry ===================
+2024-05-17 21:20:22 - Max Drawdown: 5.49%
+2024-05-17 21:20:22 - Total Trades: 68
+2024-05-17 21:20:22 - Profitable Trades: 30
+2024-05-17 21:20:22 - Sharpe Ratio: 32.29
+2024-05-17 21:20:22 - SQN: 2.24
+2024-05-17 21:20:22 - Profit Factor: -2.38
+2024-05-17 21:20:22 - Average Trade: 14.21
+2024-05-17 21:20:22 - Average Winning Trade: 55.50
+2024-05-17 21:20:22 - Average Losing Trade: -18.38
+2024-05-17 21:20:22 - Largest Winning Trade: 243.18
+2024-05-17 21:20:22 - Largest Losing Trade: -71.34
+2024-05-17 21:20:22 - Time taken: 9.07 seconds
+2024-05-17 21:20:22 - Inital Portfolio funding: $5000.00
+2024-05-17 21:20:22 - Final Portfolio Value: $6070.71
+2024-05-17 21:20:22 - Percentage Gain: 21.41%
+2024-05-17 21:20:22 - Cash: $1018.39
+2024-05-17 21:21:05 - ====================== New Entry ===================
+2024-05-17 21:21:05 - Max Drawdown: 6.68%
+2024-05-17 21:21:05 - Total Trades: 113
+2024-05-17 21:21:05 - Profitable Trades: 45
+2024-05-17 21:21:05 - Sharpe Ratio: 8.19
+2024-05-17 21:21:05 - SQN: 2.81
+2024-05-17 21:21:05 - Profit Factor: -2.70
+2024-05-17 21:21:05 - Average Trade: 20.62
+2024-05-17 21:21:05 - Average Winning Trade: 82.19
+2024-05-17 21:21:05 - Average Losing Trade: -20.12
+2024-05-17 21:21:05 - Largest Winning Trade: 451.48
+2024-05-17 21:21:05 - Largest Losing Trade: -108.00
+2024-05-17 21:21:05 - Time taken: 35.91 seconds
+2024-05-17 21:21:05 - Inital Portfolio funding: $5000.00
+2024-05-17 21:21:05 - Final Portfolio Value: $7510.05
+2024-05-17 21:21:05 - Percentage Gain: 50.20%
+2024-05-17 21:21:05 - Cash: $1079.74
+2024-05-17 21:22:39 - ====================== New Entry ===================
+2024-05-17 21:22:39 - Max Drawdown: 8.10%
+2024-05-17 21:22:39 - Total Trades: 152
+2024-05-17 21:22:39 - Profitable Trades: 62
+2024-05-17 21:22:39 - Sharpe Ratio: 2.40
+2024-05-17 21:22:39 - SQN: 2.55
+2024-05-17 21:22:39 - Profit Factor: -3.72
+2024-05-17 21:22:39 - Average Trade: 38.09
+2024-05-17 21:22:39 - Average Winning Trade: 127.65
+2024-05-17 21:22:39 - Average Losing Trade: -23.61
+2024-05-17 21:22:39 - Largest Winning Trade: 1498.14
+2024-05-17 21:22:39 - Largest Losing Trade: -350.68
+2024-05-17 21:22:39 - Time taken: 83.07 seconds
+2024-05-17 21:22:39 - Inital Portfolio funding: $5000.00
+2024-05-17 21:22:39 - Final Portfolio Value: $10785.75
+2024-05-17 21:22:39 - Percentage Gain: 115.72%
+2024-05-17 21:22:39 - Cash: $7596.22
+2024-05-17 23:01:25 - ====================== New Entry ===================
+2024-05-17 23:01:25 - Max Drawdown: 4.99%
+2024-05-17 23:01:25 - Total Trades: 172
+2024-05-17 23:01:25 - Profitable Trades: 80
+2024-05-17 23:01:25 - Sharpe Ratio: 2.89
+2024-05-17 23:01:25 - SQN: 3.72
+2024-05-17 23:01:25 - Profit Factor: -3.15
+2024-05-17 23:01:25 - Average Trade: 23.71
+2024-05-17 23:01:25 - Average Winning Trade: 74.62
+2024-05-17 23:01:25 - Average Losing Trade: -20.57
+2024-05-17 23:01:25 - Largest Winning Trade: 549.98
+2024-05-17 23:01:25 - Largest Losing Trade: -71.90
+2024-05-17 23:01:25 - Time taken: 94.70 seconds
+2024-05-17 23:01:25 - Inital Portfolio funding: $5000.00
+2024-05-17 23:01:25 - Final Portfolio Value: $9254.34
+2024-05-17 23:01:25 - Percentage Gain: 85.09%
+2024-05-17 23:01:25 - Cash: $634.97
+2024-05-17 23:05:26 - ====================== New Entry ===================
+2024-05-17 23:05:26 - Max Drawdown: 5.17%
+2024-05-17 23:05:26 - Total Trades: 188
+2024-05-17 23:05:26 - Profitable Trades: 79
+2024-05-17 23:05:26 - Sharpe Ratio: 1.28
+2024-05-17 23:05:26 - SQN: 2.79
+2024-05-17 23:05:26 - Profit Factor: -2.70
+2024-05-17 23:05:26 - Average Trade: 20.73
+2024-05-17 23:05:26 - Average Winning Trade: 78.33
+2024-05-17 23:05:26 - Average Losing Trade: -21.02
+2024-05-17 23:05:26 - Largest Winning Trade: 977.69
+2024-05-17 23:05:26 - Largest Losing Trade: -89.23
+2024-05-17 23:05:26 - Time taken: 97.30 seconds
+2024-05-17 23:05:26 - Inital Portfolio funding: $5000.00
+2024-05-17 23:05:26 - Final Portfolio Value: $8937.79
+2024-05-17 23:05:26 - Percentage Gain: 78.76%
+2024-05-17 23:05:26 - Cash: $2961.91
+2024-05-17 23:17:48 - ====================== New Entry ===================
+2024-05-17 23:17:48 - Max Drawdown: 7.61%
+2024-05-17 23:17:48 - Total Trades: 168
+2024-05-17 23:17:48 - Profitable Trades: 86
+2024-05-17 23:17:48 - Sharpe Ratio: 2.75
+2024-05-17 23:17:48 - SQN: 3.47
+2024-05-17 23:17:48 - Profit Factor: -3.93
+2024-05-17 23:17:48 - Average Trade: 35.61
+2024-05-17 23:17:48 - Average Winning Trade: 93.29
+2024-05-17 23:17:48 - Average Losing Trade: -24.89
+2024-05-17 23:17:48 - Largest Winning Trade: 1119.48
+2024-05-17 23:17:48 - Largest Losing Trade: -267.25
+2024-05-17 23:17:48 - Time taken: 94.23 seconds
+2024-05-17 23:17:48 - Inital Portfolio funding: $5000.00
+2024-05-17 23:17:48 - Final Portfolio Value: $11084.45
+2024-05-17 23:17:48 - Percentage Gain: 121.69%
+2024-05-17 23:17:48 - Cash: $1319.11

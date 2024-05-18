@@ -73,7 +73,7 @@ class ATRPercentage(bt.Indicator):
 
 
 class CustomPandasData(bt.feeds.PandasData):
-    lines = ('dist_to_support', 'dist_to_resistance', 'UpProb', 'DownProb', 'Weighted_UpProb')
+    lines = ('dist_to_support', 'dist_to_resistance', 'UpProbability')
     
     params = (
         ('datetime', None),
@@ -85,11 +85,8 @@ class CustomPandasData(bt.feeds.PandasData):
         ('openinterest', None),
         ('dist_to_support', 'Distance to Support (%)'),
         ('dist_to_resistance', 'Distance to Resistance (%)'),
-        ('UpProb', 'UpProb_Shift_1'),
-        ('DownProb', 'DownProb_Shift_1'),
-        ('Weighted_UpProb', 'Weighted_UpProb'),
+        ('UpProbability', 'UpProbability'),
     )
-
 
 
 
@@ -119,14 +116,10 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
         for d in self.datas:
             self.inds[d] = {
-                'up_prob': d.UpProb,
-                'down_prob': d.DownProb,
-                'Weighted_UpProb': d.Weighted_UpProb,
+                'up_prob': d.UpProbability,
                 'dist_to_support': d.dist_to_support,
                 'dist_to_resistance': d.dist_to_resistance,
-                'UpProbMA': bt.indicators.SimpleMovingAverage(d.UpProb, period=self.params.fast_period),
-                'DownProbMA': bt.indicators.SimpleMovingAverage(d.DownProb, period=self.params.fast_period),
-                'crossover': bt.indicators.CrossOver(d.UpProb, d.DownProb)
+                'UpProbMA': bt.indicators.SimpleMovingAverage(d.UpProbability, period=self.params.fast_period),
             }
 
             self.inds[d]['UpProbMA'].plotinfo.plot = True
@@ -135,20 +128,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             self.inds[d]['UpProbMA'].plotinfo.linecolor = 'blue'
             self.inds[d]['UpProbMA'].plotinfo.plotname = 'Up Probability MA'
 
-            self.inds[d]['DownProbMA'].plotinfo.plot = True
-            self.inds[d]['DownProbMA'].plotinfo.subplot = True
-            self.inds[d]['DownProbMA'].plotinfo.plotlinelabels = True
-            self.inds[d]['DownProbMA'].plotinfo.linecolor = 'red'
-            self.inds[d]['DownProbMA'].plotinfo.plotname = 'Down Probability MA'
-
     def next_trading_day(current_date):
         next_day = current_date + timedelta(days=1)
         while next_day.weekday() >= 5:  # 5 = Saturday, 6 = Sunday
             next_day += timedelta(days=1)
         return next_day
-
-
-
 
     def notify_order(self, order):
         status_names = {
@@ -165,13 +149,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
         if order.status in [bt.Order.Completed, bt.Order.Partial]:
             if order.isbuy():
-                ##ensure that there is a 1 day cooldown period between orders
                 if self.datetime.date() >= self.order_cooldown.get(order.data, datetime.date):
                     self.buying_status[order.data._name] = False
                     self.open_positions += 1
                     self.entry_prices[order.data] = order.executed.price
                     self.position_dates[order.data] = self.datetime.date()
-                    #logging.info(f"Bought: {order.data._name} at {order.executed.price}")
                     self.order_list.append(order)
                     self.order_cooldown[order.data] = self.datetime.date() + timedelta(days=1)
             elif order.issell():
@@ -181,14 +163,12 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                     percentage = (order.executed.price - self.entry_prices[order.data]) / self.entry_prices[order.data] * 100
                     trade_result = (order.executed.price - self.entry_prices[order.data]) / self.entry_prices[order.data]
                     if percentage < 0:
-                        # Loss
                         self.consecutive_losses[order.data] = self.consecutive_losses.get(order.data, 0) + 1
                         loss_count = self.consecutive_losses[order.data]
                         cooldown_days = {1: 7, 2: 28, 3: 90, 4: 282}
                         days = cooldown_days.get(loss_count, 282 if loss_count >= 4 else 0)
                         self.cooldown_end[order.data] = self.datetime.date() + timedelta(days=days)
                     else:
-                        # Profit
                         self.consecutive_losses[order.data] = 0
                     del self.entry_prices[order.data]
                     del self.position_dates[order.data]
@@ -199,155 +179,113 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             if order in self.order_list:
                 self.order_list.remove(order)
 
-
     def calculate_position_size(self, data):
         total_value = self.broker.getvalue()
-        reserved_cash = total_value * self.params.reserve_percent  # 40% reserved
-        investable_capital = total_value - reserved_cash  # 60% of total value
-        chunk_size = total_value * 0.15  # Each chunk is 15% of total value
+        reserved_cash = total_value * self.params.reserve_percent
+        investable_capital = total_value - reserved_cash
+        chunk_size = total_value * 0.15
 
         size = int(chunk_size / data.close[0])
         return size if self.broker.getcash() >= chunk_size else 0
 
-
     def CloseWrapper(self, data, message):
         self.close(data=data)
-        #logging.info(f"{message} for {data._name} at {data.close[0]} on {self.datetime.date()}")
-
-
-
-
-
 
     def next(self):
-            for d in self.datas:                
+        for d in self.datas:                
+            if self.buying_status.get(d._name, False):
+                continue
 
-                if self.buying_status.get(d._name, False):  # Check if there's an ongoing buying process
-                    continue  # Skip if already trying to buy this stock
+            current_date = self.datetime.date()
+            if d in self.entry_prices:
+                if d.close[0] <= self.entry_prices[d] * (1 - self.params.stop_loss_percent / 100):
+                    self.CloseWrapper(d, "Stop loss")
+                    continue
 
-                current_date = self.datetime.date()
-                if d in self.entry_prices:  # Check if there is an entry price stored
-                    if d.close[0] <= self.entry_prices[d] * (1 - self.params.stop_loss_percent / 100):
-                        message = "Stop loss"
-                        self.CloseWrapper(d, message)  # Execute stop loss
-                        continue
+                if d.close[0] >= self.entry_prices[d] * (1 + self.params.take_profit_percent / 100):
+                    self.CloseWrapper(d, "Take profit")
+                    continue
+                
+                NewStopLossTesting = True
 
-                    # Check for take profit
-                    if d.close[0] >= self.entry_prices[d] * (1 + self.params.take_profit_percent / 100):
-                        message = "Take profit"
-                        self.CloseWrapper(d, message)
-                        continue
-                    
-                    NewStopLossTesting = True
-                    
-                    if NewStopLossTesting:
-                        days_held = (self.datetime.date() - self.position_dates[d]).days
-                        InitalTime = 3
-                        
-
-                        PercantageList = []
-
-                        for i in range(1, 80):
-                            percentageChange = ((d.close[-i] - d.close[-i-1]) / d.close[-i-1]) * 100
-                            if percentageChange < 0:
-                                PercantageList.append(percentageChange)
-
-                       
-                        InitalPercentile = 80.0
-                        FinalPercentile = 50.0
-                        ##in the inital period set the stop loss to the maximum allowed inital stop loss or the 90th percentile of the negative percentage changes
-                        if days_held < InitalTime:
-                            current_stop_loss_percent = abs(np.percentile(PercantageList, InitalPercentile))
-                            #print(f"current_stop_loss_percent: {current_stop_loss_percent}")
-                        else:
-                            current_stop_loss_percent = abs(np.percentile(PercantageList, FinalPercentile))
-                            #print(f"current_stop_loss_percent after inital time: {current_stop_loss_percent}")
-                            ##if the current price is less than the stop loss percentage then close the position
-
-
-
-
-
-                        if d.close[0] <= self.entry_prices[d] * (1 - current_stop_loss_percent / 100):
-                            currentLoss = ((d.close[0] - self.entry_prices[d]) / self.entry_prices[d]) * 100
-                            #print(f"Stop loss due to stop loss percentage: {currentLoss} exceeding {current_stop_loss_percent}")
-                            self.CloseWrapper(d, "Stop loss due to stop loss percentage")
-
-
-
-
-
-
-
-
-
-                # Position timeout check
-                if d in self.position_dates:
+                if NewStopLossTesting:
                     days_held = (self.datetime.date() - self.position_dates[d]).days
-                    if days_held > self.params.position_timeout:
-                        self.CloseWrapper(d, "Position timeout")
-                        continue
+                    InitalTime = 3
 
-                if d._name in self.cooldown_end and self.datetime.date() <= self.cooldown_end[d._name]:
-                    continue  # Skip trading this stock if still in cooldown period
+                    PercantageList = []
+
+                    for i in range(1, 80):
+                        percentageChange = ((d.close[-i] - d.close[-i-1]) / d.close[-i-1]) * 100
+                        if percentageChange < 0:
+                            PercantageList.append(percentageChange)
+
+                    InitalPercentile = 80.0
+                    FinalPercentile = 50.0
+                    if days_held < InitalTime:
+                        current_stop_loss_percent = abs(np.percentile(PercantageList, InitalPercentile)) if PercantageList else self.params.stop_loss_percent
+                    else:
+                        current_stop_loss_percent = abs(np.percentile(PercantageList, FinalPercentile)) if PercantageList else self.params.stop_loss_percent
+
+                    if d.close[0] <= self.entry_prices[d] * (1 - current_stop_loss_percent / 100):
+                        currentLoss = ((d.close[0] - self.entry_prices[d]) / self.entry_prices[d]) * 100
+                        self.CloseWrapper(d, "Stop loss due to stop loss percentage")
 
 
-                if self.buying_status.get(d._name, False):  # Check if there's an ongoing buying process
-                    continue  # Skip if already trying to buy this stock
 
-                if self.open_positions > self.params.max_positions:
-                    continue  # Limit number of open positions
-                else:
-                    current_position = self.getposition(d)
-                    if not current_position.size > 0:
-                        ##get the cross ovver indicator made in the self.inds dictionary
-                        pass
 
-                        HighUpProb = np.percentile(self.inds[d]['up_prob'], 95)
-                        LowDownProb = np.percentile(self.inds[d]['down_prob'], 50)
+            if d in self.position_dates:
+                days_held = (self.datetime.date() - self.position_dates[d]).days
+                if days_held > self.params.position_timeout:
+                    self.CloseWrapper(d, "Position timeout")
+                    continue
 
-                        BuySignal = (
-                            (self.inds[d]['UpProbMA'][0] > self.inds[d]['DownProbMA'][0]) and
-                            ##(self.inds[d]['crossover'][0] == 1) and
-                            (self.inds[d]['up_prob'][0] > HighUpProb*1.1) and 
-                            (self.inds[d]['down_prob'][0] < LowDownProb*1.1)
+            if d._name in self.cooldown_end and self.datetime.date() <= self.cooldown_end[d._name]:
+                continue
 
-                        )
+            if self.buying_status.get(d._name, False):
+                continue
 
-                        if BuySignal:  # UpProb MA crosses above DownProb MA
-                        
+            if self.open_positions > self.params.max_positions:
+                continue
 
-                            size = self.calculate_position_size(d)
-                            if size > 0:
-                                #print(f"DistToSupport: {DistToSupport[0]}")
-                                #print(f"DistToResistance: {DistToResistance[0]}")
-                                ##print(f"DistRatio: {DistRatio}")
-                                self.buy(data=d, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
-                                self.order_cooldown[d] = current_date + timedelta(days=1)
-                                self.buying_status[d._name] = True
-                                ##logging.info(f"Bought: {d._name} at {d.close[0]} on {self.datetime.date()}")
+            else:
+
+
+                current_position = self.getposition(d)
+                if not current_position.size > 0:
+                    #HighUpProb = np.percentile(self.inds[d]['up_prob'], 95)
+                    LowDownProb = np.percentile(self.inds[d]['up_prob'], 99)
+                    #randomBuy = random.randint(1, 5) == 1
+                    #print(f"LowDownProb: {LowDownProb}")
+                    #print(f"UpProbMA: {self.inds[d]['UpProbMA'][0]}")
+                    #print(f"RandomBuy: {randomBuy}")
+                    BuySignal = (
+                        (self.inds[d]['UpProbMA'][0] > LowDownProb)
+                        #randomBuy == True
+                    )
+
+
+                    ###make a random buy signal that is 1 in 1000
+                    #BuySignal = random.randint(1, 1000) == 1
+
+
+
+                    if BuySignal:
+                        size = self.calculate_position_size(d)
+                        if size > 0:
+                            self.buy(data=d, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
+                            self.order_cooldown[d] = current_date + timedelta(days=1)
+                            self.buying_status[d._name] = True
+
+
+
+
 
 
     def stop(self):
         for d in self.datas:
-            if d in self.entry_prices:  # Check if there is an entry price stored
-                self.close(data=d)  # Execute stop loss
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if d in self.entry_prices:
+                self.close(data=d)
 
 
 
@@ -382,6 +320,13 @@ def load_data(file_path):
 def load_and_add_data(cerebro, file_path, FailedFileCounter):
     df = load_data(file_path)
     if df is not None:
+
+        ##ensure that the data has at least 100 rows
+        if len(df) < 100:
+            FailedFileCounter += 1
+            return None
+
+
         data = CustomPandasData(dataname=df)
         cerebro.adddata(data, name=os.path.basename(file_path))
     else:
@@ -550,13 +495,15 @@ def main():
     print(colorize_output(cerebro.broker.getvalue(), 'Final Portfolio Value:', 10000, 5400))
     print(colorize_output(drawdown.max.len, 'Max Drawdown Days:', 15, 90, reverse=True))
     print(colorize_output(drawdown.max.drawdown, 'Max Drawdown percentage:', 5, 15, reverse=True))
-    print(f"{'Total Trades:':<30}{trade_stats.total.closed}")
+    print(colorize_output(trade_stats.total.closed, 'Total Trades:', 100, 250, reverse=True))
+
+    #print(f"{'Total Trades:':<30}{trade_stats.total.closed}")
     print(colorize_output(percent_profitable, 'Percentage Profitable Trades:', 60, 40))
     print(colorize_output(trade_stats.won.pnl.average, 'Average Profitable Trade:', 100, 50))
     print(colorize_output(trade_stats.lost.pnl.average, 'Average Unprofitable Trade:', -20, -trade_stats.won.pnl.average, reverse=True))
-    print(colorize_output(trade_stats.won.pnl.max, 'Largest Winning Trade:', 400, 100))
+    print(colorize_output(trade_stats.won.pnl.max, 'Largest Winning Trade:', 500, 100))
     print(colorize_output(trade_stats.lost.pnl.max, 'Largest Losing Trade:', -50, -200, reverse=True))
-    print(colorize_output(sharpe_ratio['sharperatio'], 'Sharpe Ratio:', 2.0, 0.5))
+    print(colorize_output(sharpe_ratio['sharperatio'], 'Sharpe Ratio:', 3.0, 0.5))
     print(colorize_output(sqn_value, 'SQN:', 5.0, 2.0))
     print(f"{'SQN Description:':<30}{description}")
     print(colorize_output(PercentGain, 'Percentage Gain:', 100, 10))

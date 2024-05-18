@@ -17,9 +17,10 @@ from scipy.signal import argrelextrema
 import cProfile
 import pstats
 from concurrent.futures import ProcessPoolExecutor
-
-
-
+import numba as nb
+from numba import njit, jit
+from scipy.stats import entropy
+from tqdm import tqdm
 
 
 """
@@ -110,7 +111,6 @@ def find_best_fit_line(x, y):
     
 
 def find_levels(df, window_size):
-
     def calculate_level_distance(rolling_window):
         # Handle incomplete window
         if len(rolling_window) < window_size:
@@ -146,18 +146,15 @@ def find_levels(df, window_size):
 
 
 def detect_peaks_and_valleys(df, column_name, prominence=1):
-    # Initialize Peaks and Valleys columns dynamically based on the input column name
     peaks_column = column_name + '_Peaks'
     valleys_column = column_name + '_Valleys'
     
     df[peaks_column] = np.nan
     df[valleys_column] = np.nan
 
-    # Detect peaks with prominence
     peaks, properties = find_peaks(df[column_name], prominence=prominence)
     df.loc[peaks, peaks_column] = df[column_name][peaks]
 
-    # Detect valleys by inverting the data and using the same prominence
     valleys, properties = find_peaks(-df[column_name], prominence=prominence)
     df.loc[valleys, valleys_column] = df[column_name][valleys]
 
@@ -171,7 +168,6 @@ def detect_peaks_and_valleys(df, column_name, prominence=1):
 
 
 def hurst_exponent(time_series):
-    """ Returns the Hurst Exponent of the time series """
     lags = range(2, 100)
     tau = [np.std(np.subtract(time_series[lag:], time_series[:-lag])) for lag in lags]
     poly = np.polyfit(np.log(lags), np.log(tau), 1)
@@ -180,16 +176,170 @@ def hurst_exponent(time_series):
 
 
 def rolling_hurst_exponent(series, window_size):
-    """ Apply Hurst exponent calculation over a rolling window with raw=True for performance """
-    # First, drop any NaNs from the series to avoid issues in the window
     series_clean = series.dropna()
 
-    # Define a function to apply to each window, now assuming no NaNs
     def hurst_window(window):
         return hurst_exponent(window)
 
-    # Apply rolling function with raw=True
     return series_clean.rolling(window=window_size).apply(hurst_window, raw=True)
+
+
+
+
+
+
+
+
+
+
+def add_multiple_mean_reversion_z_scores(data, price_column='Smoothed_Close', windows=[28, 90, 151], std_multipliers=[1, 1, 3]):
+    for window, std_multiplier in zip(windows, std_multipliers):
+        mean_col = f'Rolling_Mean_{window}'
+        std_col = f'Rolling_Std_{window}'
+        z_score_col = f'Mean_Reversion_Z_Score_{window}_std_{std_multiplier}'
+
+        data[mean_col] = data[price_column].rolling(window=window).mean()
+        data[std_col] = data[price_column].rolling(window=window).std()
+        data[z_score_col] = (data[price_column] - data[mean_col]) / (data[std_col] * std_multiplier)
+
+    return data
+
+def calculate_percentage_difference_from_ewma(data, price_column='Close', periods=[14, 151, 269], adjust=False):
+    alphas = [2 / (p + 1) for p in periods]  # Convert periods to alpha values for more direct control
+    for period, alpha in zip(periods, alphas):
+        ewm_col = f'EWM_{period}'
+        pct_diff_col = f'Pct_Diff_EWM_{period}'
+        data[ewm_col] = data[price_column].ewm(alpha=alpha, adjust=adjust).mean()
+        data[pct_diff_col] = (data[price_column] - data[ewm_col]) / data[ewm_col] * 100
+
+    return data
+
+def calculate_poc_and_metrics(data, window_size=70):
+    @njit
+    def find_poc(prices, volumes):
+        volume_by_price = {}
+        for price, volume in zip(prices, volumes):
+            if price in volume_by_price:
+                volume_by_price[price] += volume
+            else:
+                volume_by_price[price] = volume
+        max_volume = -1
+        poc = -1
+        for price, volume in volume_by_price.items():
+            if volume > max_volume:
+                max_volume = volume
+                poc = price
+        return poc
+
+    def calculate_poc_rolling(local_data):
+        poc_values = []
+        dates = []
+        for i in range(len(local_data) - window_size + 1):
+            window = local_data.iloc[i:i + window_size]
+            prices = window['Close'].values
+            volumes = window['Volume'].values
+            poc = find_poc(prices, volumes)
+            poc_values.append(poc)
+            dates.append(window['Date'].iloc[-1])
+        return pd.DataFrame({'Date': dates, 'PoC': poc_values})
+
+    poc_df = calculate_poc_rolling(data)
+    data = pd.merge(data, poc_df, on='Date', how='left')
+    data['Pct_Diff_PoC'] = (data['Close'] - data['PoC']) / data['PoC'] * 100
+    data['PoC_Mean'] = data['PoC'].rolling(window=window_size).mean()
+    data['PoC_SD'] = data['PoC'].rolling(window=window_size).std()
+    data['Pct_Diff_PoC_Mean'] = data['Pct_Diff_PoC'].rolling(window=window_size).mean()
+    data['Pct_Diff_PoC_SD'] = data['Pct_Diff_PoC'].rolling(window=window_size).std()
+
+    return data
+
+
+
+def add_complexity_metrics(df, window_size=90):
+    def calculate_complexity_invariant_distance(local_data):
+        rolling_variance = local_data.rolling(window=window_size).var()
+        complexity_distance = rolling_variance.diff().abs()
+        return complexity_distance
+
+    df['Complexity_Invariant_Distance'] = calculate_complexity_invariant_distance(df['Close'])
+    df['CID_Mean'] = df['Complexity_Invariant_Distance'].rolling(window=window_size).mean()
+    df['CID_SD'] = df['Complexity_Invariant_Distance'].rolling(window=window_size).std()
+    df['CID_Diff_From_Mean'] = df['Complexity_Invariant_Distance'] - df['CID_Mean']
+
+    return df
+
+def add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70):
+    def apply_kalman_filter(close_prices):
+        kf = KalmanFilter(transition_matrices=[1],
+                          observation_matrices=[1],
+                          initial_state_mean=close_prices.iloc[0],
+                          initial_state_covariance=1,
+                          observation_covariance=1,
+                          transition_covariance=0.01)
+        state_means, _ = kf.filter(close_prices)
+        return state_means.flatten()
+
+    @jit(nopython=True, fastmath=True)
+    def calculate_recurrence_rate(data, epsilon):
+        n = len(data)
+        recurrences = np.zeros(n - window_size + 1)
+        for i in range(n - window_size + 1):
+            window = data[i:i + window_size]
+            count = 0
+            for j in range(window_size):
+                for k in range(j + 1, window_size):
+                    if np.abs(window[j] - window[k]) < epsilon:
+                        count += 1
+            recurrences[i] = count / (window_size * (window_size - 1) / 2)
+        return recurrences
+
+    df['Smoothed_Close'] = apply_kalman_filter(df['Close'])
+    epsilon = epsilon_multiplier * np.std(df['Smoothed_Close'])
+    df['Recurrence_Rate'] = np.nan
+    recurrences = calculate_recurrence_rate(df['Smoothed_Close'].values, epsilon)
+    df.loc[df.index[window_size-1:window_size+len(recurrences)-1], 'Recurrence_Rate'] = recurrences
+
+    return df
+
+
+def add_kalman_and_entropy_metrics(df, window_size=70, bins=30):
+    def apply_kalman_filter(close_prices):
+        kf = KalmanFilter(transition_matrices=[1],
+                          observation_matrices=[1],
+                          initial_state_mean=close_prices.iloc[0],
+                          initial_state_covariance=1,
+                          observation_covariance=1,
+                          transition_covariance=0.01)
+        state_means, _ = kf.filter(close_prices)
+        return state_means.flatten()
+
+    def calculate_differences_entropy(smoothed_prices):
+        log_returns = np.log(smoothed_prices / np.roll(smoothed_prices, 1))[1:]
+        entropies = []
+        for i in range(len(log_returns) - window_size + 1):
+            window = log_returns[i:i + window_size]
+            hist, _ = np.histogram(window, bins=bins, density=True)
+            entropies.append(entropy(hist, base=2))
+        return entropies
+
+    df['Smoothed_Close'] = apply_kalman_filter(df['Close'])
+    df['Entropy of Differences'] = np.nan
+    entropy_values = calculate_differences_entropy(df['Smoothed_Close'])
+    df.loc[df.index[window_size-1:window_size+len(entropy_values)-1], 'Entropy of Differences'] = entropy_values
+
+    return df
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -271,22 +421,8 @@ def add_vama_changes(df, vama, periods):
         df[label] = vama.pct_change(periods=period)
     return df
 
-def calculate_cumulative_streaks(df, window_size=20):
-    pct_change = df['Close'].pct_change() * 100
-    close = df['Close']
-    sign_change = pct_change.mul(pct_change.shift(1)) <= 0
-    streak_counter = sign_change.cumsum()
-    streak_sums = pct_change.groupby(streak_counter).cumsum()
-    df['positive_streak_cumulative'] = np.where(pct_change > 0, streak_sums, 0)
-    df['negative_streak_cumulative'] = np.where(pct_change < 0, streak_sums, 0)
-    df['positive_streak_cumulative'] = df['positive_streak_cumulative'].rolling(window=window_size, min_periods=1).max()
-    df['negative_streak_cumulative'] = df['negative_streak_cumulative'].rolling(window=window_size, min_periods=1).min()
-    return df
-
-
 
 def compute_VPT(df):
-    # Pre-compute shifted columns
     close_shift_1 = df['Close'].shift(1)
     low_shift_1 = df['Low'].shift(1)
     high_shift_1 = df['High'].shift(1)
@@ -344,71 +480,124 @@ def ATR_Based_Adaptive_Trend_Channels(df):
     df = df.drop(columns=['200MA', '14Day_Avg_ATR', 'Upper_Band', 'Lower_Band'])
     return df
 
-def calculate_rsi_divergence(df):
-    # Calculate necessary differences and shifts
-    price_diff = df['Close'].diff()
-    RSI_diff = df['RSI'].diff()
-    price_shift = df['Close'].shift(-1)
-    RSI_shift = df['RSI'].shift(-1)
 
-    # Identify the local minima and maxima for price and RSI using vectorized operations
-    price_is_low = (df['Close'] < np.minimum(price_shift, price_diff))
-    RSI_is_low = (df['RSI'] < np.minimum(RSI_shift, RSI_diff))
-    price_is_high = (df['Close'] > np.maximum(price_shift, price_diff))
-    RSI_is_high = (df['RSI'] > np.maximum(RSI_shift, RSI_diff))
 
-    # Calculate Bullish and Bearish Divergences
-    bullish_divergence = np.where(price_is_low & ~RSI_is_low, 1, 0)
-    bearish_divergence = np.where(price_is_high & ~RSI_is_high, 1, 0)
 
-    # Combine divergences into a single column with categorical labeling
-    RSI_divergence = np.where(bullish_divergence, 'Bullish', np.where(bearish_divergence, 'Bearish', 'None'))
+def calculate_klinger_oscillator(df, short_period=34, long_period=55, signal_period=13):
+    high = df['High']
+    low = df['Low']
+    close = df['Close']
+    volume = df['Volume']
 
-    # Combine all new data into a DataFrame
-    temp_df = pd.DataFrame({
-        'RSI_divergence': RSI_divergence
-    }, index=df.index)
+    typical_price = (high + low + close) / 3
+    dm = typical_price.diff()
+    dm[dm < 0] = 0
 
-    # Concatenate this DataFrame with the original one
-    df = pd.concat([df, temp_df], axis=1)
+    cmf = volume * dm
+    cmf_short = cmf.rolling(window=short_period).sum()
+    cmf_long = cmf.rolling(window=long_period).sum()
+
+    kvo = cmf_short - cmf_long
+    kvo_signal = kvo.rolling(window=signal_period).mean()
+
+    df['KVO'] = kvo
+    df['KVO_Signal'] = kvo_signal
+
     return df
 
 
+def add_rolling_lzc(df, window_size=50, bin_size=1):
+    def calculate_percentage_moves(close_prices):
+        return (close_prices[1:] - close_prices[:-1]) / close_prices[:-1] * 100
 
-def calculate_pivot_points(df):
-    # Calculate the pivot point and related resistance and support levels
-    Pivot_Point = (df['High'] + df['Low'] + df['Close']) / 3
-    R1 = 2 * Pivot_Point - df['Low']  # Resistance 1
-    S1 = 2 * Pivot_Point - df['High']  # Support 1
-    R2 = Pivot_Point + (df['High'] - df['Low'])  # Resistance 2
-    S2 = Pivot_Point - (df['High'] - df['Low'])  # Support 2
-    R3 = df['High'] + 2 * (Pivot_Point - df['Low'])  # Resistance 3
-    S3 = df['Low'] - 2 * (df['High'] - Pivot_Point)  # Support 3
+    def bin_percentage_changes(percentage_changes, bin_size=1):
+        return np.floor(percentage_changes / bin_size).astype(int)
 
-    # Create a temporary DataFrame with new values
-    pivot_data = pd.DataFrame({
-        'Pivot_Point': Pivot_Point,
-        'R1': R1,
-        'S1': S1,
-        'R2': R2,
-        'S2': S2,
-        'R3': R3,
-        'S3': S3
-    }, index=df.index)
+    def lempel_ziv_complexity(sequence):
+        n = len(sequence)
+        sub_strings = []
+        i, k, l = 0, 1, 1
+        while k + l <= n:
+            if tuple(sequence[i:i + l]) == tuple(sequence[k:k + l]):
+                l += 1
+                if k + l > n:
+                    sub_strings.append(tuple(sequence[i:k + l - 1]))
+            else:
+                sub_strings.append(tuple(sequence[i:k + l - 1]))
+                i = k
+                k += 1
+                l = 1
+        sub_strings.append(tuple(sequence[i:k + l - 1]))
+        return len(set(sub_strings))
 
-    # Concatenate this DataFrame with the original DataFrame
-    df = pd.concat([df, pivot_data], axis=1)
+    close_prices = df['Close'].to_numpy()
+    percentage_moves = calculate_percentage_moves(close_prices)
+    binned_changes = bin_percentage_changes(percentage_moves, bin_size)
+
+    # Initialize LZC values with NaN
+    lzc_values = np.full(len(binned_changes), np.nan)
+
+    # Calculate Lempel-Ziv Complexity on the binned sequence for each rolling window
+    for i in range(len(binned_changes) - window_size + 1):
+        window = binned_changes[i:i + window_size]
+        lzc_values[i + window_size - 1] = lempel_ziv_complexity(window)
+
+    # Add the LZC values to the DataFrame
+    df['Lempel_Ziv_Complexity'] = np.concatenate([[np.nan], lzc_values])  # Ensure same length as original data
+
     return df
 
 
+def calculate_poc_and_metrics(data, window_size=70):
+    @njit
+    def find_poc(prices, volumes):
+        volume_by_price = {}
+        for price, volume in zip(prices, volumes):
+            if price in volume_by_price:
+                volume_by_price[price] += volume
+            else:
+                volume_by_price[price] = volume
+        max_volume = -1
+        poc = -1
+        for price, volume in volume_by_price.items():
+            if volume > max_volume:
+                max_volume = volume
+                poc = price
+        return poc
+
+    def calculate_poc_rolling(local_data):
+        poc_values = []
+        dates = []
+        for i in range(len(local_data) - window_size + 1):
+            window = local_data.iloc[i:i + window_size]
+            prices = window['Close'].values
+            volumes = window['Volume'].values
+            poc = find_poc(prices, volumes)
+            poc_values.append(poc)
+            dates.append(window['Date'].iloc[-1])
+        return pd.DataFrame({'Date': dates, 'PoC': poc_values})
+
+    poc_df = calculate_poc_rolling(data)
+    data = pd.merge(data, poc_df, on='Date', how='left')
+
+    if 'PoC' in data.columns:
+        data['Pct_Diff_PoC'] = (data['Close'] - data['PoC']) / data['PoC'] * 100
+        data['PoC_Mean'] = data['PoC'].rolling(window=window_size).mean()
+        data['PoC_SD'] = data['PoC'].rolling(window=window_size).std()
+        data['Pct_Diff_PoC_Mean'] = data['Pct_Diff_PoC'].rolling(window=window_size).mean()
+        data['Pct_Diff_PoC_SD'] = data['Pct_Diff_PoC'].rolling(window=window_size).std()
+    else:
+        logging.error("PoC column not found after calculation.")
+
+    return data
 
 
 
-def calculate_fibonacci_retracement(df):
-    Levels = [0.236, 0.382, 0.5, 0.618, 0.786]
-    for level in Levels:
-        df[f'Fib_Retracement_{level}'] = df['Close'].rolling(window=60).mean() * level
+def calculate_cmf(df, period=20):
+    mfv = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low']) * df['Volume']
+    df['CMF'] = mfv.rolling(window=period).sum() / df['Volume'].rolling(window=period).sum()
     return df
+
 
 
 def imminent_channel_breakout(df, ma_period=200, atr_period=14):
@@ -433,9 +622,34 @@ def imminent_channel_breakout(df, ma_period=200, atr_period=14):
     return df
 
 
+def calculate_ad_line(df):
+    clv = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low'])
+    ad = clv * df['Volume']
+    df['AD_Line'] = ad.cumsum()
+    return df
+
+def calculate_nvi(df):
+    nvi = np.where(df['Volume'] < df['Volume'].shift(1), df['Close'].pct_change(), 0)
+    df['NVI'] = (1 + nvi).cumprod()
+    return df
+
+def calculate_emv(df, period=14):
+    distance_moved = ((df['High'] + df['Low']) / 2 - (df['High'].shift(1) + df['Low'].shift(1)) / 2)
+    box_ratio = (df['Volume'] / 1e8) / (df['High'] - df['Low'])
+    emv = distance_moved / box_ratio
+    emv_ma = emv.rolling(window=period).mean()
+    df['EMV'] = emv_ma
+    return df
+
+
+def calculate_ado(df):
+    clv = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low'])
+    ado = clv * df['Volume']
+    df['ADO'] = ado.cumsum()
+    return df
+
 
 def indicators(df):
-    Timer = time.time()
     df['Close'] = df['Close'].ffill()
     df['High'] = df['High'].ffill()
     df['Low'] = df['Low'].ffill()
@@ -461,20 +675,16 @@ def indicators(df):
     rs = avg_gain / avg_loss
     df['RSI'] = 100 - (100 / (1 + rs))
     
-    # Now we can safely calculate RSI Divergence
-    if 'RSI' in df.columns:
-        df = calculate_rsi_divergence(df)
-    else:
-        logging.warning("RSI column not found, skipping RSI divergence calculation")
-
     calculate_apz(df)
     df = calculate_parabolic_SAR(df)
-    df = calculate_cumulative_streaks(df)
     df = ATR_Based_Adaptive_Trend_Channels(df)
     df = imminent_channel_breakout(df)
-    df = calculate_pivot_points(df)
-    df = calculate_fibonacci_retracement(df)
-
+    df = calculate_klinger_oscillator(df)
+    df = calculate_cmf(df)
+    df = calculate_ad_line(df)
+    df = calculate_nvi(df)
+    df = calculate_emv(df)
+    df = calculate_ado(df)
 
 
     close_shift_1 = close.shift(1)
@@ -493,16 +703,10 @@ def indicators(df):
 
     ##get the std of the 14ma from the 200ma
 
-
-
     df['SMA_200'] = close.rolling(window=200).mean()
     df['SMA_14'] = close.rolling(window=14).mean()
     df['std_14'] = close.rolling(window=14).std()
     df['Std_Devs_from_SMA'] = (df['SMA_200'] - df['SMA_14']) / df['std_14']
-
-
-
-
 
     df['14ma-200ma'] = df['14ma'] - df['200ma']
     df['14ma%_change'] = df['14ma%'].pct_change()
@@ -540,9 +744,7 @@ def indicators(df):
 
     rolling_20 = df['Close'].rolling(window=20)
     rolling_14 = df['Close'].rolling(window=14)
-    rolling_7 = df['Close'].rolling(window=7)
-    rolling_30 = df['Close'].rolling(window=30)
-    
+
     df['percent_change_Close'] = pct_change_close
     df['pct_change_std'] = rolling_20.std()
 
@@ -551,10 +753,6 @@ def indicators(df):
     df['percent_change_Close_lag_3'] = pct_change_close.shift(3)  # Lag by 3 periods
     df['percent_change_Close_lag_5'] = pct_change_close.shift(5)  # Lag by 5 periods
     df['percent_change_Close_lag_10'] = pct_change_close.shift(10)  # Lag by 10 periods
-    df['percent_change_Close_7'] = rolling_7.mean()
-    df['percent_change_Close_30'] = rolling_30.mean()
-    df['percent_change_Close>std'] = (pct_change_close > df['pct_change_std']).astype(int)
-    df['percent_change_Close<std'] = (pct_change_close < df['pct_change_std']).astype(int)
 
     # Merged rolling std calculations
     df['pct_change_std_rolling'] = rolling_14.mean()
@@ -573,15 +771,6 @@ def indicators(df):
     delta = df['Close'].diff()
     gain = np.where(delta > 0, delta, 0)
     loss = np.where(delta < 0, -delta, 0)
-    avg_gain = pd.Series(gain).rolling(window=14).mean()
-    avg_loss = pd.Series(loss).rolling(window=14).mean()
-    rs = avg_gain / avg_loss
-    df['RSI'] = 100 - (100 / (1 + rs))
-    df['RSI_overbought'] = (df['RSI'] > 70).astype(int)
-    df['RSI_oversold'] = (df['RSI'] < 30).astype(int)
-    df['RSI_very_overbought'] = (df['RSI'] > 90).astype(int)
-    df['RSI_very_oversold'] = (df['RSI'] < 10).astype(int)
-
     df['EFI'] = df['Close'].diff() * df['Volume']
 
     df['direction_flipper'] = (pct_change_close > 0).astype(int)
@@ -597,16 +786,6 @@ def indicators(df):
     keltner_range = df['ATR'] * 1.5
     df['KC_UPPER%'] = ((keltner_central + keltner_range) - df['Close']) / df['Close'] * 100
     df['KC_LOWER%'] = (df['Close'] - (keltner_central - keltner_range)) / df['Close'] * 100
-
-    # Streak calculations streamlined
-    positive_streak = (pct_change_close > 0).astype(int).cumsum()
-    negative_streak = (pct_change_close < 0).astype(int).cumsum()
-    df['positive_streak'] = positive_streak - positive_streak.where(pct_change_close <= 0).ffill().fillna(0)
-    df['negative_streak'] = negative_streak - negative_streak.where(pct_change_close >= 0).ffill().fillna(0)
-
-    ##get the maximum postitoive value in a rolling window of 60
-    df['positive_streak_max'] = df['positive_streak'].rolling(window=60).max()
-    df['negative_streak_max'] = df['negative_streak'].rolling(window=60).max()
 
     kf = KalmanFilter(transition_matrices=[1],
                       observation_matrices=[1],
@@ -638,20 +817,6 @@ def indicators(df):
     df_temp['kalman_diff'] = (df['Kalman'] - df['Close'].rolling(window=200).mean()) / df['Close'].rolling(window=200).mean() * 100
     df = pd.concat([df, df_temp], axis=1)
 
-    df['bullish_fractal'] = 0
-    df['bearish_fractal'] = 0
-    bullish_idx = (df['Low'].shift(2) > df['Low'].shift(1)) & \
-                  (df['Low'].shift(1) > df['Low']) & \
-                  (df['Low'].shift(-1) > df['Low']) & \
-                  (df['Low'].shift(-2) > df['Low'].shift(-1))
-    bearish_idx = (df['High'].shift(2) < df['High'].shift(1)) & \
-                  (df['High'].shift(1) < df['High']) & \
-                  (df['High'].shift(-1) < df['High']) & \
-                  (df['High'].shift(-2) < df['High'].shift(-1))
-    df.loc[bullish_idx, 'bullish_fractal'] = 1
-    df.loc[bearish_idx, 'bearish_fractal'] = 1
-
-
     df['Distance to Support (%)'] = (df['Close'] - df['minima'].shift(1)) / df['minima'].shift(1) * 100
     df['Distance to Resistance (%)'] = (df['maxima'].shift(1) - df['Close']) / df['Close'] * 100
     df['MA_200'] = df['Close'].rolling(window=200).mean()
@@ -669,7 +834,24 @@ def indicators(df):
     df['Lyapunov_Exponent'] = df['Log_Divergence'].diff() / np.log(1 + epsilon)
     window_size = 14  # Adjust window size as needed
     df['Lyapunov_Exponent_MA'] = df['Lyapunov_Exponent'].rolling(window=window_size).mean()
-    df = detect_peaks_and_valleys(df, 'Lyapunov_Exponent_MA')
+
+    df = add_kalman_and_entropy_metrics(df, window_size=70, bins=30)
+    df = add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70)
+    df = add_complexity_metrics(df)
+
+
+
+    #call the new function 
+    df = add_kalman_and_entropy_metrics(df, window_size=70, bins=30)
+    df = add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70)
+    df = add_complexity_metrics(df)
+    df = calculate_poc_and_metrics(df, window_size=70)
+    df = calculate_percentage_difference_from_ewma(df, 'Close', [14, 151, 269], adjust=False)
+
+
+    windows = [28, 90, 151]
+    std_multipliers = [1, 2, 3]
+    df = add_multiple_mean_reversion_z_scores(df, 'Smoothed_Close', windows, std_multipliers)
 
     columns_to_drop = ['Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
@@ -677,27 +859,7 @@ def indicators(df):
     df = df.iloc[200:]
     df = df.drop(columns_to_drop, axis=1)
     df = df.round(8)
-
-    ##make a random number between 1 and 100
-    TimerFlag = True
-    if TimerFlag:
-        print(f"Indicators calculated in {time.time() - Timer:.2f} seconds")
-
     return df
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -735,13 +897,10 @@ def DataQualityCheck(df):
         logging.error("DataFrame is empty or too short to process.")
         return None
     
-
-    ##check to see if there is some variance between the open high low and close prices ensuring that the data is not flat
     if df[['Open', 'High', 'Low', 'Close']].std().sum() < 0.01:
         logging.error("Data is flat. Variance in Open, High, Low, Close prices is too low.")
         return None
  
-    ##if more than 1/3 of the df has a close price below 1 then skip it 
     if len(df[df['Close'] < 1]) > len(df) / 3:
         logging.error("More than 1/3 of the data has a close price below 1. Skipping the data.")
         return None
@@ -761,10 +920,6 @@ def DataQualityCheck(df):
         logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
     return df
-
-
-
-
 
 def process_file(file_path, output_dir):
     try:
@@ -796,9 +951,6 @@ def process_file(file_path, output_dir):
 
 
 
-
-
-
 def SaveData(df, file_path, output_dir):
     file_name = os.path.basename(file_path)
     output_file = os.path.join(output_dir, file_name)
@@ -806,14 +958,6 @@ def SaveData(df, file_path, output_dir):
         df.to_csv(output_file, index=False)
     elif file_path.endswith('.parquet'):
         df.to_parquet(output_file, index=False)
-
-
-
-    ##logging.info(f"Processed {file_path} and saved to {output_file}")
-
-
-
-
 
 def clear_output_directory(output_dir):
     """
@@ -824,16 +968,6 @@ def clear_output_directory(output_dir):
             os.remove(os.path.join(output_dir, file))
 
 
-
-
-
-
-##lets make a function that converts the csv files in the 
-
-
-
-
-
 ##===========================(Main Function)===========================##
 ##===========================(Main Function)===========================##
 ##===========================(Main Function)===========================##
@@ -842,8 +976,6 @@ def process_file_wrapper(file_path):
     return process_file(file_path, CONFIG['output_directory'])
 
 def process_data_files(run_percent):
-    # Set up profiling
-
     print(f"Processing {run_percent}% of files from {CONFIG['input_directory']}")
     StartTimer = time.time()
     os.makedirs(CONFIG['output_directory'], exist_ok=True)
@@ -853,7 +985,7 @@ def process_data_files(run_percent):
     files_to_process = file_paths[:int(len(file_paths) * (run_percent / 100))]
 
     with ProcessPoolExecutor() as executor:
-        list(executor.map(process_file_wrapper, files_to_process))
+        list(tqdm(executor.map(process_file_wrapper, files_to_process), total=len(files_to_process), desc="Processing files"))
 
     print(f"Processed {len(files_to_process)} files in {time.time() - StartTimer:.2f} seconds")
     print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.')
