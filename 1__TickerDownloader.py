@@ -11,10 +11,9 @@ from urllib3.util.retry import Retry
 
 CONFIG = {
     "url": "https://www.sec.gov/files/company_tickers_exchange.json",
-    "csv_file_path": "Data/TickerCikData/TickerCIKs_{date}.csv",
     "parquet_file_path": "Data/TickerCikData/TickerCIKs_{date}.parquet",
     "log_file": "Data/TickerCikData/TickerCIK.log",
-    "user_agent": "PersonalTesting Masamunex9000@gmail.com"
+    "user_agent": "MarketAnalysis Masamunex9000@gmail.com"
 }
 
 def setup_logging():
@@ -33,7 +32,7 @@ def download_and_convert_ticker_cik_file():
     try:
         # Insert the current date in the file paths
         current_date = datetime.datetime.now().strftime("%Y%m%d")
-        csv_file_path = CONFIG["csv_file_path"].format(date=current_date)
+        parquet_file_path = CONFIG["parquet_file_path"].format(date=current_date)
         session = requests.Session()
         headers = {
             'User-Agent': CONFIG["user_agent"],
@@ -46,9 +45,9 @@ def download_and_convert_ticker_cik_file():
 
         json_data = response.json()
         df = pd.DataFrame(json_data['data'], columns=json_data['fields'])
-        df.to_csv(csv_file_path, index=False)
+        df.to_parquet(parquet_file_path, index=False)
 
-        logging.info("File downloaded and saved successfully in CSV.")
+        logging.info("File downloaded and saved successfully in Parquet format.")
     except requests.exceptions.HTTPError as e:
         logging.error(f"HTTP error occurred: {e}")
     except Exception as e:

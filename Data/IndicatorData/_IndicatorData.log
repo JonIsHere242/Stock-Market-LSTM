@@ -1,858 +1,384 @@
-2024-05-14 21:14:43,976 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.291723809523809
-2024-05-14 21:14:43,976 - ERROR - Data quality check failed for Data/PriceData/SMBMY.csv.
-2024-05-14 21:14:59,880 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:14:59,880 - ERROR - Data quality check failed for Data/PriceData/VRDR.csv.
-2024-05-14 21:15:06,017 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:15:06,017 - ERROR - Data quality check failed for Data/PriceData/NLST.csv.
-2024-05-14 21:15:13,170 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:15:13,170 - ERROR - Data quality check failed for Data/PriceData/DNN.csv.
-2024-05-14 21:15:22,090 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:15:22,090 - ERROR - Data quality check failed for Data/PriceData/EM.csv.
-2024-05-14 21:15:25,161 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.906805555555565
-2024-05-14 21:15:25,161 - ERROR - Data quality check failed for Data/PriceData/LEU.csv.
-2024-05-14 21:15:26,047 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:15:26,047 - ERROR - Data quality check failed for Data/PriceData/CATX.csv.
-2024-05-14 21:15:44,664 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:15:44,665 - ERROR - Data quality check failed for Data/PriceData/ABIT.csv.
-2024-05-14 21:15:56,974 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 8.810555555555554
-2024-05-14 21:15:56,974 - ERROR - Data quality check failed for Data/PriceData/CRK.csv.
-2024-05-14 21:15:57,481 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.5065454545454545
-2024-05-14 21:15:57,482 - ERROR - Data quality check failed for Data/PriceData/FLJ.csv.
-2024-05-14 21:16:02,752 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.322352941176471
-2024-05-14 21:16:02,752 - ERROR - Data quality check failed for Data/PriceData/UP.csv.
-2024-05-14 21:16:10,278 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:16:10,279 - ERROR - Data quality check failed for Data/PriceData/BITF.csv.
-2024-05-14 21:17:00,044 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:17:00,044 - ERROR - Data quality check failed for Data/PriceData/PAYS.csv.
-2024-05-14 21:17:05,608 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0638597222222224
-2024-05-14 21:17:05,608 - ERROR - Data quality check failed for Data/PriceData/HNOI.csv.
-2024-05-14 21:17:14,935 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.7426666666666666
-2024-05-14 21:17:14,935 - ERROR - Data quality check failed for Data/PriceData/AMTD.csv.
-2024-05-14 21:17:15,278 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:17:15,278 - ERROR - Data quality check failed for Data/PriceData/NEWP.csv.
-2024-05-14 21:17:15,612 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.886666666666667
-2024-05-14 21:17:15,613 - ERROR - Data quality check failed for Data/PriceData/IVR.csv.
-2024-05-14 21:17:16,583 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 12.939583333333333
-2024-05-14 21:17:16,583 - ERROR - Data quality check failed for Data/PriceData/AMSC.csv.
-2024-05-14 21:17:16,726 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:17:16,726 - ERROR - Data quality check failed for Data/PriceData/WRN.csv.
-2024-05-14 21:17:41,458 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.6902777777777778
-2024-05-14 21:17:41,458 - ERROR - Data quality check failed for Data/PriceData/CVAC.csv.
-2024-05-14 21:17:56,465 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:17:56,510 - ERROR - Data quality check failed for Data/PriceData/FNMA.csv.
-2024-05-14 21:18:06,864 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:18:06,864 - ERROR - Data quality check failed for Data/PriceData/GSAT.csv.
-2024-05-14 21:18:12,291 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.593780487804878
-2024-05-14 21:18:12,291 - ERROR - Data quality check failed for Data/PriceData/NNDM.csv.
-2024-05-14 21:18:36,736 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:18:36,736 - ERROR - Data quality check failed for Data/PriceData/ZJYL.csv.
-2024-05-14 21:18:50,892 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:18:50,893 - ERROR - Data quality check failed for Data/PriceData/RUPRF.csv.
-2024-05-14 21:18:53,058 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:18:53,058 - ERROR - Data quality check failed for Data/PriceData/EU.csv.
-2024-05-14 21:19:17,050 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:19:17,050 - ERROR - Data quality check failed for Data/PriceData/EUBG.csv.
-2024-05-14 21:19:19,899 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.255416666666667
-2024-05-14 21:19:19,899 - ERROR - Data quality check failed for Data/PriceData/GMGI.csv.
-2024-05-14 21:19:52,641 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:19:52,641 - ERROR - Data quality check failed for Data/PriceData/AQPW.csv.
-2024-05-14 21:19:58,044 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 23.577333333333332, End mean: 1.1316666666666668
-2024-05-14 21:19:58,044 - ERROR - Data quality check failed for Data/PriceData/OTLY.csv.
-2024-05-14 21:20:29,034 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:20:29,034 - ERROR - Data quality check failed for Data/PriceData/LMDXF.csv.
-2024-05-14 21:20:43,776 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.474558823529412
-2024-05-14 21:20:43,776 - ERROR - Data quality check failed for Data/PriceData/ARMN.csv.
-2024-05-14 21:21:20,310 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:21:20,311 - ERROR - Data quality check failed for Data/PriceData/LWLG.csv.
-2024-05-14 21:21:43,159 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.791597222222222
-2024-05-14 21:21:43,159 - ERROR - Data quality check failed for Data/PriceData/BLNK.csv.
-2024-05-14 21:21:43,165 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5775
-2024-05-14 21:21:43,165 - ERROR - Data quality check failed for Data/PriceData/LTMAY.csv.
-2024-05-14 21:21:57,845 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 1.9456896551724137
-2024-05-14 21:21:57,846 - ERROR - Data quality check failed for Data/PriceData/UXIN.csv.
-2024-05-14 21:22:09,412 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.6045833333333333
-2024-05-14 21:22:09,412 - ERROR - Data quality check failed for Data/PriceData/TELL.csv.
-2024-05-14 21:22:34,299 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:22:34,299 - ERROR - Data quality check failed for Data/PriceData/ZYXI.csv.
-2024-05-14 21:22:58,868 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 328.8935258823529, End mean: 16.281176470588235
-2024-05-14 21:22:58,868 - ERROR - Data quality check failed for Data/PriceData/WGS.csv.
-2024-05-14 21:23:56,974 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:23:56,974 - ERROR - Data quality check failed for Data/PriceData/NWBO.csv.
-2024-05-14 21:24:11,286 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
-2024-05-14 21:24:11,286 - ERROR - Data quality check failed for Data/PriceData/SSCC.csv.
-2024-05-14 21:24:32,918 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:24:32,919 - ERROR - Data quality check failed for Data/PriceData/WNLV.csv.
-2024-05-14 21:24:43,590 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 12.979787234042552
-2024-05-14 21:24:43,591 - ERROR - Data quality check failed for Data/PriceData/SKYE.csv.
-2024-05-14 21:25:01,756 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.8081944444444447
-2024-05-14 21:25:01,756 - ERROR - Data quality check failed for Data/PriceData/BB.csv.
-2024-05-14 21:25:20,813 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 71.78725806451614
-2024-05-14 21:25:20,813 - ERROR - Data quality check failed for Data/PriceData/CIVI.csv.
-2024-05-14 21:25:31,627 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.9008571428571429
-2024-05-14 21:25:31,627 - ERROR - Data quality check failed for Data/PriceData/NEGG.csv.
-2024-05-14 21:25:32,469 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.403333333333332
-2024-05-14 21:25:32,469 - ERROR - Data quality check failed for Data/PriceData/GYRE.csv.
-2024-05-14 21:25:35,094 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 11.75215909090909
-2024-05-14 21:25:35,094 - ERROR - Data quality check failed for Data/PriceData/ATXS.csv.
-2024-05-14 21:25:47,178 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.468888888888889
-2024-05-14 21:25:47,178 - ERROR - Data quality check failed for Data/PriceData/LUMN.csv.
-2024-05-14 21:25:55,489 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:25:55,489 - ERROR - Data quality check failed for Data/PriceData/AWCA.csv.
-2024-05-14 21:26:01,009 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.993823529411763
-2024-05-14 21:26:01,011 - ERROR - Data quality check failed for Data/PriceData/CBUS.csv.
-2024-05-14 21:26:01,913 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.427212765957447
-2024-05-14 21:26:01,913 - ERROR - Data quality check failed for Data/PriceData/OCGN.csv.
-2024-05-14 21:26:03,869 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 16.12183673469388
-2024-05-14 21:26:03,869 - ERROR - Data quality check failed for Data/PriceData/VRDN.csv.
-2024-05-14 21:26:04,912 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:26:04,913 - ERROR - Data quality check failed for Data/PriceData/URG.csv.
-2024-05-14 21:26:20,157 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:26:20,157 - ERROR - Data quality check failed for Data/PriceData/SCGY.csv.
-2024-05-14 21:26:27,889 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.1410416666666667
-2024-05-14 21:26:27,890 - ERROR - Data quality check failed for Data/PriceData/SNDL.csv.
-2024-05-14 21:26:31,336 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 2.000408163265306
-2024-05-14 21:26:31,336 - ERROR - Data quality check failed for Data/PriceData/GPRO.csv.
-2024-05-14 21:26:46,619 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.592692307692308
-2024-05-14 21:26:46,619 - ERROR - Data quality check failed for Data/PriceData/AMC.csv.
-2024-05-14 21:27:31,343 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.4083333333333333
-2024-05-14 21:27:31,343 - ERROR - Data quality check failed for Data/PriceData/BETR.csv.
-2024-05-14 21:27:33,857 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.8426388888888888
-2024-05-14 21:27:33,857 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.csv.
-2024-05-14 21:27:38,238 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 63.76115384615385, End mean: 2.5369230769230766
-2024-05-14 21:27:38,238 - ERROR - Data quality check failed for Data/PriceData/MTC.csv.
-2024-05-14 21:27:48,421 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:27:48,421 - ERROR - Data quality check failed for Data/PriceData/CYBN.csv.
-2024-05-14 21:28:07,857 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:28:07,858 - ERROR - Data quality check failed for Data/PriceData/LFMD.csv.
-2024-05-14 21:28:18,612 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.078852459016394
-2024-05-14 21:28:18,612 - ERROR - Data quality check failed for Data/PriceData/OUTKY.csv.
-2024-05-14 21:28:23,928 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.399861111111111
-2024-05-14 21:28:23,929 - ERROR - Data quality check failed for Data/PriceData/PBAJ.csv.
-2024-05-14 21:28:28,367 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.4823611111111115
-2024-05-14 21:28:28,367 - ERROR - Data quality check failed for Data/PriceData/NCMI.csv.
-2024-05-14 21:28:33,313 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:28:33,313 - ERROR - Data quality check failed for Data/PriceData/EGFEY.csv.
-2024-05-14 21:28:34,244 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:28:34,244 - ERROR - Data quality check failed for Data/PriceData/FMCC.csv.
-2024-05-14 21:28:53,702 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 424.9387099999999, End mean: 13.958548387096776
-2024-05-14 21:28:53,703 - ERROR - Data quality check failed for Data/PriceData/GRPN.csv.
-2024-05-14 21:28:55,818 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 10.252258064516129
-2024-05-14 21:28:55,818 - ERROR - Data quality check failed for Data/PriceData/SLDB.csv.
-2024-05-14 21:29:18,262 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.0980555555555556
-2024-05-14 21:29:18,263 - ERROR - Data quality check failed for Data/PriceData/FCEL.csv.
-2024-05-14 21:29:18,606 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-14 21:29:18,607 - ERROR - Data quality check failed for Data/PriceData/CELH.csv.
-2024-05-15 15:12:04,063 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.291723809523809
-2024-05-15 15:12:04,064 - ERROR - Data quality check failed for Data/PriceData/SMBMY.csv.
-2024-05-15 15:12:19,651 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:12:19,651 - ERROR - Data quality check failed for Data/PriceData/VRDR.csv.
-2024-05-15 15:12:27,063 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:12:27,064 - ERROR - Data quality check failed for Data/PriceData/NLST.csv.
-2024-05-15 15:12:33,086 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:12:33,086 - ERROR - Data quality check failed for Data/PriceData/DNN.csv.
-2024-05-15 15:12:41,917 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:12:41,917 - ERROR - Data quality check failed for Data/PriceData/EM.csv.
-2024-05-15 15:12:45,227 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.906805555555565
-2024-05-15 15:12:45,227 - ERROR - Data quality check failed for Data/PriceData/LEU.csv.
-2024-05-15 15:12:46,421 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:12:46,421 - ERROR - Data quality check failed for Data/PriceData/CATX.csv.
-2024-05-15 15:13:04,888 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:13:04,889 - ERROR - Data quality check failed for Data/PriceData/ABIT.csv.
-2024-05-15 15:13:17,118 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 8.810555555555554
-2024-05-15 15:13:17,118 - ERROR - Data quality check failed for Data/PriceData/CRK.csv.
-2024-05-15 15:13:17,487 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.5065454545454545
-2024-05-15 15:13:17,487 - ERROR - Data quality check failed for Data/PriceData/FLJ.csv.
-2024-05-15 15:13:22,343 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.322352941176471
-2024-05-15 15:13:22,343 - ERROR - Data quality check failed for Data/PriceData/UP.csv.
-2024-05-15 15:13:30,051 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:13:30,051 - ERROR - Data quality check failed for Data/PriceData/BITF.csv.
-2024-05-15 15:14:20,519 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:14:20,519 - ERROR - Data quality check failed for Data/PriceData/PAYS.csv.
-2024-05-15 15:14:24,909 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0638597222222224
-2024-05-15 15:14:24,909 - ERROR - Data quality check failed for Data/PriceData/HNOI.csv.
-2024-05-15 15:14:33,142 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.7426666666666666
-2024-05-15 15:14:33,143 - ERROR - Data quality check failed for Data/PriceData/AMTD.csv.
-2024-05-15 15:14:34,518 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:14:34,518 - ERROR - Data quality check failed for Data/PriceData/NEWP.csv.
-2024-05-15 15:14:34,761 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.886666666666667
-2024-05-15 15:14:34,761 - ERROR - Data quality check failed for Data/PriceData/IVR.csv.
-2024-05-15 15:14:35,613 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 12.939583333333333
-2024-05-15 15:14:35,613 - ERROR - Data quality check failed for Data/PriceData/AMSC.csv.
-2024-05-15 15:14:35,618 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:14:35,618 - ERROR - Data quality check failed for Data/PriceData/WRN.csv.
-2024-05-15 15:15:00,361 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.6902777777777778
-2024-05-15 15:15:00,361 - ERROR - Data quality check failed for Data/PriceData/CVAC.csv.
-2024-05-15 15:15:15,354 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:15:15,355 - ERROR - Data quality check failed for Data/PriceData/FNMA.csv.
-2024-05-15 15:15:25,747 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:15:25,747 - ERROR - Data quality check failed for Data/PriceData/GSAT.csv.
-2024-05-15 15:15:31,449 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.593780487804878
-2024-05-15 15:15:31,449 - ERROR - Data quality check failed for Data/PriceData/NNDM.csv.
-2024-05-15 15:15:56,239 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:15:56,239 - ERROR - Data quality check failed for Data/PriceData/ZJYL.csv.
-2024-05-15 15:16:10,468 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:16:10,468 - ERROR - Data quality check failed for Data/PriceData/RUPRF.csv.
-2024-05-15 15:16:12,340 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:16:12,341 - ERROR - Data quality check failed for Data/PriceData/EU.csv.
-2024-05-15 15:16:36,491 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:16:36,492 - ERROR - Data quality check failed for Data/PriceData/EUBG.csv.
-2024-05-15 15:16:39,420 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.255416666666667
-2024-05-15 15:16:39,420 - ERROR - Data quality check failed for Data/PriceData/GMGI.csv.
-2024-05-15 15:17:12,818 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:17:12,819 - ERROR - Data quality check failed for Data/PriceData/AQPW.csv.
-2024-05-15 15:17:18,139 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 23.577333333333332, End mean: 1.1316666666666668
-2024-05-15 15:17:18,139 - ERROR - Data quality check failed for Data/PriceData/OTLY.csv.
-2024-05-15 15:17:48,257 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:17:48,257 - ERROR - Data quality check failed for Data/PriceData/LMDXF.csv.
-2024-05-15 15:18:02,854 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.474558823529412
-2024-05-15 15:18:02,855 - ERROR - Data quality check failed for Data/PriceData/ARMN.csv.
-2024-05-15 15:18:39,078 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:18:39,078 - ERROR - Data quality check failed for Data/PriceData/LWLG.csv.
-2024-05-15 15:19:03,121 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.791597222222222
-2024-05-15 15:19:03,121 - ERROR - Data quality check failed for Data/PriceData/BLNK.csv.
-2024-05-15 15:19:03,128 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5775
-2024-05-15 15:19:03,128 - ERROR - Data quality check failed for Data/PriceData/LTMAY.csv.
-2024-05-15 15:19:18,368 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 1.9456896551724137
-2024-05-15 15:19:18,368 - ERROR - Data quality check failed for Data/PriceData/UXIN.csv.
-2024-05-15 15:19:30,357 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.6045833333333333
-2024-05-15 15:19:30,357 - ERROR - Data quality check failed for Data/PriceData/TELL.csv.
-2024-05-15 15:19:55,654 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:19:55,655 - ERROR - Data quality check failed for Data/PriceData/ZYXI.csv.
-2024-05-15 15:20:20,943 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 328.8935258823529, End mean: 16.281176470588235
-2024-05-15 15:20:20,944 - ERROR - Data quality check failed for Data/PriceData/WGS.csv.
-2024-05-15 15:21:20,106 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:21:20,106 - ERROR - Data quality check failed for Data/PriceData/NWBO.csv.
-2024-05-15 15:21:33,976 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
-2024-05-15 15:21:33,976 - ERROR - Data quality check failed for Data/PriceData/SSCC.csv.
-2024-05-15 15:21:55,729 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:21:55,729 - ERROR - Data quality check failed for Data/PriceData/WNLV.csv.
-2024-05-15 15:22:07,366 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 12.979787234042552
-2024-05-15 15:22:07,366 - ERROR - Data quality check failed for Data/PriceData/SKYE.csv.
-2024-05-15 15:22:26,279 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.8081944444444447
-2024-05-15 15:22:26,279 - ERROR - Data quality check failed for Data/PriceData/BB.csv.
-2024-05-15 15:22:45,384 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 71.78725806451614
-2024-05-15 15:22:45,384 - ERROR - Data quality check failed for Data/PriceData/CIVI.csv.
-2024-05-15 15:22:57,073 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.9008571428571429
-2024-05-15 15:22:57,073 - ERROR - Data quality check failed for Data/PriceData/NEGG.csv.
-2024-05-15 15:22:57,533 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.403333333333332
-2024-05-15 15:22:57,533 - ERROR - Data quality check failed for Data/PriceData/GYRE.csv.
-2024-05-15 15:23:01,018 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 11.75215909090909
-2024-05-15 15:23:01,018 - ERROR - Data quality check failed for Data/PriceData/ATXS.csv.
-2024-05-15 15:23:13,463 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.468888888888889
-2024-05-15 15:23:13,463 - ERROR - Data quality check failed for Data/PriceData/LUMN.csv.
-2024-05-15 15:23:21,428 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:23:21,428 - ERROR - Data quality check failed for Data/PriceData/AWCA.csv.
-2024-05-15 15:23:27,400 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.993823529411763
-2024-05-15 15:23:27,401 - ERROR - Data quality check failed for Data/PriceData/CBUS.csv.
-2024-05-15 15:23:27,914 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.427212765957447
-2024-05-15 15:23:27,914 - ERROR - Data quality check failed for Data/PriceData/OCGN.csv.
-2024-05-15 15:23:30,195 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 16.12183673469388
-2024-05-15 15:23:30,196 - ERROR - Data quality check failed for Data/PriceData/VRDN.csv.
-2024-05-15 15:23:30,448 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:23:30,448 - ERROR - Data quality check failed for Data/PriceData/URG.csv.
-2024-05-15 15:23:45,900 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:23:45,901 - ERROR - Data quality check failed for Data/PriceData/SCGY.csv.
-2024-05-15 15:23:54,174 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.1410416666666667
-2024-05-15 15:23:54,174 - ERROR - Data quality check failed for Data/PriceData/SNDL.csv.
-2024-05-15 15:23:57,431 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 2.000408163265306
-2024-05-15 15:23:57,431 - ERROR - Data quality check failed for Data/PriceData/GPRO.csv.
-2024-05-15 15:24:12,710 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.592692307692308
-2024-05-15 15:24:12,710 - ERROR - Data quality check failed for Data/PriceData/AMC.csv.
-2024-05-15 15:24:58,531 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.4083333333333333
-2024-05-15 15:24:58,531 - ERROR - Data quality check failed for Data/PriceData/BETR.csv.
-2024-05-15 15:25:00,698 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.8426388888888888
-2024-05-15 15:25:00,698 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.csv.
-2024-05-15 15:25:05,395 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 63.76115384615385, End mean: 2.5369230769230766
-2024-05-15 15:25:05,395 - ERROR - Data quality check failed for Data/PriceData/MTC.csv.
-2024-05-15 15:25:15,815 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:25:15,815 - ERROR - Data quality check failed for Data/PriceData/CYBN.csv.
-2024-05-15 15:25:36,034 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:25:36,034 - ERROR - Data quality check failed for Data/PriceData/LFMD.csv.
-2024-05-15 15:25:46,964 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.078852459016394
-2024-05-15 15:25:46,964 - ERROR - Data quality check failed for Data/PriceData/OUTKY.csv.
-2024-05-15 15:25:52,683 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.399861111111111
-2024-05-15 15:25:52,683 - ERROR - Data quality check failed for Data/PriceData/PBAJ.csv.
-2024-05-15 15:25:57,055 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.4823611111111115
-2024-05-15 15:25:57,055 - ERROR - Data quality check failed for Data/PriceData/NCMI.csv.
-2024-05-15 15:26:01,858 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:26:01,858 - ERROR - Data quality check failed for Data/PriceData/EGFEY.csv.
-2024-05-15 15:26:03,114 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:26:03,115 - ERROR - Data quality check failed for Data/PriceData/FMCC.csv.
-2024-05-15 15:26:23,090 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 424.9387099999999, End mean: 13.958548387096776
-2024-05-15 15:26:23,090 - ERROR - Data quality check failed for Data/PriceData/GRPN.csv.
-2024-05-15 15:26:25,021 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 10.252258064516129
-2024-05-15 15:26:25,021 - ERROR - Data quality check failed for Data/PriceData/SLDB.csv.
-2024-05-15 15:26:48,523 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.0980555555555556
-2024-05-15 15:26:48,523 - ERROR - Data quality check failed for Data/PriceData/FCEL.csv.
-2024-05-15 15:26:48,941 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 15:26:48,942 - ERROR - Data quality check failed for Data/PriceData/CELH.csv.
-2024-05-15 21:20:49,332 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.328485714285716
-2024-05-15 21:20:49,342 - ERROR - Data quality check failed for Data/PriceData/SMBMY.csv.
-2024-05-15 21:20:52,346 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:20:52,346 - ERROR - Data quality check failed for Data/PriceData/WEWA.csv.
-2024-05-15 21:21:04,793 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:21:04,793 - ERROR - Data quality check failed for Data/PriceData/VRDR.csv.
-2024-05-15 21:21:11,479 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:21:11,479 - ERROR - Data quality check failed for Data/PriceData/NLST.csv.
-2024-05-15 21:21:17,834 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:21:17,835 - ERROR - Data quality check failed for Data/PriceData/DNN.csv.
-2024-05-15 21:21:27,836 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:21:27,836 - ERROR - Data quality check failed for Data/PriceData/EM.csv.
-2024-05-15 21:21:31,218 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.69361111111111
-2024-05-15 21:21:31,218 - ERROR - Data quality check failed for Data/PriceData/LEU.csv.
-2024-05-15 21:21:33,055 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:21:33,055 - ERROR - Data quality check failed for Data/PriceData/CATX.csv.
-2024-05-15 21:21:51,777 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:21:51,777 - ERROR - Data quality check failed for Data/PriceData/ABIT.csv.
-2024-05-15 21:22:06,112 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 8.89097222222222
-2024-05-15 21:22:06,112 - ERROR - Data quality check failed for Data/PriceData/CRK.csv.
-2024-05-15 21:22:06,337 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.4945454545454545
-2024-05-15 21:22:06,337 - ERROR - Data quality check failed for Data/PriceData/FLJ.csv.
-2024-05-15 21:22:11,204 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.355294117647059
-2024-05-15 21:22:11,205 - ERROR - Data quality check failed for Data/PriceData/UP.csv.
-2024-05-15 21:22:13,016 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:22:13,016 - ERROR - Data quality check failed for Data/PriceData/ICTSF.csv.
-2024-05-15 21:22:17,198 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 332.6620036111112, End mean: 2.201944444444445
-2024-05-15 21:22:17,199 - ERROR - Data quality check failed for Data/PriceData/ODV.csv.
-2024-05-15 21:22:18,127 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:22:18,127 - ERROR - Data quality check failed for Data/PriceData/BITF.csv.
-2024-05-15 21:23:14,316 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:23:14,316 - ERROR - Data quality check failed for Data/PriceData/PAYS.csv.
-2024-05-15 21:23:18,123 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0674291666666667
-2024-05-15 21:23:18,123 - ERROR - Data quality check failed for Data/PriceData/HNOI.csv.
-2024-05-15 21:23:25,200 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 286.49210736842105, End mean: 9.864736842105263
-2024-05-15 21:23:25,200 - ERROR - Data quality check failed for Data/PriceData/GOCO.csv.
-2024-05-15 21:23:28,532 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.7419166666666666
-2024-05-15 21:23:28,532 - ERROR - Data quality check failed for Data/PriceData/AMTD.csv.
-2024-05-15 21:23:28,882 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:23:28,882 - ERROR - Data quality check failed for Data/PriceData/NEWP.csv.
-2024-05-15 21:23:29,311 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.897916666666667
-2024-05-15 21:23:29,311 - ERROR - Data quality check failed for Data/PriceData/IVR.csv.
-2024-05-15 21:23:29,536 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 13.025833333333333
-2024-05-15 21:23:29,537 - ERROR - Data quality check failed for Data/PriceData/AMSC.csv.
-2024-05-15 21:23:30,325 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:23:30,325 - ERROR - Data quality check failed for Data/PriceData/WRN.csv.
-2024-05-15 21:23:57,937 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.7686111111111114
-2024-05-15 21:23:57,937 - ERROR - Data quality check failed for Data/PriceData/CVAC.csv.
-2024-05-15 21:24:16,439 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:24:16,439 - ERROR - Data quality check failed for Data/PriceData/FNMA.csv.
-2024-05-15 21:24:27,226 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:24:27,226 - ERROR - Data quality check failed for Data/PriceData/GSAT.csv.
-2024-05-15 21:24:32,307 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.583536585365854
-2024-05-15 21:24:32,307 - ERROR - Data quality check failed for Data/PriceData/NNDM.csv.
-2024-05-15 21:24:59,578 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:24:59,579 - ERROR - Data quality check failed for Data/PriceData/ZJYL.csv.
-2024-05-15 21:25:02,246 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.5469696969697, End mean: 0.9663636363636363
-2024-05-15 21:25:02,246 - ERROR - Data quality check failed for Data/PriceData/NAAS.csv.
-2024-05-15 21:25:14,529 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:25:14,529 - ERROR - Data quality check failed for Data/PriceData/RUPRF.csv.
-2024-05-15 21:25:16,238 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 226.6530396, End mean: 2.7532000000000005
-2024-05-15 21:25:16,238 - ERROR - Data quality check failed for Data/PriceData/GOEV.csv.
-2024-05-15 21:25:17,680 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:25:17,681 - ERROR - Data quality check failed for Data/PriceData/EU.csv.
-2024-05-15 21:25:42,512 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:25:42,512 - ERROR - Data quality check failed for Data/PriceData/EUBG.csv.
-2024-05-15 21:25:43,772 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 90.0, End mean: 1.8303030303030305
-2024-05-15 21:25:43,772 - ERROR - Data quality check failed for Data/PriceData/LVO.csv.
-2024-05-15 21:25:45,901 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.310833333333333
-2024-05-15 21:25:45,901 - ERROR - Data quality check failed for Data/PriceData/GMGI.csv.
-2024-05-15 21:25:52,433 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2030862.676056338, End mean: 19.703239436619725
-2024-05-15 21:25:52,433 - ERROR - Data quality check failed for Data/PriceData/CRVO.csv.
-2024-05-15 21:25:57,491 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 795.4105266666667, End mean: 1.5064912280701752
-2024-05-15 21:25:57,491 - ERROR - Data quality check failed for Data/PriceData/ATOS.csv.
-2024-05-15 21:26:20,767 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:26:20,767 - ERROR - Data quality check failed for Data/PriceData/AQPW.csv.
-2024-05-15 21:26:27,680 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 23.577333333333332, End mean: 1.1709999999999998
-2024-05-15 21:26:27,680 - ERROR - Data quality check failed for Data/PriceData/OTLY.csv.
-2024-05-15 21:26:37,694 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 552.5948715384616, End mean: 8.639230769230767
-2024-05-15 21:26:37,694 - ERROR - Data quality check failed for Data/PriceData/OTLK.csv.
-2024-05-15 21:26:51,163 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:26:51,164 - ERROR - Data quality check failed for Data/PriceData/SCWO.csv.
-2024-05-15 21:27:00,369 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:27:00,370 - ERROR - Data quality check failed for Data/PriceData/LMDXF.csv.
-2024-05-15 21:27:00,373 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1221.0566016, End mean: 0.6972776
-2024-05-15 21:27:00,373 - ERROR - Data quality check failed for Data/PriceData/XTKG.csv.
-2024-05-15 21:27:15,233 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.5083823529411764
-2024-05-15 21:27:15,233 - ERROR - Data quality check failed for Data/PriceData/ARMN.csv.
-2024-05-15 21:27:36,626 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.891764705882352, End mean: 0.5064705882352941
-2024-05-15 21:27:36,626 - ERROR - Data quality check failed for Data/PriceData/ME.csv.
-2024-05-15 21:27:54,320 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:27:54,320 - ERROR - Data quality check failed for Data/PriceData/AMTX.csv.
-2024-05-15 21:27:54,539 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:27:54,539 - ERROR - Data quality check failed for Data/PriceData/LWLG.csv.
-2024-05-15 21:27:57,140 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 301.3367332653061, End mean: 12.76
-2024-05-15 21:27:57,140 - ERROR - Data quality check failed for Data/PriceData/ADVM.csv.
-2024-05-15 21:28:09,547 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 423.02333416666664, End mean: 19.168
-2024-05-15 21:28:09,547 - ERROR - Data quality check failed for Data/PriceData/FET.csv.
-2024-05-15 21:28:19,746 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.814652777777778
-2024-05-15 21:28:19,747 - ERROR - Data quality check failed for Data/PriceData/BLNK.csv.
-2024-05-15 21:28:19,752 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5761111111111111
-2024-05-15 21:28:19,752 - ERROR - Data quality check failed for Data/PriceData/LTMAY.csv.
-2024-05-15 21:28:36,254 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 2.0493103448275862
-2024-05-15 21:28:36,255 - ERROR - Data quality check failed for Data/PriceData/UXIN.csv.
-2024-05-15 21:28:49,136 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.6048611111111111
-2024-05-15 21:28:49,136 - ERROR - Data quality check failed for Data/PriceData/TELL.csv.
-2024-05-15 21:29:12,052 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2238.0, End mean: 26.178571428571434
-2024-05-15 21:29:12,052 - ERROR - Data quality check failed for Data/PriceData/ALAR.csv.
-2024-05-15 21:29:16,683 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:29:16,684 - ERROR - Data quality check failed for Data/PriceData/ZYXI.csv.
-2024-05-15 21:30:17,107 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:30:17,107 - ERROR - Data quality check failed for Data/PriceData/HIVE.csv.
-2024-05-15 21:30:48,954 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:30:48,954 - ERROR - Data quality check failed for Data/PriceData/NWBO.csv.
-2024-05-15 21:31:04,493 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
-2024-05-15 21:31:04,493 - ERROR - Data quality check failed for Data/PriceData/SSCC.csv.
-2024-05-15 21:31:05,345 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:31:05,345 - ERROR - Data quality check failed for Data/PriceData/EP.csv.
-2024-05-15 21:31:27,738 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:31:27,738 - ERROR - Data quality check failed for Data/PriceData/WNLV.csv.
-2024-05-15 21:31:41,097 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 12.926702127659574
-2024-05-15 21:31:41,097 - ERROR - Data quality check failed for Data/PriceData/SKYE.csv.
-2024-05-15 21:32:01,331 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.824027777777778
-2024-05-15 21:32:01,331 - ERROR - Data quality check failed for Data/PriceData/BB.csv.
-2024-05-15 21:32:22,182 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 72.23274193548387
-2024-05-15 21:32:22,182 - ERROR - Data quality check failed for Data/PriceData/CIVI.csv.
-2024-05-15 21:32:24,629 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:32:24,629 - ERROR - Data quality check failed for Data/PriceData/RAASY.csv.
-2024-05-15 21:32:34,178 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.9104285714285713
-2024-05-15 21:32:34,178 - ERROR - Data quality check failed for Data/PriceData/NEGG.csv.
-2024-05-15 21:32:34,872 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.498333333333335
-2024-05-15 21:32:34,872 - ERROR - Data quality check failed for Data/PriceData/GYRE.csv.
-2024-05-15 21:32:38,040 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 11.508522727272728
-2024-05-15 21:32:38,040 - ERROR - Data quality check failed for Data/PriceData/ATXS.csv.
-2024-05-15 21:32:51,682 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.4706944444444445
-2024-05-15 21:32:51,683 - ERROR - Data quality check failed for Data/PriceData/LUMN.csv.
-2024-05-15 21:32:59,655 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:32:59,655 - ERROR - Data quality check failed for Data/PriceData/AWCA.csv.
-2024-05-15 21:33:07,340 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.790882352941175
-2024-05-15 21:33:07,340 - ERROR - Data quality check failed for Data/PriceData/CBUS.csv.
-2024-05-15 21:33:08,169 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.4625744680851063
-2024-05-15 21:33:08,169 - ERROR - Data quality check failed for Data/PriceData/OCGN.csv.
-2024-05-15 21:33:09,834 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 15.963877551020408
-2024-05-15 21:33:09,834 - ERROR - Data quality check failed for Data/PriceData/VRDN.csv.
-2024-05-15 21:33:10,583 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:33:10,583 - ERROR - Data quality check failed for Data/PriceData/URG.csv.
-2024-05-15 21:33:27,443 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:33:27,443 - ERROR - Data quality check failed for Data/PriceData/SCGY.csv.
-2024-05-15 21:33:37,817 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.1839583333333334
-2024-05-15 21:33:37,818 - ERROR - Data quality check failed for Data/PriceData/SNDL.csv.
-2024-05-15 21:33:42,228 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 1.98
-2024-05-15 21:33:42,228 - ERROR - Data quality check failed for Data/PriceData/GPRO.csv.
-2024-05-15 21:33:55,146 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 203.67608977777775, End mean: 5.101111111111111
-2024-05-15 21:33:55,146 - ERROR - Data quality check failed for Data/PriceData/ZVRA.csv.
-2024-05-15 21:33:58,441 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.6628846153846153
-2024-05-15 21:33:58,442 - ERROR - Data quality check failed for Data/PriceData/AMC.csv.
-2024-05-15 21:34:46,769 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.40653333333333336
-2024-05-15 21:34:46,769 - ERROR - Data quality check failed for Data/PriceData/BETR.csv.
-2024-05-15 21:34:48,860 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.8266666666666667
-2024-05-15 21:34:48,860 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.csv.
-2024-05-15 21:34:48,869 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 276050.0, End mean: 8.705972222222222
-2024-05-15 21:34:48,869 - ERROR - Data quality check failed for Data/PriceData/SHIP.csv.
-2024-05-15 21:34:53,973 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 63.76115384615385, End mean: 3.0107692307692306
-2024-05-15 21:34:53,973 - ERROR - Data quality check failed for Data/PriceData/MTC.csv.
-2024-05-15 21:34:55,865 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1122.9511075, End mean: 15.735694444444444
-2024-05-15 21:34:55,865 - ERROR - Data quality check failed for Data/PriceData/UNG.csv.
-2024-05-15 21:35:05,016 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:35:05,016 - ERROR - Data quality check failed for Data/PriceData/CYBN.csv.
-2024-05-15 21:35:28,034 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:35:28,035 - ERROR - Data quality check failed for Data/PriceData/LFMD.csv.
-2024-05-15 21:35:39,175 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.0719672131147546
-2024-05-15 21:35:39,175 - ERROR - Data quality check failed for Data/PriceData/OUTKY.csv.
-2024-05-15 21:35:44,094 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.316527777777777
-2024-05-15 21:35:44,094 - ERROR - Data quality check failed for Data/PriceData/PBAJ.csv.
-2024-05-15 21:35:48,861 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.500972222222221
-2024-05-15 21:35:48,862 - ERROR - Data quality check failed for Data/PriceData/NCMI.csv.
-2024-05-15 21:35:54,915 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:35:54,915 - ERROR - Data quality check failed for Data/PriceData/EGFEY.csv.
-2024-05-15 21:35:56,173 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:35:56,173 - ERROR - Data quality check failed for Data/PriceData/FMCC.csv.
-2024-05-15 21:36:01,694 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 161.98676470588234, End mean: 7.351176470588236
-2024-05-15 21:36:01,694 - ERROR - Data quality check failed for Data/PriceData/OPAD.csv.
-2024-05-15 21:36:16,758 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 425.65714333333324, End mean: 14.003650793650795
-2024-05-15 21:36:16,759 - ERROR - Data quality check failed for Data/PriceData/GRPN.csv.
-2024-05-15 21:36:19,607 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 10.094516129032254
-2024-05-15 21:36:19,607 - ERROR - Data quality check failed for Data/PriceData/SLDB.csv.
-2024-05-15 21:36:41,311 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3412.152777777778, End mean: 6.456527777777778
-2024-05-15 21:36:41,311 - ERROR - Data quality check failed for Data/PriceData/ABEO.csv.
-2024-05-15 21:36:45,042 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.087361111111111
-2024-05-15 21:36:45,043 - ERROR - Data quality check failed for Data/PriceData/FCEL.csv.
-2024-05-15 21:36:46,690 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-15 21:36:46,690 - ERROR - Data quality check failed for Data/PriceData/CELH.csv.
-2024-05-16 21:20:43,735 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.150492063492063
-2024-05-16 21:20:43,745 - ERROR - Data quality check failed for Data/PriceData/SMBMY.csv.
-2024-05-16 21:20:47,106 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:20:47,106 - ERROR - Data quality check failed for Data/PriceData/WEWA.csv.
-2024-05-16 21:20:59,158 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:20:59,158 - ERROR - Data quality check failed for Data/PriceData/VRDR.csv.
-2024-05-16 21:21:05,611 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:21:05,611 - ERROR - Data quality check failed for Data/PriceData/NLST.csv.
-2024-05-16 21:21:13,063 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:21:13,064 - ERROR - Data quality check failed for Data/PriceData/DNN.csv.
-2024-05-16 21:21:22,429 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:21:22,430 - ERROR - Data quality check failed for Data/PriceData/EM.csv.
-2024-05-16 21:21:25,880 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.60194444444445
-2024-05-16 21:21:25,880 - ERROR - Data quality check failed for Data/PriceData/LEU.csv.
-2024-05-16 21:21:28,076 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:21:28,076 - ERROR - Data quality check failed for Data/PriceData/CATX.csv.
-2024-05-16 21:21:46,634 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:21:46,635 - ERROR - Data quality check failed for Data/PriceData/ABIT.csv.
-2024-05-16 21:22:00,983 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 8.932777777777778
-2024-05-16 21:22:00,983 - ERROR - Data quality check failed for Data/PriceData/CRK.csv.
-2024-05-16 21:22:01,755 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.4895454545454545
-2024-05-16 21:22:01,756 - ERROR - Data quality check failed for Data/PriceData/FLJ.csv.
-2024-05-16 21:22:05,853 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.3770588235294117
-2024-05-16 21:22:05,854 - ERROR - Data quality check failed for Data/PriceData/UP.csv.
-2024-05-16 21:22:07,851 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:22:07,851 - ERROR - Data quality check failed for Data/PriceData/ICTSF.csv.
-2024-05-16 21:22:12,384 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 332.6620036111112, End mean: 2.1991666666666667
-2024-05-16 21:22:12,384 - ERROR - Data quality check failed for Data/PriceData/ODV.csv.
-2024-05-16 21:22:13,524 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:22:13,524 - ERROR - Data quality check failed for Data/PriceData/BITF.csv.
-2024-05-16 21:23:08,392 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:23:08,393 - ERROR - Data quality check failed for Data/PriceData/PAYS.csv.
-2024-05-16 21:23:11,846 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0688597222222223
-2024-05-16 21:23:11,846 - ERROR - Data quality check failed for Data/PriceData/HNOI.csv.
-2024-05-16 21:23:19,466 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 286.49210736842105, End mean: 9.781315789473682
-2024-05-16 21:23:19,466 - ERROR - Data quality check failed for Data/PriceData/GOCO.csv.
-2024-05-16 21:23:21,736 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.744
-2024-05-16 21:23:21,736 - ERROR - Data quality check failed for Data/PriceData/AMTD.csv.
-2024-05-16 21:23:21,999 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:23:21,999 - ERROR - Data quality check failed for Data/PriceData/NEWP.csv.
-2024-05-16 21:23:22,427 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.904583333333335
-2024-05-16 21:23:22,427 - ERROR - Data quality check failed for Data/PriceData/IVR.csv.
-2024-05-16 21:23:23,206 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 13.068055555555555
-2024-05-16 21:23:23,206 - ERROR - Data quality check failed for Data/PriceData/AMSC.csv.
-2024-05-16 21:23:23,916 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:23:23,916 - ERROR - Data quality check failed for Data/PriceData/WRN.csv.
-2024-05-16 21:23:50,343 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.8213888888888885
-2024-05-16 21:23:50,343 - ERROR - Data quality check failed for Data/PriceData/CVAC.csv.
-2024-05-16 21:24:08,801 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:24:08,802 - ERROR - Data quality check failed for Data/PriceData/FNMA.csv.
-2024-05-16 21:24:19,609 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:24:19,609 - ERROR - Data quality check failed for Data/PriceData/GSAT.csv.
-2024-05-16 21:24:24,882 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.5815853658536585
-2024-05-16 21:24:24,882 - ERROR - Data quality check failed for Data/PriceData/NNDM.csv.
-2024-05-16 21:24:51,131 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:24:51,132 - ERROR - Data quality check failed for Data/PriceData/ZJYL.csv.
-2024-05-16 21:24:54,181 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.5469696969697, End mean: 0.9496060606060606
-2024-05-16 21:24:54,181 - ERROR - Data quality check failed for Data/PriceData/NAAS.csv.
-2024-05-16 21:25:06,031 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:25:06,032 - ERROR - Data quality check failed for Data/PriceData/RUPRF.csv.
-2024-05-16 21:25:07,923 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 226.6530396, End mean: 2.7768
-2024-05-16 21:25:07,924 - ERROR - Data quality check failed for Data/PriceData/GOEV.csv.
-2024-05-16 21:25:08,952 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:25:08,953 - ERROR - Data quality check failed for Data/PriceData/EU.csv.
-2024-05-16 21:25:34,129 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:25:34,129 - ERROR - Data quality check failed for Data/PriceData/EUBG.csv.
-2024-05-16 21:25:34,554 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 90.0, End mean: 1.829090909090909
-2024-05-16 21:25:34,554 - ERROR - Data quality check failed for Data/PriceData/LVO.csv.
-2024-05-16 21:25:37,361 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.3343055555555554
-2024-05-16 21:25:37,361 - ERROR - Data quality check failed for Data/PriceData/GMGI.csv.
-2024-05-16 21:25:43,620 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2030862.676056338, End mean: 19.926338028169017
-2024-05-16 21:25:43,620 - ERROR - Data quality check failed for Data/PriceData/CRVO.csv.
-2024-05-16 21:25:48,450 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 795.4105266666667, End mean: 1.5175438596491229
-2024-05-16 21:25:48,450 - ERROR - Data quality check failed for Data/PriceData/ATOS.csv.
-2024-05-16 21:26:11,921 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:26:11,921 - ERROR - Data quality check failed for Data/PriceData/AQPW.csv.
-2024-05-16 21:26:29,043 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 552.5948715384616, End mean: 8.646666666666667
-2024-05-16 21:26:29,044 - ERROR - Data quality check failed for Data/PriceData/OTLK.csv.
-2024-05-16 21:26:42,058 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:26:42,059 - ERROR - Data quality check failed for Data/PriceData/SCWO.csv.
-2024-05-16 21:26:51,105 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:26:51,105 - ERROR - Data quality check failed for Data/PriceData/LMDXF.csv.
-2024-05-16 21:26:51,110 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1221.0566016, End mean: 0.7007568000000001
-2024-05-16 21:26:51,110 - ERROR - Data quality check failed for Data/PriceData/XTKG.csv.
-2024-05-16 21:27:06,166 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.523823529411765
-2024-05-16 21:27:06,167 - ERROR - Data quality check failed for Data/PriceData/ARMN.csv.
-2024-05-16 21:27:28,006 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.891764705882352, End mean: 0.5125294117647058
-2024-05-16 21:27:28,006 - ERROR - Data quality check failed for Data/PriceData/ME.csv.
-2024-05-16 21:27:45,010 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:27:45,010 - ERROR - Data quality check failed for Data/PriceData/AMTX.csv.
-2024-05-16 21:27:45,244 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:27:45,244 - ERROR - Data quality check failed for Data/PriceData/LWLG.csv.
-2024-05-16 21:27:48,040 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 301.3367332653061, End mean: 12.536530612244897
-2024-05-16 21:27:48,040 - ERROR - Data quality check failed for Data/PriceData/ADVM.csv.
-2024-05-16 21:28:00,516 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 423.02333416666664, End mean: 19.1525
-2024-05-16 21:28:00,516 - ERROR - Data quality check failed for Data/PriceData/FET.csv.
-2024-05-16 21:28:10,729 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.8272916666666665
-2024-05-16 21:28:10,729 - ERROR - Data quality check failed for Data/PriceData/BLNK.csv.
-2024-05-16 21:28:10,734 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5754166666666667
-2024-05-16 21:28:10,734 - ERROR - Data quality check failed for Data/PriceData/LTMAY.csv.
-2024-05-16 21:28:27,247 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 2.106551724137931
-2024-05-16 21:28:27,247 - ERROR - Data quality check failed for Data/PriceData/UXIN.csv.
-2024-05-16 21:28:39,690 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.60625
-2024-05-16 21:28:39,690 - ERROR - Data quality check failed for Data/PriceData/TELL.csv.
-2024-05-16 21:29:01,538 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2238.0, End mean: 26.20428571428571
-2024-05-16 21:29:01,539 - ERROR - Data quality check failed for Data/PriceData/ALAR.csv.
-2024-05-16 21:29:06,278 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:29:06,278 - ERROR - Data quality check failed for Data/PriceData/ZYXI.csv.
-2024-05-16 21:30:05,188 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:30:05,189 - ERROR - Data quality check failed for Data/PriceData/HIVE.csv.
-2024-05-16 21:30:36,306 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:30:36,306 - ERROR - Data quality check failed for Data/PriceData/NWBO.csv.
-2024-05-16 21:30:51,537 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
-2024-05-16 21:30:51,537 - ERROR - Data quality check failed for Data/PriceData/SSCC.csv.
-2024-05-16 21:30:52,632 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:30:52,632 - ERROR - Data quality check failed for Data/PriceData/EP.csv.
-2024-05-16 21:31:14,341 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:31:14,341 - ERROR - Data quality check failed for Data/PriceData/WNLV.csv.
-2024-05-16 21:31:27,349 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 12.974574468085105
-2024-05-16 21:31:27,350 - ERROR - Data quality check failed for Data/PriceData/SKYE.csv.
-2024-05-16 21:31:47,391 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.8284722222222225
-2024-05-16 21:31:47,391 - ERROR - Data quality check failed for Data/PriceData/BB.csv.
-2024-05-16 21:32:07,803 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 72.40806451612903
-2024-05-16 21:32:07,804 - ERROR - Data quality check failed for Data/PriceData/CIVI.csv.
-2024-05-16 21:32:10,389 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:32:10,389 - ERROR - Data quality check failed for Data/PriceData/RAASY.csv.
-2024-05-16 21:32:19,270 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.916285714285714
-2024-05-16 21:32:19,270 - ERROR - Data quality check failed for Data/PriceData/NEGG.csv.
-2024-05-16 21:32:20,059 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.550972222222224
-2024-05-16 21:32:20,059 - ERROR - Data quality check failed for Data/PriceData/GYRE.csv.
-2024-05-16 21:32:23,650 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 11.390795454545454
-2024-05-16 21:32:23,650 - ERROR - Data quality check failed for Data/PriceData/ATXS.csv.
-2024-05-16 21:32:36,482 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.4708333333333334
-2024-05-16 21:32:36,482 - ERROR - Data quality check failed for Data/PriceData/LUMN.csv.
-2024-05-16 21:32:44,645 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:32:44,645 - ERROR - Data quality check failed for Data/PriceData/AWCA.csv.
-2024-05-16 21:32:51,964 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.670588235294115
-2024-05-16 21:32:51,964 - ERROR - Data quality check failed for Data/PriceData/CBUS.csv.
-2024-05-16 21:32:52,137 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.4846595744680853
-2024-05-16 21:32:52,137 - ERROR - Data quality check failed for Data/PriceData/OCGN.csv.
-2024-05-16 21:32:54,517 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 15.867346938775512
-2024-05-16 21:32:54,517 - ERROR - Data quality check failed for Data/PriceData/VRDN.csv.
-2024-05-16 21:32:55,197 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:32:55,198 - ERROR - Data quality check failed for Data/PriceData/URG.csv.
-2024-05-16 21:33:11,724 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:33:11,724 - ERROR - Data quality check failed for Data/PriceData/SCGY.csv.
-2024-05-16 21:33:21,996 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.211041666666667
-2024-05-16 21:33:21,996 - ERROR - Data quality check failed for Data/PriceData/SNDL.csv.
-2024-05-16 21:33:26,177 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 1.9667346938775512
-2024-05-16 21:33:26,178 - ERROR - Data quality check failed for Data/PriceData/GPRO.csv.
-2024-05-16 21:33:38,913 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 203.67608977777775, End mean: 5.067333333333333
-2024-05-16 21:33:38,913 - ERROR - Data quality check failed for Data/PriceData/ZVRA.csv.
-2024-05-16 21:33:42,000 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.6690384615384612
-2024-05-16 21:33:42,001 - ERROR - Data quality check failed for Data/PriceData/AMC.csv.
-2024-05-16 21:34:28,821 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.40466666666666673
-2024-05-16 21:34:28,821 - ERROR - Data quality check failed for Data/PriceData/BETR.csv.
-2024-05-16 21:34:31,589 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.8194444444444444
-2024-05-16 21:34:31,589 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.csv.
-2024-05-16 21:34:31,599 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 276050.0, End mean: 8.767083333333334
-2024-05-16 21:34:31,599 - ERROR - Data quality check failed for Data/PriceData/SHIP.csv.
-2024-05-16 21:34:35,673 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 63.76115384615385, End mean: 3.1738461538461538
-2024-05-16 21:34:35,673 - ERROR - Data quality check failed for Data/PriceData/MTC.csv.
-2024-05-16 21:34:37,025 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1122.9511075, End mean: 15.719166666666666
-2024-05-16 21:34:37,025 - ERROR - Data quality check failed for Data/PriceData/UNG.csv.
-2024-05-16 21:34:46,104 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:34:46,105 - ERROR - Data quality check failed for Data/PriceData/CYBN.csv.
-2024-05-16 21:35:07,189 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:35:07,189 - ERROR - Data quality check failed for Data/PriceData/LFMD.csv.
-2024-05-16 21:35:18,504 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.069180327868853
-2024-05-16 21:35:18,504 - ERROR - Data quality check failed for Data/PriceData/OUTKY.csv.
-2024-05-16 21:35:23,656 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.274861111111111
-2024-05-16 21:35:23,657 - ERROR - Data quality check failed for Data/PriceData/PBAJ.csv.
-2024-05-16 21:35:28,463 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.516111111111111
-2024-05-16 21:35:28,464 - ERROR - Data quality check failed for Data/PriceData/NCMI.csv.
-2024-05-16 21:35:34,931 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:35:34,931 - ERROR - Data quality check failed for Data/PriceData/EGFEY.csv.
-2024-05-16 21:35:35,907 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:35:35,907 - ERROR - Data quality check failed for Data/PriceData/FMCC.csv.
-2024-05-16 21:35:41,426 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 161.98676470588234, End mean: 7.270588235294118
-2024-05-16 21:35:41,427 - ERROR - Data quality check failed for Data/PriceData/OPAD.csv.
-2024-05-16 21:35:56,332 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 425.65714333333324, End mean: 13.9784126984127
-2024-05-16 21:35:56,332 - ERROR - Data quality check failed for Data/PriceData/GRPN.csv.
-2024-05-16 21:35:59,368 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 9.990645161290322
-2024-05-16 21:35:59,368 - ERROR - Data quality check failed for Data/PriceData/SLDB.csv.
-2024-05-16 21:36:21,088 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3412.152777777778, End mean: 6.459027777777778
-2024-05-16 21:36:21,088 - ERROR - Data quality check failed for Data/PriceData/ABEO.csv.
-2024-05-16 21:36:24,130 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.0812499999999998
-2024-05-16 21:36:24,130 - ERROR - Data quality check failed for Data/PriceData/FCEL.csv.
-2024-05-16 21:36:25,955 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-16 21:36:25,955 - ERROR - Data quality check failed for Data/PriceData/CELH.csv.
-2024-05-17 21:20:43,677 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.112634920634923
-2024-05-17 21:20:43,687 - ERROR - Data quality check failed for Data/PriceData/SMBMY.csv.
-2024-05-17 21:20:47,074 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:20:47,074 - ERROR - Data quality check failed for Data/PriceData/WEWA.csv.
-2024-05-17 21:20:58,734 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:20:58,734 - ERROR - Data quality check failed for Data/PriceData/VRDR.csv.
-2024-05-17 21:21:04,797 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:21:04,798 - ERROR - Data quality check failed for Data/PriceData/NLST.csv.
-2024-05-17 21:21:11,677 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:21:11,677 - ERROR - Data quality check failed for Data/PriceData/DNN.csv.
-2024-05-17 21:21:21,443 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:21:21,443 - ERROR - Data quality check failed for Data/PriceData/EM.csv.
-2024-05-17 21:21:25,179 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.57916666666667
-2024-05-17 21:21:25,180 - ERROR - Data quality check failed for Data/PriceData/LEU.csv.
-2024-05-17 21:21:28,273 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:21:28,273 - ERROR - Data quality check failed for Data/PriceData/CATX.csv.
-2024-05-17 21:21:46,984 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:21:46,984 - ERROR - Data quality check failed for Data/PriceData/ABIT.csv.
-2024-05-17 21:22:01,618 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 8.979305555555555
-2024-05-17 21:22:01,618 - ERROR - Data quality check failed for Data/PriceData/CRK.csv.
-2024-05-17 21:22:01,930 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.5347727272727273
-2024-05-17 21:22:01,930 - ERROR - Data quality check failed for Data/PriceData/FLJ.csv.
-2024-05-17 21:22:07,044 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.4105882352941173
-2024-05-17 21:22:07,044 - ERROR - Data quality check failed for Data/PriceData/UP.csv.
-2024-05-17 21:22:08,505 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:22:08,505 - ERROR - Data quality check failed for Data/PriceData/ICTSF.csv.
-2024-05-17 21:22:13,162 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 332.6620036111112, End mean: 2.1965277777777774
-2024-05-17 21:22:13,162 - ERROR - Data quality check failed for Data/PriceData/ODV.csv.
-2024-05-17 21:22:13,824 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:22:13,824 - ERROR - Data quality check failed for Data/PriceData/BITF.csv.
-2024-05-17 21:23:08,938 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:23:08,938 - ERROR - Data quality check failed for Data/PriceData/PAYS.csv.
-2024-05-17 21:23:12,010 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0698319444444444
-2024-05-17 21:23:12,010 - ERROR - Data quality check failed for Data/PriceData/HNOI.csv.
-2024-05-17 21:23:18,873 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 286.49210736842105, End mean: 9.717631578947367
-2024-05-17 21:23:18,873 - ERROR - Data quality check failed for Data/PriceData/GOCO.csv.
-2024-05-17 21:23:21,931 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.75025
-2024-05-17 21:23:21,931 - ERROR - Data quality check failed for Data/PriceData/AMTD.csv.
-2024-05-17 21:23:21,937 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:23:21,937 - ERROR - Data quality check failed for Data/PriceData/NEWP.csv.
-2024-05-17 21:23:22,321 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.915
-2024-05-17 21:23:22,321 - ERROR - Data quality check failed for Data/PriceData/IVR.csv.
-2024-05-17 21:23:23,503 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 13.110000000000001
-2024-05-17 21:23:23,504 - ERROR - Data quality check failed for Data/PriceData/AMSC.csv.
-2024-05-17 21:23:24,143 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:23:24,143 - ERROR - Data quality check failed for Data/PriceData/WRN.csv.
-2024-05-17 21:23:49,800 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.8708333333333336
-2024-05-17 21:23:49,800 - ERROR - Data quality check failed for Data/PriceData/CVAC.csv.
-2024-05-17 21:24:08,076 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:24:08,076 - ERROR - Data quality check failed for Data/PriceData/FNMA.csv.
-2024-05-17 21:24:18,855 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:24:18,855 - ERROR - Data quality check failed for Data/PriceData/GSAT.csv.
-2024-05-17 21:24:23,860 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.578658536585366
-2024-05-17 21:24:23,860 - ERROR - Data quality check failed for Data/PriceData/NNDM.csv.
-2024-05-17 21:24:50,760 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:24:50,760 - ERROR - Data quality check failed for Data/PriceData/ZJYL.csv.
-2024-05-17 21:24:53,209 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.5469696969697, End mean: 0.9332424242424242
-2024-05-17 21:24:53,209 - ERROR - Data quality check failed for Data/PriceData/NAAS.csv.
-2024-05-17 21:25:05,165 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:25:05,165 - ERROR - Data quality check failed for Data/PriceData/RUPRF.csv.
-2024-05-17 21:25:06,738 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 226.6530396, End mean: 2.7920000000000003
-2024-05-17 21:25:06,738 - ERROR - Data quality check failed for Data/PriceData/GOEV.csv.
-2024-05-17 21:25:08,166 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:25:08,166 - ERROR - Data quality check failed for Data/PriceData/EU.csv.
-2024-05-17 21:25:31,896 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:25:31,896 - ERROR - Data quality check failed for Data/PriceData/EUBG.csv.
-2024-05-17 21:25:32,839 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 90.0, End mean: 1.8278787878787877
-2024-05-17 21:25:32,839 - ERROR - Data quality check failed for Data/PriceData/LVO.csv.
-2024-05-17 21:25:34,829 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.358194444444445
-2024-05-17 21:25:34,829 - ERROR - Data quality check failed for Data/PriceData/GMGI.csv.
-2024-05-17 21:25:41,318 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2030862.676056338, End mean: 20.1474647887324
-2024-05-17 21:25:41,318 - ERROR - Data quality check failed for Data/PriceData/CRVO.csv.
-2024-05-17 21:25:46,032 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 798.3310346551724, End mean: 1.5184482758620688
-2024-05-17 21:25:46,032 - ERROR - Data quality check failed for Data/PriceData/ATOS.csv.
-2024-05-17 21:26:08,594 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:26:08,594 - ERROR - Data quality check failed for Data/PriceData/AQPW.csv.
-2024-05-17 21:26:24,608 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 552.5948715384616, End mean: 8.624871794871794
-2024-05-17 21:26:24,608 - ERROR - Data quality check failed for Data/PriceData/OTLK.csv.
-2024-05-17 21:26:37,967 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:26:37,968 - ERROR - Data quality check failed for Data/PriceData/SCWO.csv.
-2024-05-17 21:26:46,236 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:26:46,236 - ERROR - Data quality check failed for Data/PriceData/LMDXF.csv.
-2024-05-17 21:26:46,240 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1221.0566016, End mean: 0.7049908
-2024-05-17 21:26:46,240 - ERROR - Data quality check failed for Data/PriceData/XTKG.csv.
-2024-05-17 21:27:00,668 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.5422058823529414
-2024-05-17 21:27:00,668 - ERROR - Data quality check failed for Data/PriceData/ARMN.csv.
-2024-05-17 21:27:21,380 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.891764705882352, End mean: 0.5195882352941177
-2024-05-17 21:27:21,380 - ERROR - Data quality check failed for Data/PriceData/ME.csv.
-2024-05-17 21:27:38,025 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:27:38,025 - ERROR - Data quality check failed for Data/PriceData/AMTX.csv.
-2024-05-17 21:27:38,411 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:27:38,412 - ERROR - Data quality check failed for Data/PriceData/LWLG.csv.
-2024-05-17 21:27:41,046 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 301.3367332653061, End mean: 12.316938775510204
-2024-05-17 21:27:41,046 - ERROR - Data quality check failed for Data/PriceData/ADVM.csv.
-2024-05-17 21:27:52,993 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 423.02333416666664, End mean: 19.141333333333332
-2024-05-17 21:27:52,993 - ERROR - Data quality check failed for Data/PriceData/FET.csv.
-2024-05-17 21:28:02,873 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.8415972222222217
-2024-05-17 21:28:02,873 - ERROR - Data quality check failed for Data/PriceData/BLNK.csv.
-2024-05-17 21:28:02,878 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5741666666666667
-2024-05-17 21:28:02,878 - ERROR - Data quality check failed for Data/PriceData/LTMAY.csv.
-2024-05-17 21:28:17,994 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 2.1520689655172416
-2024-05-17 21:28:17,994 - ERROR - Data quality check failed for Data/PriceData/UXIN.csv.
-2024-05-17 21:28:30,374 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.6084722222222222
-2024-05-17 21:28:30,374 - ERROR - Data quality check failed for Data/PriceData/TELL.csv.
-2024-05-17 21:28:52,095 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2238.0, End mean: 26.26392857142857
-2024-05-17 21:28:52,095 - ERROR - Data quality check failed for Data/PriceData/ALAR.csv.
-2024-05-17 21:28:56,521 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:28:56,521 - ERROR - Data quality check failed for Data/PriceData/ZYXI.csv.
-2024-05-17 21:29:53,048 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:29:53,048 - ERROR - Data quality check failed for Data/PriceData/HIVE.csv.
-2024-05-17 21:30:23,816 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:30:23,816 - ERROR - Data quality check failed for Data/PriceData/NWBO.csv.
-2024-05-17 21:30:38,316 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
-2024-05-17 21:30:38,316 - ERROR - Data quality check failed for Data/PriceData/SSCC.csv.
-2024-05-17 21:30:39,109 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:30:39,110 - ERROR - Data quality check failed for Data/PriceData/EP.csv.
-2024-05-17 21:31:00,603 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:31:00,604 - ERROR - Data quality check failed for Data/PriceData/WNLV.csv.
-2024-05-17 21:31:12,488 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 13.008617021276592
-2024-05-17 21:31:12,488 - ERROR - Data quality check failed for Data/PriceData/SKYE.csv.
-2024-05-17 21:31:32,290 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.832361111111111
-2024-05-17 21:31:32,290 - ERROR - Data quality check failed for Data/PriceData/BB.csv.
-2024-05-17 21:31:52,056 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 72.6125806451613
-2024-05-17 21:31:52,056 - ERROR - Data quality check failed for Data/PriceData/CIVI.csv.
-2024-05-17 21:31:54,833 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:31:54,834 - ERROR - Data quality check failed for Data/PriceData/RAASY.csv.
-2024-05-17 21:32:03,269 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.9207142857142856
-2024-05-17 21:32:03,269 - ERROR - Data quality check failed for Data/PriceData/NEGG.csv.
-2024-05-17 21:32:04,403 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.564166666666665
-2024-05-17 21:32:04,404 - ERROR - Data quality check failed for Data/PriceData/GYRE.csv.
-2024-05-17 21:32:07,594 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 11.256250000000001
-2024-05-17 21:32:07,594 - ERROR - Data quality check failed for Data/PriceData/ATXS.csv.
-2024-05-17 21:32:20,075 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.4712500000000002
-2024-05-17 21:32:20,075 - ERROR - Data quality check failed for Data/PriceData/LUMN.csv.
-2024-05-17 21:32:28,041 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:32:28,042 - ERROR - Data quality check failed for Data/PriceData/AWCA.csv.
-2024-05-17 21:32:35,468 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.615588235294116
-2024-05-17 21:32:35,468 - ERROR - Data quality check failed for Data/PriceData/CBUS.csv.
-2024-05-17 21:32:35,706 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.5043617021276596
-2024-05-17 21:32:35,706 - ERROR - Data quality check failed for Data/PriceData/OCGN.csv.
-2024-05-17 21:32:38,086 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 15.75122448979592
-2024-05-17 21:32:38,086 - ERROR - Data quality check failed for Data/PriceData/VRDN.csv.
-2024-05-17 21:32:38,274 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:32:38,274 - ERROR - Data quality check failed for Data/PriceData/URG.csv.
-2024-05-17 21:32:54,399 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:32:54,399 - ERROR - Data quality check failed for Data/PriceData/SCGY.csv.
-2024-05-17 21:33:04,423 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.2335416666666665
-2024-05-17 21:33:04,423 - ERROR - Data quality check failed for Data/PriceData/SNDL.csv.
-2024-05-17 21:33:08,693 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 1.9518367346938776
-2024-05-17 21:33:08,693 - ERROR - Data quality check failed for Data/PriceData/GPRO.csv.
-2024-05-17 21:33:20,588 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 203.67608977777775, End mean: 5.035777777777778
-2024-05-17 21:33:20,588 - ERROR - Data quality check failed for Data/PriceData/ZVRA.csv.
-2024-05-17 21:33:24,189 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.667115384615384
-2024-05-17 21:33:24,189 - ERROR - Data quality check failed for Data/PriceData/AMC.csv.
-2024-05-17 21:34:10,004 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.4038666666666667
-2024-05-17 21:34:10,005 - ERROR - Data quality check failed for Data/PriceData/BETR.csv.
-2024-05-17 21:34:12,421 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.8125
-2024-05-17 21:34:12,421 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.csv.
-2024-05-17 21:34:12,427 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 276050.0, End mean: 8.830277777777777
-2024-05-17 21:34:12,427 - ERROR - Data quality check failed for Data/PriceData/SHIP.csv.
-2024-05-17 21:34:18,481 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1122.9511075, End mean: 15.717083333333335
-2024-05-17 21:34:18,481 - ERROR - Data quality check failed for Data/PriceData/UNG.csv.
-2024-05-17 21:34:26,421 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:34:26,421 - ERROR - Data quality check failed for Data/PriceData/CYBN.csv.
-2024-05-17 21:34:47,078 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:34:47,078 - ERROR - Data quality check failed for Data/PriceData/LFMD.csv.
-2024-05-17 21:34:58,338 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.0663934426229513
-2024-05-17 21:34:58,338 - ERROR - Data quality check failed for Data/PriceData/OUTKY.csv.
-2024-05-17 21:35:03,029 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.233194444444444
-2024-05-17 21:35:03,029 - ERROR - Data quality check failed for Data/PriceData/PBAJ.csv.
-2024-05-17 21:35:07,970 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.5325
-2024-05-17 21:35:07,970 - ERROR - Data quality check failed for Data/PriceData/NCMI.csv.
-2024-05-17 21:35:13,904 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:35:13,904 - ERROR - Data quality check failed for Data/PriceData/EGFEY.csv.
-2024-05-17 21:35:15,207 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:35:15,207 - ERROR - Data quality check failed for Data/PriceData/FMCC.csv.
-2024-05-17 21:35:20,524 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 161.98676470588234, End mean: 7.148235294117646
-2024-05-17 21:35:20,524 - ERROR - Data quality check failed for Data/PriceData/OPAD.csv.
-2024-05-17 21:35:35,069 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 425.65714333333324, End mean: 13.955714285714286
-2024-05-17 21:35:35,070 - ERROR - Data quality check failed for Data/PriceData/GRPN.csv.
-2024-05-17 21:35:37,756 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 9.879999999999999
-2024-05-17 21:35:37,756 - ERROR - Data quality check failed for Data/PriceData/SLDB.csv.
-2024-05-17 21:35:58,985 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3412.152777777778, End mean: 6.460555555555556
-2024-05-17 21:35:58,985 - ERROR - Data quality check failed for Data/PriceData/ABEO.csv.
-2024-05-17 21:36:02,194 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.076111111111111
-2024-05-17 21:36:02,194 - ERROR - Data quality check failed for Data/PriceData/FCEL.csv.
-2024-05-17 21:36:03,736 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
-2024-05-17 21:36:03,736 - ERROR - Data quality check failed for Data/PriceData/CELH.csv.
+2024-05-20 16:04:55,660 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:04:55,661 - ERROR - Data quality check failed for Data/PriceData/ZJYL.parquet.
+2024-05-20 16:04:57,787 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:04:57,787 - ERROR - Data quality check failed for Data/PriceData/URG.parquet.
+2024-05-20 16:04:58,520 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 15.75122448979592
+2024-05-20 16:04:58,520 - ERROR - Data quality check failed for Data/PriceData/VRDN.parquet.
+2024-05-20 16:06:41,848 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:06:41,848 - ERROR - Data quality check failed for Data/PriceData/ZJYL.parquet.
+2024-05-20 16:06:43,860 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:06:43,860 - ERROR - Data quality check failed for Data/PriceData/URG.parquet.
+2024-05-20 16:06:45,039 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 15.75122448979592
+2024-05-20 16:06:45,040 - ERROR - Data quality check failed for Data/PriceData/VRDN.parquet.
+2024-05-20 16:07:26,750 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:07:26,750 - ERROR - Data quality check failed for Data/PriceData/DNN.parquet.
+2024-05-20 16:07:28,873 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:07:28,873 - ERROR - Data quality check failed for Data/PriceData/SCWO.parquet.
+2024-05-20 16:07:32,275 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:07:32,275 - ERROR - Data quality check failed for Data/PriceData/LWLG.parquet.
+2024-05-20 16:07:45,004 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
+2024-05-20 16:07:45,004 - ERROR - Data quality check failed for Data/PriceData/SSCC.parquet.
+2024-05-20 16:07:54,003 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 90.0, End mean: 1.8278787878787877
+2024-05-20 16:07:54,003 - ERROR - Data quality check failed for Data/PriceData/LVO.parquet.
+2024-05-20 16:08:31,511 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:08:31,512 - ERROR - Data quality check failed for Data/PriceData/CYBN.parquet.
+2024-05-20 16:08:39,656 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:08:39,656 - ERROR - Data quality check failed for Data/PriceData/RUPRF.parquet.
+2024-05-20 16:08:52,754 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.667115384615384
+2024-05-20 16:08:52,754 - ERROR - Data quality check failed for Data/PriceData/AMC.parquet.
+2024-05-20 16:08:52,758 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:08:52,758 - ERROR - Data quality check failed for Data/PriceData/PAYS.parquet.
+2024-05-20 16:09:00,121 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.615588235294116
+2024-05-20 16:09:00,121 - ERROR - Data quality check failed for Data/PriceData/CBUS.parquet.
+2024-05-20 16:09:00,545 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.5043617021276596
+2024-05-20 16:09:00,545 - ERROR - Data quality check failed for Data/PriceData/OCGN.parquet.
+2024-05-20 16:09:02,215 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:09:02,216 - ERROR - Data quality check failed for Data/PriceData/LMDXF.parquet.
+2024-05-20 16:09:15,273 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:09:15,273 - ERROR - Data quality check failed for Data/PriceData/AMTX.parquet.
+2024-05-20 16:09:22,952 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 161.98676470588234, End mean: 7.148235294117646
+2024-05-20 16:09:22,953 - ERROR - Data quality check failed for Data/PriceData/OPAD.parquet.
+2024-05-20 16:09:23,968 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 13.008617021276592
+2024-05-20 16:09:23,968 - ERROR - Data quality check failed for Data/PriceData/SKYE.parquet.
+2024-05-20 16:09:24,008 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 13.110000000000001
+2024-05-20 16:09:24,008 - ERROR - Data quality check failed for Data/PriceData/AMSC.parquet.
+2024-05-20 16:09:27,323 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:09:27,323 - ERROR - Data quality check failed for Data/PriceData/FNMA.parquet.
+2024-05-20 16:09:29,150 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.832361111111111
+2024-05-20 16:09:29,151 - ERROR - Data quality check failed for Data/PriceData/BB.parquet.
+2024-05-20 16:09:42,609 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 2.1520689655172416
+2024-05-20 16:09:42,609 - ERROR - Data quality check failed for Data/PriceData/UXIN.parquet.
+2024-05-20 16:09:43,501 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:09:43,501 - ERROR - Data quality check failed for Data/PriceData/WNLV.parquet.
+2024-05-20 16:10:32,140 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.57916666666667
+2024-05-20 16:10:32,140 - ERROR - Data quality check failed for Data/PriceData/LEU.parquet.
+2024-05-20 16:10:33,027 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:10:33,028 - ERROR - Data quality check failed for Data/PriceData/EUBG.parquet.
+2024-05-20 16:10:54,895 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.4038666666666667
+2024-05-20 16:10:54,896 - ERROR - Data quality check failed for Data/PriceData/BETR.parquet.
+2024-05-20 16:11:00,476 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.5422058823529414
+2024-05-20 16:11:00,476 - ERROR - Data quality check failed for Data/PriceData/ARMN.parquet.
+2024-05-20 16:11:01,732 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.8415972222222217
+2024-05-20 16:11:01,732 - ERROR - Data quality check failed for Data/PriceData/BLNK.parquet.
+2024-05-20 16:11:10,600 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 8.979305555555555
+2024-05-20 16:11:10,600 - ERROR - Data quality check failed for Data/PriceData/CRK.parquet.
+2024-05-20 16:11:14,620 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 72.6125806451613
+2024-05-20 16:11:14,621 - ERROR - Data quality check failed for Data/PriceData/CIVI.parquet.
+2024-05-20 16:11:16,183 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2030862.676056338, End mean: 20.1474647887324
+2024-05-20 16:11:16,183 - ERROR - Data quality check failed for Data/PriceData/CRVO.parquet.
+2024-05-20 16:11:16,188 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 276050.0, End mean: 8.830277777777777
+2024-05-20 16:11:16,188 - ERROR - Data quality check failed for Data/PriceData/SHIP.parquet.
+2024-05-20 16:11:18,924 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 423.02333416666664, End mean: 19.141333333333332
+2024-05-20 16:11:18,925 - ERROR - Data quality check failed for Data/PriceData/FET.parquet.
+2024-05-20 16:11:25,396 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:11:25,396 - ERROR - Data quality check failed for Data/PriceData/SCGY.parquet.
+2024-05-20 16:11:25,954 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 301.3367332653061, End mean: 12.316938775510204
+2024-05-20 16:11:25,955 - ERROR - Data quality check failed for Data/PriceData/ADVM.parquet.
+2024-05-20 16:11:27,549 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 286.49210736842105, End mean: 9.717631578947367
+2024-05-20 16:11:27,549 - ERROR - Data quality check failed for Data/PriceData/GOCO.parquet.
+2024-05-20 16:11:43,443 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:11:43,444 - ERROR - Data quality check failed for Data/PriceData/CATX.parquet.
+2024-05-20 16:11:50,003 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3412.152777777778, End mean: 6.460555555555556
+2024-05-20 16:11:50,003 - ERROR - Data quality check failed for Data/PriceData/ABEO.parquet.
+2024-05-20 16:12:03,155 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:12:03,156 - ERROR - Data quality check failed for Data/PriceData/GSAT.parquet.
+2024-05-20 16:12:06,937 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.5325
+2024-05-20 16:12:06,937 - ERROR - Data quality check failed for Data/PriceData/NCMI.parquet.
+2024-05-20 16:12:08,829 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:12:08,829 - ERROR - Data quality check failed for Data/PriceData/RAASY.parquet.
+2024-05-20 16:12:13,340 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0698319444444444
+2024-05-20 16:12:13,340 - ERROR - Data quality check failed for Data/PriceData/HNOI.parquet.
+2024-05-20 16:12:17,081 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:12:17,081 - ERROR - Data quality check failed for Data/PriceData/LFMD.parquet.
+2024-05-20 16:12:17,876 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1221.0566016, End mean: 0.7049908
+2024-05-20 16:12:17,876 - ERROR - Data quality check failed for Data/PriceData/XTKG.parquet.
+2024-05-20 16:12:25,346 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.0663934426229513
+2024-05-20 16:12:25,346 - ERROR - Data quality check failed for Data/PriceData/OUTKY.parquet.
+2024-05-20 16:12:29,677 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2238.0, End mean: 26.26392857142857
+2024-05-20 16:12:29,677 - ERROR - Data quality check failed for Data/PriceData/ALAR.parquet.
+2024-05-20 16:12:35,777 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:12:35,777 - ERROR - Data quality check failed for Data/PriceData/EU.parquet.
+2024-05-20 16:12:37,094 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:12:37,094 - ERROR - Data quality check failed for Data/PriceData/AQPW.parquet.
+2024-05-20 16:12:38,024 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.112634920634923
+2024-05-20 16:12:38,024 - ERROR - Data quality check failed for Data/PriceData/SMBMY.parquet.
+2024-05-20 16:12:55,378 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:12:55,378 - ERROR - Data quality check failed for Data/PriceData/EM.parquet.
+2024-05-20 16:13:05,955 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.358194444444445
+2024-05-20 16:13:05,955 - ERROR - Data quality check failed for Data/PriceData/GMGI.parquet.
+2024-05-20 16:13:15,475 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:13:15,475 - ERROR - Data quality check failed for Data/PriceData/EP.parquet.
+2024-05-20 16:13:31,182 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.9207142857142856
+2024-05-20 16:13:31,182 - ERROR - Data quality check failed for Data/PriceData/NEGG.parquet.
+2024-05-20 16:13:33,022 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 203.67608977777775, End mean: 5.035777777777778
+2024-05-20 16:13:33,023 - ERROR - Data quality check failed for Data/PriceData/ZVRA.parquet.
+2024-05-20 16:13:33,282 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1122.9511075, End mean: 15.717083333333335
+2024-05-20 16:13:33,282 - ERROR - Data quality check failed for Data/PriceData/UNG.parquet.
+2024-05-20 16:13:58,832 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.5469696969697, End mean: 0.9332424242424242
+2024-05-20 16:13:58,832 - ERROR - Data quality check failed for Data/PriceData/NAAS.parquet.
+2024-05-20 16:14:00,151 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:14:00,152 - ERROR - Data quality check failed for Data/PriceData/HIVE.parquet.
+2024-05-20 16:14:05,006 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:14:05,007 - ERROR - Data quality check failed for Data/PriceData/ZYXI.parquet.
+2024-05-20 16:14:05,791 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 425.65714333333324, End mean: 13.955714285714286
+2024-05-20 16:14:05,792 - ERROR - Data quality check failed for Data/PriceData/GRPN.parquet.
+2024-05-20 16:14:10,166 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:14:10,167 - ERROR - Data quality check failed for Data/PriceData/FMCC.parquet.
+2024-05-20 16:14:10,956 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.8708333333333336
+2024-05-20 16:14:10,956 - ERROR - Data quality check failed for Data/PriceData/CVAC.parquet.
+2024-05-20 16:15:08,566 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 798.3310346551724, End mean: 1.5184482758620688
+2024-05-20 16:15:08,566 - ERROR - Data quality check failed for Data/PriceData/ATOS.parquet.
+2024-05-20 16:15:17,604 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 226.6530396, End mean: 2.7920000000000003
+2024-05-20 16:15:17,605 - ERROR - Data quality check failed for Data/PriceData/GOEV.parquet.
+2024-05-20 16:15:44,089 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:15:44,089 - ERROR - Data quality check failed for Data/PriceData/NEWP.parquet.
+2024-05-20 16:15:44,315 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:15:44,315 - ERROR - Data quality check failed for Data/PriceData/AWCA.parquet.
+2024-05-20 16:15:46,681 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:15:46,682 - ERROR - Data quality check failed for Data/PriceData/BITF.parquet.
+2024-05-20 16:15:47,878 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.6084722222222222
+2024-05-20 16:15:47,878 - ERROR - Data quality check failed for Data/PriceData/TELL.parquet.
+2024-05-20 16:16:01,664 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.75025
+2024-05-20 16:16:01,665 - ERROR - Data quality check failed for Data/PriceData/AMTD.parquet.
+2024-05-20 16:16:12,859 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.076111111111111
+2024-05-20 16:16:12,859 - ERROR - Data quality check failed for Data/PriceData/FCEL.parquet.
+2024-05-20 16:16:24,716 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 11.256250000000001
+2024-05-20 16:16:24,716 - ERROR - Data quality check failed for Data/PriceData/ATXS.parquet.
+2024-05-20 16:16:30,684 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:16:30,684 - ERROR - Data quality check failed for Data/PriceData/CELH.parquet.
+2024-05-20 16:16:36,888 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 332.6620036111112, End mean: 2.1965277777777774
+2024-05-20 16:16:36,888 - ERROR - Data quality check failed for Data/PriceData/ODV.parquet.
+2024-05-20 16:16:37,234 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:16:37,234 - ERROR - Data quality check failed for Data/PriceData/ABIT.parquet.
+2024-05-20 16:16:46,911 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:16:46,911 - ERROR - Data quality check failed for Data/PriceData/EGFEY.parquet.
+2024-05-20 16:17:05,994 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.8125
+2024-05-20 16:17:05,994 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.parquet.
+2024-05-20 16:17:23,900 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:17:23,900 - ERROR - Data quality check failed for Data/PriceData/WRN.parquet.
+2024-05-20 16:17:25,794 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.4105882352941173
+2024-05-20 16:17:25,795 - ERROR - Data quality check failed for Data/PriceData/UP.parquet.
+2024-05-20 16:17:34,689 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 9.879999999999999
+2024-05-20 16:17:34,689 - ERROR - Data quality check failed for Data/PriceData/SLDB.parquet.
+2024-05-20 16:17:34,915 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.915
+2024-05-20 16:17:34,915 - ERROR - Data quality check failed for Data/PriceData/IVR.parquet.
+2024-05-20 16:17:35,378 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.564166666666665
+2024-05-20 16:17:35,378 - ERROR - Data quality check failed for Data/PriceData/GYRE.parquet.
+2024-05-20 16:17:47,267 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:17:47,267 - ERROR - Data quality check failed for Data/PriceData/ICTSF.parquet.
+2024-05-20 16:17:50,811 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 552.5948715384616, End mean: 8.624871794871794
+2024-05-20 16:17:50,811 - ERROR - Data quality check failed for Data/PriceData/OTLK.parquet.
+2024-05-20 16:17:54,706 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.578658536585366
+2024-05-20 16:17:54,706 - ERROR - Data quality check failed for Data/PriceData/NNDM.parquet.
+2024-05-20 16:17:57,540 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:17:57,541 - ERROR - Data quality check failed for Data/PriceData/NLST.parquet.
+2024-05-20 16:18:01,213 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.2335416666666665
+2024-05-20 16:18:01,213 - ERROR - Data quality check failed for Data/PriceData/SNDL.parquet.
+2024-05-20 16:18:18,365 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.233194444444444
+2024-05-20 16:18:18,365 - ERROR - Data quality check failed for Data/PriceData/PBAJ.parquet.
+2024-05-20 16:18:19,327 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 1.9518367346938776
+2024-05-20 16:18:19,327 - ERROR - Data quality check failed for Data/PriceData/GPRO.parquet.
+2024-05-20 16:18:19,679 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:18:19,679 - ERROR - Data quality check failed for Data/PriceData/WEWA.parquet.
+2024-05-20 16:18:44,745 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.4712500000000002
+2024-05-20 16:18:44,745 - ERROR - Data quality check failed for Data/PriceData/LUMN.parquet.
+2024-05-20 16:18:52,352 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.891764705882352, End mean: 0.5195882352941177
+2024-05-20 16:18:52,352 - ERROR - Data quality check failed for Data/PriceData/ME.parquet.
+2024-05-20 16:19:19,239 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:19:19,239 - ERROR - Data quality check failed for Data/PriceData/NWBO.parquet.
+2024-05-20 16:19:22,700 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-20 16:19:22,700 - ERROR - Data quality check failed for Data/PriceData/VRDR.parquet.
+2024-05-20 16:19:40,752 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.5347727272727273
+2024-05-20 16:19:40,753 - ERROR - Data quality check failed for Data/PriceData/FLJ.parquet.
+2024-05-20 16:19:51,183 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5741666666666667
+2024-05-20 16:19:51,183 - ERROR - Data quality check failed for Data/PriceData/LTMAY.parquet.
+2024-05-21 21:20:53,984 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:20:53,986 - ERROR - Data quality check failed for Data/PriceData/ZJYL.parquet.
+2024-05-21 21:20:55,640 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:20:55,640 - ERROR - Data quality check failed for Data/PriceData/URG.parquet.
+2024-05-21 21:20:56,424 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1343.810203265306, End mean: 15.529183673469388
+2024-05-21 21:20:56,424 - ERROR - Data quality check failed for Data/PriceData/VRDN.parquet.
+2024-05-21 21:21:38,743 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:21:38,743 - ERROR - Data quality check failed for Data/PriceData/DNN.parquet.
+2024-05-21 21:21:41,053 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:21:41,053 - ERROR - Data quality check failed for Data/PriceData/SCWO.parquet.
+2024-05-21 21:21:44,633 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:21:44,633 - ERROR - Data quality check failed for Data/PriceData/LWLG.parquet.
+2024-05-21 21:21:57,557 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 764.0277777777778, End mean: 2.0
+2024-05-21 21:21:57,557 - ERROR - Data quality check failed for Data/PriceData/SSCC.parquet.
+2024-05-21 21:22:05,991 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 90.0, End mean: 1.8244117647058824
+2024-05-21 21:22:05,991 - ERROR - Data quality check failed for Data/PriceData/LVO.parquet.
+2024-05-21 21:22:42,359 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:22:42,360 - ERROR - Data quality check failed for Data/PriceData/CYBN.parquet.
+2024-05-21 21:22:50,226 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:22:50,226 - ERROR - Data quality check failed for Data/PriceData/RUPRF.parquet.
+2024-05-21 21:23:03,757 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 211.328845, End mean: 3.673269230769231
+2024-05-21 21:23:03,758 - ERROR - Data quality check failed for Data/PriceData/AMC.parquet.
+2024-05-21 21:23:03,762 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:23:03,762 - ERROR - Data quality check failed for Data/PriceData/PAYS.parquet.
+2024-05-21 21:23:10,414 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 651.6397058823529, End mean: 17.42970588235294
+2024-05-21 21:23:10,415 - ERROR - Data quality check failed for Data/PriceData/CBUS.parquet.
+2024-05-21 21:23:11,143 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 605.3489359574468, End mean: 1.5407446808510636
+2024-05-21 21:23:11,143 - ERROR - Data quality check failed for Data/PriceData/OCGN.parquet.
+2024-05-21 21:23:12,837 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:23:12,838 - ERROR - Data quality check failed for Data/PriceData/LMDXF.parquet.
+2024-05-21 21:23:25,367 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:23:25,367 - ERROR - Data quality check failed for Data/PriceData/AMTX.parquet.
+2024-05-21 21:23:33,009 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 161.98676470588234, End mean: 6.838235294117647
+2024-05-21 21:23:33,009 - ERROR - Data quality check failed for Data/PriceData/OPAD.parquet.
+2024-05-21 21:23:33,835 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1345.7978723404256, End mean: 13.020531914893613
+2024-05-21 21:23:33,835 - ERROR - Data quality check failed for Data/PriceData/SKYE.parquet.
+2024-05-21 21:23:34,032 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 326.2513894444444, End mean: 13.230972222222224
+2024-05-21 21:23:34,032 - ERROR - Data quality check failed for Data/PriceData/AMSC.parquet.
+2024-05-21 21:23:37,441 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:23:37,441 - ERROR - Data quality check failed for Data/PriceData/FNMA.parquet.
+2024-05-21 21:23:38,924 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 69.42819444444446, End mean: 2.8387499999999997
+2024-05-21 21:23:38,924 - ERROR - Data quality check failed for Data/PriceData/BB.parquet.
+2024-05-21 21:23:52,699 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 763.4827586206897, End mean: 2.23551724137931
+2024-05-21 21:23:52,699 - ERROR - Data quality check failed for Data/PriceData/UXIN.parquet.
+2024-05-21 21:23:53,302 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:23:53,302 - ERROR - Data quality check failed for Data/PriceData/WNLV.parquet.
+2024-05-21 21:24:41,930 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1344.3986493055554, End mean: 42.63486111111111
+2024-05-21 21:24:41,930 - ERROR - Data quality check failed for Data/PriceData/LEU.parquet.
+2024-05-21 21:24:42,869 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:24:42,869 - ERROR - Data quality check failed for Data/PriceData/EUBG.parquet.
+2024-05-21 21:25:04,623 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.093333333333332, End mean: 0.40219999999999995
+2024-05-21 21:25:04,623 - ERROR - Data quality check failed for Data/PriceData/BETR.parquet.
+2024-05-21 21:25:10,420 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 699.1433823529412, End mean: 3.581838235294118
+2024-05-21 21:25:10,420 - ERROR - Data quality check failed for Data/PriceData/ARMN.parquet.
+2024-05-21 21:25:11,134 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2264.8958333333335, End mean: 2.8586805555555554
+2024-05-21 21:25:11,134 - ERROR - Data quality check failed for Data/PriceData/BLNK.parquet.
+2024-05-21 21:25:19,462 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 182.93263819444442, End mean: 9.081666666666667
+2024-05-21 21:25:19,463 - ERROR - Data quality check failed for Data/PriceData/CRK.parquet.
+2024-05-21 21:25:23,236 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1798.1866274193546, End mean: 72.97193548387095
+2024-05-21 21:25:23,237 - ERROR - Data quality check failed for Data/PriceData/CIVI.parquet.
+2024-05-21 21:25:25,157 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2030862.676056338, End mean: 20.425915492957746
+2024-05-21 21:25:25,157 - ERROR - Data quality check failed for Data/PriceData/CRVO.parquet.
+2024-05-21 21:25:25,162 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 276050.0, End mean: 8.981527777777778
+2024-05-21 21:25:25,163 - ERROR - Data quality check failed for Data/PriceData/SHIP.parquet.
+2024-05-21 21:25:26,937 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 423.02333416666664, End mean: 19.110666666666667
+2024-05-21 21:25:26,937 - ERROR - Data quality check failed for Data/PriceData/FET.parquet.
+2024-05-21 21:25:32,900 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:25:32,900 - ERROR - Data quality check failed for Data/PriceData/SCGY.parquet.
+2024-05-21 21:25:33,656 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 301.3367332653061, End mean: 11.911020408163266
+2024-05-21 21:25:33,656 - ERROR - Data quality check failed for Data/PriceData/ADVM.parquet.
+2024-05-21 21:25:35,308 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 286.49210736842105, End mean: 9.619736842105262
+2024-05-21 21:25:35,308 - ERROR - Data quality check failed for Data/PriceData/GOCO.parquet.
+2024-05-21 21:25:49,406 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:25:49,406 - ERROR - Data quality check failed for Data/PriceData/CATX.parquet.
+2024-05-21 21:25:55,446 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3412.152777777778, End mean: 6.454444444444444
+2024-05-21 21:25:55,446 - ERROR - Data quality check failed for Data/PriceData/ABEO.parquet.
+2024-05-21 21:26:07,310 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:26:07,310 - ERROR - Data quality check failed for Data/PriceData/GSAT.parquet.
+2024-05-21 21:26:11,282 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 168.54305680555555, End mean: 4.5643055555555545
+2024-05-21 21:26:11,283 - ERROR - Data quality check failed for Data/PriceData/NCMI.parquet.
+2024-05-21 21:26:12,770 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:26:12,771 - ERROR - Data quality check failed for Data/PriceData/RAASY.parquet.
+2024-05-21 21:26:18,241 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 802.5277777777778, End mean: 1.0735819444444443
+2024-05-21 21:26:18,241 - ERROR - Data quality check failed for Data/PriceData/HNOI.parquet.
+2024-05-21 21:26:21,002 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:26:21,003 - ERROR - Data quality check failed for Data/PriceData/LFMD.parquet.
+2024-05-21 21:26:21,752 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1221.0566016, End mean: 0.7129512
+2024-05-21 21:26:21,752 - ERROR - Data quality check failed for Data/PriceData/XTKG.parquet.
+2024-05-21 21:26:29,128 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 76.60655737704919, End mean: 2.060491803278689
+2024-05-21 21:26:29,129 - ERROR - Data quality check failed for Data/PriceData/OUTKY.parquet.
+2024-05-21 21:26:33,826 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 2238.0, End mean: 26.655357142857138
+2024-05-21 21:26:33,827 - ERROR - Data quality check failed for Data/PriceData/ALAR.parquet.
+2024-05-21 21:26:39,782 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:26:39,782 - ERROR - Data quality check failed for Data/PriceData/EU.parquet.
+2024-05-21 21:26:40,855 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:26:40,855 - ERROR - Data quality check failed for Data/PriceData/AQPW.parquet.
+2024-05-21 21:26:41,928 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 530.8539679365078, End mean: 12.067584126984128
+2024-05-21 21:26:41,928 - ERROR - Data quality check failed for Data/PriceData/SMBMY.parquet.
+2024-05-21 21:26:58,316 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:26:58,316 - ERROR - Data quality check failed for Data/PriceData/EM.parquet.
+2024-05-21 21:27:09,191 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 68221875200.0, End mean: 3.396111111111111
+2024-05-21 21:27:09,191 - ERROR - Data quality check failed for Data/PriceData/GMGI.parquet.
+2024-05-21 21:27:18,204 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:27:18,204 - ERROR - Data quality check failed for Data/PriceData/EP.parquet.
+2024-05-21 21:27:33,948 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.24342857142858, End mean: 0.9288571428571428
+2024-05-21 21:27:33,948 - ERROR - Data quality check failed for Data/PriceData/NEGG.parquet.
+2024-05-21 21:27:35,112 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 203.67608977777775, End mean: 4.9768888888888885
+2024-05-21 21:27:35,112 - ERROR - Data quality check failed for Data/PriceData/ZVRA.parquet.
+2024-05-21 21:27:35,933 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 1122.9511075, End mean: 15.75222222222222
+2024-05-21 21:27:35,933 - ERROR - Data quality check failed for Data/PriceData/UNG.parquet.
+2024-05-21 21:28:00,721 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.5469696969697, End mean: 0.8953636363636364
+2024-05-21 21:28:00,721 - ERROR - Data quality check failed for Data/PriceData/NAAS.parquet.
+2024-05-21 21:28:02,025 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:28:02,025 - ERROR - Data quality check failed for Data/PriceData/HIVE.parquet.
+2024-05-21 21:28:06,905 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:28:06,905 - ERROR - Data quality check failed for Data/PriceData/ZYXI.parquet.
+2024-05-21 21:28:07,518 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 425.65714333333324, End mean: 13.926349206349204
+2024-05-21 21:28:07,518 - ERROR - Data quality check failed for Data/PriceData/GRPN.parquet.
+2024-05-21 21:28:12,074 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:28:12,075 - ERROR - Data quality check failed for Data/PriceData/FMCC.parquet.
+2024-05-21 21:28:12,367 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 60.78, End mean: 2.9747222222222223
+2024-05-21 21:28:12,367 - ERROR - Data quality check failed for Data/PriceData/CVAC.parquet.
+2024-05-21 21:29:09,231 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 798.3310346551724, End mean: 1.5391379310344824
+2024-05-21 21:29:09,231 - ERROR - Data quality check failed for Data/PriceData/ATOS.parquet.
+2024-05-21 21:29:18,427 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 226.6530396, End mean: 2.7884
+2024-05-21 21:29:18,427 - ERROR - Data quality check failed for Data/PriceData/GOEV.parquet.
+2024-05-21 21:29:43,676 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:29:43,676 - ERROR - Data quality check failed for Data/PriceData/NEWP.parquet.
+2024-05-21 21:29:44,313 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:29:44,314 - ERROR - Data quality check failed for Data/PriceData/AWCA.parquet.
+2024-05-21 21:29:46,503 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:29:46,503 - ERROR - Data quality check failed for Data/PriceData/BITF.parquet.
+2024-05-21 21:29:47,224 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 15.26888888888889, End mean: 0.61125
+2024-05-21 21:29:47,226 - ERROR - Data quality check failed for Data/PriceData/TELL.parquet.
+2024-05-21 21:30:00,993 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 55.62, End mean: 1.7531666666666668
+2024-05-21 21:30:00,993 - ERROR - Data quality check failed for Data/PriceData/AMTD.parquet.
+2024-05-21 21:30:11,375 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 436.46000194444446, End mean: 1.0633333333333335
+2024-05-21 21:30:11,375 - ERROR - Data quality check failed for Data/PriceData/FCEL.parquet.
+2024-05-21 21:30:23,415 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 768.4977288636364, End mean: 10.949204545454547
+2024-05-21 21:30:23,415 - ERROR - Data quality check failed for Data/PriceData/ATXS.parquet.
+2024-05-21 21:30:28,975 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:30:28,975 - ERROR - Data quality check failed for Data/PriceData/CELH.parquet.
+2024-05-21 21:30:34,783 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 332.6620036111112, End mean: 2.193888888888889
+2024-05-21 21:30:34,783 - ERROR - Data quality check failed for Data/PriceData/ODV.parquet.
+2024-05-21 21:30:35,259 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:30:35,259 - ERROR - Data quality check failed for Data/PriceData/ABIT.parquet.
+2024-05-21 21:30:44,975 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:30:44,975 - ERROR - Data quality check failed for Data/PriceData/EGFEY.parquet.
+2024-05-21 21:31:04,658 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 27.067222222222224, End mean: 0.7933333333333333
+2024-05-21 21:31:04,658 - ERROR - Data quality check failed for Data/PriceData/GOLLQ.parquet.
+2024-05-21 21:31:23,489 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:31:23,490 - ERROR - Data quality check failed for Data/PriceData/WRN.parquet.
+2024-05-21 21:31:25,593 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 98.60411764705883, End mean: 2.4899999999999998
+2024-05-21 21:31:25,593 - ERROR - Data quality check failed for Data/PriceData/UP.parquet.
+2024-05-21 21:31:34,968 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 408.58548129032255, End mean: 9.67225806451613
+2024-05-21 21:31:34,968 - ERROR - Data quality check failed for Data/PriceData/SLDB.parquet.
+2024-05-21 21:31:35,235 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 227.1222226388889, End mean: 8.937222222222223
+2024-05-21 21:31:35,235 - ERROR - Data quality check failed for Data/PriceData/IVR.parquet.
+2024-05-21 21:31:35,432 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 31721.59375, End mean: 16.622361111111115
+2024-05-21 21:31:35,432 - ERROR - Data quality check failed for Data/PriceData/GYRE.parquet.
+2024-05-21 21:31:47,663 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:31:47,663 - ERROR - Data quality check failed for Data/PriceData/ICTSF.parquet.
+2024-05-21 21:31:50,927 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 552.5948715384616, End mean: 8.589743589743588
+2024-05-21 21:31:50,927 - ERROR - Data quality check failed for Data/PriceData/OTLK.parquet.
+2024-05-21 21:31:54,619 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 78.01512195121951, End mean: 2.5732926829268292
+2024-05-21 21:31:54,619 - ERROR - Data quality check failed for Data/PriceData/NNDM.parquet.
+2024-05-21 21:31:57,860 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:31:57,860 - ERROR - Data quality check failed for Data/PriceData/NLST.parquet.
+2024-05-21 21:32:01,403 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 101.10000000000001, End mean: 2.273125
+2024-05-21 21:32:01,404 - ERROR - Data quality check failed for Data/PriceData/SNDL.parquet.
+2024-05-21 21:32:18,475 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 7837009.826388889, End mean: 4.149861111111111
+2024-05-21 21:32:18,476 - ERROR - Data quality check failed for Data/PriceData/PBAJ.parquet.
+2024-05-21 21:32:19,815 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 42.562775510204084, End mean: 1.9220408163265306
+2024-05-21 21:32:19,816 - ERROR - Data quality check failed for Data/PriceData/GPRO.parquet.
+2024-05-21 21:32:19,826 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:32:19,827 - ERROR - Data quality check failed for Data/PriceData/WEWA.parquet.
+2024-05-21 21:32:44,117 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 35.0251388888889, End mean: 1.4679166666666665
+2024-05-21 21:32:44,117 - ERROR - Data quality check failed for Data/PriceData/LUMN.parquet.
+2024-05-21 21:32:52,143 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 10.891764705882352, End mean: 0.5286470588235295
+2024-05-21 21:32:52,143 - ERROR - Data quality check failed for Data/PriceData/ME.parquet.
+2024-05-21 21:33:19,979 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:33:19,979 - ERROR - Data quality check failed for Data/PriceData/NWBO.parquet.
+2024-05-21 21:33:23,863 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
+2024-05-21 21:33:23,864 - ERROR - Data quality check failed for Data/PriceData/VRDR.parquet.
+2024-05-21 21:33:41,661 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 3197.509088636364, End mean: 0.5724545454545455
+2024-05-21 21:33:41,661 - ERROR - Data quality check failed for Data/PriceData/FLJ.parquet.
+2024-05-21 21:33:51,977 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 17.308611111111112, End mean: 0.5727777777777777
+2024-05-21 21:33:51,977 - ERROR - Data quality check failed for Data/PriceData/LTMAY.parquet.
+2024-05-22 21:26:17,611 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 160.9682752777778, End mean: 7.917374999999999
+2024-05-22 21:26:17,628 - ERROR - Data quality check failed for Data/PriceData/QDMI.parquet.

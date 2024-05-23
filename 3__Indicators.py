@@ -24,10 +24,10 @@ from tqdm import tqdm
 
 
 """
-This script processes financial market data to calculate various technical indicators and saves the processed data in CSV or Parquet formats. It is designed to handle large datasets efficiently by utilizing multiple cores of the processor.
+This script processes financial market data to calculate various technical indicators and saves the processed data Parquet format. It is designed to handle large datasets efficiently by utilizing multiple cores of the processor.
 
 Features:
-- Processes data files (CSV or Parquet) containing market data like Open, High, Low, Close, Volume, etc.
+- Processes data files containing market data like Open, High, Low, Close, Volume, etc.
 - Calculates a comprehensive set of technical indicators including moving averages, ATR, VWAP, RSI, and apoxx 50 others.
 - Implements anomaly detection by squashing outliers and interpolating missing data.
 - Optimized for performance with multithreading and conditional execution based on processor core count.
@@ -36,7 +36,7 @@ Features:
 
 Usage:
 - The script reads market data files from a specified input directory, processes each file to compute various indicators, and writes the enhanced data to an output directory.
-- The file format (CSV or Parquet) is preserved during the process.
+- The file format is preserved during the process.
 - Log information about the process, including processing time and any encountered errors, is saved in a log file.
 - It can be customized for different sets of indicators or processing logic based on specific needs.
 
@@ -190,6 +190,8 @@ def rolling_hurst_exponent(series, window_size):
 
 
 
+###=======[add_multiple_mean_reversion_z_scores]======###
+
 
 
 def add_multiple_mean_reversion_z_scores(data, price_column='Smoothed_Close', windows=[28, 90, 151], std_multipliers=[1, 1, 3]):
@@ -198,58 +200,102 @@ def add_multiple_mean_reversion_z_scores(data, price_column='Smoothed_Close', wi
         std_col = f'Rolling_Std_{window}'
         z_score_col = f'Mean_Reversion_Z_Score_{window}_std_{std_multiplier}'
 
-        data[mean_col] = data[price_column].rolling(window=window).mean()
-        data[std_col] = data[price_column].rolling(window=window).std()
+        rolling_window = data[price_column].rolling(window=window)
+        data[mean_col] = rolling_window.mean()
+        data[std_col] = rolling_window.std()
         data[z_score_col] = (data[price_column] - data[mean_col]) / (data[std_col] * std_multiplier)
 
     return data
 
+
+
+
+
+#==========[calculate_percentage_difference_from_ewma]==========#
+
+@njit
+def calculate_ewm(arr, alpha):
+    n = len(arr)
+    ewm_arr = np.empty(n)
+    ewm_arr[0] = arr[0]
+    for i in range(1, n):
+        ewm_arr[i] = alpha * arr[i] + (1 - alpha) * ewm_arr[i - 1]
+    return ewm_arr
+
+@njit
+def calculate_percentage_difference_from_ewma_numba(close_prices, periods):
+    n = len(close_prices)
+    results = np.empty((n, len(periods)))
+    
+    for j, period in enumerate(periods):
+        alpha = 2 / (period + 1)
+        ewm_arr = calculate_ewm(close_prices, alpha)
+        for i in range(n):
+            results[i, j] = (close_prices[i] - ewm_arr[i]) / ewm_arr[i] * 100
+    
+    return results
+
 def calculate_percentage_difference_from_ewma(data, price_column='Close', periods=[14, 151, 269], adjust=False):
-    alphas = [2 / (p + 1) for p in periods]  # Convert periods to alpha values for more direct control
-    for period, alpha in zip(periods, alphas):
+    close_prices = data[price_column].values
+    results = calculate_percentage_difference_from_ewma_numba(close_prices, periods)
+
+    for j, period in enumerate(periods):
         ewm_col = f'EWM_{period}'
         pct_diff_col = f'Pct_Diff_EWM_{period}'
-        data[ewm_col] = data[price_column].ewm(alpha=alpha, adjust=adjust).mean()
-        data[pct_diff_col] = (data[price_column] - data[ewm_col]) / data[ewm_col] * 100
+        data[ewm_col] = calculate_ewm(close_prices, 2 / (period + 1))
+        data[pct_diff_col] = results[:, j]
 
     return data
 
+
+
+
 def calculate_poc_and_metrics(data, window_size=70):
-    @njit
+    @njit(fastmath=True)
     def find_poc(prices, volumes):
-        volume_by_price = {}
-        for price, volume in zip(prices, volumes):
-            if price in volume_by_price:
-                volume_by_price[price] += volume
-            else:
-                volume_by_price[price] = volume
-        max_volume = -1
-        poc = -1
-        for price, volume in volume_by_price.items():
-            if volume > max_volume:
-                max_volume = volume
-                poc = price
-        return poc
+        unique_prices = np.unique(prices)
+        volume_by_price = np.zeros(len(unique_prices))
+        
+        for i in range(len(prices)):
+            for j in range(len(unique_prices)):
+                if prices[i] == unique_prices[j]:
+                    volume_by_price[j] += volumes[i]
+        
+        max_volume_idx = np.argmax(volume_by_price)
+        return unique_prices[max_volume_idx]
 
-    def calculate_poc_rolling(local_data):
-        poc_values = []
-        dates = []
-        for i in range(len(local_data) - window_size + 1):
-            window = local_data.iloc[i:i + window_size]
-            prices = window['Close'].values
-            volumes = window['Volume'].values
-            poc = find_poc(prices, volumes)
-            poc_values.append(poc)
-            dates.append(window['Date'].iloc[-1])
-        return pd.DataFrame({'Date': dates, 'PoC': poc_values})
+    @njit(fastmath=True)
+    def calculate_poc_rolling(prices, volumes, dates, window_size):
+        n = len(prices)
+        poc_values = np.empty(n - window_size + 1)
+        poc_dates = np.empty(n - window_size + 1, dtype=np.int64)
+        
+        for i in range(n - window_size + 1):
+            window_prices = prices[i:i + window_size]
+            window_volumes = volumes[i:i + window_size]
+            poc = find_poc(window_prices, window_volumes)
+            poc_values[i] = poc
+            poc_dates[i] = dates[i + window_size - 1]
+        
+        return poc_values, poc_dates
 
-    poc_df = calculate_poc_rolling(data)
+    close_prices = data['Close'].values
+    volumes = data['Volume'].values
+    dates = data['Date'].astype(np.int64).values
+
+    poc_values, result_dates = calculate_poc_rolling(close_prices, volumes, dates, window_size)
+
+    poc_df = pd.DataFrame({'Date': pd.to_datetime(result_dates), 'PoC': poc_values})
     data = pd.merge(data, poc_df, on='Date', how='left')
-    data['Pct_Diff_PoC'] = (data['Close'] - data['PoC']) / data['PoC'] * 100
-    data['PoC_Mean'] = data['PoC'].rolling(window=window_size).mean()
-    data['PoC_SD'] = data['PoC'].rolling(window=window_size).std()
-    data['Pct_Diff_PoC_Mean'] = data['Pct_Diff_PoC'].rolling(window=window_size).mean()
-    data['Pct_Diff_PoC_SD'] = data['Pct_Diff_PoC'].rolling(window=window_size).std()
+
+    if 'PoC' in data.columns:
+        data['Pct_Diff_PoC'] = (data['Close'] - data['PoC']) / data['PoC'] * 100
+        data['PoC_Mean'] = data['PoC'].rolling(window=window_size).mean()
+        data['PoC_SD'] = data['PoC'].rolling(window=window_size).std()
+        data['Pct_Diff_PoC_Mean'] = data['Pct_Diff_PoC'].rolling(window=window_size).mean()
+        data['Pct_Diff_PoC_SD'] = data['Pct_Diff_PoC'].rolling(window=window_size).std()
+    else:
+        logging.error("PoC column not found after calculation.")
 
     return data
 
@@ -267,6 +313,10 @@ def add_complexity_metrics(df, window_size=90):
     df['CID_Diff_From_Mean'] = df['Complexity_Invariant_Distance'] - df['CID_Mean']
 
     return df
+
+
+
+
 
 def add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70):
     def apply_kalman_filter(close_prices):
@@ -300,6 +350,10 @@ def add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=7
     df.loc[df.index[window_size-1:window_size+len(recurrences)-1], 'Recurrence_Rate'] = recurrences
 
     return df
+
+
+
+
 
 
 def add_kalman_and_entropy_metrics(df, window_size=70, bins=30):
@@ -506,46 +560,59 @@ def calculate_klinger_oscillator(df, short_period=34, long_period=55, signal_per
     return df
 
 
-def add_rolling_lzc(df, window_size=50, bin_size=1):
-    def calculate_percentage_moves(close_prices):
-        return (close_prices[1:] - close_prices[:-1]) / close_prices[:-1] * 100
 
-    def bin_percentage_changes(percentage_changes, bin_size=1):
-        return np.floor(percentage_changes / bin_size).astype(int)
+##======[add_rolling_lzc]======##
+@njit
+def calculate_percentage_moves(close_prices):
+    return (close_prices[1:] - close_prices[:-1]) / close_prices[:-1] * 100
 
-    def lempel_ziv_complexity(sequence):
-        n = len(sequence)
-        sub_strings = []
-        i, k, l = 0, 1, 1
-        while k + l <= n:
-            if tuple(sequence[i:i + l]) == tuple(sequence[k:k + l]):
-                l += 1
-                if k + l > n:
-                    sub_strings.append(tuple(sequence[i:k + l - 1]))
-            else:
+@njit
+def bin_percentage_changes(percentage_changes, bin_size=1):
+    return np.floor(percentage_changes / bin_size).astype(int)
+
+@njit
+def lempel_ziv_complexity(sequence):
+    n = len(sequence)
+    sub_strings = []
+    i, k, l = 0, 1, 1
+    while k + l <= n:
+        if tuple(sequence[i:i + l]) == tuple(sequence[k:k + l]):
+            l += 1
+            if k + l > n:
                 sub_strings.append(tuple(sequence[i:k + l - 1]))
-                i = k
-                k += 1
-                l = 1
-        sub_strings.append(tuple(sequence[i:k + l - 1]))
-        return len(set(sub_strings))
+        else:
+            sub_strings.append(tuple(sequence[i:k + l - 1]))
+            i = k
+            k += 1
+            l = 1
+    sub_strings.append(tuple(sequence[i:k + l - 1]))
+    return len(set(sub_strings))
 
+@njit
+def calculate_lzc(binned_changes, window_size):
+    n = len(binned_changes)
+    lzc_values = np.full(n, np.nan)
+    for i in range(n - window_size + 1):
+        window = binned_changes[i:i + window_size]
+        lzc_values[i + window_size - 1] = lempel_ziv_complexity(window)
+    return lzc_values
+
+def add_rolling_lzc(df, window_size=50, bin_size=1):
     close_prices = df['Close'].to_numpy()
     percentage_moves = calculate_percentage_moves(close_prices)
     binned_changes = bin_percentage_changes(percentage_moves, bin_size)
 
-    # Initialize LZC values with NaN
-    lzc_values = np.full(len(binned_changes), np.nan)
-
     # Calculate Lempel-Ziv Complexity on the binned sequence for each rolling window
-    for i in range(len(binned_changes) - window_size + 1):
-        window = binned_changes[i:i + window_size]
-        lzc_values[i + window_size - 1] = lempel_ziv_complexity(window)
+    lzc_values = calculate_lzc(binned_changes, window_size)
 
     # Add the LZC values to the DataFrame
-    df['Lempel_Ziv_Complexity'] = np.concatenate([[np.nan], lzc_values])  # Ensure same length as original data
+    df['Lempel_Ziv_Complexity'] = np.concatenate([[np.nan] * (window_size - 1), lzc_values[window_size - 1:]])  # Ensure same length as original data
 
     return df
+
+
+
+
 
 
 def calculate_poc_and_metrics(data, window_size=70):
@@ -590,6 +657,129 @@ def calculate_poc_and_metrics(data, window_size=70):
         logging.error("PoC column not found after calculation.")
 
     return data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@njit
+def linear_regression(x, y):
+    n = len(x)
+    x_mean = np.mean(x)
+    y_mean = np.mean(y)
+    xy_cov = np.sum((x - x_mean) * (y - y_mean))
+    xx_cov = np.sum((x - x_mean) ** 2)
+    slope = xy_cov / xx_cov
+    intercept = y_mean - slope * x_mean
+    return slope, intercept
+
+@njit
+def calculate_indicators_numba(volume, close, high, low):
+    n = len(volume)
+    volume_lag_1 = np.zeros(n)
+    volume_lag_2 = np.zeros(n)
+    volume_lag_3 = np.zeros(n)
+    volume_rolling_28 = np.zeros(n)
+    volume_percent = np.zeros(n)
+    volume_std = np.zeros(n)
+    volume_slope = np.zeros(n)
+    volume_rolling_90 = np.zeros(n)
+    volume_percent_rolling_90 = np.zeros(n)
+    ado = np.zeros(n)
+    ado_close_cor = np.zeros(n)
+
+    # Calculate volume lag
+    for i in range(1, n):
+        volume_lag_1[i] = volume[i - 1]
+        if i > 1:
+            volume_lag_2[i] = volume[i - 2]
+        if i > 2:
+            volume_lag_3[i] = volume[i - 3]
+
+    # Calculate rolling mean, percentage change, and std
+    for i in range(28, n):
+        volume_rolling_28[i] = np.mean(volume[i-28:i])
+        if volume_rolling_28[i] != 0:
+            volume_percent[i] = ((volume[i] - volume_rolling_28[i]) / volume_rolling_28[i]) * 100
+        volume_std[i] = np.std(volume[i-28:i])
+
+    for i in range(90, n):
+        volume_rolling_90[i] = np.mean(volume[i-90:i])
+        if volume_rolling_90[i] != 0:
+            volume_percent_rolling_90[i] = ((volume[i] - volume_rolling_90[i]) / volume_rolling_90[i]) * 100
+
+    # Calculate volume slope
+    for i in range(5, n):
+        x = np.arange(5)
+        y = volume[i-5:i]
+        slope, _ = linear_regression(x, y)
+        volume_slope[i] = slope
+
+    # Calculate ADO
+    for i in range(n):
+        if high[i] != low[i]:  # Avoid division by zero
+            clv = ((close[i] - low[i]) - (high[i] - close[i])) / (high[i] - low[i])
+            ado[i] = clv * volume[i]
+
+    ado_cumsum = np.cumsum(ado)
+
+    # Calculate rolling correlation
+    for i in range(28, n):
+        if np.std(close[i-28:i]) > 0 and np.std(ado_cumsum[i-28:i]) > 0:  # Ensure valid standard deviations
+            ado_close_cor[i] = np.corrcoef(close[i-28:i], ado_cumsum[i-28:i])[0, 1]
+
+    return (volume_lag_1, volume_lag_2, volume_lag_3, volume_rolling_28, volume_percent,
+            volume_std, volume_slope, volume_rolling_90, volume_percent_rolling_90,
+            ado_cumsum, ado_close_cor)
+
+
+def VolumeADO(df):
+    # Extract relevant columns as numpy arrays
+    volume = df['Volume'].to_numpy()
+    close = df['Close'].to_numpy()
+    high = df['High'].to_numpy()
+    low = df['Low'].to_numpy()
+
+    # Call the numba optimized function
+    (volume_lag_1, volume_lag_2, volume_lag_3, volume_rolling_28, volume_percent,
+     volume_std, volume_slope, volume_rolling_90, volume_percent_rolling_90,
+     ado_cumsum, ado_close_cor) = calculate_indicators_numba(volume, close, high, low)
+
+    # Add results back to the DataFrame
+    df['Volume_lag_1'] = volume_lag_1
+    df['Volume_lag_2'] = volume_lag_2
+    df['Volume_lag_3'] = volume_lag_3
+    df['Volume_rolling_28'] = volume_rolling_28
+    df['Volume%'] = volume_percent
+    df['Volume_std'] = volume_std
+    df['Volume_slope'] = volume_slope
+    df['Volume_rolling_90'] = volume_rolling_90
+    df['Volume%_rolling_90'] = volume_percent_rolling_90
+    df['ADO'] = ado_cumsum
+    df['ADOCloseCor'] = ado_close_cor
+
+    return df
+
+
+
+
+
+
+
 
 
 
@@ -642,12 +832,6 @@ def calculate_emv(df, period=14):
     return df
 
 
-def calculate_ado(df):
-    clv = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low'])
-    ado = clv * df['Volume']
-    df['ADO'] = ado.cumsum()
-    return df
-
 
 def indicators(df):
     df['Close'] = df['Close'].ffill()
@@ -684,7 +868,7 @@ def indicators(df):
     df = calculate_ad_line(df)
     df = calculate_nvi(df)
     df = calculate_emv(df)
-    df = calculate_ado(df)
+    df = VolumeADO(df)
 
 
     close_shift_1 = close.shift(1)
@@ -701,7 +885,6 @@ def indicators(df):
     df['14ma%'] = ((close - df['14ma']) / df['14ma']) * 100
     df['200ma%'] = ((close - df['200ma']) / df['200ma']) * 100
 
-    ##get the std of the 14ma from the 200ma
 
     df['SMA_200'] = close.rolling(window=200).mean()
     df['SMA_14'] = close.rolling(window=14).mean()
@@ -838,16 +1021,8 @@ def indicators(df):
     df = add_kalman_and_entropy_metrics(df, window_size=70, bins=30)
     df = add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70)
     df = add_complexity_metrics(df)
-
-
-
-    #call the new function 
-    df = add_kalman_and_entropy_metrics(df, window_size=70, bins=30)
-    df = add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70)
-    df = add_complexity_metrics(df)
     df = calculate_poc_and_metrics(df, window_size=70)
     df = calculate_percentage_difference_from_ewma(df, 'Close', [14, 151, 269], adjust=False)
-
 
     windows = [28, 90, 151]
     std_multipliers = [1, 2, 3]
@@ -878,19 +1053,12 @@ def clean_and_interpolate_data(df):
     df.ffill(inplace=True)
     return df
 
-
-
-
 def validate_columns(df, required_columns):
     missing_columns = [col for col in required_columns if col not in df.columns]
     if missing_columns:
         logging.error(f"Missing columns: {missing_columns}")
         return False
     return True
-
-
-
-
 
 def DataQualityCheck(df):
     if df.empty or len(df) < 201:
@@ -923,14 +1091,24 @@ def DataQualityCheck(df):
 
 def process_file(file_path, output_dir):
     try:
-        if file_path.endswith('.csv'):
-            df = pd.read_csv(file_path)
-        elif file_path.endswith('.parquet'):
-            df = pd.read_parquet(file_path)
-        else:
-            logging.error(f"Skipped {file_path}: Unsupported file format")
-            return
-        
+
+        file_path.endswith('.parquet')
+        df = pd.read_parquet(file_path)
+        if 'Date' not in df.columns:
+            if df.index.name == 'Date':
+                df = df.reset_index()
+            else:
+                logging.error("The 'Date' column is missing from the DataFrame.")
+                return None
+
+
+
+        if df['Date'].dtype != 'datetime64[ns]':
+            logging.info("Converting 'Date' column to datetime.")
+            df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+    
+
+
         if not validate_columns(df, ['Close', 'High', 'Low', 'Volume']):
             logging.error(f"File {file_path} does not contain all required columns.")
             return
@@ -949,27 +1127,20 @@ def process_file(file_path, output_dir):
         traceback_info = traceback.format_exc()
         logging.error(traceback_info)
 
-
-
 def SaveData(df, file_path, output_dir):
     file_name = os.path.basename(file_path)
     output_file = os.path.join(output_dir, file_name)
-    if file_path.endswith('.csv'):
-        df.to_csv(output_file, index=False)
-    elif file_path.endswith('.parquet'):
-        df.to_parquet(output_file, index=False)
+    df.to_parquet(output_file, index=False)
+    del df
 
 def clear_output_directory(output_dir):
     """
     Remove existing files in the output directory.
     """
     for file in os.listdir(output_dir):
-        if file.endswith('.csv') or file.endswith('.parquet'):
+        if file.endswith('.parquet'):
             os.remove(os.path.join(output_dir, file))
 
-
-##===========================(Main Function)===========================##
-##===========================(Main Function)===========================##
 ##===========================(Main Function)===========================##
 
 def process_file_wrapper(file_path):
@@ -981,15 +1152,15 @@ def process_data_files(run_percent):
     os.makedirs(CONFIG['output_directory'], exist_ok=True)
     clear_output_directory(CONFIG['output_directory'])
 
-    file_paths = [os.path.join(CONFIG['input_directory'], f) for f in os.listdir(CONFIG['input_directory']) if f.endswith('.csv') or f.endswith('.parquet')]
+    file_paths = [os.path.join(CONFIG['input_directory'], f) for f in os.listdir(CONFIG['input_directory']) if f.endswith('.parquet')]
     files_to_process = file_paths[:int(len(file_paths) * (run_percent / 100))]
-
     with ProcessPoolExecutor() as executor:
         list(tqdm(executor.map(process_file_wrapper, files_to_process), total=len(files_to_process), desc="Processing files"))
 
+
+
     print(f"Processed {len(files_to_process)} files in {time.time() - StartTimer:.2f} seconds")
     print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.')
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process financial market data files.")
@@ -997,4 +1168,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     process_data_files(args.runpercent)
-
