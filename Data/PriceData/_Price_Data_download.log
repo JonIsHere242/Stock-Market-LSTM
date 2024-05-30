@@ -82,3 +82,413 @@
 2024-05-22 21:15:13,939 - INFO - Downloaded data for 3900 tickers taking 4506.582538604736 seconds
 2024-05-22 21:17:08,605 - INFO - Downloaded data for 4000 tickers taking 4621.248311042786 seconds
 2024-05-22 21:17:48,564 - INFO - Data download completed.
+2024-05-24 20:00:07,752 - INFO - Cleared old data files.
+2024-05-24 20:02:01,630 - INFO - Downloaded data for 100 tickers taking 113.8765013217926 seconds
+2024-05-24 20:03:56,657 - INFO - Downloaded data for 200 tickers taking 228.9035997390747 seconds
+2024-05-24 20:05:51,224 - INFO - Downloaded data for 300 tickers taking 343.47024297714233 seconds
+2024-05-24 20:07:44,707 - INFO - Downloaded data for 400 tickers taking 456.953426361084 seconds
+2024-05-24 20:09:39,089 - INFO - Downloaded data for 500 tickers taking 571.3355627059937 seconds
+2024-05-24 20:11:33,606 - INFO - Downloaded data for 600 tickers taking 685.8520119190216 seconds
+2024-05-24 20:13:28,092 - INFO - Downloaded data for 700 tickers taking 800.3382160663605 seconds
+2024-05-24 20:15:22,284 - INFO - Downloaded data for 800 tickers taking 914.5307111740112 seconds
+2024-05-24 20:17:16,527 - INFO - Downloaded data for 900 tickers taking 1028.773726940155 seconds
+2024-05-24 20:19:11,100 - INFO - Downloaded data for 1000 tickers taking 1143.3461339473724 seconds
+2024-05-24 20:21:05,751 - INFO - Downloaded data for 1100 tickers taking 1257.9975748062134 seconds
+2024-05-24 20:23:00,233 - INFO - Downloaded data for 1200 tickers taking 1372.479005098343 seconds
+2024-05-24 20:24:55,293 - INFO - Downloaded data for 1300 tickers taking 1487.5396411418915 seconds
+2024-05-24 20:26:49,865 - INFO - Downloaded data for 1400 tickers taking 1602.111525297165 seconds
+2024-05-24 20:28:44,842 - INFO - Downloaded data for 1500 tickers taking 1717.0884037017822 seconds
+2024-05-24 20:30:39,938 - INFO - Downloaded data for 1600 tickers taking 1832.1844499111176 seconds
+2024-05-24 20:32:34,680 - INFO - Downloaded data for 1700 tickers taking 1946.9266068935394 seconds
+2024-05-24 20:34:28,530 - INFO - Downloaded data for 1800 tickers taking 2060.775830745697 seconds
+2024-05-24 20:36:23,546 - INFO - Downloaded data for 1900 tickers taking 2175.792409658432 seconds
+2024-05-24 20:38:17,772 - INFO - Downloaded data for 2000 tickers taking 2290.017974615097 seconds
+2024-05-24 20:40:11,849 - INFO - Downloaded data for 2100 tickers taking 2404.095161676407 seconds
+2024-05-24 20:42:06,054 - INFO - Downloaded data for 2200 tickers taking 2518.3005001544952 seconds
+2024-05-24 20:44:00,098 - INFO - Downloaded data for 2300 tickers taking 2632.3444397449493 seconds
+2024-05-24 20:45:54,363 - INFO - Downloaded data for 2400 tickers taking 2746.6092088222504 seconds
+2024-05-24 20:47:48,692 - INFO - Downloaded data for 2500 tickers taking 2860.938663482666 seconds
+2024-05-24 20:49:43,367 - INFO - Downloaded data for 2600 tickers taking 2975.6133127212524 seconds
+2024-05-24 20:51:39,084 - INFO - Downloaded data for 2700 tickers taking 3091.329955101013 seconds
+2024-05-24 20:53:33,920 - INFO - Downloaded data for 2800 tickers taking 3206.1666898727417 seconds
+2024-05-24 20:55:28,890 - INFO - Downloaded data for 2900 tickers taking 3321.13649058342 seconds
+2024-05-24 20:57:23,860 - INFO - Downloaded data for 3000 tickers taking 3436.106013774872 seconds
+2024-05-24 20:59:18,060 - INFO - Downloaded data for 3100 tickers taking 3550.3059842586517 seconds
+2024-05-24 21:01:12,900 - INFO - Downloaded data for 3200 tickers taking 3665.146178007126 seconds
+2024-05-24 21:03:07,844 - INFO - Downloaded data for 3300 tickers taking 3780.090479850769 seconds
+2024-05-24 21:05:01,251 - INFO - Downloaded data for 3400 tickers taking 3893.4970111846924 seconds
+2024-05-24 21:06:55,326 - INFO - Downloaded data for 3500 tickers taking 4007.5723292827606 seconds
+2024-05-24 21:08:50,099 - INFO - Downloaded data for 3600 tickers taking 4122.3453805446625 seconds
+2024-05-24 21:10:44,560 - INFO - Downloaded data for 3700 tickers taking 4236.805879831314 seconds
+2024-05-25 20:00:07,643 - INFO - Cleared old data files.
+2024-05-25 20:02:02,018 - INFO - Downloaded data for 100 tickers taking 114.37323331832886 seconds
+2024-05-26 20:00:07,812 - INFO - Cleared old data files.
+2024-05-26 20:02:01,057 - INFO - Downloaded data for 100 tickers taking 113.2438600063324 seconds
+2024-05-26 20:03:55,404 - INFO - Downloaded data for 200 tickers taking 227.59106469154358 seconds
+2024-05-26 20:05:50,016 - INFO - Downloaded data for 300 tickers taking 342.2034692764282 seconds
+2024-05-26 20:07:44,229 - INFO - Downloaded data for 400 tickers taking 456.4160339832306 seconds
+2024-05-26 20:09:38,475 - INFO - Downloaded data for 500 tickers taking 570.6624591350555 seconds
+2024-05-26 20:11:32,209 - INFO - Downloaded data for 600 tickers taking 684.3962171077728 seconds
+2024-05-26 20:13:26,145 - INFO - Downloaded data for 700 tickers taking 798.3323664665222 seconds
+2024-05-26 20:15:19,390 - INFO - Downloaded data for 800 tickers taking 911.5774657726288 seconds
+2024-05-26 20:17:13,273 - INFO - Downloaded data for 900 tickers taking 1025.4603655338287 seconds
+2024-05-26 20:19:07,877 - INFO - Downloaded data for 1000 tickers taking 1140.063888311386 seconds
+2024-05-26 20:21:01,822 - INFO - Downloaded data for 1100 tickers taking 1254.0089263916016 seconds
+2024-05-26 20:22:56,005 - INFO - Downloaded data for 1200 tickers taking 1368.1917021274567 seconds
+2024-05-26 20:24:49,524 - INFO - Downloaded data for 1300 tickers taking 1481.7114715576172 seconds
+2024-05-26 20:26:44,028 - INFO - Downloaded data for 1400 tickers taking 1596.2155573368073 seconds
+2024-05-26 20:27:41,569 - INFO - Data download completed.
+2024-05-27 20:00:07,629 - INFO - Cleared old data files.
+2024-05-27 20:02:00,903 - INFO - Downloaded data for 100 tickers taking 113.27280640602112 seconds
+2024-05-27 20:03:54,850 - INFO - Downloaded data for 200 tickers taking 227.21965980529785 seconds
+2024-05-27 20:05:49,489 - INFO - Downloaded data for 300 tickers taking 341.8592839241028 seconds
+2024-05-27 20:07:44,319 - INFO - Downloaded data for 400 tickers taking 456.6893365383148 seconds
+2024-05-27 20:09:38,788 - INFO - Downloaded data for 500 tickers taking 571.1579556465149 seconds
+2024-05-27 20:11:32,527 - INFO - Downloaded data for 600 tickers taking 684.8972833156586 seconds
+2024-05-27 20:13:26,641 - INFO - Downloaded data for 700 tickers taking 799.0110492706299 seconds
+2024-05-27 20:15:20,084 - INFO - Downloaded data for 800 tickers taking 912.4541659355164 seconds
+2024-05-27 20:17:13,603 - INFO - Downloaded data for 900 tickers taking 1025.9730377197266 seconds
+2024-05-27 20:19:07,980 - INFO - Downloaded data for 1000 tickers taking 1140.3499767780304 seconds
+2024-05-27 20:21:02,100 - INFO - Downloaded data for 1100 tickers taking 1254.4695353507996 seconds
+2024-05-27 20:22:56,981 - INFO - Downloaded data for 1200 tickers taking 1369.3514668941498 seconds
+2024-05-27 20:24:51,146 - INFO - Downloaded data for 1300 tickers taking 1483.5157845020294 seconds
+2024-05-27 20:26:46,398 - INFO - Downloaded data for 1400 tickers taking 1598.7678008079529 seconds
+2024-05-27 20:27:43,996 - INFO - Data download completed.
+2024-05-29 17:18:29,345 - INFO - Cleared old data files.
+2024-05-29 17:20:28,973 - INFO - Downloaded data for 100 tickers taking 119.59333062171936 seconds
+2024-05-29 17:20:38,392 - WARNING - Data for ARM is too short. Skipping.
+2024-05-29 17:22:27,842 - INFO - Downloaded data for 200 tickers taking 238.46293878555298 seconds
+2024-05-29 17:24:25,756 - INFO - Downloaded data for 300 tickers taking 356.3765299320221 seconds
+2024-05-29 17:24:31,606 - WARNING - Data for GEV is too short. Skipping.
+2024-05-29 17:25:33,520 - WARNING - Data for KVUE is too short. Skipping.
+2024-05-29 17:26:22,800 - INFO - Downloaded data for 400 tickers taking 473.4206700325012 seconds
+2024-05-29 17:28:14,198 - WARNING - Data for VLTO is too short. Skipping.
+2024-05-29 17:28:20,279 - INFO - Downloaded data for 500 tickers taking 590.8995361328125 seconds
+2024-05-29 17:28:36,623 - WARNING - Data for KSPI is too short. Skipping.
+2024-05-29 17:30:16,920 - INFO - Downloaded data for 600 tickers taking 707.5408277511597 seconds
+2024-05-29 17:32:14,681 - INFO - Downloaded data for 700 tickers taking 825.3020107746124 seconds
+2024-05-29 17:33:33,240 - WARNING - Data for VIK is too short. Skipping.
+2024-05-29 17:34:11,824 - INFO - Downloaded data for 800 tickers taking 942.4442238807678 seconds
+2024-05-29 17:34:29,411 - WARNING - Data for ALAB is too short. Skipping.
+2024-05-29 17:34:52,004 - WARNING - Data for VFS is too short. Skipping.
+2024-05-29 17:35:14,198 - WARNING - Data for SOLV is too short. Skipping.
+2024-05-29 17:35:21,252 - WARNING - Data for SN is too short. Skipping.
+2024-05-29 17:36:08,818 - INFO - Downloaded data for 900 tickers taking 1059.4389951229095 seconds
+2024-05-29 17:36:32,952 - WARNING - Data for RDDT is too short. Skipping.
+2024-05-29 17:37:06,574 - WARNING - Data for CAVA is too short. Skipping.
+2024-05-29 17:37:09,041 - WARNING - Data for BIRK is too short. Skipping.
+2024-05-29 17:37:09,093 - WARNING - Data for CART is too short. Skipping.
+2024-05-29 17:38:04,903 - INFO - Downloaded data for 1000 tickers taking 1175.5234291553497 seconds
+2024-05-29 17:38:12,985 - WARNING - Data for ULS is too short. Skipping.
+2024-05-29 17:38:51,263 - WARNING - Data for AS is too short. Skipping.
+2024-05-29 17:40:01,139 - INFO - Downloaded data for 1100 tickers taking 1291.7596452236176 seconds
+2024-05-29 17:40:45,699 - WARNING - Data for ZK is too short. Skipping.
+2024-05-29 17:40:50,553 - WARNING - Data for KVYO is too short. Skipping.
+2024-05-29 17:41:56,359 - INFO - Downloaded data for 1200 tickers taking 1406.9795529842377 seconds
+2024-05-29 17:42:12,323 - WARNING - Data for RBRK is too short. Skipping.
+2024-05-29 17:43:44,463 - WARNING - Data for LOAR is too short. Skipping.
+2024-05-29 17:43:51,463 - INFO - Downloaded data for 1300 tickers taking 1522.0835855007172 seconds
+2024-05-29 17:45:47,176 - INFO - Downloaded data for 1400 tickers taking 1637.7963593006134 seconds
+2024-05-29 17:46:29,778 - WARNING - Data for HAFN is too short. Skipping.
+2024-05-29 17:47:04,452 - WARNING - Data for KNF is too short. Skipping.
+2024-05-29 17:47:10,312 - WARNING - Data for PACS is too short. Skipping.
+2024-05-29 17:47:43,385 - INFO - Downloaded data for 1500 tickers taking 1754.0056920051575 seconds
+2024-05-29 17:49:39,601 - INFO - Downloaded data for 1600 tickers taking 1870.2220990657806 seconds
+2024-05-29 17:49:42,961 - WARNING - Data for VTMX is too short. Skipping.
+2024-05-29 17:51:34,986 - INFO - Downloaded data for 1700 tickers taking 1985.6071190834045 seconds
+2024-05-29 17:52:23,371 - WARNING - Data for IBTA is too short. Skipping.
+2024-05-29 17:53:11,661 - WARNING - Data for TBBB is too short. Skipping.
+2024-05-29 17:53:14,088 - WARNING - Data for APGE is too short. Skipping.
+2024-05-29 17:53:30,254 - INFO - Downloaded data for 1800 tickers taking 2100.874694108963 seconds
+2024-05-29 17:54:20,504 - WARNING - Data for ATMU is too short. Skipping.
+2024-05-29 17:55:11,540 - WARNING - Data for CTRI is too short. Skipping.
+2024-05-29 17:55:12,678 - WARNING - Data for FTRE is too short. Skipping.
+2024-05-29 17:55:19,569 - WARNING - Data for KGS is too short. Skipping.
+2024-05-29 17:55:24,366 - INFO - Downloaded data for 1900 tickers taking 2214.9863250255585 seconds
+2024-05-29 17:56:54,657 - WARNING - Data for ODD is too short. Skipping.
+2024-05-29 17:57:18,691 - WARNING - Data for SVV is too short. Skipping.
+2024-05-29 17:57:18,796 - INFO - Downloaded data for 2000 tickers taking 2329.416145801544 seconds
+2024-05-29 17:57:21,057 - WARNING - Data for PHIN is too short. Skipping.
+2024-05-29 17:57:36,147 - WARNING - Data for CGON is too short. Skipping.
+2024-05-29 17:57:39,547 - WARNING - Data for MSDL is too short. Skipping.
+2024-05-29 17:57:41,985 - WARNING - Data for NATL is too short. Skipping.
+2024-05-29 17:57:46,540 - WARNING - Data for FIHL is too short. Skipping.
+2024-05-29 17:57:48,920 - WARNING - Data for OBDE is too short. Skipping.
+2024-05-29 17:58:01,435 - WARNING - Data for BTSG is too short. Skipping.
+2024-05-29 17:58:20,799 - WARNING - Data for MNR is too short. Skipping.
+2024-05-29 17:58:25,450 - WARNING - Data for CDLR is too short. Skipping.
+2024-05-29 17:58:43,747 - WARNING - Data for HG is too short. Skipping.
+2024-05-29 17:59:14,940 - INFO - Downloaded data for 2100 tickers taking 2445.5601947307587 seconds
+2024-05-29 17:59:25,287 - WARNING - Data for MSGE is too short. Skipping.
+2024-05-29 18:00:08,388 - WARNING - Data for KLG is too short. Skipping.
+2024-05-29 18:00:23,383 - WARNING - Data for AHR is too short. Skipping.
+2024-05-29 18:00:30,598 - WARNING - Data for ZKH is too short. Skipping.
+2024-05-29 18:00:32,838 - WARNING - Data for WS is too short. Skipping.
+2024-05-29 18:00:44,606 - WARNING - Data for DBD is too short. Skipping.
+2024-05-29 18:00:57,164 - WARNING - Data for VSTS is too short. Skipping.
+2024-05-29 18:01:11,088 - INFO - Downloaded data for 2200 tickers taking 2561.709119796753 seconds
+2024-05-29 18:02:05,531 - WARNING - Data for NMRA is too short. Skipping.
+2024-05-29 18:02:07,923 - WARNING - Data for MRX is too short. Skipping.
+2024-05-29 18:03:08,125 - INFO - Downloaded data for 2300 tickers taking 2678.745676755905 seconds
+2024-05-29 18:03:48,982 - WARNING - Data for SDHC is too short. Skipping.
+2024-05-29 18:04:52,262 - WARNING - Data for HDL is too short. Skipping.
+2024-05-29 18:05:02,863 - INFO - Downloaded data for 2400 tickers taking 2793.483542442322 seconds
+2024-05-29 18:06:11,412 - WARNING - Data for KBDC is too short. Skipping.
+2024-05-29 18:06:22,731 - WARNING - Data for ECO is too short. Skipping.
+2024-05-29 18:06:56,898 - INFO - Downloaded data for 2500 tickers taking 2907.5183730125427 seconds
+2024-05-29 18:08:45,268 - WARNING - Data for NCDL is too short. Skipping.
+2024-05-29 18:08:50,894 - INFO - Downloaded data for 2600 tickers taking 3021.5143523216248 seconds
+2024-05-29 18:09:45,714 - WARNING - Data for ABVX is too short. Skipping.
+2024-05-29 18:10:13,731 - WARNING - Data for LAC is too short. Skipping.
+2024-05-29 18:10:45,968 - INFO - Downloaded data for 2700 tickers taking 3136.5884881019592 seconds
+2024-05-29 18:11:20,423 - WARNING - Data for FLYX is too short. Skipping.
+2024-05-29 18:11:40,915 - WARNING - Data for CRGX is too short. Skipping.
+2024-05-29 18:12:37,808 - WARNING - Data for NIKA is too short. Skipping.
+2024-05-29 18:12:40,293 - INFO - Downloaded data for 2800 tickers taking 3250.9136638641357 seconds
+2024-05-29 18:12:51,717 - WARNING - Data for EXTO is too short. Skipping.
+2024-05-29 18:13:02,133 - WARNING - Data for CORZ is too short. Skipping.
+2024-05-29 18:14:15,898 - WARNING - Data for DEC is too short. Skipping.
+2024-05-29 18:14:30,675 - WARNING - Data for AVBP is too short. Skipping.
+2024-05-29 18:14:31,865 - WARNING - Data for AACT is too short. Skipping.
+2024-05-29 18:14:34,381 - INFO - Downloaded data for 2900 tickers taking 3365.001567840576 seconds
+2024-05-29 18:14:36,418 - ERROR - 
+1 Failed download:
+2024-05-29 18:14:36,418 - ERROR - ['ETH']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2024-05-29 18:14:37,471 - WARNING - Data for NBBK is too short. Skipping.
+2024-05-29 18:14:54,609 - WARNING - Data for AUNA is too short. Skipping.
+2024-05-29 18:15:34,331 - WARNING - Data for SWIN is too short. Skipping.
+2024-05-29 18:16:30,063 - INFO - Downloaded data for 3000 tickers taking 3480.6839270591736 seconds
+2024-05-29 18:16:59,672 - WARNING - Data for KYTX is too short. Skipping.
+2024-05-29 18:18:24,844 - INFO - Downloaded data for 3100 tickers taking 3595.4644854068756 seconds
+2024-05-29 18:18:30,537 - WARNING - Data for PSBD is too short. Skipping.
+2024-05-29 18:18:30,580 - WARNING - Data for SVCO is too short. Skipping.
+2024-05-29 18:19:03,887 - WARNING - Data for SMXT is too short. Skipping.
+2024-05-29 18:19:53,705 - WARNING - Data for LXEO is too short. Skipping.
+2024-05-29 18:20:18,529 - INFO - Downloaded data for 3200 tickers taking 3709.1493356227875 seconds
+2024-05-29 18:21:07,378 - WARNING - Data for ANL is too short. Skipping.
+2024-05-29 18:21:48,595 - WARNING - Data for SLRN is too short. Skipping.
+2024-05-29 18:22:05,834 - WARNING - Data for ANSC is too short. Skipping.
+2024-05-29 18:22:12,997 - INFO - Downloaded data for 3300 tickers taking 3823.6174392700195 seconds
+2024-05-29 18:23:12,989 - WARNING - Data for GENK is too short. Skipping.
+2024-05-29 18:23:17,693 - WARNING - Data for CTNM is too short. Skipping.
+2024-05-29 18:23:32,620 - WARNING - Data for NETD is too short. Skipping.
+2024-05-29 18:23:43,086 - WARNING - Data for SEZL is too short. Skipping.
+2024-05-29 18:24:06,995 - INFO - Downloaded data for 3400 tickers taking 3937.615232229233 seconds
+2024-05-29 18:25:08,876 - WARNING - Data for FBLG is too short. Skipping.
+2024-05-29 18:25:12,435 - WARNING - Data for PAL is too short. Skipping.
+2024-05-29 18:25:20,371 - WARNING - Data for GUTS is too short. Skipping.
+2024-05-29 18:25:45,555 - WARNING - Data for NLOP is too short. Skipping.
+2024-05-29 18:26:02,033 - INFO - Downloaded data for 3500 tickers taking 4052.6536736488342 seconds
+2024-05-29 18:26:15,634 - WARNING - Data for LPA is too short. Skipping.
+2024-05-29 18:26:23,602 - WARNING - Data for ANRO is too short. Skipping.
+2024-05-29 18:26:39,714 - WARNING - Data for IPXX is too short. Skipping.
+2024-05-29 18:27:40,290 - WARNING - Data for HYAC is too short. Skipping.
+2024-05-29 18:27:56,376 - INFO - Downloaded data for 3600 tickers taking 4166.996189594269 seconds
+2024-05-29 18:28:46,519 - WARNING - Data for ANVI is too short. Skipping.
+2024-05-29 18:28:56,666 - WARNING - Data for FTEL is too short. Skipping.
+2024-05-29 18:29:25,315 - WARNING - Data for MNDR is too short. Skipping.
+2024-05-29 18:29:34,713 - WARNING - Data for EBFI is too short. Skipping.
+2024-05-29 18:29:42,584 - WARNING - Data for MGX is too short. Skipping.
+2024-05-29 18:29:43,933 - WARNING - Data for JDZG is too short. Skipping.
+2024-05-29 18:29:50,846 - INFO - Downloaded data for 3700 tickers taking 4281.466841936111 seconds
+2024-05-29 18:30:02,162 - WARNING - Data for LGCL is too short. Skipping.
+2024-05-29 18:31:05,926 - WARNING - Data for LEGT is too short. Skipping.
+2024-05-29 18:31:44,985 - INFO - Downloaded data for 3800 tickers taking 4395.605186223984 seconds
+2024-05-29 18:32:02,041 - WARNING - Data for BOLD is too short. Skipping.
+2024-05-29 18:32:30,506 - WARNING - Data for RLEA is too short. Skipping.
+2024-05-29 18:32:45,710 - WARNING - Data for HLXB is too short. Skipping.
+2024-05-29 18:33:01,713 - WARNING - Data for INSE is too short. Skipping.
+2024-05-29 18:33:02,885 - WARNING - Data for EVM is too short. Skipping.
+2024-05-29 18:33:23,915 - ERROR - 
+1 Failed download:
+2024-05-29 18:33:23,915 - ERROR - ['SUNS']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2024-05-29 18:33:43,136 - INFO - Downloaded data for 3900 tickers taking 4513.757056951523 seconds
+2024-05-29 18:33:52,168 - WARNING - Data for CLBR is too short. Skipping.
+2024-05-29 18:34:16,752 - ERROR - 
+1 Failed download:
+2024-05-29 18:34:16,752 - ERROR - ['ONE']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2024-05-29 18:35:06,055 - WARNING - Data for HAO is too short. Skipping.
+2024-05-29 18:35:14,074 - WARNING - Data for KVAC is too short. Skipping.
+2024-05-29 18:35:37,569 - ERROR - 
+1 Failed download:
+2024-05-29 18:35:37,569 - ERROR - ['KGNR']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2024-05-29 18:35:40,979 - INFO - Downloaded data for 4000 tickers taking 4631.600005865097 seconds
+2024-05-29 18:35:50,069 - WARNING - Data for BTOC is too short. Skipping.
+2024-05-29 18:37:07,194 - WARNING - Data for SBXC is too short. Skipping.
+2024-05-29 18:37:35,686 - INFO - Downloaded data for 4100 tickers taking 4746.306838989258 seconds
+2024-05-29 18:38:10,460 - WARNING - Data for SPKL is too short. Skipping.
+2024-05-29 18:38:20,720 - WARNING - Data for SUUN is too short. Skipping.
+2024-05-29 18:38:21,961 - WARNING - Data for TELO is too short. Skipping.
+2024-05-29 18:38:43,457 - WARNING - Data for RYDE is too short. Skipping.
+2024-05-29 18:38:43,509 - WARNING - Data for MAMO is too short. Skipping.
+2024-05-29 18:39:11,828 - WARNING - Data for ALCY is too short. Skipping.
+2024-05-29 18:39:15,281 - WARNING - Data for SGMT is too short. Skipping.
+2024-05-29 18:39:24,244 - WARNING - Data for IBAC is too short. Skipping.
+2024-05-29 18:39:29,063 - INFO - Downloaded data for 4200 tickers taking 4859.683753728867 seconds
+2024-05-29 18:39:50,817 - WARNING - Data for ESHA is too short. Skipping.
+2024-05-29 18:39:53,039 - WARNING - Data for DXYZ is too short. Skipping.
+2024-05-29 18:41:00,137 - WARNING - Data for FEBO is too short. Skipping.
+2024-05-29 18:41:22,888 - INFO - Downloaded data for 4300 tickers taking 4973.508677959442 seconds
+2024-05-29 18:42:01,091 - WARNING - Data for NNAG is too short. Skipping.
+2024-05-29 18:42:15,707 - WARNING - Data for SHMD is too short. Skipping.
+2024-05-29 18:42:19,250 - WARNING - Data for UBXG is too short. Skipping.
+2024-05-29 18:42:53,266 - WARNING - Data for FBYD is too short. Skipping.
+2024-05-29 18:43:02,441 - WARNING - Data for CNXX is too short. Skipping.
+2024-05-29 18:43:16,280 - INFO - Downloaded data for 4400 tickers taking 5086.900479793549 seconds
+2024-05-29 18:43:24,142 - WARNING - Data for CCG is too short. Skipping.
+2024-05-29 18:43:24,193 - WARNING - Data for ZBAO is too short. Skipping.
+2024-05-29 18:44:46,775 - WARNING - Data for NNE is too short. Skipping.
+2024-05-29 18:44:49,071 - WARNING - Data for ESGH is too short. Skipping.
+2024-05-29 18:45:02,923 - WARNING - Data for BEEP is too short. Skipping.
+2024-05-29 18:45:09,949 - INFO - Downloaded data for 4500 tickers taking 5200.569654226303 seconds
+2024-05-29 18:45:17,747 - WARNING - Data for EPRX is too short. Skipping.
+2024-05-29 18:45:18,865 - WARNING - Data for YIBO is too short. Skipping.
+2024-05-29 18:45:32,771 - WARNING - Data for GSIW is too short. Skipping.
+2024-05-29 18:45:45,233 - WARNING - Data for SERV is too short. Skipping.
+2024-05-29 18:46:56,945 - WARNING - Data for TBMC is too short. Skipping.
+2024-05-29 18:47:03,595 - INFO - Downloaded data for 4600 tickers taking 5314.215235948563 seconds
+2024-05-29 18:47:09,188 - WARNING - Data for BOWN is too short. Skipping.
+2024-05-29 18:47:46,768 - WARNING - Data for AFJK is too short. Skipping.
+2024-05-29 18:47:54,657 - WARNING - Data for QETA is too short. Skipping.
+2024-05-29 18:47:55,812 - WARNING - Data for GLAC is too short. Skipping.
+2024-05-29 18:47:58,186 - WARNING - Data for DYCQ is too short. Skipping.
+2024-05-29 18:48:06,185 - WARNING - Data for BKHA is too short. Skipping.
+2024-05-29 18:48:18,228 - WARNING - Data for IROH is too short. Skipping.
+2024-05-29 18:48:29,299 - WARNING - Data for TMTC is too short. Skipping.
+2024-05-29 18:48:38,240 - WARNING - Data for SRBK is too short. Skipping.
+2024-05-29 18:48:56,554 - INFO - Downloaded data for 4700 tickers taking 5427.174217939377 seconds
+2024-05-29 18:49:26,864 - WARNING - Data for MDBH is too short. Skipping.
+2024-05-29 18:49:30,471 - WARNING - Data for CYRB is too short. Skipping.
+2024-05-29 18:49:34,979 - WARNING - Data for TRSG is too short. Skipping.
+2024-05-29 18:49:38,381 - WARNING - Data for BUJA is too short. Skipping.
+2024-05-29 18:49:47,241 - WARNING - Data for INAQ is too short. Skipping.
+2024-05-29 18:49:54,119 - WARNING - Data for OAKU is too short. Skipping.
+2024-05-29 18:49:56,330 - WARNING - Data for RR is too short. Skipping.
+2024-05-29 18:49:56,381 - WARNING - Data for AITR is too short. Skipping.
+2024-05-29 18:50:17,178 - WARNING - Data for BAYA is too short. Skipping.
+2024-05-29 18:50:21,733 - WARNING - Data for GODN is too short. Skipping.
+2024-05-29 18:50:34,044 - WARNING - Data for JVSA is too short. Skipping.
+2024-05-29 18:50:48,648 - INFO - Downloaded data for 4800 tickers taking 5539.2690234184265 seconds
+2024-05-29 18:50:58,533 - WARNING - Data for AEON is too short. Skipping.
+2024-05-29 18:51:09,634 - WARNING - Data for ABLV is too short. Skipping.
+2024-05-29 18:51:17,712 - WARNING - Data for FORL is too short. Skipping.
+2024-05-29 18:51:25,667 - WARNING - Data for USGO is too short. Skipping.
+2024-05-29 18:52:10,947 - WARNING - Data for CSLR is too short. Skipping.
+2024-05-29 18:52:41,710 - INFO - Downloaded data for 4900 tickers taking 5652.330564498901 seconds
+2024-05-29 18:52:43,941 - WARNING - Data for INTS is too short. Skipping.
+2024-05-29 18:53:26,584 - WARNING - Data for BCG is too short. Skipping.
+2024-05-29 18:53:32,047 - WARNING - Data for DHAI is too short. Skipping.
+2024-05-29 18:53:32,098 - WARNING - Data for MURA is too short. Skipping.
+2024-05-29 18:53:35,447 - WARNING - Data for MGRM is too short. Skipping.
+2024-05-29 18:53:35,509 - WARNING - Data for LGCB is too short. Skipping.
+2024-05-29 18:53:59,229 - WARNING - Data for TSBX is too short. Skipping.
+2024-05-29 18:54:34,163 - INFO - Downloaded data for 5000 tickers taking 5764.783764839172 seconds
+2024-05-29 18:54:46,658 - WARNING - Data for RAY is too short. Skipping.
+2024-05-29 18:55:00,037 - WARNING - Data for AXIL is too short. Skipping.
+2024-05-29 18:55:04,630 - WARNING - Data for ATGL is too short. Skipping.
+2024-05-29 18:55:08,052 - WARNING - Data for LRE is too short. Skipping.
+2024-05-29 18:55:11,517 - WARNING - Data for CALC is too short. Skipping.
+2024-05-29 18:55:26,158 - WARNING - Data for JUNE is too short. Skipping.
+2024-05-29 18:55:50,229 - WARNING - Data for GRDI is too short. Skipping.
+2024-05-29 18:56:27,554 - INFO - Downloaded data for 5100 tickers taking 5878.1746282577515 seconds
+2024-05-29 18:56:50,446 - WARNING - Data for YYGH is too short. Skipping.
+2024-05-29 18:56:52,762 - WARNING - Data for LVER is too short. Skipping.
+2024-05-29 18:57:42,018 - WARNING - Data for WBUY is too short. Skipping.
+2024-05-29 18:58:01,006 - WARNING - Data for AMIX is too short. Skipping.
+2024-05-29 18:58:07,750 - WARNING - Data for NKGN is too short. Skipping.
+2024-05-29 18:58:10,024 - WARNING - Data for PMNT is too short. Skipping.
+2024-05-29 18:58:11,079 - ERROR - 
+1 Failed download:
+2024-05-29 18:58:11,079 - ERROR - ['ICON']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2024-05-29 18:58:21,187 - INFO - Downloaded data for 5200 tickers taking 5991.807696342468 seconds
+2024-05-29 18:59:07,932 - WARNING - Data for NWGL is too short. Skipping.
+2024-05-29 18:59:30,046 - WARNING - Data for MMA is too short. Skipping.
+2024-05-29 18:59:34,451 - WARNING - Data for PODC is too short. Skipping.
+2024-05-29 18:59:45,634 - WARNING - Data for AIRE is too short. Skipping.
+2024-05-29 18:59:59,798 - WARNING - Data for CDTG is too short. Skipping.
+2024-05-29 19:00:12,130 - INFO - Downloaded data for 5300 tickers taking 6102.750781536102 seconds
+2024-05-29 19:00:25,528 - WARNING - Data for SHIM is too short. Skipping.
+2024-05-29 19:00:30,101 - WARNING - Data for CPBI is too short. Skipping.
+2024-05-29 19:01:02,862 - WARNING - Data for MTEN is too short. Skipping.
+2024-05-29 19:01:29,789 - WARNING - Data for PNXP is too short. Skipping.
+2024-05-29 19:01:34,310 - WARNING - Data for SUGP is too short. Skipping.
+2024-05-29 19:01:38,945 - WARNING - Data for PXDT is too short. Skipping.
+2024-05-29 19:02:05,082 - INFO - Downloaded data for 5400 tickers taking 6215.702339410782 seconds
+2024-05-29 19:02:50,168 - WARNING - Data for CTNT is too short. Skipping.
+2024-05-29 19:02:50,219 - WARNING - Data for BTQQF is too short. Skipping.
+2024-05-29 19:02:53,609 - WARNING - Data for TWG is too short. Skipping.
+2024-05-29 19:03:07,079 - WARNING - Data for DTCK is too short. Skipping.
+2024-05-29 19:03:08,275 - WARNING - Data for SRFM is too short. Skipping.
+2024-05-29 19:03:12,780 - WARNING - Data for ZOOZ is too short. Skipping.
+2024-05-29 19:03:45,232 - WARNING - Data for ZPTA is too short. Skipping.
+2024-05-29 19:03:45,283 - WARNING - Data for YERBF is too short. Skipping.
+2024-05-29 19:03:49,692 - WARNING - Data for CCTG is too short. Skipping.
+2024-05-29 19:03:49,748 - WARNING - Data for ULY is too short. Skipping.
+2024-05-29 19:03:57,881 - INFO - Downloaded data for 5500 tickers taking 6328.502045631409 seconds
+2024-05-29 19:04:14,717 - WARNING - Data for GMM is too short. Skipping.
+2024-05-29 19:04:19,196 - WARNING - Data for LOBO is too short. Skipping.
+2024-05-29 19:04:29,418 - WARNING - Data for LAES is too short. Skipping.
+2024-05-29 19:04:40,748 - WARNING - Data for ZONE is too short. Skipping.
+2024-05-29 19:05:20,913 - WARNING - Data for GVH is too short. Skipping.
+2024-05-29 19:05:31,055 - WARNING - Data for JYD is too short. Skipping.
+2024-05-29 19:05:31,106 - WARNING - Data for PMEC is too short. Skipping.
+2024-05-29 19:05:42,269 - WARNING - Data for HRYU is too short. Skipping.
+2024-05-29 19:05:50,044 - INFO - Downloaded data for 5600 tickers taking 6440.664439439774 seconds
+2024-05-29 19:06:07,776 - WARNING - Data for CWD is too short. Skipping.
+2024-05-29 19:06:07,827 - WARNING - Data for WETH is too short. Skipping.
+2024-05-29 19:06:26,787 - WARNING - Data for MSS is too short. Skipping.
+2024-05-29 19:06:27,986 - WARNING - Data for CREV is too short. Skipping.
+2024-05-29 19:06:42,544 - WARNING - Data for ATPC is too short. Skipping.
+2024-05-29 19:06:47,066 - WARNING - Data for NRXS is too short. Skipping.
+2024-05-29 19:06:57,014 - WARNING - Data for JL is too short. Skipping.
+2024-05-29 19:07:12,727 - WARNING - Data for NCI is too short. Skipping.
+2024-05-29 19:07:17,068 - WARNING - Data for LRHC is too short. Skipping.
+2024-05-29 19:07:41,640 - INFO - Downloaded data for 5700 tickers taking 6552.260154724121 seconds
+2024-05-29 19:07:43,831 - WARNING - Data for DDC is too short. Skipping.
+2024-05-29 19:08:40,158 - WARNING - Data for INTJ is too short. Skipping.
+2024-05-29 19:08:45,786 - WARNING - Data for MFI is too short. Skipping.
+2024-05-29 19:09:10,635 - WARNING - Data for OGGIF is too short. Skipping.
+2024-05-29 19:09:19,363 - WARNING - Data for PFSB is too short. Skipping.
+2024-05-29 19:09:33,981 - INFO - Downloaded data for 5800 tickers taking 6664.601770877838 seconds
+2024-05-29 19:09:47,271 - WARNING - Data for SMTK is too short. Skipping.
+2024-05-29 19:09:52,922 - WARNING - Data for MIRA is too short. Skipping.
+2024-05-29 19:10:13,124 - WARNING - Data for FMST is too short. Skipping.
+2024-05-29 19:10:24,342 - WARNING - Data for SRM is too short. Skipping.
+2024-05-29 19:10:41,133 - WARNING - Data for SYNX is too short. Skipping.
+2024-05-29 19:10:44,688 - WARNING - Data for UCAR is too short. Skipping.
+2024-05-29 19:10:45,855 - WARNING - Data for MSBB is too short. Skipping.
+2024-05-29 19:10:59,343 - WARNING - Data for PAPL is too short. Skipping.
+2024-05-29 19:11:02,787 - WARNING - Data for UMAC is too short. Skipping.
+2024-05-29 19:11:08,450 - WARNING - Data for MCLDF is too short. Skipping.
+2024-05-29 19:11:26,488 - INFO - Downloaded data for 5900 tickers taking 6777.108775377274 seconds
+2024-05-29 19:11:31,947 - WARNING - Data for ELAB is too short. Skipping.
+2024-05-29 19:11:39,808 - WARNING - Data for TURB is too short. Skipping.
+2024-05-29 19:11:43,168 - WARNING - Data for JNVR is too short. Skipping.
+2024-05-29 19:11:49,637 - ERROR - 
+1 Failed download:
+2024-05-29 19:11:49,637 - ERROR - ['AIRO']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2024-05-29 19:11:51,785 - WARNING - Data for SPPL is too short. Skipping.
+2024-05-29 19:11:53,943 - WARNING - Data for SGE is too short. Skipping.
+2024-05-29 19:12:00,697 - WARNING - Data for PGFF is too short. Skipping.
+2024-05-29 19:12:13,034 - WARNING - Data for INHD is too short. Skipping.
+2024-05-29 19:13:07,502 - WARNING - Data for ICCT is too short. Skipping.
+2024-05-29 19:13:19,964 - INFO - Downloaded data for 6000 tickers taking 6890.584817171097 seconds
+2024-05-29 19:13:25,575 - WARNING - Data for CHRO is too short. Skipping.
+2024-05-29 19:13:33,383 - WARNING - Data for PWM is too short. Skipping.
+2024-05-29 19:13:47,922 - WARNING - Data for TRLEF is too short. Skipping.
+2024-05-29 19:13:54,764 - WARNING - Data for TPET is too short. Skipping.
+2024-05-29 19:14:36,492 - WARNING - Data for CISS is too short. Skipping.
+2024-05-29 19:14:52,097 - WARNING - Data for NCL is too short. Skipping.
+2024-05-29 19:14:55,563 - WARNING - Data for SGD is too short. Skipping.
+2024-05-29 19:15:04,504 - WARNING - Data for WLGS is too short. Skipping.
+2024-05-29 19:15:05,622 - WARNING - Data for SYRA is too short. Skipping.
+2024-05-29 19:15:07,875 - WARNING - Data for LTRY is too short. Skipping.
+2024-05-29 19:15:12,412 - INFO - Downloaded data for 6100 tickers taking 7003.033019542694 seconds
+2024-05-29 19:15:14,571 - WARNING - Data for VSME is too short. Skipping.
+2024-05-29 19:15:35,830 - WARNING - Data for ZKGCF is too short. Skipping.
+2024-05-29 19:15:50,468 - WARNING - Data for ROMA is too short. Skipping.
+2024-05-29 19:15:57,176 - WARNING - Data for PRZO is too short. Skipping.
+2024-05-29 19:16:00,590 - WARNING - Data for SPGC is too short. Skipping.
+2024-05-29 19:16:20,823 - WARNING - Data for ELWS is too short. Skipping.
+2024-05-29 19:16:38,555 - WARNING - Data for WRNT is too short. Skipping.
+2024-05-29 19:16:45,139 - INFO - Data download completed.

@@ -49,10 +49,6 @@ config = {
     "max_samples": None
 }
 
-
-
-
-
 def prepare_training_data(input_directory, output_directory, file_selection_percentage, target_column, reuse, date_column):
     output_file = os.path.join(output_directory, 'training_data.parquet')
     if reuse and os.path.exists(output_file):

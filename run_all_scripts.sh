@@ -16,7 +16,7 @@ echo "Ticker Downloader completed. Waiting before next step..."
 sleep 5  
 
 echo "Running Bulk Price Downloader..."
-/root/root/miniconda4/envs/tf/bin/python ./2__BulkPriceDownloader.py --ClearOldData --RefreshMode
+$/root/root/miniconda4/envs/tf/bin/python ./2__BulkPriceDownloader.py --ClearOldData --RefreshMode
 echo "Bulk Price Downloader completed. Waiting before next step..."
 sleep 30  
 
@@ -28,5 +28,8 @@ sleep 30
 echo "Running Predictor script..."
 /root/root/miniconda4/envs/tf/bin/python ./4__Predictor.py --predict
 echo "Predictor script completed. Waiting before next step..."
-sleep 30  
+sleep 60  
 
+echo "Running Nightly broker script..."
+/root/root/miniconda4/envs/tf/bin/python ./7.2__NightlyBroker.py --RunStocks 1
+echo "This Weeks Buy Signals Saved to BuySignals.json"

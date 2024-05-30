@@ -81,8 +81,6 @@ class CustomPandasData(bt.feeds.PandasData):
         'correlation_3', 
         'correlation_4',
         'correlation_5', 
-        'correlation_6', 
-        'correlation_7'
     )
     
     params = (
@@ -106,8 +104,6 @@ class CustomPandasData(bt.feeds.PandasData):
         ('correlation_3', 'correlation_3'),
         ('correlation_4', 'correlation_4'),
         ('correlation_5', 'correlation_5'),
-        ('correlation_6', 'correlation_6'),
-        ('correlation_7', 'correlation_7')
     )
 
 
@@ -188,8 +184,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                     'correlation_3': order.data.correlation_3[0],
                     'correlation_4': order.data.correlation_4[0],
                     'correlation_5': order.data.correlation_5[0],
-                    'correlation_6': order.data.correlation_6[0],
-                    'correlation_7': order.data.correlation_7[0]
                 }
             elif order.issell():
                 #print(f"SELL ORDER {order_status}: {order.executed.price}")
@@ -309,6 +303,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
 
 
+###=====================[ DISCRIMATIONNNNN ]====================###
+###=====================[ DISCRIMATIONNNNN ]====================###
+
     def sort_buy_candidates(self, buy_candidates):
         current_positions = [d._name for d in self.datas if self.getposition(d).size > 0]
         try:
@@ -332,6 +329,64 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             buy_candidates = sorted(buy_candidates, key=lambda x: self.inds[x[0]]['up_prob'][0], reverse=True)
         return buy_candidates
 
+    def sort_buy_candidatesUNTESTED(self, buy_candidates):
+        current_positions = [d._name for d in self.datas if self.getposition(d).size > 0]
+        try:
+            # Add mean correlation, cluster information, and a random factor to each candidate
+            candidates_with_details = []
+            for d, size in buy_candidates:
+                ticker = d._name
+                mean_corr = self.get_mean_correlation(ticker, current_positions)
+                cluster = self.cluster_data.loc[self.cluster_data['Ticker'] == ticker, 'correlation'].values[0]
+                random_factor = random.random()  # Random factor for perturbation
+                candidates_with_details.append((d, size, mean_corr, cluster, random_factor))
+
+            # Get the current distribution of clusters in the portfolio
+            current_cluster_distribution = self.get_cluster_distribution(current_positions)
+
+            # Sort by up_prob, mean correlation (lowest first), and random factor
+            candidates_with_details = sorted(candidates_with_details, 
+                                             key=lambda x: (self.inds[x[0]]['up_prob'][0], -x[2], x[4]), 
+                                             reverse=True)
+
+            # Ensure no more than 3 out of 4 positions are in the same group
+            final_buy_candidates = []
+            cluster_count = {i: current_cluster_distribution.get(i, 0) for i in range(8)}  # Initialize cluster counts
+
+            for candidate in candidates_with_details:
+                d, size, mean_corr, cluster, random_factor = candidate
+
+                if cluster_count[cluster] < 3 or len(final_buy_candidates) < 3:
+                    final_buy_candidates.append((d, size))
+                    cluster_count[cluster] += 1
+
+                if len(final_buy_candidates) >= 4:
+                    break
+
+            # If there are not enough candidates, add the rest based on the primary sorting criteria
+            if len(final_buy_candidates) < 4:
+                for candidate in candidates_with_details:
+                    if candidate[:2] not in final_buy_candidates:
+                        final_buy_candidates.append((candidate[0], candidate[1]))
+                        if len(final_buy_candidates) >= 4:
+                            break
+
+            buy_candidates = final_buy_candidates[:4]  # Ensure only the top 4 candidates are selected
+        except Exception as e:
+            logging.error(f"Error sorting buy candidates: {e}")
+            # Backup sort by up probability
+            buy_candidates = sorted(buy_candidates, key=lambda x: self.inds[x[0]]['up_prob'][0], reverse=True)[:4]
+        return buy_candidates
+
+    def get_cluster_distribution(self, current_positions):
+        cluster_distribution = {}
+        for ticker in current_positions:
+            cluster = self.cluster_data.loc[self.cluster_data['Ticker'] == ticker, 'Cluster'].values[0]
+            if cluster in cluster_distribution:
+                cluster_distribution[cluster] += 1
+            else:
+                cluster_distribution[cluster] = 1
+        return cluster_distribution
 
 
 
@@ -370,16 +425,8 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             ExpectedProfitPerDay = ExpectedProfitPerDayPercentage * days_held
 
             if DailyProfitPercentage < ExpectedProfitPerDay:
-                #print(f"Closing position for {d._name} due to Expected Profit Per Day not met")
-                #print(f"Expected Profit Per Day: {ExpectedProfitPerDay:.2f}%")
-                #print(f"Actual Profit Per Day:   {DailyProfitPercentage:.2f}%")
-                #print(f"Missed Target by {ExpectedProfitPerDay - DailyProfitPercentage:.2f}%")
                 self.CloseWrapper(d, "Expected Profit Per Day not met")
                 return
-
-
-
-
 
 
     def can_buy_more_positions(self):
@@ -413,9 +460,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         )
         return BuySignal
 
-    
-
-
 
     def execute_buy(self, d, current_date, size):
         self.buy(data=d, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
@@ -424,13 +468,19 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.open_positions += 1
 
     def CloseWrapper(self, data, message):
-        #print(f"{message} - Closing position for {data._name}")
         self.close(data=data)
 
     def stop(self):
         for d in self.datas:
             if d in self.entry_prices:
                 self.close(data=d)
+
+
+
+
+
+
+
 
 
 
