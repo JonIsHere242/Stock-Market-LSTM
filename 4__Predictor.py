@@ -20,6 +20,9 @@ argparser.add_argument("--predict", action='store_true', help="Flag to predict n
 argparser.add_argument("--reuse", action='store_true', help="Flag to reuse existing training data if available.")
 args = argparser.parse_args()
 
+
+
+
 config = {
     "input_directory": "Data/IndicatorData",
     "model_output_directory": "Data/ModelData",
@@ -29,25 +32,27 @@ config = {
     "file_selection_percentage": args.runpercent,
     "target_column": "percent_change_Close",
 
-    # Random Forest Classifier Parameters
-    "n_estimators": 128,
+    "n_estimators": 64,  # Increased to 64
     "criterion": "entropy",
-    "max_depth": 15,
-    "min_samples_split": 8,
-    "min_samples_leaf": 4,
+    "max_depth": 15,  # Increased depth
+    "min_samples_split": 10,  # Adjusted for better performance
+    "min_samples_leaf": 5,  
     "min_weight_fraction_leaf": 0,
-    "max_features": 0.10,
+    "max_features": 0.15,  # Adjusted to use more features
     "max_leaf_nodes": None,
     "min_impurity_decrease": 0,
     "bootstrap": True,
-    "oob_score": False,
+    "oob_score": True,  
     "random_state": 3301,
     "verbose": 2,
     "warm_start": False,
-    "class_weight": {0: 1.0, 1: 1.75},
-    "ccp_alpha": 0,
+    "class_weight": {0: 0.9, 1: 2.0},  # Adjusted class weights
+    "ccp_alpha": 0,  
     "max_samples": None
 }
+
+
+
 
 def prepare_training_data(input_directory, output_directory, file_selection_percentage, target_column, reuse, date_column):
     output_file = os.path.join(output_directory, 'training_data.parquet')
@@ -95,10 +100,7 @@ def prepare_training_data(input_directory, output_directory, file_selection_perc
 
 
 
-
-
-
-def train_random_forest(training_data, config, confidence_threshold_pos=0.62, confidence_threshold_neg=0.62):
+def train_random_forest(training_data, config, confidence_threshold_pos=0.70, confidence_threshold_neg=0.70):
     logging.info("Training Random Forest model.")
     
     #remove the old model file
@@ -118,10 +120,10 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.62, co
     X = X.drop(columns=datetime_columns)
     
     # Split the data into train and validation sets
-    split_index = int(len(X) * 0.9)
+    split_index = int(len(X) * 0.8)
     X_train, X_test = X.iloc[:split_index], X.iloc[split_index:]
     y_train, y_test = y.iloc[:split_index], y.iloc[split_index:]
-    
+
     # Train the Random Forest classifier
     clf = RandomForestClassifier(
         n_estimators=config['n_estimators'],
@@ -138,7 +140,7 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.62, co
         random_state=config['random_state'],
         verbose=config['verbose'],
         warm_start=config['warm_start'],
-        class_weight={0: 1, 1: 1.5},  # Increase class weight for class 1
+        class_weight=config['class_weight'],
         ccp_alpha=config['ccp_alpha'],
         max_samples=config['max_samples'],
         n_jobs=-1  # Use all available processors
@@ -169,8 +171,23 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.62, co
     logging.info(f"Precision: {precision}")
     logging.info(f"Recall: {recall}")
     
-    print(classification_report(y_test_filtered, y_pred_filtered, zero_division=0))
-    
+    if len(y_test_filtered) == 0 or len(y_pred_filtered) == 0:
+        print("Warning: y_test_filtered or y_pred_filtered is empty")
+    else:
+        # Ensure there are unique labels in y_test_filtered
+        unique_labels = set(y_test_filtered)
+        if len(unique_labels) == 0:
+            print("Warning: No unique labels in y_test_filtered")
+        else:
+            # Ensure y_pred_filtered has corresponding predictions
+            unique_pred_labels = set(y_pred_filtered)
+            if len(unique_pred_labels) == 0:
+                print("Warning: No unique predictions in y_pred_filtered")
+            else:
+                print(classification_report(y_test_filtered, y_pred_filtered, zero_division=0))    
+
+
+
     # Save the model
     model_output_path = os.path.join(config['model_output_directory'], 'random_forest_model.joblib')
     dump(clf, model_output_path)
@@ -190,7 +207,9 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.62, co
     
     logging.info(f"Feature importances saved to {feature_importance_output_path}")
 
-def predict_and_save(input_directory, model_path, output_directory, target_column, date_column):
+
+
+def predict_and_save(input_directory, model_path, output_directory, target_column, date_column, confidence_threshold_pos=0.7, confidence_threshold_neg=0.7):
     logging.info("Loading the trained model.")
     
     # Remove all the parquet files in the output directory
@@ -221,7 +240,7 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
         
         # Append predictions to dataframe
         df['UpProbability'] = y_pred_proba[:, 1]
-        df['UpPrediction'] = (df['UpProbability'] >= 0.62).astype(int)
+        df['UpPrediction'] = (df['UpProbability'] >= confidence_threshold_pos).astype(int)
         
         # Save the dataframe with predictions
         output_file_path = os.path.join(output_directory, file)
@@ -231,6 +250,7 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
     
     pbar.close()
     logging.info(f"Predictions saved to {output_directory}")
+
 
 
 

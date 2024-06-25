@@ -50,10 +50,6 @@ Notes:
 - Check the log file for detailed information about the processing time and potential errors.
 """
 
-
-
-
-
 logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log',
                     level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
@@ -386,7 +382,23 @@ def add_kalman_and_entropy_metrics(df, window_size=70, bins=30):
 
 
 
+def calculate_ema_volume_change(df, window=90, ema_span=20):
 
+    # Calculate rolling median and IQR
+    rolling_median = df['Volume'].rolling(window=window).median()
+    rolling_iqr = df['Volume'].rolling(window=window).apply(lambda x: x.quantile(0.75) - x.quantile(0.25))
+    
+    # Scale the volume
+    df['Volume_Scaled'] = (df['Volume'] - rolling_median) / rolling_iqr
+    df['Volume_Scaled'] = df['Volume_Scaled'].fillna(0)  # Fill NaNs that may arise from rolling window
+    
+    # Calculate EMA of the scaled volume
+    df['Volume_EMA'] = df['Volume_Scaled'].ewm(span=ema_span, adjust=False).mean()
+    
+    # Calculate the percentage change of the EMA of the scaled volume
+    df['Volume_EMA_Change'] = df['Volume_EMA'].pct_change()
+    
+    return df['Volume_EMA_Change']
 
 
 
@@ -869,7 +881,7 @@ def indicators(df):
     df = calculate_nvi(df)
     df = calculate_emv(df)
     df = VolumeADO(df)
-
+    #df = calculate_ema_volume_change(df)
 
     close_shift_1 = close.shift(1)
     true_range = np.maximum(high - low, np.maximum(np.abs(high - close_shift_1), np.abs(close_shift_1 - low)))

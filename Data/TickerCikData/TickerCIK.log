@@ -17,7 +17,6 @@
 2024-05-03 20:00:02,135 - INFO - File downloaded and saved successfully in CSV.
 2024-05-04 20:00:01,990 - INFO - File downloaded and saved successfully in CSV.
 2024-05-05 20:00:01,903 - INFO - File downloaded and saved successfully in CSV.
-2024-05-06 20:00:14,951 - ERROR - Error occurred: HTTPSConnectionPool(host='www.sec.gov', port=443): Max retries exceeded with url: /files/company_tickers_exchange.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fc8d7534760>: Failed to resolve 'www.sec.gov' ([Errno -3] Temporary failure in name resolution)"))
 2024-05-08 20:00:05,340 - INFO - File downloaded and saved successfully in CSV.
 2024-05-09 20:00:02,762 - INFO - File downloaded and saved successfully in CSV.
 2024-05-10 20:00:02,815 - INFO - File downloaded and saved successfully in CSV.
@@ -39,3 +38,9 @@
 2024-05-26 20:00:02,535 - INFO - File downloaded and saved successfully in Parquet format.
 2024-05-27 20:00:02,331 - INFO - File downloaded and saved successfully in Parquet format.
 2024-05-29 20:00:01,936 - INFO - File downloaded and saved successfully in Parquet format.
+2024-05-30 13:55:30,318 - INFO - File downloaded and saved successfully in Parquet format.
+2024-05-30 14:00:00,031 - ERROR - Error occurred: HTTPSConnectionPool(host='www.sec.gov', port=443): Max retries exceeded with url: /files/company_tickers_exchange.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001AA4B996250>: Failed to resolve 'www.sec.gov' ([Errno 11001] getaddrinfo failed)"))
+2024-05-30 14:00:15,903 - INFO - File downloaded and saved successfully in Parquet format.
+2024-06-07 21:58:15,319 - INFO - File downloaded and saved successfully in Parquet format.
+2024-06-17 21:45:56,682 - INFO - File downloaded and saved successfully in Parquet format.
+2024-06-21 18:48:48,752 - ERROR - Error occurred: HTTPSConnectionPool(host='www.sec.gov', port=443): Max retries exceeded with url: /files/company_tickers_exchange.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000227B46B4340>: Failed to resolve 'www.sec.gov' ([Errno 11001] getaddrinfo failed)"))

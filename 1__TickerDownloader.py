@@ -45,6 +45,13 @@ def download_and_convert_ticker_cik_file():
 
         json_data = response.json()
         df = pd.DataFrame(json_data['data'], columns=json_data['fields'])
+
+        ##remove any rows that have the excahnge column as missing value or otc
+        df = df[df['exchange'].notna()]
+        df = df[df['exchange'] != 'OTC']
+        df = df[df['exchange'] != 'CBOE']
+
+
         df.to_parquet(parquet_file_path, index=False)
 
         logging.info("File downloaded and saved successfully in Parquet format.")

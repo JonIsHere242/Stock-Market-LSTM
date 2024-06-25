@@ -12,6 +12,10 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from tqdm import tqdm
 import json
+import csv
+
+
+
 def LoggingSetup():
     loggerfile = "__BrokerLog.log"
     logging.basicConfig(
@@ -381,32 +385,40 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         for d, size in top_buy_candidates:
             self.save_buy_signal(d, self.datetime.date())
 
-
-
-
-
-
     def save_buy_signal(self, d, current_date):
         CurrentIRLDate = datetime.now().date()
         days_diff = (CurrentIRLDate - current_date).days
-
+    
         # Only save signals within the last 5 IRL days
         if days_diff <= 5:
-            if not os.path.exists('BuySignals.json'):
-                with open('BuySignals.json', 'w') as f:
-                    json.dump({}, f)
-
-            # Read existing buy signals, handle empty or invalid JSON
+            csv_file = 'BuySignals.csv'
+            columns = ['Ticker', 'Date', 'isBought', 'sharesHeld', 'TimeSinceBought', 'HasHeldPreviously', 'WinLossPercentage']
+            
+            if not os.path.exists(csv_file):
+                with open(csv_file, 'w', newline='') as f:
+                    writer = csv.writer(f)
+                    writer.writerow(columns)
+    
+            # Read existing buy signals into a DataFrame
             try:
-                with open('BuySignals.json', 'r') as f:
-                    buy_signals = json.load(f)
-            except json.JSONDecodeError:
-                buy_signals = {}
+                buy_signals = pd.read_csv(csv_file)
+            except pd.errors.EmptyDataError:
+                buy_signals = pd.DataFrame(columns=columns)
+    
+            new_signal = {
+                'Ticker': d._name,
+                'Date': str(current_date),
+                'isBought': False,
+                'sharesHeld': 0,
+                'TimeSinceBought': 0,
+                'HasHeldPreviously': False,
+                'WinLossPercentage': 0.0
+            }
+    
+            if d._name not in buy_signals['Ticker'].values:
+                buy_signals = pd.concat([buy_signals, pd.DataFrame([new_signal])], ignore_index=True)
+                buy_signals.to_csv(csv_file, index=False)
 
-            if d._name not in buy_signals:
-                buy_signals[d._name] = {'Date': str(current_date)}
-                with open('BuySignals.json', 'w') as f:
-                    json.dump(buy_signals, f, indent=4)
 
 
 
@@ -466,8 +478,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         return self.open_positions < self.params.max_positions
 
     def is_buy_signal(self, d):
-
-
         HighUpProb = np.percentile(self.inds[d]['up_prob'], 90)
         UpPrediction = self.inds[d]['UpPrediction'] = 1
 
@@ -481,7 +491,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             for i in range(1, 8)
         ])
 
-        CurrentUpProbGood = self.inds[d]['up_prob'][0] > 0.53
+        CurrentUpProbGood = self.inds[d]['up_prob'][0] > 0.55
 
         BuySignal = (
             self.inds[d]['UpProbMA'][0] > HighUpProb and
@@ -493,8 +503,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         return BuySignal
 
 
-
-
     def execute_buy(self, d, current_date, size):
         self.buy(data=d, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
         self.order_cooldown[d] = current_date + timedelta(days=1)
@@ -502,27 +510,14 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.open_positions += 1
 
 
-
-
     def CloseWrapper(self, data, message):
         self.close(data=data)
-
-
 
 
     def stop(self):
         for d in self.datas:
             if d in self.entry_prices:
                 self.close(data=d)
-
-
-
-
-
-
-
-
-
 
 
 #=============================[ Control Logic ]=============================#
@@ -622,6 +617,9 @@ def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better
     return f"{label:<30}{color_code}{value:.2f}\033[0m"
 
 
+
+
+
 def main():
     Path_to_Correlations = 'Correlations.parquet'
     LoggingSetup()
@@ -639,24 +637,20 @@ def main():
             if FailedFileCounter > 0:
                 logging.info(f"Failed to load {FailedFileCounter} files.")
     elif args.RunStocks > 0:
-        df_tickers = pd.read_csv('nasdaq_screener.csv')
-        tickers = df_tickers['Symbol'].tolist()
-        print(f"Total Tickers: {len(tickers)}")
-        file_names = os.listdir('Data/RFpredictions')
-        for file_name in tqdm([f for f in file_names if f.endswith('.parquet') and f.split('.')[0].lower() in [t.lower() for t in tickers]], desc="Loading Ticker Files"):
+        file_names = [f for f in os.listdir('Data/RFpredictions') if f.endswith('.parquet')]
+        file_names.sort(key=lambda x: x.lower())
+        for file_name in tqdm(file_names, desc="Loading Ticker Files"):
             file_path = os.path.join('Data/RFpredictions', file_name)
             load_and_add_data(cerebro, file_path, Path_to_Correlations, FailedFileCounter)
             if FailedFileCounter > 0:
                 logging.info(f"Failed to load {FailedFileCounter} files.")
 
+
+
+
     if len(cerebro.datas) == 0:
         print("WARNING No data loaded into Cerebro. Exiting.")
         return
-
-
-
-
-
 
     cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="TradeStats")
     cerebro.addanalyzer(bt.analyzers.DrawDown, _name="DrawDown")
@@ -665,10 +659,10 @@ def main():
 
     # Call the strategy
     cerebro.addstrategy(MovingAverageCrossoverStrategy)
-
     strategies = cerebro.run()
     first_strategy = strategies[0]
 
+    ##enalble cheat on open
     trade_stats = first_strategy.analyzers.TradeStats.get_analysis()
     drawdown = first_strategy.analyzers.DrawDown.get_analysis()
     sharpe_ratio = first_strategy.analyzers.SharpeRatio.get_analysis()
@@ -725,14 +719,11 @@ def main():
     percentage_gain = ((final_portfolio_value / InitalStartingCash) * 100) - 100
     PercentPerTrade = percentage_gain / total_closed if total_closed > 0 else 0
 
-    ##okay calculate the percentage gain per trade without the lagest winning trade
     if total_closed > 1:
         percentage_gain_without_largest_winner = (((final_portfolio_value - won_max) / InitalStartingCash) * 100) - 100
         PercentWithoutLargestWinningTradePerTrade = percentage_gain_without_largest_winner / total_closed
 
         if won_total > 0:
-
-
             won_max_percentage = (won_max / won_total) * 100
     else :
         percentage_gain_without_largest_winner = 0
@@ -761,15 +752,11 @@ def main():
     print(colorize_output(PercentWithoutLargestWinningTradePerTrade, 'Gain without Largest:', 1.0, 0.75))
     print(colorize_output(percentage_gain, 'Percentage Gain:', 50, 10.0))
 
-    
-
-
     if len(cerebro.datas) < 10:
         plt.style.use('dark_background')
         plt.rcParams['figure.facecolor'] = '#424242'
         plt.rcParams['axes.facecolor'] = '#424242'
         plt.rcParams['grid.color'] = 'None'
-
         cerebro.plot(style='candlestick',
                      iplot=False,
                      start=datetime.now().date() - pd.DateOffset(days=252),
@@ -778,6 +765,7 @@ def main():
                      height=10,
                      dpi=100,
                      tight=True)
+
 
 if __name__ == "__main__":
     main()
