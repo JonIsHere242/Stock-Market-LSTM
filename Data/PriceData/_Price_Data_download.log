@@ -528,3 +528,69 @@
 2024-06-21 20:23:10,395 - INFO - Downloaded data for 5000 tickers taking 5655.286531925201 seconds
 2024-06-21 20:25:03,788 - INFO - Downloaded data for 5100 tickers taking 5768.678780078888 seconds
 2024-06-21 20:26:34,582 - INFO - Data download completed.
+2024-06-25 21:31:33,139 - INFO - Cleared old data files.
+2024-06-25 21:31:33,336 - ERROR - 
+1 Failed download:
+2024-06-25 21:31:33,336 - ERROR - ['AACG']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000167F08806D0>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-06-25 21:33:42,206 - INFO - Downloaded data for 100 tickers taking 129.06189370155334 seconds
+2024-06-25 21:35:34,232 - ERROR - 
+1 Failed download:
+2024-06-25 21:35:34,232 - ERROR - ['ALEX']: ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)"))
+2024-06-25 21:36:07,938 - INFO - Downloaded data for 200 tickers taking 274.79399514198303 seconds
+2024-06-25 21:36:47,657 - ERROR - 
+1 Failed download:
+2024-06-25 21:36:47,657 - ERROR - ['AMD']: ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)"))
+2024-06-26 20:30:33,381 - INFO - Cleared old data files.
+2024-06-26 20:32:26,064 - INFO - Downloaded data for 100 tickers taking 112.67889475822449 seconds
+2024-06-26 20:34:19,411 - INFO - Downloaded data for 200 tickers taking 226.02568936347961 seconds
+2024-06-26 20:36:12,211 - INFO - Downloaded data for 300 tickers taking 338.8258821964264 seconds
+2024-06-26 20:38:04,463 - INFO - Downloaded data for 400 tickers taking 451.0776734352112 seconds
+2024-06-26 20:39:57,475 - INFO - Downloaded data for 500 tickers taking 564.0905373096466 seconds
+2024-06-26 20:41:50,676 - INFO - Downloaded data for 600 tickers taking 677.2909779548645 seconds
+2024-06-26 20:43:43,003 - INFO - Downloaded data for 700 tickers taking 789.6180124282837 seconds
+2024-06-26 20:45:36,434 - INFO - Downloaded data for 800 tickers taking 903.0491945743561 seconds
+2024-06-26 20:47:29,568 - INFO - Downloaded data for 900 tickers taking 1016.1831266880035 seconds
+2024-06-26 20:49:22,775 - INFO - Downloaded data for 1000 tickers taking 1129.389806509018 seconds
+2024-06-26 20:51:15,790 - INFO - Downloaded data for 1100 tickers taking 1242.4048726558685 seconds
+2024-06-26 20:53:08,336 - INFO - Downloaded data for 1200 tickers taking 1354.9507913589478 seconds
+2024-06-26 20:55:01,623 - INFO - Downloaded data for 1300 tickers taking 1468.2379958629608 seconds
+2024-06-26 20:56:54,461 - INFO - Downloaded data for 1400 tickers taking 1581.0761075019836 seconds
+2024-06-26 20:58:47,331 - INFO - Downloaded data for 1500 tickers taking 1693.9463849067688 seconds
+2024-06-26 21:00:40,431 - INFO - Downloaded data for 1600 tickers taking 1807.0458309650421 seconds
+2024-06-26 21:02:33,587 - INFO - Downloaded data for 1700 tickers taking 1920.20175242424 seconds
+2024-06-26 21:04:27,095 - INFO - Downloaded data for 1800 tickers taking 2033.7103526592255 seconds
+2024-06-26 21:06:20,438 - INFO - Downloaded data for 1900 tickers taking 2147.053132534027 seconds
+2024-06-26 21:08:13,253 - INFO - Downloaded data for 2000 tickers taking 2259.8681693077087 seconds
+2024-06-26 21:10:06,247 - INFO - Downloaded data for 2100 tickers taking 2372.8624782562256 seconds
+2024-06-26 21:11:49,158 - WARNING - Data for HGAS is too short. Skipping.
+2024-06-26 21:11:59,341 - INFO - Downloaded data for 2200 tickers taking 2485.9564397335052 seconds
+2024-06-26 21:13:52,593 - INFO - Downloaded data for 2300 tickers taking 2599.20791387558 seconds
+2024-06-26 21:15:45,556 - INFO - Downloaded data for 2400 tickers taking 2712.1710588932037 seconds
+2024-06-26 21:17:37,717 - INFO - Downloaded data for 2500 tickers taking 2824.332423686981 seconds
+2024-06-26 21:19:30,744 - INFO - Downloaded data for 2600 tickers taking 2937.359322309494 seconds
+2024-06-26 21:21:23,692 - INFO - Downloaded data for 2700 tickers taking 3050.306880712509 seconds
+2024-06-26 21:23:16,163 - INFO - Downloaded data for 2800 tickers taking 3162.778514146805 seconds
+2024-06-26 21:25:09,032 - INFO - Downloaded data for 2900 tickers taking 3275.6472051143646 seconds
+2024-06-26 21:27:02,133 - INFO - Downloaded data for 3000 tickers taking 3388.747679233551 seconds
+2024-06-26 21:28:55,300 - INFO - Downloaded data for 3100 tickers taking 3501.9150998592377 seconds
+2024-06-26 21:30:49,157 - INFO - Downloaded data for 3200 tickers taking 3615.771800994873 seconds
+2024-06-26 21:32:42,701 - INFO - Downloaded data for 3300 tickers taking 3729.315849304199 seconds
+2024-06-26 21:34:35,704 - INFO - Downloaded data for 3400 tickers taking 3842.3195559978485 seconds
+2024-06-26 21:36:28,368 - INFO - Downloaded data for 3500 tickers taking 3954.983257293701 seconds
+2024-06-26 21:38:21,273 - INFO - Downloaded data for 3600 tickers taking 4067.888041496277 seconds
+2024-06-26 21:40:15,125 - INFO - Downloaded data for 3700 tickers taking 4181.740252733231 seconds
+2024-06-26 21:42:07,965 - INFO - Downloaded data for 3800 tickers taking 4294.579658031464 seconds
+2024-06-26 21:44:00,017 - INFO - Downloaded data for 3900 tickers taking 4406.6325035095215 seconds
+2024-06-26 21:45:52,633 - INFO - Downloaded data for 4000 tickers taking 4519.248022556305 seconds
+2024-06-26 21:47:45,597 - INFO - Downloaded data for 4100 tickers taking 4632.2117438316345 seconds
+2024-06-26 21:49:38,753 - INFO - Downloaded data for 4200 tickers taking 4745.3681428432465 seconds
+2024-06-26 21:51:31,650 - INFO - Downloaded data for 4300 tickers taking 4858.264847755432 seconds
+2024-06-26 21:53:25,049 - INFO - Downloaded data for 4400 tickers taking 4971.664218425751 seconds
+2024-06-26 21:55:17,896 - INFO - Downloaded data for 4500 tickers taking 5084.510772943497 seconds
+2024-06-26 21:57:10,793 - INFO - Downloaded data for 4600 tickers taking 5197.407967567444 seconds
+2024-06-26 21:59:04,114 - INFO - Downloaded data for 4700 tickers taking 5310.728585958481 seconds
+2024-06-26 22:00:57,521 - INFO - Downloaded data for 4800 tickers taking 5424.136565923691 seconds
+2024-06-26 22:02:50,481 - INFO - Downloaded data for 4900 tickers taking 5537.095703125 seconds
+2024-06-26 22:04:43,397 - INFO - Downloaded data for 5000 tickers taking 5650.012262582779 seconds
+2024-06-26 22:06:36,679 - INFO - Downloaded data for 5100 tickers taking 5763.294256448746 seconds
+2024-06-26 22:07:58,396 - INFO - Data download completed.

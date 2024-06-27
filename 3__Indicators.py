@@ -16,11 +16,12 @@ from scipy.stats import gaussian_kde, skew, kurtosis
 from scipy.signal import argrelextrema
 import cProfile
 import pstats
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import numba as nb
 from numba import njit, jit
 from scipy.stats import entropy
 from tqdm import tqdm
+from datetime import datetime, timedelta
 
 
 """
@@ -139,8 +140,6 @@ def find_levels(df, window_size):
     return df
 
 
-
-
 def detect_peaks_and_valleys(df, column_name, prominence=1):
     peaks_column = column_name + '_Peaks'
     valleys_column = column_name + '_Valleys'
@@ -155,11 +154,6 @@ def detect_peaks_and_valleys(df, column_name, prominence=1):
     df.loc[valleys, valleys_column] = df[column_name][valleys]
 
     return df
-
-
-
-
-
 
 
 
@@ -182,14 +176,7 @@ def rolling_hurst_exponent(series, window_size):
 
 
 
-
-
-
-
 ###=======[add_multiple_mean_reversion_z_scores]======###
-
-
-
 def add_multiple_mean_reversion_z_scores(data, price_column='Smoothed_Close', windows=[28, 90, 151], std_multipliers=[1, 1, 3]):
     for window, std_multiplier in zip(windows, std_multipliers):
         mean_col = f'Rolling_Mean_{window}'
@@ -203,12 +190,7 @@ def add_multiple_mean_reversion_z_scores(data, price_column='Smoothed_Close', wi
 
     return data
 
-
-
-
-
 #==========[calculate_percentage_difference_from_ewma]==========#
-
 @njit
 def calculate_ewm(arr, alpha):
     n = len(arr)
@@ -242,8 +224,6 @@ def calculate_percentage_difference_from_ewma(data, price_column='Close', period
         data[pct_diff_col] = results[:, j]
 
     return data
-
-
 
 
 def calculate_poc_and_metrics(data, window_size=70):
@@ -312,8 +292,6 @@ def add_complexity_metrics(df, window_size=90):
 
 
 
-
-
 def add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70):
     def apply_kalman_filter(close_prices):
         kf = KalmanFilter(transition_matrices=[1],
@@ -346,9 +324,6 @@ def add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=7
     df.loc[df.index[window_size-1:window_size+len(recurrences)-1], 'Recurrence_Rate'] = recurrences
 
     return df
-
-
-
 
 
 
@@ -399,18 +374,6 @@ def calculate_ema_volume_change(df, window=90, ema_span=20):
     df['Volume_EMA_Change'] = df['Volume_EMA'].pct_change()
     
     return df['Volume_EMA_Change']
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -548,7 +511,6 @@ def ATR_Based_Adaptive_Trend_Channels(df):
 
 
 
-
 def calculate_klinger_oscillator(df, short_period=34, long_period=55, signal_period=13):
     high = df['High']
     low = df['Low']
@@ -570,7 +532,6 @@ def calculate_klinger_oscillator(df, short_period=34, long_period=55, signal_per
     df['KVO_Signal'] = kvo_signal
 
     return df
-
 
 
 ##======[add_rolling_lzc]======##
@@ -624,9 +585,6 @@ def add_rolling_lzc(df, window_size=50, bin_size=1):
 
 
 
-
-
-
 def calculate_poc_and_metrics(data, window_size=70):
     @njit
     def find_poc(prices, volumes):
@@ -669,22 +627,6 @@ def calculate_poc_and_metrics(data, window_size=70):
         logging.error("PoC column not found after calculation.")
 
     return data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -787,19 +729,10 @@ def VolumeADO(df):
     return df
 
 
-
-
-
-
-
-
-
-
 def calculate_cmf(df, period=20):
     mfv = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low']) * df['Volume']
     df['CMF'] = mfv.rolling(window=period).sum() / df['Volume'].rolling(window=period).sum()
     return df
-
 
 
 def imminent_channel_breakout(df, ma_period=200, atr_period=14):
@@ -842,7 +775,6 @@ def calculate_emv(df, period=14):
     emv_ma = emv.rolling(window=period).mean()
     df['EMV'] = emv_ma
     return df
-
 
 
 def indicators(df):
@@ -1049,10 +981,6 @@ def indicators(df):
     return df
 
 
-
-
-
-
 ##===========================(File Processing)===========================##
 ##===========================(File Processing)===========================##
 ##===========================(File Processing)===========================##
@@ -1072,7 +1000,8 @@ def validate_columns(df, required_columns):
         return False
     return True
 
-def DataQualityCheck(df):
+
+def DataQualityCheck(df, all_dfs=None):
     if df.empty or len(df) < 201:
         logging.error("DataFrame is empty or too short to process.")
         return None
@@ -1088,9 +1017,18 @@ def DataQualityCheck(df):
     if df['Date'].dtype != 'datetime64[ns]':
         df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
         
-    if df['Date'].iloc[-1] < pd.Timestamp.now() - pd.DateOffset(days=365):
-        logging.error(f"Data is outdated. Last date in dataset: {df['Date'].iloc[-1]}")
+    # Check if the data is recent (has data in the current year)
+    current_year = datetime.now().year
+    if df['Date'].max().year < current_year:
+        logging.error(f"Data is not recent. Last date in dataset: {df['Date'].max()}")
         return None
+
+    # Check if the data has enough trading days compared to the mean
+    if all_dfs is not None:
+        mean_trading_days = np.mean([len(d) for d in all_dfs])
+        if len(df) < 0.95 * mean_trading_days:
+            logging.error(f"Insufficient data. File has {len(df)} trading days, which is less than 95% of the mean ({mean_trading_days:.0f}).")
+            return None
 
     sample_size = max(int(len(df) * 0.02), 1)  # Ensure at least one sample is taken
     start_mean = df['Close'].head(sample_size).mean()
@@ -1099,7 +1037,10 @@ def DataQualityCheck(df):
     if start_mean > 3000 or (start_mean / max(end_mean, 1e-10) > 20):
         logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
+    
     return df
+
+
 
 def process_file(file_path, output_dir):
     try:
@@ -1113,14 +1054,10 @@ def process_file(file_path, output_dir):
                 logging.error("The 'Date' column is missing from the DataFrame.")
                 return None
 
-
-
         if df['Date'].dtype != 'datetime64[ns]':
             logging.info("Converting 'Date' column to datetime.")
             df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     
-
-
         if not validate_columns(df, ['Close', 'High', 'Low', 'Volume']):
             logging.error(f"File {file_path} does not contain all required columns.")
             return
@@ -1168,8 +1105,6 @@ def process_data_files(run_percent):
     files_to_process = file_paths[:int(len(file_paths) * (run_percent / 100))]
     with ProcessPoolExecutor() as executor:
         list(tqdm(executor.map(process_file_wrapper, files_to_process), total=len(files_to_process), desc="Processing files"))
-
-
 
     print(f"Processed {len(files_to_process)} files in {time.time() - StartTimer:.2f} seconds")
     print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.')

@@ -10,6 +10,10 @@ from joblib import dump, load
 import argparse
 from sklearn.metrics import precision_recall_curve
 from tqdm import tqdm
+from joblib import parallel_backend
+from contextlib import redirect_stdout, redirect_stderr
+import io
+
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
@@ -209,6 +213,7 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.70, co
 
 
 
+
 def predict_and_save(input_directory, model_path, output_directory, target_column, date_column, confidence_threshold_pos=0.7, confidence_threshold_neg=0.7):
     logging.info("Loading the trained model.")
     
@@ -220,11 +225,21 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
     # Load the trained model
     clf = load(model_path)
     
+    # Get the feature names the model was trained on
+    model_features = clf.feature_names_in_
+    
     # Get the list of files to process
     all_files = [f for f in os.listdir(input_directory) if f.endswith('.parquet')]
     
     # Initialize progress bar
-    pbar = tqdm(total=len(all_files), desc="Processing files")
+    pbar = tqdm(total=len(all_files), desc="Processing files", ncols=100)
+    
+    # Set up a custom logger to capture joblib output
+    joblib_logger = logging.getLogger('joblib')
+    joblib_logger.setLevel(logging.ERROR)  # Only show errors
+    
+    # Redirect stdout and stderr
+    null_io = io.StringIO()
     
     for file in all_files:
         df = pd.read_parquet(os.path.join(input_directory, file))
@@ -235,8 +250,13 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
         datetime_columns = df.select_dtypes(include=['datetime64']).columns
         X = df.drop(columns=[date_column, target_column] + list(datetime_columns))
         
+        # Align the features with the model's expected features
+        X = X.reindex(columns=model_features, fill_value=0)
+        
         # Make predictions with probabilities
-        y_pred_proba = clf.predict_proba(X)
+        with parallel_backend('threading', n_jobs=-1):
+            with redirect_stdout(null_io), redirect_stderr(null_io):
+                y_pred_proba = clf.predict_proba(X)
         
         # Append predictions to dataframe
         df['UpProbability'] = y_pred_proba[:, 1]
