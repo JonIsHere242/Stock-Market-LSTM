@@ -6,31 +6,18 @@ import argparse
 import random
 import pandas as pd
 import numpy as np
-from backtrader.feeds import PandasData
 import backtrader as bt
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from tqdm import tqdm
-import json
 import csv
-import sqlite3
-import json
-import functools
-from numba import jit
-import concurrent.futures
-from functools import partial
-import asyncio
-import aiofiles
-import pyarrow.parquet as pq
-from tqdm.asyncio import tqdm_asyncio
-import multiprocessing
-from functools import partial
-from numba import njit
-from functools import lru_cache
 import traceback
 from collections import Counter
-
-
+from numba import njit
+from functools import lru_cache
+import multiprocessing
+import pyarrow.parquet as pq
+from live_trading_db import get_open_positions, add_open_position, update_position_exit_levels, add_trade_history, update_strategy_data, get_strategy_data, update_performance_metrics, get_latest_performance_metrics, update_portfolio_data, get_latest_portfolio_data, update_risk_management, update_system_state, get_last_system_state, update_buy_signal, get_buy_signals
 
 def LoggingSetup():
     loggerfile = "__BrokerLog.log"
@@ -42,15 +29,11 @@ def LoggingSetup():
         filemode='a'  # Append mode
     )
 
-
 @njit
 def fast_calculate_recent_mean_percentage_change(close_prices):
     diff = close_prices[1:] - close_prices[:-1]
     percentage_changes = diff / close_prices[:-1] * 100
     return np.mean(percentage_changes)
-
-
-
 
 def arg_parser():
     parser = argparse.ArgumentParser(description="Backtesting Trading Strategy on Stock Data")
@@ -81,8 +64,6 @@ class PercentileIndicator(bt.Indicator):
         self.lines.high_up_prob[0] = np.percentile(up_probs, 95)
         self.lines.low_down_prob[0] = np.percentile(down_probs, 95)
 
-
-
 class ATRPercentage(bt.Indicator):
     lines = ('atr_percent',)
     params = (('period', 14),)
@@ -93,9 +74,38 @@ class ATRPercentage(bt.Indicator):
     def next(self):
         self.lines.atr_percent[0] = (self.atr[0] / self.data.close[0]) * 100
 
-
+def save_buy_signals_to_db(buy_signals):
+    for signal in buy_signals:
+        update_buy_signal(signal['Ticker'], True)
 
 correlation_data = pd.read_parquet('Correlations.parquet').set_index('Ticker')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -116,72 +126,11 @@ class CustomPandasData(bt.feeds.PandasData):
         ('UpPrediction', 'UpPrediction'),
     )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class MovingAverageCrossoverStrategy(bt.Strategy):
     __slots__ = ('inds', 'order_list', 'entry_prices', 'position_dates', 'order_cooldown',
-             'buying_status', 'consecutive_losses', 'cooldown_end', 'open_positions',
-             'asset_groups', 'asset_correlations', 'group_allocations', 'total_groups',
-             'correlation_data', 'workable_capital', 'capital_per_position')
-
-
+                 'buying_status', 'consecutive_losses', 'cooldown_end', 'open_positions',
+                 'asset_groups', 'asset_correlations', 'group_allocations', 'total_groups',
+                 'correlation_data', 'workable_capital', 'capital_per_position')
 
     params = (
         ('days_range', 5),
@@ -194,8 +143,8 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ('position_timeout', 9),
         ('trailing_stop_percent', 5.0),
         ('rolling_period', 8),
-        ('max_group_allocation', 0.5),  # Maximum allocation for any single group
-        ('correlation_data', None),  # New parameter to accept correlation data
+        ('max_group_allocation', 0.5),
+        ('correlation_data', None),
     )
 
     def __init__(self):
@@ -207,20 +156,20 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.buying_status = {}
         self.consecutive_losses = {}
         self.cooldown_end = {}
-        self.open_positions = 0
+        self.open_positions = len(get_open_positions())  # Load the number of open positions from the database
         self.asset_groups = {}
         self.asset_correlations = {}
         self.group_allocations = {}
         self.total_groups = self.detect_total_groups()
-        self.correlation_data = self.params.correlation_data  # Use the passed correlation data
-        
+        self.correlation_data = self.params.correlation_data
+
         # Get the length of the first data feed (they should all be the same length now)
         self.total_bars = 252
         print(f"Total bars in strategy: {self.total_bars}")
         self.progress_bar = tqdm(
-            total=self.total_bars, 
-            desc="Strategy Progress", 
-            unit="day", 
+            total=self.total_bars,
+            desc="Strategy Progress",
+            unit="day",
             bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}{postfix}]',
             ncols=100
         )
@@ -233,13 +182,24 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             self.inds[d]['dist_to_resistance'] = d.dist_to_resistance
             self.inds[d]['UpProbMA'] = bt.indicators.SimpleMovingAverage(d.UpProbability, period=self.p.fast_period)
 
+        self.load_open_positions_from_db()
+
+    def load_open_positions_from_db(self):
+        positions = get_open_positions()
+        for pos in positions:
+            data = self.getdatabyname(pos['symbol'])
+            self.entry_prices[data] = pos['entry_price']
+            self.position_dates[data] = datetime.strptime(pos['entry_date'], '%Y-%m-%d').date()
+            self.buying_status[pos['symbol']] = True
+            self.order_cooldown[data] = self.position_dates[data] + timedelta(days=1)
+
     def next(self):
         # Update progress bar
         self.day_count += 1
         self.progress_bar.update(1)
-        
+
         current_date = self.datetime.date()
-        
+
         if any(len(data) == 0 for data in self.datas):
             return  # Skip this bar if any data feed has run out
 
@@ -254,12 +214,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             if buy_candidates:
                 self.process_buy_candidates(buy_candidates, current_date)
 
-
     def detect_total_groups(self):
-        # Detect the number of groups dynamically
         correlation_data = pd.read_parquet('Correlations.parquet')
         return correlation_data['Cluster'].nunique()
-
 
     def setup_indicator_plot(self, indicator):
         indicator.plotinfo.plot = True
@@ -290,6 +247,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.order_list.append(order)
         self.order_cooldown[data] = self.datetime.date() + timedelta(days=1)
         self.update_group_data(order)
+        add_open_position(data._name, self.datetime.date(), order.executed.price, self.getposition(data).size)
 
     def update_group_data(self, order):
         data = order.data
@@ -320,6 +278,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.buying_status[data._name] = False
         self.handle_position_closure(data, order)
         self.remove_asset_data(data)
+        self.remove_open_position_from_db(data._name)
 
     def handle_position_closure(self, data, order):
         if data in self.position_dates:
@@ -351,10 +310,8 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         if order in self.order_list:
             self.order_list.remove(order)
 
-
     def update_open_positions_count(self):
         self.open_positions = sum(1 for d in self.datas if self.getposition(d).size > 0)
-
 
     def get_buy_candidates(self, current_date):
         buy_candidates = []
@@ -366,22 +323,20 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                     buy_candidates.append((d, size, correlation))
         return buy_candidates
 
-
-
     def can_buy(self, data, current_date):
         return (not self.should_skip_buying(data, current_date) and
                 self.can_buy_more_positions() and
                 self.is_buy_signal(data))
 
     def process_buy_candidates(self, buy_candidates, current_date):
-       if buy_candidates:
-           buy_candidates = self.sort_buy_candidates(buy_candidates)
-           self.save_best_buy_signals(buy_candidates)
-           for d, size, _ in buy_candidates:  # Unpack three values, ignore correlation
-               if self.open_positions < self.params.max_positions:
-                   self.execute_buy(d, current_date, size)
-               else:
-                   break
+        if buy_candidates:
+            buy_candidates = self.sort_buy_candidates(buy_candidates)
+            self.save_best_buy_signals(buy_candidates)
+            for d, size, _ in buy_candidates:  # Unpack three values, ignore correlation
+                if self.open_positions < self.params.max_positions:
+                    self.execute_buy(d, current_date, size)
+                else:
+                    break
 
     def calculate_position_size(self, data):
         total_value = self.broker.getvalue()
@@ -430,8 +385,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             logging.error(f"Error sorting buy candidates: {e}")
             return sorted(buy_candidates, key=lambda x: self.inds[x[0]]['up_prob'][0], reverse=True)
 
-
-
     def get_mean_correlation(self, candidate_ticker, current_positions):
         correlation_data = pd.read_parquet('Correlations.parquet')
         if not current_positions:
@@ -447,19 +400,15 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             if pos_data.empty:
                 logging.warning(f"No correlation data found for position: {pos}")
                 continue
-            
+
             correlation_column = f'correlation_{pos_data.index[0]}'
             if correlation_column not in candidate_data.columns:
                 logging.warning(f"Column {correlation_column} not found for {candidate_ticker}")
                 continue
-            
+
             correlations.append(candidate_data.iloc[0][correlation_column])
 
         return sum(correlations) / len(correlations) if correlations else 0
-
-
-
-
 
     def should_skip_buying(self, data, current_date):
         return (self.buying_status.get(data._name, False) or
@@ -484,12 +433,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             (days_held > 3 and profit_percent / days_held < 0.25 * days_held)):
             self.close_position(data, "Sell condition met")
 
-
     @lru_cache(maxsize=1000)
     def get_high_up_prob(self, data):
         return np.percentile(self.inds[data]['up_prob'], 90)
-
-
 
     def can_buy_more_positions(self):
         return self.open_positions < self.params.max_positions
@@ -519,14 +465,13 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             current_up_prob_good
         )
 
-
-
     def execute_buy(self, data, current_date, size):
         if self.check_group_allocation(data):
             self.buy(data=data, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
             self.order_cooldown[data] = current_date + timedelta(days=1)
             self.buying_status[data._name] = True
             self.open_positions += 1
+            add_open_position(data._name, current_date, data.close[0], size)
 
     def check_group_allocation(self, data):
         group = self.asset_groups.get(data._name)
@@ -545,9 +490,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 self.close(data=data)
 
     def save_best_buy_signals(self, buy_candidates):
-       top_buy_candidates = buy_candidates[:5]
-       for d, size, correlation in top_buy_candidates:
-           self.save_buy_signal(d, self.datetime.date())
+        top_buy_candidates = buy_candidates[:5]
+        for d, size, correlation in top_buy_candidates:
+            self.save_buy_signal(d, self.datetime.date())
 
     def save_buy_signal(self, data, current_date):
         current_irl_date = datetime.now().date()
@@ -622,7 +567,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         logging.info(f'Portfolio Value: {self.broker.getvalue():.2f}')
         logging.info(f'Cash: {self.broker.getcash():.2f}')
 
-
     def stop(self):
         self.progress_bar.close()
         print(f"Strategy stopped. Last processed date: {self.datetime.date()}")
@@ -687,26 +631,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##=====================[ Colorize Output ]=====================#
-##=====================[ Colorize Output ]=====================#
-##=====================[ Colorize Output ]=====================#
+##===================================[ Control logic ]===================================##
+##===================================[ Control logic ]===================================##
+##===================================[ Control logic ]===================================##
+##===================================[ Control logic ]===================================##
+##===================================[ Control logic ]===================================##
 
 def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better=False, reverse=False):
     def get_color_code(normalized_value):
@@ -740,19 +669,12 @@ def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better
 
     return f"{label:<30}{color_code}{value:.2f}\033[0m"
 
-
-#=============================[ Control Logic ]=============================#
-#=============================[ Control Logic ]=============================#
-#=============================[ Control Logic ]=============================#
-
 def select_random_files(directory, percent):
     all_files = [f for f in os.listdir(directory) if f.endswith('.parquet')]
     num_files = len(all_files)
     num_to_select = max(1, int(round(num_files * percent / 100)))
     selected_files = random.sample(all_files, num_to_select)
     return [os.path.join(directory, f) for f in selected_files]
-
-
 
 def load_data(file_path):
     try:
@@ -806,15 +728,6 @@ def find_common_start_date(dates, threshold=0.95):
             return date
     return None
 
-
-
-def parallel_load_data(file_paths):
-    with multiprocessing.Pool() as pool:
-        results = list(tqdm(pool.imap(load_data, file_paths), total=len(file_paths), desc="Loading Files"))
-    return [result for result in results if result is not None]
-
-
-
 def main():
     LoggingSetup()
     timer = time.time()
@@ -862,8 +775,6 @@ def main():
         data = CustomPandasData(dataname=df)
         cerebro.adddata(data, name=name)
 
-
-
     if not loaded_data:
         print("No data was successfully loaded. Exiting.")
         return
@@ -871,7 +782,6 @@ def main():
     if len(cerebro.datas) == 0:
         print("WARNING: No data loaded into Cerebro. Exiting.")
         return
-
 
     cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="TradeStats")
     cerebro.addanalyzer(bt.analyzers.DrawDown, _name="DrawDown")
@@ -883,8 +793,6 @@ def main():
     strategies = cerebro.run()
     first_strategy = strategies[0]
     print(f"Actually processed {first_strategy.day_count} days")
-
-
 
     ##enalble cheat on open
     trade_stats = first_strategy.analyzers.TradeStats.get_analysis()

@@ -8,7 +8,6 @@ import ib_insync as ibi
 import pandas as pd
 from datetime import datetime
 import time 
-import sqlite3
 import datetime
 import pytz
 import numpy as np

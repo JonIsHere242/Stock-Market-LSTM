@@ -647,3 +647,19 @@
 2024-06-27 22:04:45,681 - INFO - Downloaded data for 5000 tickers taking 5651.806496143341 seconds
 2024-06-27 22:06:39,366 - INFO - Downloaded data for 5100 tickers taking 5765.491390705109 seconds
 2024-06-27 22:07:54,555 - INFO - Data download completed.
+2024-06-28 18:39:03,226 - INFO - Downloaded data for 100 tickers taking 112.6155743598938 seconds
+2024-06-28 18:43:39,214 - WARNING - Skipping GEV: insufficient data or abnormal price.
+2024-06-28 18:44:19,306 - INFO - Total download time: 57.21 seconds
+2024-06-28 18:44:19,306 - INFO - Data download completed.
+2024-06-28 18:46:47,490 - INFO - Cleared old data files.
+2024-06-28 18:46:59,011 - INFO - Total download time: 11.50 seconds
+2024-06-28 18:46:59,012 - INFO - Data download completed.
+2024-06-28 18:51:10,989 - INFO - Total download time: 11.56 seconds
+2024-06-28 18:51:10,989 - INFO - Data download completed.
+2024-06-28 18:52:52,873 - INFO - Total download time: 11.45 seconds
+2024-06-28 18:52:52,874 - INFO - Data download completed. Downloaded 10 new files.
+2024-06-28 18:54:07,885 - INFO - Total download time: 11.60 seconds
+2024-06-28 18:54:07,885 - INFO - Data download completed. Downloaded 10 new files.
+2024-06-28 18:54:11,109 - INFO - Cleared old data files.
+2024-06-28 18:54:22,646 - INFO - Total download time: 11.52 seconds
+2024-06-28 18:54:22,646 - INFO - Data download completed. Downloaded 10 new files.

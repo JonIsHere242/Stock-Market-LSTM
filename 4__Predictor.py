@@ -4,11 +4,9 @@ import pandas as pd
 import numpy as np
 import logging
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, f1_score, precision_score, recall_score
 from joblib import dump, load
 import argparse
-from sklearn.metrics import precision_recall_curve
 from tqdm import tqdm
 from joblib import parallel_backend
 from contextlib import redirect_stdout, redirect_stderr

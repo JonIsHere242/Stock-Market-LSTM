@@ -89,17 +89,6 @@ def create_tables():
     )
     ''')
 
-    cur.execute('''
-    CREATE TABLE IF NOT EXISTS performance_metrics (
-        date DATE PRIMARY KEY,
-        sharpe_ratio REAL,
-        win_loss_ratio REAL,
-        avg_profit_per_trade REAL
-       )
-    ''')
-
-
-
     conn.commit()
     conn.close()
 
@@ -250,27 +239,6 @@ def get_last_system_state():
     conn.close()
     return state
 
-# Performance Metrics functions
-def update_performance_metrics(sharpe_ratio, win_loss_ratio, avg_profit_per_trade):
-    conn = get_db_connection()
-    cur = conn.cursor()
-    today = date.today()
-    cur.execute('''
-    INSERT OR REPLACE INTO performance_metrics 
-    (date, sharpe_ratio, win_loss_ratio, avg_profit_per_trade)
-    VALUES (?, ?, ?, ?)
-    ''', (today, sharpe_ratio, win_loss_ratio, avg_profit_per_trade))
-    conn.commit()
-    conn.close()
-
-def get_latest_performance_metrics():
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM performance_metrics ORDER BY date DESC LIMIT 1')
-    metrics = cur.fetchone()
-    conn.close()
-    return metrics
-
 def update_buy_signal(symbol, buy_signal):
     conn = get_db_connection()
     cur = conn.cursor()
@@ -290,9 +258,6 @@ def get_buy_signals():
     signals = cur.fetchall()
     conn.close()
     return signals
-
-
-
 
 # Initialize the database
 if __name__ == "__main__":
