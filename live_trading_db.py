@@ -80,19 +80,24 @@ def create_tables():
     )
     ''')
 
-    def create_tables():
-       # ... (existing code) ...
 
-       cur.execute('''
-       CREATE TABLE IF NOT EXISTS performance_metrics (
-           date DATE PRIMARY KEY,
-           sharpe_ratio REAL,
-           win_loss_ratio REAL,
-           avg_profit_per_trade REAL
+    cur.execute('''
+    CREATE TABLE IF NOT EXISTS buy_signals (
+        symbol TEXT PRIMARY KEY,
+        buy_signal BOOLEAN NOT NULL,
+        date_updated DATE NOT NULL
+    )
+    ''')
+
+    cur.execute('''
+    CREATE TABLE IF NOT EXISTS performance_metrics (
+        date DATE PRIMARY KEY,
+        sharpe_ratio REAL,
+        win_loss_ratio REAL,
+        avg_profit_per_trade REAL
        )
-       ''')
+    ''')
 
-       # ... (rest of the function)
 
 
     conn.commit()
@@ -265,6 +270,29 @@ def get_latest_performance_metrics():
     metrics = cur.fetchone()
     conn.close()
     return metrics
+
+def update_buy_signal(symbol, buy_signal):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    today = date.today()
+    cur.execute('''
+    INSERT OR REPLACE INTO buy_signals 
+    (symbol, buy_signal, date_updated)
+    VALUES (?, ?, ?)
+    ''', (symbol, buy_signal, today))
+    conn.commit()
+    conn.close()
+
+def get_buy_signals():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM buy_signals WHERE buy_signal = TRUE')
+    signals = cur.fetchall()
+    conn.close()
+    return signals
+
+
+
 
 # Initialize the database
 if __name__ == "__main__":

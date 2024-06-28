@@ -19,7 +19,8 @@ from datetime import datetime, timedelta
 
 from live_trading_db import (
     get_db_connection, update_portfolio_data, update_performance_metrics,
-    update_system_state, get_recent_trades, calculate_performance_metrics
+    update_system_state, get_recent_trades, calculate_performance_metrics, get_open_positions, add_trade_history, get_strategy_data, update_strategy_data, add_open_position
+
 )
 
 
@@ -215,6 +216,7 @@ class MyStrategy(bt.Strategy):
         ('take_profit_percent', 20),
         ('position_timeout', 9),
         ('expected_profit_per_day_percentage', 0.25),
+        ('order_cooldown', 45), ## 45 seconds to wait before submitting another order for the same symbol
     )
 
     def __init__(self):
@@ -224,7 +226,10 @@ class MyStrategy(bt.Strategy):
         self.market_open = True
         self.data_ready = {d: False for d in self.datas}
         self.barCounter = 0
-        
+        self.pending_orders = {}
+        self.order_cooldown_end = {}
+
+
         # Load strategy data for each symbol
         self.strategy_data = {}
         for data in self.datas:
@@ -249,7 +254,25 @@ class MyStrategy(bt.Strategy):
             self.data_ready[data] = True
 
     def notify_order(self, order):
-        self.handle_order_notification(order)
+        if order.status in [order.Submitted, order.Accepted]:
+            return  # Order pending, do nothing
+
+        if order.status in [order.Completed]:
+            if order.isbuy():
+                self.handle_buy_order(order)
+            elif order.issell():
+                self.handle_sell_order(order)
+            
+            # Remove the pending order
+            self.pending_orders.pop(order.data._name, None)
+            
+            # Set cooldown
+            self.order_cooldown_end[order.data._name] = self.datas[0].datetime.datetime(0) + timedelta(seconds=self.params.order_cooldown)
+
+        elif order.status in [order.Canceled, order.Margin, order.Rejected]:
+            self.log(f'Order Canceled/Margin/Rejected: {order.status}')
+            # Remove the pending order
+            self.pending_orders.pop(order.data._name, None)
 
     def next(self):
         self.barCounter += 1
@@ -329,6 +352,8 @@ class MyStrategy(bt.Strategy):
 
             del self.open_positions[symbol]
 
+
+
     def process_buy_signal(self, data):
         symbol = data._name
         if symbol in self.buy_signals and symbol not in self.order_dict:
@@ -338,9 +363,13 @@ class MyStrategy(bt.Strategy):
                 order = self.buy(data=data, size=size)
                 self.order_dict[symbol] = order
 
+
+
     def evaluate_sell_conditions(self, data, current_date):
         symbol = data._name
-        if symbol in self.order_dict:
+
+        # Check if there's a pending order or if we're in cooldown
+        if symbol in self.pending_orders or (symbol in self.order_cooldown_end and current_date < self.order_cooldown_end[symbol]):
             return
 
         position = self.broker.getposition(data)
@@ -359,10 +388,13 @@ class MyStrategy(bt.Strategy):
         elif self.check_expected_profit(current_date, symbol, current_price, entry_price):
             self.close_position(data, "Expected Profit Per Day not met")
 
+
     def check_position_timeout(self, current_date, symbol):
         entry_date = self.open_positions[symbol]['entry_date']
         days_held = (current_date - entry_date).days
         return days_held > self.params.position_timeout
+
+
 
     def check_expected_profit(self, current_date, symbol, current_price, entry_price):
         entry_date = self.open_positions[symbol]['entry_date']
@@ -383,11 +415,11 @@ class MyStrategy(bt.Strategy):
         return current_price >= entry_price * (1 + self.params.take_profit_percent / 100)
 
     def close_position(self, data, reason):
-        if data._name not in self.active_orders:
+        if data._name not in self.pending_orders:
             logging.info(f'Closing {data._name} due to {reason}')
             print(f'Closing {data._name} due to {reason}')
             order = self.close(data=data)
-            self.active_orders[data._name] = order
+            self.pending_orders[data._name] = order
 
     def stop(self):
         cash_balance = self.broker.getcash()
@@ -491,11 +523,6 @@ class TradingCmd(cmd.Cmd):
         logging.info('Trading session ended successfully.')
         return True
 
-
-
-
-
-
     def do_positions(self, arg):
         'List current open positions.'
         if self.ib:
@@ -506,17 +533,9 @@ class TradingCmd(cmd.Cmd):
             print('IB is not connected.')
             logging.info('IB is not connected.')
 
-
-
-
-
-
 # Function to check if the stock is listed on NASDAQ or NYSE
 def is_valid_exchange(exchange):
     return exchange in ['NASDAQ', 'NYSE']
-
-
-
 
 def start():
     cerebro = bt.Cerebro()
