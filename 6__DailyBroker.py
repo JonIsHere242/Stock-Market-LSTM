@@ -7,21 +7,15 @@ import logging
 import ib_insync as ibi
 import pandas as pd
 from datetime import datetime
-import time 
+import time
 import datetime
 import pytz
 import numpy as np
 from datetime import datetime, timedelta
-
-
-
-
 from live_trading_db import (
     get_db_connection, update_portfolio_data, update_performance_metrics,
     update_system_state, get_recent_trades, calculate_performance_metrics, get_open_positions, add_trade_history, get_strategy_data, update_strategy_data, add_open_position
-
 )
-
 
 # Set up logging
 logging.basicConfig(filename='__BrokerLive.log', level=logging.INFO,
@@ -94,9 +88,6 @@ def check_market_status():
                 next_open += datetime.timedelta(days=1)
         return False, next_open
 
-
-
-
 def read_buy_signals(csv_file):
     try:
         df = pd.read_csv(csv_file)
@@ -105,19 +96,6 @@ def read_buy_signals(csv_file):
     except Exception as e:
         logging.error(f"Error reading {csv_file}: {e}")
         return []
-
-def get_open_positions(ib):
-    positions = ib.positions()
-    positions_list = []
-    for position in positions:
-        if position.position != 0:
-            contract = position.contract
-            positions_list.append((contract, position))
-            logging.info(f'Position found: {contract.symbol}, {position.position}')
-    return positions_list
-
-
-
 
 def calculate_sharpe_ratio(trades, risk_free_rate=0.02):
     if not trades:
@@ -198,15 +176,6 @@ def calculate_performance_metrics():
 
 
 
-
-
-
-
-
-
-
-
-
 class MyStrategy(bt.Strategy):
     params = (
         ('max_positions', 4),
@@ -215,7 +184,7 @@ class MyStrategy(bt.Strategy):
         ('take_profit_percent', 20),
         ('position_timeout', 9),
         ('expected_profit_per_day_percentage', 0.25),
-        ('order_cooldown', 45), ## 45 seconds to wait before submitting another order for the same symbol
+        ('order_cooldown', 45),  # 45 seconds to wait before submitting another order for the same symbol
     )
 
     def __init__(self):
@@ -227,7 +196,6 @@ class MyStrategy(bt.Strategy):
         self.barCounter = 0
         self.pending_orders = {}
         self.order_cooldown_end = {}
-
 
         # Load strategy data for each symbol
         self.strategy_data = {}
@@ -351,8 +319,6 @@ class MyStrategy(bt.Strategy):
 
             del self.open_positions[symbol]
 
-
-
     def process_buy_signal(self, data):
         symbol = data._name
         if symbol in self.buy_signals and symbol not in self.order_dict:
@@ -361,8 +327,6 @@ class MyStrategy(bt.Strategy):
                 size = int(self.params.position_size / data.close[0])
                 order = self.buy(data=data, size=size)
                 self.order_dict[symbol] = order
-
-
 
     def evaluate_sell_conditions(self, data, current_date):
         symbol = data._name
@@ -387,13 +351,10 @@ class MyStrategy(bt.Strategy):
         elif self.check_expected_profit(current_date, symbol, current_price, entry_price):
             self.close_position(data, "Expected Profit Per Day not met")
 
-
     def check_position_timeout(self, current_date, symbol):
         entry_date = self.open_positions[symbol]['entry_date']
         days_held = (current_date - entry_date).days
         return days_held > self.params.position_timeout
-
-
 
     def check_expected_profit(self, current_date, symbol, current_price, entry_price):
         entry_date = self.open_positions[symbol]['entry_date']
@@ -404,8 +365,6 @@ class MyStrategy(bt.Strategy):
             expected_profit_per_day = self.params.expected_profit_per_day_percentage * days_held
             return daily_profit_percentage < expected_profit_per_day
         return False
-    
-
 
     def check_stop_loss(self, current_price, entry_price):
         return current_price <= entry_price * (1 - self.params.stop_loss_percent / 100)
@@ -431,33 +390,6 @@ class MyStrategy(bt.Strategy):
 
         # Update system state
         update_system_state("Stopped", "Daily trading session completed")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
