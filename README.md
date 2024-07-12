@@ -12,6 +12,13 @@ This project employs sophisticated methods for stock market analysis and predict
 - **Data Preprocessing**: Involves scaling, cleaning, and normalizing the data, and calculating various technical indicators such as ATR, moving averages, VWAP, RSI, and MACD.
 - Comprehensive calculations of technical indicators using Python libraries like Pandas and NumPy.
 
+### Synthetic Genetic Indicators
+- **Genetic Programming Approach**: The project utilizes genetic programming to create synthetic indicators that outperform traditional technical indicators.
+- **Evolution Process**: Indicators are evolved over multiple generations, with fitness evaluated based on their predictive power for stock price movements.
+- **Complex Formulas**: The genetic algorithm combines mathematical operations, technical indicators, and price data to create intricate formulas that capture market patterns.
+- **Top Performers**: These synthetic indicators consistently rank at the top of the feature importance list in the Random Forest model, demonstrating their effectiveness in predicting market movements.
+- **Adaptability**: The genetic programming process can be re-run periodically to evolve new indicators that adapt to changing market conditions.
+
 ### Machine Learning Models
 - **Hybrid Approach**: The project uses a combination of Random Forest Classifier and Random Forest Regressor models to handle different aspects of market prediction. This dual approach leverages classification for directionality of the market movements and regression for quantifying the changes.
 
@@ -42,6 +49,7 @@ This project employs sophisticated methods for stock market analysis and predict
 ### Model Optimization
 - Continuous optimization of the Random Forest model to enhance prediction accuracy.
 - Extension of the data repository to include the most recent market data for next-day trading strategies.
+- Further refinement of the genetic programming process to evolve even more effective synthetic indicators.
 
 ### Backtesting and Performance Analysis
 - Advanced backtesting frameworks to rigorously evaluate model performance using extensive historical data.

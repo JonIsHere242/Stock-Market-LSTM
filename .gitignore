@@ -3,3 +3,6 @@ Data/ModelData/*
 Data/IndicatorData/*
 Data/PriceData/*
 Data/RFpredictions/*
+__BrokerLive.log/*
+__BrokerTest.log/*
+live_trading.db/*
