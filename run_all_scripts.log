@@ -1,1 +1,492 @@
-﻿
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240628203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 27244
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240628221422
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240629203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 29252
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Error running Indicators script. Exit code: 1
+Output: Processing 100% of files from Data/PriceData System.Management.Automation.RemoteException Processing files: 0it [00:00, ?it/s] Processing files: 0it [00:00, ?it/s] Processed 0 files in 0.00 seconds Traceback (most recent call last):   File "C:\apitesting\Stock-Market-LSTM\3__Indicators.py", line 1110, in <module>     process_data_files(args.runpercent)   File "C:\apitesting\Stock-Market-LSTM\3__Indicators.py", line 1103, in process_data_files     print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.') ZeroDivisionError: float division by zero
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240629203238
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240630203009
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 11516
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+**********************
+Windows PowerShell transcript start
+Start time: 20240701203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 22956
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240701214612
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240702203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 24068
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240702213917
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240703203005
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 9648
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+**********************
+Windows PowerShell transcript start
+Start time: 20240703203723
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -file  C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1 
+Process ID: 10396
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+**********************
+Windows PowerShell transcript start
+Start time: 20240703204321
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 18804
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+**********************
+Windows PowerShell transcript start
+Start time: 20240703204848
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 17596
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240703215808
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240705203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 13192
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240705213940
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240706203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 20504
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This Week's Buy Signals Saved to BuySignals.json
+**********************
+Windows PowerShell transcript end
+End time: 20240706214752
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240708203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 4072
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This days Buy Signals Saved to live_trading.db buy_signals table
+**********************
+Windows PowerShell transcript end
+End time: 20240708214437
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240709203001
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 18764
+PSVersion: 5.1.22621.3672
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3672
+BuildVersion: 10.0.22621.3672
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This days Buy Signals Saved to live_trading.db buy_signals table
+**********************
+Windows PowerShell transcript end
+End time: 20240709220249
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240710203001
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 21252
+PSVersion: 5.1.22621.3880
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3880
+BuildVersion: 10.0.22621.3880
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Predictor script completed successfully.
+Running Nightly broker script...
+Nightly broker script completed successfully.
+This days Buy Signals Saved to live_trading.db buy_signals table
+**********************
+Windows PowerShell transcript end
+End time: 20240710214404
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20240711203002
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell.exe -ExecutionPolicy Bypass -File C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1
+Process ID: 27740
+PSVersion: 5.1.22621.3880
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3880
+BuildVersion: 10.0.22621.3880
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+**********************
+Windows PowerShell transcript start
+Start time: 20240711212041
+Username: DESKTOP-UQ8O8Q7\Masam
+RunAs User: DESKTOP-UQ8O8Q7\Masam
+Configuration Name: 
+Machine: DESKTOP-UQ8O8Q7 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -file  C:\apitesting\Stock-Market-LSTM\run_all_scripts.ps1 
+Process ID: 19668
+PSVersion: 5.1.22621.3880
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.3880
+BuildVersion: 10.0.22621.3880
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\apitesting\Stock-Market-LSTM\run_all_scripts.log
+Starting the stock market data download and processing sequence...
+Running Ticker Downloader...
+Ticker Downloader completed successfully.
+Running Bulk Price Downloader...
+Bulk Price Downloader completed successfully.
+Running Indicators script...
+Indicators script completed successfully.
+Running Predictor script...
+Error running Predictor script. Exit code: 1
+Output: Traceback (most recent call last):   File "C:\apitesting\Stock-Market-LSTM\4__Predictor.py", line 420, in <module>     main()   File "C:\apitesting\Stock-Market-LSTM\4__Predictor.py", line 409, in main     predict_and_save( TypeError: predict_and_save() got an unexpected keyword argument 'selected_features'

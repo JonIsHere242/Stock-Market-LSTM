@@ -17,7 +17,7 @@ FINAL_DATA_DIRECTORY = "Data/RFpredictions"
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
 LOG_FILE = "Data/PriceData/_Price_Data_download.log"
-START_DATE = '2020-01-01'
+START_DATE = '2010-01-01'
 RATE_LIMIT = 1.0  # seconds between downloads
 
 os.makedirs(DATA_DIRECTORY, exist_ok=True)
@@ -59,17 +59,19 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
                     stock_data.to_parquet(file_path)
                     download_count += 1
                     if download_count % 100 == 0:
-                        logging.info(f"Downloaded data for {download_count} tickers taking {time.time() - start_time:.2f} seconds")
+                        elapsed_time = time.time() - start_time
+                        logging.info(f"Downloaded data for {download_count} tickers taking {elapsed_time:.2f} seconds")
                 else:
                     logging.warning(f"Skipping {ticker}: insufficient data or abnormal price.")
                 time.sleep(wait_time)
             except Exception as e:
                 logging.error(f"Error downloading data for {ticker}: {e}")
         progress_bar.update(1)
-        progress_bar.refresh()  # Force refresh the progress bar
+        progress_bar.refresh()
 
     progress_bar.close()
-    logging.info(f"Total download time: {time.time() - start_time:.2f} seconds")
+    total_time = time.time() - start_time
+    logging.info(f"Total download time: {total_time:.2f} seconds")
     return download_count
 
 if __name__ == "__main__":
@@ -85,7 +87,15 @@ if __name__ == "__main__":
 
     if args.RefreshMode:
         tickers = get_existing_tickers(FINAL_DATA_DIRECTORY)
-        max_files = len(tickers)
+        if len(tickers) < 10:
+            logging.info("Less than 10 files found in the final output directory. Switching to full download mode.")
+            args.RefreshMode = False
+            all_tickers = pd.read_parquet(find_latest_ticker_cik_file(TICKERS_CIK_DIRECTORY))
+            nyse_nasdaq_tickers = all_tickers[all_tickers['exchange'].isin(['NYSE', 'NASDAQ'])]['ticker'].tolist()
+            tickers = nyse_nasdaq_tickers
+            max_files = len(nyse_nasdaq_tickers)
+        else:
+            max_files = len(tickers)
     else:
         all_tickers = pd.read_parquet(find_latest_ticker_cik_file(TICKERS_CIK_DIRECTORY))
         nyse_nasdaq_tickers = all_tickers[all_tickers['exchange'].isin(['NYSE', 'NASDAQ'])]['ticker'].tolist()
@@ -97,7 +107,12 @@ if __name__ == "__main__":
     if args.NumberOfFiles:
         max_files = min(args.NumberOfFiles, max_files)
 
+    start_time = time.time()
     downloaded = fetch_and_save_stock_data(tickers, DATA_DIRECTORY, max_downloads=max_files, start_date=START_DATE, rate_limit=RATE_LIMIT)
 
+    total_time = time.time() - start_time
+    total_time_minutes = total_time / 60
     logging.info(f"Data download completed. Downloaded {downloaded} new files.")
+    logging.info(f"Total execution time: {total_time_minutes:.2f} minutes")
     print(f"Downloaded {downloaded} new files.")
+    print(f"Total execution time: {total_time_minutes:.2f} minutes")

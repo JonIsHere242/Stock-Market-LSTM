@@ -1,0 +1,345 @@
+2024-07-07 19:13:56,228 - Optimal threshold for 0.79 precision: 0.7433
+2024-07-07 19:13:56,228 - Adjusted threshold for 5.00% predictions: 0.7433
+2024-07-07 19:13:56,961 - Accuracy: 0.5113
+2024-07-07 19:13:56,962 - Precision (class 1): 0.7930
+2024-07-07 19:13:56,962 - Recall (class 1): 0.0021
+2024-07-07 19:13:56,962 - F1 Score (class 1): 0.0041
+2024-07-07 19:13:56,962 - Percentage of positive predictions: 0.13%
+2024-07-07 19:13:58,038 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-07 19:13:58,039 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-07 19:19:10,322 - Reusing existing training data.
+2024-07-07 19:19:11,603 - Data preparation complete.
+2024-07-07 19:19:11,603 - Training Precision-Focused Random Forest model.
+2024-07-07 19:26:16,238 - Optimal threshold for 0.79 precision: 0.7331
+2024-07-07 19:26:16,238 - Adjusted threshold for 5.00% predictions: 0.7331
+2024-07-07 19:26:17,049 - Accuracy: 0.5112
+2024-07-07 19:26:17,049 - Precision (class 1): 0.7930
+2024-07-07 19:26:17,049 - Recall (class 1): 0.0017
+2024-07-07 19:26:17,049 - F1 Score (class 1): 0.0034
+2024-07-07 19:26:17,051 - Percentage of positive predictions: 0.10%
+2024-07-07 19:26:18,407 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-07 19:26:18,407 - True Positives: 1222
+2024-07-07 19:26:18,407 - False Positives: 319
+2024-07-07 19:26:18,407 - False Negatives: 723139
+2024-07-07 19:26:18,407 - True Negatives: 755342
+2024-07-07 19:26:18,407 - Positive Prediction Rate: 0.0010
+2024-07-07 19:26:18,407 - Precision of Positive Predictions: 0.7930
+2024-07-07 19:26:18,407 - Recall of Positive Class: 0.0017
+2024-07-07 19:26:19,389 - Brier Score: 0.2730
+2024-07-07 19:26:19,425 - 
+Top 10 Most Important Features:
+2024-07-07 19:26:19,669 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-07 19:26:19,670 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-07 19:42:42,570 - Reusing existing training data.
+2024-07-07 19:42:43,863 - Data preparation complete.
+2024-07-07 19:42:43,863 - Training Precision-Focused Random Forest model.
+2024-07-08 16:13:42,472 - Preparing new training data.
+2024-07-08 16:15:13,475 - Data preparation complete.
+2024-07-08 16:15:13,475 - Training Precision-Focused Random Forest model.
+2024-07-08 16:21:54,782 - Optimal threshold for 0.63 precision: 0.7686
+2024-07-08 16:21:54,784 - Adjusted threshold for 5.00% predictions: 0.7686
+2024-07-08 16:21:55,527 - Accuracy: 0.5141
+2024-07-08 16:21:55,527 - Precision (class 1): 0.6300
+2024-07-08 16:21:55,527 - Recall (class 1): 0.0218
+2024-07-08 16:21:55,527 - F1 Score (class 1): 0.0421
+2024-07-08 16:21:55,527 - Percentage of positive predictions: 1.69%
+2024-07-08 16:21:56,694 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-08 16:21:56,694 - True Positives: 15801
+2024-07-08 16:21:56,694 - False Positives: 9280
+2024-07-08 16:21:56,694 - False Negatives: 709806
+2024-07-08 16:21:56,694 - True Negatives: 745135
+2024-07-08 16:21:56,694 - Positive Prediction Rate: 0.0169
+2024-07-08 16:21:56,694 - Precision of Positive Predictions: 0.6300
+2024-07-08 16:21:56,694 - Recall of Positive Class: 0.0218
+2024-07-08 16:21:57,605 - Brier Score: 0.2985
+2024-07-08 16:21:57,632 - 
+Top 10 Most Important Features:
+2024-07-08 16:21:57,872 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-08 16:21:57,872 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-08 16:42:47,161 - Reusing existing training data.
+2024-07-08 16:42:48,424 - Data preparation complete.
+2024-07-08 16:42:48,424 - Training Precision-Focused Random Forest model with ADASYN oversampling.
+2024-07-08 16:44:03,524 - Reusing existing training data.
+2024-07-08 16:44:04,782 - Data preparation complete.
+2024-07-08 16:44:04,782 - Training Precision-Focused Random Forest model with ADASYN oversampling.
+2024-07-08 17:25:05,655 - Preparing new training data.
+2024-07-08 17:26:13,164 - Data preparation complete.
+2024-07-08 17:26:13,165 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-08 17:26:21,610 - Original training set shape: (5297441, 116)
+2024-07-08 17:26:21,610 - Resampled training set shape: (5349900, 116)
+2024-07-08 17:31:41,290 - Optimal threshold for 0.63 precision: 0.7682
+2024-07-08 17:31:41,290 - Adjusted threshold for 5.00% predictions: 0.7682
+2024-07-08 17:31:41,961 - Accuracy: 0.5112
+2024-07-08 17:31:41,961 - Precision (class 1): 0.6300
+2024-07-08 17:31:41,961 - Recall (class 1): 0.0316
+2024-07-08 17:31:41,961 - F1 Score (class 1): 0.0601
+2024-07-08 17:31:41,962 - Percentage of positive predictions: 2.48%
+2024-07-08 17:31:42,965 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-08 17:31:42,965 - True Positives: 20698
+2024-07-08 17:31:42,965 - False Positives: 12156
+2024-07-08 17:31:42,965 - False Negatives: 635224
+2024-07-08 17:31:42,965 - True Negatives: 656283
+2024-07-08 17:31:42,965 - Positive Prediction Rate: 0.0248
+2024-07-08 17:31:42,965 - Precision of Positive Predictions: 0.6300
+2024-07-08 17:31:42,965 - Recall of Positive Class: 0.0316
+2024-07-08 17:31:43,719 - Brier Score: 0.3017
+2024-07-08 17:31:43,754 - 
+Top 10 Most Important Features:
+2024-07-08 17:31:43,983 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-08 17:31:43,984 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-08 17:36:27,230 - Reusing existing training data.
+2024-07-08 17:36:28,477 - Data preparation complete.
+2024-07-08 17:36:28,477 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-08 17:36:37,964 - Original training set shape: (5297441, 116)
+2024-07-08 17:36:37,964 - Resampled training set shape: (5349900, 116)
+2024-07-08 17:48:25,191 - Optimal threshold for 0.70 precision: 0.7795
+2024-07-08 17:48:25,191 - Adjusted threshold for 5.00% predictions: 0.7795
+2024-07-08 17:48:25,864 - Accuracy: 0.5072
+2024-07-08 17:48:25,864 - Precision (class 1): 0.7000
+2024-07-08 17:48:25,864 - Recall (class 1): 0.0088
+2024-07-08 17:48:25,864 - F1 Score (class 1): 0.0174
+2024-07-08 17:48:25,865 - Percentage of positive predictions: 0.62%
+2024-07-08 17:48:26,859 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-08 17:48:26,859 - True Positives: 5787
+2024-07-08 17:48:26,859 - False Positives: 2480
+2024-07-08 17:48:26,859 - False Negatives: 650135
+2024-07-08 17:48:26,859 - True Negatives: 665959
+2024-07-08 17:48:26,859 - Positive Prediction Rate: 0.0062
+2024-07-08 17:48:26,859 - Precision of Positive Predictions: 0.7000
+2024-07-08 17:48:26,859 - Recall of Positive Class: 0.0088
+2024-07-08 17:48:27,620 - Brier Score: 0.3017
+2024-07-08 17:48:27,645 - 
+Top 10 Most Important Features:
+2024-07-08 17:48:27,909 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-08 17:48:27,909 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-08 18:36:43,271 - Preparing new training data.
+2024-07-08 18:38:02,082 - Data preparation complete.
+2024-07-08 18:38:02,082 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-08 18:38:11,125 - Original training set shape: (5297441, 116)
+2024-07-08 18:38:11,125 - Resampled training set shape: (5349372, 116)
+2024-07-08 19:04:14,074 - Optimal threshold for 0.70 precision: 0.8398
+2024-07-08 19:04:14,074 - Adjusted threshold for 5.00% predictions: 0.8398
+2024-07-08 19:04:14,687 - Accuracy: 0.5067
+2024-07-08 19:04:14,688 - Precision (class 1): 0.7000
+2024-07-08 19:04:14,688 - Recall (class 1): 0.0063
+2024-07-08 19:04:14,688 - F1 Score (class 1): 0.0124
+2024-07-08 19:04:14,688 - Percentage of positive predictions: 0.44%
+2024-07-08 19:04:15,607 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-08 19:04:15,607 - True Positives: 4116
+2024-07-08 19:04:15,607 - False Positives: 1764
+2024-07-08 19:04:15,607 - False Negatives: 651542
+2024-07-08 19:04:15,607 - True Negatives: 666939
+2024-07-08 19:04:15,607 - Positive Prediction Rate: 0.0044
+2024-07-08 19:04:15,607 - Precision of Positive Predictions: 0.7000
+2024-07-08 19:04:15,607 - Recall of Positive Class: 0.0063
+2024-07-08 19:04:16,358 - Brier Score: 0.3356
+2024-07-08 19:04:16,385 - 
+Top 10 Most Important Features:
+2024-07-08 19:04:16,722 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-08 19:04:16,722 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-08 20:02:47,748 - Loading the trained model.
+2024-07-08 20:05:58,065 - Predictions saved to Data/RFpredictions
+2024-07-08 21:38:29,975 - Loading the trained model.
+2024-07-08 21:41:11,838 - Predictions saved to Data/RFpredictions
+2024-07-09 12:24:47,458 - Preparing new training data.
+2024-07-09 12:26:09,884 - Data preparation complete.
+2024-07-09 12:26:09,885 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-09 12:26:18,765 - Original training set shape: (5299622, 116)
+2024-07-09 12:26:18,765 - Resampled training set shape: (5353124, 116)
+2024-07-09 15:17:09,767 - Optimal threshold for 0.70 precision: 0.8658
+2024-07-09 15:17:09,767 - Adjusted threshold for 5.00% predictions: 0.8658
+2024-07-09 15:17:10,420 - Accuracy: 0.5061
+2024-07-09 15:17:10,420 - Precision (class 1): 0.7000
+2024-07-09 15:17:10,420 - Recall (class 1): 0.0059
+2024-07-09 15:17:10,420 - F1 Score (class 1): 0.0117
+2024-07-09 15:17:10,421 - Percentage of positive predictions: 0.42%
+2024-07-09 15:17:11,384 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-09 15:17:11,384 - True Positives: 3871
+2024-07-09 15:17:11,384 - False Positives: 1659
+2024-07-09 15:17:11,384 - False Negatives: 652646
+2024-07-09 15:17:11,384 - True Negatives: 666730
+2024-07-09 15:17:11,384 - Positive Prediction Rate: 0.0042
+2024-07-09 15:17:11,384 - Precision of Positive Predictions: 0.7000
+2024-07-09 15:17:11,384 - Recall of Positive Class: 0.0059
+2024-07-09 15:17:12,226 - Brier Score: 0.3563
+2024-07-09 20:32:37,077 - Loading the trained model.
+2024-07-09 20:32:48,987 - Loading the trained model.
+2024-07-09 20:33:36,584 - Preparing new training data.
+2024-07-09 20:35:02,485 - Data preparation complete.
+2024-07-09 20:35:02,485 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-09 20:35:12,253 - Original training set shape: (5299622, 116)
+2024-07-09 20:35:12,253 - Resampled training set shape: (5351526, 116)
+2024-07-09 20:57:57,848 - Optimal threshold for 0.70 precision: 0.8660
+2024-07-09 20:57:57,848 - Adjusted threshold for 5.00% predictions: 0.8660
+2024-07-09 20:57:58,543 - Accuracy: 0.5068
+2024-07-09 20:57:58,543 - Precision (class 1): 0.7000
+2024-07-09 20:57:58,543 - Recall (class 1): 0.0059
+2024-07-09 20:57:58,543 - F1 Score (class 1): 0.0117
+2024-07-09 20:57:58,544 - Percentage of positive predictions: 0.42%
+2024-07-09 20:57:59,570 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-09 20:57:59,570 - True Positives: 3878
+2024-07-09 20:57:59,570 - False Positives: 1662
+2024-07-09 20:57:59,570 - False Negatives: 651840
+2024-07-09 20:57:59,570 - True Negatives: 667526
+2024-07-09 20:57:59,570 - Positive Prediction Rate: 0.0042
+2024-07-09 20:57:59,570 - Precision of Positive Predictions: 0.7000
+2024-07-09 20:57:59,570 - Recall of Positive Class: 0.0059
+2024-07-09 20:58:00,392 - Brier Score: 0.3567
+2024-07-09 20:58:00,426 - 
+Top 10 Most Important Features:
+2024-07-09 20:58:00,808 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-09 20:58:00,809 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-09 21:56:54,157 - Loading the trained model.
+2024-07-09 21:59:24,201 - Predictions saved to Data/RFpredictions
+2024-07-10 13:27:25,928 - Preparing new training data.
+2024-07-10 13:28:44,308 - Data preparation complete.
+2024-07-10 13:28:44,308 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-10 13:28:53,245 - Original training set shape: (5247172, 118)
+2024-07-10 13:28:53,246 - Resampled training set shape: (5298988, 118)
+2024-07-10 13:50:18,387 - Optimal threshold for 0.70 precision: 0.8642
+2024-07-10 13:50:18,387 - Adjusted threshold for 5.00% predictions: 0.8642
+2024-07-10 13:50:19,025 - Accuracy: 0.5070
+2024-07-10 13:50:19,025 - Precision (class 1): 0.7000
+2024-07-10 13:50:19,025 - Recall (class 1): 0.0068
+2024-07-10 13:50:19,025 - F1 Score (class 1): 0.0135
+2024-07-10 13:50:19,025 - Percentage of positive predictions: 0.48%
+2024-07-10 13:50:19,986 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-10 13:50:19,986 - True Positives: 4438
+2024-07-10 13:50:19,986 - False Positives: 1902
+2024-07-10 13:50:19,986 - False Negatives: 644767
+2024-07-10 13:50:19,986 - True Negatives: 660687
+2024-07-10 13:50:19,986 - Positive Prediction Rate: 0.0048
+2024-07-10 13:50:19,986 - Precision of Positive Predictions: 0.7000
+2024-07-10 13:50:19,986 - Recall of Positive Class: 0.0068
+2024-07-10 13:50:20,794 - Brier Score: 0.3567
+2024-07-10 13:50:20,829 - 
+Top 10 Most Important Features:
+2024-07-10 13:50:21,189 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-10 13:50:21,189 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-10 16:54:12,599 - Preparing new training data.
+2024-07-10 16:55:33,948 - Data preparation complete.
+2024-07-10 16:55:33,948 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-10 16:55:34,400 - Original training set shape: (11005, 124)
+2024-07-10 16:55:34,400 - Resampled training set shape: (12546, 124)
+2024-07-10 16:55:36,289 - Optimal threshold for 0.70 precision: 0.8824
+2024-07-10 16:55:36,289 - Adjusted threshold for 5.00% predictions: 0.8824
+2024-07-10 16:55:36,292 - Accuracy: 0.5843
+2024-07-10 16:55:36,292 - Precision (class 1): 0.6667
+2024-07-10 16:55:36,292 - Recall (class 1): 0.0035
+2024-07-10 16:55:36,292 - F1 Score (class 1): 0.0069
+2024-07-10 16:55:36,292 - Percentage of positive predictions: 0.22%
+2024-07-10 16:55:36,297 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-10 16:55:36,297 - True Positives: 4
+2024-07-10 16:55:36,297 - False Positives: 2
+2024-07-10 16:55:36,297 - False Negatives: 1142
+2024-07-10 16:55:36,297 - True Negatives: 1604
+2024-07-10 16:55:36,297 - Positive Prediction Rate: 0.0022
+2024-07-10 16:55:36,297 - Precision of Positive Predictions: 0.6667
+2024-07-10 16:55:36,297 - Recall of Positive Class: 0.0035
+2024-07-10 16:55:36,695 - Brier Score: 0.2952
+2024-07-10 16:55:36,746 - 
+Top 10 Most Important Features:
+2024-07-10 16:55:36,971 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-10 16:55:36,971 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-10 16:56:22,266 - Preparing new training data.
+2024-07-10 16:57:32,040 - Data preparation complete.
+2024-07-10 16:57:32,040 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-10 16:57:32,451 - Original training set shape: (13109, 124)
+2024-07-10 16:57:32,451 - Resampled training set shape: (14962, 124)
+2024-07-10 16:57:34,908 - Optimal threshold for 0.70 precision: 0.8710
+2024-07-10 16:57:34,908 - Adjusted threshold for 5.00% predictions: 0.8710
+2024-07-10 16:57:34,912 - Accuracy: 0.5897
+2024-07-10 16:57:34,912 - Precision (class 1): 0.7000
+2024-07-10 16:57:34,912 - Recall (class 1): 0.0052
+2024-07-10 16:57:34,912 - F1 Score (class 1): 0.0103
+2024-07-10 16:57:34,912 - Percentage of positive predictions: 0.31%
+2024-07-10 16:57:34,917 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-10 16:57:34,917 - True Positives: 7
+2024-07-10 16:57:34,917 - False Positives: 3
+2024-07-10 16:57:34,917 - False Negatives: 1342
+2024-07-10 16:57:34,917 - True Negatives: 1926
+2024-07-10 16:57:34,917 - Positive Prediction Rate: 0.0031
+2024-07-10 16:57:34,917 - Precision of Positive Predictions: 0.7000
+2024-07-10 16:57:34,917 - Recall of Positive Class: 0.0052
+2024-07-10 16:57:35,248 - Brier Score: 0.3062
+2024-07-10 16:57:35,285 - 
+Top 10 Most Important Features:
+2024-07-10 16:57:35,494 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-10 16:57:35,494 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-10 17:15:36,368 - Preparing new training data.
+2024-07-10 17:16:57,186 - Data preparation complete.
+2024-07-10 17:16:57,186 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-10 17:17:06,468 - Original training set shape: (5243586, 124)
+2024-07-10 17:17:06,468 - Resampled training set shape: (5296802, 124)
+2024-07-10 17:41:23,535 - Optimal threshold for 0.70 precision: 0.8669
+2024-07-10 17:41:23,535 - Adjusted threshold for 5.00% predictions: 0.8669
+2024-07-10 17:41:24,187 - Accuracy: 0.5065
+2024-07-10 17:41:24,187 - Precision (class 1): 0.7000
+2024-07-10 17:41:24,187 - Recall (class 1): 0.0056
+2024-07-10 17:41:24,187 - F1 Score (class 1): 0.0111
+2024-07-10 17:41:24,187 - Percentage of positive predictions: 0.39%
+2024-07-10 17:41:25,149 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-10 17:41:25,149 - True Positives: 3621
+2024-07-10 17:41:25,149 - False Positives: 1552
+2024-07-10 17:41:25,149 - False Negatives: 645424
+2024-07-10 17:41:25,149 - True Negatives: 660300
+2024-07-10 17:41:25,149 - Positive Prediction Rate: 0.0039
+2024-07-10 17:41:25,149 - Precision of Positive Predictions: 0.7000
+2024-07-10 17:41:25,149 - Recall of Positive Class: 0.0056
+2024-07-10 17:41:25,876 - Brier Score: 0.3566
+2024-07-10 17:41:25,913 - 
+Top 10 Most Important Features:
+2024-07-10 17:41:26,258 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-10 17:41:26,259 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-10 17:41:50,162 - Loading the trained model.
+2024-07-10 17:44:23,787 - Predictions saved to Data/RFpredictions
+2024-07-10 21:38:16,016 - Loading the trained model.
+2024-07-10 21:40:45,614 - Predictions saved to Data/RFpredictions
+2024-07-11 15:31:32,611 - Keeping top 70.0% of features: 86 out of 124
+2024-07-11 15:31:32,612 - Preparing new training data.
+2024-07-11 15:32:16,150 - Kept 88 features after selection
+2024-07-11 15:32:26,081 - Data preparation complete.
+2024-07-11 15:32:26,081 - Training Precision-Focused Random Forest model with Random Over-Sampling.
+2024-07-11 15:32:28,993 - Original training set shape: (2668626, 86)
+2024-07-11 15:32:28,993 - Resampled training set shape: (2690312, 86)
+2024-07-11 15:41:03,251 - Optimal threshold for 0.70 precision: 0.8660
+2024-07-11 15:41:03,251 - Adjusted threshold for 5.00% predictions: 0.8660
+2024-07-11 15:41:03,574 - Accuracy: 0.5068
+2024-07-11 15:41:03,574 - Precision (class 1): 0.7000
+2024-07-11 15:41:03,574 - Recall (class 1): 0.0046
+2024-07-11 15:41:03,574 - F1 Score (class 1): 0.0092
+2024-07-11 15:41:03,574 - Percentage of positive predictions: 0.33%
+2024-07-11 15:41:04,047 - 
+Detailed Class 1 (Upward) Prediction Analysis:
+2024-07-11 15:41:04,047 - True Positives: 1533
+2024-07-11 15:41:04,047 - False Positives: 657
+2024-07-11 15:41:04,047 - False Negatives: 328361
+2024-07-11 15:41:04,047 - True Negatives: 336606
+2024-07-11 15:41:04,047 - Positive Prediction Rate: 0.0033
+2024-07-11 15:41:04,047 - Precision of Positive Predictions: 0.7000
+2024-07-11 15:41:04,047 - Recall of Positive Class: 0.0046
+2024-07-11 15:41:04,683 - Brier Score: 0.3562
+2024-07-11 15:41:04,720 - 
+Top 10 Most Important Features:
+2024-07-11 15:41:05,019 - Model saved to Data/ModelData\random_forest_model.joblib
+2024-07-11 15:41:05,020 - Prediction threshold saved to Data/ModelData\prediction_threshold.txt
+2024-07-11 22:29:14,663 - Using all 85 features (excluding essential columns)
+2024-07-11 22:39:49,928 - Keeping top 70.0% of features: 59 out of 85 (excluding essential columns)
+2024-07-11 22:41:57,866 - Keeping top 70.0% of features: 59 out of 85 (excluding essential columns)
+2024-07-11 22:41:57,867 - Loading the trained model.
+2024-07-11 22:42:17,461 - Using all 85 features (excluding essential columns)
+2024-07-11 22:42:17,461 - Loading the trained model.
+2024-07-11 22:43:55,857 - Using all 85 features (excluding essential columns)
+2024-07-11 22:43:55,857 - Loading the trained model.
+2024-07-11 22:46:58,533 - Predictions saved to Data/RFpredictions

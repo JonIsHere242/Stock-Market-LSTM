@@ -3,6 +3,7 @@ from datetime import datetime, date
 
 DB_NAME = 'live_trading.db'
 
+
 def get_db_connection():
     conn = sqlite3.connect(DB_NAME)
     conn.row_factory = sqlite3.Row
@@ -80,12 +81,12 @@ def create_tables():
     )
     ''')
 
-
     cur.execute('''
     CREATE TABLE IF NOT EXISTS buy_signals (
-        symbol TEXT PRIMARY KEY,
-        buy_signal BOOLEAN NOT NULL,
-        date_updated DATE NOT NULL
+        symbol TEXT,
+        date DATE NOT NULL,
+        price REAL,
+        PRIMARY KEY (symbol, date)
     )
     ''')
 
@@ -254,7 +255,7 @@ def update_buy_signal(symbol, buy_signal):
 def get_buy_signals():
     conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute('SELECT * FROM buy_signals WHERE buy_signal = TRUE')
+    cur.execute('SELECT * FROM buy_signals')
     signals = cur.fetchall()
     conn.close()
     return signals

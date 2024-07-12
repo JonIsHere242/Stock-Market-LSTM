@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import time
 import scipy.stats as stats
-from scipy.stats import linregress, skew, kurtosis
+from scipy.stats import linregress, skew, kurtosis, entropy
 import logging
 import argparse
 import warnings
@@ -12,13 +12,14 @@ import traceback
 from pykalman import KalmanFilter
 from scipy.signal import find_peaks, argrelextrema
 from concurrent.futures import ProcessPoolExecutor
-from numba import njit
+from numba import njit, jit
 from tqdm import tqdm
 from datetime import datetime, timedelta
 
 
 """
-This script processes financial market data to calculate various technical indicators and saves the processed data Parquet format. It is designed to handle large datasets efficiently by utilizing multiple cores of the processor.
+This script processes financial market data to calculate various technical indicators and saves the processed data Parquet format.
+It is designed to handle large datasets efficiently by utilizing multiple cores.
 
 Features:
 - Processes data files containing market data like Open, High, Low, Close, Volume, etc.
@@ -58,6 +59,7 @@ CONFIG = {
 
 warnings.filterwarnings('ignore', 'invalid value encountered in subtract', RuntimeWarning)
 warnings.filterwarnings('ignore', 'invalid value encountered in reduce', RuntimeWarning)
+
 
 ##===========================(Indicators)===========================##
 ##===========================(Indicators)===========================##
@@ -470,19 +472,6 @@ def compute_VPT(df):
     return df
 
 
-def AtrVolume(df):
-    df['ATR_std'] = df['ATR'].rolling(window=60).std()
-    df['Volume_std'] = df['Volume'].rolling(window=60).std()
-    ATR_threshold_multiplier = 2  # Example value, can be adjusted
-    Volume_threshold_multiplier = 2  # Example value, can be adjusted
-    df['ATR_trigger'] = df['ATR'] > (df['ATR_std'] * ATR_threshold_multiplier)
-    df['Volume_trigger'] = df['Volume'] > (df['Volume_std'] * Volume_threshold_multiplier)
-    df['Oscillator'] = (df['ATR_trigger'] & df['Volume_trigger']).astype(int)
-    reset_points = df['Oscillator'].diff().eq(-1).cumsum()
-    # Calculate the trigger counter
-    df['Trigger_Counter'] = df['Oscillator'].groupby(reset_points).cumsum()
-    return df
-
 
 def ATR_Based_Adaptive_Trend_Channels(df):
     # 200-day Moving Average
@@ -770,6 +759,91 @@ def calculate_emv(df, period=14):
     return df
 
 
+
+def create_lagged_features(df, columns, lags):
+    for col in columns:
+        for lag in lags:
+            df[f'{col}_Lag{lag}'] = df[col].shift(lag)
+    return df
+
+
+
+
+def safe_log(x):
+    return np.log(np.where(x <= 0, np.nan, x))
+
+def safe_sqrt(x):
+    return np.sqrt(np.where(x < 0, np.nan, x))
+
+def replace_nan_with_interpolation_or_zero(series):
+    return series.fillna(method='ffill').fillna(0)
+
+def calculate_genetic_indicators(df):
+    df['G-PriceRangeLeverage'] = (df['Close'] - df['Low_Lag1']) / df['Low_Lag2']
+    df['G-PriceRangeLeverage'] = replace_nan_with_interpolation_or_zero(df['G-PriceRangeLeverage'])
+    
+    df['G-SinusoidalPriceOscillator'] = np.sin((df['Close'] - df['Low_Lag2']) / df['High_Lag1'])
+    df['G-SinusoidalPriceOscillator'] = replace_nan_with_interpolation_or_zero(df['G-SinusoidalPriceOscillator'])
+    
+    df['G-VolatilityMomentumHybrid'] = (df['High_Lag2'] - df['Low_Lag2']) * df['Close_Pct_Change']
+    df['G-VolatilityMomentumHybrid'] = replace_nan_with_interpolation_or_zero(df['G-VolatilityMomentumHybrid'])
+    
+    df['G-WeeklyPriceDeviation'] = (df['Close'] - df['High_Lag2']) / df['High_Lag7']
+    df['G-WeeklyPriceDeviation'] = replace_nan_with_interpolation_or_zero(df['G-WeeklyPriceDeviation'])
+    
+    df['G-CompoundPriceStrength'] = (df['Close'] - df['High_Lag1']) / (df['High_Lag2'] * df['High_Lag7'])
+    df['G-CompoundPriceStrength'] = replace_nan_with_interpolation_or_zero(df['G-CompoundPriceStrength'])
+    
+    df['G-VolumeAdjustedPriceShift'] = (df['Close'] - df['High_Lag4'] + df['High_Lag3']) / df['Volume']
+    df['G-VolumeAdjustedPriceShift'] = replace_nan_with_interpolation_or_zero(df['G-VolumeAdjustedPriceShift'])
+    
+    df['G-PriceVolumeEfficiency'] = (df['Close'] - df['High_Lag1']) / df['Volume']
+    df['G-PriceVolumeEfficiency'] = replace_nan_with_interpolation_or_zero(df['G-PriceVolumeEfficiency'])
+    
+    df['G-GapStrengthRatio'] = (df['Close'] - df['Open_Lag2']) / (df['High_Lag1'] - df['Low_Lag1'])
+    df['G-GapStrengthRatio'] = replace_nan_with_interpolation_or_zero(df['G-GapStrengthRatio'])
+    
+    df['G-DelayedVolumeShift'] = (df['Close'] - df['High_Lag2'] + df['High_Lag3']) / df['Volume']
+    df['G-DelayedVolumeShift'] = replace_nan_with_interpolation_or_zero(df['G-DelayedVolumeShift'])
+    
+    # New genetic indicators based on the best programs
+    df['G-VolumeAccelerationRoot'] = safe_sqrt(df['Volume'] * safe_sqrt(df['Volume'] * (df['High_Lag4'] + df['Open_Lag1'])))
+    df['G-VolumeAccelerationRoot'] = replace_nan_with_interpolation_or_zero(df['G-VolumeAccelerationRoot'])
+    
+    df['G-VolumeAmplificationIndex'] = safe_sqrt(safe_sqrt(df['High_Lag4'] * df['Volume']) * df['Volume'])
+    df['G-VolumeAmplificationIndex'] = replace_nan_with_interpolation_or_zero(df['G-VolumeAmplificationIndex'])
+    
+    df['G-VolumeImpactLogarithm'] = safe_sqrt(safe_log(np.abs(df['Volume'] - df['Low_Lag1'])) + np.abs(np.abs(df['Volume'] * (df['Volume'] + df['High']) * df['High_Lag3'])) - (df['Low_Lag1'] * safe_log(np.abs(df['Open_Lag1']))))
+    df['G-VolumeImpactLogarithm'] = replace_nan_with_interpolation_or_zero(df['G-VolumeImpactLogarithm'])
+    
+    df['G-VolumeCosineEffect'] = safe_sqrt(safe_log(np.abs(df['Low'] - (df['Open_Lag1'] + df['High']))) - np.abs(np.abs(df['Volume'] - df['Low_Lag1']) * df['High_Lag3']) - (np.cos(np.abs(df['High'])) / np.abs(df['High_Lag2'])))
+    df['G-VolumeCosineEffect'] = replace_nan_with_interpolation_or_zero(df['G-VolumeCosineEffect'])
+    
+    df['G-VolumeSqrtHigh'] = safe_sqrt(df['High_Lag3'] * df['Volume'])
+    df['G-VolumeSqrtHigh'] = replace_nan_with_interpolation_or_zero(df['G-VolumeSqrtHigh'])
+    
+    df['G-VolumeHighComplex'] = safe_sqrt(df['Volume'] * (df['High_Lag7'] + safe_sqrt(df['High_Lag4'] * safe_sqrt(df['Volume'] * (df['High_Lag7'] + df['High_Lag3'])))))
+    df['G-VolumeHighComplex'] = replace_nan_with_interpolation_or_zero(df['G-VolumeHighComplex'])
+    
+    df['G-VolumeHighDifference'] = df['Volume'] - df['High_Lag7']
+    df['G-VolumeHighDifference'] = replace_nan_with_interpolation_or_zero(df['G-VolumeHighDifference'])
+    
+    df['G-VolumeLogClose'] = safe_sqrt(df['High_Lag4'] * df['Volume']) + safe_log(df['Close'])
+    df['G-VolumeLogClose'] = replace_nan_with_interpolation_or_zero(df['G-VolumeLogClose'])
+
+    for col in df.columns:
+        if 'Lag' in col:
+            df = df.drop(columns=col)
+
+    return df
+
+
+def create_lagged_features(df, columns, lags):
+    for col in columns:
+        for lag in lags:
+            df[f'{col}_Lag{lag}'] = df[col].shift(lag)
+    return df
+
 def indicators(df):
     df['Close'] = df['Close'].ffill()
     df['High'] = df['High'].ffill()
@@ -782,10 +856,32 @@ def indicators(df):
     df['Open'] = df['Open'].astype(np.float32)
     df['Volume'] = df['Volume'].astype(np.float32)
 
+
+    open = df['Open']
     high = df['High']
     low = df['Low']
     close = df['Close']
     volume = df['Volume']
+
+
+
+
+
+    # Create lagged features
+    columns = ['Open', 'High', 'Low', 'Close', 'Volume']
+    lags = [1, 2, 3, 4, 7]
+    df = create_lagged_features(df, columns, lags)
+
+    # Calculate percentage change
+    df['Close_Pct_Change'] = df['Close'].pct_change()
+
+    # Calculate genetic indicators
+    df = calculate_genetic_indicators(df)
+
+    # Drop intermediate columns
+    #df = drop_intermediate_columns(df)
+
+
 
     # Calculate RSI first to ensure it exists for divergence calculation
     delta = df['Close'].diff()
@@ -816,31 +912,25 @@ def indicators(df):
     df['ATR'] = np.pad(mean_rolled, (window-1, 0), 'constant', constant_values=(np.nan,))
     df['ATR%'] = (df['ATR'] / close) * 100
     df['ATR%_change'] = df['ATR%'].pct_change()
-    df = AtrVolume(df)
+    
     df['200ma'] = close.rolling(window=200).mean()
     df['14ma'] = close.rolling(window=14).mean()
     df['14ma%'] = ((close - df['14ma']) / df['14ma']) * 100
     df['200ma%'] = ((close - df['200ma']) / df['200ma']) * 100
 
 
-    df['SMA_200'] = close.rolling(window=200).mean()
     df['SMA_14'] = close.rolling(window=14).mean()
     df['std_14'] = close.rolling(window=14).std()
-    df['Std_Devs_from_SMA'] = (df['SMA_200'] - df['SMA_14']) / df['std_14']
 
     df['14ma-200ma'] = df['14ma'] - df['200ma']
     df['14ma%_change'] = df['14ma%'].pct_change()
     df['14ma%_count'] = df['14ma%'].gt(0).rolling(window=14).sum()
     df['200ma%_count'] = df['200ma%'].gt(0).rolling(window=200).sum()
-    df['14ma_crossover'] = (close > df['14ma'])
-    df['200ma_crossover'] = (close > df['200ma'])
     df['200DAY_ATR'] = df['200ma'] + df['ATR']
     df['200DAY_ATR-'] = df['200ma'] - df['ATR']
     df['200DAY_ATR%'] = df['200DAY_ATR'] / close
     df['200DAY_ATR-%'] = df['200DAY_ATR-'] / close
     df['percent_from_high'] = ((close - close.cummax()) / close.cummax()) * 100
-    df['new_high'] = (close == close.cummax())
-    df['days_since_high'] = (~df['new_high']).cumsum() - (~df['new_high']).cumsum().where(df['new_high']).ffill().fillna(0)
     df['percent_range'] = (high - low) / close * 100
     typical_price = (high + low + close) / 3
     df['VWAP'] = (typical_price * volume).rolling(window=14).sum() / volume.rolling(window=14).sum()
@@ -941,19 +1031,9 @@ def indicators(df):
     df['Distance to Resistance (%)'] = (df['maxima'].shift(1) - df['Close']) / df['Close'] * 100
     df['MA_200'] = df['Close'].rolling(window=200).mean()
     df['Perc_Diff'] = (df['Kalman'] - df['MA_200']) / df['MA_200'] * 100
-    std_perc_diff = df['Perc_Diff'].std()
-    df['skew'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: skew(x))
-    df['kurtosis'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: kurtosis(x))
     df['mean'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: np.mean(x))
     df['std'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: np.std(x))
 
-    epsilon = 0.001  # Small perturbation factor
-    df['Perturbed_Kalman'] = df['Kalman'] * (1 + epsilon)
-    df['Divergence'] = np.abs(df['Perturbed_Kalman'] - df['Kalman'])
-    df['Log_Divergence'] = np.log(df['Divergence'] + np.finfo(float).eps)  # Adding eps to handle log(0)
-    df['Lyapunov_Exponent'] = df['Log_Divergence'].diff() / np.log(1 + epsilon)
-    window_size = 14  # Adjust window size as needed
-    df['Lyapunov_Exponent_MA'] = df['Lyapunov_Exponent'].rolling(window=window_size).mean()
 
     df = add_kalman_and_entropy_metrics(df, window_size=70, bins=30)
     df = add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70)
@@ -972,6 +1052,31 @@ def indicators(df):
     df = df.drop(columns_to_drop, axis=1)
     df = df.round(8)
     return df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ##===========================(File Processing)===========================##
@@ -1108,3 +1213,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     process_data_files(args.runpercent)
+
+
+##===========================(End)===========================##

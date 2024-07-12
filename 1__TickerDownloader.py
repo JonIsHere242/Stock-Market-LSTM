@@ -61,15 +61,6 @@ def download_and_convert_ticker_cik_file():
         logging.error(f"Error occurred: {e}")
 
 def is_file_recent(file_path):
-    """
-    Check if the file was modified today.
-
-    Args:
-        file_path (str): Path of the file to check.
-
-    Returns:
-        bool: True if the file was modified today, False otherwise.
-    """
     if os.path.exists(file_path):
         last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
         return last_modified == datetime.date.today()

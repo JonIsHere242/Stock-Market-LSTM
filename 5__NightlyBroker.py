@@ -17,7 +17,9 @@ from numba import njit
 from functools import lru_cache
 import multiprocessing
 import pyarrow.parquet as pq
-from live_trading_db import get_open_positions, add_open_position, update_position_exit_levels, add_trade_history, update_strategy_data, get_strategy_data, update_performance_metrics, get_latest_performance_metrics, update_portfolio_data, get_latest_portfolio_data, update_risk_management, update_system_state, get_last_system_state, update_buy_signal, get_buy_signals
+from live_trading_db import get_open_positions
+import sqlite3
+import scipy.stats as stats
 
 def LoggingSetup():
     loggerfile = "__BrokerLog.log"
@@ -29,11 +31,6 @@ def LoggingSetup():
         filemode='a'  # Append mode
     )
 
-@njit
-def fast_calculate_recent_mean_percentage_change(close_prices):
-    diff = close_prices[1:] - close_prices[:-1]
-    percentage_changes = diff / close_prices[:-1] * 100
-    return np.mean(percentage_changes)
 
 def arg_parser():
     parser = argparse.ArgumentParser(description="Backtesting Trading Strategy on Stock Data")
@@ -74,9 +71,19 @@ class ATRPercentage(bt.Indicator):
     def next(self):
         self.lines.atr_percent[0] = (self.atr[0] / self.data.close[0]) * 100
 
-def save_buy_signals_to_db(buy_signals):
-    for signal in buy_signals:
-        update_buy_signal(signal['Ticker'], True)
+    def save_buy_signals(self):
+        conn = sqlite3.connect('trading.db')
+        cursor = conn.cursor()
+        
+        cursor.execute('''CREATE TABLE IF NOT EXISTS buy_signals
+                          (symbol TEXT, date DATE, price REAL)''')
+
+        for signal in self.buy_signals:
+            cursor.execute("INSERT INTO buy_signals (symbol, date, price) VALUES (?, ?, ?)",
+                           (signal['symbol'], signal['date'], signal['price']))
+
+        conn.commit()
+        conn.close()
 
 correlation_data = pd.read_parquet('Correlations.parquet').set_index('Ticker')
 
@@ -107,11 +114,9 @@ correlation_data = pd.read_parquet('Correlations.parquet').set_index('Ticker')
 
 
 
-
-
 class CustomPandasData(bt.feeds.PandasData):
     lines = ('dist_to_support', 'dist_to_resistance', 'UpProbability', 'UpPrediction')
-    
+
     params = (
         ('datetime', 'Date'),
         ('open', 'Open'),
@@ -125,6 +130,7 @@ class CustomPandasData(bt.feeds.PandasData):
         ('UpProbability', 'UpProbability'),
         ('UpPrediction', 'UpPrediction'),
     )
+
 
 class MovingAverageCrossoverStrategy(bt.Strategy):
     __slots__ = ('inds', 'order_list', 'entry_prices', 'position_dates', 'order_cooldown',
@@ -156,13 +162,37 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.buying_status = {}
         self.consecutive_losses = {}
         self.cooldown_end = {}
-        self.open_positions = len(get_open_positions())  # Load the number of open positions from the database
+        self.open_positions = 0  # Start with 0 open positions
         self.asset_groups = {}
         self.asset_correlations = {}
         self.group_allocations = {}
         self.total_groups = self.detect_total_groups()
         self.correlation_data = self.params.correlation_data
+        if self.params.correlation_data is None:
+            self.correlation_data = pd.read_parquet('Correlations.parquet')
+        else:
+            self.correlation_data = self.params.correlation_data
 
+            # Log information about the correlation data
+            logging.info(f"Correlation data shape: {self.correlation_data.shape}")
+            logging.info(f"Correlation data columns: {self.correlation_data.columns}")
+
+            # Check if 'Ticker' column exists
+            if 'Ticker' not in self.correlation_data.columns:
+                logging.error("'Ticker' column not found in correlation data. Available columns are:")
+                for col in self.correlation_data.columns:
+                    logging.error(f"  - {col}")
+                raise ValueError("'Ticker' column not found in correlation data")
+
+            # Convert the correlation data to a more efficient format for lookups
+            try:
+                self.correlation_dict = {row['Ticker']: row.to_dict() for _, row in self.correlation_data.iterrows()}
+            except KeyError as e:
+                logging.error(f"Error creating correlation dictionary: {str(e)}")
+                logging.error("First few rows of correlation data:")
+                logging.error(self.correlation_data.head().to_string())
+                raise
+            
         # Get the length of the first data feed (they should all be the same length now)
         self.total_bars = 252
         print(f"Total bars in strategy: {self.total_bars}")
@@ -182,16 +212,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             self.inds[d]['dist_to_resistance'] = d.dist_to_resistance
             self.inds[d]['UpProbMA'] = bt.indicators.SimpleMovingAverage(d.UpProbability, period=self.p.fast_period)
 
-        self.load_open_positions_from_db()
 
-    def load_open_positions_from_db(self):
-        positions = get_open_positions()
-        for pos in positions:
-            data = self.getdatabyname(pos['symbol'])
-            self.entry_prices[data] = pos['entry_price']
-            self.position_dates[data] = datetime.strptime(pos['entry_date'], '%Y-%m-%d').date()
-            self.buying_status[pos['symbol']] = True
-            self.order_cooldown[data] = self.position_dates[data] + timedelta(days=1)
+
+
 
     def next(self):
         # Update progress bar
@@ -213,6 +236,55 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             buy_candidates = self.get_buy_candidates(current_date)
             if buy_candidates:
                 self.process_buy_candidates(buy_candidates, current_date)
+
+                if (datetime.now().date() - current_date).days <= 10:
+                    self.save_buy_signals(buy_candidates)
+
+
+
+
+
+
+
+    def save_buy_signals(self, buy_candidates):
+        if not buy_candidates:
+            return
+
+        conn = sqlite3.connect('live_trading.db')
+        cursor = conn.cursor()
+
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS buy_signals (
+            symbol TEXT,
+            date DATE NOT NULL,
+            price REAL,
+            PRIMARY KEY (symbol, date)
+        )
+        ''')
+
+        for candidate in buy_candidates[:5]:  # Save top 5 candidates
+            if isinstance(candidate, tuple):
+                if len(candidate) >= 2:
+                    data = candidate[0]
+                    # Ensure data is the correct type before accessing attributes
+                    if hasattr(data, '_name') and hasattr(data, 'close'):
+                        cursor.execute("INSERT OR REPLACE INTO buy_signals (symbol, date, price) VALUES (?, ?, ?)",
+                                       (data._name, self.datetime.date(), data.close[0]))
+                    else:
+                        logging.warning(f"Unexpected data format in buy candidate: {candidate}")
+                else:
+                    logging.warning(f"Unexpected tuple length in buy candidate: {candidate}")
+            else:
+                logging.warning(f"Unexpected format for buy candidate: {candidate}")
+
+        conn.commit()
+        conn.close()
+
+
+
+
+
+
 
     def detect_total_groups(self):
         correlation_data = pd.read_parquet('Correlations.parquet')
@@ -247,20 +319,33 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.order_list.append(order)
         self.order_cooldown[data] = self.datetime.date() + timedelta(days=1)
         self.update_group_data(order)
-        add_open_position(data._name, self.datetime.date(), order.executed.price, self.getposition(data).size)
+
+
+
+
+
 
     def update_group_data(self, order):
         data = order.data
-        if hasattr(data, 'Cluster'):
-            self.asset_groups[data._name] = data.Cluster[0]
-            self.asset_correlations[data._name] = {
-                'mean_intragroup_correlation': getattr(data, 'mean_intragroup_correlation', [0])[0],
-                'diff_to_mean_group_corr': getattr(data, 'diff_to_mean_group_corr', [0])[0],
-                **{f'correlation_{i}': getattr(data, f'correlation_{i}', [0])[0] for i in range(8)}
+        ticker = data._name
+        if ticker in self.correlation_dict:
+            self.asset_groups[ticker] = self.correlation_dict[ticker].get('Cluster', 0)
+            self.asset_correlations[ticker] = {
+                'mean_intragroup_correlation': self.correlation_dict[ticker].get('mean_intragroup_correlation', 0),
+                'diff_to_mean_group_corr': self.correlation_dict[ticker].get('diff_to_mean_group_corr', 0),
             }
         else:
-            logging.warning(f"Cluster information not available for {data._name}")
+            #logging.warning(f"Correlation data not found for {ticker}")
+            self.asset_groups[ticker] = 0
+            self.asset_correlations[ticker] = {
+                'mean_intragroup_correlation': 0,
+                'diff_to_mean_group_corr': 0,
+            }
         self.update_group_allocations()
+
+
+
+
 
     def update_group_allocations(self):
         total_value = self.broker.getvalue()
@@ -278,13 +363,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.buying_status[data._name] = False
         self.handle_position_closure(data, order)
         self.remove_asset_data(data)
-        self.remove_open_position_from_db(data._name)
 
     def handle_position_closure(self, data, order):
         if data in self.position_dates:
             days_held = (self.datetime.date() - self.position_dates[data]).days
             percentage = (order.executed.price - self.entry_prices[data]) / self.entry_prices[data] * 100
-            self.update_consecutive_losses(data, percentage < 0)
             del self.entry_prices[data]
             del self.position_dates[data]
         if order in self.order_list:
@@ -332,11 +415,18 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         if buy_candidates:
             buy_candidates = self.sort_buy_candidates(buy_candidates)
             self.save_best_buy_signals(buy_candidates)
-            for d, size, _ in buy_candidates:  # Unpack three values, ignore correlation
+            for candidate in buy_candidates:
                 if self.open_positions < self.params.max_positions:
-                    self.execute_buy(d, current_date, size)
+                    if isinstance(candidate, tuple) and len(candidate) >= 2:
+                        d, size = candidate[:2]
+                        self.execute_buy(d, current_date, size)
+                    else:
+                        logging.warning(f"Unexpected buy candidate format: {candidate}")
                 else:
                     break
+
+
+
 
     def calculate_position_size(self, data):
         total_value = self.broker.getvalue()
@@ -349,66 +439,65 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             return 0
         return size if cash_available >= capital_for_position else 0
 
+
+
+
+
     def sort_buy_candidates(self, buy_candidates):
         current_positions = [d._name for d in self.datas if self.getposition(d).size > 0]
-        try:
-            candidates_with_correlation = []
-            for candidate in buy_candidates:
-                try:
-                    if len(candidate) == 2:
-                        d, size = candidate
-                    elif len(candidate) == 3:
-                        d, size, _ = candidate
-                    else:
-                        logging.error(f"Unexpected candidate format: {candidate}")
-                        continue
+        candidates_with_correlation = []
 
-                    # Check if correlation data is available
-                    correlation_column = f'correlation_{size}'
-                    if correlation_column not in self.inds[d].lines:
-                        logging.error(f"Column {correlation_column} not found for {d._name}")
-                        continue
-
-                    correlation = self.get_mean_correlation(d._name, current_positions)
-                    candidates_with_correlation.append((d, size, correlation))
-
-                except ValueError as e:
-                    logging.error(f"Error unpacking candidate {candidate}: {e}")
+        for candidate in buy_candidates:
+            try:
+                if len(candidate) == 2:
+                    d, size = candidate
+                elif len(candidate) == 3:
+                    d, size, _ = candidate
+                else:
+                    logging.warning(f"Unexpected candidate format: {candidate}")
                     continue
-                
+
+                # Get the up probability directly from the data feed
+                up_prob = d.UpProbability[0]
+
+                correlation = self.get_mean_correlation(d._name, current_positions)
+                candidates_with_correlation.append((d, size, correlation, up_prob))
+
+            except Exception as e:
+                logging.warning(f"Error processing candidate {candidate}: {e}")
+                continue
+
+        try:
             return sorted(
                 candidates_with_correlation,
-                key=lambda x: (self.inds[x[0]]['up_prob'][0], -x[2]),
+                key=lambda x: (x[3], -x[2]),  # x[3] is up_prob, x[2] is correlation
                 reverse=True
             )
         except Exception as e:
             logging.error(f"Error sorting buy candidates: {e}")
-            return sorted(buy_candidates, key=lambda x: self.inds[x[0]]['up_prob'][0], reverse=True)
+            return sorted(buy_candidates, key=lambda x: x[0].UpProbability[0], reverse=True)
+
 
     def get_mean_correlation(self, candidate_ticker, current_positions):
-        correlation_data = pd.read_parquet('Correlations.parquet')
         if not current_positions:
             return 0
-        candidate_data = correlation_data[correlation_data['Ticker'] == candidate_ticker]
-        if candidate_data.empty:
-            logging.warning(f"No correlation data found for ticker: {candidate_ticker}")
-            return 0
+
+        candidate_data = self.correlation_dict.get(candidate_ticker)
+        if candidate_data is None:
+            #logging.warning(f"No correlation data found for ticker: {candidate_ticker}")
+            return 0.20  # Return a weak correlation instead of 0
 
         correlations = []
         for pos in current_positions:
-            pos_data = correlation_data[correlation_data['Ticker'] == pos]
-            if pos_data.empty:
-                logging.warning(f"No correlation data found for position: {pos}")
-                continue
-
-            correlation_column = f'correlation_{pos_data.index[0]}'
-            if correlation_column not in candidate_data.columns:
+            correlation_column = f'correlation_{pos}'
+            if correlation_column in candidate_data:
+                correlations.append(candidate_data[correlation_column])
+            else:
                 logging.warning(f"Column {correlation_column} not found for {candidate_ticker}")
-                continue
+                correlations.append(0.25)  # Append a weak correlation for missing data
 
-            correlations.append(candidate_data.iloc[0][correlation_column])
+        return sum(correlations) / len(correlations) if correlations else 0.20
 
-        return sum(correlations) / len(correlations) if correlations else 0
 
     def should_skip_buying(self, data, current_date):
         return (self.buying_status.get(data._name, False) or
@@ -433,45 +522,166 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             (days_held > 3 and profit_percent / days_held < 0.25 * days_held)):
             self.close_position(data, "Sell condition met")
 
-    @lru_cache(maxsize=1000)
-    def get_high_up_prob(self, data):
-        return np.percentile(self.inds[data]['up_prob'], 90)
-
     def can_buy_more_positions(self):
         return self.open_positions < self.params.max_positions
 
+
     def is_buy_signal(self, data):
-        if 'up_prob' not in self.inds[data]:
-            return False
-
-        high_up_prob = self.get_high_up_prob(data)
-        up_prediction = self.inds[data].get('UpPrediction', [1])[0]
-
-        favorable_support_resistance = (
-            self.inds[data].get('dist_to_support', [100])[0] < 50 and
-            self.inds[data].get('dist_to_resistance', [0])[0] > 100
-        )
-
-        close_prices = np.array(data.close.get(size=8))
-        recent_mean_percentage_change = fast_calculate_recent_mean_percentage_change(close_prices)
-
-        current_up_prob_good = self.inds[data]['up_prob'][0] > 0.55
+        # Define all parameters locally
+        volatility_threshold = 1.0
+        trend_threshold = 5.0
+        up_prob_threshold = 0.70
+        volume_percentile = 25.0
+        support_threshold = 50
+        resistance_threshold = 50
 
         return (
-            self.inds[data].get('UpProbMA', [0])[0] > high_up_prob and
-            up_prediction and
-            favorable_support_resistance and
-            recent_mean_percentage_change > 1.5 and
-            current_up_prob_good
+            self.check_volatility(data, volatility_threshold) and
+            self.check_trend(data, trend_threshold) and
+            self.check_up_probability(data, up_prob_threshold) and
+            self.check_volume_spike(data, volume_percentile) and
+            self.check_near_support(data, support_threshold) and 
+            self.check_far_from_resistance(data, resistance_threshold)
         )
+
+    def check_volatility(self, data, volatility_threshold):
+        volatility = self.calculate_volatility(data)
+        return volatility >= volatility_threshold
+
+    def check_trend(self, data, trend_threshold):
+        trend = self.calculate_trend(data)
+        return trend*100 >= trend_threshold
+
+    def check_up_probability(self, data, up_prob_threshold):
+        if len(data.UpProbability) == 0:
+            return False
+        return data.UpProbability[0] >= up_prob_threshold
+
+    def check_volume_spike(self, data, volume_percentile):
+        return self.is_volume_spike(data, volume_percentile)
+
+    def check_near_support(self, data, support_threshold):
+        if len(data.dist_to_support) == 0:
+            return False
+        return data.dist_to_support[0] < support_threshold
+
+    def check_far_from_resistance(self, data, resistance_threshold):
+        if len(data.dist_to_resistance) == 0:
+            return False
+        return data.dist_to_resistance[0] > resistance_threshold
+    
+
+    def calculate_volatility(self, data):
+        close_prices = np.array(data.close.get(size=21))
+        if len(close_prices) < 21:
+            return 0
+        return (np.std(close_prices) / np.mean(close_prices)) * 100
+
+    def calculate_trend(self, data):
+        prices = np.array(data.close.get(size=21))
+        if len(prices) < 21:
+            return 0
+        x = np.arange(len(prices))
+        slope, _, _, _, _ = stats.linregress(x, prices)
+        return slope
+
+    def is_volume_spike(self, data, volume_percentile):
+        recent_volume = data.volume[0]
+        volume_history = np.array(data.volume.get(size=50))
+        if len(volume_history) < 50 or recent_volume == 0:
+            return False
+        volume_percentile_value = np.percentile(volume_history, volume_percentile)
+        return recent_volume > volume_percentile_value
+
+
+
+
+
+
+    ###
+
+            #def is_buy_signal(self, data):
+            #    RecentPriceVolatility = self.RecentPriceVolatility(data)
+            #    if RecentPriceVolatility < 5.0:
+            #        return False
+            #
+            #
+            #
+            #    # Check if stock has been doing okay over the last month (approximately 21 trading days)
+            #    monthly_close_prices = np.array(data.close.get(size=21))
+            #    monthly_trend = self.calculate_trend(monthly_close_prices)
+            #
+            #    # Check if the last 3 days are doing okay
+            #    recent_close_prices = np.array(data.close.get(size=3))
+            #    recent_trend = self.calculate_trend(recent_close_prices)
+            #
+            #    # Get the 95th percentile of up_prob over the last 100 periods
+            #    up_prob_95th_percentile = self.get_up_prob_percentile(data, percentile=85)
+            #
+            #    # Get the 5th percentile of up_prob over the last week (5 trading days)
+            #    up_prob_5th_percentile_week = self.get_up_prob_percentile(data, percentile=5, lookback=5)
+            #
+            #    # Check conditions
+            #    long_short_term_positive = monthly_trend > 0.05 and recent_trend > 0.01
+            #    high_up_prob = self.inds[data]['up_prob'][0] >= up_prob_95th_percentile
+            #    not_recently_very_low = self.inds[data]['up_prob'][0] > up_prob_5th_percentile_week
+            #
+            #    return (long_short_term_positive and 
+            #            high_up_prob and 
+            #            not_recently_very_low and 
+            #            RecentPriceVolatility > 5.0)
+            #
+            #
+            #
+            #def calculate_trend(self, prices):
+            #    """Calculate the trend of prices using linear regression."""
+            #    if len(prices) < 2:
+            #        return 0  # Return 0 (no trend) if there's not enough data
+            #    x = np.arange(len(prices))
+            #    slope, _ = np.polyfit(x, prices, 1)
+            #    return slope
+            #
+            #def get_up_prob_percentile(self, data, percentile, lookback=100):
+            #    """Calculate the specified percentile of up_prob over the last lookback periods."""
+            #    up_prob_history = np.array(self.inds[data]['up_prob'].get(size=lookback))
+            #
+            #    if len(up_prob_history) == 0:
+            #        return 0  # Return 0 to prevent false positives
+            #    return np.percentile(up_prob_history, percentile)
+            #
+            #def RecentPriceVolatility(self, data):
+            #    """Calculate the recent price volatility of the stock."""
+            #    if len(data) < 21:
+            #        return 0
+            #    close_prices = np.array(data.close.get(size=21))
+            #    return (np.std(close_prices) / np.mean(close_prices)) * 100
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def execute_buy(self, data, current_date, size):
         if self.check_group_allocation(data):
+            logging.info(f"Placing buy order for {data._name}, size: {size}")
             self.buy(data=data, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
             self.order_cooldown[data] = current_date + timedelta(days=1)
             self.buying_status[data._name] = True
             self.open_positions += 1
-            add_open_position(data._name, current_date, data.close[0], size)
 
     def check_group_allocation(self, data):
         group = self.asset_groups.get(data._name)
@@ -490,44 +700,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 self.close(data=data)
 
     def save_best_buy_signals(self, buy_candidates):
-        top_buy_candidates = buy_candidates[:5]
-        for d, size, correlation in top_buy_candidates:
-            self.save_buy_signal(d, self.datetime.date())
-
-    def save_buy_signal(self, data, current_date):
-        current_irl_date = datetime.now().date()
-        days_diff = (current_irl_date - current_date).days
-        if days_diff <= 5:
-            csv_file = 'BuySignals.csv'
-            columns = ['Ticker', 'Date', 'isBought', 'sharesHeld', 'TimeSinceBought', 'HasHeldPreviously', 'WinLossPercentage']
-            self.ensure_csv_file(csv_file, columns)
-            self.add_buy_signal_to_csv(csv_file, data, current_date)
-
-    def ensure_csv_file(self, csv_file, columns):
-        if not os.path.exists(csv_file):
-            with open(csv_file, 'w', newline='') as f:
-                writer = csv.writer(f)
-                writer.writerow(columns)
-
-    def add_buy_signal_to_csv(self, csv_file, data, current_date):
-        try:
-            buy_signals = pd.read_csv(csv_file)
-        except pd.errors.EmptyDataError:
-            buy_signals = pd.DataFrame(columns=['Ticker', 'Date', 'isBought', 'sharesHeld', 'TimeSinceBought', 'HasHeldPreviously', 'WinLossPercentage'])
-
-        new_signal = {
-            'Ticker': data._name,
-            'Date': str(current_date),
-            'isBought': False,
-            'sharesHeld': 0,
-            'TimeSinceBought': 0,
-            'HasHeldPreviously': False,
-            'WinLossPercentage': 0.0
-        }
-
-        if data._name not in buy_signals['Ticker'].values:
-            buy_signals = pd.concat([buy_signals, pd.DataFrame([new_signal])], ignore_index=True)
-            buy_signals.to_csv(csv_file, index=False)
+        self.save_buy_signals(buy_candidates[:5])
 
     def get_cluster_distribution(self, current_positions):
         cluster_distribution = {}
@@ -593,44 +766,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ##===================================[ Control logic ]===================================##
 ##===================================[ Control logic ]===================================##
 ##===================================[ Control logic ]===================================##
@@ -676,6 +811,8 @@ def select_random_files(directory, percent):
     selected_files = random.sample(all_files, num_to_select)
     return [os.path.join(directory, f) for f in selected_files]
 
+
+
 def load_data(file_path):
     try:
         table = pq.read_table(file_path)
@@ -691,7 +828,7 @@ def load_data(file_path):
         
         if len(df) < 265:
             ##log a warning here
-            logging.info(f"Skipping {file_path} due to insufficient data: {len(df)} days")
+            #logging.info(f"Skipping {file_path} due to insufficient data: {len(df)} days")
             return None
         
         df = df.iloc[-265:]  # Keep up to 265 trading days
@@ -708,16 +845,26 @@ def load_data(file_path):
         else:
             missing_columns = [col for col in required_columns if col not in df.columns]
             print(f"Skipping {file_path} due to missing columns: {missing_columns}")
-
     except Exception as e:
         print(f"Error loading {file_path}: {str(e)}")
         traceback.print_exc()
-
+        global error_counter
+        error_counter += 1
     return None
+
+
+error_counter = 0
+
+
+
+
 
 def parallel_load_data(file_paths):
     with multiprocessing.Pool() as pool:
         results = list(tqdm(pool.imap(load_data, file_paths), total=len(file_paths), desc="Loading Files"))
+
+    logging.info(f"Successfully loaded {len(results) - error_counter} files")
+
     return [result for result in results if result is not None]
 
 def find_common_start_date(dates, threshold=0.95):
@@ -768,7 +915,8 @@ def main():
         print("No data remains after alignment. Exiting.")
         return
 
-    print(f"Aligned data from {common_start_date} to {common_start_date + timedelta(days=251)}")
+    end_date = aligned_data[0][1]['Date'].max().date()
+    print(f"Aligned data from {common_start_date} to {end_date}")
     print(f"Number of trading days: {len(aligned_data[0][1])}")
 
     for name, df in aligned_data:
@@ -788,7 +936,15 @@ def main():
     cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name="SharpeRatio", riskfreerate=0.05)
     cerebro.addanalyzer(bt.analyzers.SQN, _name="SQN")
 
-    # Call the strategy with correlation_data
+    # In your main function
+    try:
+        correlation_data = pd.read_parquet('Correlations.parquet')
+        print(f"Loaded correlation data with shape: {correlation_data.shape}")
+        print(f"Columns in correlation data: {correlation_data.columns}")
+    except Exception as e:
+        print(f"Error loading correlation data: {str(e)}")
+        return
+
     cerebro.addstrategy(MovingAverageCrossoverStrategy, correlation_data=correlation_data)
     strategies = cerebro.run()
     first_strategy = strategies[0]

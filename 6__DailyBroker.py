@@ -177,6 +177,7 @@ def calculate_performance_metrics():
 
 
 class MyStrategy(bt.Strategy):
+    
     params = (
         ('max_positions', 4),
         ('position_size', 0),  # Will be set dynamically

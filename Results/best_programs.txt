@@ -1,0 +1,392 @@
+
+
+--- New Best Program (2024-07-09 21:18:57) ---
+Program: div(abs(max(log(High8), High9)), High8)
+Test Set MSE: 601.389194
+Test Set MAE: 1.218646
+Test Set RMSE: 24.523238
+Test Set Correlation: 0.063916
+Test Set R-squared: -0.001576
+Test Set Accuracy (�5%): 0.000118
+Test Set Accuracy (�10%): 0.000158
+Test Set Directional Accuracy: 0.624084
+
+
+--- New Best Program (2024-07-09 21:23:17) ---
+Program: abs(inv(sub(mul(Open_Lag2, Open_Lag2), abs(Volume))))
+Test Set MSE: 601.187646
+Test Set MAE: 1.219175
+Test Set RMSE: 24.519128
+Test Set Correlation: 0.407847
+Test Set R-squared: -0.001241
+Test Set Accuracy (�5%): 0.000000
+Test Set Accuracy (�10%): 0.000000
+Test Set Directional Accuracy: 0.624084
+
+
+--- New Best Program (2024-07-09 21:25:13) ---
+Program: div(mul(abs(div(High4, High_Lag2)), inv(add(High8, High_Lag1))), div(div(add(High4, High7), max(Low, High9)), High8))
+Test Set MSE: 601.174222
+Test Set MAE: 1.217704
+Test Set RMSE: 24.518854
+Test Set Correlation: 0.151749
+Test Set R-squared: -0.001218
+Test Set Accuracy (�5%): 0.000118
+Test Set Accuracy (�10%): 0.000236
+Test Set Directional Accuracy: 0.624084
+
+
+--- New Best Program (2024-07-09 21:27:51) ---
+Program: div(inv(Volume), abs(add(div(Open_Lag2, High7), mul(High8, High_Lag1))))
+Test Set MSE: 1851.569323
+Test Set MAE: 1.294964
+Test Set RMSE: 43.029865
+Test Set Correlation: 0.001399
+Test Set R-squared: -0.000469
+Test Set Accuracy (�5%): 0.000000
+Test Set Accuracy (�10%): 0.000000
+Test Set Directional Accuracy: 0.495043
+
+
+
+
+
+
+##VOLUME BASED INDICATORS
+
+
+
+
+
+
+--- New Best Program (2024-07-10 12:38:15) ---
+Program: sqrt(mul(Volume, sqrt(mul(Volume, add(High4, Open(t-1))))))
+Test Set Metrics:
+MSE: 6341810703288.108398
+MAE: 456935.020547
+Correlation: 0.938004
+Relative Accuracy: 0.695921
+Volume Trend Accuracy: 0.953318
+Direction Accuracy: 0.000000
+Rank Correlation: 0.974069
+MAPE: 69.592105
+Information Coefficient: 0.938004
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 52710948584302.320312
+MAE: 2004385.634814
+Correlation: 0.000000
+Relative Accuracy: 611.629534
+Volume Trend Accuracy: 0.806900
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 61162.953408
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 43749002414096.281250
+MAE: 1856078.087929
+Correlation: 0.414064
+Relative Accuracy: 442.202331
+Volume Trend Accuracy: 0.734093
+Direction Accuracy: 0.000000
+Rank Correlation: 0.322812
+MAPE: 44220.233063
+Information Coefficient: 0.414064
+
+
+--- New Best Program (2024-07-10 12:43:06) ---
+Program: sqrt(mul(sqrt(mul(High4, Volume)), Volume))
+Test Set Metrics:
+MSE: 3876394012942.425781
+MAE: 478144.484654
+Correlation: 0.866914
+Relative Accuracy: 0.513808
+Volume Trend Accuracy: 0.959784
+Direction Accuracy: 0.000000
+Rank Correlation: 0.980387
+MAPE: 51.380770
+Information Coefficient: 0.866914
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 15533117897744.699219
+MAE: 2038697.050660
+Correlation: 0.000000
+Relative Accuracy: 510.949304
+Volume Trend Accuracy: 0.762503
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 51094.930379
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13312296478079.851562
+MAE: 1812677.788708
+Correlation: 0.383397
+Relative Accuracy: 466.970655
+Volume Trend Accuracy: 0.692089
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323460
+MAPE: 46697.065536
+Information Coefficient: 0.383397
+
+
+--- New Best Program (2024-07-10 12:51:13) ---
+Program: sub(sqrt(add(log(sub(Volume, Low(t-1))), abs(abs(mul(add(Volume, High), High3))))), mul(neg(Low(t-1)), log(neg(Open(t-1)))))
+Test Set Metrics:
+MSE: 4197738775910.665039
+MAE: 496941.437103
+Correlation: 0.855148
+Relative Accuracy: 0.576130
+Volume Trend Accuracy: 0.958463
+Direction Accuracy: 0.000000
+Rank Correlation: 0.979794
+MAPE: 57.612976
+Information Coefficient: 0.855148
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 15533117897744.699219
+MAE: 2038697.050660
+Correlation: 0.000000
+Relative Accuracy: 510.949304
+Volume Trend Accuracy: 0.762503
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 51094.930379
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13312296478079.851562
+MAE: 1812677.788708
+Correlation: 0.383397
+Relative Accuracy: 466.970655
+Volume Trend Accuracy: 0.692089
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323460
+MAPE: 46697.065536
+Information Coefficient: 0.383397
+
+
+--- New Best Program (2024-07-10 15:51:57) ---
+Program: sub(sqrt(sub(log(sub(abs(Low), add(Open(t-1), High0))), abs(abs(mul(sub(Volume, Low(t-1)), High3))))), div(cos(abs(High)), High(t-2)))
+Test Set Metrics:
+MSE: 4758674978180.465820
+MAE: 512798.851514
+Correlation: 0.840946
+Relative Accuracy: 0.760898
+Volume Trend Accuracy: 0.957203
+Direction Accuracy: 0.000000
+Rank Correlation: 0.978604
+MAPE: 76.089779
+Information Coefficient: 0.840946
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 16182017492426.298828
+MAE: 2043196.983811
+Correlation: 0.000000
+Relative Accuracy: 1303.879271
+Volume Trend Accuracy: 0.763397
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 130387.927086
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13917707142868.761719
+MAE: 1816789.420184
+Correlation: 0.378701
+Relative Accuracy: 1117.471420
+Volume Trend Accuracy: 0.692820
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323200
+MAPE: 111747.142011
+Information Coefficient: 0.378701
+
+
+--- New Best Program (2024-07-10 15:54:55) ---
+Program: sqrt(mul(High3, Volume))
+Test Set Metrics:
+MSE: 4758674833613.737305
+MAE: 512800.055251
+Correlation: 0.840946
+Relative Accuracy: 0.770869
+Volume Trend Accuracy: 0.957183
+Direction Accuracy: 0.000000
+Rank Correlation: 0.978608
+MAPE: 77.086912
+Information Coefficient: 0.840946
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 16182017492426.298828
+MAE: 2043196.983811
+Correlation: 0.000000
+Relative Accuracy: 1303.879271
+Volume Trend Accuracy: 0.763397
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 130387.927086
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13917707142868.761719
+MAE: 1816789.420184
+Correlation: 0.378701
+Relative Accuracy: 1117.471420
+Volume Trend Accuracy: 0.692820
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323200
+MAPE: 111747.142011
+Information Coefficient: 0.378701
+
+
+--- New Best Program (2024-07-10 16:02:50) ---
+Program: sqrt(mul(Volume, add(High7, sqrt(mul(High4, sqrt(mul(Volume, add(High7, High3))))))))
+Test Set Metrics:
+MSE: 4310208905892.272461
+MAE: 477837.434396
+Correlation: 0.856789
+Relative Accuracy: 0.666922
+Volume Trend Accuracy: 0.959763
+Direction Accuracy: 0.000000
+Rank Correlation: 0.980430
+MAPE: 66.692249
+Information Coefficient: 0.856789
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 16182017492426.298828
+MAE: 2043196.983811
+Correlation: 0.000000
+Relative Accuracy: 1303.879271
+Volume Trend Accuracy: 0.763397
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 130387.927086
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13917707142868.761719
+MAE: 1816789.420184
+Correlation: 0.378701
+Relative Accuracy: 1117.471420
+Volume Trend Accuracy: 0.692820
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323200
+MAPE: 111747.142011
+Information Coefficient: 0.378701
+
+
+--- New Best Program (2024-07-10 16:16:32) ---
+Program: sub(Volume, High7)
+Test Set Metrics:
+MSE: 5172076674736.866211
+MAE: 549012.229675
+Correlation: 0.836569
+Relative Accuracy: 1.073159
+Volume Trend Accuracy: 0.956614
+Direction Accuracy: 0.000000
+Rank Correlation: 0.975719
+MAPE: 107.315856
+Information Coefficient: 0.836569
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 16182017492426.298828
+MAE: 2043196.983811
+Correlation: 0.000000
+Relative Accuracy: 1303.879271
+Volume Trend Accuracy: 0.763397
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 130387.927086
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13917707142868.761719
+MAE: 1816789.420184
+Correlation: 0.378701
+Relative Accuracy: 1117.471420
+Volume Trend Accuracy: 0.692820
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323200
+MAPE: 111747.142011
+Information Coefficient: 0.378701
+
+
+--- New Best Program (2024-07-10 16:24:07) ---
+Program: sqrt(mul(High3, Volume))
+Test Set Metrics:
+MSE: 4758674833613.737305
+MAE: 512800.055251
+Correlation: 0.840946
+Relative Accuracy: 0.770869
+Volume Trend Accuracy: 0.957183
+Direction Accuracy: 0.000000
+Rank Correlation: 0.978608
+MAPE: 77.086912
+Information Coefficient: 0.840946
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 16182017492426.298828
+MAE: 2043196.983811
+Correlation: 0.000000
+Relative Accuracy: 1303.879271
+Volume Trend Accuracy: 0.763397
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 130387.927086
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13917707142868.761719
+MAE: 1816789.420184
+Correlation: 0.378701
+Relative Accuracy: 1117.471420
+Volume Trend Accuracy: 0.692820
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323200
+MAPE: 111747.142011
+Information Coefficient: 0.378701
+
+
+--- New Best Program (2024-07-10 16:31:15) ---
+Program: add(sqrt(mul(High4, Volume)), log(Close))
+Test Set Metrics:
+MSE: 4794742913450.560547
+MAE: 522630.700356
+Correlation: 0.839150
+Relative Accuracy: 0.798250
+Volume Trend Accuracy: 0.955476
+Direction Accuracy: 0.000000
+Rank Correlation: 0.977365
+MAPE: 79.824979
+Information Coefficient: 0.839150
+
+Benchmark Comparisons:
+Average Volume Benchmark:
+MSE: 16182017492426.298828
+MAE: 2043196.983811
+Correlation: 0.000000
+Relative Accuracy: 1303.879271
+Volume Trend Accuracy: 0.763397
+Direction Accuracy: 0.000000
+Rank Correlation: 0.000000
+MAPE: 130387.927086
+Information Coefficient: 0.000000
+
+Moving Average Volume Benchmark:
+MSE: 13917707142868.761719
+MAE: 1816789.420184
+Correlation: 0.378701
+Relative Accuracy: 1117.471420
+Volume Trend Accuracy: 0.692820
+Direction Accuracy: 0.000000
+Rank Correlation: 0.323200
+MAPE: 111747.142011
+Information Coefficient: 0.378701

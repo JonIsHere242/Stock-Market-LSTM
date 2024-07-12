@@ -1,665 +1,929 @@
-2024-06-04 20:49:07,828 - INFO - Downloaded data for 100 tickers taking 114.45146489143372 seconds
-2024-06-04 20:49:14,614 - WARNING - Data for ARM is too short. Skipping.
-2024-06-04 20:51:02,535 - INFO - Downloaded data for 200 tickers taking 229.1584312915802 seconds
-2024-06-04 20:52:39,976 - WARNING - Data for GEV is too short. Skipping.
-2024-06-04 20:52:57,147 - INFO - Downloaded data for 300 tickers taking 343.7697949409485 seconds
-2024-06-04 20:53:42,622 - WARNING - Data for KVUE is too short. Skipping.
-2024-06-04 20:54:51,091 - INFO - Downloaded data for 400 tickers taking 457.7143051624298 seconds
-2024-06-04 20:55:56,011 - WARNING - Data for VLTO is too short. Skipping.
-2024-06-04 20:56:20,122 - WARNING - Data for KSPI is too short. Skipping.
-2024-06-04 20:56:45,330 - INFO - Downloaded data for 500 tickers taking 571.9526093006134 seconds
-2024-06-04 20:58:38,858 - INFO - Downloaded data for 600 tickers taking 685.4805879592896 seconds
-2024-06-04 21:00:32,566 - INFO - Downloaded data for 700 tickers taking 799.1890728473663 seconds
-2024-06-04 21:00:43,830 - WARNING - Data for VIK is too short. Skipping.
-2024-06-04 21:01:59,746 - WARNING - Data for VFS is too short. Skipping.
-2024-06-04 21:02:00,944 - WARNING - Data for ALAB is too short. Skipping.
-2024-06-04 21:02:14,671 - WARNING - Data for SN is too short. Skipping.
-2024-06-04 21:02:18,145 - WARNING - Data for SOLV is too short. Skipping.
-2024-06-04 21:02:26,157 - INFO - Downloaded data for 800 tickers taking 912.780077457428 seconds
-2024-06-04 21:03:47,219 - WARNING - Data for RDDT is too short. Skipping.
-2024-06-04 21:03:48,385 - WARNING - Data for CAVA is too short. Skipping.
-2024-06-04 21:03:56,357 - WARNING - Data for BIRK is too short. Skipping.
-2024-06-04 21:04:03,198 - WARNING - Data for CART is too short. Skipping.
-2024-06-04 21:04:19,275 - INFO - Downloaded data for 900 tickers taking 1025.8975956439972 seconds
-2024-06-04 21:04:22,707 - WARNING - Data for ULS is too short. Skipping.
-2024-06-04 21:05:17,522 - WARNING - Data for AS is too short. Skipping.
-2024-06-04 21:06:13,083 - INFO - Downloaded data for 1000 tickers taking 1139.706036567688 seconds
-2024-06-04 21:07:13,948 - WARNING - Data for ZK is too short. Skipping.
-2024-06-04 21:07:46,869 - WARNING - Data for KVYO is too short. Skipping.
-2024-06-04 21:08:06,080 - INFO - Downloaded data for 1100 tickers taking 1252.7026183605194 seconds
-2024-06-04 21:08:40,958 - WARNING - Data for RBRK is too short. Skipping.
-2024-06-04 21:09:59,297 - INFO - Downloaded data for 1200 tickers taking 1365.9196577072144 seconds
-2024-06-04 21:10:27,443 - WARNING - Data for LOAR is too short. Skipping.
-2024-06-04 21:11:52,425 - INFO - Downloaded data for 1300 tickers taking 1479.0484552383423 seconds
-2024-06-04 21:12:03,703 - WARNING - Data for PACS is too short. Skipping.
-2024-06-04 21:12:19,693 - WARNING - Data for HAFN is too short. Skipping.
-2024-06-04 21:13:08,495 - WARNING - Data for KNF is too short. Skipping.
-2024-06-04 21:13:45,857 - INFO - Downloaded data for 1400 tickers taking 1592.4801394939423 seconds
-2024-06-04 21:15:38,700 - INFO - Downloaded data for 1500 tickers taking 1705.322979927063 seconds
-2024-06-04 21:15:50,946 - WARNING - Data for VTMX is too short. Skipping.
-2024-06-04 21:16:13,498 - WARNING - Data for TBBB is too short. Skipping.
-2024-06-04 21:17:31,321 - INFO - Downloaded data for 1600 tickers taking 1817.9444434642792 seconds
-2024-06-04 21:18:04,097 - WARNING - Data for IBTA is too short. Skipping.
-2024-06-04 21:19:02,616 - WARNING - Data for APGE is too short. Skipping.
-2024-06-04 21:19:24,199 - INFO - Downloaded data for 1700 tickers taking 1930.8219017982483 seconds
-2024-06-04 21:19:45,518 - WARNING - Data for ATMU is too short. Skipping.
-2024-06-04 21:20:55,289 - WARNING - Data for FTRE is too short. Skipping.
-2024-06-04 21:20:57,670 - WARNING - Data for KGS is too short. Skipping.
-2024-06-04 21:21:04,428 - WARNING - Data for CTRI is too short. Skipping.
-2024-06-04 21:21:16,856 - INFO - Downloaded data for 1800 tickers taking 2043.478639125824 seconds
-2024-06-04 21:22:30,336 - WARNING - Data for CDLR is too short. Skipping.
-2024-06-04 21:22:32,659 - WARNING - Data for ODD is too short. Skipping.
-2024-06-04 21:22:36,073 - WARNING - Data for CGON is too short. Skipping.
-2024-06-04 21:22:38,381 - WARNING - Data for SVV is too short. Skipping.
-2024-06-04 21:22:50,893 - WARNING - Data for PHIN is too short. Skipping.
-2024-06-04 21:22:53,198 - WARNING - Data for NATL is too short. Skipping.
-2024-06-04 21:22:56,598 - WARNING - Data for OBDE is too short. Skipping.
-2024-06-04 21:22:58,920 - WARNING - Data for MSDL is too short. Skipping.
-2024-06-04 21:23:10,358 - INFO - Downloaded data for 1900 tickers taking 2156.981549024582 seconds
-2024-06-04 21:23:11,424 - WARNING - Data for BTSG is too short. Skipping.
-2024-06-04 21:23:26,189 - WARNING - Data for MNR is too short. Skipping.
-2024-06-04 21:23:38,672 - WARNING - Data for FIHL is too short. Skipping.
-2024-06-04 21:24:05,680 - WARNING - Data for HG is too short. Skipping.
-2024-06-04 21:24:28,234 - WARNING - Data for INBX is too short. Skipping.
-2024-06-04 21:25:03,270 - INFO - Downloaded data for 2000 tickers taking 2269.8933801651 seconds
-2024-06-04 21:25:13,590 - WARNING - Data for MSGE is too short. Skipping.
-2024-06-04 21:25:18,139 - WARNING - Data for KLG is too short. Skipping.
-2024-06-04 21:25:48,721 - WARNING - Data for AHR is too short. Skipping.
-2024-06-04 21:25:53,290 - WARNING - Data for DBD is too short. Skipping.
-2024-06-04 21:26:05,632 - WARNING - Data for WS is too short. Skipping.
-2024-06-04 21:26:12,401 - WARNING - Data for VSTS is too short. Skipping.
-2024-06-04 21:26:56,295 - WARNING - Data for NMRA is too short. Skipping.
-2024-06-04 21:26:56,437 - INFO - Downloaded data for 2100 tickers taking 2383.060025691986 seconds
-2024-06-04 21:27:09,895 - WARNING - Data for ZKH is too short. Skipping.
-2024-06-04 21:27:41,573 - WARNING - Data for MRX is too short. Skipping.
-2024-06-04 21:28:49,438 - INFO - Downloaded data for 2200 tickers taking 2496.0612332820892 seconds
-2024-06-04 21:28:59,383 - WARNING - Data for SDHC is too short. Skipping.
-2024-06-04 21:30:13,386 - WARNING - Data for HDL is too short. Skipping.
-2024-06-04 21:30:41,557 - INFO - Downloaded data for 2300 tickers taking 2608.1804633140564 seconds
-2024-06-04 21:31:07,419 - WARNING - Data for KBDC is too short. Skipping.
-2024-06-04 21:31:30,076 - WARNING - Data for ECO is too short. Skipping.
-2024-06-04 21:32:34,442 - INFO - Downloaded data for 2400 tickers taking 2721.065461397171 seconds
-2024-06-04 21:33:10,504 - WARNING - Data for EAI is too short. Skipping.
-2024-06-04 21:33:28,496 - WARNING - Data for NCDL is too short. Skipping.
-2024-06-04 21:34:26,891 - INFO - Downloaded data for 2500 tickers taking 2833.5145201683044 seconds
-2024-06-04 21:34:47,083 - WARNING - Data for ABVX is too short. Skipping.
-2024-06-04 21:35:56,968 - WARNING - Data for LAC is too short. Skipping.
-2024-06-04 21:35:57,015 - WARNING - Data for CRGX is too short. Skipping.
-2024-06-04 21:36:19,536 - INFO - Downloaded data for 2600 tickers taking 2946.159132003784 seconds
-2024-06-04 21:37:02,238 - WARNING - Data for EXTO is too short. Skipping.
-2024-06-04 21:37:28,043 - WARNING - Data for CORZ is too short. Skipping.
-2024-06-04 21:37:36,052 - WARNING - Data for FLYX is too short. Skipping.
-2024-06-04 21:37:52,935 - WARNING - Data for BOW is too short. Skipping.
-2024-06-04 21:38:12,097 - INFO - Downloaded data for 2700 tickers taking 3058.7198770046234 seconds
-2024-06-04 21:38:54,620 - WARNING - Data for AACT is too short. Skipping.
-2024-06-04 21:39:00,153 - WARNING - Data for DEC is too short. Skipping.
-2024-06-04 21:39:27,323 - WARNING - Data for NBBK is too short. Skipping.
-2024-06-04 21:39:35,283 - WARNING - Data for AVBP is too short. Skipping.
-2024-06-04 21:40:04,694 - INFO - Downloaded data for 2800 tickers taking 3171.31707906723 seconds
-2024-06-04 21:40:26,038 - WARNING - Data for AUNA is too short. Skipping.
-2024-06-04 21:41:57,182 - INFO - Downloaded data for 2900 tickers taking 3283.8048491477966 seconds
-2024-06-04 21:42:34,255 - WARNING - Data for PSBD is too short. Skipping.
-2024-06-04 21:42:36,642 - WARNING - Data for SVCO is too short. Skipping.
-2024-06-04 21:42:40,090 - WARNING - Data for KYTX is too short. Skipping.
-2024-06-04 21:43:38,796 - WARNING - Data for LXEO is too short. Skipping.
-2024-06-04 21:43:50,145 - INFO - Downloaded data for 3000 tickers taking 3396.768295764923 seconds
-2024-06-04 21:45:22,235 - WARNING - Data for ANL is too short. Skipping.
-2024-06-04 21:45:23,431 - WARNING - Data for SMXT is too short. Skipping.
-2024-06-04 21:45:42,613 - INFO - Downloaded data for 3100 tickers taking 3509.235615491867 seconds
-2024-06-04 21:46:01,870 - WARNING - Data for ANSC is too short. Skipping.
-2024-06-04 21:46:59,242 - WARNING - Data for SLRN is too short. Skipping.
-2024-06-04 21:47:21,998 - WARNING - Data for CTNM is too short. Skipping.
-2024-06-04 21:47:26,640 - WARNING - Data for NETD is too short. Skipping.
-2024-06-04 21:47:35,800 - INFO - Downloaded data for 3200 tickers taking 3622.4229402542114 seconds
-2024-06-04 21:48:06,226 - WARNING - Data for GENK is too short. Skipping.
-2024-06-04 21:48:09,663 - WARNING - Data for SEZL is too short. Skipping.
-2024-06-04 21:48:52,391 - WARNING - Data for FBLG is too short. Skipping.
-2024-06-04 21:48:54,747 - WARNING - Data for PAL is too short. Skipping.
-2024-06-04 21:49:08,284 - WARNING - Data for GUTS is too short. Skipping.
-2024-06-04 21:49:28,697 - INFO - Downloaded data for 3300 tickers taking 3735.320514678955 seconds
-2024-06-04 21:49:46,802 - WARNING - Data for NLOP is too short. Skipping.
-2024-06-04 21:49:47,969 - WARNING - Data for FTEL is too short. Skipping.
-2024-06-04 21:49:57,019 - WARNING - Data for LPA is too short. Skipping.
-2024-06-04 21:50:25,124 - WARNING - Data for IPXX is too short. Skipping.
-2024-06-04 21:50:30,776 - WARNING - Data for ANRO is too short. Skipping.
-2024-06-04 21:51:14,957 - WARNING - Data for HYAC is too short. Skipping.
-2024-06-04 21:51:21,840 - INFO - Downloaded data for 3400 tickers taking 3848.4626166820526 seconds
-2024-06-04 21:51:59,987 - WARNING - Data for JDZG is too short. Skipping.
-2024-06-04 21:52:30,245 - WARNING - Data for MNDR is too short. Skipping.
-2024-06-04 21:53:14,146 - INFO - Downloaded data for 3500 tickers taking 3960.7693984508514 seconds
-2024-06-04 21:54:23,781 - WARNING - Data for LEGT is too short. Skipping.
-2024-06-04 21:54:36,178 - WARNING - Data for LGCL is too short. Skipping.
-2024-06-04 21:55:06,599 - INFO - Downloaded data for 3600 tickers taking 4073.222476243973 seconds
-2024-06-04 21:55:24,622 - WARNING - Data for MGX is too short. Skipping.
-2024-06-04 21:55:31,305 - WARNING - Data for BOLD is too short. Skipping.
-2024-06-04 21:56:07,204 - WARNING - Data for HLXB is too short. Skipping.
-2024-06-04 21:56:58,737 - INFO - Downloaded data for 3700 tickers taking 4185.359687805176 seconds
-2024-06-04 21:57:14,520 - WARNING - Data for CLBR is too short. Skipping.
-2024-06-04 21:57:21,314 - WARNING - Data for HAO is too short. Skipping.
-2024-06-04 21:58:04,217 - WARNING - Data for BTOC is too short. Skipping.
-2024-06-04 21:58:18,929 - WARNING - Data for KVAC is too short. Skipping.
-2024-06-04 21:58:51,809 - INFO - Downloaded data for 3800 tickers taking 4298.4318470954895 seconds
-2024-06-04 21:59:58,034 - WARNING - Data for EMP is too short. Skipping.
-2024-06-04 22:00:03,677 - WARNING - Data for TELO is too short. Skipping.
-2024-06-04 22:00:18,414 - WARNING - Data for SBXC is too short. Skipping.
-2024-06-04 22:00:44,312 - INFO - Downloaded data for 3900 tickers taking 4410.935551166534 seconds
-2024-06-04 22:01:19,951 - WARNING - Data for SPKL is too short. Skipping.
-2024-06-04 22:01:34,548 - WARNING - Data for RYDE is too short. Skipping.
-2024-06-04 22:02:02,485 - WARNING - Data for SUUN is too short. Skipping.
-2024-06-04 22:02:05,882 - WARNING - Data for ALCY is too short. Skipping.
-2024-06-04 22:02:20,790 - WARNING - Data for MAMO is too short. Skipping.
-2024-06-04 22:02:25,269 - WARNING - Data for IBAC is too short. Skipping.
-2024-06-04 22:02:34,296 - WARNING - Data for SWIN is too short. Skipping.
-2024-06-04 22:02:36,688 - INFO - Downloaded data for 4000 tickers taking 4523.311443090439 seconds
-2024-06-04 22:02:50,201 - WARNING - Data for ESHA is too short. Skipping.
-2024-06-04 22:02:57,996 - WARNING - Data for DXYZ is too short. Skipping.
-2024-06-04 22:03:03,745 - WARNING - Data for SGMT is too short. Skipping.
-2024-06-04 22:03:30,856 - WARNING - Data for UBXG is too short. Skipping.
-2024-06-04 22:03:59,972 - WARNING - Data for FEBO is too short. Skipping.
-2024-06-04 22:04:06,776 - WARNING - Data for SHMD is too short. Skipping.
-2024-06-04 22:04:29,188 - INFO - Downloaded data for 4100 tickers taking 4635.810951471329 seconds
-2024-06-04 22:04:35,796 - WARNING - Data for NNAG is too short. Skipping.
-2024-06-04 22:05:26,360 - WARNING - Data for FBYD is too short. Skipping.
-2024-06-04 22:06:05,471 - WARNING - Data for ZBAO is too short. Skipping.
-2024-06-04 22:06:21,535 - INFO - Downloaded data for 4200 tickers taking 4748.1584413051605 seconds
-2024-06-04 22:06:46,015 - WARNING - Data for NNE is too short. Skipping.
-2024-06-04 22:06:50,505 - WARNING - Data for GSIW is too short. Skipping.
-2024-06-04 22:07:09,847 - WARNING - Data for YIBO is too short. Skipping.
-2024-06-04 22:07:33,531 - WARNING - Data for BEEP is too short. Skipping.
-2024-06-04 22:07:41,432 - WARNING - Data for BCG is too short. Skipping.
-2024-06-04 22:08:01,462 - WARNING - Data for EPRX is too short. Skipping.
-2024-06-04 22:08:14,055 - INFO - Downloaded data for 4300 tickers taking 4860.678026676178 seconds
-2024-06-04 22:08:21,825 - WARNING - Data for CCG is too short. Skipping.
-2024-06-04 22:08:22,980 - WARNING - Data for SERV is too short. Skipping.
-2024-06-04 22:08:56,727 - WARNING - Data for TBMC is too short. Skipping.
-2024-06-04 22:09:04,653 - WARNING - Data for BOWN is too short. Skipping.
-2024-06-04 22:09:21,538 - WARNING - Data for AFJK is too short. Skipping.
-2024-06-04 22:09:29,348 - WARNING - Data for QETA is too short. Skipping.
-2024-06-04 22:09:29,411 - WARNING - Data for GLAC is too short. Skipping.
-2024-06-04 22:09:32,944 - WARNING - Data for INAQ is too short. Skipping.
-2024-06-04 22:09:43,022 - WARNING - Data for DYCQ is too short. Skipping.
-2024-06-04 22:09:46,398 - WARNING - Data for BKHA is too short. Skipping.
-2024-06-04 22:10:00,900 - WARNING - Data for IROH is too short. Skipping.
-2024-06-04 22:10:06,537 - INFO - Downloaded data for 4400 tickers taking 4973.159955024719 seconds
-2024-06-04 22:10:12,058 - WARNING - Data for TMTC is too short. Skipping.
-2024-06-04 22:10:16,618 - WARNING - Data for SRBK is too short. Skipping.
-2024-06-04 22:10:52,104 - WARNING - Data for MDBH is too short. Skipping.
-2024-06-04 22:11:07,787 - WARNING - Data for BUJA is too short. Skipping.
-2024-06-04 22:11:22,267 - WARNING - Data for OAKU is too short. Skipping.
-2024-06-04 22:11:25,643 - WARNING - Data for AITR is too short. Skipping.
-2024-06-04 22:11:41,254 - WARNING - Data for RR is too short. Skipping.
-2024-06-04 22:11:45,694 - WARNING - Data for BAYA is too short. Skipping.
-2024-06-04 22:11:54,573 - WARNING - Data for JVSA is too short. Skipping.
-2024-06-04 22:11:57,990 - INFO - Downloaded data for 4500 tickers taking 5084.613357305527 seconds
-2024-06-04 22:12:34,383 - WARNING - Data for GODN is too short. Skipping.
-2024-06-04 22:12:39,955 - WARNING - Data for FORL is too short. Skipping.
-2024-06-04 22:12:59,968 - WARNING - Data for CSLR is too short. Skipping.
-2024-06-04 22:13:17,978 - WARNING - Data for RAY is too short. Skipping.
-2024-06-04 22:13:18,025 - WARNING - Data for TRSG is too short. Skipping.
-2024-06-04 22:13:46,053 - WARNING - Data for AEON is too short. Skipping.
-2024-06-04 22:13:49,523 - INFO - Downloaded data for 4600 tickers taking 5196.146250486374 seconds
-2024-06-04 22:13:55,115 - WARNING - Data for INTS is too short. Skipping.
-2024-06-04 22:14:18,545 - WARNING - Data for LRE is too short. Skipping.
-2024-06-04 22:14:52,064 - WARNING - Data for MGRM is too short. Skipping.
-2024-06-04 22:14:58,815 - WARNING - Data for ABLV is too short. Skipping.
-2024-06-04 22:15:09,886 - WARNING - Data for LGCB is too short. Skipping.
-2024-06-04 22:15:23,376 - WARNING - Data for DHAI is too short. Skipping.
-2024-06-04 22:15:26,794 - WARNING - Data for MURA is too short. Skipping.
-2024-06-04 22:15:36,823 - WARNING - Data for TSBX is too short. Skipping.
-2024-06-04 22:15:41,386 - INFO - Downloaded data for 4700 tickers taking 5308.009026050568 seconds
-2024-06-04 22:15:51,305 - WARNING - Data for CALC is too short. Skipping.
-2024-06-04 22:16:04,738 - WARNING - Data for JUNE is too short. Skipping.
-2024-06-04 22:16:23,735 - WARNING - Data for ATGL is too short. Skipping.
-2024-06-04 22:16:39,338 - WARNING - Data for GRDI is too short. Skipping.
-2024-06-04 22:16:43,802 - WARNING - Data for AXIL is too short. Skipping.
-2024-06-04 22:17:08,260 - WARNING - Data for YYGH is too short. Skipping.
-2024-06-04 22:17:32,813 - INFO - Downloaded data for 4800 tickers taking 5419.4359567165375 seconds
-2024-06-04 22:17:58,425 - WARNING - Data for PMNT is too short. Skipping.
-2024-06-04 22:18:15,304 - WARNING - Data for NKGN is too short. Skipping.
-2024-06-04 22:18:22,022 - WARNING - Data for AMIX is too short. Skipping.
-2024-06-04 22:18:32,003 - WARNING - Data for MMA is too short. Skipping.
-2024-06-04 22:18:34,224 - WARNING - Data for WBUY is too short. Skipping.
-2024-06-04 22:18:46,513 - WARNING - Data for AIRE is too short. Skipping.
-2024-06-04 22:19:18,669 - WARNING - Data for NWGL is too short. Skipping.
-2024-06-04 22:19:20,875 - WARNING - Data for MTEN is too short. Skipping.
-2024-06-04 22:19:20,921 - WARNING - Data for CDTG is too short. Skipping.
-2024-06-04 22:19:24,339 - INFO - Downloaded data for 4900 tickers taking 5530.962034702301 seconds
-2024-06-04 22:19:46,341 - WARNING - Data for PODC is too short. Skipping.
-2024-06-04 22:19:58,559 - WARNING - Data for CPBI is too short. Skipping.
-2024-06-04 22:20:00,865 - WARNING - Data for SHIM is too short. Skipping.
-2024-06-04 22:20:40,103 - WARNING - Data for PXDT is too short. Skipping.
-2024-06-04 22:20:47,973 - WARNING - Data for SUGP is too short. Skipping.
-2024-06-04 22:21:15,998 - INFO - Downloaded data for 5000 tickers taking 5642.620988845825 seconds
-2024-06-04 22:21:28,192 - WARNING - Data for TWG is too short. Skipping.
-2024-06-04 22:21:41,616 - WARNING - Data for SRFM is too short. Skipping.
-2024-06-04 22:21:53,863 - WARNING - Data for ZOOZ is too short. Skipping.
-2024-06-04 22:22:11,841 - WARNING - Data for ULY is too short. Skipping.
-2024-06-04 22:22:29,774 - WARNING - Data for CCTG is too short. Skipping.
-2024-06-04 22:22:33,114 - WARNING - Data for DTCK is too short. Skipping.
-2024-06-04 22:22:34,282 - WARNING - Data for CTNT is too short. Skipping.
-2024-06-04 22:22:41,081 - WARNING - Data for ZPTA is too short. Skipping.
-2024-06-04 22:22:48,898 - WARNING - Data for GMM is too short. Skipping.
-2024-06-04 22:23:03,281 - WARNING - Data for LAES is too short. Skipping.
-2024-06-04 22:23:07,821 - INFO - Downloaded data for 5100 tickers taking 5754.444332122803 seconds
-2024-06-04 22:23:14,513 - WARNING - Data for ZONE is too short. Skipping.
-2024-06-04 22:23:20,186 - WARNING - Data for LOBO is too short. Skipping.
-2024-06-04 22:23:23,553 - WARNING - Data for HRYU is too short. Skipping.
-2024-06-04 22:23:34,658 - WARNING - Data for GVH is too short. Skipping.
-2024-06-04 22:23:34,707 - WARNING - Data for JYD is too short. Skipping.
-2024-06-04 22:23:50,351 - WARNING - Data for CWD is too short. Skipping.
-2024-06-04 22:23:57,007 - WARNING - Data for PMEC is too short. Skipping.
-2024-06-04 22:24:02,577 - WARNING - Data for WETH is too short. Skipping.
-2024-06-04 22:24:05,930 - WARNING - Data for MSS is too short. Skipping.
-2024-06-04 22:24:08,217 - WARNING - Data for CREV is too short. Skipping.
-2024-06-04 22:24:09,380 - WARNING - Data for NRXS is too short. Skipping.
-2024-06-04 22:24:39,600 - WARNING - Data for ATPC is too short. Skipping.
-2024-06-04 22:24:40,780 - WARNING - Data for JL is too short. Skipping.
-2024-06-04 22:24:59,724 - INFO - Downloaded data for 5200 tickers taking 5866.347204446793 seconds
-2024-06-04 22:25:08,727 - WARNING - Data for LRHC is too short. Skipping.
-2024-06-04 22:25:20,960 - WARNING - Data for INTJ is too short. Skipping.
-2024-06-04 22:25:31,133 - WARNING - Data for NCI is too short. Skipping.
-2024-06-04 22:25:52,302 - WARNING - Data for DDC is too short. Skipping.
-2024-06-04 22:26:15,661 - WARNING - Data for MFI is too short. Skipping.
-2024-06-04 22:26:17,954 - WARNING - Data for SRM is too short. Skipping.
-2024-06-04 22:26:22,460 - WARNING - Data for FMST is too short. Skipping.
-2024-06-04 22:26:40,256 - WARNING - Data for MIRA is too short. Skipping.
-2024-06-04 22:26:43,593 - WARNING - Data for SYNX is too short. Skipping.
-2024-06-04 22:26:46,940 - WARNING - Data for UMAC is too short. Skipping.
-2024-06-04 22:26:51,534 - INFO - Downloaded data for 5300 tickers taking 5978.1568257808685 seconds
-2024-06-04 22:27:29,374 - WARNING - Data for ELAB is too short. Skipping.
-2024-06-04 22:27:29,435 - WARNING - Data for TURB is too short. Skipping.
-2024-06-04 22:27:42,756 - WARNING - Data for JNVR is too short. Skipping.
-2024-06-04 22:28:03,879 - WARNING - Data for SGE is too short. Skipping.
-2024-06-04 22:28:08,338 - WARNING - Data for SPPL is too short. Skipping.
-2024-06-04 22:28:28,364 - WARNING - Data for INHD is too short. Skipping.
-2024-06-04 22:28:40,629 - WARNING - Data for ICCT is too short. Skipping.
-2024-06-04 22:28:42,932 - INFO - Downloaded data for 5400 tickers taking 6089.555337667465 seconds
-2024-06-04 22:28:46,216 - WARNING - Data for CHRO is too short. Skipping.
-2024-06-04 22:28:52,952 - WARNING - Data for PWM is too short. Skipping.
-2024-06-04 22:29:15,259 - WARNING - Data for CISS is too short. Skipping.
-2024-06-04 22:29:15,306 - WARNING - Data for NCL is too short. Skipping.
-2024-06-04 22:29:20,929 - WARNING - Data for PAPL is too short. Skipping.
-2024-06-04 22:29:30,983 - WARNING - Data for SYRA is too short. Skipping.
-2024-06-04 22:29:36,602 - WARNING - Data for SGD is too short. Skipping.
-2024-06-04 22:29:45,575 - WARNING - Data for LTRY is too short. Skipping.
-2024-06-04 22:29:58,817 - WARNING - Data for SPGC is too short. Skipping.
-2024-06-04 22:30:08,941 - WARNING - Data for VSME is too short. Skipping.
-2024-06-04 22:30:21,256 - WARNING - Data for PRZO is too short. Skipping.
-2024-06-04 22:30:31,338 - WARNING - Data for ROMA is too short. Skipping.
-2024-06-04 22:30:34,790 - INFO - Downloaded data for 5500 tickers taking 6201.413111925125 seconds
-2024-06-04 22:30:38,088 - WARNING - Data for GPAK is too short. Skipping.
-2024-06-04 22:30:53,647 - WARNING - Data for WRNT is too short. Skipping.
-2024-06-04 22:30:55,894 - WARNING - Data for BOF is too short. Skipping.
-2024-06-04 22:30:58,156 - WARNING - Data for ELWS is too short. Skipping.
-2024-06-04 22:31:34,712 - WARNING - Data for AZTR is too short. Skipping.
-2024-06-04 22:32:19,006 - WARNING - Data for LQR is too short. Skipping.
-2024-06-04 22:32:25,720 - INFO - Downloaded data for 5600 tickers taking 6312.343111276627 seconds
-2024-06-04 22:32:46,708 - WARNING - Data for SGN is too short. Skipping.
-2024-06-04 22:33:26,536 - WARNING - Data for TRNR is too short. Skipping.
-2024-06-04 22:33:34,383 - WARNING - Data for SXTP is too short. Skipping.
-2024-06-04 22:34:15,376 - WARNING - Data for IVP is too short. Skipping.
-2024-06-04 22:34:16,607 - INFO - Downloaded data for 5700 tickers taking 6423.229664564133 seconds
-2024-06-04 22:34:35,488 - WARNING - Data for BQ is too short. Skipping.
-2024-06-05 20:31:59,013 - INFO - Cleared old data files.
-2024-06-05 20:33:22,235 - INFO - Cleared old data files.
-2024-06-05 20:35:17,403 - INFO - Downloaded data for 100 tickers taking 115.1455750465393 seconds
-2024-06-05 20:35:24,193 - WARNING - Data for ARM is too short. Skipping.
-2024-06-05 20:36:45,741 - INFO - Cleared old data files.
-2024-06-05 20:38:37,399 - INFO - Downloaded data for 100 tickers taking 111.65398168563843 seconds
-2024-06-05 20:40:30,212 - INFO - Downloaded data for 200 tickers taking 224.46628403663635 seconds
-2024-06-05 20:42:22,093 - INFO - Downloaded data for 300 tickers taking 336.3478422164917 seconds
-2024-06-05 20:44:14,302 - INFO - Downloaded data for 400 tickers taking 448.5565903186798 seconds
-2024-06-05 20:46:06,808 - INFO - Downloaded data for 500 tickers taking 561.062527179718 seconds
-2024-06-05 20:47:59,623 - INFO - Downloaded data for 600 tickers taking 673.8781082630157 seconds
-2024-06-05 20:49:52,091 - INFO - Downloaded data for 700 tickers taking 786.3458149433136 seconds
-2024-06-05 20:51:44,497 - INFO - Downloaded data for 800 tickers taking 898.7516694068909 seconds
-2024-06-05 20:53:37,125 - INFO - Downloaded data for 900 tickers taking 1011.379967212677 seconds
-2024-06-05 20:55:29,402 - INFO - Downloaded data for 1000 tickers taking 1123.6572382450104 seconds
-2024-06-05 20:57:21,895 - INFO - Downloaded data for 1100 tickers taking 1236.1501457691193 seconds
-2024-06-05 20:59:14,544 - INFO - Downloaded data for 1200 tickers taking 1348.798347711563 seconds
-2024-06-05 21:01:07,423 - INFO - Downloaded data for 1300 tickers taking 1461.6778106689453 seconds
-2024-06-05 21:03:00,257 - INFO - Downloaded data for 1400 tickers taking 1574.51145362854 seconds
-2024-06-05 21:04:52,721 - INFO - Downloaded data for 1500 tickers taking 1686.9762454032898 seconds
-2024-06-05 21:06:45,635 - INFO - Downloaded data for 1600 tickers taking 1799.8894438743591 seconds
-2024-06-05 21:08:38,669 - INFO - Downloaded data for 1700 tickers taking 1912.9237263202667 seconds
-2024-06-05 21:10:31,882 - INFO - Downloaded data for 1800 tickers taking 2026.1367585659027 seconds
-2024-06-05 21:12:24,788 - INFO - Downloaded data for 1900 tickers taking 2139.042279958725 seconds
-2024-06-05 21:14:17,446 - INFO - Downloaded data for 2000 tickers taking 2251.7003235816956 seconds
-2024-06-05 21:16:10,729 - INFO - Downloaded data for 2100 tickers taking 2364.9842705726624 seconds
-2024-06-05 21:18:04,118 - INFO - Downloaded data for 2200 tickers taking 2478.372513771057 seconds
-2024-06-05 21:19:56,892 - INFO - Downloaded data for 2300 tickers taking 2591.14702129364 seconds
-2024-06-05 21:21:50,026 - INFO - Downloaded data for 2400 tickers taking 2704.280559539795 seconds
-2024-06-05 21:23:41,882 - INFO - Downloaded data for 2500 tickers taking 2816.1367542743683 seconds
-2024-06-05 21:25:34,400 - INFO - Downloaded data for 2600 tickers taking 2928.6546177864075 seconds
-2024-06-05 21:27:27,221 - INFO - Downloaded data for 2700 tickers taking 3041.475872516632 seconds
-2024-06-05 21:29:19,194 - INFO - Downloaded data for 2800 tickers taking 3153.4489545822144 seconds
-2024-06-05 21:31:11,348 - INFO - Downloaded data for 2900 tickers taking 3265.602346420288 seconds
-2024-06-05 21:33:04,288 - INFO - Downloaded data for 3000 tickers taking 3378.5431146621704 seconds
-2024-06-05 21:34:56,883 - INFO - Downloaded data for 3100 tickers taking 3491.137806892395 seconds
-2024-06-05 21:36:50,502 - INFO - Downloaded data for 3200 tickers taking 3604.756293773651 seconds
-2024-06-05 21:38:43,261 - INFO - Downloaded data for 3300 tickers taking 3717.5153353214264 seconds
-2024-06-05 21:40:35,842 - INFO - Downloaded data for 3400 tickers taking 3830.097042322159 seconds
-2024-06-05 21:42:28,952 - INFO - Downloaded data for 3500 tickers taking 3943.2071533203125 seconds
-2024-06-05 21:44:21,193 - INFO - Downloaded data for 3600 tickers taking 4055.447867870331 seconds
-2024-06-05 21:46:14,119 - INFO - Downloaded data for 3700 tickers taking 4168.37371969223 seconds
-2024-06-05 21:48:07,118 - INFO - Downloaded data for 3800 tickers taking 4281.372799396515 seconds
-2024-06-05 21:49:59,401 - INFO - Downloaded data for 3900 tickers taking 4393.655468225479 seconds
-2024-06-05 21:51:52,359 - INFO - Downloaded data for 4000 tickers taking 4506.613340377808 seconds
-2024-06-05 21:53:45,244 - INFO - Downloaded data for 4100 tickers taking 4619.498878240585 seconds
-2024-06-05 21:55:38,026 - INFO - Downloaded data for 4200 tickers taking 4732.280319452286 seconds
-2024-06-05 21:57:30,497 - INFO - Downloaded data for 4300 tickers taking 4844.751977443695 seconds
-2024-06-05 21:59:22,957 - INFO - Downloaded data for 4400 tickers taking 4957.211425065994 seconds
-2024-06-05 22:01:15,319 - INFO - Downloaded data for 4500 tickers taking 5069.573668956757 seconds
-2024-06-05 22:03:07,617 - INFO - Downloaded data for 4600 tickers taking 5181.8716776371 seconds
-2024-06-05 22:04:59,904 - INFO - Downloaded data for 4700 tickers taking 5294.15892291069 seconds
-2024-06-05 22:06:52,905 - INFO - Downloaded data for 4800 tickers taking 5407.159863948822 seconds
-2024-06-05 22:08:45,373 - INFO - Downloaded data for 4900 tickers taking 5519.62732052803 seconds
-2024-06-05 22:10:38,089 - INFO - Downloaded data for 5000 tickers taking 5632.344165325165 seconds
-2024-06-05 22:12:31,301 - INFO - Downloaded data for 5100 tickers taking 5745.5554847717285 seconds
-2024-06-05 22:14:23,464 - INFO - Downloaded data for 5200 tickers taking 5857.7189338207245 seconds
-2024-06-05 22:14:26,709 - INFO - Data download completed.
-2024-06-07 21:58:21,738 - INFO - Cleared old data files.
-2024-06-07 22:00:14,106 - INFO - Downloaded data for 100 tickers taking 112.36432480812073 seconds
-2024-06-07 22:02:07,258 - INFO - Downloaded data for 200 tickers taking 225.51651668548584 seconds
-2024-06-07 22:04:00,245 - INFO - Downloaded data for 300 tickers taking 338.5032422542572 seconds
-2024-06-07 22:05:52,257 - INFO - Downloaded data for 400 tickers taking 450.51488280296326 seconds
-2024-06-07 22:07:44,725 - INFO - Downloaded data for 500 tickers taking 562.9836218357086 seconds
-2024-06-07 22:09:37,604 - INFO - Downloaded data for 600 tickers taking 675.8618092536926 seconds
-2024-06-07 22:11:30,267 - INFO - Downloaded data for 700 tickers taking 788.5249528884888 seconds
-2024-06-07 22:13:23,157 - INFO - Downloaded data for 800 tickers taking 901.4148209095001 seconds
-2024-06-07 22:15:16,312 - INFO - Downloaded data for 900 tickers taking 1014.5701308250427 seconds
-2024-06-07 22:17:09,525 - INFO - Downloaded data for 1000 tickers taking 1127.7834887504578 seconds
-2024-06-07 22:19:02,731 - INFO - Downloaded data for 1100 tickers taking 1240.9895522594452 seconds
-2024-06-07 22:20:55,438 - INFO - Downloaded data for 1200 tickers taking 1353.6957864761353 seconds
-2024-06-07 22:22:48,811 - INFO - Downloaded data for 1300 tickers taking 1467.0691130161285 seconds
-2024-06-07 22:24:42,332 - INFO - Downloaded data for 1400 tickers taking 1580.5906636714935 seconds
-2024-06-07 22:26:35,173 - INFO - Downloaded data for 1500 tickers taking 1693.4312403202057 seconds
-2024-06-07 22:28:28,760 - INFO - Downloaded data for 1600 tickers taking 1807.0177836418152 seconds
-2024-06-07 22:30:22,349 - INFO - Downloaded data for 1700 tickers taking 1920.6069431304932 seconds
-2024-06-07 22:32:15,998 - INFO - Downloaded data for 1800 tickers taking 2034.2566721439362 seconds
-2024-06-07 22:34:09,046 - INFO - Downloaded data for 1900 tickers taking 2147.3041954040527 seconds
-2024-06-07 22:36:02,138 - INFO - Downloaded data for 2000 tickers taking 2260.3966653347015 seconds
-2024-06-07 22:37:54,915 - INFO - Downloaded data for 2100 tickers taking 2373.1717896461487 seconds
-2024-06-07 22:39:48,216 - INFO - Downloaded data for 2200 tickers taking 2486.4739656448364 seconds
-2024-06-07 22:41:41,462 - INFO - Downloaded data for 2300 tickers taking 2599.7197122573853 seconds
-2024-06-07 22:43:34,469 - INFO - Downloaded data for 2400 tickers taking 2712.7272098064423 seconds
-2024-06-07 22:45:26,945 - INFO - Downloaded data for 2500 tickers taking 2825.2029111385345 seconds
-2024-06-07 22:47:19,922 - INFO - Downloaded data for 2600 tickers taking 2938.180202960968 seconds
-2024-06-07 22:49:13,699 - INFO - Downloaded data for 2700 tickers taking 3051.957083463669 seconds
-2024-06-07 22:51:06,498 - INFO - Downloaded data for 2800 tickers taking 3164.755946159363 seconds
-2024-06-07 22:52:59,371 - INFO - Downloaded data for 2900 tickers taking 3277.6293501853943 seconds
-2024-06-07 22:54:53,145 - INFO - Downloaded data for 3000 tickers taking 3391.4017934799194 seconds
-2024-06-07 22:56:46,354 - INFO - Downloaded data for 3100 tickers taking 3504.6124000549316 seconds
-2024-06-07 22:58:40,369 - INFO - Downloaded data for 3200 tickers taking 3618.627235889435 seconds
-2024-06-07 23:00:33,984 - INFO - Downloaded data for 3300 tickers taking 3732.241706609726 seconds
-2024-06-07 23:02:27,540 - INFO - Downloaded data for 3400 tickers taking 3845.7985742092133 seconds
-2024-06-07 23:04:21,574 - INFO - Downloaded data for 3500 tickers taking 3959.8321480751038 seconds
-2024-06-07 23:06:14,813 - INFO - Downloaded data for 3600 tickers taking 4073.0716099739075 seconds
-2024-06-07 23:08:08,993 - INFO - Downloaded data for 3700 tickers taking 4187.251199960709 seconds
-2024-06-07 23:10:02,852 - INFO - Downloaded data for 3800 tickers taking 4301.109744787216 seconds
-2024-06-07 23:11:13,407 - ERROR - 
+2024-07-03 20:43:52,849 - INFO - Cleared old data files.
+2024-07-03 20:43:53,117 - ERROR - 
 1 Failed download:
-2024-06-07 23:11:13,407 - ERROR - ['PSTX']: ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)))
-2024-06-07 23:12:04,302 - INFO - Downloaded data for 3900 tickers taking 4422.560427188873 seconds
-2024-06-07 23:13:57,052 - INFO - Downloaded data for 4000 tickers taking 4535.310081005096 seconds
-2024-06-07 23:15:50,723 - INFO - Downloaded data for 4100 tickers taking 4648.980824232101 seconds
-2024-06-07 23:17:44,121 - INFO - Downloaded data for 4200 tickers taking 4762.378791093826 seconds
-2024-06-07 23:19:37,341 - INFO - Downloaded data for 4300 tickers taking 4875.5989825725555 seconds
-2024-06-07 23:21:30,604 - INFO - Downloaded data for 4400 tickers taking 4988.862316608429 seconds
-2024-06-07 23:23:23,927 - INFO - Downloaded data for 4500 tickers taking 5102.18537569046 seconds
-2024-06-07 23:25:17,010 - INFO - Downloaded data for 4600 tickers taking 5215.268345355988 seconds
-2024-06-07 23:27:10,206 - INFO - Downloaded data for 4700 tickers taking 5328.464074611664 seconds
-2024-06-07 23:29:03,543 - INFO - Downloaded data for 4800 tickers taking 5441.800917625427 seconds
-2024-06-07 23:30:56,318 - INFO - Downloaded data for 4900 tickers taking 5554.576301574707 seconds
-2024-06-07 23:32:48,937 - INFO - Downloaded data for 5000 tickers taking 5667.195152997971 seconds
-2024-06-07 23:34:42,721 - INFO - Downloaded data for 5100 tickers taking 5780.9791395664215 seconds
-2024-06-07 23:36:35,169 - INFO - Downloaded data for 5200 tickers taking 5893.427498817444 seconds
-2024-06-07 23:36:37,314 - INFO - Data download completed.
-2024-06-17 21:46:03,221 - INFO - Cleared old data files.
-2024-06-17 21:47:56,301 - INFO - Downloaded data for 100 tickers taking 113.04059386253357 seconds
-2024-06-17 21:49:50,147 - INFO - Downloaded data for 200 tickers taking 226.88645911216736 seconds
-2024-06-17 21:51:27,375 - WARNING - Data for AONC is too short. Skipping.
-2024-06-17 21:51:43,394 - INFO - Downloaded data for 300 tickers taking 340.1337468624115 seconds
-2024-06-17 21:53:36,789 - INFO - Downloaded data for 400 tickers taking 453.5284523963928 seconds
-2024-06-17 21:55:30,752 - INFO - Downloaded data for 500 tickers taking 567.491941690445 seconds
-2024-06-17 21:57:23,751 - INFO - Downloaded data for 600 tickers taking 680.4902439117432 seconds
-2024-06-17 21:59:16,295 - INFO - Downloaded data for 700 tickers taking 793.0343368053436 seconds
-2024-06-17 22:01:09,233 - INFO - Downloaded data for 800 tickers taking 905.9726054668427 seconds
-2024-06-17 22:03:02,196 - INFO - Downloaded data for 900 tickers taking 1018.9356365203857 seconds
-2024-06-17 22:04:55,349 - INFO - Downloaded data for 1000 tickers taking 1132.0889265537262 seconds
-2024-06-17 22:06:48,229 - INFO - Downloaded data for 1100 tickers taking 1244.968932390213 seconds
-2024-06-17 22:08:41,670 - INFO - Downloaded data for 1200 tickers taking 1358.4092321395874 seconds
-2024-06-17 22:10:35,732 - INFO - Downloaded data for 1300 tickers taking 1472.4705986976624 seconds
-2024-06-17 22:12:28,946 - INFO - Downloaded data for 1400 tickers taking 1585.6856694221497 seconds
-2024-06-17 22:14:22,130 - INFO - Downloaded data for 1500 tickers taking 1698.8699581623077 seconds
-2024-06-17 22:16:15,492 - INFO - Downloaded data for 1600 tickers taking 1812.2312216758728 seconds
-2024-06-17 22:18:08,859 - INFO - Downloaded data for 1700 tickers taking 1925.5985741615295 seconds
-2024-06-17 22:20:02,428 - INFO - Downloaded data for 1800 tickers taking 2039.167516708374 seconds
-2024-06-17 22:21:55,656 - INFO - Downloaded data for 1900 tickers taking 2152.395692586899 seconds
-2024-06-17 22:23:48,824 - INFO - Downloaded data for 2000 tickers taking 2265.5632078647614 seconds
-2024-06-17 22:25:42,040 - INFO - Downloaded data for 2100 tickers taking 2378.7796292304993 seconds
-2024-06-17 22:27:35,513 - INFO - Downloaded data for 2200 tickers taking 2492.252591609955 seconds
-2024-06-17 22:29:28,566 - INFO - Downloaded data for 2300 tickers taking 2605.3059895038605 seconds
-2024-06-17 22:31:21,762 - INFO - Downloaded data for 2400 tickers taking 2718.502067565918 seconds
-2024-06-17 22:33:14,320 - INFO - Downloaded data for 2500 tickers taking 2831.0598328113556 seconds
-2024-06-17 22:35:07,747 - INFO - Downloaded data for 2600 tickers taking 2944.486353158951 seconds
-2024-06-17 22:37:01,352 - INFO - Downloaded data for 2700 tickers taking 3058.0921556949615 seconds
-2024-06-17 22:38:54,103 - INFO - Downloaded data for 2800 tickers taking 3170.842297554016 seconds
-2024-06-17 22:40:47,196 - INFO - Downloaded data for 2900 tickers taking 3283.9361057281494 seconds
-2024-06-17 22:42:40,959 - INFO - Downloaded data for 3000 tickers taking 3397.698264360428 seconds
-2024-06-17 22:44:34,387 - INFO - Downloaded data for 3100 tickers taking 3511.126870393753 seconds
-2024-06-17 22:46:27,911 - INFO - Downloaded data for 3200 tickers taking 3624.6509339809418 seconds
-2024-06-17 22:48:21,326 - INFO - Downloaded data for 3300 tickers taking 3738.065933942795 seconds
-2024-06-17 22:50:14,494 - INFO - Downloaded data for 3400 tickers taking 3851.233221054077 seconds
-2024-06-17 22:52:07,884 - INFO - Downloaded data for 3500 tickers taking 3964.6234946250916 seconds
-2024-06-17 22:54:00,936 - INFO - Downloaded data for 3600 tickers taking 4077.676041841507 seconds
-2024-06-17 22:55:55,153 - INFO - Downloaded data for 3700 tickers taking 4191.892720222473 seconds
-2024-06-17 22:57:48,464 - INFO - Downloaded data for 3800 tickers taking 4305.203805208206 seconds
-2024-06-17 22:59:41,107 - INFO - Downloaded data for 3900 tickers taking 4417.8463389873505 seconds
-2024-06-17 23:01:33,670 - INFO - Downloaded data for 4000 tickers taking 4530.410130262375 seconds
-2024-06-17 23:03:27,064 - INFO - Downloaded data for 4100 tickers taking 4643.8033566474915 seconds
-2024-06-17 23:05:20,321 - INFO - Downloaded data for 4200 tickers taking 4757.060285568237 seconds
-2024-06-17 23:07:13,364 - INFO - Downloaded data for 4300 tickers taking 4870.103882789612 seconds
-2024-06-17 23:09:06,453 - INFO - Downloaded data for 4400 tickers taking 4983.193005561829 seconds
-2024-06-17 23:10:59,570 - INFO - Downloaded data for 4500 tickers taking 5096.3095552921295 seconds
-2024-06-17 23:12:52,818 - INFO - Downloaded data for 4600 tickers taking 5209.557592391968 seconds
-2024-06-17 23:14:45,958 - INFO - Downloaded data for 4700 tickers taking 5322.698045015335 seconds
-2024-06-17 23:16:39,732 - INFO - Downloaded data for 4800 tickers taking 5436.471987247467 seconds
-2024-06-17 23:18:33,193 - INFO - Downloaded data for 4900 tickers taking 5549.932610034943 seconds
-2024-06-17 23:20:26,232 - INFO - Downloaded data for 5000 tickers taking 5662.97139954567 seconds
-2024-06-17 23:22:20,343 - INFO - Downloaded data for 5100 tickers taking 5777.083155632019 seconds
-2024-06-17 23:24:08,230 - INFO - Data download completed.
-2024-06-21 18:48:55,104 - INFO - Cleared old data files.
-2024-06-21 18:48:55,293 - ERROR - 
+2024-07-03 20:43:53,117 - ERROR - ['A']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000162B71D0F10>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-07-03 20:43:53,117 - WARNING - Skipping A: insufficient data or abnormal price.
+2024-07-03 20:45:47,687 - INFO - Downloaded data for 100 tickers taking 114.83 seconds
+2024-07-03 20:47:41,278 - INFO - Downloaded data for 200 tickers taking 228.43 seconds
+2024-07-03 20:49:19,510 - INFO - Cleared old data files.
+2024-07-03 20:51:12,242 - INFO - Downloaded data for 100 tickers taking 112.73 seconds
+2024-07-03 20:53:04,932 - INFO - Downloaded data for 200 tickers taking 225.42 seconds
+2024-07-03 20:54:58,225 - INFO - Downloaded data for 300 tickers taking 338.71 seconds
+2024-07-03 20:56:51,596 - INFO - Downloaded data for 400 tickers taking 452.08 seconds
+2024-07-03 20:58:45,089 - INFO - Downloaded data for 500 tickers taking 565.58 seconds
+2024-07-03 21:00:38,606 - INFO - Downloaded data for 600 tickers taking 679.09 seconds
+2024-07-03 21:02:34,438 - INFO - Downloaded data for 700 tickers taking 794.93 seconds
+2024-07-03 21:04:28,158 - INFO - Downloaded data for 800 tickers taking 908.65 seconds
+2024-07-03 21:06:21,365 - INFO - Downloaded data for 900 tickers taking 1021.85 seconds
+2024-07-03 21:08:15,278 - INFO - Downloaded data for 1000 tickers taking 1135.77 seconds
+2024-07-03 21:10:09,039 - INFO - Downloaded data for 1100 tickers taking 1249.53 seconds
+2024-07-03 21:12:02,573 - INFO - Downloaded data for 1200 tickers taking 1363.06 seconds
+2024-07-03 21:13:56,157 - INFO - Downloaded data for 1300 tickers taking 1476.65 seconds
+2024-07-03 21:15:50,156 - INFO - Downloaded data for 1400 tickers taking 1590.64 seconds
+2024-07-03 21:17:43,718 - INFO - Downloaded data for 1500 tickers taking 1704.21 seconds
+2024-07-03 21:19:37,416 - INFO - Downloaded data for 1600 tickers taking 1817.90 seconds
+2024-07-03 21:21:30,878 - INFO - Downloaded data for 1700 tickers taking 1931.37 seconds
+2024-07-03 21:23:25,112 - INFO - Downloaded data for 1800 tickers taking 2045.60 seconds
+2024-07-03 21:25:19,067 - INFO - Downloaded data for 1900 tickers taking 2159.56 seconds
+2024-07-03 21:27:13,175 - INFO - Downloaded data for 2000 tickers taking 2273.66 seconds
+2024-07-03 21:29:06,713 - INFO - Downloaded data for 2100 tickers taking 2387.20 seconds
+2024-07-03 21:31:00,532 - INFO - Downloaded data for 2200 tickers taking 2501.02 seconds
+2024-07-03 21:32:53,051 - INFO - Downloaded data for 2300 tickers taking 2613.54 seconds
+2024-07-03 21:34:46,769 - INFO - Downloaded data for 2400 tickers taking 2727.26 seconds
+2024-07-03 21:36:39,566 - INFO - Downloaded data for 2500 tickers taking 2840.05 seconds
+2024-07-03 21:38:33,085 - INFO - Downloaded data for 2600 tickers taking 2953.57 seconds
+2024-07-03 21:40:26,744 - INFO - Downloaded data for 2700 tickers taking 3067.23 seconds
+2024-07-03 21:42:20,496 - INFO - Downloaded data for 2800 tickers taking 3180.98 seconds
+2024-07-03 21:44:14,091 - INFO - Downloaded data for 2900 tickers taking 3294.58 seconds
+2024-07-03 21:46:07,772 - INFO - Downloaded data for 3000 tickers taking 3408.26 seconds
+2024-07-03 21:46:32,623 - INFO - Total download time: 3433.11 seconds
+2024-07-03 21:46:32,623 - INFO - Data download completed. Downloaded 3021 new files.
+2024-07-03 21:46:32,623 - INFO - Total execution time: 3433.11 seconds
+2024-07-05 20:30:33,997 - INFO - Cleared old data files.
+2024-07-05 20:30:34,196 - ERROR - 
 1 Failed download:
-2024-06-21 18:48:55,293 - ERROR - ['A']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001CB29CE3520>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
-2024-06-21 18:49:03,514 - ERROR - 
+2024-07-05 20:30:34,196 - ERROR - ['A']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002169%ticker%18B490>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-07-05 20:30:34,196 - WARNING - Skipping A: insufficient data or abnormal price.
+2024-07-05 20:32:27,854 - INFO - Downloaded data for 100 tickers taking 113.86 seconds
+2024-07-05 20:34:21,082 - INFO - Downloaded data for 200 tickers taking 227.08 seconds
+2024-07-05 20:36:14,333 - INFO - Downloaded data for 300 tickers taking 340.33 seconds
+2024-07-05 20:38:07,485 - INFO - Downloaded data for 400 tickers taking 453.49 seconds
+2024-07-05 20:40:00,817 - INFO - Downloaded data for 500 tickers taking 566.82 seconds
+2024-07-05 20:41:54,306 - INFO - Downloaded data for 600 tickers taking 680.31 seconds
+2024-07-05 20:43:48,612 - INFO - Downloaded data for 700 tickers taking 794.61 seconds
+2024-07-05 20:45:42,139 - INFO - Downloaded data for 800 tickers taking 908.14 seconds
+2024-07-05 20:47:35,131 - INFO - Downloaded data for 900 tickers taking 1021.13 seconds
+2024-07-05 20:49:28,400 - INFO - Downloaded data for 1000 tickers taking 1134.40 seconds
+2024-07-05 20:51:22,351 - INFO - Downloaded data for 1100 tickers taking 1248.35 seconds
+2024-07-05 20:53:15,942 - INFO - Downloaded data for 1200 tickers taking 1361.94 seconds
+2024-07-05 20:55:09,216 - INFO - Downloaded data for 1300 tickers taking 1475.22 seconds
+2024-07-05 20:57:03,266 - INFO - Downloaded data for 1400 tickers taking 1589.27 seconds
+2024-07-05 20:58:56,784 - INFO - Downloaded data for 1500 tickers taking 1702.79 seconds
+2024-07-05 21:00:50,188 - INFO - Downloaded data for 1600 tickers taking 1816.19 seconds
+2024-07-05 21:02:43,313 - INFO - Downloaded data for 1700 tickers taking 1929.31 seconds
+2024-07-05 21:04:36,967 - INFO - Downloaded data for 1800 tickers taking 2042.97 seconds
+2024-07-05 21:06:31,226 - INFO - Downloaded data for 1900 tickers taking 2157.23 seconds
+2024-07-05 21:08:25,634 - INFO - Downloaded data for 2000 tickers taking 2271.64 seconds
+2024-07-05 21:10:18,883 - INFO - Downloaded data for 2100 tickers taking 2384.88 seconds
+2024-07-05 21:12:12,522 - INFO - Downloaded data for 2200 tickers taking 2498.52 seconds
+2024-07-05 21:14:05,103 - INFO - Downloaded data for 2300 tickers taking 2611.10 seconds
+2024-07-05 21:15:58,080 - INFO - Downloaded data for 2400 tickers taking 2724.08 seconds
+2024-07-05 21:17:50,893 - INFO - Downloaded data for 2500 tickers taking 2836.89 seconds
+2024-07-05 21:19:44,459 - INFO - Downloaded data for 2600 tickers taking 2950.46 seconds
+2024-07-05 21:21:38,134 - INFO - Downloaded data for 2700 tickers taking 3064.13 seconds
+2024-07-05 21:23:31,453 - INFO - Downloaded data for 2800 tickers taking 3177.45 seconds
+2024-07-05 21:25:24,658 - INFO - Downloaded data for 2900 tickers taking 3290.66 seconds
+2024-07-05 21:27:18,114 - INFO - Downloaded data for 3000 tickers taking 3404.12 seconds
+2024-07-05 21:27:40,543 - INFO - Total download time: 3426.54 seconds
+2024-07-05 21:27:40,544 - INFO - Data download completed. Downloaded 3019 new files.
+2024-07-05 21:27:40,544 - INFO - Total execution time: 3426.55 seconds
+2024-07-06 20:30:34,299 - INFO - Cleared old data files.
+2024-07-06 20:32:29,937 - INFO - Downloaded data for 100 tickers taking 115.60 seconds
+2024-07-06 20:34:25,831 - INFO - Downloaded data for 200 tickers taking 231.49 seconds
+2024-07-06 20:36:22,368 - INFO - Downloaded data for 300 tickers taking 348.03 seconds
+2024-07-06 20:38:19,071 - INFO - Downloaded data for 400 tickers taking 464.73 seconds
+2024-07-06 20:40:16,656 - INFO - Downloaded data for 500 tickers taking 582.31 seconds
+2024-07-06 20:42:14,095 - INFO - Downloaded data for 600 tickers taking 699.75 seconds
+2024-07-06 20:44:11,428 - INFO - Downloaded data for 700 tickers taking 817.09 seconds
+2024-07-06 20:46:09,184 - INFO - Downloaded data for 800 tickers taking 934.84 seconds
+2024-07-06 20:48:06,171 - INFO - Downloaded data for 900 tickers taking 1051.83 seconds
+2024-07-06 20:50:03,779 - INFO - Downloaded data for 1000 tickers taking 1169.44 seconds
+2024-07-06 20:52:02,194 - INFO - Downloaded data for 1100 tickers taking 1287.85 seconds
+2024-07-06 20:53:59,194 - INFO - Downloaded data for 1200 tickers taking 1404.85 seconds
+2024-07-06 20:55:56,038 - INFO - Downloaded data for 1300 tickers taking 1521.70 seconds
+2024-07-06 20:57:53,385 - INFO - Downloaded data for 1400 tickers taking 1639.04 seconds
+2024-07-06 20:59:50,093 - INFO - Downloaded data for 1500 tickers taking 1755.75 seconds
+2024-07-06 21:01:47,293 - INFO - Downloaded data for 1600 tickers taking 1872.95 seconds
+2024-07-06 21:03:44,612 - INFO - Downloaded data for 1700 tickers taking 1990.27 seconds
+2024-07-06 21:05:42,235 - INFO - Downloaded data for 1800 tickers taking 2107.89 seconds
+2024-07-06 21:07:39,754 - INFO - Downloaded data for 1900 tickers taking 2225.41 seconds
+2024-07-06 21:09:37,053 - INFO - Downloaded data for 2000 tickers taking 2342.71 seconds
+2024-07-06 21:11:33,848 - INFO - Downloaded data for 2100 tickers taking 2459.51 seconds
+2024-07-06 21:13:31,118 - INFO - Downloaded data for 2200 tickers taking 2576.78 seconds
+2024-07-06 21:15:26,347 - INFO - Downloaded data for 2300 tickers taking 2692.00 seconds
+2024-07-06 21:17:22,424 - INFO - Downloaded data for 2400 tickers taking 2808.08 seconds
+2024-07-06 21:19:17,845 - INFO - Downloaded data for 2500 tickers taking 2923.50 seconds
+2024-07-06 21:21:14,749 - INFO - Downloaded data for 2600 tickers taking 3040.41 seconds
+2024-07-06 21:23:12,832 - INFO - Downloaded data for 2700 tickers taking 3158.49 seconds
+2024-07-06 21:25:10,762 - INFO - Downloaded data for 2800 tickers taking 3276.42 seconds
+2024-07-06 21:27:07,963 - INFO - Downloaded data for 2900 tickers taking 3393.62 seconds
+2024-07-06 21:29:05,690 - INFO - Downloaded data for 3000 tickers taking 3511.35 seconds
+2024-07-06 21:29:26,255 - INFO - Total download time: 3531.91 seconds
+2024-07-06 21:29:26,255 - INFO - Data download completed. Downloaded 3017 new files.
+2024-07-06 21:29:26,255 - INFO - Total execution time: 3531.91 seconds
+2024-07-07 13:23:23,980 - WARNING - Skipping GEV: insufficient data or abnormal price.
+2024-07-07 13:23:26,335 - WARNING - Skipping VLTO: insufficient data or abnormal price.
+2024-07-07 13:23:28,567 - WARNING - Skipping LB: insufficient data or abnormal price.
+2024-07-07 13:23:29,628 - WARNING - Skipping VIK: insufficient data or abnormal price.
+2024-07-07 13:23:30,720 - WARNING - Skipping SN: insufficient data or abnormal price.
+2024-07-07 13:23:31,798 - WARNING - Skipping RDDT: insufficient data or abnormal price.
+2024-07-07 13:23:32,860 - WARNING - Skipping CAVA: insufficient data or abnormal price.
+2024-07-07 13:23:33,935 - WARNING - Skipping BIRK: insufficient data or abnormal price.
+2024-07-07 13:23:35,011 - WARNING - Skipping SOLV: insufficient data or abnormal price.
+2024-07-07 13:23:36,087 - WARNING - Skipping ULS: insufficient data or abnormal price.
+2024-07-07 13:23:37,150 - WARNING - Skipping KVYO: insufficient data or abnormal price.
+2024-07-07 13:23:38,225 - WARNING - Skipping AS: insufficient data or abnormal price.
+2024-07-07 13:23:39,300 - WARNING - Skipping RBRK: insufficient data or abnormal price.
+2024-07-07 13:23:40,375 - WARNING - Skipping ZK: insufficient data or abnormal price.
+2024-07-07 13:23:57,628 - INFO - Cleared old data files.
+2024-07-07 13:24:17,732 - INFO - Cleared old data files.
+2024-07-07 13:26:20,036 - INFO - Downloaded data for 100 tickers taking 122.28 seconds
+2024-07-07 13:28:06,703 - WARNING - Skipping GEV: insufficient data or abnormal price.
+2024-07-07 13:28:22,725 - INFO - Downloaded data for 200 tickers taking 244.97 seconds
+2024-07-07 13:30:23,482 - INFO - Downloaded data for 300 tickers taking 365.73 seconds
+2024-07-07 13:31:10,175 - WARNING - Skipping VLTO: insufficient data or abnormal price.
+2024-07-07 13:31:32,800 - WARNING - Skipping LB: insufficient data or abnormal price.
+2024-07-07 13:32:25,724 - INFO - Downloaded data for 400 tickers taking 487.97 seconds
+2024-07-07 13:33:55,446 - WARNING - Skipping VIK: insufficient data or abnormal price.
+2024-07-07 13:34:26,756 - INFO - Downloaded data for 500 tickers taking 609.00 seconds
+2024-07-07 13:35:39,100 - WARNING - Skipping SN: insufficient data or abnormal price.
+2024-07-07 13:35:48,508 - WARNING - Skipping RDDT: insufficient data or abnormal price.
+2024-07-07 13:35:49,573 - WARNING - Skipping CAVA: insufficient data or abnormal price.
+2024-07-07 13:35:54,218 - WARNING - Skipping BIRK: insufficient data or abnormal price.
+2024-07-07 13:36:29,761 - INFO - Downloaded data for 600 tickers taking 732.01 seconds
+2024-07-07 13:36:48,466 - WARNING - Skipping SOLV: insufficient data or abnormal price.
+2024-07-07 13:37:23,841 - WARNING - Skipping ULS: insufficient data or abnormal price.
+2024-07-07 13:38:30,201 - INFO - Downloaded data for 700 tickers taking 852.45 seconds
+2024-07-07 13:38:59,843 - WARNING - Skipping KVYO: insufficient data or abnormal price.
+2024-07-07 13:39:00,901 - WARNING - Skipping AS: insufficient data or abnormal price.
+2024-07-07 13:40:32,434 - INFO - Downloaded data for 800 tickers taking 974.68 seconds
+2024-07-07 13:40:40,675 - WARNING - Skipping RBRK: insufficient data or abnormal price.
+2024-07-07 13:41:12,623 - WARNING - Skipping ZK: insufficient data or abnormal price.
+2024-07-07 13:41:33,914 - WARNING - Skipping LOAR: insufficient data or abnormal price.
+2024-07-07 13:42:14,506 - WARNING - Skipping PACS: insufficient data or abnormal price.
+2024-07-07 13:42:35,939 - INFO - Downloaded data for 900 tickers taking 1098.18 seconds
+2024-07-07 13:42:38,185 - WARNING - Skipping HAFN: insufficient data or abnormal price.
+2024-07-07 13:43:08,682 - WARNING - Skipping KNF: insufficient data or abnormal price.
+2024-07-07 13:44:36,054 - INFO - Downloaded data for 1000 tickers taking 1218.30 seconds
+2024-07-07 13:46:34,514 - INFO - Downloaded data for 1100 tickers taking 1336.76 seconds
+2024-07-07 13:46:40,172 - WARNING - Skipping VTMX: insufficient data or abnormal price.
+2024-07-07 13:46:43,570 - WARNING - Skipping TBBB: insufficient data or abnormal price.
+2024-07-07 13:47:44,700 - WARNING - Skipping ATMU: insufficient data or abnormal price.
+2024-07-07 13:48:11,751 - WARNING - Skipping KGS: insufficient data or abnormal price.
+2024-07-07 13:48:19,925 - WARNING - Skipping CDLR: insufficient data or abnormal price.
+2024-07-07 13:48:37,571 - INFO - Downloaded data for 1200 tickers taking 1459.82 seconds
+2024-07-07 13:48:45,675 - WARNING - Skipping MSDL: insufficient data or abnormal price.
+2024-07-07 13:49:06,851 - WARNING - Skipping IBTA: insufficient data or abnormal price.
+2024-07-07 13:49:16,131 - WARNING - Skipping NATL: insufficient data or abnormal price.
+2024-07-07 13:49:31,282 - WARNING - Skipping CTRI: insufficient data or abnormal price.
+2024-07-07 13:49:32,346 - WARNING - Skipping SVV: insufficient data or abnormal price.
+2024-07-07 13:49:35,812 - WARNING - Skipping FIHL: insufficient data or abnormal price.
+2024-07-07 13:49:43,830 - WARNING - Skipping OBDE: insufficient data or abnormal price.
+2024-07-07 13:49:48,465 - WARNING - Skipping MNR: insufficient data or abnormal price.
+2024-07-07 13:50:03,928 - WARNING - Skipping PHIN: insufficient data or abnormal price.
+2024-07-07 13:50:16,710 - WARNING - Skipping WS: insufficient data or abnormal price.
+2024-07-07 13:50:18,980 - WARNING - Skipping AHR: insufficient data or abnormal price.
+2024-07-07 13:50:22,386 - WARNING - Skipping HG: insufficient data or abnormal price.
+2024-07-07 13:50:48,111 - INFO - Downloaded data for 1300 tickers taking 1590.36 seconds
+2024-07-07 13:51:01,955 - WARNING - Skipping VSTS: insufficient data or abnormal price.
+2024-07-07 13:51:49,031 - WARNING - Skipping KLG: insufficient data or abnormal price.
+2024-07-07 13:52:12,375 - WARNING - Skipping DBD: insufficient data or abnormal price.
+2024-07-07 13:52:48,768 - INFO - Downloaded data for 1400 tickers taking 1711.01 seconds
+2024-07-07 13:53:09,279 - WARNING - Skipping SDHC: insufficient data or abnormal price.
+2024-07-07 13:53:30,409 - WARNING - Skipping SILA: insufficient data or abnormal price.
+2024-07-07 13:53:35,130 - WARNING - Skipping KBDC: insufficient data or abnormal price.
+2024-07-07 13:54:35,454 - WARNING - Skipping ECO: insufficient data or abnormal price.
+2024-07-07 13:54:49,295 - INFO - Downloaded data for 1500 tickers taking 1831.54 seconds
+2024-07-07 13:55:07,759 - WARNING - Skipping NCDL: insufficient data or abnormal price.
+2024-07-07 13:56:37,819 - WARNING - Skipping BOW: insufficient data or abnormal price.
+2024-07-07 13:56:48,392 - INFO - Downloaded data for 1600 tickers taking 1950.64 seconds
+2024-07-07 13:57:41,950 - WARNING - Skipping EXTO: insufficient data or abnormal price.
+2024-07-07 13:57:49,933 - WARNING - Skipping AACT: insufficient data or abnormal price.
+2024-07-07 13:58:25,884 - WARNING - Skipping ZKH: insufficient data or abnormal price.
+2024-07-07 13:58:31,753 - WARNING - Skipping DEC: insufficient data or abnormal price.
+2024-07-07 13:58:32,818 - WARNING - Skipping LAC: insufficient data or abnormal price.
+2024-07-07 13:58:50,284 - INFO - Downloaded data for 1700 tickers taking 2072.53 seconds
+2024-07-07 13:58:51,347 - WARNING - Skipping AUNA: insufficient data or abnormal price.
+2024-07-07 13:58:58,259 - WARNING - Skipping FLYX: insufficient data or abnormal price.
+2024-07-07 13:59:33,592 - WARNING - Skipping PSBD: insufficient data or abnormal price.
+2024-07-07 14:00:51,333 - INFO - Downloaded data for 1800 tickers taking 2193.58 seconds
+2024-07-07 14:01:14,685 - WARNING - Skipping LPA: insufficient data or abnormal price.
+2024-07-07 14:02:10,795 - WARNING - Skipping TBN: insufficient data or abnormal price.
+2024-07-07 14:02:49,473 - WARNING - Skipping NLOP: insufficient data or abnormal price.
+2024-07-07 14:02:51,951 - INFO - Downloaded data for 1900 tickers taking 2314.20 seconds
+2024-07-07 14:03:41,544 - WARNING - Skipping HYAC: insufficient data or abnormal price.
+2024-07-07 14:04:23,914 - WARNING - Skipping ANRO: insufficient data or abnormal price.
+2024-07-07 14:04:52,066 - INFO - Downloaded data for 2000 tickers taking 2434.31 seconds
+2024-07-07 14:04:53,126 - WARNING - Skipping LEGT: insufficient data or abnormal price.
+2024-07-07 14:06:06,167 - WARNING - Skipping CLBR: insufficient data or abnormal price.
+2024-07-07 14:06:52,248 - INFO - Downloaded data for 2100 tickers taking 2554.49 seconds
+2024-07-07 14:08:16,579 - WARNING - Skipping DXYZ: insufficient data or abnormal price.
+2024-07-07 14:08:50,429 - INFO - Downloaded data for 2200 tickers taking 2672.67 seconds
+2024-07-07 14:09:56,887 - WARNING - Skipping RYDE: insufficient data or abnormal price.
+2024-07-07 14:10:26,241 - WARNING - Skipping BEEP: insufficient data or abnormal price.
+2024-07-07 14:10:49,788 - INFO - Downloaded data for 2300 tickers taking 2792.03 seconds
+2024-07-07 14:12:47,304 - WARNING - Skipping TOPS: insufficient data or abnormal price.
+2024-07-07 14:12:48,468 - INFO - Downloaded data for 2400 tickers taking 2910.71 seconds
+2024-07-07 14:13:05,711 - WARNING - Skipping AXIL: insufficient data or abnormal price.
+2024-07-07 14:13:11,417 - WARNING - Skipping AEON: insufficient data or abnormal price.
+2024-07-07 14:13:32,126 - WARNING - Skipping SRFM: insufficient data or abnormal price.
+2024-07-07 14:13:39,053 - WARNING - Skipping PMNT: insufficient data or abnormal price.
+2024-07-07 14:13:45,926 - WARNING - Skipping MMA: insufficient data or abnormal price.
+2024-07-07 14:14:18,388 - WARNING - Skipping ZONE: insufficient data or abnormal price.
+2024-07-07 14:14:32,305 - WARNING - Skipping DDC: insufficient data or abnormal price.
+2024-07-07 14:14:35,766 - WARNING - Skipping NRXS: insufficient data or abnormal price.
+2024-07-07 14:14:38,001 - WARNING - Skipping SYNX: insufficient data or abnormal price.
+2024-07-07 14:14:54,068 - INFO - Downloaded data for 2500 tickers taking 3036.31 seconds
+2024-07-07 14:14:56,308 - WARNING - Skipping UMAC: insufficient data or abnormal price.
+2024-07-07 14:15:16,692 - WARNING - Skipping CHRO: insufficient data or abnormal price.
+2024-07-07 14:15:21,214 - WARNING - Skipping PAPL: insufficient data or abnormal price.
+2024-07-07 14:15:24,613 - WARNING - Skipping NCL: insufficient data or abnormal price.
+2024-07-07 14:15:30,227 - WARNING - Skipping SGN: insufficient data or abnormal price.
+2024-07-07 14:15:35,937 - WARNING - Skipping AZTR: insufficient data or abnormal price.
+2024-07-07 14:15:45,011 - WARNING - Skipping BQ: insufficient data or abnormal price.
+2024-07-07 14:15:49,515 - WARNING - Skipping NVA: insufficient data or abnormal price.
+2024-07-07 14:16:37,123 - WARNING - Skipping BITB: insufficient data or abnormal price.
+2024-07-07 14:16:40,403 - WARNING - Skipping SPMC: insufficient data or abnormal price.
+2024-07-07 14:17:00,221 - INFO - Downloaded data for 2600 tickers taking 3162.47 seconds
+2024-07-07 14:17:44,444 - WARNING - Skipping APO-PA: insufficient data or abnormal price.
+2024-07-07 14:18:10,993 - WARNING - Skipping INOV: insufficient data or abnormal price.
+2024-07-07 14:18:41,253 - ERROR - 
 1 Failed download:
-2024-06-21 18:49:03,514 - ERROR - ['AA']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'query1.finance.yahoo.com\', port=443): Max retries exceeded with url: /v1/test/getcrumb (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001CB29DCC4C0>: Failed to resolve \'query1.finance.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
-2024-06-21 18:50:56,548 - INFO - Downloaded data for 100 tickers taking 121.4390196800232 seconds
-2024-06-21 18:52:49,323 - INFO - Downloaded data for 200 tickers taking 234.21449851989746 seconds
-2024-06-21 18:54:41,626 - INFO - Downloaded data for 300 tickers taking 346.5166275501251 seconds
-2024-06-21 18:56:33,814 - INFO - Downloaded data for 400 tickers taking 458.70480275154114 seconds
-2024-06-21 18:58:26,794 - INFO - Downloaded data for 500 tickers taking 571.6853878498077 seconds
-2024-06-21 19:00:19,939 - INFO - Downloaded data for 600 tickers taking 684.8301091194153 seconds
-2024-06-21 19:02:12,812 - INFO - Downloaded data for 700 tickers taking 797.703010559082 seconds
-2024-06-21 19:04:05,410 - INFO - Downloaded data for 800 tickers taking 910.3011245727539 seconds
-2024-06-21 19:05:58,241 - INFO - Downloaded data for 900 tickers taking 1023.1322321891785 seconds
-2024-06-21 19:07:51,140 - INFO - Downloaded data for 1000 tickers taking 1136.0310513973236 seconds
-2024-06-21 19:09:44,345 - INFO - Downloaded data for 1100 tickers taking 1249.2363028526306 seconds
-2024-06-21 19:11:36,946 - INFO - Downloaded data for 1200 tickers taking 1361.8371555805206 seconds
-2024-06-21 19:13:30,219 - INFO - Downloaded data for 1300 tickers taking 1475.1099441051483 seconds
-2024-06-21 19:15:22,926 - INFO - Downloaded data for 1400 tickers taking 1587.8166370391846 seconds
-2024-06-21 19:17:15,831 - INFO - Downloaded data for 1500 tickers taking 1700.7215921878815 seconds
-2024-06-21 19:19:08,628 - INFO - Downloaded data for 1600 tickers taking 1813.5191433429718 seconds
-2024-06-21 19:21:01,786 - INFO - Downloaded data for 1700 tickers taking 1926.6772155761719 seconds
-2024-06-21 19:22:55,376 - INFO - Downloaded data for 1800 tickers taking 2040.2671737670898 seconds
-2024-06-21 19:24:48,327 - INFO - Downloaded data for 1900 tickers taking 2153.218296289444 seconds
-2024-06-21 19:26:41,265 - INFO - Downloaded data for 2000 tickers taking 2266.1560719013214 seconds
-2024-06-21 19:28:34,195 - INFO - Downloaded data for 2100 tickers taking 2379.086002588272 seconds
-2024-06-21 19:30:27,149 - INFO - Downloaded data for 2200 tickers taking 2492.0400121212006 seconds
-2024-06-21 19:32:20,258 - INFO - Downloaded data for 2300 tickers taking 2605.149478197098 seconds
-2024-06-21 19:34:13,642 - INFO - Downloaded data for 2400 tickers taking 2718.53257727623 seconds
-2024-06-21 19:36:07,617 - INFO - Downloaded data for 2500 tickers taking 2832.507688999176 seconds
-2024-06-21 19:38:00,572 - INFO - Downloaded data for 2600 tickers taking 2945.4629764556885 seconds
-2024-06-21 19:39:53,798 - INFO - Downloaded data for 2700 tickers taking 3058.6894731521606 seconds
-2024-06-21 19:41:46,533 - INFO - Downloaded data for 2800 tickers taking 3171.42435836792 seconds
-2024-06-21 19:43:38,967 - INFO - Downloaded data for 2900 tickers taking 3283.8584740161896 seconds
-2024-06-21 19:45:32,404 - INFO - Downloaded data for 3000 tickers taking 3397.2949109077454 seconds
-2024-06-21 19:47:25,320 - INFO - Downloaded data for 3100 tickers taking 3510.2111184597015 seconds
-2024-06-21 19:49:18,930 - INFO - Downloaded data for 3200 tickers taking 3623.8210265636444 seconds
-2024-06-21 19:51:12,110 - INFO - Downloaded data for 3300 tickers taking 3737.0013267993927 seconds
-2024-06-21 19:53:04,878 - INFO - Downloaded data for 3400 tickers taking 3849.769172668457 seconds
-2024-06-21 19:54:57,512 - INFO - Downloaded data for 3500 tickers taking 3962.403251886368 seconds
-2024-06-21 19:56:49,952 - INFO - Downloaded data for 3600 tickers taking 4074.8434839248657 seconds
-2024-06-21 19:58:43,112 - INFO - Downloaded data for 3700 tickers taking 4188.003110408783 seconds
-2024-06-21 20:00:35,864 - INFO - Downloaded data for 3800 tickers taking 4300.755400180817 seconds
-2024-06-21 20:02:27,975 - INFO - Downloaded data for 3900 tickers taking 4412.865829467773 seconds
-2024-06-21 20:04:20,419 - INFO - Downloaded data for 4000 tickers taking 4525.310155630112 seconds
-2024-06-21 20:06:13,485 - INFO - Downloaded data for 4100 tickers taking 4638.376087188721 seconds
-2024-06-21 20:08:06,551 - INFO - Downloaded data for 4200 tickers taking 4751.442233085632 seconds
-2024-06-21 20:09:59,424 - INFO - Downloaded data for 4300 tickers taking 4864.314961433411 seconds
-2024-06-21 20:11:52,251 - INFO - Downloaded data for 4400 tickers taking 4977.141805171967 seconds
-2024-06-21 20:13:44,938 - INFO - Downloaded data for 4500 tickers taking 5089.82887673378 seconds
-2024-06-21 20:15:37,764 - INFO - Downloaded data for 4600 tickers taking 5202.654971599579 seconds
-2024-06-21 20:17:30,685 - INFO - Downloaded data for 4700 tickers taking 5315.575736999512 seconds
-2024-06-21 20:19:24,285 - INFO - Downloaded data for 4800 tickers taking 5429.1758444309235 seconds
-2024-06-21 20:21:17,610 - INFO - Downloaded data for 4900 tickers taking 5542.500595092773 seconds
-2024-06-21 20:23:10,395 - INFO - Downloaded data for 5000 tickers taking 5655.286531925201 seconds
-2024-06-21 20:25:03,788 - INFO - Downloaded data for 5100 tickers taking 5768.678780078888 seconds
-2024-06-21 20:26:34,582 - INFO - Data download completed.
-2024-06-25 21:31:33,139 - INFO - Cleared old data files.
-2024-06-25 21:31:33,336 - ERROR - 
+2024-07-07 14:18:41,253 - ERROR - ['PBI-PB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:18:41,253 - WARNING - Skipping PBI-PB: insufficient data or abnormal price.
+2024-07-07 14:19:00,099 - INFO - Downloaded data for 2700 tickers taking 3282.34 seconds
+2024-07-07 14:19:04,702 - WARNING - Skipping TRTN-PA: insufficient data or abnormal price.
+2024-07-07 14:19:34,914 - WARNING - Skipping GLOP-PB: insufficient data or abnormal price.
+2024-07-07 14:19:35,983 - WARNING - Skipping GLOP-PC: insufficient data or abnormal price.
+2024-07-07 14:19:37,045 - WARNING - Skipping GLOP-PA: insufficient data or abnormal price.
+2024-07-07 14:19:43,901 - WARNING - Skipping GRAF-UN: insufficient data or abnormal price.
+2024-07-07 14:19:44,974 - WARNING - Skipping IRET: insufficient data or abnormal price.
+2024-07-07 14:20:46,704 - WARNING - Skipping RHE-PA: insufficient data or abnormal price.
+2024-07-07 14:20:50,081 - ERROR - 
 1 Failed download:
-2024-06-25 21:31:33,336 - ERROR - ['AACG']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000167F08806D0>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
-2024-06-25 21:33:42,206 - INFO - Downloaded data for 100 tickers taking 129.06189370155334 seconds
-2024-06-25 21:35:34,232 - ERROR - 
+2024-07-07 14:20:50,081 - ERROR - ['AP-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:50,081 - WARNING - Skipping AP-WT: insufficient data or abnormal price.
+2024-07-07 14:20:53,346 - ERROR - 
 1 Failed download:
-2024-06-25 21:35:34,232 - ERROR - ['ALEX']: ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)"))
-2024-06-25 21:36:07,938 - INFO - Downloaded data for 200 tickers taking 274.79399514198303 seconds
-2024-06-25 21:36:47,657 - ERROR - 
+2024-07-07 14:20:53,346 - ERROR - ['WRB-PF']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:53,346 - WARNING - Skipping WRB-PF: insufficient data or abnormal price.
+2024-07-07 14:20:54,395 - ERROR - 
 1 Failed download:
-2024-06-25 21:36:47,657 - ERROR - ['AMD']: ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)"))
-2024-06-26 20:30:33,381 - INFO - Cleared old data files.
-2024-06-26 20:32:26,064 - INFO - Downloaded data for 100 tickers taking 112.67889475822449 seconds
-2024-06-26 20:34:19,411 - INFO - Downloaded data for 200 tickers taking 226.02568936347961 seconds
-2024-06-26 20:36:12,211 - INFO - Downloaded data for 300 tickers taking 338.8258821964264 seconds
-2024-06-26 20:38:04,463 - INFO - Downloaded data for 400 tickers taking 451.0776734352112 seconds
-2024-06-26 20:39:57,475 - INFO - Downloaded data for 500 tickers taking 564.0905373096466 seconds
-2024-06-26 20:41:50,676 - INFO - Downloaded data for 600 tickers taking 677.2909779548645 seconds
-2024-06-26 20:43:43,003 - INFO - Downloaded data for 700 tickers taking 789.6180124282837 seconds
-2024-06-26 20:45:36,434 - INFO - Downloaded data for 800 tickers taking 903.0491945743561 seconds
-2024-06-26 20:47:29,568 - INFO - Downloaded data for 900 tickers taking 1016.1831266880035 seconds
-2024-06-26 20:49:22,775 - INFO - Downloaded data for 1000 tickers taking 1129.389806509018 seconds
-2024-06-26 20:51:15,790 - INFO - Downloaded data for 1100 tickers taking 1242.4048726558685 seconds
-2024-06-26 20:53:08,336 - INFO - Downloaded data for 1200 tickers taking 1354.9507913589478 seconds
-2024-06-26 20:55:01,623 - INFO - Downloaded data for 1300 tickers taking 1468.2379958629608 seconds
-2024-06-26 20:56:54,461 - INFO - Downloaded data for 1400 tickers taking 1581.0761075019836 seconds
-2024-06-26 20:58:47,331 - INFO - Downloaded data for 1500 tickers taking 1693.9463849067688 seconds
-2024-06-26 21:00:40,431 - INFO - Downloaded data for 1600 tickers taking 1807.0458309650421 seconds
-2024-06-26 21:02:33,587 - INFO - Downloaded data for 1700 tickers taking 1920.20175242424 seconds
-2024-06-26 21:04:27,095 - INFO - Downloaded data for 1800 tickers taking 2033.7103526592255 seconds
-2024-06-26 21:06:20,438 - INFO - Downloaded data for 1900 tickers taking 2147.053132534027 seconds
-2024-06-26 21:08:13,253 - INFO - Downloaded data for 2000 tickers taking 2259.8681693077087 seconds
-2024-06-26 21:10:06,247 - INFO - Downloaded data for 2100 tickers taking 2372.8624782562256 seconds
-2024-06-26 21:11:49,158 - WARNING - Data for HGAS is too short. Skipping.
-2024-06-26 21:11:59,341 - INFO - Downloaded data for 2200 tickers taking 2485.9564397335052 seconds
-2024-06-26 21:13:52,593 - INFO - Downloaded data for 2300 tickers taking 2599.20791387558 seconds
-2024-06-26 21:15:45,556 - INFO - Downloaded data for 2400 tickers taking 2712.1710588932037 seconds
-2024-06-26 21:17:37,717 - INFO - Downloaded data for 2500 tickers taking 2824.332423686981 seconds
-2024-06-26 21:19:30,744 - INFO - Downloaded data for 2600 tickers taking 2937.359322309494 seconds
-2024-06-26 21:21:23,692 - INFO - Downloaded data for 2700 tickers taking 3050.306880712509 seconds
-2024-06-26 21:23:16,163 - INFO - Downloaded data for 2800 tickers taking 3162.778514146805 seconds
-2024-06-26 21:25:09,032 - INFO - Downloaded data for 2900 tickers taking 3275.6472051143646 seconds
-2024-06-26 21:27:02,133 - INFO - Downloaded data for 3000 tickers taking 3388.747679233551 seconds
-2024-06-26 21:28:55,300 - INFO - Downloaded data for 3100 tickers taking 3501.9150998592377 seconds
-2024-06-26 21:30:49,157 - INFO - Downloaded data for 3200 tickers taking 3615.771800994873 seconds
-2024-06-26 21:32:42,701 - INFO - Downloaded data for 3300 tickers taking 3729.315849304199 seconds
-2024-06-26 21:34:35,704 - INFO - Downloaded data for 3400 tickers taking 3842.3195559978485 seconds
-2024-06-26 21:36:28,368 - INFO - Downloaded data for 3500 tickers taking 3954.983257293701 seconds
-2024-06-26 21:38:21,273 - INFO - Downloaded data for 3600 tickers taking 4067.888041496277 seconds
-2024-06-26 21:40:15,125 - INFO - Downloaded data for 3700 tickers taking 4181.740252733231 seconds
-2024-06-26 21:42:07,965 - INFO - Downloaded data for 3800 tickers taking 4294.579658031464 seconds
-2024-06-26 21:44:00,017 - INFO - Downloaded data for 3900 tickers taking 4406.6325035095215 seconds
-2024-06-26 21:45:52,633 - INFO - Downloaded data for 4000 tickers taking 4519.248022556305 seconds
-2024-06-26 21:47:45,597 - INFO - Downloaded data for 4100 tickers taking 4632.2117438316345 seconds
-2024-06-26 21:49:38,753 - INFO - Downloaded data for 4200 tickers taking 4745.3681428432465 seconds
-2024-06-26 21:51:31,650 - INFO - Downloaded data for 4300 tickers taking 4858.264847755432 seconds
-2024-06-26 21:53:25,049 - INFO - Downloaded data for 4400 tickers taking 4971.664218425751 seconds
-2024-06-26 21:55:17,896 - INFO - Downloaded data for 4500 tickers taking 5084.510772943497 seconds
-2024-06-26 21:57:10,793 - INFO - Downloaded data for 4600 tickers taking 5197.407967567444 seconds
-2024-06-26 21:59:04,114 - INFO - Downloaded data for 4700 tickers taking 5310.728585958481 seconds
-2024-06-26 22:00:57,521 - INFO - Downloaded data for 4800 tickers taking 5424.136565923691 seconds
-2024-06-26 22:02:50,481 - INFO - Downloaded data for 4900 tickers taking 5537.095703125 seconds
-2024-06-26 22:04:43,397 - INFO - Downloaded data for 5000 tickers taking 5650.012262582779 seconds
-2024-06-26 22:06:36,679 - INFO - Downloaded data for 5100 tickers taking 5763.294256448746 seconds
-2024-06-26 22:07:58,396 - INFO - Data download completed.
-2024-06-27 20:30:33,869 - INFO - Cleared old data files.
-2024-06-27 20:32:26,371 - INFO - Downloaded data for 100 tickers taking 112.49531650543213 seconds
-2024-06-27 20:34:19,620 - INFO - Downloaded data for 200 tickers taking 225.74590849876404 seconds
-2024-06-27 20:36:12,571 - INFO - Downloaded data for 300 tickers taking 338.6970388889313 seconds
-2024-06-27 20:38:05,108 - INFO - Downloaded data for 400 tickers taking 451.23395919799805 seconds
-2024-06-27 20:39:58,125 - INFO - Downloaded data for 500 tickers taking 564.2507181167603 seconds
-2024-06-27 20:41:51,431 - INFO - Downloaded data for 600 tickers taking 677.5567855834961 seconds
-2024-06-27 20:43:44,249 - INFO - Downloaded data for 700 tickers taking 790.3752067089081 seconds
-2024-06-27 20:45:36,908 - INFO - Downloaded data for 800 tickers taking 903.0338449478149 seconds
-2024-06-27 20:47:29,737 - INFO - Downloaded data for 900 tickers taking 1015.8626854419708 seconds
-2024-06-27 20:49:22,929 - INFO - Downloaded data for 1000 tickers taking 1129.0548458099365 seconds
-2024-06-27 20:51:15,958 - INFO - Downloaded data for 1100 tickers taking 1242.0838854312897 seconds
-2024-06-27 20:53:09,374 - INFO - Downloaded data for 1200 tickers taking 1355.4995744228363 seconds
-2024-06-27 20:55:02,990 - INFO - Downloaded data for 1300 tickers taking 1469.1161513328552 seconds
-2024-06-27 20:56:55,929 - INFO - Downloaded data for 1400 tickers taking 1582.0546658039093 seconds
-2024-06-27 20:58:49,075 - INFO - Downloaded data for 1500 tickers taking 1695.2004640102386 seconds
-2024-06-27 21:00:42,317 - INFO - Downloaded data for 1600 tickers taking 1808.4431517124176 seconds
-2024-06-27 21:02:35,735 - INFO - Downloaded data for 1700 tickers taking 1921.8603949546814 seconds
-2024-06-27 21:04:28,884 - INFO - Downloaded data for 1800 tickers taking 2035.0099403858185 seconds
-2024-06-27 21:06:21,887 - INFO - Downloaded data for 1900 tickers taking 2148.0128948688507 seconds
-2024-06-27 21:08:14,737 - INFO - Downloaded data for 2000 tickers taking 2260.8628418445587 seconds
-2024-06-27 21:10:07,521 - INFO - Downloaded data for 2100 tickers taking 2373.6468908786774 seconds
-2024-06-27 21:12:00,308 - INFO - Downloaded data for 2200 tickers taking 2486.433929204941 seconds
-2024-06-27 21:13:53,353 - INFO - Downloaded data for 2300 tickers taking 2599.4786248207092 seconds
-2024-06-27 21:15:46,371 - INFO - Downloaded data for 2400 tickers taking 2712.49688911438 seconds
-2024-06-27 21:17:38,701 - INFO - Downloaded data for 2500 tickers taking 2824.8267588615417 seconds
-2024-06-27 21:19:32,005 - INFO - Downloaded data for 2600 tickers taking 2938.1309354305267 seconds
-2024-06-27 21:21:25,338 - INFO - Downloaded data for 2700 tickers taking 3051.463371992111 seconds
-2024-06-27 21:23:17,599 - INFO - Downloaded data for 2800 tickers taking 3163.72527885437 seconds
-2024-06-27 21:25:09,977 - INFO - Downloaded data for 2900 tickers taking 3276.1029245853424 seconds
-2024-06-27 21:27:03,380 - INFO - Downloaded data for 3000 tickers taking 3389.505700111389 seconds
-2024-06-27 21:28:56,800 - INFO - Downloaded data for 3100 tickers taking 3502.9258024692535 seconds
-2024-06-27 21:30:50,474 - INFO - Downloaded data for 3200 tickers taking 3616.5993275642395 seconds
-2024-06-27 21:32:43,703 - INFO - Downloaded data for 3300 tickers taking 3729.8284113407135 seconds
-2024-06-27 21:34:36,549 - INFO - Downloaded data for 3400 tickers taking 3842.67466711998 seconds
-2024-06-27 21:36:29,322 - INFO - Downloaded data for 3500 tickers taking 3955.4476804733276 seconds
-2024-06-27 21:38:22,657 - INFO - Downloaded data for 3600 tickers taking 4068.7825379371643 seconds
-2024-06-27 21:40:16,371 - INFO - Downloaded data for 3700 tickers taking 4182.496792078018 seconds
-2024-06-27 21:42:09,716 - INFO - Downloaded data for 3800 tickers taking 4295.841374158859 seconds
-2024-06-27 21:44:02,079 - INFO - Downloaded data for 3900 tickers taking 4408.20520734787 seconds
-2024-06-27 21:45:54,765 - INFO - Downloaded data for 4000 tickers taking 4520.891011238098 seconds
-2024-06-27 21:47:47,516 - INFO - Downloaded data for 4100 tickers taking 4633.642119884491 seconds
-2024-06-27 21:49:40,321 - INFO - Downloaded data for 4200 tickers taking 4746.44717502594 seconds
-2024-06-27 21:51:33,276 - INFO - Downloaded data for 4300 tickers taking 4859.401436328888 seconds
-2024-06-27 21:53:26,408 - INFO - Downloaded data for 4400 tickers taking 4972.533915281296 seconds
-2024-06-27 21:55:19,604 - INFO - Downloaded data for 4500 tickers taking 5085.729471445084 seconds
-2024-06-27 21:57:12,504 - INFO - Downloaded data for 4600 tickers taking 5198.630042076111 seconds
-2024-06-27 21:59:05,403 - INFO - Downloaded data for 4700 tickers taking 5311.528349399567 seconds
-2024-06-27 22:00:58,669 - INFO - Downloaded data for 4800 tickers taking 5424.794307470322 seconds
-2024-06-27 22:02:52,644 - INFO - Downloaded data for 4900 tickers taking 5538.769608974457 seconds
-2024-06-27 22:04:45,681 - INFO - Downloaded data for 5000 tickers taking 5651.806496143341 seconds
-2024-06-27 22:06:39,366 - INFO - Downloaded data for 5100 tickers taking 5765.491390705109 seconds
-2024-06-27 22:07:54,555 - INFO - Data download completed.
-2024-06-28 18:39:03,226 - INFO - Downloaded data for 100 tickers taking 112.6155743598938 seconds
-2024-06-28 18:43:39,214 - WARNING - Skipping GEV: insufficient data or abnormal price.
-2024-06-28 18:44:19,306 - INFO - Total download time: 57.21 seconds
-2024-06-28 18:44:19,306 - INFO - Data download completed.
-2024-06-28 18:46:47,490 - INFO - Cleared old data files.
-2024-06-28 18:46:59,011 - INFO - Total download time: 11.50 seconds
-2024-06-28 18:46:59,012 - INFO - Data download completed.
-2024-06-28 18:51:10,989 - INFO - Total download time: 11.56 seconds
-2024-06-28 18:51:10,989 - INFO - Data download completed.
-2024-06-28 18:52:52,873 - INFO - Total download time: 11.45 seconds
-2024-06-28 18:52:52,874 - INFO - Data download completed. Downloaded 10 new files.
-2024-06-28 18:54:07,885 - INFO - Total download time: 11.60 seconds
-2024-06-28 18:54:07,885 - INFO - Data download completed. Downloaded 10 new files.
-2024-06-28 18:54:11,109 - INFO - Cleared old data files.
-2024-06-28 18:54:22,646 - INFO - Total download time: 11.52 seconds
-2024-06-28 18:54:22,646 - INFO - Data download completed. Downloaded 10 new files.
+2024-07-07 14:20:54,395 - ERROR - ['WRB-PG']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:54,395 - WARNING - Skipping WRB-PG: insufficient data or abnormal price.
+2024-07-07 14:20:55,473 - ERROR - 
+1 Failed download:
+2024-07-07 14:20:55,473 - ERROR - ['WRB-PH']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:55,473 - WARNING - Skipping WRB-PH: insufficient data or abnormal price.
+2024-07-07 14:20:56,535 - ERROR - 
+1 Failed download:
+2024-07-07 14:20:56,535 - ERROR - ['CELG-RI']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:56,535 - WARNING - Skipping CELG-RI: insufficient data or abnormal price.
+2024-07-07 14:20:57,612 - ERROR - 
+1 Failed download:
+2024-07-07 14:20:57,612 - ERROR - ['BC-PA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:57,612 - WARNING - Skipping BC-PA: insufficient data or abnormal price.
+2024-07-07 14:20:58,673 - ERROR - 
+1 Failed download:
+2024-07-07 14:20:58,673 - ERROR - ['BC-PB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:58,673 - WARNING - Skipping BC-PB: insufficient data or abnormal price.
+2024-07-07 14:20:59,734 - ERROR - 
+1 Failed download:
+2024-07-07 14:20:59,734 - ERROR - ['BC-PC']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:20:59,734 - WARNING - Skipping BC-PC: insufficient data or abnormal price.
+2024-07-07 14:21:01,927 - WARNING - Skipping AMJB: insufficient data or abnormal price.
+2024-07-07 14:21:13,170 - INFO - Downloaded data for 2800 tickers taking 3415.41 seconds
+2024-07-07 14:21:14,227 - WARNING - Skipping MTB-PJ: insufficient data or abnormal price.
+2024-07-07 14:21:19,753 - ERROR - 
+1 Failed download:
+2024-07-07 14:21:19,753 - ERROR - ['F-PB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:21:19,753 - WARNING - Skipping F-PB: insufficient data or abnormal price.
+2024-07-07 14:21:20,815 - ERROR - 
+1 Failed download:
+2024-07-07 14:21:20,815 - ERROR - ['F-PC']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:21:20,815 - WARNING - Skipping F-PC: insufficient data or abnormal price.
+2024-07-07 14:21:21,877 - ERROR - 
+1 Failed download:
+2024-07-07 14:21:21,877 - ERROR - ['F-PD']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:21:21,877 - WARNING - Skipping F-PD: insufficient data or abnormal price.
+2024-07-07 14:21:25,211 - WARNING - Skipping BOH-PB: insufficient data or abnormal price.
+2024-07-07 14:21:27,362 - ERROR - 
+1 Failed download:
+2024-07-07 14:21:27,362 - ERROR - ['LGL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:21:27,362 - WARNING - Skipping LGL-WT: insufficient data or abnormal price.
+2024-07-07 14:21:48,878 - WARNING - Skipping SCE-PM: insufficient data or abnormal price.
+2024-07-07 14:21:49,956 - WARNING - Skipping SCE-PN: insufficient data or abnormal price.
+2024-07-07 14:21:56,625 - ERROR - 
+1 Failed download:
+2024-07-07 14:21:56,625 - ERROR - ['TDW-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:21:56,625 - WARNING - Skipping TDW-WT: insufficient data or abnormal price.
+2024-07-07 14:21:59,970 - ERROR - 
+1 Failed download:
+2024-07-07 14:21:59,970 - ERROR - ['VAL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:21:59,970 - WARNING - Skipping VAL-WT: insufficient data or abnormal price.
+2024-07-07 14:22:02,166 - ERROR - 
+1 Failed download:
+2024-07-07 14:22:02,166 - ERROR - ['GL-PD']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:22:02,166 - WARNING - Skipping GL-PD: insufficient data or abnormal price.
+2024-07-07 14:22:04,325 - ERROR - 
+1 Failed download:
+2024-07-07 14:22:04,325 - ERROR - ['SFB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:22:04,325 - WARNING - Skipping SFB: insufficient data or abnormal price.
+2024-07-07 14:22:07,631 - WARNING - Skipping O-P: insufficient data or abnormal price.
+2024-07-07 14:22:12,024 - ERROR - 
+1 Failed download:
+2024-07-07 14:22:12,024 - ERROR - ['NEE-PN']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:22:12,024 - WARNING - Skipping NEE-PN: insufficient data or abnormal price.
+2024-07-07 14:22:14,192 - WARNING - Skipping NEE-PS: insufficient data or abnormal price.
+2024-07-07 14:22:16,387 - WARNING - Skipping CFG-PH: insufficient data or abnormal price.
+2024-07-07 14:22:19,723 - ERROR - 
+1 Failed download:
+2024-07-07 14:22:19,723 - ERROR - ['OXY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:22:19,723 - WARNING - Skipping OXY-WT: insufficient data or abnormal price.
+2024-07-07 14:22:36,539 - WARNING - Skipping KIM-PN: insufficient data or abnormal price.
+2024-07-07 14:22:55,458 - WARNING - Skipping ALB-PA: insufficient data or abnormal price.
+2024-07-07 14:23:08,921 - WARNING - Skipping CARD: insufficient data or abnormal price.
+2024-07-07 14:23:09,996 - WARNING - Skipping CARU: insufficient data or abnormal price.
+2024-07-07 14:23:20,069 - WARNING - Skipping JETD: insufficient data or abnormal price.
+2024-07-07 14:23:21,141 - WARNING - Skipping JETU: insufficient data or abnormal price.
+2024-07-07 14:23:30,045 - INFO - Downloaded data for 2900 tickers taking 3552.29 seconds
+2024-07-07 14:23:31,120 - WARNING - Skipping RWTN: insufficient data or abnormal price.
+2024-07-07 14:23:32,194 - WARNING - Skipping RWTO: insufficient data or abnormal price.
+2024-07-07 14:23:34,359 - ERROR - 
+1 Failed download:
+2024-07-07 14:23:34,359 - ERROR - ['IRS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:23:34,359 - WARNING - Skipping IRS-WT: insufficient data or abnormal price.
+2024-07-07 14:23:43,278 - WARNING - Skipping MGRE: insufficient data or abnormal price.
+2024-07-07 14:23:47,741 - WARNING - Skipping ELPC: insufficient data or abnormal price.
+2024-07-07 14:23:57,984 - WARNING - Skipping MFAN: insufficient data or abnormal price.
+2024-07-07 14:23:59,061 - WARNING - Skipping MFAO: insufficient data or abnormal price.
+2024-07-07 14:24:42,164 - WARNING - Skipping BANC-PF: insufficient data or abnormal price.
+2024-07-07 14:24:45,460 - ERROR - 
+1 Failed download:
+2024-07-07 14:24:45,460 - ERROR - ['CNO-PA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:24:45,460 - WARNING - Skipping CNO-PA: insufficient data or abnormal price.
+2024-07-07 14:24:54,371 - WARNING - Skipping ET-PI: insufficient data or abnormal price.
+2024-07-07 14:24:56,560 - ERROR - 
+1 Failed download:
+2024-07-07 14:24:56,560 - ERROR - ['GLU-PA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:24:56,560 - WARNING - Skipping GLU-PA: insufficient data or abnormal price.
+2024-07-07 14:25:06,671 - ERROR - 
+1 Failed download:
+2024-07-07 14:25:06,671 - ERROR - ['DSX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:25:06,671 - WARNING - Skipping DSX-WT: insufficient data or abnormal price.
+2024-07-07 14:25:35,921 - INFO - Downloaded data for 3000 tickers taking 3678.17 seconds
+2024-07-07 14:25:42,566 - WARNING - Skipping BIPJ: insufficient data or abnormal price.
+2024-07-07 14:25:45,861 - WARNING - Skipping CIMN: insufficient data or abnormal price.
+2024-07-07 14:25:50,259 - WARNING - Skipping EFC-PD: insufficient data or abnormal price.
+2024-07-07 14:25:51,337 - WARNING - Skipping EFC-PE: insufficient data or abnormal price.
+2024-07-07 14:26:11,344 - WARNING - Skipping PMTU: insufficient data or abnormal price.
+2024-07-07 14:26:20,417 - ERROR - 
+1 Failed download:
+2024-07-07 14:26:20,417 - ERROR - ['CVE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:26:20,417 - WARNING - Skipping CVE-WT: insufficient data or abnormal price.
+2024-07-07 14:26:35,975 - ERROR - 
+1 Failed download:
+2024-07-07 14:26:35,975 - ERROR - ['NXG-RT']: YFTzMissingError('$%ticker%: possibly delisted; No timezone found')
+2024-07-07 14:26:35,975 - WARNING - Skipping NXG-RT: insufficient data or abnormal price.
+2024-07-07 14:26:37,038 - WARNING - Skipping MITN: insufficient data or abnormal price.
+2024-07-07 14:26:38,115 - WARNING - Skipping MITP: insufficient data or abnormal price.
+2024-07-07 14:26:40,327 - WARNING - Skipping CCIA: insufficient data or abnormal price.
+2024-07-07 14:26:42,539 - WARNING - Skipping GNL-PD: insufficient data or abnormal price.
+2024-07-07 14:26:43,617 - WARNING - Skipping GNL-PE: insufficient data or abnormal price.
+2024-07-07 14:26:49,135 - WARNING - Skipping ATHS: insufficient data or abnormal price.
+2024-07-07 14:26:58,002 - WARNING - Skipping BEPJ: insufficient data or abnormal price.
+2024-07-07 14:27:01,316 - ERROR - 
+1 Failed download:
+2024-07-07 14:27:01,316 - ERROR - ['SBEV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:27:01,316 - WARNING - Skipping SBEV-WT: insufficient data or abnormal price.
+2024-07-07 14:27:20,320 - WARNING - Skipping SYF-PB: insufficient data or abnormal price.
+2024-07-07 14:27:22,504 - WARNING - Skipping ECCF: insufficient data or abnormal price.
+2024-07-07 14:27:29,762 - ERROR - 
+1 Failed download:
+2024-07-07 14:27:29,762 - ERROR - ['NSA-PB']: YFTzMissingError('$%ticker%: possibly delisted; No timezone found')
+2024-07-07 14:27:29,762 - WARNING - Skipping NSA-PB: insufficient data or abnormal price.
+2024-07-07 14:27:40,976 - WARNING - Skipping TRTN-PB: insufficient data or abnormal price.
+2024-07-07 14:27:42,049 - WARNING - Skipping TRTN-PC: insufficient data or abnormal price.
+2024-07-07 14:27:43,123 - WARNING - Skipping TRTN-PD: insufficient data or abnormal price.
+2024-07-07 14:27:44,201 - WARNING - Skipping TRTN-PE: insufficient data or abnormal price.
+2024-07-07 14:27:54,413 - INFO - Downloaded data for 3100 tickers taking 3816.66 seconds
+2024-07-07 14:27:59,892 - ERROR - 
+1 Failed download:
+2024-07-07 14:27:59,892 - ERROR - ['LMND-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:27:59,892 - WARNING - Skipping LMND-WT: insufficient data or abnormal price.
+2024-07-07 14:28:04,454 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:04,454 - ERROR - ['BMTX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:04,454 - WARNING - Skipping BMTX-WT: insufficient data or abnormal price.
+2024-07-07 14:28:06,624 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:06,624 - ERROR - ['BKSY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:06,624 - WARNING - Skipping BKSY-WT: insufficient data or abnormal price.
+2024-07-07 14:28:08,801 - WARNING - Skipping EICB: insufficient data or abnormal price.
+2024-07-07 14:28:09,861 - WARNING - Skipping EICC: insufficient data or abnormal price.
+2024-07-07 14:28:12,025 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:12,025 - ERROR - ['UWMC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:12,025 - WARNING - Skipping UWMC-WT: insufficient data or abnormal price.
+2024-07-07 14:28:14,194 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:14,194 - ERROR - ['AEVA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:14,194 - WARNING - Skipping AEVA-WT: insufficient data or abnormal price.
+2024-07-07 14:28:17,647 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:17,647 - ERROR - ['GB-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:17,647 - WARNING - Skipping GB-WT: insufficient data or abnormal price.
+2024-07-07 14:28:18,695 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:18,695 - ERROR - ['ETWO-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:18,695 - WARNING - Skipping ETWO-WT: insufficient data or abnormal price.
+2024-07-07 14:28:19,752 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:19,752 - ERROR - ['BFLY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:19,752 - WARNING - Skipping BFLY-WT: insufficient data or abnormal price.
+2024-07-07 14:28:20,800 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:20,800 - ERROR - ['SST-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:20,800 - WARNING - Skipping SST-WT: insufficient data or abnormal price.
+2024-07-07 14:28:21,860 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:21,860 - ERROR - ['ML-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:21,860 - WARNING - Skipping ML-WT: insufficient data or abnormal price.
+2024-07-07 14:28:22,921 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:22,921 - ERROR - ['NUVB-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:22,921 - WARNING - Skipping NUVB-WT: insufficient data or abnormal price.
+2024-07-07 14:28:23,973 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:23,973 - ERROR - ['RBOT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:23,973 - WARNING - Skipping RBOT-WT: insufficient data or abnormal price.
+2024-07-07 14:28:25,035 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:25,035 - ERROR - ['OUST-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:25,035 - WARNING - Skipping OUST-WT: insufficient data or abnormal price.
+2024-07-07 14:28:26,085 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:26,085 - ERROR - ['OUST-WTA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:26,085 - WARNING - Skipping OUST-WTA: insufficient data or abnormal price.
+2024-07-07 14:28:27,140 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:27,140 - ERROR - ['MKFG-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:27,140 - WARNING - Skipping MKFG-WT: insufficient data or abnormal price.
+2024-07-07 14:28:28,196 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:28,196 - ERROR - ['OPFI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:28,196 - WARNING - Skipping OPFI-WT: insufficient data or abnormal price.
+2024-07-07 14:28:29,249 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:29,249 - ERROR - ['SES-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:29,249 - WARNING - Skipping SES-WT: insufficient data or abnormal price.
+2024-07-07 14:28:30,296 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:30,296 - ERROR - ['GWH-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:30,296 - WARNING - Skipping GWH-WT: insufficient data or abnormal price.
+2024-07-07 14:28:31,358 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:31,358 - ERROR - ['BARK-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:31,358 - WARNING - Skipping BARK-WT: insufficient data or abnormal price.
+2024-07-07 14:28:32,419 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:32,419 - ERROR - ['RDW-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:32,419 - WARNING - Skipping RDW-WT: insufficient data or abnormal price.
+2024-07-07 14:28:33,480 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:33,480 - ERROR - ['JOBY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:33,480 - WARNING - Skipping JOBY-WT: insufficient data or abnormal price.
+2024-07-07 14:28:34,538 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:34,538 - ERROR - ['GRND-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:34,538 - WARNING - Skipping GRND-WT: insufficient data or abnormal price.
+2024-07-07 14:28:35,615 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:35,615 - ERROR - ['BKKT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:35,615 - WARNING - Skipping BKKT-WT: insufficient data or abnormal price.
+2024-07-07 14:28:36,676 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:36,676 - ERROR - ['HLLY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:36,676 - WARNING - Skipping HLLY-WT: insufficient data or abnormal price.
+2024-07-07 14:28:37,734 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:37,734 - ERROR - ['SMR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:37,734 - WARNING - Skipping SMR-WT: insufficient data or abnormal price.
+2024-07-07 14:28:39,879 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:39,879 - ERROR - ['NOTE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:39,879 - WARNING - Skipping NOTE-WT: insufficient data or abnormal price.
+2024-07-07 14:28:40,936 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:40,936 - ERROR - ['SKYH-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:40,936 - WARNING - Skipping SKYH-WT: insufficient data or abnormal price.
+2024-07-07 14:28:41,995 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:41,995 - ERROR - ['EVEX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:41,995 - WARNING - Skipping EVEX-WT: insufficient data or abnormal price.
+2024-07-07 14:28:43,055 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:43,055 - ERROR - ['ACHR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:43,055 - WARNING - Skipping ACHR-WT: insufficient data or abnormal price.
+2024-07-07 14:28:44,116 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:44,116 - ERROR - ['IONQ-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:44,116 - WARNING - Skipping IONQ-WT: insufficient data or abnormal price.
+2024-07-07 14:28:45,176 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:45,176 - ERROR - ['VLD-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:45,176 - WARNING - Skipping VLD-WT: insufficient data or abnormal price.
+2024-07-07 14:28:46,234 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:46,234 - ERROR - ['HIPO-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:46,234 - WARNING - Skipping HIPO-WT: insufficient data or abnormal price.
+2024-07-07 14:28:47,295 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:47,295 - ERROR - ['FOA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:47,295 - WARNING - Skipping FOA-WT: insufficient data or abnormal price.
+2024-07-07 14:28:48,346 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:48,346 - ERROR - ['DNA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:48,346 - WARNING - Skipping DNA-WT: insufficient data or abnormal price.
+2024-07-07 14:28:50,484 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:50,484 - ERROR - ['BLUA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:50,484 - WARNING - Skipping BLUA-WT: insufficient data or abnormal price.
+2024-07-07 14:28:52,611 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:52,611 - ERROR - ['BITE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:52,611 - WARNING - Skipping BITE-WT: insufficient data or abnormal price.
+2024-07-07 14:28:54,778 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:54,778 - ERROR - ['JWSM-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:54,778 - WARNING - Skipping JWSM-WT: insufficient data or abnormal price.
+2024-07-07 14:28:55,837 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:55,845 - ERROR - ['SOC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:55,845 - WARNING - Skipping SOC-WT: insufficient data or abnormal price.
+2024-07-07 14:28:56,899 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:56,899 - ERROR - ['PSFE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:56,899 - WARNING - Skipping PSFE-WT: insufficient data or abnormal price.
+2024-07-07 14:28:57,948 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:57,948 - ERROR - ['GROY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:57,948 - WARNING - Skipping GROY-WT: insufficient data or abnormal price.
+2024-07-07 14:28:59,007 - ERROR - 
+1 Failed download:
+2024-07-07 14:28:59,007 - ERROR - ['LEV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:28:59,007 - WARNING - Skipping LEV-WT: insufficient data or abnormal price.
+2024-07-07 14:29:00,055 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:00,055 - ERROR - ['LEV-WTA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:00,055 - WARNING - Skipping LEV-WTA: insufficient data or abnormal price.
+2024-07-07 14:29:01,103 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:01,103 - ERROR - ['CTV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:01,103 - WARNING - Skipping CTV-WT: insufficient data or abnormal price.
+2024-07-07 14:29:02,161 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:02,161 - ERROR - ['LLAP-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:02,161 - WARNING - Skipping LLAP-WT: insufficient data or abnormal price.
+2024-07-07 14:29:03,218 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:03,218 - ERROR - ['PL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:03,218 - WARNING - Skipping PL-WT: insufficient data or abnormal price.
+2024-07-07 14:29:04,277 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:04,277 - ERROR - ['BBAI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:04,277 - WARNING - Skipping BBAI-WT: insufficient data or abnormal price.
+2024-07-07 14:29:05,339 - WARNING - Skipping BNRE-A: insufficient data or abnormal price.
+2024-07-07 14:29:06,397 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:06,397 - ERROR - ['HGTY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:06,397 - WARNING - Skipping HGTY-WT: insufficient data or abnormal price.
+2024-07-07 14:29:07,457 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:07,457 - ERROR - ['HNRA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:07,457 - WARNING - Skipping HNRA-WT: insufficient data or abnormal price.
+2024-07-07 14:29:08,532 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:08,532 - ERROR - ['FLYX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:08,532 - WARNING - Skipping FLYX-WT: insufficient data or abnormal price.
+2024-07-07 14:29:09,593 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:09,593 - ERROR - ['AMBP-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:09,593 - WARNING - Skipping AMBP-WT: insufficient data or abnormal price.
+2024-07-07 14:29:10,648 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:10,649 - ERROR - ['NPWR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:10,649 - WARNING - Skipping NPWR-WT: insufficient data or abnormal price.
+2024-07-07 14:29:12,797 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:12,797 - ERROR - ['TCOA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:12,797 - WARNING - Skipping TCOA-WT: insufficient data or abnormal price.
+2024-07-07 14:29:14,943 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:14,943 - ERROR - ['SEDA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:14,943 - WARNING - Skipping SEDA-WT: insufficient data or abnormal price.
+2024-07-07 14:29:15,995 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:15,995 - ERROR - ['PSQH-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:15,995 - WARNING - Skipping PSQH-WT: insufficient data or abnormal price.
+2024-07-07 14:29:18,129 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:18,129 - ERROR - ['TRTL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:18,129 - WARNING - Skipping TRTL-WT: insufficient data or abnormal price.
+2024-07-07 14:29:20,267 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:20,267 - ERROR - ['LCW-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:20,267 - WARNING - Skipping LCW-WT: insufficient data or abnormal price.
+2024-07-07 14:29:22,420 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:22,420 - ERROR - ['PHYT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:22,420 - WARNING - Skipping PHYT-WT: insufficient data or abnormal price.
+2024-07-07 14:29:23,496 - WARNING - Skipping VCXB-UN: insufficient data or abnormal price.
+2024-07-07 14:29:25,639 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:25,639 - ERROR - ['NFYS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:25,639 - WARNING - Skipping NFYS-WT: insufficient data or abnormal price.
+2024-07-07 14:29:26,711 - WARNING - Skipping CNDA-UN: insufficient data or abnormal price.
+2024-07-07 14:29:27,769 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:27,769 - ERROR - ['CNDA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:27,769 - WARNING - Skipping CNDA-WT: insufficient data or abnormal price.
+2024-07-07 14:29:28,842 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:28,842 - ERROR - ['GCTS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:28,842 - WARNING - Skipping GCTS-WT: insufficient data or abnormal price.
+2024-07-07 14:29:29,912 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:29,912 - ERROR - ['DC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:29,912 - WARNING - Skipping DC-WT: insufficient data or abnormal price.
+2024-07-07 14:29:30,970 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:30,970 - ERROR - ['PNST-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:30,970 - WARNING - Skipping PNST-WT: insufficient data or abnormal price.
+2024-07-07 14:29:33,111 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:33,111 - ERROR - ['TRIS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:33,111 - WARNING - Skipping TRIS-WT: insufficient data or abnormal price.
+2024-07-07 14:29:34,171 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:34,171 - ERROR - ['SOAR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:34,171 - WARNING - Skipping SOAR-WT: insufficient data or abnormal price.
+2024-07-07 14:29:36,311 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:36,311 - ERROR - ['AACT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:36,311 - WARNING - Skipping AACT-WT: insufficient data or abnormal price.
+2024-07-07 14:29:37,401 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:37,401 - ERROR - ['CLDI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:37,401 - WARNING - Skipping CLDI-WT: insufficient data or abnormal price.
+2024-07-07 14:29:38,473 - WARNING - Skipping APOS: insufficient data or abnormal price.
+2024-07-07 14:29:40,609 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:40,609 - ERROR - ['SBXC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:40,609 - WARNING - Skipping SBXC-WT: insufficient data or abnormal price.
+2024-07-07 14:29:42,744 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:42,744 - ERROR - ['RRAC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:42,744 - WARNING - Skipping RRAC-WT: insufficient data or abnormal price.
+2024-07-07 14:29:43,806 - WARNING - Skipping EVE-UN: insufficient data or abnormal price.
+2024-07-07 14:29:44,882 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:44,882 - ERROR - ['EVE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:44,882 - WARNING - Skipping EVE-WT: insufficient data or abnormal price.
+2024-07-07 14:29:47,018 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:47,018 - ERROR - ['VLN-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:47,018 - WARNING - Skipping VLN-WT: insufficient data or abnormal price.
+2024-07-07 14:29:49,162 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:49,162 - ERROR - ['MNTN-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:49,162 - WARNING - Skipping MNTN-WT: insufficient data or abnormal price.
+2024-07-07 14:29:50,229 - WARNING - Skipping ADRT-UN: insufficient data or abnormal price.
+2024-07-07 14:29:52,376 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:52,376 - ERROR - ['KCGI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:52,376 - WARNING - Skipping KCGI-WT: insufficient data or abnormal price.
+2024-07-07 14:29:53,438 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:53,438 - ERROR - ['WBX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:53,438 - WARNING - Skipping WBX-WT: insufficient data or abnormal price.
+2024-07-07 14:29:54,496 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:54,496 - ERROR - ['EVTL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:54,496 - WARNING - Skipping EVTL-WT: insufficient data or abnormal price.
+2024-07-07 14:29:56,621 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:56,621 - ERROR - ['RCFA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:56,621 - WARNING - Skipping RCFA-WT: insufficient data or abnormal price.
+2024-07-07 14:29:58,758 - ERROR - 
+1 Failed download:
+2024-07-07 14:29:58,758 - ERROR - ['WEL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:29:58,758 - WARNING - Skipping WEL-WT: insufficient data or abnormal price.
+2024-07-07 14:30:00,919 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:00,919 - ERROR - ['BFAC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:00,919 - WARNING - Skipping BFAC-WT: insufficient data or abnormal price.
+2024-07-07 14:30:01,990 - WARNING - Skipping ATEK-UN: insufficient data or abnormal price.
+2024-07-07 14:30:03,047 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:03,047 - ERROR - ['ATEK-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:03,047 - WARNING - Skipping ATEK-WT: insufficient data or abnormal price.
+2024-07-07 14:30:04,106 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:04,106 - ERROR - ['SLND-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:04,106 - WARNING - Skipping SLND-WT: insufficient data or abnormal price.
+2024-07-07 14:30:05,156 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:05,156 - ERROR - ['NE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:05,156 - WARNING - Skipping NE-WT: insufficient data or abnormal price.
+2024-07-07 14:30:06,205 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:06,205 - ERROR - ['NE-WTA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:06,205 - WARNING - Skipping NE-WTA: insufficient data or abnormal price.
+2024-07-07 14:30:07,263 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:07,263 - ERROR - ['LVWR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:07,263 - WARNING - Skipping LVWR-WT: insufficient data or abnormal price.
+2024-07-07 14:30:08,337 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:08,337 - ERROR - ['AMPX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:08,337 - WARNING - Skipping AMPX-WT: insufficient data or abnormal price.
+2024-07-07 14:30:09,397 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:09,397 - ERROR - ['PERF-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:09,397 - WARNING - Skipping PERF-WT: insufficient data or abnormal price.
+2024-07-07 14:30:10,451 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:10,451 - ERROR - ['QBTS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:10,451 - WARNING - Skipping QBTS-WT: insufficient data or abnormal price.
+2024-07-07 14:30:11,522 - WARNING - Skipping DMYY-UN: insufficient data or abnormal price.
+2024-07-07 14:30:12,573 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:12,573 - ERROR - ['DMYY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:12,573 - WARNING - Skipping DMYY-WT: insufficient data or abnormal price.
+2024-07-07 14:30:13,649 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:13,649 - ERROR - ['LANV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:13,649 - WARNING - Skipping LANV-WT: insufficient data or abnormal price.
+2024-07-07 14:30:14,710 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:14,710 - ERROR - ['MRDB-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:14,710 - WARNING - Skipping MRDB-WT: insufficient data or abnormal price.
+2024-07-07 14:30:15,786 - WARNING - Skipping FGN: insufficient data or abnormal price.
+2024-07-07 14:30:16,862 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:16,862 - ERROR - ['AMBI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:16,862 - WARNING - Skipping AMBI-WT: insufficient data or abnormal price.
+2024-07-07 14:30:17,921 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:17,921 - ERROR - ['LZM-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:17,921 - WARNING - Skipping LZM-WT: insufficient data or abnormal price.
+2024-07-07 14:30:18,993 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:19,002 - ERROR - ['ALUR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:19,002 - WARNING - Skipping ALUR-WT: insufficient data or abnormal price.
+2024-07-07 14:30:20,070 - WARNING - Skipping HYAC-UN: insufficient data or abnormal price.
+2024-07-07 14:30:21,132 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:21,132 - ERROR - ['HYAC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:21,132 - WARNING - Skipping HYAC-WT: insufficient data or abnormal price.
+2024-07-07 14:30:22,190 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:22,190 - ERROR - ['FREY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:22,190 - WARNING - Skipping FREY-WT: insufficient data or abnormal price.
+2024-07-07 14:30:23,263 - WARNING - Skipping CLBR-UN: insufficient data or abnormal price.
+2024-07-07 14:30:24,319 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:24,319 - ERROR - ['CLBR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:24,319 - WARNING - Skipping CLBR-WT: insufficient data or abnormal price.
+2024-07-07 14:30:25,392 - WARNING - Skipping LEGT-UN: insufficient data or abnormal price.
+2024-07-07 14:30:26,448 - ERROR - 
+1 Failed download:
+2024-07-07 14:30:26,448 - ERROR - ['LEGT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-07-07 14:30:26,448 - WARNING - Skipping LEGT-WT: insufficient data or abnormal price.
+2024-07-07 14:30:27,513 - WARNING - Skipping CHEB-UN: insufficient data or abnormal price.
+2024-07-07 14:30:28,513 - INFO - Total download time: 3970.76 seconds
+2024-07-07 14:30:28,513 - INFO - Data download completed. Downloaded 3133 new files.
+2024-07-07 14:30:28,513 - INFO - Total execution time: 3970.76 seconds
+2024-07-08 20:30:34,205 - INFO - Cleared old data files.
+2024-07-08 20:32:33,114 - INFO - Downloaded data for 100 tickers taking 118.91 seconds
+2024-07-08 20:34:29,030 - INFO - Downloaded data for 200 tickers taking 234.82 seconds
+2024-07-08 20:36:26,396 - INFO - Downloaded data for 300 tickers taking 352.19 seconds
+2024-07-08 20:38:23,588 - INFO - Downloaded data for 400 tickers taking 469.38 seconds
+2024-07-08 20:40:20,991 - INFO - Downloaded data for 500 tickers taking 586.78 seconds
+2024-07-08 20:42:18,334 - INFO - Downloaded data for 600 tickers taking 704.13 seconds
+2024-07-08 20:44:16,104 - INFO - Downloaded data for 700 tickers taking 821.90 seconds
+2024-07-08 20:46:14,633 - INFO - Downloaded data for 800 tickers taking 940.43 seconds
+2024-07-08 20:48:10,872 - INFO - Downloaded data for 900 tickers taking 1056.66 seconds
+2024-07-08 20:50:08,761 - INFO - Downloaded data for 1000 tickers taking 1174.55 seconds
+2024-07-08 20:52:06,351 - INFO - Downloaded data for 1100 tickers taking 1292.14 seconds
+2024-07-08 20:54:03,779 - INFO - Downloaded data for 1200 tickers taking 1409.57 seconds
+2024-07-08 20:56:01,435 - INFO - Downloaded data for 1300 tickers taking 1527.23 seconds
+2024-07-08 20:57:59,792 - INFO - Downloaded data for 1400 tickers taking 1645.59 seconds
+2024-07-08 20:59:57,234 - INFO - Downloaded data for 1500 tickers taking 1763.03 seconds
+2024-07-08 21:01:54,225 - INFO - Downloaded data for 1600 tickers taking 1880.02 seconds
+2024-07-08 21:03:52,710 - INFO - Downloaded data for 1700 tickers taking 1998.50 seconds
+2024-07-08 21:05:51,381 - INFO - Downloaded data for 1800 tickers taking 2117.17 seconds
+2024-07-08 21:07:49,477 - INFO - Downloaded data for 1900 tickers taking 2235.27 seconds
+2024-07-08 21:09:47,767 - INFO - Downloaded data for 2000 tickers taking 2353.56 seconds
+2024-07-08 21:11:45,652 - INFO - Downloaded data for 2100 tickers taking 2471.44 seconds
+2024-07-08 21:13:43,073 - INFO - Downloaded data for 2200 tickers taking 2588.87 seconds
+2024-07-08 21:15:39,093 - INFO - Downloaded data for 2300 tickers taking 2704.89 seconds
+2024-07-08 21:17:35,323 - INFO - Downloaded data for 2400 tickers taking 2821.12 seconds
+2024-07-08 21:19:31,891 - INFO - Downloaded data for 2500 tickers taking 2937.68 seconds
+2024-07-08 21:21:28,824 - INFO - Downloaded data for 2600 tickers taking 3054.62 seconds
+2024-07-08 21:23:26,379 - INFO - Downloaded data for 2700 tickers taking 3172.17 seconds
+2024-07-08 21:25:24,473 - INFO - Downloaded data for 2800 tickers taking 3290.27 seconds
+2024-07-08 21:27:21,419 - INFO - Downloaded data for 2900 tickers taking 3407.21 seconds
+2024-07-08 21:28:57,062 - INFO - Total download time: 3502.86 seconds
+2024-07-08 21:28:57,062 - INFO - Data download completed. Downloaded 2981 new files.
+2024-07-08 21:28:57,062 - INFO - Total execution time: 58.38 minutes
+2024-07-09 20:30:33,928 - INFO - Cleared old data files.
+2024-07-09 20:32:31,355 - INFO - Downloaded data for 100 tickers taking 117.42 seconds
+2024-07-09 20:34:28,081 - INFO - Downloaded data for 200 tickers taking 234.15 seconds
+2024-07-09 20:52:07,528 - INFO - Downloaded data for 300 tickers taking 1293.60 seconds
+2024-07-09 20:55:31,100 - INFO - Downloaded data for 400 tickers taking 1497.17 seconds
+2024-07-09 20:57:28,125 - INFO - Downloaded data for 500 tickers taking 1614.19 seconds
+2024-07-09 20:59:26,041 - INFO - Downloaded data for 600 tickers taking 1732.11 seconds
+2024-07-09 21:01:23,645 - INFO - Downloaded data for 700 tickers taking 1849.71 seconds
+2024-07-09 21:03:21,742 - INFO - Downloaded data for 800 tickers taking 1967.81 seconds
+2024-07-09 21:05:18,168 - INFO - Downloaded data for 900 tickers taking 2084.24 seconds
+2024-07-09 21:07:16,559 - INFO - Downloaded data for 1000 tickers taking 2202.63 seconds
+2024-07-09 21:09:35,514 - INFO - Downloaded data for 1100 tickers taking 2341.58 seconds
+2024-07-09 21:11:34,679 - INFO - Downloaded data for 1200 tickers taking 2460.75 seconds
+2024-07-09 21:13:34,525 - INFO - Downloaded data for 1300 tickers taking 2580.59 seconds
+2024-07-09 21:15:34,497 - INFO - Downloaded data for 1400 tickers taking 2700.57 seconds
+2024-07-09 21:17:32,082 - INFO - Downloaded data for 1500 tickers taking 2818.15 seconds
+2024-07-09 21:19:30,479 - INFO - Downloaded data for 1600 tickers taking 2936.55 seconds
+2024-07-09 21:21:28,200 - INFO - Downloaded data for 1700 tickers taking 3054.27 seconds
+2024-07-09 21:23:35,463 - INFO - Downloaded data for 1800 tickers taking 3181.53 seconds
+2024-07-09 21:25:53,160 - INFO - Downloaded data for 1900 tickers taking 3319.23 seconds
+2024-07-09 21:28:12,096 - INFO - Downloaded data for 2000 tickers taking 3458.17 seconds
+2024-07-09 21:30:09,650 - INFO - Downloaded data for 2100 tickers taking 3575.72 seconds
+2024-07-09 21:32:06,052 - INFO - Downloaded data for 2200 tickers taking 3692.12 seconds
+2024-07-09 21:34:01,657 - INFO - Downloaded data for 2300 tickers taking 3807.73 seconds
+2024-07-09 21:35:58,155 - INFO - Downloaded data for 2400 tickers taking 3924.22 seconds
+2024-07-09 21:37:54,299 - INFO - Downloaded data for 2500 tickers taking 4040.37 seconds
+2024-07-09 21:39:51,858 - INFO - Downloaded data for 2600 tickers taking 4157.93 seconds
+2024-07-09 21:41:49,724 - INFO - Downloaded data for 2700 tickers taking 4275.79 seconds
+2024-07-09 21:43:47,317 - INFO - Downloaded data for 2800 tickers taking 4393.39 seconds
+2024-07-09 21:45:44,826 - INFO - Downloaded data for 2900 tickers taking 4510.89 seconds
+2024-07-09 21:47:18,286 - INFO - Total download time: 4604.36 seconds
+2024-07-09 21:47:18,286 - INFO - Data download completed. Downloaded 2979 new files.
+2024-07-09 21:47:18,286 - INFO - Total execution time: 76.74 minutes
+2024-07-10 20:30:33,514 - INFO - Cleared old data files.
+2024-07-10 20:32:29,571 - INFO - Downloaded data for 100 tickers taking 116.04 seconds
+2024-07-10 20:34:25,759 - INFO - Downloaded data for 200 tickers taking 232.23 seconds
+2024-07-10 20:36:22,344 - INFO - Downloaded data for 300 tickers taking 348.82 seconds
+2024-07-10 20:38:19,095 - INFO - Downloaded data for 400 tickers taking 465.57 seconds
+2024-07-10 20:40:16,734 - INFO - Downloaded data for 500 tickers taking 583.21 seconds
+2024-07-10 20:42:13,925 - INFO - Downloaded data for 600 tickers taking 700.40 seconds
+2024-07-10 20:44:11,221 - INFO - Downloaded data for 700 tickers taking 817.69 seconds
+2024-07-10 20:46:09,225 - INFO - Downloaded data for 800 tickers taking 935.70 seconds
+2024-07-10 20:48:05,422 - INFO - Downloaded data for 900 tickers taking 1051.90 seconds
+2024-07-10 20:50:03,151 - INFO - Downloaded data for 1000 tickers taking 1169.62 seconds
+2024-07-10 20:52:00,420 - INFO - Downloaded data for 1100 tickers taking 1286.89 seconds
+2024-07-10 20:53:58,015 - INFO - Downloaded data for 1200 tickers taking 1404.49 seconds
+2024-07-10 20:55:55,884 - INFO - Downloaded data for 1300 tickers taking 1522.36 seconds
+2024-07-10 20:57:53,820 - INFO - Downloaded data for 1400 tickers taking 1640.29 seconds
+2024-07-10 20:59:51,420 - INFO - Downloaded data for 1500 tickers taking 1757.89 seconds
+2024-07-10 21:01:48,615 - INFO - Downloaded data for 1600 tickers taking 1875.09 seconds
+2024-07-10 21:03:46,704 - INFO - Downloaded data for 1700 tickers taking 1993.18 seconds
+2024-07-10 21:05:44,639 - INFO - Downloaded data for 1800 tickers taking 2111.11 seconds
+2024-07-10 21:07:43,059 - INFO - Downloaded data for 1900 tickers taking 2229.53 seconds
+2024-07-10 21:09:41,605 - INFO - Downloaded data for 2000 tickers taking 2348.08 seconds
+2024-07-10 21:11:39,223 - INFO - Downloaded data for 2100 tickers taking 2465.70 seconds
+2024-07-10 21:13:36,427 - INFO - Downloaded data for 2200 tickers taking 2582.90 seconds
+2024-07-10 21:15:32,576 - INFO - Downloaded data for 2300 tickers taking 2699.05 seconds
+2024-07-10 21:17:28,637 - INFO - Downloaded data for 2400 tickers taking 2815.11 seconds
+2024-07-10 21:19:24,754 - INFO - Downloaded data for 2500 tickers taking 2931.23 seconds
+2024-07-10 21:21:22,596 - INFO - Downloaded data for 2600 tickers taking 3049.07 seconds
+2024-07-10 21:23:21,052 - INFO - Downloaded data for 2700 tickers taking 3167.53 seconds
+2024-07-10 21:25:18,356 - INFO - Downloaded data for 2800 tickers taking 3284.83 seconds
+2024-07-10 21:27:16,693 - INFO - Downloaded data for 2900 tickers taking 3403.17 seconds
+2024-07-10 21:28:50,457 - INFO - Total download time: 3496.93 seconds
+2024-07-10 21:28:50,457 - INFO - Data download completed. Downloaded 2979 new files.
+2024-07-10 21:28:50,457 - INFO - Total execution time: 58.28 minutes
+2024-07-11 21:21:14,089 - INFO - Cleared old data files.
+2024-07-11 21:23:12,612 - INFO - Downloaded data for 100 tickers taking 118.52 seconds
+2024-07-11 21:25:08,919 - INFO - Downloaded data for 200 tickers taking 234.83 seconds
+2024-07-11 21:27:05,977 - INFO - Downloaded data for 300 tickers taking 351.89 seconds
+2024-07-11 21:29:03,104 - INFO - Downloaded data for 400 tickers taking 469.01 seconds
+2024-07-11 21:31:00,331 - INFO - Downloaded data for 500 tickers taking 586.24 seconds
+2024-07-11 21:32:57,983 - INFO - Downloaded data for 600 tickers taking 703.89 seconds
+2024-07-11 21:34:55,368 - INFO - Downloaded data for 700 tickers taking 821.28 seconds
+2024-07-11 21:36:53,547 - INFO - Downloaded data for 800 tickers taking 939.45 seconds
+2024-07-11 21:38:49,987 - INFO - Downloaded data for 900 tickers taking 1055.89 seconds
+2024-07-11 21:40:48,692 - INFO - Downloaded data for 1000 tickers taking 1174.60 seconds
+2024-07-11 21:42:46,673 - INFO - Downloaded data for 1100 tickers taking 1292.58 seconds
+2024-07-11 21:44:44,298 - INFO - Downloaded data for 1200 tickers taking 1410.21 seconds
+2024-07-11 21:46:41,805 - INFO - Downloaded data for 1300 tickers taking 1527.71 seconds
+2024-07-11 21:48:40,054 - INFO - Downloaded data for 1400 tickers taking 1645.96 seconds
+2024-07-11 21:50:37,573 - INFO - Downloaded data for 1500 tickers taking 1763.48 seconds
+2024-07-11 21:52:34,397 - INFO - Downloaded data for 1600 tickers taking 1880.31 seconds
+2024-07-11 21:54:32,518 - INFO - Downloaded data for 1700 tickers taking 1998.43 seconds
+2024-07-11 21:56:30,945 - INFO - Downloaded data for 1800 tickers taking 2116.85 seconds
+2024-07-11 21:58:29,504 - INFO - Downloaded data for 1900 tickers taking 2235.41 seconds
+2024-07-11 22:00:27,865 - INFO - Downloaded data for 2000 tickers taking 2353.77 seconds
+2024-07-11 22:02:24,901 - INFO - Downloaded data for 2100 tickers taking 2470.81 seconds
+2024-07-11 22:04:22,322 - INFO - Downloaded data for 2200 tickers taking 2588.23 seconds
+2024-07-11 22:06:19,402 - INFO - Downloaded data for 2300 tickers taking 2705.31 seconds
+2024-07-11 22:08:15,884 - INFO - Downloaded data for 2400 tickers taking 2821.79 seconds
+2024-07-11 22:10:12,017 - INFO - Downloaded data for 2500 tickers taking 2937.93 seconds
+2024-07-11 22:12:09,597 - INFO - Downloaded data for 2600 tickers taking 3055.50 seconds
+2024-07-11 22:14:08,627 - INFO - Downloaded data for 2700 tickers taking 3174.54 seconds
+2024-07-11 22:16:06,659 - INFO - Downloaded data for 2800 tickers taking 3292.57 seconds
+2024-07-11 22:18:04,000 - INFO - Downloaded data for 2900 tickers taking 3409.91 seconds
+2024-07-11 22:19:38,394 - INFO - Total download time: 3504.30 seconds
+2024-07-11 22:19:38,394 - INFO - Data download completed. Downloaded 2979 new files.
+2024-07-11 22:19:38,394 - INFO - Total execution time: 58.41 minutes
