@@ -50,7 +50,7 @@ This project is a comprehensive stock market analysis and trading system that co
 
 ## Usage
 
-- **Good old bash**: Currently the scrip is run as a series python files task sceduled and called with bash.
+- **Good old bash**: Currently the script is run as a series python files task sceduled and called with bash.
 
 ## Future Enhancements
 
@@ -68,4 +68,4 @@ This software is for educational and research purposes only. It is not intended 
 
 ## License
 
-- **The Old Secret Mission Cia Edition**: The license is veyr fun 10/10 recommend usting it for projects
+- **The Old Secret Mission Cia Edition**: The license is very fun 10/10 recommend usting it for projects
