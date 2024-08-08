@@ -777,6 +777,90 @@ def calculate_emv(df, period=14):
     return df
 
 
+
+
+def safe_divide(a, b, fill_value=0):
+    return np.divide(a, b, out=np.full_like(a, fill_value), where=b!=0)
+
+def calculate_genetic_indicators(df):
+    # Create lagged versions of high, low, volume, and open
+    for i in range(1, 8):
+        df[f'High_Lag{i}'] = df['High'].shift(i)
+        df[f'Low_Lag{i}'] = df['Low'].shift(i)
+        df[f'Volume_Lag{i}'] = df['Volume'].shift(i)
+        df[f'Open_Lag{i}'] = df['Open'].shift(i)
+
+    # Add epsilon to lagged versions
+    epsilon = 1e-6
+    for i in range(1, 8):
+        df[f'High_Lag{i}'] += epsilon
+        df[f'Low_Lag{i}'] += epsilon
+        df[f'Volume_Lag{i}'] += epsilon
+        df[f'Open_Lag{i}'] += epsilon
+
+    # 1. Momentum Confluence Indicator
+    df['G_Momentum_Confluence_Indicator'] = safe_divide(df['High_Lag2'], df['High_Lag2'] * df['Open'])
+    df['G_Price_Gap_Analyzer'] = safe_divide(np.log(df['Open_Lag2']), df['High_Lag1'])
+    df['G_Triple_High_Trend_Indicator'] = safe_divide(df['High_Lag2'], df['High_Lag1'] * df['High'])
+    df['G_Cyclical_Price_Oscillator'] = safe_divide(
+        safe_divide(np.cos(safe_divide(df['High_Lag2'], df['High'])), df['High_Lag1']),
+        np.sqrt(df['Open_Lag1'])
+    )
+    df['G_Volume_Adjusted_Price_Indicator'] = safe_divide(df['High_Lag2'], safe_divide(df['Volume'], df['Low_Lag1']))
+    df['G_Adjusted_Close_Tracker'] = df['Adj Close']
+    df['G_Volume_Weighted_High_Ratio'] = safe_divide(safe_divide(df['High'], df['High_Lag1']), np.log1p(df['Volume']))
+    df['G_High_Price_Momentum_Indicator'] = safe_divide(df['High'], (df['High_Lag1'] + df['High_Lag2']) / 2)
+    df['G_Advanced_Trend_Synthesizer'] = (
+        np.log(safe_divide(df['High_Lag1'] + df['High_Lag5'], df['High_Lag1'])) *
+        np.abs(np.log(safe_divide(df['High_Lag2'], df['High_Lag2'])) - df['High_Lag7']) *
+        safe_divide(df['Open_Lag2'], df['Close'])
+    )
+    df['G_Price_Volatility_Gauge'] = safe_divide(np.abs(df['High_Lag2'] - df['High']), df['Open'])
+    df['G_Multi_Point_Price_Analyzer'] = np.abs(
+        safe_divide(
+            safe_divide(np.log(safe_divide(df['High'], df['High_Lag2'])), safe_divide(df['Close'], df['High_Lag2'])),
+            safe_divide(df['Close'], df['High_Lag2']) * safe_divide(df['Close'], df['High_Lag1'])
+        )
+    )
+
+    df['G_Logarithmic_Trend_Detector'] = -np.log(safe_divide(df['High_Lag2'], df['High_Lag4']))
+    df['G_Complex_Price_Pattern_Indicator'] = np.log(
+        safe_divide(
+            np.sqrt(np.sqrt(np.sqrt(np.sqrt(df['High_Lag7'] * df['High_Lag4'])))),
+            df['Close']
+        )
+    )
+
+    # 14. Log-Scaled Price Ratio
+    df['G_Log_Scaled_Price_Ratio'] = np.log(safe_divide(df['High'], (df['High_Lag1'] + df['High_Lag2']) / 2))
+
+    # 16. Volume-Price Impact Indicator
+    df['G_Volume_Price_Impact_Indicator'] = safe_divide(
+        -df['High_Lag1'] + safe_divide(df['High_Lag3'], df['Close']),
+        df['Volume']
+    )
+
+    # 17. Volume Trend Analyzer
+    df['G_Volume_Trend_Analyzer'] = np.log(safe_divide(df['Volume'], df['Volume_Lag1']))
+
+    # 18. G-Price-Open Ratio Indicator
+    df['G_Price_Open_Ratio_Indicator'] = safe_divide(
+        safe_divide(np.log(safe_divide(df['High_Lag2'], df['High'])), safe_divide(df['High'], df['Open_Lag2'])),
+        safe_divide(df['High'], df['Open_Lag2'])
+    )
+
+    # Drop all lagged columns
+    for i in range(1, 8):
+        df = df.drop(columns=[f'High_Lag{i}', f'Low_Lag{i}', f'Volume_Lag{i}', f'Open_Lag{i}'])
+
+    return df
+
+
+
+
+
+
+
 def indicators(df):
     df['Close'] = df['Close'].ffill()
     df['High'] = df['High'].ffill()
@@ -802,7 +886,7 @@ def indicators(df):
     avg_loss = loss.rolling(window=14, min_periods=1).mean()
     rs = avg_gain / avg_loss
     df['RSI'] = 100 - (100 / (1 + rs))
-    
+    df = calculate_genetic_indicators(df)
     calculate_apz(df)
     df = calculate_parabolic_SAR(df)
     df = ATR_Based_Adaptive_Trend_Channels(df)

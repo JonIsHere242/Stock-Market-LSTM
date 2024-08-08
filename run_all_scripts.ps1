@@ -21,7 +21,7 @@ try {
         @{Name="Bulk Price Downloader"; File="2__BulkPriceDownloader.py"; Args=@("--ClearOldData", "--RefreshMode")},
         @{Name="Indicators script"; File="3__Indicators.py"; Args=@()},
         @{Name="Predictor script"; File="4__Predictor.py"; Args=@("--predict")},
-        @{Name="Nightly broker script"; File="7.2__NightlyBroker.py"; Args=@("--RunStocks", "1")}
+        @{Name="Nightly broker script"; File="5__NightlyBroker.py"; Args=@("--RunStocks", "1")}
     )
 
     foreach ($script in $scripts) {

@@ -36,7 +36,7 @@ config = {
     "file_selection_percentage": args.runpercent,
     "target_column": "percent_change_Close",
 
-    "n_estimators": 64,  # Increased to 64
+    "n_estimators": 256,  # Increased to 64
     "criterion": "entropy",
     "max_depth": 15,  # Increased depth
     "min_samples_split": 10,  # Adjusted for better performance
@@ -262,12 +262,12 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
         df['UpProbability'] = y_pred_proba[:, 1]
         df['UpPrediction'] = (df['UpProbability'] >= confidence_threshold_pos).astype(int)
         
-        # Save the dataframe with predictions
+        df = df[['Date', 'Open', 'High', 'Low', 'Close', 'Volume','Distance to Resistance (%)', 'Distance to Support (%)', 'UpProbability', 'UpPrediction']]
+
         output_file_path = os.path.join(output_directory, file)
         df.to_parquet(output_file_path, index=False)
         
         pbar.update(1)
-    
     pbar.close()
     logging.info(f"Predictions saved to {output_directory}")
 
