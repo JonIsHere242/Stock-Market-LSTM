@@ -21,43 +21,71 @@ BACKTEST_PARQUET_FILE = 'trading_data.parquet'
 LIVE_PARQUET_FILE = 'real_trade_data.parquet'
 
 COLUMNS = [
-    'Symbol', 'LastBuySignalDate', 'LastBuySignalPrice', 'IsCurrentlyBought', 
-    'ConsecutiveLosses', 'LastTradedDate', 'UpProbability'
-]
+        'Symbol', 'LastBuySignalDate', 'LastBuySignalPrice', 'IsCurrentlyBought', 
+        'ConsecutiveLosses', 'LastTradedDate', 'UpProbability', 'LastSellPrice'
+    ]
 
 def get_parquet_file(is_live=False):
     return LIVE_PARQUET_FILE if is_live else BACKTEST_PARQUET_FILE
 
+
+
+
 def initialize_parquet(is_live=False):
-    """Create or reset the Parquet file with an empty DataFrame."""
-    df = pd.DataFrame(columns=COLUMNS)
+    df = pd.DataFrame(columns=[
+        'Symbol', 'LastBuySignalDate', 'LastBuySignalPrice', 'IsCurrentlyBought', 
+        'ConsecutiveLosses', 'LastTradedDate', 'UpProbability', 'LastSellPrice'
+    ])
     df.to_parquet(get_parquet_file(is_live), index=False)
 
+
+
+
 def read_trading_data(is_live=False):
-    """Read all trading data from the Parquet file."""
     file = get_parquet_file(is_live)
     if not os.path.exists(file):
         initialize_parquet(is_live)
         return pd.DataFrame(columns=COLUMNS)
-    return pd.read_parquet(file)
+    df = pd.read_parquet(file)
+    
+    # Convert date columns to datetime
+    date_columns = ['LastBuySignalDate', 'LastTradedDate']
+    for col in date_columns:
+        if col in df.columns:
+            df[col] = pd.to_datetime(df[col])
+    
+    return df
+
+
+
+
+ 
 
 def write_trading_data(df, is_live=False):
-    """Write all trading data to the Parquet file."""
+    # Convert date columns to datetime
+    date_columns = ['LastBuySignalDate', 'LastTradedDate']
+    for col in date_columns:
+        if col in df.columns:
+            df[col] = pd.to_datetime(df[col])
+    
+    # Replace NaT with None for Parquet compatibility
+    for col in df.select_dtypes(include=['datetime64']).columns:
+        df[col] = df[col].astype(object).where(df[col].notnull(), None)
+    
     df.to_parquet(get_parquet_file(is_live), index=False)
+
+
+
 
 def update_buy_signal(symbol, date, price, up_probability, is_live=False):
     """Update or add a buy signal for a symbol."""
-    ##round the up prob to 4 decimal places
     up_probability = round(up_probability, 4)
-    ##round the price to 4 decimal places
     price = round(price, 4)
-
-
 
     df = read_trading_data(is_live)
     new_data = pd.DataFrame({
         'Symbol': [symbol],
-        'LastBuySignalDate': [date],
+        'LastBuySignalDate': [pd.Timestamp(date)],  # Convert date to Timestamp
         'LastBuySignalPrice': [price],
         'IsCurrentlyBought': [False],
         'ConsecutiveLosses': [0],
@@ -65,7 +93,18 @@ def update_buy_signal(symbol, date, price, up_probability, is_live=False):
         'UpProbability': [up_probability]
     })
     df = pd.concat([df[df['Symbol'] != symbol], new_data], ignore_index=True)
+    
+    # Ensure all date columns are converted to datetime
+    date_columns = ['LastBuySignalDate', 'LastTradedDate']
+    for col in date_columns:
+        df[col] = pd.to_datetime(df[col])
+    
     write_trading_data(df, is_live)
+
+
+
+
+
 
 def mark_position_as_bought(symbol, is_live=False):
     """Mark a symbol as currently bought."""
@@ -73,17 +112,42 @@ def mark_position_as_bought(symbol, is_live=False):
     df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = True
     write_trading_data(df, is_live)
 
-def update_trade_result(symbol, is_loss, is_live=False):
-    """Update the consecutive losses and last traded date for a symbol."""
+
+
+
+
+
+
+def update_trade_result(symbol, is_loss, exit_price=None, exit_date=None, is_live=False):
     df = read_trading_data(is_live)
     if symbol in df['Symbol'].values:
         if is_loss:
             df.loc[df['Symbol'] == symbol, 'ConsecutiveLosses'] += 1
         else:
             df.loc[df['Symbol'] == symbol, 'ConsecutiveLosses'] = 0
-        df.loc[df['Symbol'] == symbol, 'LastTradedDate'] = datetime.now()
+        
+        if is_live:
+            if exit_price is None or exit_date is None:
+                raise ValueError("exit_price and exit_date are required for live trading")
+            df.loc[df['Symbol'] == symbol, 'LastTradedDate'] = pd.Timestamp(exit_date)
+            df.loc[df['Symbol'] == symbol, 'LastSellPrice'] = exit_price
+        else:
+            df.loc[df['Symbol'] == symbol, 'LastTradedDate'] = pd.Timestamp(exit_date or datetime.now().date())
+            if exit_price is not None:
+                df.loc[df['Symbol'] == symbol, 'LastSellPrice'] = exit_price
+        
         df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = False
+        
+        # Convert all date columns to pandas Timestamp
+        date_columns = ['LastBuySignalDate', 'LastTradedDate']
+        for col in date_columns:
+            df[col] = pd.to_datetime(df[col])
+        
         write_trading_data(df, is_live)
+
+
+
+
 
 def get_buy_signals(is_live=False):
     try:
@@ -163,9 +227,12 @@ def calculate_position_size(total_value, cash, reserve_percent, max_positions, c
     
     return int(capital_per_position / current_price) - 1
 
+
+
+
 def should_sell(current_price, entry_price, entry_date, current_date, 
                 stop_loss_percent=3.0, take_profit_percent=100.0, 
-                max_hold_days=9, min_daily_return=0.25):
+                max_hold_days=9, min_daily_return=0.25,verbose=False):
     """Determine if a position should be sold based on various criteria."""
     days_held = (current_date - entry_date).days
     profit_percent = (current_price - entry_price) / entry_price * 100
@@ -174,8 +241,20 @@ def should_sell(current_price, entry_price, entry_date, current_date,
     take_profit = current_price >= entry_price * (1 + take_profit_percent / 100)
     max_hold = days_held > max_hold_days
     low_return = days_held > 3 and profit_percent / days_held < min_daily_return * days_held
-    
-    return stop_loss or take_profit or max_hold or low_return
+    ##map those to text outputs too 
+    stop_loss = "Stop Loss" if stop_loss else ""
+    take_profit = "Take Profit" if take_profit else ""
+    max_hold = "Max Hold" if max_hold else ""
+    low_return = "Low Return" if low_return else ""
+
+    if verbose:
+        logging.info(f"Stop Loss: {stop_loss}, Take Profit: {take_profit}, Max Hold: {max_hold}, Low Return: {low_return}")
+    else:
+        return stop_loss or take_profit or max_hold or low_return
+
+
+
+
 
 def prioritize_buy_signals(buy_signals, correlation_data):
     """Prioritize buy signals based on group correlations and up probability."""
@@ -263,6 +342,10 @@ def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better
             color_code = get_color_code(normalized_value)
 
     return f"{label:<30}{color_code}{value:.2f}\033[0m"
+
+
+
+
 
 # Initialize both Parquet files if they don't exist
 if not os.path.exists(BACKTEST_PARQUET_FILE):

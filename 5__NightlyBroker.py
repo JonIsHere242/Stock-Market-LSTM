@@ -198,6 +198,10 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         elif order.status in [order.Canceled, order.Margin, order.Rejected, order.Expired]:
             self.handle_order_failure(order)
 
+
+
+
+
     def handle_order_execution(self, order):
         if order.isbuy():
             self.handle_buy_execution(order)
@@ -711,6 +715,12 @@ class MovingAverageCrossoverStrategy2222(bt.Strategy):
         self.buying_status[data._name] = False
         self.handle_position_closure(data, order)
         self.remove_asset_data(data)
+
+
+
+
+
+
 
     def handle_position_closure(self, data, order):
         if data in self.position_dates:
