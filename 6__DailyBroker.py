@@ -4,168 +4,73 @@ from backtrader_ib_insync import IBStore
 import threading
 import cmd
 import logging
+from logging.handlers import RotatingFileHandler
+
 import ib_insync as ibi
 import pandas as pd
-from datetime import datetime
-import time 
 import sqlite3
-import datetime
-import pytz
 import numpy as np
-from datetime import datetime, timedelta
 
-from BuySignalParquet import *
+
+
+####Time related headaches
+from datetime import datetime, time
+import pytz
+
+
+
+
+
 from Trading_Functions import *
+import traceback
 
 
-# Set up logging
-logging.basicConfig(filename='__BrokerLive.log', level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+def setup_logging(log_to_console=True):
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
 
-POSITIONS_FILE = 'positions.csv'
+    # Create a rotating file handler
+    file_handler = RotatingFileHandler('__BrokerLive.log', maxBytes=1024 * 1024, backupCount=5)
+    file_handler.setLevel(logging.INFO)
 
-def fetch_and_save_positions(ib):
-    positions = ib.positions()
-    positions_list = []
-    for position in positions:
-        if position.position != 0:
-            contract = position.contract
-            positions_list.append({
-                'symbol': contract.symbol,
-                'exchange': contract.exchange,
-                'secType': contract.secType,
-                'position': position.position,
-                'averageCost': position.avgCost
-            })
-            logging.info(f'Position found: {contract.symbol}, {position.position}, {position.avgCost}')
-    df = pd.DataFrame(positions_list)
-    df.to_csv(POSITIONS_FILE, index=False)
-    return df
+    # Create a formatter and add it to the handler
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
 
-def load_positions_from_csv():
-    try:
-        df = pd.read_csv(POSITIONS_FILE)
-        return df.to_dict(orient='records')
-    except FileNotFoundError:
-        logging.warning(f"{POSITIONS_FILE} not found, returning empty positions list")
-        return []
-    except Exception as e:
-        logging.error(f"Error loading {POSITIONS_FILE}: {e}")
-        return []
+    # Add the file handler to the logger
+    logger.addHandler(file_handler)
 
-def save_positions_to_csv(positions_data):
-    df = pd.DataFrame.from_dict(positions_data, orient='index')
-    df.to_csv(POSITIONS_FILE, index=False)
+    if log_to_console:
+        # Create a console handler only if log_to_console is True
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        console_handler.setFormatter(formatter)
+        logger.addHandler(console_handler)
 
-def check_market_status():
-    # Define market hours in Eastern Time
-    market_open = datetime.time(9, 30)
-    market_close = datetime.time(16, 0)
-    
-    # Get current time in Eastern Time
-    eastern_tz = pytz.timezone('US/Eastern')
-    now = datetime.datetime.now(eastern_tz)
-    
-    # Check if it's a weekday
-    if now.weekday() >= 5:  # 5 = Saturday, 6 = Sunday
-        next_open = now.replace(hour=market_open.hour, minute=market_open.minute, second=0, microsecond=0)
-        while next_open.weekday() >= 5:
-            next_open += datetime.timedelta(days=1)
-        return False, next_open
-    
-    # Convert current time to a time object for comparison
-    current_time = now.time()
-    
-    # Check if market is open
-    if market_open <= current_time < market_close:
-        next_close = now.replace(hour=market_close.hour, minute=market_close.minute, second=0, microsecond=0)
-        return True, next_close
-    else:
-        if current_time < market_open:
-            next_open = now.replace(hour=market_open.hour, minute=market_open.minute, second=0, microsecond=0)
-        else:
-            next_open = (now + datetime.timedelta(days=1)).replace(hour=market_open.hour, minute=market_open.minute, second=0, microsecond=0)
-            while next_open.weekday() >= 5:
-                next_open += datetime.timedelta(days=1)
-        return False, next_open
+# You can now control logging to the console by setting this parameter when you call setup_logging
+setup_logging(log_to_console=False)  # Set to False to disable logging to the terminal
 
 
 
 
-def read_buy_signals(csv_file):
-    try:
-        df = pd.read_csv(csv_file)
-        buy_signals = df[df['isBought'] == False]['Ticker'].tolist()
-        return buy_signals
-    except Exception as e:
-        logging.error(f"Error reading {csv_file}: {e}")
-        return []
 
 def get_open_positions(ib):
-    positions = ib.positions()
-    positions_list = []
-    for position in positions:
-        if position.position != 0:
-            contract = position.contract
-            positions_list.append((contract, position))
-            logging.info(f'Position found: {contract.symbol}, {position.position}')
-    return positions_list
-
-
-
-
-def calculate_sharpe_ratio(trades, risk_free_rate=0.02):
-    if not trades:
-        return 0
-
-    returns = [(trade['exit_price'] - trade['entry_price']) / trade['entry_price'] for trade in trades]
-    excess_returns = [r - (risk_free_rate / 252) for r in returns]  # Assuming daily returns
-
-    if len(excess_returns) < 2:
-        return 0
-
-    return np.mean(excess_returns) / np.std(excess_returns) * np.sqrt(252)  # Annualized
-
-def calculate_win_loss_ratio(trades):
-    if not trades:
-        return 0
-
-    wins = sum(1 for trade in trades if trade['profit_loss'] > 0)
-    losses = sum(1 for trade in trades if trade['profit_loss'] < 0)
-
-    if losses == 0:
-        return float('inf') if wins > 0 else 0
-
-    return wins / losses
-
-def calculate_avg_profit_per_trade(trades):
-    if not trades:
-        return 0
-
-    total_profit = sum(trade['profit_loss'] for trade in trades)
-    return total_profit / len(trades)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    try:
+        positions = ib.positions()
+        positions_list = []
+        for position in positions:
+            if position.position != 0:
+                contract = position.contract
+                positions_list.append(contract.symbol)
+                logging.info(f'Position found: {contract.symbol}, {position.position}')
+        
+        if not positions_list:
+            logging.info('No open positions found')
+        
+        return positions_list
+    except Exception as e:
+        logging.error(f'Error fetching positions: {e}')
+        return []
 
 
 
@@ -187,6 +92,13 @@ class MyStrategy(bt.Strategy):
         ('expected_profit_per_day_percentage', 0.25),
     )
 
+
+
+
+
+
+
+
     def __init__(self):
         self.order_dict = {}
         self.market_open = True
@@ -194,45 +106,20 @@ class MyStrategy(bt.Strategy):
         self.barCounter = 0
         self.trading_data = read_trading_data()
 
-    def notify_data(self, data, status):
-        logging.info(f'Data Status => {data._getstatusname(status)}')
-        print('Data Status =>', data._getstatusname(status))
-        if status == data.LIVE:
-            self.data_ready[data] = True
+        # Add a timer for heartbeat
+        self.add_timer(
+            when=bt.Timer.SESSION_START,
+            offset=timedelta(minutes=0),  # No offset at the session start
+            repeat=timedelta(minutes=1),  # Repeat every minute
+            weekdays=[0, 1, 2, 3, 4],  # Monday to Friday
+        )
 
-    def notify_order(self, order):
-        if order.status in [order.Completed]:
-            self.process_completed_order(order)
-        if order.status in [order.Completed, order.Canceled, order.Margin]:
-            self.order_dict.pop(order.data._name, None)
-
-    def next(self):
-        self.barCounter += 1
-        current_date = bt.num2date(self.datas[0].datetime[0]).date()
-        
-        is_market_open, _ = self.check_market_status()
-        if not is_market_open:
-            return
-
-        for data in self.datas:
-            if not self.data_ready[data]:
-                continue
-
-            symbol = data._name
-            position = self.broker.getposition(data)
-            
-            if position.size != 0:
-                self.evaluate_sell_conditions(data, current_date)
-            else:
-                self.process_buy_signal(data, current_date)
-            
-            print(f'{symbol}: Current Price: {data.close[0]}')
 
     def check_market_status(self):
         eastern_tz = pytz.timezone('US/Eastern')
         now = datetime.now(eastern_tz)
-        market_open = datetime.time(9, 30)
-        market_close = datetime.time(16, 0)
+        market_open = time(9, 30)
+        market_close = time(16, 0)
         
         if now.weekday() >= 5:
             return False, None
@@ -241,6 +128,76 @@ class MyStrategy(bt.Strategy):
         if market_open <= current_time < market_close:
             return True, None
         return False, None
+
+
+
+
+    def notify_timer(self, timer, when, *args, **kwargs):
+        ##change this to be a simple heartbeat check 
+        print(f'Heartbeat: {self.safe_get_date()}')
+
+
+
+
+    def safe_get_date(self):
+        try:
+            # Using Backtrader's num2date to convert plot datetime numbers to datetime objects
+            return bt.num2date(self.datas[0].datetime[0]).date()
+        except AttributeError:
+            # If datetime is an integer, convert it using fromtimestamp
+            return datetime.fromtimestamp(self.datas[0].datetime[0], tz=datetime.timezone.utc).date()
+        except Exception as e:
+            logging.error(f"Error getting date: {e}")
+            # Fallback to current UTC date
+            return datetime.now(datetime.timezone.utc).date()
+
+
+
+    def notify_data(self, data, status, *args, **kwargs):
+        if status == data.LIVE:
+            self.data_ready[data] = True
+            logging.info(f'Data Status: {data._name} is now LIVE')
+        else:
+            self.data_ready[data] = False
+            logging.info(f'Data Status: {data._name} is {data._getstatusname(status)}')
+
+    def notify_order(self, order):
+        if order.status in [order.Completed]:
+            self.process_completed_order(order)
+        if order.status in [order.Completed, order.Canceled, order.Margin]:
+            self.order_dict.pop(order.data._name, None)
+
+
+
+
+    def next(self):
+            self.barCounter += 1
+            current_date = self.safe_get_date()
+            logging.info(f"Next method called. Bar: {self.barCounter}, Date: {current_date}")
+
+            if not self.market_open:
+                logging.info("Market is closed. Skipping this bar.")
+                return
+
+            for data in self.datas:
+                if data not in self.data_ready or not self.data_ready[data]:
+                    continue  # Skip this data feed if it's not ready
+                
+                symbol = data._name
+                position = self.broker.getposition(data)
+
+                if position.size != 0:
+                    logging.info(f'{symbol}: Current Position Size: {position.size}')
+                    self.evaluate_sell_conditions(data, current_date)
+                else:
+                    logging.info(f'{symbol}: No position. Evaluating buy signals.')
+                    self.process_buy_signal(data, current_date)
+                logging.info(f'{symbol}: Current Price: {data.close[0]}')
+
+
+
+
+
 
     def process_completed_order(self, order):
         symbol = order.data._name
@@ -280,6 +237,10 @@ class MyStrategy(bt.Strategy):
                 self.order_dict[symbol] = order
                 logging.info(f'Buy order placed for {symbol}')
 
+
+
+
+
     def evaluate_sell_conditions(self, data, current_date):
         symbol = data._name
         if symbol in self.order_dict:
@@ -318,10 +279,12 @@ class MyStrategy(bt.Strategy):
         symbol_data = self.trading_data[self.trading_data['Symbol'] == symbol].iloc[0]
         entry_date = symbol_data['LastBuySignalDate']
         days_held = (current_date - entry_date).days
+        logging.info(f"Checking expected profit for {symbol}: Days held: {days_held}, Current price: {current_price}, Entry price: {entry_price}")
         if days_held > 3:
             total_profit_percentage = ((current_price - entry_price) / entry_price) * 100
             daily_profit_percentage = total_profit_percentage / days_held
             expected_profit_per_day = self.params.expected_profit_per_day_percentage * days_held
+            logging.info(f"{symbol}: Total profit %: {total_profit_percentage:.4f}%, Daily profit %: {daily_profit_percentage:.4f}%, Expected daily %: {self.params.expected_profit_per_day_percentage:.4f}%")
             return daily_profit_percentage < expected_profit_per_day
         return False
 
@@ -442,7 +405,6 @@ def is_valid_exchange(exchange):
 
 
 
-
 def start():
     cerebro = bt.Cerebro()
 
@@ -452,59 +414,80 @@ def start():
         ib = ibi.IB()
         ib.connect('127.0.0.1', 7497, clientId=1)
         store = IBStore(port=7497)
-        time.sleep(3)  # Allow time for connection to establish
-    except Exception as e:
-        print('Failed to connect to Interactive Brokers TWS')
-        logging.error(f'Failed to connect to Interactive Brokers TWS: {e}')
-        return
 
-    # Load positions from Parquet file
-    open_positions = get_open_positions()
-    
-    # Load buy signals from Parquet file
-    buy_signals = get_buy_signals()
-    
-    all_symbols = set(open_positions + [signal['Symbol'] for signal in buy_signals])
+        ##wait until the connection is established
+        while not ib.isConnected():
+            pass
 
-    print(f'Total symbols to trade: {len(all_symbols)}')
-    logging.info(f'Total symbols to trade: {len(all_symbols)}')
 
-    # Add data feeds for all symbols
-    for symbol in all_symbols:
-        try:
-            contract = ibi.Stock(symbol, 'SMART', 'USD')
-            if contract.exchange in ['NASDAQ', 'NYSE']:
-                data = store.getdata(dataname=symbol, sectype=contract.secType, exchange=contract.exchange)
+        open_positions = get_open_positions(ib)
+        buy_signals = get_buy_signals()
+        all_symbols = list(set(open_positions + [signal['Symbol'] for signal in buy_signals]))
+
+        all_symbols.sort(key=lambda x: x in open_positions, reverse=True)
+
+        print(f'Total symbols to trade: {len(all_symbols)}')
+        logging.info(f'Total symbols to trade: {len(all_symbols)}')
+
+        for symbol in all_symbols:
+            try:
+                contract = ibi.Stock(symbol, 'SMART', 'USD')
+                data = store.getdata(
+                    dataname=symbol,
+                    sectype=contract.secType,
+                    exchange='SMART',
+                    currency='USD',
+                    rtbar=True,
+                    what='TRADES',
+                    useRTH=True,
+                    qcheck=1.0,
+                    backfill_start=False,
+                    reconnect=True,
+                    timeframe=bt.TimeFrame.Seconds,
+                    compression=5,
+                    live=True,
+                )
+
                 data._name = symbol
-                cerebro.resampledata(data, timeframe=bt.TimeFrame.Seconds, compression=15)
-                print(f'Added data feed for {symbol}')
-                logging.info(f'Added data feed for {symbol}')
-            else:
-                print(f'Skipping data for {symbol} - Invalid Exchange: {contract.exchange}')
-                logging.info(f'Skipping data for {symbol} - Invalid Exchange: {contract.exchange}')
+                cerebro.adddata(data)
+                cerebro.resampledata(data, timeframe=bt.TimeFrame.Minutes, compression=1)  # Resample to 1-minute bars
+                
+                print(f'Added live data feed for {symbol}')
+            except Exception as e:
+                print(f'Error adding data for {symbol}: {e}')
+
+
+
+
+        broker = store.getbroker()
+        cerebro.setbroker(broker)
+
+        logging.info('Starting Cerebro run')
+        try:
+
+            cerebro.addstrategy(MyStrategy)
+
+            cerebro.run()
         except Exception as e:
-            print(f'Error adding data for {symbol}: {e}')
-            logging.error(f'Error adding data for {symbol}: {e}')
+            logging.error(f"Error during Cerebro run: {e}")
+            logging.error(f"Traceback: {traceback.format_exc()}")
+        logging.info('Cerebro run completed')
 
-    # Create the broker from the store
-    broker = store.getbroker()
-    cerebro.setbroker(broker)
-
-    # Add the strategy
-    cerebro.addstrategy(MyStrategy)
-
-    # Run the backtrader engine
-    try:
-        cerebro.run()
     except Exception as e:
-        print(f'Error during Cerebro run: {e}')
-        logging.error(f'Error during Cerebro run: {e}')
+        print(f'Error during execution: {e}')
+        logging.error(f'Error during execution: {e}')
+        logging.error(f"Traceback: {traceback.format_exc()}")
     finally:
-        # Ensure we disconnect from IB even if an error occurs
-        if ib.isConnected():
+        if 'ib' in locals() and ib.isConnected():
             ib.disconnect()
             print('Disconnected from Interactive Brokers TWS')
             logging.info('Disconnected from Interactive Brokers TWS')
 
+
+
+
+
 if __name__ == '__main__':
     start()
+
+

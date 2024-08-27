@@ -28,6 +28,7 @@ def setup_args():
     args = parser.parse_args()
     return args
 
+
 def download_and_convert_ticker_cik_file():
     try:
         # Insert the current date in the file paths
