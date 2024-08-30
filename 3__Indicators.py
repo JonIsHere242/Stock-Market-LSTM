@@ -782,6 +782,10 @@ def calculate_emv(df, period=14):
 def safe_divide(a, b, fill_value=0):
     return np.divide(a, b, out=np.full_like(a, fill_value), where=b!=0)
 
+
+
+
+
 def calculate_genetic_indicators(df):
     # Create lagged versions of high, low, volume, and open
     for i in range(1, 8):

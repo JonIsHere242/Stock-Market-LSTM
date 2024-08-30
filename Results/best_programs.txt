@@ -1,518 +1,77 @@
 
---- New Best Program (2024-08-20 15:23:44) ---
-Program: div(add(sub(High, Low), abs(div(sub(Open, Open(t-2)), add(Low(t-1), div(abs(sub(Low, Open(t-2))), abs(High2)))))), High1)
+
+--- New Best Program (2024-08-29 20:53:16) ---
+Program: mul(div(PC8, PC6), div(PC3, PC2))
 Test Set Metrics:
-  MSE: 0.002461
-  MAE: 0.026027
-  Correlation: 0.374769
-  Information Coefficient: 0.458311
-  Mutual Information: 0.108935
-  KL Divergence: 0.482916
+  MSE: 0.890579
+  MAE: 0.942097
+  Correlation: 0.012422
+  Information Coefficient: -0.007377
+  Mutual Information: 0.178926
+  KL Divergence: 0.011944
 
 
-===============ENTROPY FILTERING ========================
-
---- New Best Program (2024-08-20 16:10:03) ---
-Program: div(sub(High, Low), div(add(Open, High), abs(abs(div(High(t-1), High)))))
+--- New Best Program (2024-08-29 21:03:55) ---
+Program: div(PC21, X9)
 Test Set Metrics:
-  MSE: 0.003036
-  MAE: 0.027893
-  Correlation: 0.401289
-  Information Coefficient: 0.533706
-  Mutual Information: 0.197720
-  KL Divergence: 0.608162
+  MSE: 0.955379
+  MAE: 0.974807
+  Correlation: -0.006806
+  Information Coefficient: 0.001292
+  Mutual Information: 0.073647
+  KL Divergence: 0.019697
 
 
---- New Best Program (2024-08-20 16:50:35) ---
-Program: div(sub(High, Low), abs(High))
+--- New Best Program (2024-08-29 21:51:44) ---
+Program: add(div(PC21, X9), div(PC3, PC2))
 Test Set Metrics:
-  MSE: 0.049259
-  MAE: 0.054941
-  Correlation: 0.113796
-  Information Coefficient: 0.392188
-  Mutual Information: 0.115716
-  KL Divergence: 1.320432
+  MSE: 3.792105
+  MAE: 1.945630
+  Correlation: 0.003742
+  Information Coefficient: 0.006582
+  Mutual Information: 0.088484
+  KL Divergence: 0.019958
 
 
---- New Best Program (2024-08-20 17:25:53) ---
-Program: abs(sub(div(High, Low), div(div(div(add(High, Open), add(High, Volume)), mul(High, Low(t-1))), div(div(Open, Volume), add(High2, abs(Volume))))))
+--- New Best Program (2024-08-29 22:05:07) ---
+Program: div(PC22, mul(PC20, div(X9, PC21)))
 Test Set Metrics:
-  MSE: 0.003210
-  MAE: 0.023299
-  Correlation: 0.266307
-  Information Coefficient: 0.528568
-  Mutual Information: 0.174088
-  KL Divergence: 0.599681
+  MSE: 0.902495
+  MAE: 0.946693
+  Correlation: 0.017294
+  Information Coefficient: -0.003494
+  Mutual Information: 0.078529
+  KL Divergence: 0.021544
 
 
---- New Best Program (2024-08-20 17:31:29) ---
-Program: sub(div(sub(High, Low), abs(High)), div(Low(t-1), High3))
+--- New Best Program (2024-08-29 22:18:21) ---
+Program: abs(sub(abs(-0.743), div(PC21, X9)))
 Test Set Metrics:
-  MSE: 0.002725
-  MAE: 0.028996
-  Correlation: 0.276524
-  Information Coefficient: 0.507493
-  Mutual Information: 0.243576
-  KL Divergence: 0.629880
+  MSE: 0.058749
+  MAE: 0.232653
+  Correlation: -0.004371
+  Information Coefficient: 0.001292
+  Mutual Information: 0.073647
+  KL Divergence: 0.022499
 
 
---- New Best Program (2024-08-20 17:42:21) ---
-Program: add(div(sub(High(t-2), High0), High), sub(div(sub(High, Low), abs(High)), div(Low, Volume)))
+--- New Best Program (2024-08-29 22:24:36) ---
+Program: add(div(PC21, X9), div(PC3, PC2))
 Test Set Metrics:
-  MSE: 0.007297
-  MAE: 0.056151
-  Correlation: 0.228137
-  Information Coefficient: 0.429032
-  Mutual Information: 0.128200
-  KL Divergence: 0.488634
+  MSE: 3.792105
+  MAE: 1.945630
+  Correlation: 0.003742
+  Information Coefficient: 0.006582
+  Mutual Information: 0.088484
+  KL Divergence: 0.019958
 
 
---- New Best Program (2024-08-20 19:06:48) ---
-Program: add(div(sub(High(t-1), Low(t-1)), add(div(div(Open(t-2), Volume), High3), High(t-1))), div(sub(Low, High), sub(sub(Volume, Low), Volume)))
+--- New Best Program (2024-08-30 00:26:56) ---
+Program: div(div(PC3, PC2), div(X9, PC21))
 Test Set Metrics:
-  MSE: 0.005642
-  MAE: 0.047295
-  Correlation: 0.356668
-  Information Coefficient: 0.538860
-  Mutual Information: 0.180391
-  KL Divergence: 0.516179
-
-
---- New Best Program (2024-08-20 20:05:36) ---
-Program: mul(sub(sub(High0, High(t-2)), div(Low(t-1), High(t-2))), mul(abs(High0), mul(High0, High)))
-Test Set Metrics:
-  MSE: 98317912894127360.000000
-  MAE: 46861266.773510
-  Correlation: -0.012616
-  Information Coefficient: -0.062998
-  Mutual Information: 0.092300
-  KL Divergence: 0.688245
-
-
---- New Best Program (2024-08-20 20:07:14) ---
-Program: add(sub(div(High2, High(t-2)), add(Close, High4)), sub(div(High2, High1), add(Volume, High4)))
-Test Set Metrics:
-  MSE: 88534424783427.203125
-  MAE: 3709181.164190
-  Correlation: -0.093588
-  Information Coefficient: -0.350170
-  Mutual Information: 0.080416
-  KL Divergence: 0.656106
-
-
---- New Best Program (2024-08-20 20:13:26) ---
-Program: sub(div(div(mul(abs(sub(High1, Open(t-2))), sub(div(High2, Open), mul(High(t-2), High(t-2)))), add(mul(mul(Close, High1), abs(High)), mul(abs(Open(t-1)), div(High0, Low(t-1))))), div(sub(abs(mul(High4, Low(t-1))), sub(div(High(t-2), High3), mul(Low, Open(t-1)))), mul(add(abs(High(t-2)), add(mul(abs(High4), abs(High(t-1))), add(abs(Close), abs(Volume)))), div(div(Low, Open(t-2)), div(High(t-1), Open(t-2)))))), abs(add(div(abs(div(Open(t-1), Open)), abs(sub(High0, High1))), abs(abs(abs(Open(t-2)))))))
-Test Set Metrics:
-  MSE: 862030.235525
-  MAE: 73.567188
-  Correlation: -0.015203
-  Information Coefficient: 0.071919
-  Mutual Information: 0.037942
-  KL Divergence: 0.607856
-
-
---- New Best Program (2024-08-25 19:37:28) ---
-Program: sub(div(High1, Open(t-2)), mul(mul(add(High4, High(t-1)), add(div(abs(Open), High0), High0)), abs(mul(Low, abs(High)))))
-Test Set Metrics:
-  MSE: 15653617555198777311033819136.000000
-  MAE: 9519996295471.251953
-  Correlation: 0.015751
-  Information Coefficient: -0.088210
-  Mutual Information: 0.043088
-  KL Divergence: 0.629446
-
-
---- New Best Program (2024-08-25 19:39:33) ---
-Program: mul(sub(High0, High(t-2)), Open)
-Test Set Metrics:
-  MSE: 5102972.122232
-  MAE: 199.510816
-  Correlation: 0.005385
-  Information Coefficient: -0.156350
-  Mutual Information: 0.037443
-  KL Divergence: 0.764116
-
-
---- New Best Program (2024-08-25 19:45:45) ---
-Program: mul(mul(sub(sub(High0, High(t-2)), abs(High(t-2))), abs(High3)), High0)
-Test Set Metrics:
-  MSE: 55968165927892545437696.000000
-  MAE: 11600101068.718527
-  Correlation: -0.023617
-  Information Coefficient: -0.108007
-  Mutual Information: 0.026440
-  KL Divergence: 0.585018
-
-
---- New Best Program (2024-08-25 19:49:32) ---
-Program: mul(mul(Low, add(div(mul(mul(High3, High3), add(High0, Low(t-1))), mul(div(High, High(t-1)), abs(High3))), sub(add(mul(High, High2), abs(Low)), div(mul(High2, High3), mul(mul(Volume, Low), div(Close, Close)))))), mul(add(mul(abs(abs(Volume)), abs(sub(Open, Open))), div(div(Volume, High1), mul(abs(Low(t-1)), abs(High0)))), sub(abs(abs(Low(t-1))), add(mul(abs(Open(t-2)), mul(High4, High1)), mul(add(Open(t-1), High(t-2)), mul(High, Open(t-1)))))))
-Test Set Metrics:
-  MSE: 1167622955503855133360823056957753484567463149436928.000000
-  MAE: 2246374609192262196789248.000000
-  Correlation: 0.019087
-  Information Coefficient: -0.209113
-  Mutual Information: 0.039560
-  KL Divergence: 0.623273
-
-
---- New Best Program (2024-08-25 19:53:53) ---
-Program: mul(sub(Low(t-1), High(t-1)), div(add(abs(div(div(Low, Open(t-2)), Low)), mul(High4, High(t-2))), add(Volume, add(High0, Close))))
-Test Set Metrics:
-  MSE: 11031252.713545
-  MAE: 243.351224
-  Correlation: -0.064684
-  Information Coefficient: -0.048061
-  Mutual Information: 0.012248
-  KL Divergence: 0.640829
-
-
---- New Best Program (2024-08-25 20:42:11) ---
-Program: sub(sub(sub(mul(div(Low(t-1), High(t-2)), Close), mul(add(High(t-1), Close), sub(Volume, High4))), abs(mul(sub(Volume, sub(Close, Open(t-1))), sub(Open, Low)))), abs(abs(mul(mul(High, High4), add(High(t-1), Low(t-1))))))
-Test Set Metrics:
-  MSE: 9383135021664125845504.000000
-  MAE: 27286508682.254871
-  Correlation: -0.027962
-  Information Coefficient: -0.111519
-  Mutual Information: 0.066336
-  KL Divergence: 0.815514
-
-
---- New Best Program (2024-08-25 20:44:55) ---
-Program: sub(Open(t-1), mul(add(High, abs(High(t-1))), div(mul(High(t-2), add(High(t-1), High3)), add(Close, High(t-1)))))
-Test Set Metrics:
-  MSE: 9420068516206912.000000
-  MAE: 25754571.446410
-  Correlation: 0.001376
-  Information Coefficient: -0.098483
-  Mutual Information: 0.051066
-  KL Divergence: 0.622320
-
-
---- New Best Program (2024-08-25 20:55:10) ---
-Program: mul(add(High2, sub(Open(t-2), mul(mul(High1, Close), High3))), High3)
-Test Set Metrics:
-  MSE: 500660260370430860618890194821578752.000000
-  MAE: 81504679250592064.000000
-  Correlation: 0.005658
-  Information Coefficient: -0.212569
-  Mutual Information: 0.055385
-  KL Divergence: 0.646108
-
-
---- New Best Program (2024-08-25 20:57:12) ---
-Program: sub(mul(sub(Low(t-1), High(t-1)), div(add(abs(div(Open, High0)), mul(High4, High(t-2))), add(abs(Close), add(High0, Close)))), sub(abs(add(add(High(t-1), Open), abs(Close))), sub(div(add(High, High2), div(High1, Open)), mul(mul(Volume, Low), div(Close, Close)))))
-Test Set Metrics:
-  MSE: 17671763097537672.000000
-  MAE: 47914166.880316
-  Correlation: -0.003475
-  Information Coefficient: -0.136314
-  Mutual Information: 0.042276
-  KL Divergence: 0.626778
-
-
---- New Best Program (2024-08-25 21:05:17) ---
-Program: sub(sub(Open(t-2), add(mul(High, High(t-2)), High(t-2))), mul(High2, Open))
-Test Set Metrics:
-  MSE: 12956026281.069405
-  MAE: 16657.995895
-  Correlation: 0.021784
-  Information Coefficient: 0.106156
-  Mutual Information: 0.074740
-  KL Divergence: 0.595230
-
-
---- New Best Program (2024-08-25 21:37:10) ---
-Program: add(High3, abs(High0))
-Test Set Metrics:
-  MSE: 28934952621284.902344
-  MAE: 1025393.994629
-  Correlation: 0.091425
-  Information Coefficient: 0.244746
-  Mutual Information: 0.041917
-  KL Divergence: 2.297353
-
-
---- New Best Program (2024-08-25 21:43:04) ---
-Program: sub(sub(div(add(Open(t-2), High1), abs(Volume)), mul(mul(abs(abs(High)), abs(add(mul(High3, Open), sub(Low(t-1), Open(t-1))))), High(t-1))), Open)
-Test Set Metrics:
-  MSE: 174448514318714339843899392.000000
-  MAE: 1707961211377.729492
-  Correlation: 0.012773
-  Information Coefficient: -0.014106
-  Mutual Information: 0.049640
-  KL Divergence: 0.693001
-
-
---- New Best Program (2024-08-25 22:00:01) ---
-Program: mul(mul(mul(sub(sub(High0, High(t-2)), abs(Volume)), add(Low, Open(t-2))), Close), mul(mul(High(t-2), High(t-2)), add(Low, Open(t-2))))
-Test Set Metrics:
-  MSE: 7285914319238884366790522963583561629696.000000
-  MAE: 5614613756441117696.000000
-  Correlation: 0.007033
-  Information Coefficient: -0.038635
-  Mutual Information: 0.045525
-  KL Divergence: 0.658771
-
-
---- New Best Program (2024-08-25 22:02:16) ---
-Program: mul(sub(add(High0, Low), High3), High3)
-Test Set Metrics:
-  MSE: 3126319941223832556085683683328.000000
-  MAE: 37496007966438.007812
-  Correlation: -0.000175
-  Information Coefficient: -0.313576
-  Mutual Information: 0.062680
-  KL Divergence: 0.611251
-
-
---- New Best Program (2024-08-25 22:28:24) ---
-Program: mul(sub(sub(sub(High0, High(t-2)), Open(t-2)), High(t-2)), mul(add(High0, Low), High0))
-Test Set Metrics:
-  MSE: 1699055360346657.000000
-  MAE: 7515397.875880
-  Correlation: 0.000745
-  Information Coefficient: 0.048344
-  Mutual Information: 0.070760
-  KL Divergence: 0.677441
-
-
---- New Best Program (2024-08-25 22:32:51) ---
-Program: mul(sub(Low(t-1), High(t-1)), abs(mul(sub(Low(t-1), High(t-1)), High(t-2))))
-Test Set Metrics:
-  MSE: 224221521.001090
-  MAE: 1419.580426
-  Correlation: -0.014032
-  Information Coefficient: -0.205747
-  Mutual Information: 0.036566
-  KL Divergence: 0.589850
-
-
---- New Best Program (2024-08-25 22:53:16) ---
-Program: mul(sub(Low(t-1), High(t-1)), High2)
-Test Set Metrics:
-  MSE: 23584126.838150
-  MAE: 587.674587
-  Correlation: 0.018666
-  Information Coefficient: -0.103263
-  Mutual Information: 0.032235
-  KL Divergence: 0.652080
-
-
---- New Best Program (2024-08-25 22:55:37) ---
-Program: mul(abs(mul(div(div(div(Open(t-1), High0), div(High3, High(t-1))), add(sub(div(add(Open(t-2), abs(Close)), abs(Volume)), Close), div(High0, High))), mul(mul(abs(High(t-2)), sub(High4, Open(t-1))), add(High3, High)))), sub(sub(div(add(add(Open(t-2), High), sub(abs(abs(Close)), High(t-1))), abs(High4)), Open), abs(add(mul(div(Open(t-2), High1), mul(Close, Volume)), sub(abs(Low(t-1)), sub(Volume, High4))))))
-Test Set Metrics:
-  MSE: 1080318491211223530344218446060847104.000000
-  MAE: 93086514479024448.000000
-  Correlation: -0.018216
-  Information Coefficient: -0.184665
-  Mutual Information: 0.050832
-  KL Divergence: 0.738030
-
-
---- New Best Program (2024-08-25 22:58:55) ---
-Program: mul(sub(sub(High0, High(t-2)), div(High4, High)), mul(Low, mul(High0, abs(add(High2, Close)))))
-Test Set Metrics:
-  MSE: 15424977577968459055104.000000
-  MAE: 22325454619.464424
-  Correlation: 0.010905
-  Information Coefficient: -0.177285
-  Mutual Information: 0.040965
-  KL Divergence: 0.659100
-
-
---- New Best Program (2024-08-25 23:12:56) ---
-Program: mul(abs(Open(t-2)), sub(sub(div(add(High(t-1), sub(Open, High(t-1))), abs(abs(High))), mul(High(t-1), Volume)), abs(add(abs(add(abs(Volume), add(abs(Volume), sub(High(t-1), High(t-2))))), sub(abs(Low(t-1)), sub(High3, High4))))))
-Test Set Metrics:
-  MSE: 3633083769842354880512.000000
-  MAE: 10557795953.095081
-  Correlation: 0.009465
-  Information Coefficient: -0.163482
-  Mutual Information: 0.044711
-  KL Divergence: 0.735446
-
-
---- New Best Program (2024-08-25 23:17:18) ---
-Program: mul(sub(High0, Open(t-2)), High(t-2))
-Test Set Metrics:
-  MSE: 190885.780119
-  MAE: 78.358325
-  Correlation: -0.007054
-  Information Coefficient: -0.128602
-  Mutual Information: 0.026498
-  KL Divergence: 0.681061
-
-
---- New Best Program (2024-08-25 23:23:26) ---
-Program: sub(div(mul(mul(div(abs(High0), abs(High(t-2))), add(sub(High7, High2), add(Open(t-2), High4))), High5), mul(add(mul(abs(abs(abs(Close))), abs(abs(mul(High1, High2)))), add(mul(Open(t-2), add(add(Volume, High(t-1)), mul(High(t-2), High(t-1)))), mul(add(div(High5, High4), abs(High0)), add(div(High7, Low(t-1)), mul(Low, Volume))))), sub(mul(div(High7, High1), abs(High4)), sub(add(High(t-1), Low), sub(Close, High1))))), add(mul(abs(abs(Open)), abs(abs(mul(High1, High2)))), add(mul(abs(High(t-2)), add(mul(Close, High2), mul(High(t-2), High(t-1)))), mul(add(div(High5, High4), abs(add(mul(Close, High2), mul(add(div(High5, High4), abs(High0)), add(abs(Open), mul(Low, Volume)))))), add(div(High7, Low(t-1)), mul(Low, Volume))))))
-Test Set Metrics:
-  MSE: 7436970172039035505911049939336267038720.000000
-  MAE: 2713753209266861056.000000
-  Correlation: -0.102711
-  Information Coefficient: -0.209061
-  Mutual Information: 0.048973
-  KL Divergence: 0.897890
-
-
---- New Best Program (2024-08-25 23:28:28) ---
-Program: sub(-0.392, Open(t-1))
-Test Set Metrics:
-  MSE: 31248.875217
-  MAE: 57.764776
-  Correlation: 0.014211
-  Information Coefficient: 0.051087
-  Mutual Information: 0.052994
-  KL Divergence: 0.644117
-
-
---- New Best Program (2024-08-25 23:47:04) ---
-Program: mul(mul(-0.256, sub(cos(mul(-0.542, High0)), add(Low, Open(t-1)))), -0.198)
-Test Set Metrics:
-  MSE: 86.723338
-  MAE: 4.984177
-  Correlation: 0.023827
-  Information Coefficient: 0.010683
-  Mutual Information: 0.061504
-  KL Divergence: 0.645772
-
-
---- New Best Program (2024-08-26 00:06:24) ---
-Program: mul(High1, -0.198)
-Test Set Metrics:
-  MSE: 241.485291
-  MAE: 7.968757
-  Correlation: 0.026196
-  Information Coefficient: 0.051004
-  Mutual Information: 0.061523
-  KL Divergence: 0.691204
-
-
---- New Best Program (2024-08-26 00:16:31) ---
-Program: mul(High1, -0.198)
-Test Set Metrics:
-  MSE: 241.485291
-  MAE: 7.968757
-  Correlation: 0.026196
-  Information Coefficient: 0.051004
-  Mutual Information: 0.061523
-  KL Divergence: 0.691204
-
-
---- New Best Program (2024-08-26 00:17:47) ---
-Program: mul(-0.540, Low(t-2))
-Test Set Metrics:
-  MSE: 779.088255
-  MAE: 17.401459
-  Correlation: 0.013991
-  Information Coefficient: -0.024174
-  Mutual Information: 0.053237
-  KL Divergence: 0.687707
-
-
---- New Best Program (2024-08-26 00:26:47) ---
-Program: add(sqrt(cos(add(High(t-2), Low))), log(log(add(Open, Open))))
-Test Set Metrics:
-  MSE: 4.298856
-  MAE: 2.035734
-  Correlation: 0.029885
-  Information Coefficient: 0.024222
-  Mutual Information: 0.020994
-  KL Divergence: 0.017788
-
-
---- New Best Program (2024-08-26 00:42:40) ---
-Program: log(add(add(div(High1, abs(Volume)), sqrt(Volume(t-1))), sub(mul(-0.100, add(High0, Low(t-1))), sin(abs(High1)))))
-Test Set Metrics:
-  MSE: 93.218898
-  MAE: 9.359144
-  Correlation: 0.008878
-  Information Coefficient: 0.042520
-  Mutual Information: 0.055095
-  KL Divergence: 0.021218
-
-
---- New Best Program (2024-08-26 00:53:23) ---
-Program: add(log(log(abs(sqrt(Open)))), log(abs(add(log(div(sin(add(High(t-2), High0)), log(Volume(t-1)))), div(Volume, Low(t-2))))))
-Test Set Metrics:
-  MSE: 86.960338
-  MAE: 9.039145
-  Correlation: 0.017447
-  Information Coefficient: 0.043353
-  Mutual Information: 0.058926
-  KL Divergence: 0.055932
-
-
---- New Best Program (2024-08-26 01:08:00) ---
-Program: log(mul(sin(div(add(Low(t-1), Low), sin(High))), sub(Volume(t-1), mul(abs(-0.733), abs(High1)))))
-Test Set Metrics:
-  MSE: 104.140853
-  MAE: 9.871631
-  Correlation: 0.007359
-  Information Coefficient: 0.041244
-  Mutual Information: 0.040529
-  KL Divergence: 0.043045
-
-
---- New Best Program (2024-08-26 01:51:15) ---
-Program: sqrt(sqrt(mul(sqrt(High(t-1)), sqrt(sin(High(t-1))))))
-Test Set Metrics:
-  MSE: 1.921758
-  MAE: 1.366138
-  Correlation: 0.015193
-  Information Coefficient: 0.010719
-  Mutual Information: 0.018878
-  KL Divergence: 0.047712
-
-
---- New Best Program (2024-08-26 01:57:10) ---
-Program: sqrt(sqrt(mul(sqrt(High(t-1)), sqrt(sin(High(t-1))))))
-Test Set Metrics:
-  MSE: 1.921758
-  MAE: 1.366138
-  Correlation: 0.015193
-  Information Coefficient: 0.010719
-  Mutual Information: 0.018878
-  KL Divergence: 0.047712
-
-
---- New Best Program (2024-08-26 01:59:09) ---
-Program: sqrt(sqrt(mul(sqrt(High(t-1)), sqrt(sin(High(t-1))))))
-Test Set Metrics:
-  MSE: 1.921758
-  MAE: 1.366138
-  Correlation: 0.015193
-  Information Coefficient: 0.010719
-  Mutual Information: 0.018878
-  KL Divergence: 0.047712
-
-
---- New Best Program (2024-08-26 02:07:02) ---
-Program: add(log(log(abs(sqrt(Open)))), log(abs(add(log(div(sin(add(High(t-2), High0)), log(Volume(t-1)))), div(Volume, Low(t-2))))))
-Test Set Metrics:
-  MSE: 86.960338
-  MAE: 9.039145
-  Correlation: 0.017447
-  Information Coefficient: 0.043353
-  Mutual Information: 0.058926
-  KL Divergence: 0.055932
-
-
---- New Best Program (2024-08-26 02:15:48) ---
-Program: sin(cos(sin(add(High, sub(cos(High(t-2)), log(abs(div(add(log(High0), sin(Low(t-1))), add(abs(High), sqrt(sin(Low(t-1))))))))))))
-Test Set Metrics:
-  MSE: 0.472999
-  MAE: 0.676398
-  Correlation: -0.010017
-  Information Coefficient: -0.028186
-  Mutual Information: 0.012158
-  KL Divergence: 0.711345
-
-
---- New Best Program (2024-08-26 14:17:40) ---
-Program: sin(cos(sin(add(High, sub(cos(High(t-2)), log(abs(div(add(log(High0), sin(Low(t-1))), add(abs(High), sqrt(sin(Low(t-1))))))))))))
-Test Set Metrics:
-  MSE: 0.472999
-  MAE: 0.676398
-  Correlation: -0.010017
-  Information Coefficient: -0.028186
-  Mutual Information: 0.012158
-  KL Divergence: 0.711345
+  MSE: 0.903031
+  MAE: 0.946911
+  Correlation: 0.006048
+  Information Coefficient: 0.006665
+  Mutual Information: 0.088144
+  KL Divergence: 0.020689

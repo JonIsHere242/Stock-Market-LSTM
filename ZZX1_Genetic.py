@@ -7,8 +7,9 @@ from gplearn.fitness import make_fitness
 from sklearn.metrics import mean_squared_error, mean_absolute_error, mutual_info_score
 from sklearn.model_selection import train_test_split
 import scipy.stats as stats
-from scipy.stats import entropy, spearmanr, zscore
+from scipy.stats import entropy, spearmanr, zscore, kendalltau
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.decomposition import PCA
 from scipy.special import kl_div
 import random
 import datetime
@@ -22,18 +23,18 @@ import joblib  # Used to save/load preprocessed datasets
 # Updated CONFIG with Dataset Caching Options
 CONFIG = {
     'input_directory': 'Data/PriceData',
-    'data_sample_percentage': 2.5,  # Increased from 3 to use more data
+    'data_sample_percentage': 10.0,  # Increased from 3 to use more data
     'output_directory': 'Results',
     'dataset_cache_path': 'cached_dataset.pkl',
     'use_cached_dataset': True,
-    'population_size': 10000,  # Reduced from 10000 to allow more generations
+    'population_size': 100000,  # Reduced from 10000 to allow more generations
     'generations': 10,  # Increased from 10 to allow for more evolution
     'tournament_size': 5,  # Increased from 3 to apply more selection pressure
     'stopping_criteria': -1e9,  # Set to a very low value to prevent early stopping
-    'const_range': (-1, 1),
+    'const_range': (-1, 1),  # Expanded range to allow for more diverse constants
     'init_depth': (2, 5),  # Increased max depth to allow for more complex initial programs
     'init_method': 'half and half',
-    'function_set': ('add', 'sub', 'mul', 'div', 'log', 'sqrt', 'sin', 'cos', 'abs'),  # Added 'abs'
+    'function_set': ('add', 'sub', 'mul', 'div', 'abs'),  # Added 'abs'
     'parsimony_coefficient': 0.05,  # Reduced to allow for more complex programs
     'p_crossover': 0.7,
     'p_subtree_mutation': 0.1,
@@ -47,6 +48,9 @@ CONFIG = {
     'random_state': 3301,
     'max_depth': 10  # Increased to allow for more complex programs
 }
+
+
+
 
 def dynamic_round(x):
     abs_x = np.abs(x)
@@ -84,10 +88,50 @@ def calculate_target_col(df):
         0.05 * df['Log_Returns_3']
     )
 
+    ##ensure we drop the log returns so that the model does not learn from them
+    df = df.drop(columns=['Log_Returns_1', 'Log_Returns_2', 'Log_Returns_3'])
+    #drop the future returns as well
+    df = df.drop(columns=['Future_Returns_1', 'Future_Returns_2', 'Future_Returns_3'])
+
     return df
 
 
-def load_and_prepare_data(file_paths):
+
+
+def dynamic_entropy_filter(df, window_size=14, lower_quantile=0.1, upper_quantile=0.9):
+    df['Return'] = df['Close'].pct_change().fillna(0)
+    df['Volume_Change'] = df['Volume'].pct_change().fillna(0)
+    
+    # Calculate rolling entropy
+    df['Return_Entropy'] = df['Return'].rolling(window=window_size).apply(
+        lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
+    df['Volume_Entropy'] = df['Volume_Change'].rolling(window=window_size).apply(
+        lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
+
+    # Scale the entropy values
+    scaler = MinMaxScaler()
+    df[['Return_Entropy', 'Volume_Entropy']] = scaler.fit_transform(df[['Return_Entropy', 'Volume_Entropy']])
+
+    # Dynamic entropy thresholds based on market regime
+    dynamic_lower_threshold = df['Return_Entropy'].rolling(window=window_size).quantile(lower_quantile)
+    dynamic_upper_threshold = df['Return_Entropy'].rolling(window=window_size).quantile(upper_quantile)
+    
+    # Apply dynamic thresholds to filter data
+    df = df[
+        (df['Return_Entropy'] > dynamic_lower_threshold) & 
+        (df['Return_Entropy'] < dynamic_upper_threshold) & 
+        (df['Volume_Entropy'] > dynamic_lower_threshold) & 
+        (df['Volume_Entropy'] < dynamic_upper_threshold)
+    ]
+    
+    return df
+
+
+
+
+
+
+def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_quantile=0.9):
     original_total_rows = 0
     filtered_total_rows = 0
     all_data = []
@@ -95,14 +139,13 @@ def load_and_prepare_data(file_paths):
     for file_path in file_paths:
         df = pd.read_parquet(file_path)
         
-        # Ensure 'Date' is in the DataFrame
         if 'Date' not in df.columns and df.index.name == 'Date':
             df = df.reset_index()
         df['Date'] = pd.to_datetime(df['Date'])
         
         if len(df) < 100:
             continue
-        
+
         df = df[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
         df = df.assign(
             Open=dynamic_round_vec(df['Open']),
@@ -110,52 +153,28 @@ def load_and_prepare_data(file_paths):
             Low=dynamic_round_vec(df['Low']),
             Close=dynamic_round_vec(df['Close'])
         )
-        
+
         original_total_rows += len(df)
-        df['Return'] = df['Close'].pct_change().fillna(0)
-        df['Volume_Change'] = df['Volume'].pct_change().fillna(0)
         
-        window_size = 14
-        df['Return_Entropy'] = df['Return'].rolling(window=window_size).apply(
-            lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
-        df['Volume_Entropy'] = df['Volume_Change'].rolling(window=window_size).apply(
-            lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
-        
-        scaler = MinMaxScaler()
-        df[['Return_Entropy', 'Volume_Entropy']] = scaler.fit_transform(df[['Return_Entropy', 'Volume_Entropy']])
-        
-        entropy_threshold_low = 0.05
-        entropy_threshold_high = 0.90
-        df = df[
-            (df['Return_Entropy'] > entropy_threshold_low) & 
-            (df['Return_Entropy'] < entropy_threshold_high) & 
-            (df['Volume_Entropy'] > entropy_threshold_low) & 
-            (df['Volume_Entropy'] < entropy_threshold_high)
-        ]
-        
+        # Apply dynamic entropy filtering before lag features and other transformations
+        df = dynamic_entropy_filter(df, window_size, lower_quantile, upper_quantile)
         filtered_total_rows += len(df)
-        
-        for col in ['High', 'Low']:
-            df[f'{col}_Lag1'] = df[col].shift(2)
-            df[f'{col}_Lag2'] = df[col].shift(5)
-        
-        for col in ['Volume']:
-            df[f'{col}_Lag1'] = df[col].shift(1)
-            df[f'{col}_Lag2'] = df[col].shift(2)
-            df[f'{col}_Lag3'] = df[col].shift(3)
+
+        for col in ['High', 'Low', 'Volume']:
+            lag_times = [1, 2, 3] if col == 'Volume' else [2, 5]
+            for lag in lag_times:
+                df[f'{col}_Lag{lag}'] = df[col].shift(lag)
 
         df = df.dropna()
-
         df = calculate_target_col(df)
-        
         df = df.dropna().replace([np.inf, -np.inf], np.nan).dropna()
         all_data.append(df)
 
     combined_data = pd.concat(all_data, ignore_index=True).drop_duplicates()
-    feature_columns = ['Open', 'High', 'Low', 'Close', 'Volume']
     combined_data = combined_data.dropna()
 
-    X = combined_data[[col for col in combined_data.columns if col in feature_columns or '_Lag' in col]]
+    feature_columns = [col for col in combined_data.columns if col not in ['Weighted_Future_Returns', 'Date']]
+    X = combined_data[feature_columns]
     y = combined_data['Weighted_Future_Returns']
     
     percentage_removed = ((original_total_rows - filtered_total_rows) / original_total_rows) * 100 if original_total_rows > 0 else 0
@@ -163,9 +182,10 @@ def load_and_prepare_data(file_paths):
     print(f"Original data shape: {original_total_rows} rows")
     print(f"Filtered data shape: {filtered_total_rows} rows")
     print(f"Percentage of data removed: {percentage_removed:.2f}%")
-    print(f"Final data loaded with {len(X)} samples and {len(X.columns)} features.")
-    
+
     return X, y
+
+
 
 
 
@@ -240,54 +260,45 @@ def calculate_all_metrics(y, y_pred):
     return mse, mae, da, pf, sr, ir
 
 
-def y_true_discrete(y):
-    return pd.qcut(y, q=10, labels=False, duplicates='drop')
+
+def y_true_discrete(y, bins=10):
+    return np.digitize(y, np.linspace(np.min(y), np.max(y), bins))
+
+
+
+
 
 
 def _custom_fitness(y, y_pred, w):
-    y, y_pred = preprocess_data(y, y_pred)
-    
     if len(y) == 0 or len(y_pred) == 0:
-        return 1e10  # Return a large number if no valid predictions are made
+        return 1e10
     
-    if np.all(y_pred == y_pred[0]):  # Check for constant predictions
-        return 1e9  # Penalize constant predictions heavily
+    if np.all(y_pred == y_pred[0]):
+        return 1e9
     
     try:
-        # Calculate Spearman's rank correlation as Information Coefficient
-        ic = spearmanr(y, y_pred)[0]
-        # Calculate Mutual Information
-        mi = mutual_info_score(y_true_discrete(y), y_true_discrete(y_pred))  # Discretization needed for MI
+        # Use absolute value of Information Coefficient
+        ic = abs(spearmanr(y, y_pred)[0])
         
-        # Gather all other metrics
-        mse = fast_mse(y, y_pred)
-        mae = fast_mae(y, y_pred)
-        da = calculate_directional_accuracy(y, y_pred)
-        pf = calculate_profit_factor(y, y_pred)
-        sr = calculate_sharpe_ratio(y, y_pred)
-        ir = calculate_information_ratio(y, y_pred)
+        mi = mutual_info_score(y_true_discrete(y), y_true_discrete(y_pred))
+        y_entropy = mutual_info_score(y_true_discrete(y), y_true_discrete(y))
+        normalized_mi = mi / y_entropy if y_entropy != 0 else 0
         
-        # Construct the combined score with modified weights
+        # Directional accuracy might be less important now, but still included
+        da = np.mean((np.sign(y) == np.sign(y_pred)))
+        
         combined_score = (
-            0.25 * abs(ic) +  # Higher weight for Information Coefficient
-            0.25 * mi +       # Higher weight for Mutual Information
-            0.10 / (1 + mse) +  # Reduced emphasis on MSE
-            0.10 / (1 + mae) +  # Reduced emphasis on MAE
-            0.10 * da +        # Emphasis on directional accuracy
-            0.10 * pf +        # Profit factor in the scoring
-            0.05 * sr +        # Sharpe ratio for risk-adjusted returns
-            0.05 * ir          # Information ratio to measure relative returns
+            0.45 * ic +                # Increased weight on absolute IC
+            0.45 * normalized_mi +     # Increased weight on Normalized MI
+            0.10 * da                  # Reduced weight on directional accuracy
         )
         
-        return 1 / combined_score  # Invert the score to make lower better for optimization
+        return 1 / combined_score
     except Exception as e:
         print(f"Error in fitness calculation: {e}")
-        return 1e32  # Return a large number in case of any error
+        return 1e32
 
-# Register the custom fitness function
 custom_fitness = make_fitness(function=_custom_fitness, greater_is_better=False)
-
-
 
 
 
@@ -463,10 +474,8 @@ def main():
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
 
+    feature_names = [f'PC{i+1}' for i in range(8)]  # Since you know you are using 8 components
 
-
-
-    feature_names = X.columns.tolist()
     
     with open(os.path.join(CONFIG['output_directory'], 'best_programs.txt'), 'a') as f:
         f.write(f"\n\n--- New Best Program ({timestamp}) ---\n")

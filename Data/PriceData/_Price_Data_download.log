@@ -1124,3 +1124,108 @@
 2024-08-26 21:24:00,111 - INFO - Downloaded data for 2800 tickers taking 3206.4953451156616 seconds
 2024-08-26 21:25:54,603 - INFO - Downloaded data for 2900 tickers taking 3320.9871480464935 seconds
 2024-08-26 21:26:37,444 - INFO - Data download completed.
+2024-08-27 20:30:33,506 - INFO - Cleared old data files.
+2024-08-27 20:30:33,671 - ERROR - 
+1 Failed download:
+2024-08-27 20:30:33,671 - ERROR - ['AACT-UN']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002024284C4F0>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-08-27 20:32:28,784 - INFO - Downloaded data for 100 tickers taking 115.27515053749084 seconds
+2024-08-27 20:34:21,730 - INFO - Downloaded data for 200 tickers taking 228.22152853012085 seconds
+2024-08-27 20:36:15,578 - INFO - Downloaded data for 300 tickers taking 342.07010555267334 seconds
+2024-08-27 20:38:08,578 - INFO - Downloaded data for 400 tickers taking 455.0693612098694 seconds
+2024-08-27 20:40:02,613 - INFO - Downloaded data for 500 tickers taking 569.1045773029327 seconds
+2024-08-27 20:41:56,847 - INFO - Downloaded data for 600 tickers taking 683.3382561206818 seconds
+2024-08-27 20:43:50,137 - INFO - Downloaded data for 700 tickers taking 796.6283783912659 seconds
+2024-08-27 20:45:44,270 - INFO - Downloaded data for 800 tickers taking 910.7613909244537 seconds
+2024-08-27 20:47:37,997 - INFO - Downloaded data for 900 tickers taking 1024.4887373447418 seconds
+2024-08-27 20:49:32,214 - INFO - Downloaded data for 1000 tickers taking 1138.705819606781 seconds
+2024-08-27 20:51:25,548 - INFO - Downloaded data for 1100 tickers taking 1252.039282798767 seconds
+2024-08-27 20:53:19,492 - INFO - Downloaded data for 1200 tickers taking 1365.983556509018 seconds
+2024-08-27 20:55:13,100 - INFO - Downloaded data for 1300 tickers taking 1479.5920956134796 seconds
+2024-08-27 20:57:06,833 - INFO - Downloaded data for 1400 tickers taking 1593.3249506950378 seconds
+2024-08-27 20:59:00,761 - INFO - Downloaded data for 1500 tickers taking 1707.252846479416 seconds
+2024-08-27 21:00:54,704 - INFO - Downloaded data for 1600 tickers taking 1821.1957006454468 seconds
+2024-08-27 21:02:48,590 - INFO - Downloaded data for 1700 tickers taking 1935.081922531128 seconds
+2024-08-27 21:04:42,814 - INFO - Downloaded data for 1800 tickers taking 2049.3059697151184 seconds
+2024-08-27 21:06:36,767 - INFO - Downloaded data for 1900 tickers taking 2163.2581584453583 seconds
+2024-08-27 21:08:30,564 - INFO - Downloaded data for 2000 tickers taking 2277.05557179451 seconds
+2024-08-27 21:10:24,824 - INFO - Downloaded data for 2100 tickers taking 2391.3157098293304 seconds
+2024-08-27 21:12:18,130 - INFO - Downloaded data for 2200 tickers taking 2504.6218168735504 seconds
+2024-08-27 21:14:11,328 - INFO - Downloaded data for 2300 tickers taking 2617.820012331009 seconds
+2024-08-27 21:16:04,469 - INFO - Downloaded data for 2400 tickers taking 2730.960442304611 seconds
+2024-08-27 21:17:58,162 - INFO - Downloaded data for 2500 tickers taking 2844.6539463996887 seconds
+2024-08-27 21:19:51,592 - INFO - Downloaded data for 2600 tickers taking 2958.084114551544 seconds
+2024-08-27 21:21:45,510 - INFO - Downloaded data for 2700 tickers taking 3072.001904964447 seconds
+2024-08-27 21:23:39,117 - INFO - Downloaded data for 2800 tickers taking 3185.608575820923 seconds
+2024-08-27 21:25:01,565 - ERROR - 
+1 Failed download:
+2024-08-27 21:25:01,565 - ERROR - ['WM']: ConnectionError(ReadTimeoutError("HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out."))
+2024-08-27 21:25:43,966 - INFO - Downloaded data for 2900 tickers taking 3310.4576630592346 seconds
+2024-08-27 21:26:24,208 - INFO - Data download completed.
+2024-08-28 20:30:33,500 - INFO - Cleared old data files.
+2024-08-28 20:32:26,202 - INFO - Downloaded data for 100 tickers taking 112.69090223312378 seconds
+2024-08-28 20:34:19,046 - INFO - Downloaded data for 200 tickers taking 225.53490543365479 seconds
+2024-08-28 20:36:12,375 - INFO - Downloaded data for 300 tickers taking 338.8640606403351 seconds
+2024-08-28 20:38:05,599 - INFO - Downloaded data for 400 tickers taking 452.08769059181213 seconds
+2024-08-28 20:39:59,072 - INFO - Downloaded data for 500 tickers taking 565.5606307983398 seconds
+2024-08-28 20:41:52,830 - INFO - Downloaded data for 600 tickers taking 679.3192706108093 seconds
+2024-08-28 20:43:46,144 - INFO - Downloaded data for 700 tickers taking 792.6332561969757 seconds
+2024-08-28 20:45:40,089 - INFO - Downloaded data for 800 tickers taking 906.5780582427979 seconds
+2024-08-28 20:47:33,371 - INFO - Downloaded data for 900 tickers taking 1019.8594739437103 seconds
+2024-08-28 20:49:27,127 - INFO - Downloaded data for 1000 tickers taking 1133.6159312725067 seconds
+2024-08-28 20:51:20,710 - INFO - Downloaded data for 1100 tickers taking 1247.1986963748932 seconds
+2024-08-28 20:53:14,335 - INFO - Downloaded data for 1200 tickers taking 1360.823711156845 seconds
+2024-08-28 20:55:07,978 - INFO - Downloaded data for 1300 tickers taking 1474.4670147895813 seconds
+2024-08-28 20:57:01,983 - INFO - Downloaded data for 1400 tickers taking 1588.47234582901 seconds
+2024-08-28 20:58:55,811 - INFO - Downloaded data for 1500 tickers taking 1702.2997643947601 seconds
+2024-08-28 21:00:49,642 - INFO - Downloaded data for 1600 tickers taking 1816.1310744285583 seconds
+2024-08-28 21:02:43,601 - INFO - Downloaded data for 1700 tickers taking 1930.0903193950653 seconds
+2024-08-28 21:04:37,871 - INFO - Downloaded data for 1800 tickers taking 2044.35955119133 seconds
+2024-08-28 21:06:31,870 - INFO - Downloaded data for 1900 tickers taking 2158.3589582443237 seconds
+2024-08-28 21:08:25,807 - INFO - Downloaded data for 2000 tickers taking 2272.295470714569 seconds
+2024-08-28 21:10:19,974 - INFO - Downloaded data for 2100 tickers taking 2386.463065624237 seconds
+2024-08-28 21:12:13,576 - INFO - Downloaded data for 2200 tickers taking 2500.064857006073 seconds
+2024-08-28 21:14:07,642 - INFO - Downloaded data for 2300 tickers taking 2614.131068944931 seconds
+2024-08-28 21:16:00,583 - INFO - Downloaded data for 2400 tickers taking 2727.071524143219 seconds
+2024-08-28 21:17:53,806 - INFO - Downloaded data for 2500 tickers taking 2840.294946908951 seconds
+2024-08-28 21:19:47,615 - INFO - Downloaded data for 2600 tickers taking 2954.1037669181824 seconds
+2024-08-28 21:21:41,129 - INFO - Downloaded data for 2700 tickers taking 3067.617780685425 seconds
+2024-08-28 21:23:34,967 - INFO - Downloaded data for 2800 tickers taking 3181.456112384796 seconds
+2024-08-28 21:25:29,052 - INFO - Downloaded data for 2900 tickers taking 3295.5405344963074 seconds
+2024-08-28 21:26:09,311 - INFO - Data download completed.
+2024-08-29 20:31:49,302 - INFO - Cleared old data files.
+2024-08-29 20:31:49,623 - ERROR - 
+1 Failed download:
+2024-08-29 20:31:49,623 - ERROR - ['AAMC']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002BCA32757F0>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-08-29 20:34:43,496 - INFO - Downloaded data for 100 tickers taking 174.1908314228058 seconds
+2024-08-29 20:37:35,024 - INFO - Downloaded data for 200 tickers taking 345.7192075252533 seconds
+2024-08-29 20:40:26,488 - INFO - Downloaded data for 300 tickers taking 517.1829090118408 seconds
+2024-08-29 20:43:16,518 - INFO - Downloaded data for 400 tickers taking 687.2114367485046 seconds
+2024-08-29 20:47:04,031 - INFO - Downloaded data for 500 tickers taking 914.7261238098145 seconds
+2024-08-29 20:50:03,277 - INFO - Downloaded data for 600 tickers taking 1093.9718770980835 seconds
+2024-08-29 20:52:55,402 - INFO - Downloaded data for 700 tickers taking 1266.0964436531067 seconds
+2024-08-29 20:54:49,371 - INFO - Downloaded data for 800 tickers taking 1380.0656247138977 seconds
+2024-08-29 20:56:43,258 - INFO - Downloaded data for 900 tickers taking 1493.9527161121368 seconds
+2024-08-29 20:58:39,823 - INFO - Downloaded data for 1000 tickers taking 1610.518075466156 seconds
+2024-08-29 21:00:33,576 - INFO - Downloaded data for 1100 tickers taking 1724.270626783371 seconds
+2024-08-29 21:02:31,879 - INFO - Downloaded data for 1200 tickers taking 1842.5736918449402 seconds
+2024-08-29 21:04:28,145 - INFO - Downloaded data for 1300 tickers taking 1958.8389563560486 seconds
+2024-08-29 21:06:21,956 - INFO - Downloaded data for 1400 tickers taking 2072.6507711410522 seconds
+2024-08-29 21:08:15,408 - INFO - Downloaded data for 1500 tickers taking 2186.102940797806 seconds
+2024-08-29 21:10:09,344 - INFO - Downloaded data for 1600 tickers taking 2300.0388929843903 seconds
+2024-08-29 21:12:02,785 - INFO - Downloaded data for 1700 tickers taking 2413.480026960373 seconds
+2024-08-29 21:12:35,015 - ERROR - 
+1 Failed download:
+2024-08-29 21:12:35,015 - ERROR - ['MODN']: YFChartError('%ticker%: No data found, symbol may be delisted')
+2024-08-29 21:14:00,306 - INFO - Downloaded data for 1800 tickers taking 2531.0009796619415 seconds
+2024-08-29 21:15:54,034 - INFO - Downloaded data for 1900 tickers taking 2644.728865146637 seconds
+2024-08-29 21:17:48,059 - INFO - Downloaded data for 2000 tickers taking 2758.7541649341583 seconds
+2024-08-29 21:19:42,809 - INFO - Downloaded data for 2100 tickers taking 2873.5039167404175 seconds
+2024-08-29 21:21:36,285 - INFO - Downloaded data for 2200 tickers taking 2986.9801852703094 seconds
+2024-08-29 21:23:29,956 - INFO - Downloaded data for 2300 tickers taking 3100.650456905365 seconds
+2024-08-29 21:25:23,029 - INFO - Downloaded data for 2400 tickers taking 3213.724369764328 seconds
+2024-08-29 21:27:16,480 - INFO - Downloaded data for 2500 tickers taking 3327.1750078201294 seconds
+2024-08-29 21:29:10,273 - INFO - Downloaded data for 2600 tickers taking 3440.967803478241 seconds
+2024-08-29 21:31:05,461 - INFO - Downloaded data for 2700 tickers taking 3556.1554160118103 seconds
+2024-08-29 21:32:59,417 - INFO - Downloaded data for 2800 tickers taking 3670.1120176315308 seconds
+2024-08-29 21:34:53,215 - INFO - Downloaded data for 2900 tickers taking 3783.910091161728 seconds
+2024-08-29 21:35:31,176 - INFO - Data download completed.

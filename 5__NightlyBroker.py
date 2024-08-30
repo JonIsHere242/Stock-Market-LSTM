@@ -1101,6 +1101,15 @@ def main():
     LoggingSetup()
     timer = time.time()
     cerebro = bt.Cerebro(maxcpus=None)
+
+    ##commssion testing here still unsure if we need to define this as its only 1$ per trade 
+
+    #commission_per_trade = 1.015  # Adjust based on exact commission per trade from your logs
+    #cerebro.broker.setcommission(commission=commission_per_trade, commtype=bt.CommInfoBase.COMM_FIXED)
+
+
+
+
     InitalStartingCash = 5000
     cerebro.broker.set_cash(InitalStartingCash)
     args = arg_parser()
@@ -1276,5 +1285,8 @@ def main():
                      tight=True)
 
     print(f"Time taken: {time.time() - timer:.2f} seconds")
+
+
+
 if __name__ == "__main__":
     main()

@@ -26,3 +26,5 @@
 2024-08-05 21:31:27,435 - ERROR - Data quality check failed for Data/PriceData\SOAR.parquet.
 2024-08-25 21:30:41,812 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 9.798124999999999, End mean: 0.4755625
 2024-08-25 21:30:41,813 - ERROR - Data quality check failed for Data/PriceData\LLAP.parquet.
+2024-08-29 21:39:04,018 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 8.59695652173913, End mean: 0.40582173913043484
+2024-08-29 21:39:04,019 - ERROR - Data quality check failed for Data/PriceData\LL.parquet.
