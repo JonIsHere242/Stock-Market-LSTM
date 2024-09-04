@@ -75,3 +75,25 @@ Test Set Metrics:
   Information Coefficient: 0.006665
   Mutual Information: 0.088144
   KL Divergence: 0.020689
+
+
+--- New Best Program (2024-08-30 20:46:06) ---
+Program: mul(abs(add(-0.342, X8)), div(PC2, PC4))
+Test Set Metrics:
+  MSE: 0.294257
+  MAE: 0.525485
+  Correlation: -0.008272
+  Information Coefficient: -0.005647
+  Mutual Information: 0.010181
+  KL Divergence: 0.029863
+
+
+--- New Best Program (2024-08-31 15:46:05) ---
+Program: abs(mul(mul(sub(X8, PC6), X8), add(X8, PC8)))
+Test Set Metrics:
+  MSE: 1.794022
+  MAE: 1.296351
+  Correlation: -0.007061
+  Information Coefficient: -0.010174
+  Mutual Information: 0.012009
+  KL Divergence: 0.048026

@@ -4131,3 +4131,2569 @@ INFO:root:Inital Portfolio funding: $5000.00
 INFO:root:Final Portfolio Value: $10925.52
 INFO:root:Percentage Gain: 118.51%
 INFO:root:Cash: $9251.93
+INFO:root:Skipping Data/RFpredictions\ACP-PA.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\AESI.parquet due to insufficient data: 172 days
+INFO:root:Skipping Data/RFpredictions\AFT.parquet due to insufficient data: 249 days
+INFO:root:Skipping Data/RFpredictions\AGM-PC.parquet due to insufficient data: 246 days
+INFO:root:Skipping Data/RFpredictions\AIF.parquet due to insufficient data: 249 days
+INFO:root:Skipping Data/RFpredictions\ALL-PJ.parquet due to insufficient data: 125 days
+INFO:root:Skipping Data/RFpredictions\ASBA.parquet due to insufficient data: 176 days
+INFO:root:Skipping Data/RFpredictions\ATH-PE.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\AULT-PD.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\BAM.parquet due to insufficient data: 238 days
+INFO:root:Skipping Data/RFpredictions\BCV-PA.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\BITE-UN.parquet due to insufficient data: 41 days
+INFO:root:Skipping Data/RFpredictions\BITE.parquet due to insufficient data: 234 days
+INFO:root:Skipping Data/RFpredictions\BKDT.parquet due to insufficient data: 242 days
+INFO:root:Skipping Data/RFpredictions\BLUA-UN.parquet due to insufficient data: 61 days
+INFO:root:Skipping Data/RFpredictions\BMN.parquet due to insufficient data: 262 days
+INFO:root:Skipping Data/RFpredictions\BWET.parquet due to insufficient data: 134 days
+INFO:root:Skipping Data/RFpredictions\CFG-PD.parquet due to insufficient data: 238 days
+INFO:root:Skipping Data/RFpredictions\CHAA.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\CLCO.parquet due to insufficient data: 165 days
+INFO:root:Skipping Data/RFpredictions\CMRE-PE.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\CR.parquet due to insufficient data: 158 days
+INFO:root:Skipping Data/RFpredictions\DMYY.parquet due to insufficient data: 234 days
+INFO:root:Skipping Data/RFpredictions\DULL.parquet due to insufficient data: 183 days
+INFO:root:Skipping Data/RFpredictions\ECF-PA.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\EFC-PC.parquet due to insufficient data: 180 days
+INFO:root:Skipping Data/RFpredictions\ETRN.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\FBGX.parquet due to insufficient data: 244 days
+INFO:root:Skipping Data/RFpredictions\FG.parquet due to insufficient data: 244 days
+INFO:root:Skipping Data/RFpredictions\FSCO.parquet due to insufficient data: 250 days
+INFO:root:Skipping Data/RFpredictions\FSD.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\GDL-PC.parquet due to insufficient data: 138 days
+INFO:root:Skipping Data/RFpredictions\GGN-PB.parquet due to insufficient data: 252 days
+INFO:root:Skipping Data/RFpredictions\GLU-PB.parquet due to insufficient data: 174 days
+INFO:root:Skipping Data/RFpredictions\GTLS-PB.parquet due to insufficient data: 231 days
+INFO:root:Skipping Data/RFpredictions\HSHP.parquet due to insufficient data: 156 days
+INFO:root:Skipping Data/RFpredictions\HWM-P.parquet due to insufficient data: 180 days
+INFO:root:Skipping Data/RFpredictions\JWSM-UN.parquet due to insufficient data: 123 days
+INFO:root:Skipping Data/RFpredictions\JXN-PA.parquet due to insufficient data: 174 days
+INFO:root:Skipping Data/RFpredictions\KVUE.parquet due to insufficient data: 133 days
+INFO:root:Skipping Data/RFpredictions\LNC-PD.parquet due to insufficient data: 247 days
+INFO:root:Skipping Data/RFpredictions\MBC.parquet due to insufficient data: 232 days
+INFO:root:Skipping Data/RFpredictions\MSGE.parquet due to insufficient data: 135 days
+INFO:root:Skipping Data/RFpredictions\OSG.parquet due to insufficient data: 241 days
+INFO:root:Skipping Data/RFpredictions\PCG-PD.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\PCG-PG.parquet due to insufficient data: 165 days
+INFO:root:Skipping Data/RFpredictions\PEB-PE.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\PERF.parquet due to insufficient data: 260 days
+INFO:root:Skipping Data/RFpredictions\PKST.parquet due to insufficient data: 147 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PG.parquet due to insufficient data: 198 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PJ.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\RC-PC.parquet due to insufficient data: 176 days
+INFO:root:Skipping Data/RFpredictions\RWT-PA.parquet due to insufficient data: 211 days
+INFO:root:Skipping Data/RFpredictions\RXO.parquet due to insufficient data: 262 days
+INFO:root:Skipping Data/RFpredictions\SAJ.parquet due to insufficient data: 257 days
+INFO:root:Skipping Data/RFpredictions\SAY.parquet due to insufficient data: 227 days
+INFO:root:Skipping Data/RFpredictions\SAZ.parquet due to insufficient data: 141 days
+INFO:root:Skipping Data/RFpredictions\SBOW.parquet due to insufficient data: 254 days
+INFO:root:Skipping Data/RFpredictions\SBXC-UN.parquet due to insufficient data: 179 days
+INFO:root:Skipping Data/RFpredictions\SBXC.parquet due to insufficient data: 129 days
+INFO:root:Skipping Data/RFpredictions\SCCB.parquet due to insufficient data: 234 days
+INFO:root:Skipping Data/RFpredictions\SGE.parquet due to insufficient data: 125 days
+INFO:root:Skipping Data/RFpredictions\SHNY.parquet due to insufficient data: 183 days
+INFO:root:Skipping Data/RFpredictions\SIX.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\SLCA.parquet due to insufficient data: 256 days
+INFO:root:Skipping Data/RFpredictions\SPE-PC.parquet due to insufficient data: 140 days
+INFO:root:Skipping Data/RFpredictions\STRW.parquet due to insufficient data: 183 days
+INFO:root:Skipping Data/RFpredictions\TRIS-UN.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\TRIS.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\TXO.parquet due to insufficient data: 200 days
+INFO:root:Skipping Data/RFpredictions\UHAL-B.parquet due to insufficient data: 252 days
+INFO:root:Skipping Data/RFpredictions\VCXB.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\VTS.parquet due to insufficient data: 212 days
+INFO:root:Skipping Data/RFpredictions\WRK.parquet due to insufficient data: 238 days
+INFO:root:Skipping Data/RFpredictions\WTID.parquet due to insufficient data: 187 days
+INFO:root:Skipping Data/RFpredictions\WTIU.parquet due to insufficient data: 187 days
+INFO:root:Skipping Data/RFpredictions\WUCT.parquet due to insufficient data: 159 days
+INFO:root:Skipping Data/RFpredictions\YCBD-PA.parquet due to insufficient data: 254 days
+INFO:root:Skipping AUB-PA due to insufficient data: 264 days
+INFO:root:Skipping FHN-PB due to insufficient data: 254 days
+INFO:root:Skipping GAM-PB due to insufficient data: 264 days
+INFO:root:Skipping GDV-PH due to insufficient data: 260 days
+INFO:root:Skipping IFIN-UN due to insufficient data: 264 days
+INFO:root:Skipping KCGI-UN due to insufficient data: 256 days
+INFO:root:Skipping KCGI due to insufficient data: 256 days
+INFO:root:Skipping MTB-PH due to insufficient data: 260 days
+INFO:root:Skipping OPP-PA due to insufficient data: 258 days
+INFO:root:Skipping PCG-PA due to insufficient data: 260 days
+INFO:root:Skipping PSA-PG due to insufficient data: 264 days
+INFO:root:Skipping RJF-PB due to insufficient data: 257 days
+INFO:root:Skipping TCOA-UN due to insufficient data: 258 days
+INFO:root:Skipping TDS-PU due to insufficient data: 264 days
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Cluster information not available for HASI
+WARNING:root:Column correlation_212 not found for TG
+WARNING:root:Column correlation_2157 not found for TG
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HASI due to Sell condition met
+WARNING:root:Column correlation_212 not found for ZVIA
+WARNING:root:Column correlation_2157 not found for ZVIA
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for HASI. Assuming no loss.
+WARNING:root:Column correlation_212 not found for INDO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZVIA
+WARNING:root:Cluster information not available for INDO
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+INFO:root:Closing INDO due to Sell condition met
+WARNING:root:Entry price not found for INDO. Assuming no loss.
+INFO:root:Closing ZVIA due to Sell condition met
+WARNING:root:Entry price not found for ZVIA. Assuming no loss.
+WARNING:root:Cluster information not available for TG
+INFO:root:Closing TG due to Sell condition met
+WARNING:root:Entry price not found for TG. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ASPN
+WARNING:root:Column correlation_372 not found for DAO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing ASPN due to Sell condition met
+WARNING:root:Entry price not found for ASPN. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DAO
+WARNING:root:Cluster information not available for SES
+WARNING:root:Column correlation_1283 not found for ALUR
+WARNING:root:Column correlation_4189 not found for ALUR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing DAO due to Sell condition met
+INFO:root:Closing SES due to Sell condition met
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Entry price not found for DAO. Assuming no loss.
+WARNING:root:Entry price not found for SES. Assuming no loss.
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Column correlation_212 not found for BRBS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+WARNING:root:Cluster information not available for BRBS
+INFO:root:Closing BRBS due to Sell condition met
+WARNING:root:Entry price not found for BRBS. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for TSE
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MVRL
+WARNING:root:Cluster information not available for ALLY
+WARNING:root:Cluster information not available for BNKU
+WARNING:root:Cluster information not available for NOTE
+INFO:root:Closing MVRL due to Sell condition met
+INFO:root:Closing NOTE due to Sell condition met
+WARNING:root:Entry price not found for MVRL. Assuming no loss.
+WARNING:root:Entry price not found for NOTE. Assuming no loss.
+INFO:root:Closing ALLY due to Sell condition met
+INFO:root:Closing BNKU due to Sell condition met
+WARNING:root:Column correlation_197 not found for BBU
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BBUC
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BFAM
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for JELD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PAR
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PL
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for QVCD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RKT
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RSI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for SNAP
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for TGI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for VZIO
+WARNING:root:No correlation data found for position: BNKU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALLY. Assuming no loss.
+WARNING:root:Entry price not found for BNKU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for BBUC
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Cluster information not available for RKT
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for BBU
+WARNING:root:Column correlation_4313 not found for BBU
+WARNING:root:Column correlation_4012 not found for BRBS
+WARNING:root:Column correlation_4313 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_4012 not found for KRO
+WARNING:root:Column correlation_4313 not found for KRO
+WARNING:root:Column correlation_4012 not found for PAR
+WARNING:root:Column correlation_4313 not found for PAR
+WARNING:root:Column correlation_4012 not found for SEMR
+WARNING:root:Column correlation_4313 not found for SEMR
+WARNING:root:Column correlation_4012 not found for TGI
+WARNING:root:Column correlation_4313 not found for TGI
+WARNING:root:Column correlation_4012 not found for VZIO
+WARNING:root:Column correlation_4313 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing RKT due to Sell condition met
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for KEN
+WARNING:root:Cluster information not available for SEMR
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRBS
+WARNING:root:Column correlation_4184 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for SNAP
+WARNING:root:Column correlation_4184 not found for SNAP
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for VZIO
+INFO:root:Closing VZIO due to Sell condition met
+WARNING:root:Entry price not found for VZIO. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRCC
+WARNING:root:Column correlation_4184 not found for BRCC
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for PAGS
+WARNING:root:Column correlation_4184 not found for PAGS
+WARNING:root:Column correlation_2613 not found for RKT
+WARNING:root:Column correlation_4184 not found for RKT
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing KEN due to Sell condition met
+INFO:root:Closing SEMR due to Sell condition met
+WARNING:root:Entry price not found for KEN. Assuming no loss.
+WARNING:root:Entry price not found for SEMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for RKT
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for CWK
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing CWK due to Sell condition met
+WARNING:root:Column correlation_1254 not found for ONTF
+WARNING:root:Column correlation_4012 not found for ONTF
+WARNING:root:Column correlation_1254 not found for SMR
+WARNING:root:Column correlation_4012 not found for SMR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CWK. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for ADCT
+WARNING:root:Column correlation_4012 not found for BBUC
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for BBUC
+WARNING:root:Cluster information not available for BGS
+INFO:root:Closing RKT due to Sell condition met
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Column correlation_517 not found for CIO
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_517 not found for DEI
+WARNING:root:Column correlation_584 not found for DEI
+WARNING:root:Column correlation_4305 not found for DEI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_584 not found for NRGV
+WARNING:root:Column correlation_4305 not found for NRGV
+WARNING:root:Column correlation_584 not found for SES
+WARNING:root:Column correlation_4305 not found for SES
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DEI
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+WARNING:root:Cluster information not available for CIO
+INFO:root:Closing BGS due to Sell condition met
+INFO:root:Closing DEI due to Sell condition met
+WARNING:root:Entry price not found for BGS. Assuming no loss.
+WARNING:root:Entry price not found for DEI. Assuming no loss.
+WARNING:root:Column correlation_984 not found for BGS
+WARNING:root:Column correlation_984 not found for CWK
+WARNING:root:Column correlation_984 not found for LNC
+WARNING:root:Column correlation_984 not found for OGN
+WARNING:root:Column correlation_984 not found for ZIM
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZIM
+INFO:root:Closing CIO due to Sell condition met
+WARNING:root:Cluster information not available for OGN
+WARNING:root:Entry price not found for CIO. Assuming no loss.
+WARNING:root:Column correlation_3463 not found for BFLY
+WARNING:root:Column correlation_5159 not found for BFLY
+WARNING:root:Column correlation_3463 not found for CTLT
+WARNING:root:Column correlation_5159 not found for CTLT
+WARNING:root:Column correlation_3463 not found for WRBY
+WARNING:root:Column correlation_5159 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing OGN due to Sell condition met
+INFO:root:Closing WRBY due to Sell condition met
+INFO:root:Closing ZIM due to Sell condition met
+WARNING:root:Entry price not found for OGN. Assuming no loss.
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Entry price not found for ZIM. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for BFLY
+WARNING:root:Cluster information not available for TELZ
+WARNING:root:Cluster information not available for UUU
+INFO:root:Closing BFLY due to Sell condition met
+INFO:root:Closing TELZ due to Sell condition met
+INFO:root:Closing UUU due to Sell condition met
+WARNING:root:Entry price not found for BFLY. Assuming no loss.
+WARNING:root:Entry price not found for TELZ. Assuming no loss.
+WARNING:root:Entry price not found for UUU. Assuming no loss.
+WARNING:root:Cluster information not available for LNC
+INFO:root:Closing LNC due to Sell condition met
+WARNING:root:Entry price not found for LNC. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MATV
+WARNING:root:Cluster information not available for TRTX
+WARNING:root:Cluster information not available for CHPT
+INFO:root:Closing TRTX due to Sell condition met
+WARNING:root:Entry price not found for TRTX. Assuming no loss.
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ARIS
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing CHPT due to Sell condition met
+INFO:root:Closing MATV due to Sell condition met
+WARNING:root:Column correlation_334 not found for PNST
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CHPT. Assuming no loss.
+WARNING:root:Entry price not found for MATV. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+WARNING:root:No correlation data found for ticker: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_334 not found for SLI
+WARNING:root:Column correlation_3762 not found for SLI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing ARIS due to Sell condition met
+WARNING:root:Cluster information not available for SLI
+WARNING:root:Entry price not found for ARIS. Assuming no loss.
+INFO:root:Closing SLI due to Sell condition met
+WARNING:root:Entry price not found for SLI. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for GTE
+WARNING:root:Cluster information not available for NG
+WARNING:root:Column correlation_2123 not found for NOVA
+WARNING:root:Column correlation_3247 not found for NOVA
+WARNING:root:Column correlation_2123 not found for PNST
+WARNING:root:Column correlation_3247 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing GTE due to Sell condition met
+WARNING:root:Entry price not found for GTE. Assuming no loss.
+INFO:root:Closing NG due to Sell condition met
+WARNING:root:Entry price not found for NG. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CTDD
+WARNING:root:Cluster information not available for AG
+WARNING:root:Column correlation_120 not found for NEM
+WARNING:root:No correlation data found for position: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NEM
+INFO:root:Closing CTDD due to Sell condition met
+WARNING:root:Entry price not found for CTDD. Assuming no loss.
+INFO:root:Closing NEM due to Sell condition met
+WARNING:root:Entry price not found for NEM. Assuming no loss.
+INFO:root:Closing AG due to Sell condition met
+WARNING:root:Column correlation_120 not found for BKKT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AG. Assuming no loss.
+WARNING:root:Cluster information not available for BKKT
+INFO:root:Closing BKKT due to Sell condition met
+WARNING:root:Entry price not found for BKKT. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EBS
+INFO:root:Closing EBS due to Sell condition met
+WARNING:root:Entry price not found for EBS. Assuming no loss.
+WARNING:root:Cluster information not available for BFH
+WARNING:root:Cluster information not available for AMRC
+WARNING:root:Cluster information not available for GME
+INFO:root:Closing BFH due to Sell condition met
+WARNING:root:Entry price not found for BFH. Assuming no loss.
+INFO:root:Closing AMRC due to Sell condition met
+WARNING:root:Column correlation_247 not found for HLF
+WARNING:root:Column correlation_2046 not found for HLF
+WARNING:root:Column correlation_247 not found for WYY
+WARNING:root:Column correlation_2046 not found for WYY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AMRC. Assuming no loss.
+WARNING:root:Cluster information not available for WYY
+WARNING:root:Column correlation_2046 not found for AMRC
+WARNING:root:Column correlation_5090 not found for AMRC
+WARNING:root:Column correlation_2046 not found for BROS
+WARNING:root:Column correlation_5090 not found for BROS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Cluster information not available for BROS
+INFO:root:Closing GME due to Sell condition met
+INFO:root:Closing HLF due to Sell condition met
+INFO:root:Closing WYY due to Sell condition met
+WARNING:root:Entry price not found for GME. Assuming no loss.
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+WARNING:root:Entry price not found for WYY. Assuming no loss.
+WARNING:root:Column correlation_725 not found for HLF
+WARNING:root:Column correlation_725 not found for IPI
+WARNING:root:Column correlation_725 not found for KW
+WARNING:root:Column correlation_725 not found for PW
+WARNING:root:Column correlation_725 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing BROS due to Sell condition met
+WARNING:root:Entry price not found for BROS. Assuming no loss.
+WARNING:root:Column correlation_5059 not found for LXU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing WRBY due to Sell condition met
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Column correlation_2219 not found for UNFI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HLF due to Sell condition met
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Cluster information not available for KW
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_2689 not found for CHWY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for UNFI
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing KW due to Sell condition met
+WARNING:root:Entry price not found for KW. Assuming no loss.
+WARNING:root:Column correlation_968 not found for ATUS
+WARNING:root:Column correlation_4780 not found for ATUS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_4780 not found for XPOF
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for XPOF
+INFO:root:Closing UNFI due to Sell condition met
+WARNING:root:Entry price not found for UNFI. Assuming no loss.
+WARNING:root:No correlation data found for ticker: SKIL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing XPOF due to Sell condition met
+WARNING:root:Cluster information not available for SKIL
+WARNING:root:Entry price not found for XPOF. Assuming no loss.
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing SKIL due to Sell condition met
+WARNING:root:Cluster information not available for LXU
+WARNING:root:Entry price not found for SKIL. Assuming no loss.
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing LXU due to Sell condition met
+WARNING:root:Entry price not found for LXU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NOVA
+INFO:root:Closing NOVA due to Sell condition met
+WARNING:root:Entry price not found for NOVA. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ANVS
+WARNING:root:Column correlation_277 not found for AZUL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for AZUL
+WARNING:root:Column correlation_277 not found for EVRI
+WARNING:root:Column correlation_478 not found for EVRI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing AZUL due to Sell condition met
+WARNING:root:Column correlation_277 not found for AP
+WARNING:root:Column correlation_478 not found for AP
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_478 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AZUL. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_277 not found for NXDT
+WARNING:root:Column correlation_2181 not found for NXDT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Cluster information not available for NXDT
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing ANVS due to Sell condition met
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_3410 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ANVS. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_2181 not found for RVLV
+WARNING:root:Column correlation_3410 not found for RVLV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EVRI
+INFO:root:Closing EVRI due to Sell condition met
+WARNING:root:Entry price not found for EVRI. Assuming no loss.
+INFO:root:Closing NXDT due to Sell condition met
+WARNING:root:Column correlation_2181 not found for BALY
+WARNING:root:Column correlation_3410 not found for BALY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for NXDT. Assuming no loss.
+WARNING:root:Cluster information not available for RVLV
+WARNING:root:Cluster information not available for BALY
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing BALY due to Sell condition met
+WARNING:root:Entry price not found for BALY. Assuming no loss.
+INFO:root:Closing RVLV due to Sell condition met
+WARNING:root:Entry price not found for RVLV. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for OLO
+WARNING:root:Cluster information not available for MD
+INFO:root:Closing OLO due to Sell condition met
+WARNING:root:Entry price not found for OLO. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Entry price not found for MD. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EAF
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_1461 not found for TIXT
+WARNING:root:Column correlation_3762 not found for TIXT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MD
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_1461 not found for LEV
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4598 not found for LEV
+WARNING:root:Column correlation_1461 not found for TSE
+WARNING:root:Column correlation_2933 not found for TSE
+WARNING:root:Column correlation_4598 not found for TSE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for TSE
+INFO:root:Closing EAF due to Sell condition met
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for EAF. Assuming no loss.
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4686 not found for LEV
+WARNING:root:Column correlation_2933 not found for TIXT
+WARNING:root:Column correlation_4686 not found for TIXT
+WARNING:root:Column correlation_2933 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for MD. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_4598 not found for CHGG
+WARNING:root:Column correlation_4686 not found for CHGG
+WARNING:root:Column correlation_4598 not found for CLPR
+WARNING:root:Column correlation_4686 not found for CLPR
+WARNING:root:Column correlation_4598 not found for INTT
+WARNING:root:Column correlation_4686 not found for INTT
+WARNING:root:Column correlation_4598 not found for PNST
+WARNING:root:Column correlation_4686 not found for PNST
+WARNING:root:Column correlation_4598 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for LEV
+WARNING:root:Cluster information not available for INTT
+INFO:root:Closing INTT due to Sell condition met
+INFO:root:Closing LEV due to Sell condition met
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for INTT. Assuming no loss.
+WARNING:root:Entry price not found for LEV. Assuming no loss.
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+WARNING:root:Column correlation_4686 not found for CNF
+WARNING:root:Column correlation_4686 not found for DHX
+WARNING:root:Column correlation_4686 not found for EVEX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for EVEX at price 2.7899999618530273 on 2024-08-28
+INFO:root:Buy signal saved for DHX at price 1.9500000476837158 on 2024-08-28
+INFO:root:Buy signal saved for CNF at price 1.2100000381469727 on 2024-08-28
+INFO:root:Buy signal saved for VNRX at price 0.6899999976158142 on 2024-08-28
+WARNING:root:Cluster information not available for CNF
+INFO:root:Closing TSE due to Sell condition met
+INFO:root:Open Positions: 4
+INFO:root:Group Allocations: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}
+INFO:root:Position: CNF, Size: 1509, Entry Price: 1.2705000400543214
+INFO:root:Position: TSE, Size: 592, Entry Price: 3.0660000801086427
+INFO:root:Strategy stopped. Final portfolio state logged.
+INFO:root:====================== New Entry ===================
+INFO:root:Max Drawdown: 6.83%
+INFO:root:Total Trades: 88
+INFO:root:Profitable Trades: 49
+INFO:root:Sharpe Ratio: 1.06
+INFO:root:SQN: 1.53
+INFO:root:Profit Factor: -0.25
+INFO:root:Average Trade: 74.31
+INFO:root:Average Winning Trade: 177.36
+INFO:root:Average Losing Trade: -55.16
+INFO:root:Largest Winning Trade: 4109.84
+INFO:root:Largest Losing Trade: -172.99
+INFO:root:Time taken: 138.49 seconds
+INFO:root:Inital Portfolio funding: $5000.00
+INFO:root:Final Portfolio Value: $12269.84
+INFO:root:Percentage Gain: 145.40%
+INFO:root:Cash: $7807.23
+INFO:root:Skipping Data/RFpredictions\ACP-PA.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\AESI.parquet due to insufficient data: 173 days
+INFO:root:Skipping Data/RFpredictions\AFT.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\AGM-PC.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\AIF.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\ALL-PJ.parquet due to insufficient data: 126 days
+INFO:root:Skipping Data/RFpredictions\ASBA.parquet due to insufficient data: 177 days
+INFO:root:Skipping Data/RFpredictions\ATH-PE.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\AULT-PD.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\BAM.parquet due to insufficient data: 239 days
+INFO:root:Skipping Data/RFpredictions\BCV-PA.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\BKDT.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\BLUA-UN.parquet due to insufficient data: 60 days
+INFO:root:Skipping Data/RFpredictions\BMN.parquet due to insufficient data: 263 days
+INFO:root:Skipping Data/RFpredictions\BWET.parquet due to insufficient data: 135 days
+INFO:root:Skipping Data/RFpredictions\CFG-PD.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\CHAA.parquet due to insufficient data: 239 days
+INFO:root:Skipping Data/RFpredictions\CLCO.parquet due to insufficient data: 166 days
+INFO:root:Skipping Data/RFpredictions\CMRE-PE.parquet due to insufficient data: 242 days
+INFO:root:Skipping Data/RFpredictions\CR.parquet due to insufficient data: 159 days
+INFO:root:Skipping Data/RFpredictions\DMYY.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\DULL.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\ECF-PA.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\EFC-PC.parquet due to insufficient data: 181 days
+INFO:root:Skipping Data/RFpredictions\ETRN.parquet due to insufficient data: 247 days
+INFO:root:Skipping Data/RFpredictions\FBGX.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\FG.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\FSCO.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\FSD.parquet due to insufficient data: 247 days
+INFO:root:Skipping Data/RFpredictions\GDL-PC.parquet due to insufficient data: 138 days
+INFO:root:Skipping Data/RFpredictions\GGN-PB.parquet due to insufficient data: 252 days
+INFO:root:Skipping Data/RFpredictions\GLU-PB.parquet due to insufficient data: 174 days
+INFO:root:Skipping Data/RFpredictions\GTLS-PB.parquet due to insufficient data: 232 days
+INFO:root:Skipping Data/RFpredictions\HSHP.parquet due to insufficient data: 157 days
+INFO:root:Skipping Data/RFpredictions\HWM-P.parquet due to insufficient data: 179 days
+INFO:root:Skipping Data/RFpredictions\JWSM-UN.parquet due to insufficient data: 122 days
+INFO:root:Skipping Data/RFpredictions\JXN-PA.parquet due to insufficient data: 175 days
+INFO:root:Skipping Data/RFpredictions\KVUE.parquet due to insufficient data: 134 days
+INFO:root:Skipping Data/RFpredictions\LNC-PD.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\MBC.parquet due to insufficient data: 233 days
+INFO:root:Skipping Data/RFpredictions\MSGE.parquet due to insufficient data: 136 days
+INFO:root:Skipping Data/RFpredictions\OSG.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\PCG-PD.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\PCG-PG.parquet due to insufficient data: 165 days
+INFO:root:Skipping Data/RFpredictions\PEB-PE.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\PERF.parquet due to insufficient data: 261 days
+INFO:root:Skipping Data/RFpredictions\PKST.parquet due to insufficient data: 148 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PG.parquet due to insufficient data: 197 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PJ.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\RC-PC.parquet due to insufficient data: 177 days
+INFO:root:Skipping Data/RFpredictions\RWT-PA.parquet due to insufficient data: 212 days
+INFO:root:Skipping Data/RFpredictions\RXO.parquet due to insufficient data: 263 days
+INFO:root:Skipping Data/RFpredictions\SAJ.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\SAY.parquet due to insufficient data: 228 days
+INFO:root:Skipping Data/RFpredictions\SAZ.parquet due to insufficient data: 142 days
+INFO:root:Skipping Data/RFpredictions\SBOW.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\SBXC-UN.parquet due to insufficient data: 180 days
+INFO:root:Skipping Data/RFpredictions\SBXC.parquet due to insufficient data: 130 days
+INFO:root:Skipping Data/RFpredictions\SCCB.parquet due to insufficient data: 233 days
+INFO:root:Skipping Data/RFpredictions\SGE.parquet due to insufficient data: 126 days
+INFO:root:Skipping Data/RFpredictions\SHNY.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\SIX.parquet due to insufficient data: 234 days
+INFO:root:Skipping Data/RFpredictions\SLCA.parquet due to insufficient data: 255 days
+INFO:root:Skipping Data/RFpredictions\SPE-PC.parquet due to insufficient data: 139 days
+INFO:root:Skipping Data/RFpredictions\STRW.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\TRIS-UN.parquet due to insufficient data: 257 days
+INFO:root:Skipping Data/RFpredictions\TRIS.parquet due to insufficient data: 257 days
+INFO:root:Skipping Data/RFpredictions\TXO.parquet due to insufficient data: 201 days
+INFO:root:Skipping Data/RFpredictions\UHAL-B.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\VCXB.parquet due to insufficient data: 242 days
+INFO:root:Skipping Data/RFpredictions\VTS.parquet due to insufficient data: 213 days
+INFO:root:Skipping Data/RFpredictions\WRK.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\WTID.parquet due to insufficient data: 188 days
+INFO:root:Skipping Data/RFpredictions\WTIU.parquet due to insufficient data: 188 days
+INFO:root:Skipping Data/RFpredictions\WUCT.parquet due to insufficient data: 160 days
+INFO:root:Skipping Data/RFpredictions\YCBD-PA.parquet due to insufficient data: 254 days
+INFO:root:Skipping AUB-PA due to insufficient data: 264 days
+INFO:root:Skipping FHN-PB due to insufficient data: 254 days
+INFO:root:Skipping GAM-PB due to insufficient data: 264 days
+INFO:root:Skipping GDV-PH due to insufficient data: 260 days
+INFO:root:Skipping IFIN-UN due to insufficient data: 264 days
+INFO:root:Skipping KCGI-UN due to insufficient data: 255 days
+INFO:root:Skipping KCGI due to insufficient data: 255 days
+INFO:root:Skipping MTB-PH due to insufficient data: 260 days
+INFO:root:Skipping OPP-PA due to insufficient data: 258 days
+INFO:root:Skipping PCG-PA due to insufficient data: 260 days
+INFO:root:Skipping PSA-PG due to insufficient data: 264 days
+INFO:root:Skipping RJF-PB due to insufficient data: 256 days
+INFO:root:Skipping TCOA-UN due to insufficient data: 257 days
+INFO:root:Skipping TDS-PU due to insufficient data: 264 days
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Column correlation_212 not found for TG
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Column correlation_212 not found for ZVIA
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Column correlation_212 not found for INDO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZVIA
+WARNING:root:Cluster information not available for INDO
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+INFO:root:Closing INDO due to Sell condition met
+WARNING:root:Entry price not found for INDO. Assuming no loss.
+INFO:root:Closing ZVIA due to Sell condition met
+WARNING:root:Entry price not found for ZVIA. Assuming no loss.
+WARNING:root:Cluster information not available for TG
+INFO:root:Closing TG due to Sell condition met
+WARNING:root:Entry price not found for TG. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ASPN
+WARNING:root:Column correlation_372 not found for DAO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing ASPN due to Sell condition met
+WARNING:root:Entry price not found for ASPN. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DAO
+WARNING:root:Cluster information not available for SES
+WARNING:root:Column correlation_1283 not found for ALUR
+WARNING:root:Column correlation_4189 not found for ALUR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing DAO due to Sell condition met
+INFO:root:Closing SES due to Sell condition met
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Entry price not found for DAO. Assuming no loss.
+WARNING:root:Entry price not found for SES. Assuming no loss.
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Column correlation_212 not found for BRBS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+WARNING:root:Cluster information not available for BRBS
+INFO:root:Closing BRBS due to Sell condition met
+WARNING:root:Entry price not found for BRBS. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for TSE
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MVRL
+WARNING:root:Cluster information not available for ALLY
+WARNING:root:Cluster information not available for BNKU
+WARNING:root:Cluster information not available for NOTE
+INFO:root:Closing MVRL due to Sell condition met
+INFO:root:Closing NOTE due to Sell condition met
+WARNING:root:Entry price not found for MVRL. Assuming no loss.
+WARNING:root:Entry price not found for NOTE. Assuming no loss.
+INFO:root:Closing ALLY due to Sell condition met
+INFO:root:Closing BNKU due to Sell condition met
+WARNING:root:Column correlation_197 not found for BBU
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BBUC
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BFAM
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for JELD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PAR
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PL
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for QVCD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RKT
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RSI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for SNAP
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for TGI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for VZIO
+WARNING:root:No correlation data found for position: BNKU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALLY. Assuming no loss.
+WARNING:root:Entry price not found for BNKU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for BBUC
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Cluster information not available for RKT
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for BBU
+WARNING:root:Column correlation_4313 not found for BBU
+WARNING:root:Column correlation_4012 not found for BRBS
+WARNING:root:Column correlation_4313 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_4012 not found for KRO
+WARNING:root:Column correlation_4313 not found for KRO
+WARNING:root:Column correlation_4012 not found for PAR
+WARNING:root:Column correlation_4313 not found for PAR
+WARNING:root:Column correlation_4012 not found for SEMR
+WARNING:root:Column correlation_4313 not found for SEMR
+WARNING:root:Column correlation_4012 not found for TGI
+WARNING:root:Column correlation_4313 not found for TGI
+WARNING:root:Column correlation_4012 not found for VZIO
+WARNING:root:Column correlation_4313 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing RKT due to Sell condition met
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for KEN
+WARNING:root:Cluster information not available for SEMR
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRBS
+WARNING:root:Column correlation_4184 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for SNAP
+WARNING:root:Column correlation_4184 not found for SNAP
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for VZIO
+INFO:root:Closing VZIO due to Sell condition met
+WARNING:root:Entry price not found for VZIO. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRCC
+WARNING:root:Column correlation_4184 not found for BRCC
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for PAGS
+WARNING:root:Column correlation_4184 not found for PAGS
+WARNING:root:Column correlation_2613 not found for RKT
+WARNING:root:Column correlation_4184 not found for RKT
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing KEN due to Sell condition met
+INFO:root:Closing SEMR due to Sell condition met
+WARNING:root:Entry price not found for KEN. Assuming no loss.
+WARNING:root:Entry price not found for SEMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for RKT
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for CWK
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing CWK due to Sell condition met
+WARNING:root:Column correlation_1254 not found for ONTF
+WARNING:root:Column correlation_4012 not found for ONTF
+WARNING:root:Column correlation_1254 not found for SMR
+WARNING:root:Column correlation_4012 not found for SMR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CWK. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for ADCT
+WARNING:root:Column correlation_4012 not found for BBUC
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for BBUC
+WARNING:root:Cluster information not available for BGS
+INFO:root:Closing RKT due to Sell condition met
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Column correlation_517 not found for CIO
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_517 not found for DEI
+WARNING:root:Column correlation_584 not found for DEI
+WARNING:root:Column correlation_4305 not found for DEI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_584 not found for NRGV
+WARNING:root:Column correlation_4305 not found for NRGV
+WARNING:root:Column correlation_584 not found for SES
+WARNING:root:Column correlation_4305 not found for SES
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DEI
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+WARNING:root:Cluster information not available for CIO
+INFO:root:Closing BGS due to Sell condition met
+INFO:root:Closing DEI due to Sell condition met
+WARNING:root:Entry price not found for BGS. Assuming no loss.
+WARNING:root:Entry price not found for DEI. Assuming no loss.
+WARNING:root:Column correlation_984 not found for BGS
+WARNING:root:Column correlation_984 not found for CWK
+WARNING:root:Column correlation_984 not found for LNC
+WARNING:root:Column correlation_984 not found for OGN
+WARNING:root:Column correlation_984 not found for ZIM
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZIM
+INFO:root:Closing CIO due to Sell condition met
+WARNING:root:Cluster information not available for OGN
+WARNING:root:Entry price not found for CIO. Assuming no loss.
+WARNING:root:Column correlation_3463 not found for BFLY
+WARNING:root:Column correlation_5159 not found for BFLY
+WARNING:root:Column correlation_3463 not found for CTLT
+WARNING:root:Column correlation_5159 not found for CTLT
+WARNING:root:Column correlation_3463 not found for WRBY
+WARNING:root:Column correlation_5159 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing OGN due to Sell condition met
+INFO:root:Closing WRBY due to Sell condition met
+INFO:root:Closing ZIM due to Sell condition met
+WARNING:root:Entry price not found for OGN. Assuming no loss.
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Entry price not found for ZIM. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for BFLY
+WARNING:root:Cluster information not available for TELZ
+WARNING:root:Cluster information not available for UUU
+INFO:root:Closing BFLY due to Sell condition met
+INFO:root:Closing TELZ due to Sell condition met
+INFO:root:Closing UUU due to Sell condition met
+WARNING:root:Entry price not found for BFLY. Assuming no loss.
+WARNING:root:Entry price not found for TELZ. Assuming no loss.
+WARNING:root:Entry price not found for UUU. Assuming no loss.
+WARNING:root:Cluster information not available for LNC
+INFO:root:Closing LNC due to Sell condition met
+WARNING:root:Entry price not found for LNC. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MATV
+WARNING:root:Cluster information not available for TRTX
+WARNING:root:Cluster information not available for CHPT
+INFO:root:Closing TRTX due to Sell condition met
+WARNING:root:Entry price not found for TRTX. Assuming no loss.
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ARIS
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing CHPT due to Sell condition met
+INFO:root:Closing MATV due to Sell condition met
+WARNING:root:Column correlation_334 not found for PNST
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CHPT. Assuming no loss.
+WARNING:root:Entry price not found for MATV. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+WARNING:root:No correlation data found for ticker: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_334 not found for SLI
+WARNING:root:Column correlation_3762 not found for SLI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing ARIS due to Sell condition met
+WARNING:root:Cluster information not available for SLI
+WARNING:root:Entry price not found for ARIS. Assuming no loss.
+INFO:root:Closing SLI due to Sell condition met
+WARNING:root:Entry price not found for SLI. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for GTE
+WARNING:root:Cluster information not available for NG
+WARNING:root:Column correlation_2123 not found for NOVA
+WARNING:root:Column correlation_3247 not found for NOVA
+WARNING:root:Column correlation_2123 not found for PNST
+WARNING:root:Column correlation_3247 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing GTE due to Sell condition met
+WARNING:root:Entry price not found for GTE. Assuming no loss.
+INFO:root:Closing NG due to Sell condition met
+WARNING:root:Entry price not found for NG. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CTDD
+WARNING:root:Cluster information not available for AG
+WARNING:root:Column correlation_120 not found for NEM
+WARNING:root:No correlation data found for position: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NEM
+INFO:root:Closing CTDD due to Sell condition met
+WARNING:root:Entry price not found for CTDD. Assuming no loss.
+INFO:root:Closing NEM due to Sell condition met
+WARNING:root:Entry price not found for NEM. Assuming no loss.
+INFO:root:Closing AG due to Sell condition met
+WARNING:root:Column correlation_120 not found for BKKT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AG. Assuming no loss.
+WARNING:root:Cluster information not available for BKKT
+INFO:root:Closing BKKT due to Sell condition met
+WARNING:root:Entry price not found for BKKT. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EBS
+INFO:root:Closing EBS due to Sell condition met
+WARNING:root:Entry price not found for EBS. Assuming no loss.
+WARNING:root:Cluster information not available for BFH
+WARNING:root:Cluster information not available for AMRC
+WARNING:root:Cluster information not available for GME
+INFO:root:Closing BFH due to Sell condition met
+WARNING:root:Entry price not found for BFH. Assuming no loss.
+INFO:root:Closing AMRC due to Sell condition met
+WARNING:root:Column correlation_247 not found for HLF
+WARNING:root:Column correlation_2046 not found for HLF
+WARNING:root:Column correlation_247 not found for WYY
+WARNING:root:Column correlation_2046 not found for WYY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AMRC. Assuming no loss.
+WARNING:root:Cluster information not available for WYY
+WARNING:root:Column correlation_2046 not found for AMRC
+WARNING:root:Column correlation_5090 not found for AMRC
+WARNING:root:Column correlation_2046 not found for BROS
+WARNING:root:Column correlation_5090 not found for BROS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Cluster information not available for BROS
+INFO:root:Closing GME due to Sell condition met
+INFO:root:Closing HLF due to Sell condition met
+INFO:root:Closing WYY due to Sell condition met
+WARNING:root:Entry price not found for GME. Assuming no loss.
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+WARNING:root:Entry price not found for WYY. Assuming no loss.
+WARNING:root:Column correlation_725 not found for HLF
+WARNING:root:Column correlation_725 not found for IPI
+WARNING:root:Column correlation_725 not found for KW
+WARNING:root:Column correlation_725 not found for PW
+WARNING:root:Column correlation_725 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing BROS due to Sell condition met
+WARNING:root:Entry price not found for BROS. Assuming no loss.
+WARNING:root:Column correlation_5059 not found for LXU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing WRBY due to Sell condition met
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Column correlation_2219 not found for UNFI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HLF due to Sell condition met
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Cluster information not available for KW
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_2689 not found for CHWY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for UNFI
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing KW due to Sell condition met
+WARNING:root:Entry price not found for KW. Assuming no loss.
+WARNING:root:Column correlation_968 not found for ATUS
+WARNING:root:Column correlation_4780 not found for ATUS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_4780 not found for XPOF
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for XPOF
+INFO:root:Closing UNFI due to Sell condition met
+WARNING:root:Entry price not found for UNFI. Assuming no loss.
+WARNING:root:No correlation data found for ticker: SKIL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing XPOF due to Sell condition met
+WARNING:root:Cluster information not available for SKIL
+WARNING:root:Entry price not found for XPOF. Assuming no loss.
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing SKIL due to Sell condition met
+WARNING:root:Cluster information not available for LXU
+WARNING:root:Entry price not found for SKIL. Assuming no loss.
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing LXU due to Sell condition met
+WARNING:root:Entry price not found for LXU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NOVA
+INFO:root:Closing NOVA due to Sell condition met
+WARNING:root:Entry price not found for NOVA. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ANVS
+WARNING:root:Column correlation_277 not found for AZUL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for AZUL
+WARNING:root:Column correlation_277 not found for EVRI
+WARNING:root:Column correlation_478 not found for EVRI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing AZUL due to Sell condition met
+WARNING:root:Column correlation_277 not found for AP
+WARNING:root:Column correlation_478 not found for AP
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_478 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AZUL. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_277 not found for NXDT
+WARNING:root:Column correlation_2181 not found for NXDT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Cluster information not available for NXDT
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing ANVS due to Sell condition met
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_3410 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ANVS. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_2181 not found for RVLV
+WARNING:root:Column correlation_3410 not found for RVLV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EVRI
+INFO:root:Closing EVRI due to Sell condition met
+WARNING:root:Entry price not found for EVRI. Assuming no loss.
+INFO:root:Closing NXDT due to Sell condition met
+WARNING:root:Column correlation_2181 not found for BALY
+WARNING:root:Column correlation_3410 not found for BALY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for NXDT. Assuming no loss.
+WARNING:root:Cluster information not available for RVLV
+WARNING:root:Cluster information not available for BALY
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing BALY due to Sell condition met
+WARNING:root:Entry price not found for BALY. Assuming no loss.
+INFO:root:Closing RVLV due to Sell condition met
+WARNING:root:Entry price not found for RVLV. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for OLO
+WARNING:root:Cluster information not available for MD
+INFO:root:Closing OLO due to Sell condition met
+WARNING:root:Entry price not found for OLO. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Entry price not found for MD. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_3762 not found for TIXT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MD
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_2933 not found for FUBO
+WARNING:root:Column correlation_4598 not found for FUBO
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4598 not found for LEV
+WARNING:root:Column correlation_2933 not found for TSE
+WARNING:root:Column correlation_4598 not found for TSE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for TSE
+WARNING:root:Cluster information not available for FUBO
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Column correlation_1896 not found for LEV
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4686 not found for LEV
+WARNING:root:Column correlation_1896 not found for TIXT
+WARNING:root:Column correlation_2933 not found for TIXT
+WARNING:root:Column correlation_4686 not found for TIXT
+WARNING:root:Column correlation_1896 not found for VNRX
+WARNING:root:Column correlation_2933 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for MD. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_1896 not found for CHGG
+WARNING:root:Column correlation_4598 not found for CHGG
+WARNING:root:Column correlation_4686 not found for CHGG
+WARNING:root:Column correlation_1896 not found for CLPR
+WARNING:root:Column correlation_4598 not found for CLPR
+WARNING:root:Column correlation_4686 not found for CLPR
+WARNING:root:Column correlation_1896 not found for PNST
+WARNING:root:Column correlation_4598 not found for PNST
+WARNING:root:Column correlation_4686 not found for PNST
+WARNING:root:Column correlation_1896 not found for VNRX
+WARNING:root:Column correlation_4598 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CLPR
+INFO:root:Closing FUBO due to Sell condition met
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for FUBO. Assuming no loss.
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+WARNING:root:Column correlation_1012 not found for CNF
+WARNING:root:Column correlation_4686 not found for CNF
+WARNING:root:Column correlation_1012 not found for EVEX
+WARNING:root:Column correlation_4686 not found for EVEX
+WARNING:root:Column correlation_1012 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for EVEX at price 2.7899999618530273 on 2024-08-28
+INFO:root:Buy signal saved for CNF at price 1.2100000381469727 on 2024-08-28
+INFO:root:Buy signal saved for VNRX at price 0.6899999976158142 on 2024-08-28
+WARNING:root:Cluster information not available for CNF
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+INFO:root:Closing CLPR due to Sell condition met
+INFO:root:Closing CNF due to Sell condition met
+WARNING:root:Column correlation_1012 not found for BFLY
+WARNING:root:Column correlation_1057 not found for BFLY
+WARNING:root:No correlation data found for ticker: GDXD
+WARNING:root:Column correlation_1012 not found for GETY
+WARNING:root:Column correlation_1057 not found for GETY
+WARNING:root:Column correlation_1012 not found for ISDR
+WARNING:root:Column correlation_1057 not found for ISDR
+WARNING:root:Column correlation_1012 not found for NVRO
+WARNING:root:Column correlation_1057 not found for NVRO
+WARNING:root:Column correlation_1012 not found for XPEV
+WARNING:root:Column correlation_1057 not found for XPEV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for NVRO at price 6.190000057220459 on 2024-08-30
+INFO:root:Buy signal saved for GETY at price 3.799999952316284 on 2024-08-30
+INFO:root:Buy signal saved for XPEV at price 8.050000190734863 on 2024-08-30
+INFO:root:Buy signal saved for GDXD at price 15.260000228881836 on 2024-08-30
+INFO:root:Buy signal saved for ISDR at price 12.0600004196167 on 2024-08-30
+INFO:root:Open Positions: 4
+INFO:root:Group Allocations: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}
+INFO:root:Position: CLPR, Size: 382, Entry Price: 4.819500160217285
+INFO:root:Position: CNF, Size: 1523, Entry Price: 1.2705000400543214
+INFO:root:Strategy stopped. Final portfolio state logged.
+INFO:root:====================== New Entry ===================
+INFO:root:Max Drawdown: 6.77%
+INFO:root:Total Trades: 86
+INFO:root:Profitable Trades: 49
+INFO:root:Sharpe Ratio: 1.05
+INFO:root:SQN: 1.73
+INFO:root:Profit Factor: -0.20
+INFO:root:Average Trade: 86.07
+INFO:root:Average Winning Trade: 189.88
+INFO:root:Average Losing Trade: -51.41
+INFO:root:Largest Winning Trade: 4056.46
+INFO:root:Largest Losing Trade: -171.19
+INFO:root:Time taken: 137.97 seconds
+INFO:root:Inital Portfolio funding: $5000.00
+INFO:root:Final Portfolio Value: $12195.67
+INFO:root:Percentage Gain: 143.91%
+INFO:root:Cash: $8625.70
+INFO:root:Skipping Data/RFpredictions\ACP-PA.parquet due to insufficient data: 250 days
+INFO:root:Skipping Data/RFpredictions\AESI.parquet due to insufficient data: 173 days
+INFO:root:Skipping Data/RFpredictions\AFT.parquet due to insufficient data: 247 days
+INFO:root:Skipping Data/RFpredictions\AGM-PC.parquet due to insufficient data: 244 days
+INFO:root:Skipping Data/RFpredictions\AIF.parquet due to insufficient data: 247 days
+INFO:root:Skipping Data/RFpredictions\ALL-PJ.parquet due to insufficient data: 126 days
+INFO:root:Skipping Data/RFpredictions\ASBA.parquet due to insufficient data: 177 days
+INFO:root:Skipping Data/RFpredictions\ATH-PE.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\AULT-PD.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\BAM.parquet due to insufficient data: 239 days
+INFO:root:Skipping Data/RFpredictions\BCV-PA.parquet due to insufficient data: 252 days
+INFO:root:Skipping Data/RFpredictions\BKDT.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\BLUA-UN.parquet due to insufficient data: 59 days
+INFO:root:Skipping Data/RFpredictions\BMN.parquet due to insufficient data: 263 days
+INFO:root:Skipping Data/RFpredictions\BWET.parquet due to insufficient data: 135 days
+INFO:root:Skipping Data/RFpredictions\CFG-PD.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\CHAA.parquet due to insufficient data: 238 days
+INFO:root:Skipping Data/RFpredictions\CLCO.parquet due to insufficient data: 166 days
+INFO:root:Skipping Data/RFpredictions\CMRE-PE.parquet due to insufficient data: 241 days
+INFO:root:Skipping Data/RFpredictions\CR.parquet due to insufficient data: 159 days
+INFO:root:Skipping Data/RFpredictions\DMYY.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\DULL.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\ECF-PA.parquet due to insufficient data: 244 days
+INFO:root:Skipping Data/RFpredictions\EFC-PC.parquet due to insufficient data: 181 days
+INFO:root:Skipping Data/RFpredictions\ETRN.parquet due to insufficient data: 246 days
+INFO:root:Skipping Data/RFpredictions\FBGX.parquet due to insufficient data: 242 days
+INFO:root:Skipping Data/RFpredictions\FG.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\FSCO.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\FSD.parquet due to insufficient data: 246 days
+INFO:root:Skipping Data/RFpredictions\GDL-PC.parquet due to insufficient data: 137 days
+INFO:root:Skipping Data/RFpredictions\GGN-PB.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\GLU-PB.parquet due to insufficient data: 173 days
+INFO:root:Skipping Data/RFpredictions\GTLS-PB.parquet due to insufficient data: 232 days
+INFO:root:Skipping Data/RFpredictions\HSHP.parquet due to insufficient data: 157 days
+INFO:root:Skipping Data/RFpredictions\HWM-P.parquet due to insufficient data: 178 days
+INFO:root:Skipping Data/RFpredictions\JWSM-UN.parquet due to insufficient data: 121 days
+INFO:root:Skipping Data/RFpredictions\JXN-PA.parquet due to insufficient data: 175 days
+INFO:root:Skipping Data/RFpredictions\KVUE.parquet due to insufficient data: 134 days
+INFO:root:Skipping Data/RFpredictions\LNC-PD.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\MBC.parquet due to insufficient data: 233 days
+INFO:root:Skipping Data/RFpredictions\MSGE.parquet due to insufficient data: 136 days
+INFO:root:Skipping Data/RFpredictions\OSG.parquet due to insufficient data: 239 days
+INFO:root:Skipping Data/RFpredictions\PCG-PD.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\PCG-PG.parquet due to insufficient data: 164 days
+INFO:root:Skipping Data/RFpredictions\PEB-PE.parquet due to insufficient data: 257 days
+INFO:root:Skipping Data/RFpredictions\PERF.parquet due to insufficient data: 261 days
+INFO:root:Skipping Data/RFpredictions\PKST.parquet due to insufficient data: 148 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PG.parquet due to insufficient data: 197 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PJ.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\RC-PC.parquet due to insufficient data: 176 days
+INFO:root:Skipping Data/RFpredictions\RWT-PA.parquet due to insufficient data: 212 days
+INFO:root:Skipping Data/RFpredictions\RXO.parquet due to insufficient data: 263 days
+INFO:root:Skipping Data/RFpredictions\SAJ.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\SAY.parquet due to insufficient data: 228 days
+INFO:root:Skipping Data/RFpredictions\SAZ.parquet due to insufficient data: 142 days
+INFO:root:Skipping Data/RFpredictions\SBOW.parquet due to insufficient data: 252 days
+INFO:root:Skipping Data/RFpredictions\SBXC-UN.parquet due to insufficient data: 180 days
+INFO:root:Skipping Data/RFpredictions\SBXC.parquet due to insufficient data: 130 days
+INFO:root:Skipping Data/RFpredictions\SCCB.parquet due to insufficient data: 232 days
+INFO:root:Skipping Data/RFpredictions\SGE.parquet due to insufficient data: 126 days
+INFO:root:Skipping Data/RFpredictions\SHNY.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\SIX.parquet due to insufficient data: 233 days
+INFO:root:Skipping Data/RFpredictions\SLCA.parquet due to insufficient data: 254 days
+INFO:root:Skipping Data/RFpredictions\SPE-PC.parquet due to insufficient data: 138 days
+INFO:root:Skipping Data/RFpredictions\STRW.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\TRIS-UN.parquet due to insufficient data: 256 days
+INFO:root:Skipping Data/RFpredictions\TRIS.parquet due to insufficient data: 256 days
+INFO:root:Skipping Data/RFpredictions\TXO.parquet due to insufficient data: 201 days
+INFO:root:Skipping Data/RFpredictions\UHAL-B.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\VCXB.parquet due to insufficient data: 241 days
+INFO:root:Skipping Data/RFpredictions\VTS.parquet due to insufficient data: 213 days
+INFO:root:Skipping Data/RFpredictions\WRK.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\WTID.parquet due to insufficient data: 188 days
+INFO:root:Skipping Data/RFpredictions\WTIU.parquet due to insufficient data: 188 days
+INFO:root:Skipping Data/RFpredictions\WUCT.parquet due to insufficient data: 160 days
+INFO:root:Skipping Data/RFpredictions\YCBD-PA.parquet due to insufficient data: 253 days
+INFO:root:Skipping AUB-PA due to insufficient data: 264 days
+INFO:root:Skipping FHN-PB due to insufficient data: 254 days
+INFO:root:Skipping GAM-PB due to insufficient data: 264 days
+INFO:root:Skipping GDV-PH due to insufficient data: 260 days
+INFO:root:Skipping IFIN-UN due to insufficient data: 264 days
+INFO:root:Skipping KCGI-UN due to insufficient data: 255 days
+INFO:root:Skipping KCGI due to insufficient data: 255 days
+INFO:root:Skipping MTB-PH due to insufficient data: 260 days
+INFO:root:Skipping OPP-PA due to insufficient data: 258 days
+INFO:root:Skipping PCG-PA due to insufficient data: 260 days
+INFO:root:Skipping PSA-PG due to insufficient data: 264 days
+INFO:root:Skipping RJF-PB due to insufficient data: 256 days
+INFO:root:Skipping TCOA-UN due to insufficient data: 257 days
+INFO:root:Skipping TDS-PU due to insufficient data: 264 days
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Column correlation_212 not found for TG
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Column correlation_212 not found for ZVIA
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Column correlation_212 not found for INDO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZVIA
+WARNING:root:Cluster information not available for INDO
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+INFO:root:Closing INDO due to Sell condition met
+WARNING:root:Entry price not found for INDO. Assuming no loss.
+INFO:root:Closing ZVIA due to Sell condition met
+WARNING:root:Entry price not found for ZVIA. Assuming no loss.
+WARNING:root:Cluster information not available for TG
+INFO:root:Closing TG due to Sell condition met
+WARNING:root:Entry price not found for TG. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ASPN
+WARNING:root:Column correlation_372 not found for DAO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing ASPN due to Sell condition met
+WARNING:root:Entry price not found for ASPN. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DAO
+WARNING:root:Cluster information not available for SES
+WARNING:root:Column correlation_1283 not found for ALUR
+WARNING:root:Column correlation_4189 not found for ALUR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing DAO due to Sell condition met
+INFO:root:Closing SES due to Sell condition met
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Entry price not found for DAO. Assuming no loss.
+WARNING:root:Entry price not found for SES. Assuming no loss.
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Column correlation_212 not found for BRBS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+WARNING:root:Cluster information not available for BRBS
+INFO:root:Closing BRBS due to Sell condition met
+WARNING:root:Entry price not found for BRBS. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for TSE
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MVRL
+WARNING:root:Cluster information not available for ALLY
+WARNING:root:Cluster information not available for BNKU
+WARNING:root:Cluster information not available for NOTE
+INFO:root:Closing MVRL due to Sell condition met
+INFO:root:Closing NOTE due to Sell condition met
+WARNING:root:Entry price not found for MVRL. Assuming no loss.
+WARNING:root:Entry price not found for NOTE. Assuming no loss.
+INFO:root:Closing ALLY due to Sell condition met
+INFO:root:Closing BNKU due to Sell condition met
+WARNING:root:Column correlation_197 not found for BBU
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BBUC
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BFAM
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for JELD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PAR
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PL
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for QVCD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RKT
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RSI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for SNAP
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for TGI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for VZIO
+WARNING:root:No correlation data found for position: BNKU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALLY. Assuming no loss.
+WARNING:root:Entry price not found for BNKU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for BBUC
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Cluster information not available for RKT
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for BBU
+WARNING:root:Column correlation_4313 not found for BBU
+WARNING:root:Column correlation_4012 not found for BRBS
+WARNING:root:Column correlation_4313 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_4012 not found for KRO
+WARNING:root:Column correlation_4313 not found for KRO
+WARNING:root:Column correlation_4012 not found for PAR
+WARNING:root:Column correlation_4313 not found for PAR
+WARNING:root:Column correlation_4012 not found for SEMR
+WARNING:root:Column correlation_4313 not found for SEMR
+WARNING:root:Column correlation_4012 not found for TGI
+WARNING:root:Column correlation_4313 not found for TGI
+WARNING:root:Column correlation_4012 not found for VZIO
+WARNING:root:Column correlation_4313 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing RKT due to Sell condition met
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for KEN
+WARNING:root:Cluster information not available for SEMR
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRBS
+WARNING:root:Column correlation_4184 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for SNAP
+WARNING:root:Column correlation_4184 not found for SNAP
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for VZIO
+INFO:root:Closing VZIO due to Sell condition met
+WARNING:root:Entry price not found for VZIO. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRCC
+WARNING:root:Column correlation_4184 not found for BRCC
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for PAGS
+WARNING:root:Column correlation_4184 not found for PAGS
+WARNING:root:Column correlation_2613 not found for RKT
+WARNING:root:Column correlation_4184 not found for RKT
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing KEN due to Sell condition met
+INFO:root:Closing SEMR due to Sell condition met
+WARNING:root:Entry price not found for KEN. Assuming no loss.
+WARNING:root:Entry price not found for SEMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for RKT
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for CWK
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing CWK due to Sell condition met
+WARNING:root:Column correlation_1254 not found for ONTF
+WARNING:root:Column correlation_4012 not found for ONTF
+WARNING:root:Column correlation_1254 not found for SMR
+WARNING:root:Column correlation_4012 not found for SMR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CWK. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for ADCT
+WARNING:root:Column correlation_4012 not found for BBUC
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for BBUC
+WARNING:root:Cluster information not available for BGS
+INFO:root:Closing RKT due to Sell condition met
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Column correlation_517 not found for CIO
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_517 not found for DEI
+WARNING:root:Column correlation_584 not found for DEI
+WARNING:root:Column correlation_4305 not found for DEI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_584 not found for NRGV
+WARNING:root:Column correlation_4305 not found for NRGV
+WARNING:root:Column correlation_584 not found for SES
+WARNING:root:Column correlation_4305 not found for SES
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DEI
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+WARNING:root:Cluster information not available for CIO
+INFO:root:Closing BGS due to Sell condition met
+INFO:root:Closing DEI due to Sell condition met
+WARNING:root:Entry price not found for BGS. Assuming no loss.
+WARNING:root:Entry price not found for DEI. Assuming no loss.
+WARNING:root:Column correlation_984 not found for BGS
+WARNING:root:Column correlation_984 not found for CWK
+WARNING:root:Column correlation_984 not found for LNC
+WARNING:root:Column correlation_984 not found for OGN
+WARNING:root:Column correlation_984 not found for ZIM
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZIM
+INFO:root:Closing CIO due to Sell condition met
+WARNING:root:Cluster information not available for OGN
+WARNING:root:Entry price not found for CIO. Assuming no loss.
+WARNING:root:Column correlation_3463 not found for BFLY
+WARNING:root:Column correlation_5159 not found for BFLY
+WARNING:root:Column correlation_3463 not found for CTLT
+WARNING:root:Column correlation_5159 not found for CTLT
+WARNING:root:Column correlation_3463 not found for WRBY
+WARNING:root:Column correlation_5159 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing OGN due to Sell condition met
+INFO:root:Closing WRBY due to Sell condition met
+INFO:root:Closing ZIM due to Sell condition met
+WARNING:root:Entry price not found for OGN. Assuming no loss.
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Entry price not found for ZIM. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for BFLY
+WARNING:root:Cluster information not available for TELZ
+WARNING:root:Cluster information not available for UUU
+INFO:root:Closing BFLY due to Sell condition met
+INFO:root:Closing TELZ due to Sell condition met
+INFO:root:Closing UUU due to Sell condition met
+WARNING:root:Entry price not found for BFLY. Assuming no loss.
+WARNING:root:Entry price not found for TELZ. Assuming no loss.
+WARNING:root:Entry price not found for UUU. Assuming no loss.
+WARNING:root:Cluster information not available for LNC
+INFO:root:Closing LNC due to Sell condition met
+WARNING:root:Entry price not found for LNC. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MATV
+WARNING:root:Cluster information not available for TRTX
+WARNING:root:Cluster information not available for CHPT
+INFO:root:Closing TRTX due to Sell condition met
+WARNING:root:Entry price not found for TRTX. Assuming no loss.
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ARIS
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing CHPT due to Sell condition met
+INFO:root:Closing MATV due to Sell condition met
+WARNING:root:Column correlation_334 not found for PNST
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CHPT. Assuming no loss.
+WARNING:root:Entry price not found for MATV. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+WARNING:root:No correlation data found for ticker: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_334 not found for SLI
+WARNING:root:Column correlation_3762 not found for SLI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing ARIS due to Sell condition met
+WARNING:root:Cluster information not available for SLI
+WARNING:root:Entry price not found for ARIS. Assuming no loss.
+INFO:root:Closing SLI due to Sell condition met
+WARNING:root:Entry price not found for SLI. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for GTE
+WARNING:root:Cluster information not available for NG
+WARNING:root:Column correlation_2123 not found for NOVA
+WARNING:root:Column correlation_3247 not found for NOVA
+WARNING:root:Column correlation_2123 not found for PNST
+WARNING:root:Column correlation_3247 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing GTE due to Sell condition met
+WARNING:root:Entry price not found for GTE. Assuming no loss.
+INFO:root:Closing NG due to Sell condition met
+WARNING:root:Entry price not found for NG. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CTDD
+WARNING:root:Cluster information not available for AG
+WARNING:root:Column correlation_120 not found for NEM
+WARNING:root:No correlation data found for position: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NEM
+INFO:root:Closing CTDD due to Sell condition met
+WARNING:root:Entry price not found for CTDD. Assuming no loss.
+INFO:root:Closing NEM due to Sell condition met
+WARNING:root:Entry price not found for NEM. Assuming no loss.
+INFO:root:Closing AG due to Sell condition met
+WARNING:root:Column correlation_120 not found for BKKT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AG. Assuming no loss.
+WARNING:root:Cluster information not available for BKKT
+INFO:root:Closing BKKT due to Sell condition met
+WARNING:root:Entry price not found for BKKT. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EBS
+INFO:root:Closing EBS due to Sell condition met
+WARNING:root:Entry price not found for EBS. Assuming no loss.
+WARNING:root:Cluster information not available for BFH
+WARNING:root:Cluster information not available for AMRC
+WARNING:root:Cluster information not available for GME
+INFO:root:Closing BFH due to Sell condition met
+WARNING:root:Entry price not found for BFH. Assuming no loss.
+INFO:root:Closing AMRC due to Sell condition met
+WARNING:root:Column correlation_247 not found for HLF
+WARNING:root:Column correlation_2046 not found for HLF
+WARNING:root:Column correlation_247 not found for WYY
+WARNING:root:Column correlation_2046 not found for WYY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AMRC. Assuming no loss.
+WARNING:root:Cluster information not available for WYY
+WARNING:root:Column correlation_2046 not found for AMRC
+WARNING:root:Column correlation_5090 not found for AMRC
+WARNING:root:Column correlation_2046 not found for BROS
+WARNING:root:Column correlation_5090 not found for BROS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Cluster information not available for BROS
+INFO:root:Closing GME due to Sell condition met
+INFO:root:Closing HLF due to Sell condition met
+INFO:root:Closing WYY due to Sell condition met
+WARNING:root:Entry price not found for GME. Assuming no loss.
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+WARNING:root:Entry price not found for WYY. Assuming no loss.
+WARNING:root:Column correlation_725 not found for HLF
+WARNING:root:Column correlation_725 not found for IPI
+WARNING:root:Column correlation_725 not found for KW
+WARNING:root:Column correlation_725 not found for PW
+WARNING:root:Column correlation_725 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing BROS due to Sell condition met
+WARNING:root:Entry price not found for BROS. Assuming no loss.
+WARNING:root:Column correlation_5059 not found for LXU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing WRBY due to Sell condition met
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Column correlation_2219 not found for UNFI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HLF due to Sell condition met
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Cluster information not available for KW
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_2689 not found for CHWY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for UNFI
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing KW due to Sell condition met
+WARNING:root:Entry price not found for KW. Assuming no loss.
+WARNING:root:Column correlation_968 not found for ATUS
+WARNING:root:Column correlation_4780 not found for ATUS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_4780 not found for XPOF
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for XPOF
+INFO:root:Closing UNFI due to Sell condition met
+WARNING:root:Entry price not found for UNFI. Assuming no loss.
+WARNING:root:No correlation data found for ticker: SKIL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing XPOF due to Sell condition met
+WARNING:root:Cluster information not available for SKIL
+WARNING:root:Entry price not found for XPOF. Assuming no loss.
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing SKIL due to Sell condition met
+WARNING:root:Cluster information not available for LXU
+WARNING:root:Entry price not found for SKIL. Assuming no loss.
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing LXU due to Sell condition met
+WARNING:root:Entry price not found for LXU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NOVA
+INFO:root:Closing NOVA due to Sell condition met
+WARNING:root:Entry price not found for NOVA. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ANVS
+WARNING:root:Column correlation_277 not found for AZUL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for AZUL
+WARNING:root:Column correlation_277 not found for EVRI
+WARNING:root:Column correlation_478 not found for EVRI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing AZUL due to Sell condition met
+WARNING:root:Column correlation_277 not found for AP
+WARNING:root:Column correlation_478 not found for AP
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_478 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AZUL. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_277 not found for NXDT
+WARNING:root:Column correlation_2181 not found for NXDT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Cluster information not available for NXDT
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing ANVS due to Sell condition met
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_3410 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ANVS. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_2181 not found for RVLV
+WARNING:root:Column correlation_3410 not found for RVLV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EVRI
+INFO:root:Closing EVRI due to Sell condition met
+WARNING:root:Entry price not found for EVRI. Assuming no loss.
+INFO:root:Closing NXDT due to Sell condition met
+WARNING:root:Column correlation_2181 not found for BALY
+WARNING:root:Column correlation_3410 not found for BALY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for NXDT. Assuming no loss.
+WARNING:root:Cluster information not available for RVLV
+WARNING:root:Cluster information not available for BALY
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing BALY due to Sell condition met
+WARNING:root:Entry price not found for BALY. Assuming no loss.
+INFO:root:Closing RVLV due to Sell condition met
+WARNING:root:Entry price not found for RVLV. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for OLO
+WARNING:root:Cluster information not available for MD
+INFO:root:Closing OLO due to Sell condition met
+WARNING:root:Entry price not found for OLO. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Entry price not found for MD. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_3762 not found for TIXT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MD
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_2933 not found for FUBO
+WARNING:root:Column correlation_4598 not found for FUBO
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4598 not found for LEV
+WARNING:root:Column correlation_2933 not found for TSE
+WARNING:root:Column correlation_4598 not found for TSE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for TSE
+WARNING:root:Cluster information not available for FUBO
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Column correlation_1896 not found for LEV
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4686 not found for LEV
+WARNING:root:Column correlation_1896 not found for TIXT
+WARNING:root:Column correlation_2933 not found for TIXT
+WARNING:root:Column correlation_4686 not found for TIXT
+WARNING:root:Column correlation_1896 not found for VNRX
+WARNING:root:Column correlation_2933 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for MD. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_1896 not found for CHGG
+WARNING:root:Column correlation_4598 not found for CHGG
+WARNING:root:Column correlation_4686 not found for CHGG
+WARNING:root:Column correlation_1896 not found for CLPR
+WARNING:root:Column correlation_4598 not found for CLPR
+WARNING:root:Column correlation_4686 not found for CLPR
+WARNING:root:Column correlation_1896 not found for PNST
+WARNING:root:Column correlation_4598 not found for PNST
+WARNING:root:Column correlation_4686 not found for PNST
+WARNING:root:Column correlation_1896 not found for VNRX
+WARNING:root:Column correlation_4598 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CLPR
+INFO:root:Closing FUBO due to Sell condition met
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for FUBO. Assuming no loss.
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+WARNING:root:Column correlation_1012 not found for CNF
+WARNING:root:Column correlation_4686 not found for CNF
+WARNING:root:Column correlation_1012 not found for EVEX
+WARNING:root:Column correlation_4686 not found for EVEX
+WARNING:root:Column correlation_1012 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for EVEX at price 2.7899999618530273 on 2024-08-28
+INFO:root:Buy signal saved for CNF at price 1.2100000381469727 on 2024-08-28
+INFO:root:Buy signal saved for VNRX at price 0.6899999976158142 on 2024-08-28
+WARNING:root:Cluster information not available for CNF
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+INFO:root:Closing CLPR due to Sell condition met
+INFO:root:Closing CNF due to Sell condition met
+WARNING:root:Column correlation_1012 not found for BFLY
+WARNING:root:Column correlation_1057 not found for BFLY
+WARNING:root:No correlation data found for ticker: GDXD
+WARNING:root:Column correlation_1012 not found for GETY
+WARNING:root:Column correlation_1057 not found for GETY
+WARNING:root:Column correlation_1012 not found for ISDR
+WARNING:root:Column correlation_1057 not found for ISDR
+WARNING:root:Column correlation_1012 not found for NVRO
+WARNING:root:Column correlation_1057 not found for NVRO
+WARNING:root:Column correlation_1012 not found for XPEV
+WARNING:root:Column correlation_1057 not found for XPEV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for NVRO at price 6.190000057220459 on 2024-08-30
+INFO:root:Buy signal saved for GETY at price 3.799999952316284 on 2024-08-30
+INFO:root:Buy signal saved for XPEV at price 8.050000190734863 on 2024-08-30
+INFO:root:Buy signal saved for GDXD at price 15.260000228881836 on 2024-08-30
+INFO:root:Buy signal saved for ISDR at price 12.0600004196167 on 2024-08-30
+INFO:root:Open Positions: 4
+INFO:root:Group Allocations: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}
+INFO:root:Position: CLPR, Size: 382, Entry Price: 4.819500160217285
+INFO:root:Position: CNF, Size: 1523, Entry Price: 1.2705000400543214
+INFO:root:Strategy stopped. Final portfolio state logged.
+INFO:root:====================== New Entry ===================
+INFO:root:Max Drawdown: 6.77%
+INFO:root:Total Trades: 86
+INFO:root:Profitable Trades: 49
+INFO:root:Sharpe Ratio: 1.05
+INFO:root:SQN: 1.73
+INFO:root:Profit Factor: -0.20
+INFO:root:Average Trade: 86.07
+INFO:root:Average Winning Trade: 189.88
+INFO:root:Average Losing Trade: -51.41
+INFO:root:Largest Winning Trade: 4056.46
+INFO:root:Largest Losing Trade: -171.19
+INFO:root:Time taken: 146.35 seconds
+INFO:root:Inital Portfolio funding: $5000.00
+INFO:root:Final Portfolio Value: $12195.67
+INFO:root:Percentage Gain: 143.91%
+INFO:root:Cash: $8625.70
+INFO:root:Skipping Data/RFpredictions\ACP-PA.parquet due to insufficient data: 249 days
+INFO:root:Skipping Data/RFpredictions\AESI.parquet due to insufficient data: 173 days
+INFO:root:Skipping Data/RFpredictions\AFT.parquet due to insufficient data: 246 days
+INFO:root:Skipping Data/RFpredictions\AGM-PC.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\AIF.parquet due to insufficient data: 246 days
+INFO:root:Skipping Data/RFpredictions\ALL-PJ.parquet due to insufficient data: 126 days
+INFO:root:Skipping Data/RFpredictions\ASBA.parquet due to insufficient data: 177 days
+INFO:root:Skipping Data/RFpredictions\ATH-PE.parquet due to insufficient data: 236 days
+INFO:root:Skipping Data/RFpredictions\AULT-PD.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\BAM.parquet due to insufficient data: 239 days
+INFO:root:Skipping Data/RFpredictions\BCV-PA.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\BKDT.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\BLUA-UN.parquet due to insufficient data: 59 days
+INFO:root:Skipping Data/RFpredictions\BMN.parquet due to insufficient data: 263 days
+INFO:root:Skipping Data/RFpredictions\BWET.parquet due to insufficient data: 135 days
+INFO:root:Skipping Data/RFpredictions\CFG-PD.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\CHAA.parquet due to insufficient data: 237 days
+INFO:root:Skipping Data/RFpredictions\CLCO.parquet due to insufficient data: 166 days
+INFO:root:Skipping Data/RFpredictions\CMRE-PE.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\CR.parquet due to insufficient data: 159 days
+INFO:root:Skipping Data/RFpredictions\DMYY.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\DULL.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\ECF-PA.parquet due to insufficient data: 243 days
+INFO:root:Skipping Data/RFpredictions\EFC-PC.parquet due to insufficient data: 181 days
+INFO:root:Skipping Data/RFpredictions\ETRN.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\FBGX.parquet due to insufficient data: 241 days
+INFO:root:Skipping Data/RFpredictions\FG.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\FHN-PB.parquet due to insufficient data: 264 days
+INFO:root:Skipping Data/RFpredictions\FSCO.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\FSD.parquet due to insufficient data: 245 days
+INFO:root:Skipping Data/RFpredictions\GDL-PC.parquet due to insufficient data: 136 days
+INFO:root:Skipping Data/RFpredictions\GGN-PB.parquet due to insufficient data: 250 days
+INFO:root:Skipping Data/RFpredictions\GLU-PB.parquet due to insufficient data: 172 days
+INFO:root:Skipping Data/RFpredictions\GTLS-PB.parquet due to insufficient data: 232 days
+INFO:root:Skipping Data/RFpredictions\HSHP.parquet due to insufficient data: 157 days
+INFO:root:Skipping Data/RFpredictions\HWM-P.parquet due to insufficient data: 178 days
+INFO:root:Skipping Data/RFpredictions\JWSM-UN.parquet due to insufficient data: 121 days
+INFO:root:Skipping Data/RFpredictions\JXN-PA.parquet due to insufficient data: 175 days
+INFO:root:Skipping Data/RFpredictions\KVUE.parquet due to insufficient data: 134 days
+INFO:root:Skipping Data/RFpredictions\LNC-PD.parquet due to insufficient data: 248 days
+INFO:root:Skipping Data/RFpredictions\MBC.parquet due to insufficient data: 233 days
+INFO:root:Skipping Data/RFpredictions\MSGE.parquet due to insufficient data: 136 days
+INFO:root:Skipping Data/RFpredictions\OSG.parquet due to insufficient data: 238 days
+INFO:root:Skipping Data/RFpredictions\PCG-PD.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\PCG-PG.parquet due to insufficient data: 163 days
+INFO:root:Skipping Data/RFpredictions\PEB-PE.parquet due to insufficient data: 256 days
+INFO:root:Skipping Data/RFpredictions\PERF.parquet due to insufficient data: 261 days
+INFO:root:Skipping Data/RFpredictions\PKST.parquet due to insufficient data: 148 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PG.parquet due to insufficient data: 196 days
+INFO:root:Skipping Data/RFpredictions\PRIF-PJ.parquet due to insufficient data: 239 days
+INFO:root:Skipping Data/RFpredictions\RC-PC.parquet due to insufficient data: 175 days
+INFO:root:Skipping Data/RFpredictions\RWT-PA.parquet due to insufficient data: 212 days
+INFO:root:Skipping Data/RFpredictions\RXO.parquet due to insufficient data: 263 days
+INFO:root:Skipping Data/RFpredictions\SAJ.parquet due to insufficient data: 258 days
+INFO:root:Skipping Data/RFpredictions\SAY.parquet due to insufficient data: 228 days
+INFO:root:Skipping Data/RFpredictions\SAZ.parquet due to insufficient data: 142 days
+INFO:root:Skipping Data/RFpredictions\SBOW.parquet due to insufficient data: 251 days
+INFO:root:Skipping Data/RFpredictions\SBXC-UN.parquet due to insufficient data: 180 days
+INFO:root:Skipping Data/RFpredictions\SBXC.parquet due to insufficient data: 130 days
+INFO:root:Skipping Data/RFpredictions\SCCB.parquet due to insufficient data: 231 days
+INFO:root:Skipping Data/RFpredictions\SGE.parquet due to insufficient data: 126 days
+INFO:root:Skipping Data/RFpredictions\SHNY.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\SIX.parquet due to insufficient data: 232 days
+INFO:root:Skipping Data/RFpredictions\SLCA.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\SPE-PC.parquet due to insufficient data: 138 days
+INFO:root:Skipping Data/RFpredictions\STRW.parquet due to insufficient data: 184 days
+INFO:root:Skipping Data/RFpredictions\TRIS-UN.parquet due to insufficient data: 255 days
+INFO:root:Skipping Data/RFpredictions\TRIS.parquet due to insufficient data: 255 days
+INFO:root:Skipping Data/RFpredictions\TXO.parquet due to insufficient data: 201 days
+INFO:root:Skipping Data/RFpredictions\UHAL-B.parquet due to insufficient data: 253 days
+INFO:root:Skipping Data/RFpredictions\VCXB.parquet due to insufficient data: 240 days
+INFO:root:Skipping Data/RFpredictions\VTS.parquet due to insufficient data: 213 days
+INFO:root:Skipping Data/RFpredictions\WRK.parquet due to insufficient data: 235 days
+INFO:root:Skipping Data/RFpredictions\WTID.parquet due to insufficient data: 188 days
+INFO:root:Skipping Data/RFpredictions\WTIU.parquet due to insufficient data: 188 days
+INFO:root:Skipping Data/RFpredictions\WUCT.parquet due to insufficient data: 160 days
+INFO:root:Skipping Data/RFpredictions\YCBD-PA.parquet due to insufficient data: 252 days
+INFO:root:Skipping AUB-PA due to insufficient data: 264 days
+INFO:root:Skipping GAM-PB due to insufficient data: 264 days
+INFO:root:Skipping GDV-PH due to insufficient data: 260 days
+INFO:root:Skipping IFIN-UN due to insufficient data: 264 days
+INFO:root:Skipping KCGI-UN due to insufficient data: 255 days
+INFO:root:Skipping KCGI due to insufficient data: 255 days
+INFO:root:Skipping MTB-PH due to insufficient data: 260 days
+INFO:root:Skipping OPP-PA due to insufficient data: 258 days
+INFO:root:Skipping PCG-PA due to insufficient data: 260 days
+INFO:root:Skipping PSA-PG due to insufficient data: 264 days
+INFO:root:Skipping RJF-PB due to insufficient data: 256 days
+INFO:root:Skipping TDS-PU due to insufficient data: 264 days
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Column correlation_212 not found for TG
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Column correlation_212 not found for ZVIA
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Column correlation_212 not found for INDO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZVIA
+WARNING:root:Cluster information not available for INDO
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+INFO:root:Closing INDO due to Sell condition met
+WARNING:root:Entry price not found for INDO. Assuming no loss.
+INFO:root:Closing ZVIA due to Sell condition met
+WARNING:root:Entry price not found for ZVIA. Assuming no loss.
+WARNING:root:Cluster information not available for TG
+INFO:root:Closing TG due to Sell condition met
+WARNING:root:Entry price not found for TG. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ASPN
+WARNING:root:Column correlation_372 not found for DAO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing ASPN due to Sell condition met
+WARNING:root:Entry price not found for ASPN. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DAO
+WARNING:root:Cluster information not available for SES
+WARNING:root:Column correlation_1283 not found for ALUR
+WARNING:root:Column correlation_4189 not found for ALUR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing DAO due to Sell condition met
+INFO:root:Closing SES due to Sell condition met
+WARNING:root:Cluster information not available for ALUR
+WARNING:root:Entry price not found for DAO. Assuming no loss.
+WARNING:root:Entry price not found for SES. Assuming no loss.
+INFO:root:Closing ALUR due to Sell condition met
+WARNING:root:Column correlation_212 not found for BRBS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALUR. Assuming no loss.
+WARNING:root:Cluster information not available for BRBS
+INFO:root:Closing BRBS due to Sell condition met
+WARNING:root:Entry price not found for BRBS. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for TSE
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MVRL
+WARNING:root:Cluster information not available for ALLY
+WARNING:root:Cluster information not available for BNKU
+WARNING:root:Cluster information not available for NOTE
+INFO:root:Closing MVRL due to Sell condition met
+INFO:root:Closing NOTE due to Sell condition met
+WARNING:root:Entry price not found for MVRL. Assuming no loss.
+WARNING:root:Entry price not found for NOTE. Assuming no loss.
+INFO:root:Closing ALLY due to Sell condition met
+INFO:root:Closing BNKU due to Sell condition met
+WARNING:root:Column correlation_197 not found for BBU
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BBUC
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for BFAM
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for JELD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PAR
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for PL
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for QVCD
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RKT
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for RSI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for SNAP
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for TGI
+WARNING:root:No correlation data found for position: BNKU
+WARNING:root:Column correlation_197 not found for VZIO
+WARNING:root:No correlation data found for position: BNKU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ALLY. Assuming no loss.
+WARNING:root:Entry price not found for BNKU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for BBUC
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Cluster information not available for RKT
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for BBU
+WARNING:root:Column correlation_4313 not found for BBU
+WARNING:root:Column correlation_4012 not found for BRBS
+WARNING:root:Column correlation_4313 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_4012 not found for KRO
+WARNING:root:Column correlation_4313 not found for KRO
+WARNING:root:Column correlation_4012 not found for PAR
+WARNING:root:Column correlation_4313 not found for PAR
+WARNING:root:Column correlation_4012 not found for SEMR
+WARNING:root:Column correlation_4313 not found for SEMR
+WARNING:root:Column correlation_4012 not found for TGI
+WARNING:root:Column correlation_4313 not found for TGI
+WARNING:root:Column correlation_4012 not found for VZIO
+WARNING:root:Column correlation_4313 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing RKT due to Sell condition met
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for KEN
+WARNING:root:Cluster information not available for SEMR
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRBS
+WARNING:root:Column correlation_4184 not found for BRBS
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for SNAP
+WARNING:root:Column correlation_4184 not found for SNAP
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for VZIO
+INFO:root:Closing VZIO due to Sell condition met
+WARNING:root:Entry price not found for VZIO. Assuming no loss.
+WARNING:root:Column correlation_2613 not found for BRCC
+WARNING:root:Column correlation_4184 not found for BRCC
+WARNING:root:No correlation data found for ticker: KOLD
+WARNING:root:Column correlation_2613 not found for KRO
+WARNING:root:Column correlation_4184 not found for KRO
+WARNING:root:Column correlation_2613 not found for PAGS
+WARNING:root:Column correlation_4184 not found for PAGS
+WARNING:root:Column correlation_2613 not found for RKT
+WARNING:root:Column correlation_4184 not found for RKT
+WARNING:root:Column correlation_2613 not found for TGI
+WARNING:root:Column correlation_4184 not found for TGI
+WARNING:root:Column correlation_2613 not found for VZIO
+WARNING:root:Column correlation_4184 not found for VZIO
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing KEN due to Sell condition met
+INFO:root:Closing SEMR due to Sell condition met
+WARNING:root:Entry price not found for KEN. Assuming no loss.
+WARNING:root:Entry price not found for SEMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SNAP
+WARNING:root:Cluster information not available for RKT
+INFO:root:Closing SNAP due to Sell condition met
+WARNING:root:Cluster information not available for CWK
+WARNING:root:Entry price not found for SNAP. Assuming no loss.
+INFO:root:Closing CWK due to Sell condition met
+WARNING:root:Column correlation_1254 not found for ONTF
+WARNING:root:Column correlation_4012 not found for ONTF
+WARNING:root:Column correlation_1254 not found for SMR
+WARNING:root:Column correlation_4012 not found for SMR
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CWK. Assuming no loss.
+WARNING:root:Column correlation_4012 not found for ADCT
+WARNING:root:Column correlation_4012 not found for BBUC
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for BBUC
+WARNING:root:Cluster information not available for BGS
+INFO:root:Closing RKT due to Sell condition met
+WARNING:root:Entry price not found for RKT. Assuming no loss.
+INFO:root:Closing BBUC due to Sell condition met
+WARNING:root:Column correlation_517 not found for CIO
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_517 not found for DEI
+WARNING:root:Column correlation_584 not found for DEI
+WARNING:root:Column correlation_4305 not found for DEI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for BBUC. Assuming no loss.
+WARNING:root:Column correlation_584 not found for CIO
+WARNING:root:Column correlation_4305 not found for CIO
+WARNING:root:Column correlation_584 not found for NRGV
+WARNING:root:Column correlation_4305 not found for NRGV
+WARNING:root:Column correlation_584 not found for SES
+WARNING:root:Column correlation_4305 not found for SES
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for DEI
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+WARNING:root:Cluster information not available for CIO
+INFO:root:Closing BGS due to Sell condition met
+INFO:root:Closing DEI due to Sell condition met
+WARNING:root:Entry price not found for BGS. Assuming no loss.
+WARNING:root:Entry price not found for DEI. Assuming no loss.
+WARNING:root:Column correlation_984 not found for BGS
+WARNING:root:Column correlation_984 not found for CWK
+WARNING:root:Column correlation_984 not found for LNC
+WARNING:root:Column correlation_984 not found for OGN
+WARNING:root:Column correlation_984 not found for ZIM
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ZIM
+INFO:root:Closing CIO due to Sell condition met
+WARNING:root:Cluster information not available for OGN
+WARNING:root:Entry price not found for CIO. Assuming no loss.
+WARNING:root:Column correlation_3463 not found for BFLY
+WARNING:root:Column correlation_5159 not found for BFLY
+WARNING:root:Column correlation_3463 not found for CTLT
+WARNING:root:Column correlation_5159 not found for CTLT
+WARNING:root:Column correlation_3463 not found for WRBY
+WARNING:root:Column correlation_5159 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing OGN due to Sell condition met
+INFO:root:Closing WRBY due to Sell condition met
+INFO:root:Closing ZIM due to Sell condition met
+WARNING:root:Entry price not found for OGN. Assuming no loss.
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Entry price not found for ZIM. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for BFLY
+WARNING:root:Cluster information not available for TELZ
+WARNING:root:Cluster information not available for UUU
+INFO:root:Closing BFLY due to Sell condition met
+INFO:root:Closing TELZ due to Sell condition met
+INFO:root:Closing UUU due to Sell condition met
+WARNING:root:Entry price not found for BFLY. Assuming no loss.
+WARNING:root:Entry price not found for TELZ. Assuming no loss.
+WARNING:root:Entry price not found for UUU. Assuming no loss.
+WARNING:root:Cluster information not available for LNC
+INFO:root:Closing LNC due to Sell condition met
+WARNING:root:Entry price not found for LNC. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for SMR
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing SMR due to Sell condition met
+WARNING:root:Entry price not found for SMR. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MATV
+WARNING:root:Cluster information not available for TRTX
+WARNING:root:Cluster information not available for CHPT
+INFO:root:Closing TRTX due to Sell condition met
+WARNING:root:Entry price not found for TRTX. Assuming no loss.
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ARIS
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing CHPT due to Sell condition met
+INFO:root:Closing MATV due to Sell condition met
+WARNING:root:Column correlation_334 not found for PNST
+WARNING:root:Column correlation_958 not found for PNST
+WARNING:root:Column correlation_2895 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for CHPT. Assuming no loss.
+WARNING:root:Entry price not found for MATV. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+WARNING:root:No correlation data found for ticker: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_334 not found for SLI
+WARNING:root:Column correlation_3762 not found for SLI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+INFO:root:Closing ARIS due to Sell condition met
+WARNING:root:Cluster information not available for SLI
+WARNING:root:Entry price not found for ARIS. Assuming no loss.
+INFO:root:Closing SLI due to Sell condition met
+WARNING:root:Entry price not found for SLI. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for GTE
+WARNING:root:Cluster information not available for NG
+WARNING:root:Column correlation_2123 not found for NOVA
+WARNING:root:Column correlation_3247 not found for NOVA
+WARNING:root:Column correlation_2123 not found for PNST
+WARNING:root:Column correlation_3247 not found for PNST
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing GTE due to Sell condition met
+WARNING:root:Entry price not found for GTE. Assuming no loss.
+INFO:root:Closing NG due to Sell condition met
+WARNING:root:Entry price not found for NG. Assuming no loss.
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CTDD
+WARNING:root:Cluster information not available for AG
+WARNING:root:Column correlation_120 not found for NEM
+WARNING:root:No correlation data found for position: CTDD
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NEM
+INFO:root:Closing CTDD due to Sell condition met
+WARNING:root:Entry price not found for CTDD. Assuming no loss.
+INFO:root:Closing NEM due to Sell condition met
+WARNING:root:Entry price not found for NEM. Assuming no loss.
+INFO:root:Closing AG due to Sell condition met
+WARNING:root:Column correlation_120 not found for BKKT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AG. Assuming no loss.
+WARNING:root:Cluster information not available for BKKT
+INFO:root:Closing BKKT due to Sell condition met
+WARNING:root:Entry price not found for BKKT. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EBS
+INFO:root:Closing EBS due to Sell condition met
+WARNING:root:Entry price not found for EBS. Assuming no loss.
+WARNING:root:Cluster information not available for BFH
+WARNING:root:Cluster information not available for AMRC
+WARNING:root:Cluster information not available for GME
+INFO:root:Closing BFH due to Sell condition met
+WARNING:root:Entry price not found for BFH. Assuming no loss.
+INFO:root:Closing AMRC due to Sell condition met
+WARNING:root:Column correlation_247 not found for HLF
+WARNING:root:Column correlation_2046 not found for HLF
+WARNING:root:Column correlation_247 not found for WYY
+WARNING:root:Column correlation_2046 not found for WYY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AMRC. Assuming no loss.
+WARNING:root:Cluster information not available for WYY
+WARNING:root:Column correlation_2046 not found for AMRC
+WARNING:root:Column correlation_5090 not found for AMRC
+WARNING:root:Column correlation_2046 not found for BROS
+WARNING:root:Column correlation_5090 not found for BROS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Cluster information not available for BROS
+INFO:root:Closing GME due to Sell condition met
+INFO:root:Closing HLF due to Sell condition met
+INFO:root:Closing WYY due to Sell condition met
+WARNING:root:Entry price not found for GME. Assuming no loss.
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+WARNING:root:Entry price not found for WYY. Assuming no loss.
+WARNING:root:Column correlation_725 not found for HLF
+WARNING:root:Column correlation_725 not found for IPI
+WARNING:root:Column correlation_725 not found for KW
+WARNING:root:Column correlation_725 not found for PW
+WARNING:root:Column correlation_725 not found for WRBY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for WRBY
+INFO:root:Closing BROS due to Sell condition met
+WARNING:root:Entry price not found for BROS. Assuming no loss.
+WARNING:root:Column correlation_5059 not found for LXU
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing WRBY due to Sell condition met
+WARNING:root:Cluster information not available for HLF
+WARNING:root:Entry price not found for WRBY. Assuming no loss.
+WARNING:root:Column correlation_2219 not found for UNFI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HLF due to Sell condition met
+WARNING:root:Entry price not found for HLF. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Cluster information not available for KW
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_2689 not found for CHWY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for UNFI
+WARNING:root:Cluster information not available for CHWY
+INFO:root:Closing KW due to Sell condition met
+WARNING:root:Entry price not found for KW. Assuming no loss.
+WARNING:root:Column correlation_968 not found for ATUS
+WARNING:root:Column correlation_4780 not found for ATUS
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing CHWY due to Sell condition met
+WARNING:root:Entry price not found for CHWY. Assuming no loss.
+WARNING:root:Column correlation_4780 not found for XPOF
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for XPOF
+INFO:root:Closing UNFI due to Sell condition met
+WARNING:root:Entry price not found for UNFI. Assuming no loss.
+WARNING:root:No correlation data found for ticker: SKIL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing XPOF due to Sell condition met
+WARNING:root:Cluster information not available for SKIL
+WARNING:root:Entry price not found for XPOF. Assuming no loss.
+WARNING:root:Cluster information not available for ATUS
+INFO:root:Closing SKIL due to Sell condition met
+WARNING:root:Cluster information not available for LXU
+WARNING:root:Entry price not found for SKIL. Assuming no loss.
+INFO:root:Closing ATUS due to Sell condition met
+WARNING:root:Entry price not found for ATUS. Assuming no loss.
+INFO:root:Closing LXU due to Sell condition met
+WARNING:root:Entry price not found for LXU. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for NOVA
+INFO:root:Closing NOVA due to Sell condition met
+WARNING:root:Entry price not found for NOVA. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for ANVS
+WARNING:root:Column correlation_277 not found for AZUL
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for AZUL
+WARNING:root:Column correlation_277 not found for EVRI
+WARNING:root:Column correlation_478 not found for EVRI
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing AZUL due to Sell condition met
+WARNING:root:Column correlation_277 not found for AP
+WARNING:root:Column correlation_478 not found for AP
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_478 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for AZUL. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_277 not found for NXDT
+WARNING:root:Column correlation_2181 not found for NXDT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Cluster information not available for NXDT
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing ANVS due to Sell condition met
+WARNING:root:Column correlation_277 not found for HE
+WARNING:root:Column correlation_3410 not found for HE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for ANVS. Assuming no loss.
+WARNING:root:Cluster information not available for HE
+WARNING:root:Column correlation_2181 not found for RVLV
+WARNING:root:Column correlation_3410 not found for RVLV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for EVRI
+INFO:root:Closing EVRI due to Sell condition met
+WARNING:root:Entry price not found for EVRI. Assuming no loss.
+INFO:root:Closing NXDT due to Sell condition met
+WARNING:root:Column correlation_2181 not found for BALY
+WARNING:root:Column correlation_3410 not found for BALY
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for NXDT. Assuming no loss.
+WARNING:root:Cluster information not available for RVLV
+WARNING:root:Cluster information not available for BALY
+INFO:root:Closing HE due to Sell condition met
+WARNING:root:Entry price not found for HE. Assuming no loss.
+INFO:root:Closing BALY due to Sell condition met
+WARNING:root:Entry price not found for BALY. Assuming no loss.
+INFO:root:Closing RVLV due to Sell condition met
+WARNING:root:Entry price not found for RVLV. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for OLO
+WARNING:root:Cluster information not available for MD
+INFO:root:Closing OLO due to Sell condition met
+WARNING:root:Entry price not found for OLO. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Entry price not found for MD. Assuming no loss.
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for PNST
+INFO:root:Closing PNST due to Sell condition met
+WARNING:root:Column correlation_3762 not found for TIXT
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for MD
+WARNING:root:Entry price not found for PNST. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_2933 not found for FUBO
+WARNING:root:Column correlation_4598 not found for FUBO
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4598 not found for LEV
+WARNING:root:Column correlation_2933 not found for TSE
+WARNING:root:Column correlation_4598 not found for TSE
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for TSE
+WARNING:root:Cluster information not available for FUBO
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+INFO:root:Closing MD due to Sell condition met
+WARNING:root:Column correlation_1896 not found for LEV
+WARNING:root:Column correlation_2933 not found for LEV
+WARNING:root:Column correlation_4686 not found for LEV
+WARNING:root:Column correlation_1896 not found for TIXT
+WARNING:root:Column correlation_2933 not found for TIXT
+WARNING:root:Column correlation_4686 not found for TIXT
+WARNING:root:Column correlation_1896 not found for VNRX
+WARNING:root:Column correlation_2933 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Entry price not found for MD. Assuming no loss.
+WARNING:root:Cluster information not available for TIXT
+WARNING:root:Column correlation_1896 not found for CHGG
+WARNING:root:Column correlation_4598 not found for CHGG
+WARNING:root:Column correlation_4686 not found for CHGG
+WARNING:root:Column correlation_1896 not found for CLPR
+WARNING:root:Column correlation_4598 not found for CLPR
+WARNING:root:Column correlation_4686 not found for CLPR
+WARNING:root:Column correlation_1896 not found for PNST
+WARNING:root:Column correlation_4598 not found for PNST
+WARNING:root:Column correlation_4686 not found for PNST
+WARNING:root:Column correlation_1896 not found for VNRX
+WARNING:root:Column correlation_4598 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+WARNING:root:Cluster information not available for CLPR
+INFO:root:Closing FUBO due to Sell condition met
+INFO:root:Closing TIXT due to Sell condition met
+WARNING:root:Entry price not found for FUBO. Assuming no loss.
+WARNING:root:Entry price not found for TIXT. Assuming no loss.
+WARNING:root:Column correlation_1012 not found for CNF
+WARNING:root:Column correlation_4686 not found for CNF
+WARNING:root:Column correlation_1012 not found for EVEX
+WARNING:root:Column correlation_4686 not found for EVEX
+WARNING:root:Column correlation_1012 not found for VNRX
+WARNING:root:Column correlation_4686 not found for VNRX
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for EVEX at price 2.7899999618530273 on 2024-08-28
+INFO:root:Buy signal saved for CNF at price 1.2100000381469727 on 2024-08-28
+INFO:root:Buy signal saved for VNRX at price 0.6899999976158142 on 2024-08-28
+WARNING:root:Cluster information not available for CNF
+INFO:root:Closing TSE due to Sell condition met
+WARNING:root:Entry price not found for TSE. Assuming no loss.
+INFO:root:Closing CLPR due to Sell condition met
+INFO:root:Closing CNF due to Sell condition met
+WARNING:root:Column correlation_1012 not found for BFLY
+WARNING:root:Column correlation_1057 not found for BFLY
+WARNING:root:No correlation data found for ticker: GDXD
+WARNING:root:Column correlation_1012 not found for GETY
+WARNING:root:Column correlation_1057 not found for GETY
+WARNING:root:Column correlation_1012 not found for ISDR
+WARNING:root:Column correlation_1057 not found for ISDR
+WARNING:root:Column correlation_1012 not found for NVRO
+WARNING:root:Column correlation_1057 not found for NVRO
+WARNING:root:Column correlation_1012 not found for XPEV
+WARNING:root:Column correlation_1057 not found for XPEV
+ERROR:root:Error sorting buy candidates: 'dict' object has no attribute 'lines'
+INFO:root:Buy signal saved for NVRO at price 6.190000057220459 on 2024-08-30
+INFO:root:Buy signal saved for GETY at price 3.799999952316284 on 2024-08-30
+INFO:root:Buy signal saved for XPEV at price 8.050000190734863 on 2024-08-30
+INFO:root:Buy signal saved for GDXD at price 15.260000228881836 on 2024-08-30
+INFO:root:Buy signal saved for ISDR at price 12.0600004196167 on 2024-08-30
+INFO:root:Open Positions: 4
+INFO:root:Group Allocations: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}
+INFO:root:Position: CLPR, Size: 382, Entry Price: 4.819500160217285
+INFO:root:Position: CNF, Size: 1523, Entry Price: 1.2705000400543214
+INFO:root:Strategy stopped. Final portfolio state logged.
+INFO:root:====================== New Entry ===================
+INFO:root:Max Drawdown: 6.77%
+INFO:root:Total Trades: 86
+INFO:root:Profitable Trades: 49
+INFO:root:Sharpe Ratio: 1.05
+INFO:root:SQN: 1.73
+INFO:root:Profit Factor: -0.20
+INFO:root:Average Trade: 86.07
+INFO:root:Average Winning Trade: 189.88
+INFO:root:Average Losing Trade: -51.41
+INFO:root:Largest Winning Trade: 4056.46
+INFO:root:Largest Losing Trade: -171.19
+INFO:root:Time taken: 137.93 seconds
+INFO:root:Inital Portfolio funding: $5000.00
+INFO:root:Final Portfolio Value: $12195.67
+INFO:root:Percentage Gain: 143.91%
+INFO:root:Cash: $8625.70

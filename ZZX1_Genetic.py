@@ -23,11 +23,11 @@ import joblib  # Used to save/load preprocessed datasets
 # Updated CONFIG with Dataset Caching Options
 CONFIG = {
     'input_directory': 'Data/PriceData',
-    'data_sample_percentage': 10.0,  # Increased from 3 to use more data
+    'data_sample_percentage': 25.0,  # Increased from 3 to use more data
     'output_directory': 'Results',
     'dataset_cache_path': 'cached_dataset.pkl',
     'use_cached_dataset': True,
-    'population_size': 100000,  # Reduced from 10000 to allow more generations
+    'population_size': 10000,  # Reduced from 10000 to allow more generations
     'generations': 10,  # Increased from 10 to allow for more evolution
     'tournament_size': 5,  # Increased from 3 to apply more selection pressure
     'stopping_criteria': -1e9,  # Set to a very low value to prevent early stopping
@@ -70,35 +70,45 @@ dynamic_round_vec = np.vectorize(dynamic_round)
 
 
 
-def calculate_target_col(df):
+def calculate_target_col(df, volatility_window=20, max_look_ahead=5):
     # Calculate simple future returns for various days ahead
-    df['Future_Returns_1'] = df['Close'].shift(-1) / df['Close'] - 1
-    df['Future_Returns_2'] = df['Close'].shift(-2) / df['Close'] - 1
-    df['Future_Returns_3'] = df['Close'].shift(-3) / df['Close'] - 1
+    for i in range(1, max_look_ahead + 1):
+        df[f'Future_Returns_{i}'] = df['Close'].shift(-i) / df['Close'] - 1
 
     # Calculate logarithmic returns with direction
-    df['Log_Returns_1'] = np.sign(df['Future_Returns_1']) * np.log(df['Close'].shift(-1) / df['Close']).abs()
-    df['Log_Returns_2'] = np.sign(df['Future_Returns_2']) * np.log(df['Close'].shift(-2) / df['Close']).abs()
-    df['Log_Returns_3'] = np.sign(df['Future_Returns_3']) * np.log(df['Close'].shift(-3) / df['Close']).abs()
+    for i in range(1, max_look_ahead + 1):
+        df[f'Log_Returns_{i}'] = np.sign(df[f'Future_Returns_{i}']) * np.log(df['Close'].shift(-i) / df['Close']).abs()
 
-    # Weighted combination of log returns
-    df['Weighted_Future_Returns'] = (
-        0.75 * df['Log_Returns_1'] +
-        0.20 * df['Log_Returns_2'] +
-        0.05 * df['Log_Returns_3']
-    )
+    # Calculate historical volatility
+    df['Returns'] = df['Close'].pct_change()
+    df['Volatility'] = df['Returns'].rolling(window=volatility_window).std() * np.sqrt(252)  # Annualized volatility
 
-    ##ensure we drop the log returns so that the model does not learn from them
-    df = df.drop(columns=['Log_Returns_1', 'Log_Returns_2', 'Log_Returns_3'])
-    #drop the future returns as well
-    df = df.drop(columns=['Future_Returns_1', 'Future_Returns_2', 'Future_Returns_3'])
+    # Calculate volatility-adjusted log returns
+    for i in range(1, max_look_ahead + 1):
+        df[f'Vol_Adj_Log_Returns_{i}'] = df[f'Log_Returns_{i}'] / df['Volatility']
+
+    # Calculate decay weights
+    weights = np.array([np.exp(-0.5 * i) for i in range(max_look_ahead)])
+    weights /= weights.sum()  # Normalize weights
+
+    # Weighted combination of volatility-adjusted log returns
+    df['Weighted_Future_Returns'] = sum(weights[i-1] * df[f'Vol_Adj_Log_Returns_{i}'] for i in range(1, max_look_ahead + 1))
+
+    # Drop intermediate columns
+    columns_to_drop = (['Returns', 'Volatility'] + 
+                       [f'Future_Returns_{i}' for i in range(1, max_look_ahead + 1)] +
+                       [f'Log_Returns_{i}' for i in range(1, max_look_ahead + 1)] +
+                       [f'Vol_Adj_Log_Returns_{i}' for i in range(1, max_look_ahead + 1)])
+    
+    df = df.drop(columns=columns_to_drop)
 
     return df
 
 
-
+ 
 
 def dynamic_entropy_filter(df, window_size=14, lower_quantile=0.1, upper_quantile=0.9):
+    # Calculate returns and volume changes
     df['Return'] = df['Close'].pct_change().fillna(0)
     df['Volume_Change'] = df['Volume'].pct_change().fillna(0)
     
@@ -108,23 +118,42 @@ def dynamic_entropy_filter(df, window_size=14, lower_quantile=0.1, upper_quantil
     df['Volume_Entropy'] = df['Volume_Change'].rolling(window=window_size).apply(
         lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
 
-    # Scale the entropy values
-    scaler = MinMaxScaler()
-    df[['Return_Entropy', 'Volume_Entropy']] = scaler.fit_transform(df[['Return_Entropy', 'Volume_Entropy']])
+    # Calculate rolling volatility
+    df['Volatility'] = df['Return'].rolling(window=window_size).std()
 
-    # Dynamic entropy thresholds based on market regime
-    dynamic_lower_threshold = df['Return_Entropy'].rolling(window=window_size).quantile(lower_quantile)
-    dynamic_upper_threshold = df['Return_Entropy'].rolling(window=window_size).quantile(upper_quantile)
+    # Calculate rolling Hurst exponent (measure of long-term memory in time series)
+    def hurst_exponent(ts):
+        lags = range(2, 21)
+        tau = [np.sqrt(np.std(np.subtract(ts[lag:], ts[:-lag]))) for lag in lags]
+        poly = np.polyfit(np.log(lags), np.log(tau), 1)
+        return poly[0] * 2.0
+
+    df['Hurst'] = df['Return'].rolling(window=window_size).apply(hurst_exponent, raw=True)
+
+    # Scale the metrics
+    scaler = MinMaxScaler()
+    df[['Return_Entropy', 'Volume_Entropy', 'Volatility', 'Hurst']] = scaler.fit_transform(
+        df[['Return_Entropy', 'Volume_Entropy', 'Volatility', 'Hurst']])
+
+    # Calculate composite score
+    df['Composite_Score'] = (df['Return_Entropy'] + df['Volume_Entropy'] + df['Volatility'] + (1 - df['Hurst'])) / 4
+
+    # Dynamic thresholds based on composite score
+    dynamic_lower_threshold = df['Composite_Score'].rolling(window=window_size).quantile(lower_quantile)
+    dynamic_upper_threshold = df['Composite_Score'].rolling(window=window_size).quantile(upper_quantile)
     
     # Apply dynamic thresholds to filter data
-    df = df[
-        (df['Return_Entropy'] > dynamic_lower_threshold) & 
-        (df['Return_Entropy'] < dynamic_upper_threshold) & 
-        (df['Volume_Entropy'] > dynamic_lower_threshold) & 
-        (df['Volume_Entropy'] < dynamic_upper_threshold)
+    df_filtered = df[
+        (df['Composite_Score'] > dynamic_lower_threshold) & 
+        (df['Composite_Score'] < dynamic_upper_threshold)
     ]
     
-    return df
+    # Drop intermediate columns
+    columns_to_drop = ['Return', 'Volume_Change', 'Return_Entropy', 'Volume_Entropy', 
+                       'Volatility', 'Hurst', 'Composite_Score']
+    df_filtered = df_filtered.drop(columns=columns_to_drop)
+    
+    return df_filtered
 
 
 
