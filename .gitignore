@@ -3,3 +3,12 @@ Data/ModelData/*
 Data/IndicatorData/*
 Data/PriceData/*
 Data/RFpredictions/*
+Data/*
+OptimizationResults/*
+Results/*
+run_all_scripts.log
+__BrokerLive.log
+__Trading_Functions.log
+__BrokerLog.log
+real_trade_data.parquet
+data_gpr_export_interpolated.parquet

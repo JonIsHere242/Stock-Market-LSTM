@@ -270,9 +270,6 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
     logging.info(f"Predictions saved to {output_directory}")
 
 
-
-
-
 def main():
     if not args.predict:
         training_data = prepare_training_data(
