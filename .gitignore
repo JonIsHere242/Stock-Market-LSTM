@@ -3,7 +3,6 @@ Data/ModelData/*
 Data/IndicatorData/*
 Data/PriceData/*
 Data/RFpredictions/*
-Data/*
 OptimizationResults/*
 Results/*
 run_all_scripts.log
