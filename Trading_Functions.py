@@ -25,6 +25,9 @@ COLUMNS = [
         'ConsecutiveLosses', 'LastTradedDate', 'UpProbability', 'LastSellPrice'
     ]
 
+
+
+
 def get_parquet_file(is_live=False):
     return LIVE_PARQUET_FILE if is_live else BACKTEST_PARQUET_FILE
 
@@ -66,11 +69,11 @@ def write_trading_data(df, is_live=False):
     date_columns = ['LastBuySignalDate', 'LastTradedDate']
     for col in date_columns:
         if col in df.columns:
-            df[col] = pd.to_datetime(df[col])
-    
+            df[col] = pd.to_datetime(df[col]).dt.date  # Convert to date
+
     # Replace NaT with None for Parquet compatibility
-    for col in df.select_dtypes(include=['datetime64']).columns:
-        df[col] = df[col].astype(object).where(df[col].notnull(), None)
+    for col in df.select_dtypes(include=['datetime64', 'object']).columns:
+        df[col] = df[col].where(pd.notnull(df[col]), None)
     
     df.to_parquet(get_parquet_file(is_live), index=False)
 
@@ -103,13 +106,41 @@ def update_buy_signal(symbol, date, price, up_probability, is_live=False):
 
 
 
+def update_filled_order(symbol, entry_price, entry_date, position_size, is_live=False):
+    """Update the trading data when an order is filled."""
+    df = read_trading_data(is_live)
+    
+    # Update or add the new trade information
+    if symbol in df['Symbol'].values:
+        df.loc[df['Symbol'] == symbol, 'LastBuySignalDate'] = pd.Timestamp(entry_date)
+        df.loc[df['Symbol'] == symbol, 'LastBuySignalPrice'] = entry_price
+        df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = True
+        df.loc[df['Symbol'] == symbol, 'PositionSize'] = position_size
+    else:
+        new_data = pd.DataFrame({
+            'Symbol': [symbol],
+            'LastBuySignalDate': [pd.Timestamp(entry_date)],
+            'LastBuySignalPrice': [entry_price],
+            'IsCurrentlyBought': [True],
+            'ConsecutiveLosses': [0],
+            'LastTradedDate': [None],
+            'UpProbability': [None],
+            'LastSellPrice': [None],
+            'PositionSize': [position_size]
+        })
+        df = pd.concat([df, new_data], ignore_index=True)
+    
+    write_trading_data(df, is_live)
+    logging.info(f"Updated filled order for {symbol} in trading data")
 
 
 
-def mark_position_as_bought(symbol, is_live=False):
-    """Mark a symbol as currently bought."""
+
+def mark_position_as_bought(symbol, position_size, is_live=False):
+    """Mark a symbol as currently bought with its position size."""
     df = read_trading_data(is_live)
     df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = True
+    df.loc[df['Symbol'] == symbol, 'PositionSize'] = position_size
     write_trading_data(df, is_live)
 
 
@@ -172,6 +203,10 @@ def get_buy_signals(is_live=False):
         logging.error(f"Error in get_buy_signals: {e}")
         return []
 
+
+
+
+
 def get_previous_trading_day(current_date):
     """Get the previous trading day using pandas_market_calendars."""
     nyse = mcal.get_calendar('NYSE')
@@ -216,6 +251,9 @@ def get_open_positions(is_live=False):
     """Get all currently bought positions."""
     df = read_trading_data(is_live)
     return df[df['IsCurrentlyBought'] == True]['Symbol'].tolist()
+
+
+
 
 def calculate_position_size(total_value, cash, reserve_percent, max_positions, current_price):
     """Calculate the position size for a new trade."""
@@ -311,7 +349,11 @@ def get_days_since_last_trade(symbol, is_live=False):
         return (datetime.now() - last_trade_date).days
     return None
 
-def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better=False, reverse=False):
+
+
+
+
+def colorize_output_old(value, label, good_threshold, bad_threshold, lower_is_better=False, reverse=False):
     def get_color_code(normalized_value):
         # Direct transition from red to green
         red = int(255 * (1 - normalized_value))
@@ -342,6 +384,56 @@ def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better
             color_code = get_color_code(normalized_value)
 
     return f"{label:<30}{color_code}{value:.2f}\033[0m"
+
+
+
+def colorize_output(value, label, good_threshold, bad_threshold, lower_is_better=False, reverse=False):
+    def get_color_code(normalized_value):
+        # Define color steps with slightly toned down brightness for extremes
+        colors = [
+            (0, 235, 0),    # Slightly toned down Bright Green
+            (0, 180, 0),    # Normal Green
+            (220, 220, 0),  # Yellow
+            (220, 140, 0),  # Orange
+            (220, 0, 0),    # Red
+            (240, 0, 0)     # Slightly toned down Bright Red
+        ]
+        
+        # Calculate which color pair to interpolate between
+        index = min(int(normalized_value * (len(colors) - 1)), len(colors) - 2)
+        
+        # Interpolate between the two colors
+        t = (normalized_value * (len(colors) - 1)) - index
+        r = int(colors[index][0] * (1-t) + colors[index+1][0] * t)
+        g = int(colors[index][1] * (1-t) + colors[index+1][1] * t)
+        b = int(colors[index][2] * (1-t) + colors[index+1][2] * t)
+        
+        return f"\033[38;2;{r};{g};{b}m"
+
+    # Adjust thresholds and normalization for reverse and lower_is_better scenarios
+    if reverse:
+        good_threshold, bad_threshold = bad_threshold, good_threshold
+
+    if lower_is_better:
+        if value <= good_threshold:
+            normalized_value = 0  # Best value (Green)
+        elif value >= bad_threshold:
+            normalized_value = 1  # Worst value (Red)
+        else:
+            normalized_value = (value - good_threshold) / (bad_threshold - good_threshold)
+    else:
+        if value >= good_threshold:
+            normalized_value = 0  # Best value (Green)
+        elif value <= bad_threshold:
+            normalized_value = 1  # Worst value (Red)
+        else:
+            normalized_value = (good_threshold - value) / (good_threshold - bad_threshold)
+
+    color_code = get_color_code(normalized_value)
+    return f"{label:<30}{color_code}{value:.2f}\033[0m"
+
+
+
 
 
 

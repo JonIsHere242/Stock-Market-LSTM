@@ -25,6 +25,11 @@ try {
     )
 
     foreach ($script in $scripts) {
+
+        ##add a timer for each script
+        $timer = [System.Diagnostics.Stopwatch]::StartNew()
+
+
         Write-Host "Running $($script.Name)..."
         $argList = @($script.File) + $script.Args
         $output = & python $argList 2>&1
@@ -33,11 +38,12 @@ try {
             Write-Host "Output: $output"
         } else {
             Write-Host "$($script.Name) completed successfully."
+            Write-Host "time elapsed: $($timer.Elapsed)"
         }
         Start-Sleep -Seconds 30
     }
 
-    Write-Host "This Week's Buy Signals Saved to BuySignals.json"
+    Write-Host "This Week's Buy Signals Saved to trading_data.parquet"
 } catch {
     Write-Host "An error occurred: $_"
 } finally {

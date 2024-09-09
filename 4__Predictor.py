@@ -190,8 +190,6 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.70, co
             else:
                 print(classification_report(y_test_filtered, y_pred_filtered, zero_division=0))    
 
-
-
     # Save the model
     model_output_path = os.path.join(config['model_output_directory'], 'random_forest_model.joblib')
     dump(clf, model_output_path)

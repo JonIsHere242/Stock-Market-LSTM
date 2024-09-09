@@ -23,7 +23,7 @@ import joblib  # Used to save/load preprocessed datasets
 # Updated CONFIG with Dataset Caching Options
 CONFIG = {
     'input_directory': 'Data/PriceData',
-    'data_sample_percentage': 25.0,  # Increased from 3 to use more data
+    'data_sample_percentage': 3.0,  # Increased from 3 to use more data
     'output_directory': 'Results',
     'dataset_cache_path': 'cached_dataset.pkl',
     'use_cached_dataset': True,
@@ -44,13 +44,18 @@ CONFIG = {
     'max_samples': 0.2,  # Increased from 0.05 to use more of the data in each generation
     'verbose': 1,
     'n_jobs': -1,
-    'low_memory': True,
+    'low_memory': False,
     'random_state': 3301,
     'max_depth': 10  # Increased to allow for more complex programs
 }
 
 
-
+def safe_entropy(arr):
+    hist, _ = np.histogram(arr, bins=5)
+    if np.sum(hist) > 0:
+        return entropy(hist)
+    else:
+        return np.nan  # Return NaN for empty or invalid slices
 
 def dynamic_round(x):
     abs_x = np.abs(x)
@@ -68,93 +73,60 @@ def dynamic_round(x):
 dynamic_round_vec = np.vectorize(dynamic_round)
 
 
+def calculate_time_weighted_target(df, daily_weight=0.90, weekly_weight=0.09, yearly_weight=0.01):
+    # Calculate daily, weekly, and yearly future returns
+    df['Future_Returns_Daily'] = df['Close'].shift(-1) / df['Close'] - 1  # 1 day ahead
+    df['Future_Returns_Weekly'] = df['Close'].shift(-5) / df['Close'] - 1  # 5 days ahead (weekly)
+    df['Future_Returns_Yearly'] = df['Close'].shift(-252) / df['Close'] - 1  # 252 trading days ahead (yearly)
 
+    # Apply exponential decay weights to daily, weekly, and yearly returns
+    weight_sum = daily_weight + weekly_weight + yearly_weight
+    normalized_daily_weight = daily_weight / weight_sum
+    normalized_weekly_weight = weekly_weight / weight_sum
+    normalized_yearly_weight = yearly_weight / weight_sum
 
-def calculate_target_col(df, volatility_window=20, max_look_ahead=5):
-    # Calculate simple future returns for various days ahead
-    for i in range(1, max_look_ahead + 1):
-        df[f'Future_Returns_{i}'] = df['Close'].shift(-i) / df['Close'] - 1
+    # Calculate the time-weighted future returns
+    df['Weighted_Future_Returns'] = (
+        normalized_daily_weight * df['Future_Returns_Daily'] +
+        normalized_weekly_weight * df['Future_Returns_Weekly'] +
+        normalized_yearly_weight * df['Future_Returns_Yearly']
+    )
 
-    # Calculate logarithmic returns with direction
-    for i in range(1, max_look_ahead + 1):
-        df[f'Log_Returns_{i}'] = np.sign(df[f'Future_Returns_{i}']) * np.log(df['Close'].shift(-i) / df['Close']).abs()
-
-    # Calculate historical volatility
-    df['Returns'] = df['Close'].pct_change()
-    df['Volatility'] = df['Returns'].rolling(window=volatility_window).std() * np.sqrt(252)  # Annualized volatility
-
-    # Calculate volatility-adjusted log returns
-    for i in range(1, max_look_ahead + 1):
-        df[f'Vol_Adj_Log_Returns_{i}'] = df[f'Log_Returns_{i}'] / df['Volatility']
-
-    # Calculate decay weights
-    weights = np.array([np.exp(-0.5 * i) for i in range(max_look_ahead)])
-    weights /= weights.sum()  # Normalize weights
-
-    # Weighted combination of volatility-adjusted log returns
-    df['Weighted_Future_Returns'] = sum(weights[i-1] * df[f'Vol_Adj_Log_Returns_{i}'] for i in range(1, max_look_ahead + 1))
+    # Shift the target to align with the current row for machine learning purposes
+    df['Target'] = df['Weighted_Future_Returns'].shift(-1)
 
     # Drop intermediate columns
-    columns_to_drop = (['Returns', 'Volatility'] + 
-                       [f'Future_Returns_{i}' for i in range(1, max_look_ahead + 1)] +
-                       [f'Log_Returns_{i}' for i in range(1, max_look_ahead + 1)] +
-                       [f'Vol_Adj_Log_Returns_{i}' for i in range(1, max_look_ahead + 1)])
-    
-    df = df.drop(columns=columns_to_drop)
+    df = df.drop(columns=['Future_Returns_Daily', 'Future_Returns_Weekly', 'Future_Returns_Yearly', 'Weighted_Future_Returns'])
 
     return df
 
-
- 
-
-def dynamic_entropy_filter(df, window_size=14, lower_quantile=0.1, upper_quantile=0.9):
-    # Calculate returns and volume changes
+def simple_entropy_filter(df, window_size=64, min_periods=32, lower_quantile=0.1, upper_quantile=0.95):
+    # Calculate returns and fill any NaN values
     df['Return'] = df['Close'].pct_change().fillna(0)
-    df['Volume_Change'] = df['Volume'].pct_change().fillna(0)
-    
-    # Calculate rolling entropy
-    df['Return_Entropy'] = df['Return'].rolling(window=window_size).apply(
-        lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
-    df['Volume_Entropy'] = df['Volume_Change'].rolling(window=window_size).apply(
-        lambda x: entropy(np.histogram(x, bins=5)[0]), raw=True).fillna(0)
 
-    # Calculate rolling volatility
-    df['Volatility'] = df['Return'].rolling(window=window_size).std()
+    # Define a simple entropy function based on histogram
+    def calculate_entropy(arr):
+        hist, _ = np.histogram(arr, bins=5)
+        return entropy(hist) if np.sum(hist) > 0 else np.nan
 
-    # Calculate rolling Hurst exponent (measure of long-term memory in time series)
-    def hurst_exponent(ts):
-        lags = range(2, 21)
-        tau = [np.sqrt(np.std(np.subtract(ts[lag:], ts[:-lag]))) for lag in lags]
-        poly = np.polyfit(np.log(lags), np.log(tau), 1)
-        return poly[0] * 2.0
+    # Calculate rolling entropy with a minimum of 32 periods
+    df['Return_Entropy'] = df['Return'].rolling(window=window_size, min_periods=min_periods).apply(calculate_entropy, raw=True)
 
-    df['Hurst'] = df['Return'].rolling(window=window_size).apply(hurst_exponent, raw=True)
-
-    # Scale the metrics
+    # Scale entropy to be between 0 and 1
     scaler = MinMaxScaler()
-    df[['Return_Entropy', 'Volume_Entropy', 'Volatility', 'Hurst']] = scaler.fit_transform(
-        df[['Return_Entropy', 'Volume_Entropy', 'Volatility', 'Hurst']])
+    df[['Return_Entropy']] = scaler.fit_transform(df[['Return_Entropy']].fillna(0))
 
-    # Calculate composite score
-    df['Composite_Score'] = (df['Return_Entropy'] + df['Volume_Entropy'] + df['Volatility'] + (1 - df['Hurst'])) / 4
+    # Calculate dynamic thresholds based on quantiles
+    lower_threshold = df['Return_Entropy'].quantile(lower_quantile)
+    upper_threshold = df['Return_Entropy'].quantile(upper_quantile)
 
-    # Dynamic thresholds based on composite score
-    dynamic_lower_threshold = df['Composite_Score'].rolling(window=window_size).quantile(lower_quantile)
-    dynamic_upper_threshold = df['Composite_Score'].rolling(window=window_size).quantile(upper_quantile)
-    
-    # Apply dynamic thresholds to filter data
-    df_filtered = df[
-        (df['Composite_Score'] > dynamic_lower_threshold) & 
-        (df['Composite_Score'] < dynamic_upper_threshold)
-    ]
-    
+    # Filter out the bottom 10% least interesting and the top 5% most random data
+    df_filtered = df[(df['Return_Entropy'] > lower_threshold) & (df['Return_Entropy'] < upper_threshold)]
+
     # Drop intermediate columns
-    columns_to_drop = ['Return', 'Volume_Change', 'Return_Entropy', 'Volume_Entropy', 
-                       'Volatility', 'Hurst', 'Composite_Score']
-    df_filtered = df_filtered.drop(columns=columns_to_drop)
+    df_filtered = df_filtered.drop(columns=['Return', 'Return_Entropy'])
     
     return df_filtered
-
 
 
 
@@ -186,7 +158,7 @@ def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_
         original_total_rows += len(df)
         
         # Apply dynamic entropy filtering before lag features and other transformations
-        df = dynamic_entropy_filter(df, window_size, lower_quantile, upper_quantile)
+        df = simple_entropy_filter(df)
         filtered_total_rows += len(df)
 
         for col in ['High', 'Low', 'Volume']:
@@ -194,17 +166,27 @@ def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_
             for lag in lag_times:
                 df[f'{col}_Lag{lag}'] = df[col].shift(lag)
 
+        df['High_Low'] = df['High'] - df['Low']
+        df['High_Close'] = df['High'] - df['Close']
+        df['Low_Close'] = df['Low'] - df['Close']
+
         df = df.dropna()
-        df = calculate_target_col(df)
+        df = calculate_time_weighted_target(df)
         df = df.dropna().replace([np.inf, -np.inf], np.nan).dropna()
         all_data.append(df)
 
     combined_data = pd.concat(all_data, ignore_index=True).drop_duplicates()
     combined_data = combined_data.dropna()
 
-    feature_columns = [col for col in combined_data.columns if col not in ['Weighted_Future_Returns', 'Date']]
+    # Explicitly list the feature columns
+    feature_columns = [
+        'Open', 'High', 'Low', 'Close', 'Volume',
+        'High_Lag2', 'High_Lag5', 'Low_Lag2', 'Low_Lag5',
+        'Volume_Lag1', 'Volume_Lag2', 'Volume_Lag3',
+        'High_Low', 'High_Close', 'Low_Close'
+    ]
     X = combined_data[feature_columns]
-    y = combined_data['Weighted_Future_Returns']
+    y = combined_data['Target']
     
     percentage_removed = ((original_total_rows - filtered_total_rows) / original_total_rows) * 100 if original_total_rows > 0 else 0
     
@@ -213,6 +195,9 @@ def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_
     print(f"Percentage of data removed: {percentage_removed:.2f}%")
 
     return X, y
+
+
+
 
 
 
@@ -290,61 +275,221 @@ def calculate_all_metrics(y, y_pred):
 
 
 
+
+
+
+
+#####===============================[Custom Fitness Function]==================================#####
+#####===============================[Custom Fitness Function]==================================#####
+#####===============================[Custom Fitness Function]==================================#####
+#####===============================[Custom Fitness Function]==================================#####
+#####===============================[Custom Fitness Function]==================================#####
+
+
+#
+#def y_true_discrete(y, bins=10):
+#    """
+#    Discretize continuous `y` values into discrete bins for use in mutual information calculations.
+#    
+#    Args:
+#    y (array-like): Continuous target values.
+#    bins (int): The number of bins to discretize the data into.
+#    
+#    Returns:
+#    array: Discretized version of `y` into bins.
+#    """
+#    return np.digitize(y, np.linspace(np.min(y), np.max(y), bins))
+#
+#def _custom_fitness(y, y_pred, w):
+#    """
+#    Custom fitness function for evaluating model performance using Information Coefficient (IC), 
+#    Mutual Information (MI), and Directional Accuracy (DA).
+#    
+#    Args:
+#    y (array-like): True target values.
+#    y_pred (array-like): Predicted values from the model.
+#    w: Weighting parameter (not used directly in this implementation but required for compatibility).
+#    
+#    Returns:
+#    float: Fitness score, with lower values indicating better performance.
+#    """
+#    
+#    # If either `y` or `y_pred` has no data, return a very large error (1e10).
+#    if len(y) == 0 or len(y_pred) == 0:
+#        return 1e10
+#    
+#    # If all predictions are the same, return a large error (1e9) to penalize lack of variability in the predictions.
+#    if np.all(y_pred == y_pred[0]):
+#        return 1e9
+#    
+#    try:
+#        # Spearman's rank correlation is calculated between the true and predicted values.
+#        # This correlation is also called Information Coefficient (IC).
+#        ic = abs(spearmanr(y, y_pred)[0])  # Use absolute value since direction doesn't matter.
+#        
+#        # Mutual Information (MI) measures the amount of shared information between two variables.
+#        # It is useful for assessing the dependency between the true and predicted values.
+#        # The values are first discretized into bins before applying `mutual_info_score`.
+#        mi = mutual_info_score(y_true_discrete(y), y_true_discrete(y_pred))
+#
+#        # Calculate the entropy of the true values `y`. This is used for normalizing the mutual information (MI).
+#        # This tells us how much uncertainty is present in the target values `y` by themselves.
+#        y_entropy = mutual_info_score(y_true_discrete(y), y_true_discrete(y))
+#
+#        # Normalize MI by dividing by the entropy of `y`. This gives a relative measure of dependency.
+#        # If the entropy is zero (no variation in `y`), we avoid division by zero by setting normalized_mi to 0.
+#        normalized_mi = mi / y_entropy if y_entropy != 0 else 0
+#        
+#        # Directional accuracy (DA) calculates how often the predicted direction (positive/negative)
+#        # matches the direction of the true values.
+#        da = np.mean((np.sign(y) == np.sign(y_pred)))
+#        
+#        # The combined fitness score is a weighted sum of the absolute IC, normalized MI, and DA.
+#        # IC and normalized MI are given more weight than directional accuracy.
+#        combined_score = (
+#            0.45 * ic +                # 45% weight on absolute Information Coefficient
+#            0.45 * normalized_mi +     # 45% weight on Normalized Mutual Information
+#            0.10 * da                  # 10% weight on Directional Accuracy
+#        )
+#        
+#        # Return the reciprocal of the combined score to ensure that lower fitness values
+#        # (i.e., higher combined scores) indicate better performance.
+#        return 1 / combined_score
+#    except Exception as e:
+#        # If any error occurs during fitness calculation, return a very large error value (1e32) to signify failure.
+#        print(f"Error in fitness calculation: {e}")
+#        return 1e32
+#
+## Register the custom fitness function for use in genetic programming models.
+#custom_fitness = make_fitness(function=_custom_fitness, greater_is_better=False)
+
+
+@njit
 def y_true_discrete(y, bins=10):
-    return np.digitize(y, np.linspace(np.min(y), np.max(y), bins))
+    """
+    Discretize continuous `y` values into discrete bins for use in mutual information calculations.
+    """
+    min_y, max_y = np.min(y), np.max(y)
+    bin_edges = np.linspace(min_y, max_y, bins)
+    return np.digitize(y, bin_edges)
 
-
-
-
-
+@njit
+def concordance(y, y_pred):
+    """
+    Calculate concordance as the percentage of times the true values and predicted values move in the same direction.
+    """
+    y_change = np.diff(y)
+    y_pred_change = np.diff(y_pred)
+    return np.mean(np.sign(y_change) == np.sign(y_pred_change))
 
 def _custom_fitness(y, y_pred, w):
+    """
+    Optimized custom fitness function with concordance.
+    """
+    # Check for empty or identical predictions more efficiently
     if len(y) == 0 or len(y_pred) == 0:
         return 1e10
-    
+
     if np.all(y_pred == y_pred[0]):
         return 1e9
-    
+
     try:
-        # Use absolute value of Information Coefficient
+        # Spearman's rank correlation coefficient (IC)
         ic = abs(spearmanr(y, y_pred)[0])
-        
-        mi = mutual_info_score(y_true_discrete(y), y_true_discrete(y_pred))
-        y_entropy = mutual_info_score(y_true_discrete(y), y_true_discrete(y))
+
+        # Discretize `y` and `y_pred` once and reuse
+        y_discrete = y_true_discrete(y)
+        y_pred_discrete = y_true_discrete(y_pred)
+
+        # Mutual Information (MI)
+        mi = mutual_info_score(y_discrete, y_pred_discrete)
+
+        # Calculate the entropy of `y` once
+        y_entropy = mutual_info_score(y_discrete, y_discrete)
+
+        # Normalize MI
         normalized_mi = mi / y_entropy if y_entropy != 0 else 0
-        
-        # Directional accuracy might be less important now, but still included
-        da = np.mean((np.sign(y) == np.sign(y_pred)))
-        
-        combined_score = (
-            0.45 * ic +                # Increased weight on absolute IC
-            0.45 * normalized_mi +     # Increased weight on Normalized MI
-            0.10 * da                  # Reduced weight on directional accuracy
-        )
-        
+
+        # Directional Accuracy (DA)
+
+        # Concordance (CON)
+        con = abs(concordance(y, y_pred))
+
+        # Combine scores with weights
+        combined_score = (0.1 * ic) + (0.1 * normalized_mi) + (0.8 * con)
+
+        # Return inverse of combined score (lower is better)
         return 1 / combined_score
     except Exception as e:
-        print(f"Error in fitness calculation: {e}")
         return 1e32
 
+# Register the optimized custom fitness function
 custom_fitness = make_fitness(function=_custom_fitness, greater_is_better=False)
 
 
 
 
 
-def translate_program(program, feature_names):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def translate_program_to_plain_text(program, feature_names):
+    """Translate the symbolic program into plain text using column names."""
     program_str = str(program)
-    for i, name in enumerate(feature_names):
-        if '_Lag' in name:
-            base, lag = name.split('_Lag')
-            program_str = program_str.replace(f'X{i}', f'{base}(t-{lag})')
-        elif name.startswith('PriceToVolume'):
-            metric = name.replace('PriceToVolume', '')
-            program_str = program_str.replace(f'X{i}', f'{metric}/Volume')
-        else:
-            program_str = program_str.replace(f'X{i}', name)
+    
+    # Loop over each feature and replace the symbolic names (X1, X2, ...) with the actual column names
+    for i, feature_name in enumerate(feature_names):
+        program_str = program_str.replace(f'X{i}', feature_name)
+    
     return program_str
+
+def store_best_program_with_plain_text(program, feature_names, test_metrics):
+    """Store the best program with translated plain text formula."""
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Translate program into plain text formula
+    translated_program = translate_program_to_plain_text(program, feature_names)
+    
+    # Save the best program along with its metrics
+    with open(os.path.join(CONFIG['output_directory'], 'best_programs_plain_text.txt'), 'a') as f:
+        f.write(f"\n\n--- New Best Program ({timestamp}) ---\n")
+        f.write(f"Program: {translated_program}\n")
+        if test_metrics:
+            f.write("Test Set Metrics:\n")
+            for metric, value in test_metrics.items():
+                f.write(f"  {metric}: {value:.6f}\n")
+        else:
+            f.write("Unable to calculate test metrics (no valid data)\n")
+
+
+
+
+
+
 
 def calculate_metrics(y_true, y_pred, num_bins=10):
     mask = np.isfinite(y_true) & np.isfinite(y_pred)
@@ -390,47 +535,129 @@ def calculate_baseline_mse(y):
 
     return naive_mse, random_mse
 
-def display_edge_over_random(y_train, y_test, train_metrics, test_metrics):
-    naive_mse_train, random_mse_train = calculate_baseline_mse(y_train)
-    naive_mse_test, random_mse_test = calculate_baseline_mse(y_test)
-    
-    edge_naive_train = naive_mse_train - train_metrics['MSE']
-    edge_random_train = random_mse_train - train_metrics['MSE']
-    edge_naive_test = naive_mse_test - test_metrics['MSE']
-    edge_random_test = random_mse_test - test_metrics['MSE']
-    
-    print(f"Edge Over Naive Prediction (Train): {edge_naive_train:.6f}")
-    print(f"Baseline Naive MSE (Train): {naive_mse_train:.6f}")
-    print(f"Edge Over Random Prediction (Train): {edge_random_train:.6f}")
-    print(f"Baseline Random MSE (Train): {random_mse_train:.6f}")
-    
-    print(f"Edge Over Naive Prediction (Test): {edge_naive_test:.6f}")
-    print(f"Baseline Naive MSE (Test): {naive_mse_test:.6f}")
-    print(f"Edge Over Random Prediction (Test): {edge_random_test:.6f}")
-    print(f"Baseline Random MSE (Test): {random_mse_test:.6f}")
 
-def baseline_model_predictions(y_true):
-    mean_y = np.mean(y_true)
-    std_y = np.std(y_true)
-    return np.random.normal(mean_y, std_y, size=len(y_true))
 
-def calculate_mi_ic_benchmarks(y_true, y_pred, num_bins=10):
-    # Discretize the predictions and true values for mutual information calculation
-    y_true_discrete = pd.qcut(y_true, q=num_bins, labels=False, duplicates='drop')
-    y_pred_discrete = pd.qcut(y_pred, q=num_bins, labels=False, duplicates='drop')
 
-    shuffled_y_pred = np.random.permutation(y_pred_discrete)
-    random_mi = mutual_info_score(y_true_discrete, shuffled_y_pred)
-    random_ic = spearmanr(y_true_discrete, shuffled_y_pred)[0]
+
+
+
+def calculate_baseline_ic_mi(y_true):
+    """Calculate IC and MI baselines using naive and random methods."""
+    # Naive baseline: Predict the mean of y_true for every point
+    naive_pred = np.mean(y_true) * np.ones_like(y_true)
     
-    print(f"Random MI: {random_mi:.6f}, Random IC: {random_ic:.6f}")
-
-    baseline_y_pred = baseline_model_predictions(y_true)
-    baseline_y_pred_discrete = pd.qcut(baseline_y_pred, q=num_bins, labels=False, duplicates='drop')
-    baseline_mi = mutual_info_score(y_true_discrete, baseline_y_pred_discrete)
-    baseline_ic = spearmanr(y_true_discrete, baseline_y_pred_discrete)[0]
+    # Random baseline: Generate random predictions based on y_true's distribution
+    random_pred = np.random.normal(np.mean(y_true), np.std(y_true), size=len(y_true))
     
-    print(f"Baseline Model MI: {baseline_mi:.6f}, Baseline Model IC: {baseline_ic:.6f}")
+    # Calculate Information Coefficient (IC) for naive and random baselines
+    # Handle constant array case for naive IC
+    naive_ic = spearmanr(y_true, naive_pred)[0] if np.std(naive_pred) > 0 else np.nan
+    random_ic = spearmanr(y_true, random_pred)[0]
+    
+    # For Mutual Information, handle constant array for naive prediction
+    try:
+        naive_mi = mutual_info_score(np.digitize(y_true, bins=10), np.digitize(naive_pred, bins=10))
+    except ValueError:
+        naive_mi = np.nan  # Set to NaN when digitizing fails due to constant values
+    
+    random_mi = mutual_info_score(np.digitize(y_true, bins=10), np.digitize(random_pred, bins=10))
+    
+    return naive_pred, random_pred, {
+        'naive_ic': naive_ic,
+        'naive_mi': naive_mi,
+        'random_ic': random_ic,
+        'random_mi': random_mi
+    }
+
+def display_edge_over_random_ic_mi(y_train, y_test, y_pred_train, y_pred_test, train_metrics, test_metrics):
+    # Calculate baseline IC and MI for training and testing sets, and get predictions
+    naive_pred_train, random_pred_train, train_baselines = calculate_baseline_ic_mi(y_train)
+    naive_pred_test, random_pred_test, test_baselines = calculate_baseline_ic_mi(y_test)
+    
+    # Calculate the edge in IC and MI over naive and random baselines
+    edge_naive_ic_train = train_metrics['Information Coefficient'] - train_baselines['naive_ic'] if not np.isnan(train_baselines['naive_ic']) else np.nan
+    edge_naive_mi_train = train_metrics['Mutual Information'] - train_baselines['naive_mi'] if not np.isnan(train_baselines['naive_mi']) else np.nan
+    edge_naive_ic_test = test_metrics['Information Coefficient'] - test_baselines['naive_ic'] if not np.isnan(test_baselines['naive_ic']) else np.nan
+    edge_naive_mi_test = test_metrics['Mutual Information'] - test_baselines['naive_mi'] if not np.isnan(test_baselines['naive_mi']) else np.nan
+    
+    # Percentage improvement/unimprovement over naive method
+    if not np.isnan(train_baselines['naive_ic']):
+        percent_ic_train = (train_metrics['Information Coefficient'] - train_baselines['naive_ic']) / abs(train_baselines['naive_ic']) * 100
+    else:
+        percent_ic_train = np.nan
+
+    if not np.isnan(train_baselines['naive_mi']):
+        percent_mi_train = (train_metrics['Mutual Information'] - train_baselines['naive_mi']) / abs(train_baselines['naive_mi']) * 100
+    else:
+        percent_mi_train = np.nan
+    
+    if not np.isnan(test_baselines['naive_ic']):
+        percent_ic_test = (test_metrics['Information Coefficient'] - test_baselines['naive_ic']) / abs(test_baselines['naive_ic']) * 100
+    else:
+        percent_ic_test = np.nan
+
+    if not np.isnan(test_baselines['naive_mi']):
+        percent_mi_test = (test_metrics['Mutual Information'] - test_baselines['naive_mi']) / abs(test_baselines['naive_mi']) * 100
+    else:
+        percent_mi_test = np.nan
+
+    # Prepare data for the table (Train set)
+    train_table = pd.DataFrame({
+        'True Values (Train)': y_train,
+        'Model Predictions (Train)': y_pred_train,
+        'Naive Predictions (Train)': naive_pred_train
+    })
+    
+    # Prepare data for the table (Test set)
+    test_table = pd.DataFrame({
+        'True Values (Test)': y_test,
+        'Model Predictions (Test)': y_pred_test,
+        'Naive Predictions (Test)': naive_pred_test
+    })
+    
+    # Display the tables
+    print("\nTrain Set Predictions Comparison:\n")
+    print(train_table.head())  # Displaying the first few rows of the table
+    print("\nTest Set Predictions Comparison:\n")
+    print(test_table.head())  # Displaying the first few rows of the table
+    
+    # Display percentage improvement/unimprovement
+    print("\nPercentage Improvement Over Naive Baseline (Train):")
+    if not np.isnan(percent_ic_train):
+        print(f"Information Coefficient (IC): {percent_ic_train:.2f}%")
+    else:
+        print("Information Coefficient (IC): NaN (Naive prediction was constant)")
+
+    if not np.isnan(percent_mi_train):
+        print(f"Mutual Information (MI): {percent_mi_train:.2f}%")
+    else:
+        print("Mutual Information (MI): NaN (Naive prediction was constant)")
+
+    print("\nPercentage Improvement Over Naive Baseline (Test):")
+    if not np.isnan(percent_ic_test):
+        print(f"Information Coefficient (IC): {percent_ic_test:.2f}%")
+    else:
+        print("Information Coefficient (IC): NaN (Naive prediction was constant)")
+
+    if not np.isnan(percent_mi_test):
+        print(f"Mutual Information (MI): {percent_mi_test:.2f}%")
+    else:
+        print("Mutual Information (MI): NaN (Naive prediction was constant)")
+
+    # Optionally, display full metrics as before
+    print("\nTraining Set Edge Over Naive Baseline:")
+    print(f"Edge Over Naive IC (Train): {edge_naive_ic_train:.6f}")
+    print(f"Edge Over Naive MI (Train): {edge_naive_mi_train:.6f}")
+    
+    print("\nTest Set Edge Over Naive Baseline:")
+    print(f"Edge Over Naive IC (Test): {edge_naive_ic_test:.6f}")
+    print(f"Edge Over Naive MI (Test): {edge_naive_mi_test:.6f}")
+
+
+
+
+
+
 
 
 
@@ -477,6 +704,11 @@ def main():
         random_state=CONFIG['random_state']
     )
 
+    ##print off all the column names that are going into the model
+    print(X.columns)
+    
+
+
     est_gp.fit(X_train, y_train)
     
     y_pred_train = est_gp.predict(X_train)
@@ -503,25 +735,12 @@ def main():
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
 
-    feature_names = [f'PC{i+1}' for i in range(8)]  # Since you know you are using 8 components
 
     
-    with open(os.path.join(CONFIG['output_directory'], 'best_programs.txt'), 'a') as f:
-        f.write(f"\n\n--- New Best Program ({timestamp}) ---\n")
-        f.write(f"Program: {translate_program(est_gp._program, feature_names)}\n")
-        if test_metrics:
-            f.write("Test Set Metrics:\n")
-            for metric, value in test_metrics.items():
-                f.write(f"  {metric}: {value:.6f}\n")
-        else:
-            f.write("Unable to calculate test metrics (no valid data)\n")
+    store_best_program_with_plain_text(est_gp._program, X.columns, test_metrics)
 
 
 
-    if train_metrics and test_metrics:
-        display_edge_over_random(y_train, y_test, train_metrics, test_metrics)
-        ##also dispaly the ic 
-        calculate_mi_ic_benchmarks(y_train, y_pred_train)
 
 
     print("Final Time: ", round(time.time() - timer, 2))

@@ -124,14 +124,14 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ('fast_period', 14),
         ('slow_period', 60),
         ('max_positions', 4),
-        ('reserve_percent', 0.4),
+        ('reserve_percent', 0.1),
         ('stop_loss_percent', 3.0),
         ('take_profit_percent', 100.0),
         ('position_timeout', 9),
         ('trailing_stop_percent', 5.0),
         ('expected_profit_per_day_percentage', 0.25),
         ('rolling_period', 8),
-        ('max_group_allocation', 0.5),
+        ('max_group_allocation', 0.4),
         ('correlation_data', None),
         ('parquet_file', 'trading_data.parquet'),
     )
@@ -260,7 +260,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.order_list.append(order)
         self.order_cooldown[data] = self.datetime.date() + timedelta(days=1)
         self.update_group_data(order)
-        mark_position_as_bought(data._name)
+        #mark_position_as_bought()
+
+        position_size = order.executed.size  # Assuming you can get size from the executed order
+        mark_position_as_bought(data._name, position_size)
+
         update_buy_signal(data._name, self.datetime.date(), order.executed.price, data.UpProbability[0])
 
     def handle_position_closure(self, data, order):
@@ -780,6 +784,9 @@ class MovingAverageCrossoverStrategy2222(bt.Strategy):
                else:
                    break
 
+
+
+
     def calculate_position_size(self, data):
         total_value = self.broker.getvalue()
         cash_available = self.broker.getcash()
@@ -790,6 +797,10 @@ class MovingAverageCrossoverStrategy2222(bt.Strategy):
         if (total_value * self.params.reserve_percent) > cash_available or size < 5:
             return 0
         return size if cash_available >= capital_for_position else 0
+
+
+
+
 
     def sort_buy_candidates(self, buy_candidates):
         current_positions = [d._name for d in self.datas if self.getposition(d).size > 0]
@@ -905,12 +916,19 @@ class MovingAverageCrossoverStrategy2222(bt.Strategy):
             current_up_prob_good
         )
 
+
+
+
     def execute_buy(self, data, current_date, size):
         if self.check_group_allocation(data):
             self.buy(data=data, size=size, exectype=bt.Order.StopTrail, trailpercent=self.params.trailing_stop_percent / 100)
             self.order_cooldown[data] = current_date + timedelta(days=1)
             self.buying_status[data._name] = True
             self.open_positions += 1
+
+
+
+
 
     def check_group_allocation(self, data):
         group = self.asset_groups.get(data._name)
@@ -1097,6 +1115,21 @@ def parallel_load_data(file_paths):
 
 
 
+
+class FixedCommissionScheme(bt.CommInfoBase):
+    params = (
+        ('commission', 1.5),  # Fixed commission per trade (average of $1 to $3)
+        ('stocklike', True),
+        ('commtype', bt.CommInfoBase.COMM_FIXED),  # Fixed commission type
+    )
+
+    def _getcommission(self, size, price, pseudoexec):
+        return self.p.commission  # Return fixed commission regardless of trade size
+
+
+
+
+
 def main():
     LoggingSetup()
     timer = time.time()
@@ -1104,9 +1137,8 @@ def main():
 
     ##commssion testing here still unsure if we need to define this as its only 1$ per trade 
 
-    #commission_per_trade = 1.015  # Adjust based on exact commission per trade from your logs
-    #cerebro.broker.setcommission(commission=commission_per_trade, commtype=bt.CommInfoBase.COMM_FIXED)
-
+    comminfo = FixedCommissionScheme()
+    cerebro.broker.addcommissioninfo(comminfo)
 
 
 
@@ -1162,6 +1194,7 @@ def main():
     if len(cerebro.datas) == 0:
         print("WARNING: No data loaded into Cerebro. Exiting.")
         return
+
 
 
     cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name="TradeStats")
@@ -1252,17 +1285,17 @@ def main():
     print(f"{'=' * 8} Trading Strategy Results {'=' * 8}")
     print(f"{'Initial Starting Cash:':<30}${cerebro.broker.startingcash:.2f}")
     print(colorize_output(final_portfolio_value, 'Final Portfolio Value:', InitalStartingCash * 2, InitalStartingCash * 1.25))
-    print(colorize_output(drawdown['max']['len'], 'Max Drawdown Days:', 15, 90, lower_is_better=True))
-    print(colorize_output(drawdown['max']['drawdown'], 'Max Drawdown percentage:', 5, 15, lower_is_better=True))
+    print(colorize_output(drawdown['max']['len'], 'Max Drawdown Days:', 30, 90, lower_is_better=True))
+    print(colorize_output(drawdown['max']['drawdown'], 'Max Drawdown percentage:', 10, 25, lower_is_better=True))
     print(colorize_output(total_closed, 'Total Trades:', 75, 110, lower_is_better=True))
     print(colorize_output(percent_profitable, 'Profitable Trades %:', 60, 40))
     print(colorize_output(won_avg, 'Average Profitable Trade:', 100, 50))
     print(colorize_output(lost_avg, 'Average Unprofitable Trade:', -20, -100, reverse=True))
     print(colorize_output(won_total, 'Total Profitable Trades:', 5000, 800))
-    print(colorize_output(lost_total, 'Total Unprofitable Trades:', -20, -2500, reverse=True))
+    print(colorize_output(abs(lost_total), 'Total Unprofitable Trades:', good_threshold=won_total/2, bad_threshold=won_total*2, lower_is_better=True))    
     print(colorize_output(won_max_percentage, 'Largest Winning percent:', 5, 50))
     print(colorize_output(won_max, 'Largest Winning Trade:', 500, 100))
-    print(colorize_output(lost_max, 'Largest Losing Trade:', -50, -200, reverse=True))
+    print(colorize_output(abs(lost_max), 'Largest Losing Trade:', good_threshold=won_avg, bad_threshold=won_avg*3, lower_is_better=True))    
     print(colorize_output(sharpe_ratio['sharperatio'], 'Sharpe Ratio:', 2.0, 1.0))
     print(colorize_output(sqn_value, 'SQN:', 1.9, 5.0))
     print(f"{'SQN Description:':<30}{description}")
