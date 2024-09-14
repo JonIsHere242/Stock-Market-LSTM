@@ -40,7 +40,7 @@ def setup_logging(log_to_console=True):
         logger.addHandler(console_handler)
 
 # You can now control logging to the console by setting this parameter when you call setup_logging
-setup_logging(log_to_console=False)  # Set to False to disable logging to the terminal
+setup_logging(log_to_console=True)  # Set to False to disable logging to the terminal
 
 
 
@@ -94,16 +94,14 @@ class MyStrategy(bt.Strategy):
     params = (
         ('max_positions', 4),
         ('reserve_percent', 0.4),
-        ('stop_loss_percent', 10),
-        ('take_profit_percent', 50.0),
+        ('stop_loss_percent', 5),
+        ('take_profit_percent', 100),
         ('position_timeout', 9),
         ('expected_profit_per_day_percentage', 0.25),
         ('debug', True),
         ('assume_live', True),  # New parameter to control this behavior
 
     )
-
-
 
 
     def __init__(self):
@@ -113,6 +111,8 @@ class MyStrategy(bt.Strategy):
         self.barCounter = 0
         self.trading_data = read_trading_data(is_live=True)  # Read live trading data
         self.position_closed = {d._name: False for d in self.datas}  # Track if a position has been closed
+        self.live_trades = pd.DataFrame()  # Initialize live_trades as an empty DataFrame
+        self.position_data = self.load_position_data()
 
         # Add a timer for heartbeat
         self.add_timer(
@@ -122,6 +122,10 @@ class MyStrategy(bt.Strategy):
             weekdays=[0, 1, 2, 3, 4],  # Monday to Friday
         )
 
+
+    def load_position_data(self):
+        df = read_trading_data(is_live=True)
+        return {row['Symbol']: row.to_dict() for _, row in df.iterrows()}
 
 
 
@@ -194,34 +198,43 @@ class MyStrategy(bt.Strategy):
     def notify_order(self, order):
         # Handle submitted or accepted orders
         if order.status in [order.Submitted, order.Accepted]:
-            self.order_dict[order.ref] = order  # Store the order in the dictionary if submitted or accepted
+            # Store the order in the dictionary if submitted or accepted
+            self.order_dict[order.ref] = {'main_order': order}
+            logging.info(f"Order for {order.data._name} {order.getstatusname()}")
             return
 
         # Handle completed orders (both buy and sell)
         if order.status in [order.Completed]:
             if order.isbuy():
-                self.handle_buy_order(order, order.data._name)
+                self.handle_buy_order(order)
             elif order.issell():
-                self.handle_sell_order(order, order.data._name)
+                self.handle_sell_order(order)
                 self.position_closed[order.data._name] = True  # Mark the position as closed
 
-            # Remove the completed order from the order dictionary
-            if order.ref in self.order_dict:
-                del self.order_dict[order.ref]
+            logging.info(f"Order for {order.data._name} {order.getstatusname()}")
 
         # Handle canceled, margin, or rejected orders
         elif order.status in [order.Canceled, order.Margin, order.Rejected]:
             logging.warning(f'Order {order.data._name} failed with status: {order.getstatusname()}')
 
-            # Remove the failed order from the order dictionary
-            if order.ref in self.order_dict:
-                del self.order_dict[order.ref]
+        # Remove the completed or failed order from the order dictionary
+        if order.ref in self.order_dict:
+            del self.order_dict[order.ref]
+            logging.info(f"Removed order for {order.data._name} from order dictionary")
+
+
+
 
 
     def next(self):
         self.barCounter += 1
         current_date = self.safe_get_date()
         self.trading_data = read_trading_data(is_live=True)  # Read live trading data
+        self.live_trades = self.trading_data  # Update live_trades with the latest data
+
+        logging.info(f"Bar {self.barCounter}: Current date: {current_date}")
+        logging.info(f"Live trades data shape: {self.live_trades.shape}")
+        logging.info(f"Live trades columns: {self.live_trades.columns}")
 
         self.market_open, _ = self.check_market_status()
 
@@ -233,7 +246,7 @@ class MyStrategy(bt.Strategy):
         print(f"Bar {self.barCounter}: Open: {self.data.open[0]}, High: {self.data.high[0]}, Low: {self.data.low[0]}, Close: {self.data.close[0]}, Volume: {self.data.volume[0]}")
 
         # Print currently owned stocks and their purchase dates
-        current_positions = self.trading_data[self.trading_data['IsCurrentlyBought'] == True]
+        current_positions = self.live_trades[self.live_trades['IsCurrentlyBought'] == True] if 'IsCurrentlyBought' in self.live_trades.columns else pd.DataFrame()
         if not current_positions.empty:
             print("\nCurrently owned stocks:")
             for _, position in current_positions.iterrows():
@@ -251,27 +264,16 @@ class MyStrategy(bt.Strategy):
             if position.size > 0 and not self.position_closed[symbol]:
                 logging.info(f"{symbol} - Current position size: {position.size} at average price: {position.price}")
                 self.evaluate_sell_conditions(data, current_date)
-
             elif position.size == 0 and self.position_closed[symbol]:
-                # Reset the flag if the position is actually closed
                 self.position_closed[symbol] = False
                 logging.info(f"{symbol} - Position closed and flag reset")
-        
             elif position.size == 0 and not self.position_closed[symbol]:
-                # When there's no position, evaluate buy signals
                 logging.info(f'{symbol}: No position flag detected fresh check.')
                 logging.info(f'{symbol}: No position. Evaluating buy signals for data.')
                 print(f'{symbol}: No position. Evaluating buy signals for data.')
-                
-                self.process_buy_signal(data, current_date)
-
+                self.process_buy_signal(data)
             elif position.size < 0:
-                # Error case where we have shorted a stock
-                logging.error('\n\n\n')
-                logging.error(f'-------------------------------------------------------------------------------------')
                 logging.error(f'{symbol}: ERROR - We have shorted this stock! Current position size: {position.size}')
-                logging.error(f'-------------------------------------------------------------------------------------')
-                logging.error('\n\n\n')
 
             
             
@@ -282,21 +284,24 @@ class MyStrategy(bt.Strategy):
         symbol = data._name
         if symbol in self.order_dict or self.position_closed[symbol]:
             return
-
-
+    
         symbol_data = self.trading_data[self.trading_data['Symbol'] == symbol].iloc[0]
         entry_price = symbol_data['LastBuySignalPrice']
         entry_date = pd.to_datetime(symbol_data['LastBuySignalDate']).date()  # Ensure this is a datetime.date object
         current_price = data.close[0]
         current_date = pd.to_datetime(current_date).date()  # Ensure consistency in date type
-
-        print(f"Current Price: {current_price}, Entry Price: {entry_price}, Entry Date: {entry_date}, Current Date: {current_date}")
-
+    
+        logging.info(f"Current Price: {current_price}, Entry Price: {entry_price}, Entry Date: {entry_date}, Current Date: {current_date}")
+    
         if should_sell(current_price, entry_price, entry_date, current_date, 
-                       self.params.stop_loss_percent, self.params.take_profit_percent, 
-                       self.params.position_timeout, self.params.expected_profit_per_day_percentage):
+                      self.params.stop_loss_percent, self.params.take_profit_percent, 
+                      self.params.position_timeout, self.params.expected_profit_per_day_percentage, verbose=True):
+            logging.info(f"Sell conditions met for {symbol}. Initiating close_position.")
             self.close_position(data, "Sell conditions met")
             return
+        else:
+            logging.info(f"Sell conditions not met for {symbol}.")
+
 
 
 
@@ -309,12 +314,7 @@ class MyStrategy(bt.Strategy):
     
     ###================[Update system to see orders on restart]=================#
 
-    def process_completed_order(self, order):
-        symbol = order.data._name
-        if order.isbuy():
-            self.handle_buy_order(order, symbol)
-        elif order.issell():
-            self.handle_sell_order(order, symbol)
+
 
     def handle_buy_order(self, order):
         symbol = order.data._name
@@ -322,18 +322,39 @@ class MyStrategy(bt.Strategy):
         entry_date = self.data.datetime.date(0)
         position_size = order.executed.size
 
-        # Update live trades Parquet file
-        update_filled_order(symbol, entry_price, entry_date, position_size, is_live=True)
-        logging.info(f'Buy order executed for {symbol} at {entry_price}, size: {position_size}')
+        logging.info(f"Buy order for {symbol} completed. Size: {position_size}, Price: {entry_price}")
+
+        # Update the Parquet file
+        update_trade_data(symbol, 'buy', entry_price, entry_date, position_size, is_live=True)
+
+        if not hasattr(self, 'active_positions'):
+            self.active_positions = set()
+
+        if symbol not in self.active_positions:
+            self.active_positions.add(symbol)
+            logging.info(f"Added {symbol} to active positions after buy order completion")
+
+
+
+
+
 
     def handle_sell_order(self, order):
         symbol = order.data._name
         exit_price = order.executed.price
         exit_date = self.data.datetime.date(0)
-    
-        # Mark the position as not currently bought in the live trades Parquet file
-        update_trade_result(symbol, is_loss=False, exit_price=exit_price, exit_date=exit_date, is_live=True)
-        logging.info(f'Sell order executed for {symbol} at {exit_price}')
+        position_size = order.executed.size
+
+        logging.info(f"Sell order for {symbol} completed. Size: {position_size}, Price: {exit_price}")
+
+        # Update the Parquet file
+        update_trade_data(symbol, 'sell', exit_price, exit_date, 0, is_live=True)
+
+        if hasattr(self, 'active_positions') and symbol in self.active_positions:
+            self.active_positions.remove(symbol)
+            logging.info(f"Removed {symbol} from active positions after sell order completion")
+
+
 
 
 
@@ -362,117 +383,114 @@ class MyStrategy(bt.Strategy):
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
 
-    #def process_buy_signal(self, data):
-    #    symbol = data._name
-    #    if symbol not in self.live_trades[self.live_trades['IsCurrentlyBought']]['Symbol'].values:
-    #        size = self.calculate_position_size(data)
-    #        if size > 0:
-    #            order = self.buy(data=data, size=size)
-    #            self.order_dict[symbol] = order
-    #            logging.info(f'Market buy order placed for {symbol}, position size: {size}')
-
-
     def process_buy_signal(self, data):
         symbol = data._name
-        if symbol not in self.live_trades[self.live_trades['IsCurrentlyBought']]['Symbol'].values:
+        logging.info(f"Processing buy signal for {symbol}")
+
+        # Check if an order is already pending for this symbol
+        if any(order['data']._name == symbol for order in self.order_dict.values()):
+            logging.info(f"Order already pending for {symbol}, skipping buy signal")
+            return
+
+        # Check if the symbol is already in active positions
+        if hasattr(self, 'active_positions') and symbol in self.active_positions:
+            logging.info(f"{symbol} is already in active positions, skipping buy signal")
+            return
+
+        if 'IsCurrentlyBought' not in self.live_trades.columns:
+            logging.warning("'IsCurrentlyBought' column not found in live_trades")
+            return
+
+        currently_bought = self.live_trades[self.live_trades['IsCurrentlyBought'] == True]
+        logging.info(f"Currently bought symbols: {currently_bought['Symbol'].tolist() if 'Symbol' in currently_bought.columns else 'Symbol column not found'}")
+
+        if symbol not in currently_bought['Symbol'].values:
             size = self.calculate_position_size(data)
             if size > 0:
-                # Create the market buy order (transmit=False so that the children orders can be attached)
+                # Generate a unique OCO group ID
+                oco_id = f"OCO_{symbol}_{int(time.time())}"
+
+                # Create the parent market buy order
                 parent_order = self.buy(
                     data=data,
                     size=size,
-                    **{'orderType': 'MKT', 'transmit': False, 'goodTillCancel': True}
+                    exectype=bt.Order.Market,
+                    transmit=False,
+                    **{'goodTillCancel': True}
                 )
 
-                # Store the parent order in the order dictionary
+                # Estimate entry price (since it's a market order, use current price)
+                entry_price = data.close[0]
+                take_profit_price = entry_price * 2.0  # 100% profit target
+
+                # Create the take-profit limit sell order
+                take_profit_order = self.sell(
+                    data=data,
+                    size=size,
+                    exectype=bt.Order.Limit,
+                    price=take_profit_price,
+                    parent=parent_order,
+                    transmit=False,
+                    oco=oco_id,
+                    **{'goodTillCancel': True}
+                )
+
+                # Create the trailing stop sell order
+                trailing_stop_order = self.sell(
+                    data=data,
+                    size=size,
+                    exectype=bt.Order.StopTrail,
+                    trailpercent=3.0,
+                    parent=parent_order,
+                    transmit=True,  # Transmit=True on the last order to send all orders
+                    oco=oco_id,
+                    **{'goodTillCancel': True}
+                )
+
+                # Store the orders
                 self.order_dict[parent_order.ref] = {
-                    'data': data,
-                    'size': size,
-                    'parent_order': parent_order,
-                    'tp_order': None,
-                    'ts_order': None
+                    'main_order': parent_order,
+                    'take_profit_order': take_profit_order,
+                    'trailing_stop_order': trailing_stop_order,
+                    'data': data
                 }
 
-                # Once the parent order is filled, attach the child orders
-                def submit_child_orders(order):
-                    entry_price = order.executed.price
-
-                    # Calculate the take-profit price (100% above entry)
-                    take_profit_price = entry_price * 2.0
-
-                    # Create the take-profit order (transmit=False to allow chaining)
-                    take_profit_order = self.sell(
-                        data=data,
-                        size=size,
-                        exectype=bt.Order.Limit,
-                        price=take_profit_price,
-                        parent=parent_order,
-                        transmit=False,
-                        **{'goodTillCancel': True}
-                    )
-
-                    # Create the trailing stop order (transmit=True to send the full bracket order)
-                    trailing_stop_order = self.sell(
-                        data=data,
-                        size=size,
-                        **{
-                            'orderType': 'TRAIL',
-                            'trailingPercent': 3,  # 3% trailing stop
-                            'parent': parent_order,
-                            'transmit': True,
-                            'goodTillCancel': True
-                        }
-                    )
-
-                    # Update the dictionary with child orders
-                    self.order_dict[parent_order.ref]['tp_order'] = take_profit_order
-                    self.order_dict[parent_order.ref]['ts_order'] = trailing_stop_order
-
-                    logging.info(f"Submitted take-profit at {take_profit_price} and 3% trailing stop for {symbol}")
-
-                # Use Backtrader's order notification system to trigger child order submission after parent order is filled
-                self.notify_order = lambda order: (
-                    submit_child_orders(order)
-                    if order.status == bt.Order.Completed and order.ref == parent_order.ref
-                    else None
-                )
-
-                logging.info(f"Market buy order placed for {symbol}, position size: {size}")
+                logging.info(f"Bracket order placed for {symbol}, position size: {size}")
+            else:
+                logging.info(f"Not enough capital to open position for {symbol}")
+        else:
+            logging.info(f"{symbol} is already bought, skipping buy signal")
 
 
-    #================[CLOSE POSITION WITH TWS ]=================#
-    #================[CLOSE POSITION WITH TWS ]=================#
-    #================[CLOSE POSITION WITH TWS ]=================#
-    #================[CLOSE POSITION WITH TWS ]=================#
+    ##=====================[CLOSE POSITION]====================##
+    ##=====================[CLOSE POSITION]====================##
+    ##=====================[CLOSE POSITION]====================##
+    ##=====================[CLOSE POSITION]====================##
+    ##=====================[CLOSE POSITION]====================##
 
-    #def close_position(self, data, reason):
-    #    if data._name not in self.order_dict and not self.position_closed[data._name]:
-    #        logging.info(f'Closing {data._name} due to {reason}')
-    #        print(f'Closing {data._name} due to {reason}')
-    #
-    #        order = self.close(data=data)
-    #        self.order_dict[data._name] = order
-    #        logging.info(f"Close order placed for {data._name}")
-    #
+    def close_position(self, data, reason):
+        """Close the position and cancel related take-profit and trailing stop orders."""
+        symbol = data._name
+        logging.info(f"Attempting to close position for {symbol} due to: {reason}")
 
-    def close_position(self, data):
-        """ Close the position and cancel related take-profit and trailing stop orders. """
-        for order_ref, order_info in list(self.order_dict.items()):
-            if order_info['data'] == data:
-                # Cancel the take-profit and trailing stop orders
-                if order_info['tp_order']:
-                    self.cancel(order_info['tp_order'])
-                if order_info['ts_order']:
-                    self.cancel(order_info['ts_order'])
+        try:
+            # Cancel any pending orders related to this position
+            for order_ref, order_info in list(self.order_dict.items()):
+                if order_info['data'] == data:
+                    if 'take_profit_order' in order_info and order_info['take_profit_order']:
+                        self.cancel(order_info['take_profit_order'])
+                        logging.info(f"Canceled take-profit order for {symbol}")
+                    if 'trailing_stop_order' in order_info and order_info['trailing_stop_order']:
+                        self.cancel(order_info['trailing_stop_order'])
+                        logging.info(f"Canceled trailing stop order for {symbol}")
 
-                # Close the parent order position
-                self.close(data=data)
+            # Close the position
+            order = self.close(data=data)
+            self.order_dict[order.ref] = order
+            logging.info(f"Sell order submitted for {symbol}, Order ID: {order.ref}")
+        except Exception as e:
+            logging.error(f"Failed to close position for {symbol}: {e}")
 
-                # Remove from the order dictionary
-                del self.order_dict[order_ref]
-
-                logging.info(f"Closed position for {data._name} and removed related take-profit and trailing stop orders.")
-                break
 
 
 
@@ -480,6 +498,7 @@ class MyStrategy(bt.Strategy):
         total_portfolio_value = self.broker.getvalue()
         logging.info(f'Final Portfolio Value: {total_portfolio_value}')
         print(f'Final Portfolio Value: {total_portfolio_value}')
+        super().stop()
 
 
 

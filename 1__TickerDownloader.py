@@ -12,12 +12,14 @@ from urllib3.util.retry import Retry
 CONFIG = {
     "url": "https://www.sec.gov/files/company_tickers_exchange.json",
     "parquet_file_path": "Data/TickerCikData/TickerCIKs_{date}.parquet",
-    "log_file": "Data/TickerCikData/TickerCIK.log",
+    "log_file": "data/logging/1__TickerDownloader.log",
     "user_agent": "MarketAnalysis Masamunex9000@gmail.com"
 }
 
 def setup_logging():
-    """Set up logging configuration."""
+    log_dir = os.path.dirname(CONFIG["log_file"])
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
     logging.basicConfig(filename=CONFIG["log_file"], level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -27,7 +29,6 @@ def setup_args():
                         help="Download the file immediately without waiting for the scheduled time.")
     args = parser.parse_args()
     return args
-
 
 def download_and_convert_ticker_cik_file():
     try:
@@ -47,12 +48,12 @@ def download_and_convert_ticker_cik_file():
         json_data = response.json()
         df = pd.DataFrame(json_data['data'], columns=json_data['fields'])
 
-        ##remove any rows that have the excahnge column as missing value or otc
+        # Remove any rows that have the exchange column as missing value or OTC or CBOE
         df = df[df['exchange'].notna()]
-        df = df[df['exchange'] != 'OTC']
-        df = df[df['exchange'] != 'CBOE']
+        df = df[~df['exchange'].isin(['OTC', 'CBOE'])]
 
-
+        # Ensure the directory exists before saving the file
+        os.makedirs(os.path.dirname(parquet_file_path), exist_ok=True)
         df.to_parquet(parquet_file_path, index=False)
 
         logging.info("File downloaded and saved successfully in Parquet format.")
@@ -62,15 +63,7 @@ def download_and_convert_ticker_cik_file():
         logging.error(f"Error occurred: {e}")
 
 def is_file_recent(file_path):
-    """
-    Check if the file was modified today.
 
-    Args:
-        file_path (str): Path of the file to check.
-
-    Returns:
-        bool: True if the file was modified today, False otherwise.
-    """
     if os.path.exists(file_path):
         last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
         return last_modified == datetime.date.today()

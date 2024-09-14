@@ -1,0 +1,2065 @@
+2024-09-08 23:25:26,066 - INFO - Data download completed.
+2024-09-08 23:39:37,536 - WARNING - Data for ARM is too short. Skipping.
+2024-09-08 23:40:35,230 - INFO - Downloaded data for 100 tickers taking 114.73951172828674 seconds
+2024-09-08 23:42:30,156 - INFO - Downloaded data for 200 tickers taking 229.6657178401947 seconds
+2024-09-08 23:42:45,013 - WARNING - Data for GEV is too short. Skipping.
+2024-09-08 23:43:18,574 - WARNING - Data for TBN is too short. Skipping.
+2024-09-08 23:44:24,766 - INFO - Downloaded data for 300 tickers taking 344.275710105896 seconds
+2024-09-08 23:46:19,021 - INFO - Downloaded data for 400 tickers taking 458.5305452346802 seconds
+2024-09-08 23:46:21,221 - WARNING - Data for VLTO is too short. Skipping.
+2024-09-08 23:46:49,849 - WARNING - Data for KSPI is too short. Skipping.
+2024-09-08 23:47:22,982 - WARNING - Data for SW is too short. Skipping.
+2024-09-08 23:47:48,071 - WARNING - Data for LINE is too short. Skipping.
+2024-09-08 23:48:13,337 - INFO - Downloaded data for 500 tickers taking 572.8468339443207 seconds
+2024-09-08 23:50:06,985 - INFO - Downloaded data for 600 tickers taking 686.4941453933716 seconds
+2024-09-08 23:50:08,048 - WARNING - Data for VIK is too short. Skipping.
+2024-09-08 23:51:42,787 - WARNING - Data for SN is too short. Skipping.
+2024-09-08 23:52:00,972 - INFO - Downloaded data for 700 tickers taking 800.4815845489502 seconds
+2024-09-08 23:52:19,076 - WARNING - Data for BIRK is too short. Skipping.
+2024-09-08 23:53:13,600 - WARNING - Data for ULS is too short. Skipping.
+2024-09-08 23:53:24,930 - WARNING - Data for SOLV is too short. Skipping.
+2024-09-08 23:53:54,589 - INFO - Downloaded data for 800 tickers taking 914.0981566905975 seconds
+2024-09-08 23:54:07,075 - WARNING - Data for TEM is too short. Skipping.
+2024-09-08 23:54:33,235 - WARNING - Data for RDDT is too short. Skipping.
+2024-09-08 23:54:37,875 - WARNING - Data for VFS is too short. Skipping.
+2024-09-08 23:55:12,148 - WARNING - Data for CART is too short. Skipping.
+2024-09-08 23:55:23,532 - WARNING - Data for KVYO is too short. Skipping.
+2024-09-08 23:55:48,414 - INFO - Downloaded data for 900 tickers taking 1027.9238419532776 seconds
+2024-09-08 23:56:46,964 - WARNING - Data for LTM is too short. Skipping.
+2024-09-08 23:57:41,299 - INFO - Downloaded data for 1000 tickers taking 1140.8090076446533 seconds
+2024-09-08 23:57:43,524 - WARNING - Data for AS is too short. Skipping.
+2024-09-08 23:58:25,308 - WARNING - Data for LOAR is too short. Skipping.
+2024-09-08 23:58:28,788 - WARNING - Data for RBRK is too short. Skipping.
+2024-09-08 23:59:10,751 - WARNING - Data for ALAB is too short. Skipping.
+2024-09-08 23:59:23,218 - WARNING - Data for PACS is too short. Skipping.
+2024-09-08 23:59:34,537 - INFO - Downloaded data for 1100 tickers taking 1254.0468473434448 seconds
+2024-09-09 00:01:28,251 - INFO - Downloaded data for 1200 tickers taking 1367.7609210014343 seconds
+2024-09-09 00:02:54,081 - WARNING - Data for WAY is too short. Skipping.
+2024-09-09 00:03:21,407 - INFO - Downloaded data for 1300 tickers taking 1480.916316986084 seconds
+2024-09-09 00:04:33,810 - WARNING - Data for HAFN is too short. Skipping.
+2024-09-09 00:04:51,978 - WARNING - Data for ZK is too short. Skipping.
+2024-09-09 00:05:14,842 - INFO - Downloaded data for 1400 tickers taking 1594.3513989448547 seconds
+2024-09-09 00:07:07,735 - INFO - Downloaded data for 1500 tickers taking 1707.2447879314423 seconds
+2024-09-09 00:07:23,519 - WARNING - Data for TBBB is too short. Skipping.
+2024-09-09 00:08:37,029 - WARNING - Data for CON is too short. Skipping.
+2024-09-09 00:09:00,678 - INFO - Downloaded data for 1600 tickers taking 1820.1875247955322 seconds
+2024-09-09 00:09:10,845 - WARNING - Data for LIF is too short. Skipping.
+2024-09-09 00:09:49,170 - WARNING - Data for LB is too short. Skipping.
+2024-09-09 00:10:03,825 - WARNING - Data for CORZ is too short. Skipping.
+2024-09-09 00:10:42,229 - WARNING - Data for ARDT is too short. Skipping.
+2024-09-09 00:10:53,595 - INFO - Downloaded data for 1700 tickers taking 1933.104884147644 seconds
+2024-09-09 00:11:39,850 - WARNING - Data for CDLR is too short. Skipping.
+2024-09-09 00:11:50,208 - WARNING - Data for CGON is too short. Skipping.
+2024-09-09 00:12:46,659 - INFO - Downloaded data for 1800 tickers taking 2046.168431520462 seconds
+2024-09-09 00:13:10,360 - WARNING - Data for BTSG is too short. Skipping.
+2024-09-09 00:13:36,284 - WARNING - Data for HG is too short. Skipping.
+2024-09-09 00:13:58,655 - WARNING - Data for NATL is too short. Skipping.
+2024-09-09 00:14:26,840 - WARNING - Data for MNR is too short. Skipping.
+2024-09-09 00:14:39,389 - INFO - Downloaded data for 1900 tickers taking 2158.8988070487976 seconds
+2024-09-09 00:14:50,604 - WARNING - Data for SDHC is too short. Skipping.
+2024-09-09 00:15:07,417 - WARNING - Data for NMRA is too short. Skipping.
+2024-09-09 00:15:27,736 - WARNING - Data for MSDL is too short. Skipping.
+2024-09-09 00:15:42,448 - WARNING - Data for VSTS is too short. Skipping.
+2024-09-09 00:15:43,663 - WARNING - Data for OBDE is too short. Skipping.
+2024-09-09 00:15:48,404 - WARNING - Data for WBTN is too short. Skipping.
+2024-09-09 00:16:25,763 - WARNING - Data for YXT is too short. Skipping.
+2024-09-09 00:16:32,619 - INFO - Downloaded data for 2000 tickers taking 2272.1281247138977 seconds
+2024-09-09 00:16:50,605 - WARNING - Data for WS is too short. Skipping.
+2024-09-09 00:16:54,069 - WARNING - Data for MRX is too short. Skipping.
+2024-09-09 00:18:03,719 - WARNING - Data for KLG is too short. Skipping.
+2024-09-09 00:18:25,306 - INFO - Downloaded data for 2100 tickers taking 2384.8160433769226 seconds
+2024-09-09 00:18:43,224 - WARNING - Data for CTRI is too short. Skipping.
+2024-09-09 00:19:04,740 - WARNING - Data for DBD is too short. Skipping.
+2024-09-09 00:20:09,227 - WARNING - Data for IBTA is too short. Skipping.
+2024-09-09 00:20:18,366 - INFO - Downloaded data for 2200 tickers taking 2497.8758223056793 seconds
+2024-09-09 00:20:40,815 - WARNING - Data for AHR is too short. Skipping.
+2024-09-09 00:20:56,598 - WARNING - Data for NVA is too short. Skipping.
+2024-09-09 00:21:00,027 - WARNING - Data for SILA is too short. Skipping.
+2024-09-09 00:21:50,775 - WARNING - Data for KBDC is too short. Skipping.
+2024-09-09 00:22:11,244 - INFO - Downloaded data for 2300 tickers taking 2610.7535605430603 seconds
+2024-09-09 00:22:56,064 - WARNING - Data for EAI is too short. Skipping.
+2024-09-09 00:23:33,128 - WARNING - Data for ECO is too short. Skipping.
+2024-09-09 00:24:03,741 - INFO - Downloaded data for 2400 tickers taking 2723.2507309913635 seconds
+2024-09-09 00:24:56,561 - WARNING - Data for NCDL is too short. Skipping.
+2024-09-09 00:25:49,805 - WARNING - Data for BOW is too short. Skipping.
+2024-09-09 00:25:56,685 - INFO - Downloaded data for 2500 tickers taking 2836.1941273212433 seconds
+2024-09-09 00:26:04,405 - WARNING - Data for HDL is too short. Skipping.
+2024-09-09 00:26:59,847 - WARNING - Data for AVBP is too short. Skipping.
+2024-09-09 00:27:13,400 - WARNING - Data for NIPG is too short. Skipping.
+2024-09-09 00:27:34,790 - WARNING - Data for NBBK is too short. Skipping.
+2024-09-09 00:27:42,751 - WARNING - Data for CRGX is too short. Skipping.
+2024-09-09 00:27:49,649 - INFO - Downloaded data for 2600 tickers taking 2949.1582474708557 seconds
+2024-09-09 00:28:04,368 - WARNING - Data for RAPP is too short. Skipping.
+2024-09-09 00:28:22,345 - WARNING - Data for EXTO is too short. Skipping.
+2024-09-09 00:29:09,845 - WARNING - Data for OS is too short. Skipping.
+2024-09-09 00:29:42,563 - WARNING - Data for SEZL is too short. Skipping.
+2024-09-09 00:29:42,682 - INFO - Downloaded data for 2700 tickers taking 3062.191504716873 seconds
+2024-09-09 00:29:49,279 - WARNING - Data for ABVX is too short. Skipping.
+2024-09-09 00:29:52,751 - WARNING - Data for ALMS is too short. Skipping.
+2024-09-09 00:30:19,793 - WARNING - Data for DEC is too short. Skipping.
+2024-09-09 00:30:49,009 - WARNING - Data for UBXG is too short. Skipping.
+2024-09-09 00:31:35,480 - INFO - Downloaded data for 2800 tickers taking 3174.989609479904 seconds
+2024-09-09 00:32:24,131 - WARNING - Data for AUNA is too short. Skipping.
+2024-09-09 00:32:46,659 - WARNING - Data for FLYX is too short. Skipping.
+2024-09-09 00:33:09,324 - WARNING - Data for LAC is too short. Skipping.
+2024-09-09 00:33:28,587 - INFO - Downloaded data for 2900 tickers taking 3288.096125602722 seconds
+2024-09-09 00:33:40,863 - WARNING - Data for PSBD is too short. Skipping.
+2024-09-09 00:33:46,486 - WARNING - Data for ZKH is too short. Skipping.
+2024-09-09 00:34:28,603 - WARNING - Data for GRAL is too short. Skipping.
+2024-09-09 00:35:17,110 - WARNING - Data for PAL is too short. Skipping.
+2024-09-09 00:35:21,740 - INFO - Downloaded data for 3000 tickers taking 3401.249455690384 seconds
+2024-09-09 00:36:38,211 - WARNING - Data for ANSC is too short. Skipping.
+2024-09-09 00:36:42,811 - WARNING - Data for NLOP is too short. Skipping.
+2024-09-09 00:36:45,151 - WARNING - Data for CTNM is too short. Skipping.
+2024-09-09 00:37:14,419 - INFO - Downloaded data for 3100 tickers taking 3513.9281084537506 seconds
+2024-09-09 00:37:21,112 - WARNING - Data for SVCO is too short. Skipping.
+2024-09-09 00:38:06,112 - WARNING - Data for NETD is too short. Skipping.
+2024-09-09 00:38:09,562 - WARNING - Data for LXEO is too short. Skipping.
+2024-09-09 00:38:14,106 - WARNING - Data for SERV is too short. Skipping.
+2024-09-09 00:39:03,736 - WARNING - Data for LPA is too short. Skipping.
+2024-09-09 00:39:07,203 - INFO - Downloaded data for 3200 tickers taking 3626.713010787964 seconds
+2024-09-09 00:39:34,427 - WARNING - Data for TWFG is too short. Skipping.
+2024-09-09 00:39:37,928 - WARNING - Data for CCIX is too short. Skipping.
+2024-09-09 00:39:48,099 - WARNING - Data for GPAT is too short. Skipping.
+2024-09-09 00:39:50,441 - WARNING - Data for ALF is too short. Skipping.
+2024-09-09 00:41:00,536 - INFO - Downloaded data for 3300 tickers taking 3740.0456595420837 seconds
+2024-09-09 00:41:15,255 - WARNING - Data for FTEL is too short. Skipping.
+2024-09-09 00:41:48,005 - WARNING - Data for HYAC is too short. Skipping.
+2024-09-09 00:42:16,385 - WARNING - Data for CUB is too short. Skipping.
+2024-09-09 00:42:53,393 - INFO - Downloaded data for 3400 tickers taking 3852.9028363227844 seconds
+2024-09-09 00:43:00,094 - WARNING - Data for KYTX is too short. Skipping.
+2024-09-09 00:43:21,498 - WARNING - Data for GRAF is too short. Skipping.
+2024-09-09 00:44:10,130 - WARNING - Data for ARTV is too short. Skipping.
+2024-09-09 00:44:10,269 - WARNING - Data for MNDR is too short. Skipping.
+2024-09-09 00:44:36,294 - WARNING - Data for LEGT is too short. Skipping.
+2024-09-09 00:44:45,436 - WARNING - Data for HPAI is too short. Skipping.
+2024-09-09 00:44:46,659 - INFO - Downloaded data for 3500 tickers taking 3966.168343782425 seconds
+2024-09-09 00:45:06,907 - WARNING - Data for ANRO is too short. Skipping.
+2024-09-09 00:45:13,831 - WARNING - Data for NNE is too short. Skipping.
+2024-09-09 00:45:29,543 - WARNING - Data for HLXB is too short. Skipping.
+2024-09-09 00:46:39,510 - INFO - Downloaded data for 3600 tickers taking 4079.020041704178 seconds
+2024-09-09 00:47:03,102 - WARNING - Data for MACI is too short. Skipping.
+2024-09-09 00:47:18,881 - WARNING - Data for CLBR is too short. Skipping.
+2024-09-09 00:47:39,321 - WARNING - Data for CNL is too short. Skipping.
+2024-09-09 00:48:04,060 - WARNING - Data for KVAC is too short. Skipping.
+2024-09-09 00:48:27,598 - WARNING - Data for GAUZ is too short. Skipping.
+2024-09-09 00:48:32,162 - INFO - Downloaded data for 3700 tickers taking 4191.671664953232 seconds
+2024-09-09 00:48:45,528 - WARNING - Data for EMP is too short. Skipping.
+2024-09-09 00:49:20,563 - WARNING - Data for BTOC is too short. Skipping.
+2024-09-09 00:49:51,924 - WARNING - Data for RYDE is too short. Skipping.
+2024-09-09 00:50:22,488 - WARNING - Data for INBX is too short. Skipping.
+2024-09-09 00:50:24,878 - INFO - Downloaded data for 3800 tickers taking 4304.387579202652 seconds
+2024-09-09 00:50:39,432 - WARNING - Data for SHMD is too short. Skipping.
+2024-09-09 00:50:48,400 - WARNING - Data for SPKL is too short. Skipping.
+2024-09-09 00:50:57,423 - WARNING - Data for ACTU is too short. Skipping.
+2024-09-09 00:52:04,878 - WARNING - Data for TELO is too short. Skipping.
+2024-09-09 00:52:07,190 - WARNING - Data for SMXT is too short. Skipping.
+2024-09-09 00:52:11,696 - WARNING - Data for SUUN is too short. Skipping.
+2024-09-09 00:52:17,397 - INFO - Downloaded data for 3900 tickers taking 4416.906898498535 seconds
+2024-09-09 00:52:18,455 - WARNING - Data for IBAC is too short. Skipping.
+2024-09-09 00:52:21,859 - ERROR - 
+1 Failed download:
+2024-09-09 00:52:21,859 - ERROR - ['FACT']: YFTzMissingError('$%ticker%: possibly delisted; No timezone found')
+2024-09-09 00:52:55,599 - WARNING - Data for RFAI is too short. Skipping.
+2024-09-09 00:53:03,695 - WARNING - Data for PGHL is too short. Skipping.
+2024-09-09 00:53:14,073 - WARNING - Data for SEG is too short. Skipping.
+2024-09-09 00:53:26,366 - WARNING - Data for LGCL is too short. Skipping.
+2024-09-09 00:53:38,884 - WARNING - Data for DXYZ is too short. Skipping.
+2024-09-09 00:54:06,966 - WARNING - Data for MAMO is too short. Skipping.
+2024-09-09 00:54:12,736 - INFO - Downloaded data for 4000 tickers taking 4532.245541095734 seconds
+2024-09-09 00:54:22,771 - WARNING - Data for GUTS is too short. Skipping.
+2024-09-09 00:54:27,307 - WARNING - Data for NNAG is too short. Skipping.
+2024-09-09 00:54:31,900 - WARNING - Data for PDCC is too short. Skipping.
+2024-09-09 00:54:38,651 - WARNING - Data for MGX is too short. Skipping.
+2024-09-09 00:54:52,144 - WARNING - Data for ORKT is too short. Skipping.
+2024-09-09 00:55:02,321 - WARNING - Data for FBYD is too short. Skipping.
+2024-09-09 00:55:31,598 - WARNING - Data for YIBO is too short. Skipping.
+2024-09-09 00:55:44,154 - WARNING - Data for ANL is too short. Skipping.
+2024-09-09 00:56:05,564 - INFO - Downloaded data for 4100 tickers taking 4645.073699474335 seconds
+2024-09-09 00:56:06,626 - WARNING - Data for HAO is too short. Skipping.
+2024-09-09 00:56:15,733 - WARNING - Data for CHEB is too short. Skipping.
+2024-09-09 00:56:19,162 - WARNING - Data for ZBAO is too short. Skipping.
+2024-09-09 00:56:47,307 - WARNING - Data for PCSC is too short. Skipping.
+2024-09-09 00:56:47,370 - WARNING - Data for GSIW is too short. Skipping.
+2024-09-09 00:57:22,168 - WARNING - Data for DHAI is too short. Skipping.
+2024-09-09 00:57:49,089 - WARNING - Data for RR is too short. Skipping.
+2024-09-09 00:57:49,195 - WARNING - Data for CEP is too short. Skipping.
+2024-09-09 00:57:58,350 - INFO - Downloaded data for 4200 tickers taking 4757.860066413879 seconds
+2024-09-09 00:58:29,531 - WARNING - Data for BOWN is too short. Skipping.
+2024-09-09 00:58:46,267 - WARNING - Data for EPRX is too short. Skipping.
+2024-09-09 00:58:58,617 - WARNING - Data for AFJK is too short. Skipping.
+2024-09-09 00:59:07,620 - WARNING - Data for SRBK is too short. Skipping.
+2024-09-09 00:59:07,666 - WARNING - Data for GLAC is too short. Skipping.
+2024-09-09 00:59:09,938 - WARNING - Data for QETA is too short. Skipping.
+2024-09-09 00:59:15,555 - WARNING - Data for DYCQ is too short. Skipping.
+2024-09-09 00:59:16,703 - WARNING - Data for SHIM is too short. Skipping.
+2024-09-09 00:59:23,491 - WARNING - Data for BKHA is too short. Skipping.
+2024-09-09 00:59:27,973 - WARNING - Data for BEEP is too short. Skipping.
+2024-09-09 00:59:33,582 - WARNING - Data for IROH is too short. Skipping.
+2024-09-09 00:59:43,782 - WARNING - Data for FSHP is too short. Skipping.
+2024-09-09 00:59:50,585 - INFO - Downloaded data for 4300 tickers taking 4870.094811201096 seconds
+2024-09-09 01:00:01,571 - WARNING - Data for MDBH is too short. Skipping.
+2024-09-09 01:00:12,908 - WARNING - Data for SUNS is too short. Skipping.
+2024-09-09 01:00:54,914 - WARNING - Data for AITR is too short. Skipping.
+2024-09-09 01:01:02,681 - WARNING - Data for BAYA is too short. Skipping.
+2024-09-09 01:01:03,863 - WARNING - Data for GRDI is too short. Skipping.
+2024-09-09 01:01:03,972 - WARNING - Data for OSTX is too short. Skipping.
+2024-09-09 01:01:08,538 - WARNING - Data for INAQ is too short. Skipping.
+2024-09-09 01:01:12,984 - WARNING - Data for BOLD is too short. Skipping.
+2024-09-09 01:01:14,243 - WARNING - Data for JVSA is too short. Skipping.
+2024-09-09 01:01:37,619 - WARNING - Data for QMMM is too short. Skipping.
+2024-09-09 01:01:42,180 - INFO - Downloaded data for 4400 tickers taking 4981.689420461655 seconds
+2024-09-09 01:02:05,485 - WARNING - Data for ABLV is too short. Skipping.
+2024-09-09 01:02:25,742 - WARNING - Data for CCG is too short. Skipping.
+2024-09-09 01:03:09,114 - WARNING - Data for FEBO is too short. Skipping.
+2024-09-09 01:03:33,685 - INFO - Downloaded data for 4500 tickers taking 5093.1943101882935 seconds
+2024-09-09 01:04:48,262 - WARNING - Data for AIRE is too short. Skipping.
+2024-09-09 01:04:50,558 - WARNING - Data for JUNE is too short. Skipping.
+2024-09-09 01:04:50,662 - WARNING - Data for FDSB is too short. Skipping.
+2024-09-09 01:05:07,482 - WARNING - Data for MURA is too short. Skipping.
+2024-09-09 01:05:17,560 - WARNING - Data for BUJA is too short. Skipping.
+2024-09-09 01:05:25,474 - INFO - Downloaded data for 4600 tickers taking 5204.983139753342 seconds
+2024-09-09 01:06:47,788 - WARNING - Data for RECT is too short. Skipping.
+2024-09-09 01:06:58,956 - WARNING - Data for FBLG is too short. Skipping.
+2024-09-09 01:07:12,245 - WARNING - Data for BCG is too short. Skipping.
+2024-09-09 01:07:16,759 - INFO - Downloaded data for 4700 tickers taking 5316.268974304199 seconds
+2024-09-09 01:07:26,643 - WARNING - Data for CPBI is too short. Skipping.
+2024-09-09 01:07:50,008 - WARNING - Data for LGCB is too short. Skipping.
+2024-09-09 01:08:03,373 - WARNING - Data for EHGO is too short. Skipping.
+2024-09-09 01:08:07,970 - WARNING - Data for ADGM is too short. Skipping.
+2024-09-09 01:08:12,544 - WARNING - Data for TRSG is too short. Skipping.
+2024-09-09 01:08:17,130 - WARNING - Data for SWIN is too short. Skipping.
+2024-09-09 01:09:08,385 - INFO - Downloaded data for 4800 tickers taking 5427.894732475281 seconds
+2024-09-09 01:09:20,686 - WARNING - Data for PSIG is too short. Skipping.
+2024-09-09 01:09:43,121 - WARNING - Data for CDTG is too short. Skipping.
+2024-09-09 01:09:43,184 - WARNING - Data for ATGL is too short. Skipping.
+2024-09-09 01:10:07,783 - WARNING - Data for ABVE is too short. Skipping.
+2024-09-09 01:10:17,908 - WARNING - Data for PODC is too short. Skipping.
+2024-09-09 01:10:35,901 - WARNING - Data for CGBS is too short. Skipping.
+2024-09-09 01:10:38,180 - WARNING - Data for MTEN is too short. Skipping.
+2024-09-09 01:10:49,320 - WARNING - Data for DTCK is too short. Skipping.
+2024-09-09 01:11:00,593 - INFO - Downloaded data for 4900 tickers taking 5540.10289978981 seconds
+2024-09-09 01:11:21,642 - WARNING - Data for AXIL is too short. Skipping.
+2024-09-09 01:11:29,424 - WARNING - Data for GMM is too short. Skipping.
+2024-09-09 01:11:30,577 - WARNING - Data for MMA is too short. Skipping.
+2024-09-09 01:11:46,205 - WARNING - Data for NWGL is too short. Skipping.
+2024-09-09 01:11:55,227 - WARNING - Data for YYGH is too short. Skipping.
+2024-09-09 01:11:55,289 - WARNING - Data for MIRA is too short. Skipping.
+2024-09-09 01:12:19,855 - WARNING - Data for ZOOZ is too short. Skipping.
+2024-09-09 01:12:21,000 - WARNING - Data for SUGP is too short. Skipping.
+2024-09-09 01:12:23,245 - WARNING - Data for PMEC is too short. Skipping.
+2024-09-09 01:12:50,929 - WARNING - Data for TWG is too short. Skipping.
+2024-09-09 01:12:52,100 - WARNING - Data for LRE is too short. Skipping.
+2024-09-09 01:12:52,202 - INFO - Downloaded data for 5000 tickers taking 5651.711116075516 seconds
+2024-09-09 01:12:53,278 - WARNING - Data for SRFM is too short. Skipping.
+2024-09-09 01:12:55,515 - WARNING - Data for RAY is too short. Skipping.
+2024-09-09 01:13:10,266 - WARNING - Data for WETH is too short. Skipping.
+2024-09-09 01:13:15,930 - WARNING - Data for NKGN is too short. Skipping.
+2024-09-09 01:13:15,980 - WARNING - Data for NRXS is too short. Skipping.
+2024-09-09 01:13:31,564 - WARNING - Data for LOBO is too short. Skipping.
+2024-09-09 01:13:31,675 - WARNING - Data for FLYE is too short. Skipping.
+2024-09-09 01:13:47,304 - WARNING - Data for PXDT is too short. Skipping.
+2024-09-09 01:13:47,365 - WARNING - Data for PMNT is too short. Skipping.
+2024-09-09 01:14:04,186 - WARNING - Data for LSH is too short. Skipping.
+2024-09-09 01:14:06,391 - WARNING - Data for CCTG is too short. Skipping.
+2024-09-09 01:14:30,991 - WARNING - Data for SYNX is too short. Skipping.
+2024-09-09 01:14:44,388 - INFO - Downloaded data for 5100 tickers taking 5763.897164821625 seconds
+2024-09-09 01:14:53,253 - WARNING - Data for ZPTA is too short. Skipping.
+2024-09-09 01:14:56,670 - WARNING - Data for FMST is too short. Skipping.
+2024-09-09 01:15:05,684 - WARNING - Data for LRHC is too short. Skipping.
+2024-09-09 01:15:21,250 - WARNING - Data for ZONE is too short. Skipping.
+2024-09-09 01:15:21,345 - WARNING - Data for BLMZ is too short. Skipping.
+2024-09-09 01:15:26,945 - WARNING - Data for TURB is too short. Skipping.
+2024-09-09 01:15:31,409 - WARNING - Data for AMIX is too short. Skipping.
+2024-09-09 01:15:52,811 - WARNING - Data for JDZG is too short. Skipping.
+2024-09-09 01:15:58,435 - WARNING - Data for MSS is too short. Skipping.
+2024-09-09 01:16:14,168 - WARNING - Data for INTJ is too short. Skipping.
+2024-09-09 01:16:30,987 - WARNING - Data for NUVO is too short. Skipping.
+2024-09-09 01:16:36,669 - INFO - Downloaded data for 5200 tickers taking 5876.178658246994 seconds
+2024-09-09 01:16:41,053 - WARNING - Data for ULY is too short. Skipping.
+2024-09-09 01:16:45,564 - WARNING - Data for CREV is too short. Skipping.
+2024-09-09 01:16:57,899 - WARNING - Data for JL is too short. Skipping.
+2024-09-09 01:17:05,837 - WARNING - Data for HRYU is too short. Skipping.
+2024-09-09 01:17:11,506 - WARNING - Data for KDLY is too short. Skipping.
+2024-09-09 01:17:20,378 - WARNING - Data for SMTK is too short. Skipping.
+2024-09-09 01:17:20,425 - WARNING - Data for UMAC is too short. Skipping.
+2024-09-09 01:17:42,656 - WARNING - Data for NCI is too short. Skipping.
+2024-09-09 01:17:47,108 - WARNING - Data for INHD is too short. Skipping.
+2024-09-09 01:17:47,155 - WARNING - Data for DDC is too short. Skipping.
+2024-09-09 01:17:50,535 - WARNING - Data for MFI is too short. Skipping.
+2024-09-09 01:17:55,049 - WARNING - Data for SRM is too short. Skipping.
+2024-09-09 01:18:04,002 - WARNING - Data for ROMA is too short. Skipping.
+2024-09-09 01:18:08,498 - WARNING - Data for CTNT is too short. Skipping.
+2024-09-09 01:18:17,518 - WARNING - Data for SYRA is too short. Skipping.
+2024-09-09 01:18:24,274 - WARNING - Data for WBUY is too short. Skipping.
+2024-09-09 01:18:28,799 - INFO - Downloaded data for 5300 tickers taking 5988.308200597763 seconds
+2024-09-09 01:18:50,001 - WARNING - Data for ATPC is too short. Skipping.
+2024-09-09 01:18:50,049 - WARNING - Data for GVH is too short. Skipping.
+2024-09-09 01:19:01,274 - WARNING - Data for PAPL is too short. Skipping.
+2024-09-09 01:19:51,430 - WARNING - Data for PRZO is too short. Skipping.
+2024-09-09 01:20:10,467 - WARNING - Data for SPPL is too short. Skipping.
+2024-09-09 01:20:10,576 - WARNING - Data for ICCT is too short. Skipping.
+2024-09-09 01:20:20,624 - INFO - Downloaded data for 5400 tickers taking 6100.133818626404 seconds
+2024-09-09 01:20:39,455 - WARNING - Data for ELAB is too short. Skipping.
+2024-09-09 01:20:50,615 - WARNING - Data for NCL is too short. Skipping.
+2024-09-09 01:21:02,926 - WARNING - Data for CHRO is too short. Skipping.
+2024-09-09 01:21:19,634 - WARNING - Data for SGD is too short. Skipping.
+2024-09-09 01:21:29,729 - WARNING - Data for SPGC is too short. Skipping.
+2024-09-09 01:21:39,790 - WARNING - Data for IVP is too short. Skipping.
+2024-09-09 01:22:03,177 - WARNING - Data for ICON is too short. Skipping.
+2024-09-09 01:22:07,659 - WARNING - Data for VSME is too short. Skipping.
+2024-09-09 01:22:09,955 - WARNING - Data for SGN is too short. Skipping.
+2024-09-09 01:22:12,347 - INFO - Downloaded data for 5500 tickers taking 6211.856701374054 seconds
+2024-09-09 01:23:04,408 - WARNING - Data for LQR is too short. Skipping.
+2024-09-09 01:24:03,294 - INFO - Downloaded data for 5600 tickers taking 6322.803531169891 seconds
+2024-09-09 01:24:08,780 - WARNING - Data for BQ is too short. Skipping.
+2024-09-09 01:25:30,734 - ERROR - 
+1 Failed download:
+2024-09-09 01:25:30,734 - ERROR - ['BTBDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:25:48,643 - WARNING - Data for BITB is too short. Skipping.
+2024-09-09 01:25:49,880 - WARNING - Data for BRRR is too short. Skipping.
+2024-09-09 01:25:51,080 - WARNING - Data for WRD is too short. Skipping.
+2024-09-09 01:25:51,143 - WARNING - Data for SPMC is too short. Skipping.
+2024-09-09 01:25:51,253 - WARNING - Data for RITR is too short. Skipping.
+2024-09-09 01:25:51,363 - WARNING - Data for IBIT is too short. Skipping.
+2024-09-09 01:25:52,548 - WARNING - Data for ETHA is too short. Skipping.
+2024-09-09 01:25:52,655 - WARNING - Data for ETHW is too short. Skipping.
+2024-09-09 01:25:52,748 - WARNING - Data for BTC is too short. Skipping.
+2024-09-09 01:25:52,843 - WARNING - Data for ETH is too short. Skipping.
+2024-09-09 01:25:57,447 - INFO - Downloaded data for 5700 tickers taking 6436.956123590469 seconds
+2024-09-09 01:26:49,550 - WARNING - Data for DUKH is too short. Skipping.
+2024-09-09 01:26:59,713 - WARNING - Data for APO-PA is too short. Skipping.
+2024-09-09 01:27:39,119 - WARNING - Data for INOV is too short. Skipping.
+2024-09-09 01:27:50,552 - INFO - Downloaded data for 5800 tickers taking 6550.061544895172 seconds
+2024-09-09 01:27:52,760 - WARNING - Data for PCG-PC is too short. Skipping.
+2024-09-09 01:27:57,352 - WARNING - Data for PCG-PI is too short. Skipping.
+2024-09-09 01:28:09,835 - ERROR - 
+1 Failed download:
+2024-09-09 01:28:09,835 - ERROR - ['PBI-PB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:28:39,164 - WARNING - Data for TRTN-PA is too short. Skipping.
+2024-09-09 01:29:09,768 - WARNING - Data for GLOP-PB is too short. Skipping.
+2024-09-09 01:29:09,831 - WARNING - Data for GLOP-PC is too short. Skipping.
+2024-09-09 01:29:14,347 - WARNING - Data for GRAF-UN is too short. Skipping.
+2024-09-09 01:29:16,666 - WARNING - Data for IRET is too short. Skipping.
+2024-09-09 01:29:40,553 - WARNING - Data for NEWTI is too short. Skipping.
+2024-09-09 01:29:45,191 - INFO - Downloaded data for 5900 tickers taking 6664.700876712799 seconds
+2024-09-09 01:30:44,463 - WARNING - Data for GLACU is too short. Skipping.
+2024-09-09 01:30:54,589 - WARNING - Data for RHE-PA is too short. Skipping.
+2024-09-09 01:30:54,636 - ERROR - 
+1 Failed download:
+2024-09-09 01:30:54,636 - ERROR - ['OXBRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:30:59,065 - ERROR - 
+1 Failed download:
+2024-09-09 01:30:59,065 - ERROR - ['AP-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:02,315 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:02,315 - ERROR - ['WRB-PF']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:03,392 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:03,392 - ERROR - ['WRB-PG']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:04,441 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:04,441 - ERROR - ['WRB-PH']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:05,497 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:05,497 - ERROR - ['CELG-RI']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:06,556 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:06,556 - ERROR - ['BC-PA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:07,617 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:07,617 - ERROR - ['BC-PB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:08,678 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:08,678 - ERROR - ['BC-PC']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:12,013 - WARNING - Data for AMJB is too short. Skipping.
+2024-09-09 01:31:25,510 - WARNING - Data for MTB-PJ is too short. Skipping.
+2024-09-09 01:31:30,030 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:30,030 - ERROR - ['F-PB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:31,103 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:31,103 - ERROR - ['F-PC']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:32,164 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:32,164 - ERROR - ['F-PD']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:35,457 - WARNING - Data for BOH-PB is too short. Skipping.
+2024-09-09 01:31:39,966 - ERROR - 
+1 Failed download:
+2024-09-09 01:31:39,966 - ERROR - ['LGL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:31:51,080 - WARNING - Data for MER-PK is too short. Skipping.
+2024-09-09 01:31:51,201 - INFO - Downloaded data for 6000 tickers taking 6790.71053147316 seconds
+2024-09-09 01:32:02,363 - WARNING - Data for SCE-PM is too short. Skipping.
+2024-09-09 01:32:02,409 - WARNING - Data for SCE-PN is too short. Skipping.
+2024-09-09 01:32:08,026 - ERROR - 
+1 Failed download:
+2024-09-09 01:32:08,026 - ERROR - ['TDW-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:32:17,320 - ERROR - 
+1 Failed download:
+2024-09-09 01:32:17,320 - ERROR - ['VAL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:32:19,517 - ERROR - 
+1 Failed download:
+2024-09-09 01:32:19,517 - ERROR - ['GL-PD']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:32:27,348 - WARNING - Data for VLYPN is too short. Skipping.
+2024-09-09 01:32:28,501 - ERROR - 
+1 Failed download:
+2024-09-09 01:32:28,501 - ERROR - ['SFB']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:32:31,816 - WARNING - Data for O-P is too short. Skipping.
+2024-09-09 01:32:38,617 - ERROR - 
+1 Failed download:
+2024-09-09 01:32:38,617 - ERROR - ['NEE-PN']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:32:40,770 - WARNING - Data for NEE-PS is too short. Skipping.
+2024-09-09 01:32:41,952 - WARNING - Data for CFG-PH is too short. Skipping.
+2024-09-09 01:32:48,753 - ERROR - 
+1 Failed download:
+2024-09-09 01:32:48,753 - ERROR - ['OXY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:33:07,764 - ERROR - 
+1 Failed download:
+2024-09-09 01:33:07,764 - ERROR - ['GOVXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:33:12,245 - WARNING - Data for DCOMG is too short. Skipping.
+2024-09-09 01:33:15,680 - WARNING - Data for KIM-PN is too short. Skipping.
+2024-09-09 01:33:25,760 - WARNING - Data for MS-PQ is too short. Skipping.
+2024-09-09 01:33:35,879 - WARNING - Data for REGCO is too short. Skipping.
+2024-09-09 01:33:35,974 - WARNING - Data for REGCP is too short. Skipping.
+2024-09-09 01:33:37,186 - WARNING - Data for ALB-PA is too short. Skipping.
+2024-09-09 01:33:49,502 - WARNING - Data for CARD is too short. Skipping.
+2024-09-09 01:33:49,564 - WARNING - Data for CARU is too short. Skipping.
+2024-09-09 01:33:51,818 - INFO - Downloaded data for 6100 tickers taking 6911.327707290649 seconds
+2024-09-09 01:33:59,541 - WARNING - Data for JETU is too short. Skipping.
+2024-09-09 01:34:06,167 - WARNING - Data for RWTN is too short. Skipping.
+2024-09-09 01:34:06,228 - WARNING - Data for RWTO is too short. Skipping.
+2024-09-09 01:34:07,366 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:07,366 - ERROR - ['IRS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:20,787 - WARNING - Data for MGRE is too short. Skipping.
+2024-09-09 01:34:21,958 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:21,958 - ERROR - ['AIMDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:25,270 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:25,270 - ERROR - ['PTIXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:28,582 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:28,582 - ERROR - ['CRESW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:31,893 - WARNING - Data for ELPC is too short. Skipping.
+2024-09-09 01:34:44,304 - WARNING - Data for MFAN is too short. Skipping.
+2024-09-09 01:34:44,352 - WARNING - Data for MFAO is too short. Skipping.
+2024-09-09 01:34:45,507 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:45,507 - ERROR - ['NXPLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:46,584 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:46,584 - ERROR - ['APCXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:48,774 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:48,774 - ERROR - ['DHCNL']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:52,064 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:52,064 - ERROR - ['SQFTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:34:53,188 - WARNING - Data for SWKHL is too short. Skipping.
+2024-09-09 01:34:56,580 - ERROR - 
+1 Failed download:
+2024-09-09 01:34:56,580 - ERROR - ['VRMEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:35:32,156 - WARNING - Data for GLADZ is too short. Skipping.
+2024-09-09 01:35:39,031 - WARNING - Data for BANC-PF is too short. Skipping.
+2024-09-09 01:35:41,296 - ERROR - 
+1 Failed download:
+2024-09-09 01:35:41,296 - ERROR - ['CNO-PA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:35:54,728 - WARNING - Data for NYMTI is too short. Skipping.
+2024-09-09 01:35:54,824 - INFO - Downloaded data for 6200 tickers taking 7034.333733797073 seconds
+2024-09-09 01:35:58,148 - WARNING - Data for ET-PI is too short. Skipping.
+2024-09-09 01:35:58,241 - WARNING - Data for MFICL is too short. Skipping.
+2024-09-09 01:35:59,478 - WARNING - Data for RF-PF is too short. Skipping.
+2024-09-09 01:35:59,570 - ERROR - 
+1 Failed download:
+2024-09-09 01:35:59,570 - ERROR - ['RCKTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:00,629 - ERROR - 
+1 Failed download:
+2024-09-09 01:36:00,629 - ERROR - ['GLU-PA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:10,686 - ERROR - 
+1 Failed download:
+2024-09-09 01:36:10,686 - ERROR - ['DSX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:26,283 - ERROR - 
+1 Failed download:
+2024-09-09 01:36:26,283 - ERROR - ['LEXXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:38,430 - ERROR - 
+1 Failed download:
+2024-09-09 01:36:38,430 - ERROR - ['SURGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:52,895 - ERROR - 
+1 Failed download:
+2024-09-09 01:36:52,895 - ERROR - ['IVDAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:53,967 - ERROR - 
+1 Failed download:
+2024-09-09 01:36:53,967 - ERROR - ['SBFMW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:36:58,369 - WARNING - Data for BIPJ is too short. Skipping.
+2024-09-09 01:37:01,774 - WARNING - Data for CIMN is too short. Skipping.
+2024-09-09 01:37:05,181 - WARNING - Data for EFC-PD is too short. Skipping.
+2024-09-09 01:37:05,243 - WARNING - Data for EFC-PE is too short. Skipping.
+2024-09-09 01:37:06,415 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:06,424 - ERROR - ['NCPLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:37:21,914 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:21,914 - ERROR - ['DTSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:37:27,515 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:27,515 - ERROR - ['ODVWZ']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:37:30,810 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:30,810 - ERROR - ['RCRTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:37:34,165 - WARNING - Data for ATLCZ is too short. Skipping.
+2024-09-09 01:37:35,332 - WARNING - Data for PMTU is too short. Skipping.
+2024-09-09 01:37:45,373 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:45,373 - ERROR - ['HSCSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:37:46,422 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:46,422 - ERROR - ['NXGLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:37:55,270 - ERROR - 
+1 Failed download:
+2024-09-09 01:37:55,270 - ERROR - ['CVE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:38:00,788 - ERROR - 
+1 Failed download:
+2024-09-09 01:38:00,788 - ERROR - ['CEADW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:38:03,025 - INFO - Downloaded data for 6300 tickers taking 7162.534815788269 seconds
+2024-09-09 01:38:08,592 - WARNING - Data for OXLCI is too short. Skipping.
+2024-09-09 01:38:14,293 - WARNING - Data for NMFCZ is too short. Skipping.
+2024-09-09 01:38:17,723 - ERROR - 
+1 Failed download:
+2024-09-09 01:38:17,723 - ERROR - ['CPTNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:38:20,002 - WARNING - Data for CNFRZ is too short. Skipping.
+2024-09-09 01:38:23,459 - ERROR - 
+1 Failed download:
+2024-09-09 01:38:23,459 - ERROR - ['NIOBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:38:24,523 - WARNING - Data for MITN is too short. Skipping.
+2024-09-09 01:38:24,570 - WARNING - Data for MITP is too short. Skipping.
+2024-09-09 01:38:26,883 - WARNING - Data for CCIA is too short. Skipping.
+2024-09-09 01:38:29,151 - WARNING - Data for GNL-PD is too short. Skipping.
+2024-09-09 01:38:29,213 - WARNING - Data for GNL-PE is too short. Skipping.
+2024-09-09 01:38:30,414 - ERROR - 
+1 Failed download:
+2024-09-09 01:38:30,414 - ERROR - ['NXLIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:38:35,895 - WARNING - Data for ATHS is too short. Skipping.
+2024-09-09 01:38:36,003 - WARNING - Data for WHLRL is too short. Skipping.
+2024-09-09 01:38:40,510 - WARNING - Data for PW-PA is too short. Skipping.
+2024-09-09 01:38:42,798 - WARNING - Data for BEPJ is too short. Skipping.
+2024-09-09 01:38:45,182 - WARNING - Data for CGBDL is too short. Skipping.
+2024-09-09 01:38:49,750 - WARNING - Data for WHFCL is too short. Skipping.
+2024-09-09 01:38:49,797 - ERROR - 
+1 Failed download:
+2024-09-09 01:38:49,797 - ERROR - ['SBEV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:38:59,775 - ERROR - 
+1 Failed download:
+2024-09-09 01:38:59,775 - ERROR - ['AUUDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:05,332 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:05,332 - ERROR - ['TNONW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:06,445 - WARNING - Data for LLYVA is too short. Skipping.
+2024-09-09 01:39:06,555 - WARNING - Data for LLYVK is too short. Skipping.
+2024-09-09 01:39:15,764 - WARNING - Data for SMST is too short. Skipping.
+2024-09-09 01:39:15,868 - WARNING - Data for NEWTG is too short. Skipping.
+2024-09-09 01:39:23,728 - WARNING - Data for SYF-PB is too short. Skipping.
+2024-09-09 01:39:24,898 - WARNING - Data for ECCF is too short. Skipping.
+2024-09-09 01:39:29,433 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:29,433 - ERROR - ['BCTXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:33,821 - WARNING - Data for NSA-PB is too short. Skipping.
+2024-09-09 01:39:34,968 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:34,968 - ERROR - ['PAVMZ']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:36,076 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:36,076 - ERROR - ['RVMDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:47,159 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:47,159 - ERROR - ['ACONW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:49,341 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:49,341 - ERROR - ['PXSAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:53,736 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:53,736 - ERROR - ['AREBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:55,896 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:55,896 - ERROR - ['SYTAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:39:56,953 - ERROR - 
+1 Failed download:
+2024-09-09 01:39:56,953 - ERROR - ['GIPRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:01,380 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:01,380 - ERROR - ['HTZWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:02,550 - WARNING - Data for TRTN-PB is too short. Skipping.
+2024-09-09 01:40:02,614 - WARNING - Data for TRTN-PC is too short. Skipping.
+2024-09-09 01:40:02,666 - WARNING - Data for TRTN-PD is too short. Skipping.
+2024-09-09 01:40:02,723 - WARNING - Data for TRTN-PE is too short. Skipping.
+2024-09-09 01:40:02,771 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:02,771 - ERROR - ['GROMW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:03,835 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:03,835 - ERROR - ['DBGIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:04,884 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:04,884 - ERROR - ['LTRYW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:06,004 - WARNING - Data for GECCI is too short. Skipping.
+2024-09-09 01:40:08,391 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:08,391 - ERROR - ['GECCZ']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:17,367 - INFO - Downloaded data for 6400 tickers taking 7296.876368522644 seconds
+2024-09-09 01:40:29,603 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:29,603 - ERROR - ['ATNFW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:30,656 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:30,656 - ERROR - ['LMND-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:31,716 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:31,716 - ERROR - ['SNAXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:38,325 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:38,326 - ERROR - ['FATBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:39,384 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:39,384 - ERROR - ['HOFVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:41,556 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:41,556 - ERROR - ['BIAFW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:42,603 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:42,603 - ERROR - ['HYZNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:46,990 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:46,990 - ERROR - ['HYMCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:48,050 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:48,050 - ERROR - ['NRXPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:49,108 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:49,108 - ERROR - ['LSEAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:50,169 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:50,169 - ERROR - ['BFIIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:51,227 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:51,227 - ERROR - ['BMTX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:52,278 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:52,278 - ERROR - ['STSSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:53,340 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:53,340 - ERROR - ['GSMGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:55,463 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:55,463 - ERROR - ['RVPHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:56,526 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:56,526 - ERROR - ['RVSNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:57,575 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:57,575 - ERROR - ['ADNWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:40:58,633 - ERROR - 
+1 Failed download:
+2024-09-09 01:40:58,633 - ERROR - ['NEOVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:00,799 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:00,799 - ERROR - ['GOEVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:01,861 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:01,861 - ERROR - ['CELUW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:02,922 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:02,922 - ERROR - ['BKSY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:05,116 - WARNING - Data for EICB is too short. Skipping.
+2024-09-09 01:41:05,178 - WARNING - Data for EICC is too short. Skipping.
+2024-09-09 01:41:06,416 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:06,416 - ERROR - ['COEPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:08,598 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:08,598 - ERROR - ['MVSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:09,707 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:09,707 - ERROR - ['SHOTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:10,865 - WARNING - Data for AOMN is too short. Skipping.
+2024-09-09 01:41:10,911 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:10,911 - ERROR - ['AGBAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:11,961 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:11,961 - ERROR - ['BROGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:13,086 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:13,086 - ERROR - ['BENFW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:14,160 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:14,160 - ERROR - ['ADVWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:15,235 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:15,235 - ERROR - ['CURIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:16,320 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:16,320 - ERROR - ['AVPTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:17,372 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:17,372 - ERROR - ['BLDEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:18,429 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:18,429 - ERROR - ['BEATW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:19,505 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:19,505 - ERROR - ['MAPSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:20,566 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:20,566 - ERROR - ['ASTSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:21,626 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:21,626 - ERROR - ['MNTSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:23,773 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:23,773 - ERROR - ['UWMC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:24,832 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:24,832 - ERROR - ['KPLTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:25,885 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:25,885 - ERROR - ['LFLYW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:26,994 - WARNING - Data for TRINI is too short. Skipping.
+2024-09-09 01:41:28,208 - WARNING - Data for TRINZ is too short. Skipping.
+2024-09-09 01:41:29,420 - WARNING - Data for NUKKW is too short. Skipping.
+2024-09-09 01:41:29,468 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:29,468 - ERROR - ['JSPRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:30,527 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:30,527 - ERROR - ['AEVA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:36,132 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:36,132 - ERROR - ['BTCTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:38,307 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:38,307 - ERROR - ['TOIIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:39,379 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:39,379 - ERROR - ['GB-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:40,445 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:40,445 - ERROR - ['ETWO-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:42,596 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:42,596 - ERROR - ['BYNOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:44,819 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:44,819 - ERROR - ['LIFWZ']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:45,875 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:45,875 - ERROR - ['ORGNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:46,951 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:46,951 - ERROR - ['TALKW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:48,001 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:48,001 - ERROR - ['BFLY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:49,058 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:49,058 - ERROR - ['GFAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:51,206 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:51,206 - ERROR - ['EVLVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:52,266 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:52,266 - ERROR - ['FFIEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:53,318 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:53,318 - ERROR - ['SST-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:54,380 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:54,380 - ERROR - ['WESTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:55,429 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:55,429 - ERROR - ['LGHLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:56,489 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:56,489 - ERROR - ['ML-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:58,626 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:58,626 - ERROR - ['IMTXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:41:59,675 - ERROR - 
+1 Failed download:
+2024-09-09 01:41:59,675 - ERROR - ['EDBLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:00,734 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:00,734 - ERROR - ['REVBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:01,784 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:01,784 - ERROR - ['NUVB-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:02,847 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:02,847 - ERROR - ['RBOT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:03,893 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:03,893 - ERROR - ['RELIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:04,941 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:04,950 - ERROR - ['CMAXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:06,067 - WARNING - Data for ABLLL is too short. Skipping.
+2024-09-09 01:42:06,178 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:06,178 - ERROR - ['ABLLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:08,355 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:08,355 - ERROR - ['QSIAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:09,423 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:09,423 - ERROR - ['OUST-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:10,485 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:10,485 - ERROR - ['OUST-WTA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:11,547 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:11,547 - ERROR - ['MKFG-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:12,657 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:12,657 - ERROR - ['WGSWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:13,704 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:13,704 - ERROR - ['HUMAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:14,766 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:14,766 - ERROR - ['OPFI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:15,891 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:15,891 - ERROR - ['DISTR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:17,010 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:17,010 - ERROR - ['DISTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:19,194 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:19,194 - ERROR - ['SES-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:20,270 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:20,270 - ERROR - ['SONDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:21,331 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:21,331 - ERROR - ['GWH-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:22,382 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:22,382 - ERROR - ['XOSWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:23,429 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:23,429 - ERROR - ['BARK-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:25,617 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:25,617 - ERROR - ['GCMGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:26,693 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:26,693 - ERROR - ['RDW-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:27,751 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:27,751 - ERROR - ['JOBY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:28,808 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:28,808 - ERROR - ['CIFRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:29,868 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:29,868 - ERROR - ['GRND-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:30,990 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:30,990 - ERROR - ['SCLXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:32,065 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:32,065 - ERROR - ['BKKT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:34,322 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:34,322 - ERROR - ['CXAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:36,499 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:36,499 - ERROR - ['UKOMW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:37,554 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:37,554 - ERROR - ['CLNNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:38,616 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:38,616 - ERROR - ['HHGCR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:40,749 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:40,749 - ERROR - ['HHGCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:41,802 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:41,802 - ERROR - ['HLLY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:42,862 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:42,862 - ERROR - ['SMR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:45,040 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:45,040 - ERROR - ['CMPOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:46,115 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:46,115 - ERROR - ['NOTE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:47,240 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:47,240 - ERROR - ['AENTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:48,299 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:48,299 - ERROR - ['SKYH-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:49,351 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:49,351 - ERROR - ['EVEX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:50,409 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:50,409 - ERROR - ['ARKOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:53,675 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:53,675 - ERROR - ['ACHR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:54,723 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:54,723 - ERROR - ['SRZNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:55,781 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:55,781 - ERROR - ['IONQ-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:56,855 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:56,855 - ERROR - ['VLD-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:57,929 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:57,929 - ERROR - ['ONFOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:42:59,055 - ERROR - 
+1 Failed download:
+2024-09-09 01:42:59,055 - ERROR - ['BNZIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:02,393 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:02,393 - ERROR - ['HIPO-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:03,464 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:03,464 - ERROR - ['AUROW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:05,719 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:05,719 - ERROR - ['CVIIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:06,779 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:06,779 - ERROR - ['BZFDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:07,885 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:07,886 - ERROR - ['BFRGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:09,041 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:09,041 - ERROR - ['GRDIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:11,240 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:11,240 - ERROR - ['PCTTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:12,350 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:12,350 - ERROR - ['RUMBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:13,462 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:13,462 - ERROR - ['UHGWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:14,521 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:14,521 - ERROR - ['DNA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:17,805 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:17,805 - ERROR - ['JWSM-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:18,868 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:18,868 - ERROR - ['SOC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:19,979 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:19,979 - ERROR - ['ICUCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:22,123 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:22,123 - ERROR - ['IRAAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:24,267 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:24,267 - ERROR - ['NBSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:25,379 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:25,379 - ERROR - ['SDSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:26,431 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:26,431 - ERROR - ['PIIIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:27,480 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:27,480 - ERROR - ['SABSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:28,600 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:28,600 - ERROR - ['MDAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:29,663 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:29,663 - ERROR - ['PSFE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:30,720 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:30,720 - ERROR - ['GROY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:31,856 - WARNING - Data for GPATU is too short. Skipping.
+2024-09-09 01:43:31,951 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:31,951 - ERROR - ['GPATW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:33,010 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:33,010 - ERROR - ['LEV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:34,067 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:34,067 - ERROR - ['LEV-WTA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:35,115 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:35,115 - ERROR - ['CTV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:37,252 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:37,252 - ERROR - ['MACAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:38,312 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:38,312 - ERROR - ['LLAP-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:39,367 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:39,367 - ERROR - ['INVZW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:40,478 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:40,478 - ERROR - ['BETRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:41,594 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:41,594 - ERROR - ['AILEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:42,652 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:42,652 - ERROR - ['PL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:43,711 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:43,711 - ERROR - ['NVVEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:44,769 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:44,769 - ERROR - ['BBAI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:45,833 - WARNING - Data for BNRE-A is too short. Skipping.
+2024-09-09 01:43:48,080 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:48,080 - ERROR - ['NPABW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:50,236 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:50,236 - ERROR - ['SLAMW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:51,340 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:51,340 - ERROR - ['BNAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:52,388 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:52,388 - ERROR - ['RGTIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:55,658 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:55,658 - ERROR - ['CSLRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:56,780 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:56,780 - ERROR - ['CORZW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:43:57,905 - ERROR - 
+1 Failed download:
+2024-09-09 01:43:57,905 - ERROR - ['CORZZ']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:00,028 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:00,028 - ERROR - ['CFFSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:01,151 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:01,151 - ERROR - ['XBPEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:04,414 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:04,414 - ERROR - ['PLMIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:05,530 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:05,530 - ERROR - ['BLACR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:07,759 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:07,759 - ERROR - ['BLACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:08,864 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:08,864 - ERROR - ['TBLAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:09,955 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:09,955 - ERROR - ['SOUNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:11,078 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:11,078 - ERROR - ['COCHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:12,202 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:12,202 - ERROR - ['BSLKW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:14,348 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:14,348 - ERROR - ['GAMCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:15,457 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:15,457 - ERROR - ['HOLOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:16,518 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:16,518 - ERROR - ['KTTAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:17,580 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:17,580 - ERROR - ['DAVEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:18,686 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:18,686 - ERROR - ['VGASW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:20,868 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:20,868 - ERROR - ['PETWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:21,937 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:21,937 - ERROR - ['HNRA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:23,061 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:23,061 - ERROR - ['AISPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:25,213 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:25,213 - ERROR - ['HCVIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:26,336 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:26,336 - ERROR - ['CTCXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:27,396 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:27,396 - ERROR - ['BLEUR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:29,531 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:29,531 - ERROR - ['BLEUW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:30,654 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:30,654 - ERROR - ['SVIIR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:32,907 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:32,907 - ERROR - ['SVIIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:34,028 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:34,028 - ERROR - ['RMCOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:35,143 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:35,143 - ERROR - ['ZPTAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:36,267 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:36,267 - ERROR - ['LNZAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:37,315 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:37,315 - ERROR - ['FLYX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:39,480 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:39,480 - ERROR - ['THCPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:40,588 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:40,588 - ERROR - ['ESLAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:41,697 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:41,697 - ERROR - ['LUNRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:43,915 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:43,915 - ERROR - ['AACIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:44,980 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:44,980 - ERROR - ['SLDPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:47,210 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:47,210 - ERROR - ['FAASW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:48,270 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:48,270 - ERROR - ['AMBP-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:50,407 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:50,407 - ERROR - ['IVCPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:52,550 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:52,550 - ERROR - ['NPWR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:53,666 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:53,666 - ERROR - ['NKGNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:54,781 - WARNING - Data for PLMJU is too short. Skipping.
+2024-09-09 01:44:54,874 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:54,875 - ERROR - ['PLMJW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:55,934 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:55,934 - ERROR - ['PAYOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:56,996 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:56,996 - ERROR - ['BNIXR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:58,062 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:58,062 - ERROR - ['BNIXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:44:59,185 - ERROR - 
+1 Failed download:
+2024-09-09 01:44:59,185 - ERROR - ['OABIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:00,245 - WARNING - Data for TCOA-UN is too short. Skipping.
+2024-09-09 01:45:00,293 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:00,293 - ERROR - ['TCOA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:02,449 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:02,449 - ERROR - ['SEDA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:03,499 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:03,499 - ERROR - ['PSQH-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:04,546 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:04,546 - ERROR - ['SAITW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:06,675 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:06,675 - ERROR - ['PWUPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:08,805 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:08,805 - ERROR - ['TGAAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:11,001 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:11,001 - ERROR - ['MITAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:12,074 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:12,074 - ERROR - ['TRONW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:14,207 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:14,207 - ERROR - ['LCW-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:15,261 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:15,261 - ERROR - ['RFACR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:17,393 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:17,393 - ERROR - ['RFACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:18,505 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:18,505 - ERROR - ['EUDAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:19,616 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:19,616 - ERROR - ['DFLIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:21,756 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:21,756 - ERROR - ['CITEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:22,863 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:22,863 - ERROR - ['GDEVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:25,017 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:25,017 - ERROR - ['PHYT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:28,261 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:28,261 - ERROR - ['GTACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:30,397 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:30,397 - ERROR - ['HAIAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:31,504 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:31,504 - ERROR - ['AAGRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:32,556 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:32,556 - ERROR - ['CLOER']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:36,957 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:36,957 - ERROR - ['ONMDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:39,102 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:39,102 - ERROR - ['ONYXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:40,254 - WARNING - Data for DJTWW is too short. Skipping.
+2024-09-09 01:45:41,392 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:41,392 - ERROR - ['PLAOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:42,452 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:42,452 - ERROR - ['KITTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:43,572 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:43,572 - ERROR - ['FSHPR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:44,691 - WARNING - Data for FSHPU is too short. Skipping.
+2024-09-09 01:45:45,861 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:45,861 - ERROR - ['INTEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:48,016 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:48,016 - ERROR - ['BHACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:50,201 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:50,201 - ERROR - ['CDAQW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:51,265 - WARNING - Data for CNDA-UN is too short. Skipping.
+2024-09-09 01:45:51,310 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:51,310 - ERROR - ['CNDA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:52,361 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:52,361 - ERROR - ['GCTS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:54,507 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:54,507 - ERROR - ['AEAEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:56,627 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:56,627 - ERROR - ['IXAQW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:57,691 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:57,691 - ERROR - ['DC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:45:58,750 - ERROR - 
+1 Failed download:
+2024-09-09 01:45:58,750 - ERROR - ['FEXDR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:00,932 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:00,932 - ERROR - ['FEXDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:02,041 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:02,041 - ERROR - ['NVAWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:03,101 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:03,101 - ERROR - ['PNST-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:05,276 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:05,276 - ERROR - ['XFINW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:07,419 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:07,419 - ERROR - ['IVCAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:08,519 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:08,519 - ERROR - ['BRLSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:09,674 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:09,674 - ERROR - ['AERTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:13,010 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:13,010 - ERROR - ['SOAR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:14,089 - INFO - Downloaded data for 6500 tickers taking 7653.598947763443 seconds
+2024-09-09 01:46:15,146 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:15,146 - ERROR - ['AACT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:17,315 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:17,315 - ERROR - ['PFTAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:18,375 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:18,375 - ERROR - ['DRMAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:19,495 - WARNING - Data for ANSCU is too short. Skipping.
+2024-09-09 01:46:19,587 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:19,587 - ERROR - ['ANSCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:20,699 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:20,699 - ERROR - ['ZCARW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:21,821 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:21,821 - ERROR - ['WINVR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:23,970 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:23,970 - ERROR - ['WINVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:26,124 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:26,124 - ERROR - ['FIACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:27,176 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:27,176 - ERROR - ['CLBTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:28,296 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:28,297 - ERROR - ['SHFSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:29,402 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:29,402 - ERROR - ['MOBXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:30,527 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:30,527 - ERROR - ['AIRJW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:31,575 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:31,575 - ERROR - ['CLDI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:33,793 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:33,793 - ERROR - ['ZURAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:38,151 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:38,151 - ERROR - ['PRLHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:40,302 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:40,302 - ERROR - ['BOCNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:42,451 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:42,451 - ERROR - ['MCAAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:44,632 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:44,632 - ERROR - ['IVCBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:46,789 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:46,789 - ERROR - ['DPCSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:48,932 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:48,932 - ERROR - ['FNVTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:49,994 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:49,994 - ERROR - ['GDSTR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:52,147 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:52,147 - ERROR - ['GDSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:53,207 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:53,207 - ERROR - ['NOVVR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:55,372 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:55,372 - ERROR - ['NOVVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:56,438 - WARNING - Data for APOS is too short. Skipping.
+2024-09-09 01:46:56,484 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:56,484 - ERROR - ['BFRIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:46:57,605 - ERROR - 
+1 Failed download:
+2024-09-09 01:46:57,605 - ERROR - ['MCAGR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:00,879 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:00,879 - ERROR - ['SBXC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:03,020 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:03,020 - ERROR - ['NVACR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:04,171 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:04,171 - ERROR - ['NVACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:05,230 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:05,230 - ERROR - ['ASTLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:06,353 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:06,353 - ERROR - ['TVGNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:08,491 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:08,491 - ERROR - ['RRAC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:09,627 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:09,627 - ERROR - ['AQUNR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:11,836 - WARNING - Data for EVE-UN is too short. Skipping.
+2024-09-09 01:47:11,883 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:11,883 - ERROR - ['EVE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:12,999 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:12,999 - ERROR - ['JTAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:14,114 - WARNING - Data for JTAIZ is too short. Skipping.
+2024-09-09 01:47:14,160 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:14,160 - ERROR - ['ARBEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:15,351 - WARNING - Data for EVSD is too short. Skipping.
+2024-09-09 01:47:15,445 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:15,445 - ERROR - ['ECXWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:16,494 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:16,494 - ERROR - ['CINGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:20,886 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:20,886 - ERROR - ['VLN-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:21,934 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:21,934 - ERROR - ['PROCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:24,056 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:24,056 - ERROR - ['MNTN-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:25,167 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:25,167 - ERROR - ['MSAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:27,366 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:27,366 - ERROR - ['VSEEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:28,441 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:28,441 - ERROR - ['FGIWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:29,506 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:29,506 - ERROR - ['ALSAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:31,662 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:31,662 - ERROR - ['ALSAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:32,778 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:32,778 - ERROR - ['BRACR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:34,968 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:34,968 - ERROR - ['KACLR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:37,116 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:37,116 - ERROR - ['KACLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:38,239 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:38,239 - ERROR - ['ZEOWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:39,293 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:39,293 - ERROR - ['NNAVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:40,568 - WARNING - Data for BTSGU is too short. Skipping.
+2024-09-09 01:47:41,704 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:41,704 - ERROR - ['CCTSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:42,803 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:42,803 - ERROR - ['JVSAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:43,920 - WARNING - Data for JVSAU is too short. Skipping.
+2024-09-09 01:47:43,967 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:43,967 - ERROR - ['WTMAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:46,104 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:46,104 - ERROR - ['WBX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:47,161 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:47,161 - ERROR - ['CDROW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:48,275 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:48,275 - ERROR - ['OPTXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:49,328 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:49,328 - ERROR - ['IGTAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:51,503 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:51,503 - ERROR - ['IGTAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:52,570 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:52,570 - ERROR - ['EVTL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:55,816 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:55,816 - ERROR - ['WAVSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:57,959 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:57,959 - ERROR - ['APXIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:47:59,080 - ERROR - 
+1 Failed download:
+2024-09-09 01:47:59,080 - ERROR - ['RDZNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:00,195 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:00,195 - ERROR - ['EMCGR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:02,384 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:02,384 - ERROR - ['EMCGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:03,498 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:03,498 - ERROR - ['OCEAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:05,639 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:05,639 - ERROR - ['RCFA-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:06,775 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:06,775 - ERROR - ['CDIOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:07,906 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:07,907 - ERROR - ['CEROW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:08,976 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:08,976 - ERROR - ['DRTSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:11,128 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:11,128 - ERROR - ['BRKHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:12,179 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:12,179 - ERROR - ['ANGHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:13,301 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:13,301 - ERROR - ['SWAGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:14,363 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:14,363 - ERROR - ['TCBPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:15,437 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:15,437 - ERROR - ['MTEKW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:17,599 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:17,599 - ERROR - ['BCSAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:18,710 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:18,710 - ERROR - ['MMVWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:19,770 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:19,770 - ERROR - ['SATLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:20,819 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:20,819 - ERROR - ['NRSNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:21,930 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:21,930 - ERROR - ['CSLMR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:24,117 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:24,117 - ERROR - ['CSLMW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:25,172 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:25,172 - ERROR - ['LCFYW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:26,234 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:26,234 - ERROR - ['SWVLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:27,281 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:27,281 - ERROR - ['PRENW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:29,452 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:29,452 - ERROR - ['ASCBR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:31,595 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:31,595 - ERROR - ['ASCBW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:33,743 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:33,743 - ERROR - ['WEL-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:34,798 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:34,806 - ERROR - ['ADSEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:36,930 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:36,930 - ERROR - ['TLGYW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:38,039 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:38,039 - ERROR - ['TMTCR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:41,302 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:41,302 - ERROR - ['BFAC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:42,415 - WARNING - Data for TPGXL is too short. Skipping.
+2024-09-09 01:48:43,541 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:43,541 - ERROR - ['AOGOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:44,603 - WARNING - Data for ATEK-UN is too short. Skipping.
+2024-09-09 01:48:44,666 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:44,666 - ERROR - ['ATEK-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:45,715 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:45,715 - ERROR - ['MSSAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:47,841 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:47,841 - ERROR - ['MSSAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:50,025 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:50,025 - ERROR - ['DHAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:51,083 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:51,083 - ERROR - ['SLND-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:53,208 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:53,208 - ERROR - ['VSACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:54,329 - WARNING - Data for SPKLU is too short. Skipping.
+2024-09-09 01:48:54,421 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:54,422 - ERROR - ['SPKLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:55,473 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:55,473 - ERROR - ['JFBRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:57,632 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:57,632 - ERROR - ['ROCLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:58,679 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:58,679 - ERROR - ['GGROW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:48:59,741 - ERROR - 
+1 Failed download:
+2024-09-09 01:48:59,741 - ERROR - ['WLDSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:00,792 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:00,792 - ERROR - ['GLLIR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:02,920 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:02,920 - ERROR - ['GLLIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:04,044 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:04,044 - ERROR - ['ATMCR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:06,303 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:06,303 - ERROR - ['ATMCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:10,815 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:10,815 - ERROR - ['FLDDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:12,951 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:12,951 - ERROR - ['FTIIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:14,071 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:14,071 - ERROR - ['KWESW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:16,324 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:16,324 - ERROR - ['KVACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:18,479 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:18,479 - ERROR - ['DUETW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:20,617 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:20,617 - ERROR - ['VMCAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:21,773 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:21,773 - ERROR - ['MARXR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:25,018 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:25,018 - ERROR - ['ACABW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:26,139 - WARNING - Data for LUXHP is too short. Skipping.
+2024-09-09 01:49:27,281 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:27,281 - ERROR - ['PPYAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:28,405 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:28,405 - ERROR - ['QOMOR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:30,650 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:30,650 - ERROR - ['QOMOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:32,787 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:32,787 - ERROR - ['GHIXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:33,848 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:33,848 - ERROR - ['SVREW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:34,909 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:34,909 - ERROR - ['GBBKR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:35,962 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:35,962 - ERROR - ['GBBKW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:37,058 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:37,058 - ERROR - ['GODNR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:39,238 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:39,238 - ERROR - ['NE-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:40,288 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:40,288 - ERROR - ['NE-WTA']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:41,410 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:41,410 - ERROR - ['CDTTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:42,520 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:42,520 - ERROR - ['GRAF-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:43,649 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:43,649 - ERROR - ['GLACR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:44,708 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:44,708 - ERROR - ['ALVOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:45,773 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:45,773 - ERROR - ['LVWR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:46,850 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:46,850 - ERROR - ['AMPX-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:47,926 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:47,926 - ERROR - ['PERF-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:50,127 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:50,127 - ERROR - ['EVGRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:52,260 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:52,260 - ERROR - ['TETEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:53,384 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:53,384 - ERROR - ['IROHR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:54,506 - WARNING - Data for IROHU is too short. Skipping.
+2024-09-09 01:49:54,600 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:54,600 - ERROR - ['IROHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:56,815 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:56,815 - ERROR - ['ALCYW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:49:57,937 - ERROR - 
+1 Failed download:
+2024-09-09 01:49:57,937 - ERROR - ['BTMWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:00,086 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:00,086 - ERROR - ['AFARW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:01,145 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:01,145 - ERROR - ['GRRRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:02,202 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:02,202 - ERROR - ['CLRCR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:04,334 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:04,334 - ERROR - ['CLRCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:06,493 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:06,493 - ERROR - ['AIMAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:07,570 - WARNING - Data for AIMBU is too short. Skipping.
+2024-09-09 01:50:07,618 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:07,618 - ERROR - ['AFRIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:08,742 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:08,742 - ERROR - ['HUBCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:09,878 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:09,878 - ERROR - ['HUBCZ']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:10,989 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:10,989 - ERROR - ['WENAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:12,051 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:12,051 - ERROR - ['YOTAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:14,228 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:14,228 - ERROR - ['YOTAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:15,278 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:15,278 - ERROR - ['QBTS-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:18,541 - WARNING - Data for VFSWW is too short. Skipping.
+2024-09-09 01:50:19,658 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:19,658 - ERROR - ['DECAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:21,786 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:21,786 - ERROR - ['ACACW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:24,029 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:24,029 - ERROR - ['ISRLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:25,137 - WARNING - Data for DMYY-UN is too short. Skipping.
+2024-09-09 01:50:25,183 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:25,183 - ERROR - ['DMYY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:26,298 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:26,298 - ERROR - ['ESHAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:27,409 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:27,409 - ERROR - ['RZLVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:28,531 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:28,531 - ERROR - ['FUFUW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:29,592 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:29,592 - ERROR - ['LANV-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:30,705 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:30,705 - ERROR - ['GLSTR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:32,957 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:32,957 - ERROR - ['GLSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:34,069 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:34,069 - ERROR - ['ECDAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:35,195 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:35,195 - ERROR - ['CRGOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:36,257 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:36,257 - ERROR - ['MRDB-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:37,379 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:37,379 - ERROR - ['HOVRW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:39,564 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:39,564 - ERROR - ['PTWOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:40,674 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:40,674 - ERROR - ['NWTNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:41,748 - WARNING - Data for FGN is too short. Skipping.
+2024-09-09 01:50:42,976 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:42,976 - ERROR - ['FMSTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:45,209 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:45,209 - ERROR - ['FORLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:47,492 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:47,492 - ERROR - ['SDAWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:48,541 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:48,541 - ERROR - ['AMBI-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:49,662 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:49,662 - ERROR - ['MLECW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:50,785 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:50,785 - ERROR - ['ATMVR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:53,032 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:53,032 - ERROR - ['FBYDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:54,154 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:54,154 - ERROR - ['SMXWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:55,283 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:55,283 - ERROR - ['BAERW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:56,394 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:56,394 - ERROR - ['DYCQR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:50:57,515 - WARNING - Data for DYCQU is too short. Skipping.
+2024-09-09 01:50:59,852 - ERROR - 
+1 Failed download:
+2024-09-09 01:50:59,852 - ERROR - ['OAKUW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:00,974 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:00,974 - ERROR - ['LVROW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:02,084 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:02,084 - ERROR - ['HSPOR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:04,355 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:04,355 - ERROR - ['HSPOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:05,477 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:05,477 - ERROR - ['LSBPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:06,600 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:06,600 - ERROR - ['SXTPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:07,702 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:07,702 - ERROR - ['KDLYW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:08,818 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:08,818 - ERROR - ['USGOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:09,939 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:09,939 - ERROR - ['NMHIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:11,054 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:11,054 - ERROR - ['NNAGR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:12,174 - WARNING - Data for NNAGU is too short. Skipping.
+2024-09-09 01:51:12,265 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:12,265 - ERROR - ['NNAGW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:13,390 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:13,390 - ERROR - ['CRMLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:14,496 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:14,496 - ERROR - ['OCSAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:15,602 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:15,602 - ERROR - ['BCGWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:16,724 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:16,724 - ERROR - ['ZAPPW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:17,848 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:17,848 - ERROR - ['BUJAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:20,147 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:20,147 - ERROR - ['BUJAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:21,243 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:21,243 - ERROR - ['ABLVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:22,364 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:22,364 - ERROR - ['ESGLW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:23,410 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:23,410 - ERROR - ['LZM-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:24,523 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:24,523 - ERROR - ['COOTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:25,643 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:25,643 - ERROR - ['CREVW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:26,764 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:26,764 - ERROR - ['LOTWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:27,885 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:27,885 - ERROR - ['NCNCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:29,001 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:29,001 - ERROR - ['VSTEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:30,048 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:30,048 - ERROR - ['ALUR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:31,170 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:31,170 - ERROR - ['NVNIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:32,275 - WARNING - Data for CCGWW is too short. Skipping.
+2024-09-09 01:51:32,381 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:32,381 - ERROR - ['AITRR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:33,482 - WARNING - Data for AITRU is too short. Skipping.
+2024-09-09 01:51:33,572 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:33,572 - ERROR - ['CAPTW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:34,689 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:34,689 - ERROR - ['BAYAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:35,802 - WARNING - Data for BAYAU is too short. Skipping.
+2024-09-09 01:51:36,925 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:36,925 - ERROR - ['HYAC-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:39,172 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:39,172 - ERROR - ['IPXXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:40,274 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:40,274 - ERROR - ['BOWNR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:42,495 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:42,495 - ERROR - ['SVMHW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:45,881 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:45,881 - ERROR - ['NETDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:46,998 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:46,998 - ERROR - ['QETAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:48,123 - WARNING - Data for QETAU is too short. Skipping.
+2024-09-09 01:51:48,216 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:48,216 - ERROR - ['AFJKR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:49,334 - WARNING - Data for AFJKU is too short. Skipping.
+2024-09-09 01:51:49,429 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:49,429 - ERROR - ['ABVEW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:50,549 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:50,549 - ERROR - ['ENGNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:51,671 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:51,671 - ERROR - ['LDTCW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:52,781 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:52,781 - ERROR - ['NIVFW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:53,893 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:53,893 - ERROR - ['PBMWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:54,994 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:54,994 - ERROR - ['SHMDW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:56,099 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:56,099 - ERROR - ['MRNOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:57,212 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:57,212 - ERROR - ['NUVOW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:58,331 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:58,331 - ERROR - ['MKDWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:51:59,435 - ERROR - 
+1 Failed download:
+2024-09-09 01:51:59,435 - ERROR - ['CGBSW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:00,495 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:00,495 - ERROR - ['FREY-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:01,605 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:01,605 - ERROR - ['ZOOZW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:02,726 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:02,726 - ERROR - ['PITAW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:03,790 - WARNING - Data for CLBR-UN is too short. Skipping.
+2024-09-09 01:52:03,836 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:03,836 - ERROR - ['CLBR-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:04,958 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:04,958 - ERROR - ['IBACR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:06,077 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:06,077 - ERROR - ['DSYWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:07,188 - WARNING - Data for EURKU is too short. Skipping.
+2024-09-09 01:52:07,281 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:07,281 - ERROR - ['BKHAR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:08,391 - WARNING - Data for BKHAU is too short. Skipping.
+2024-09-09 01:52:08,525 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:08,526 - ERROR - ['HPAIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:09,615 - WARNING - Data for LEGT-UN is too short. Skipping.
+2024-09-09 01:52:09,678 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:09,678 - ERROR - ['LEGT-WT']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:10,835 - WARNING - Data for CCIXU is too short. Skipping.
+2024-09-09 01:52:10,930 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:10,930 - ERROR - ['CCIXW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:12,043 - WARNING - Data for VACHU is too short. Skipping.
+2024-09-09 01:52:12,137 - WARNING - Data for ALFUU is too short. Skipping.
+2024-09-09 01:52:12,233 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:12,233 - ERROR - ['ALFUW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:13,354 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:13,354 - ERROR - ['RFAIR']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:14,466 - WARNING - Data for RFAIU is too short. Skipping.
+2024-09-09 01:52:14,572 - WARNING - Data for AAM-UN is too short. Skipping.
+2024-09-09 01:52:14,666 - WARNING - Data for SIMAU is too short. Skipping.
+2024-09-09 01:52:14,776 - WARNING - Data for LPAAU is too short. Skipping.
+2024-09-09 01:52:14,868 - WARNING - Data for SBXD-UN is too short. Skipping.
+2024-09-09 01:52:14,961 - WARNING - Data for CUBWU is too short. Skipping.
+2024-09-09 01:52:15,069 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:15,069 - ERROR - ['CUBWW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:16,192 - WARNING - Data for MBAVU is too short. Skipping.
+2024-09-09 01:52:16,290 - WARNING - Data for MACIU is too short. Skipping.
+2024-09-09 01:52:16,380 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:16,380 - ERROR - ['MACIW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:17,447 - WARNING - Data for CHEB-UN is too short. Skipping.
+2024-09-09 01:52:17,546 - WARNING - Data for CHEB-WT is too short. Skipping.
+2024-09-09 01:52:17,648 - WARNING - Data for DTSQU is too short. Skipping.
+2024-09-09 01:52:17,757 - WARNING - Data for HONDU is too short. Skipping.
+2024-09-09 01:52:17,850 - WARNING - Data for EQV-UN is too short. Skipping.
+2024-09-09 01:52:17,943 - ERROR - 
+1 Failed download:
+2024-09-09 01:52:17,943 - ERROR - ['SLXNW']: YFInvalidPeriodError("%ticker%: Period 'max' is invalid, must be one of ['1d', '5d']")
+2024-09-09 01:52:18,947 - INFO - Data download completed.

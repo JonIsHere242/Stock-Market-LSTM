@@ -17,8 +17,8 @@ import numpy as np
 # Setup logging
 logging.basicConfig(filename='__Trading_Functions.log', level=logging.INFO, filemode='a')
 
-BACKTEST_PARQUET_FILE = 'trading_data.parquet'
-LIVE_PARQUET_FILE = 'real_trade_data.parquet'
+BACKTEST_PARQUET_FILE = '_Buy_Signals.parquet'
+LIVE_PARQUET_FILE = '_Live_trades.parquet'
 
 COLUMNS = [
         'Symbol', 'LastBuySignalDate', 'LastBuySignalPrice', 'IsCurrentlyBought', 
@@ -106,34 +106,6 @@ def update_buy_signal(symbol, date, price, up_probability, is_live=False):
 
 
 
-def update_filled_order(symbol, entry_price, entry_date, position_size, is_live=False):
-    """Update the trading data when an order is filled."""
-    df = read_trading_data(is_live)
-    
-    # Update or add the new trade information
-    if symbol in df['Symbol'].values:
-        df.loc[df['Symbol'] == symbol, 'LastBuySignalDate'] = pd.Timestamp(entry_date)
-        df.loc[df['Symbol'] == symbol, 'LastBuySignalPrice'] = entry_price
-        df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = True
-        df.loc[df['Symbol'] == symbol, 'PositionSize'] = position_size
-    else:
-        new_data = pd.DataFrame({
-            'Symbol': [symbol],
-            'LastBuySignalDate': [pd.Timestamp(entry_date)],
-            'LastBuySignalPrice': [entry_price],
-            'IsCurrentlyBought': [True],
-            'ConsecutiveLosses': [0],
-            'LastTradedDate': [None],
-            'UpProbability': [None],
-            'LastSellPrice': [None],
-            'PositionSize': [position_size]
-        })
-        df = pd.concat([df, new_data], ignore_index=True)
-    
-    write_trading_data(df, is_live)
-    logging.info(f"Updated filled order for {symbol} in trading data")
-
-
 
 
 def mark_position_as_bought(symbol, position_size, is_live=False):
@@ -142,6 +114,66 @@ def mark_position_as_bought(symbol, position_size, is_live=False):
     df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = True
     df.loc[df['Symbol'] == symbol, 'PositionSize'] = position_size
     write_trading_data(df, is_live)
+
+
+
+
+
+
+def update_trade_data(symbol, trade_type, price, date, position_size, up_probability=None, is_live=False):
+    """
+    Update the trading data for both buy and sell operations.
+    
+    :param symbol: The stock symbol
+    :param trade_type: 'buy' or 'sell'
+    :param price: The price at which the trade occurred
+    :param date: The date of the trade
+    :param position_size: The size of the position (positive for buy, negative for sell)
+    :param up_probability: The up probability for buy signals (optional)
+    :param is_live: Whether this is live trading or not
+    """
+    df = read_trading_data(is_live)
+    
+    if symbol not in df['Symbol'].values:
+        new_row = {
+            'Symbol': symbol,
+            'LastBuySignalDate': None,
+            'LastBuySignalPrice': None,
+            'IsCurrentlyBought': False,
+            'ConsecutiveLosses': 0,
+            'LastTradedDate': None,
+            'UpProbability': None,
+            'LastSellPrice': None,
+            'PositionSize': 0
+        }
+        df = df.append(new_row, ignore_index=True)
+    
+    if trade_type == 'buy':
+        df.loc[df['Symbol'] == symbol, 'LastBuySignalDate'] = pd.Timestamp(date)
+        df.loc[df['Symbol'] == symbol, 'LastBuySignalPrice'] = price
+        df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = True
+        df.loc[df['Symbol'] == symbol, 'PositionSize'] = position_size
+        df.loc[df['Symbol'] == symbol, 'ConsecutiveLosses'] = 0
+        if up_probability is not None:
+            df.loc[df['Symbol'] == symbol, 'UpProbability'] = up_probability
+    elif trade_type == 'sell':
+        df.loc[df['Symbol'] == symbol, 'LastTradedDate'] = pd.Timestamp(date)
+        df.loc[df['Symbol'] == symbol, 'LastSellPrice'] = price
+        df.loc[df['Symbol'] == symbol, 'IsCurrentlyBought'] = False
+        df.loc[df['Symbol'] == symbol, 'PositionSize'] = 0
+    
+    df.loc[df['Symbol'] == symbol, 'LastTradedDate'] = pd.Timestamp(date)
+    
+    write_trading_data(df, is_live)
+    
+    logging.info(f"Updated trade data for {symbol}: Trade Type={trade_type}, Price={price}, Date={date}, Position Size={position_size}")
+    
+    # Verify the update
+    updated_df = read_trading_data(is_live)
+    updated_row = updated_df[updated_df['Symbol'] == symbol].iloc[0]
+    logging.info(f"Verified data for {symbol}: IsCurrentlyBought={updated_row['IsCurrentlyBought']}, PositionSize={updated_row['PositionSize']}, BuyDate={updated_row['LastBuySignalDate']}")
+
+
 
 
 
@@ -269,26 +301,31 @@ def calculate_position_size(total_value, cash, reserve_percent, max_positions, c
 
 
 def should_sell(current_price, entry_price, entry_date, current_date, 
-                stop_loss_percent=3.0, take_profit_percent=100.0, 
-                max_hold_days=9, min_daily_return=0.25,verbose=False):
+               stop_loss_percent=5.0, take_profit_percent=100.0, 
+               max_hold_days=9, min_daily_return=0.25, verbose=False):
     """Determine if a position should be sold based on various criteria."""
     days_held = (current_date - entry_date).days
     profit_percent = (current_price - entry_price) / entry_price * 100
-    
+
     stop_loss = current_price <= entry_price * (1 - stop_loss_percent / 100)
     take_profit = current_price >= entry_price * (1 + take_profit_percent / 100)
     max_hold = days_held > max_hold_days
-    low_return = days_held > 3 and profit_percent / days_held < min_daily_return * days_held
-    ##map those to text outputs too 
-    stop_loss = "Stop Loss" if stop_loss else ""
-    take_profit = "Take Profit" if take_profit else ""
-    max_hold = "Max Hold" if max_hold else ""
-    low_return = "Low Return" if low_return else ""
+    low_return = days_held > 3 and (profit_percent / days_held) < min_daily_return
 
     if verbose:
-        logging.info(f"Stop Loss: {stop_loss}, Take Profit: {take_profit}, Max Hold: {max_hold}, Low Return: {low_return}")
-    else:
-        return stop_loss or take_profit or max_hold or low_return
+        reasons = []
+        if stop_loss:
+            reasons.append("Stop Loss")
+        if take_profit:
+            reasons.append("Take Profit")
+        if max_hold:
+            reasons.append("Max Hold")
+        if low_return:
+            reasons.append("Low Return")
+        logging.info(f"Sell Conditions Met: {', '.join(reasons) if reasons else 'None'}")
+
+    return stop_loss or take_profit or max_hold or low_return
+
 
 
 
@@ -349,41 +386,6 @@ def get_days_since_last_trade(symbol, is_live=False):
         return (datetime.now() - last_trade_date).days
     return None
 
-
-
-
-
-def colorize_output_old(value, label, good_threshold, bad_threshold, lower_is_better=False, reverse=False):
-    def get_color_code(normalized_value):
-        # Direct transition from red to green
-        red = int(255 * (1 - normalized_value))
-        green = int(255 * normalized_value)
-        return f"\033[38;2;{red};{green};0m"
-
-    # Adjust thresholds and normalization for reverse and lower_is_better scenarios
-    if reverse:
-        good_threshold, bad_threshold = bad_threshold, good_threshold
-
-    if lower_is_better:
-        if value <= good_threshold:
-            color_code = "\033[92m"  # Bright Green
-        elif value >= bad_threshold:
-            color_code = "\033[91m"  # Bright Red
-        else:
-            range_span = bad_threshold - good_threshold
-            normalized_value = (value - good_threshold) / range_span
-            color_code = get_color_code(1 - normalized_value)
-    else:
-        if value >= good_threshold:
-            color_code = "\033[92m"  # Bright Green
-        elif value <= bad_threshold:
-            color_code = "\033[91m"  # Bright Red
-        else:
-            range_span = good_threshold - bad_threshold
-            normalized_value = (value - bad_threshold) / range_span
-            color_code = get_color_code(normalized_value)
-
-    return f"{label:<30}{color_code}{value:.2f}\033[0m"
 
 
 

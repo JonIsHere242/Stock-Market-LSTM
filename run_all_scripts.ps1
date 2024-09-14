@@ -2,7 +2,13 @@
 $basePath = "C:\apitesting\Stock-Market-LSTM"
 
 # Define the log file path
-$logFile = "$basePath\run_all_scripts.log"
+$logFile = "$basePath\Data\logging\__run_all_scripts.log"
+
+# Ensure the logging directory exists
+$logDir = Split-Path $logFile -Parent
+if (-not (Test-Path $logDir)) {
+    New-Item -ItemType Directory -Path $logDir -Force
+}
 
 # Start logging
 Start-Transcript -Path $logFile -Append
@@ -25,10 +31,8 @@ try {
     )
 
     foreach ($script in $scripts) {
-
-        ##add a timer for each script
+        # Add a timer for each script
         $timer = [System.Diagnostics.Stopwatch]::StartNew()
-
 
         Write-Host "Running $($script.Name)..."
         $argList = @($script.File) + $script.Args
@@ -38,9 +42,9 @@ try {
             Write-Host "Output: $output"
         } else {
             Write-Host "$($script.Name) completed successfully."
-            Write-Host "time elapsed: $($timer.Elapsed)"
+            Write-Host "Time elapsed: $($timer.Elapsed)"
         }
-        Start-Sleep -Seconds 30
+        Start-Sleep -Seconds 10
     }
 
     Write-Host "This Week's Buy Signals Saved to trading_data.parquet"

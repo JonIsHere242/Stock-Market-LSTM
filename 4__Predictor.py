@@ -15,7 +15,24 @@ from contextlib import redirect_stdout, redirect_stderr
 import io
 
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+def setup_logging(config):
+    """Set up logging configuration."""
+    log_dir = os.path.dirname(config['log_file'])
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    
+    logging.basicConfig(
+        filename=config['log_file'],
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+
+    # Test logging to ensure it's working
+    logging.info("Logging system initialized.")
+    print(f"Logging configured. Log file: {config['log_file']}")
+
+
+
 
 argparser = argparse.ArgumentParser()
 argparser.add_argument("--runpercent", type=int, default=50, help="Percentage of files to process.")
@@ -33,6 +50,7 @@ config = {
     "data_output_directory": "Data/ModelData/TrainingData",
     "prediction_output_directory": "Data/RFpredictions",
     "feature_importance_output": "Data/ModelData/FeatureImportances/feature_importance.parquet",
+    "log_file": "data/logging/4__Predictor.log",
     "file_selection_percentage": args.runpercent,
     "target_column": "percent_change_Close",
 
@@ -271,6 +289,7 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
 
 
 def main():
+    setup_logging(config)
     if not args.predict:
         training_data = prepare_training_data(
             input_directory=config['input_directory'],

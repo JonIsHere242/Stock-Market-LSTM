@@ -13,15 +13,24 @@ from tqdm import tqdm
 """
 This script downloads stock data from Yahoo Finance based on the presence of ticker files in the output directory.
 """
+
+
 FINAL_DATA_DIRECTORY = "Data/RFpredictions"
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
-LOG_FILE = "Data/PriceData/_Price_Data_download.log"
+LOG_FILE = "data/logging/2__BulkPriceDownloader.log"
 START_DATE = '2020-01-01'
 RATE_LIMIT = 1.0  # seconds between downloads
 
 os.makedirs(DATA_DIRECTORY, exist_ok=True)
-logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def setup_logging():
+    """Set up logging configuration."""
+    log_dir = os.path.dirname(LOG_FILE)
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    logging.basicConfig(filename=LOG_FILE, level=logging.INFO, 
+                        format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_existing_tickers(data_dir):
     """Extract ticker symbols from existing data files in the directory using regex."""
@@ -64,7 +73,7 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
 
                     stock_data = stock_data.round(5)
 
-                    if stock_data['Close'].max() > 100000000000:
+                    if stock_data['Close'].max() > 1000000000:
                         logging.warning(f"Data for {ticker} has a close price that is too high. Skipping.")
                         continue
 
@@ -78,6 +87,8 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=START_DATE, max_down
                 logging.error(f"Error downloading data for {ticker}: {e}")
 
 if __name__ == "__main__":
+    setup_logging()
+    
     parser = argparse.ArgumentParser(description="Download stock data from Yahoo Finance.")
     parser.add_argument("--NumberOfFiles", type=int, help="Maximum number of ticker files to download.")
     parser.add_argument("--PercentDownload", type=float, help="Percentage of total tickers to download.")

@@ -51,14 +51,22 @@ Notes:
 - Check the log file for detailed information about the processing time and potential errors.
 """
 
-logging.basicConfig(filename='Data/IndicatorData/_IndicatorData.log',
-                    level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+def setup_logging():
+    """Set up logging configuration."""
+    log_dir = os.path.dirname(CONFIG['log_file'])
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    logging.basicConfig(filename=CONFIG['log_file'],
+                        level=logging.INFO,
+                        format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 
 CONFIG = {
     'input_directory': 'Data/PriceData',
     'output_directory': 'Data/IndicatorData',
-    'log_file': 'Data/IndicatorData/_IndicatorData.log',
+    'log_file': 'data/logging/3__Indicators.log',
     'log_lines_to_read': 500,
     'core_count_division': True, 
 }
@@ -780,113 +788,102 @@ def calculate_emv(df, period=14):
 
 
 def safe_divide(a, b, fill_value=0):
+    if isinstance(a, pd.Series) and isinstance(b, pd.Series):
+        # Ensure a and b have the same index
+        a, b = a.align(b, fill_value=fill_value)
+    elif isinstance(a, pd.Series):
+        b = pd.Series(b, index=a.index)
+    elif isinstance(b, pd.Series):
+        a = pd.Series(a, index=b.index)
+    
     with np.errstate(divide='ignore', invalid='ignore'):
-        result = np.divide(a, b, out=np.full_like(a, fill_value), where=b != 0)
-        result = np.where((a == 0) & (b == 0), fill_value, result)  # Handle 0/0 cases
+        result = np.divide(a, b)
+        if isinstance(result, pd.Series):
+            result = result.where((b != 0) & (b.notna()), fill_value)
+        else:
+            result = np.where((b != 0) & (~np.isnan(b)), result, fill_value)
     return result
 
 
 
+def safe_log(x, epsilon=1e-14):
+    return np.log(np.maximum(x, epsilon))
 
 
 def calculate_genetic_indicators(df):
-    # Add epsilon to avoid division by zero or log(0)
     epsilon = 1e-10
     
-    # Create lagged versions of high, low, volume, and open
     for i in range(1, 8):
         df[f'High_Lag{i}'] = df['High'].shift(i) + epsilon
         df[f'Low_Lag{i}'] = df['Low'].shift(i) + epsilon
         df[f'Volume_Lag{i}'] = df['Volume'].shift(i) + epsilon
         df[f'Open_Lag{i}'] = df['Open'].shift(i) + epsilon
 
-    # 1. Momentum Confluence Indicator
-    df['G_Momentum_Confluence_Indicator'] = safe_divide(df['High_Lag2'], df['High_Lag2'] * df['Open'] + epsilon)
+    df['G_Momentum_Confluence_Indicator'] = safe_divide(df['High_Lag2'], df['High_Lag2'] * df['Open'])
     
-    # 2. Price Gap Analyzer
-    df['G_Price_Gap_Analyzer'] = safe_divide(np.log(df['Open_Lag2'] + epsilon), df['High_Lag1'] + epsilon)
+    df['G_Price_Gap_Analyzer'] = safe_divide(safe_log(df['Open_Lag2']), df['High_Lag1'])
     
-    # 3. Triple High Trend Indicator
-    df['G_Triple_High_Trend_Indicator'] = safe_divide(df['High_Lag2'], df['High_Lag1'] * df['High'] + epsilon)
+    df['G_Triple_High_Trend_Indicator'] = safe_divide(df['High_Lag2'], df['High_Lag1'] * df['High'])
     
-    # 4. Cyclical Price Oscillator
     df['G_Cyclical_Price_Oscillator'] = safe_divide(
-        safe_divide(np.cos(safe_divide(df['High_Lag2'], df['High'] + epsilon)), df['High_Lag1'] + epsilon),
+        safe_divide(np.cos(safe_divide(df['High_Lag2'], df['High'])), df['High_Lag1']),
         np.sqrt(df['Open_Lag1'] + epsilon)
     )
     
-    # 5. Volume Adjusted Price Indicator
-    df['G_Volume_Adjusted_Price_Indicator'] = safe_divide(df['High_Lag2'], safe_divide(df['Volume'], df['Low_Lag1'] + epsilon))
+    df['G_Volume_Adjusted_Price_Indicator'] = safe_divide(df['High_Lag2'], safe_divide(df['Volume'], df['Low_Lag1']))
 
-    # 6. Adjusted Close Tracker
     df['G_Adjusted_Close_Tracker'] = df['Adj Close']
     
-    # 7. Volume Weighted High Ratio
-    df['G_Volume_Weighted_High_Ratio'] = safe_divide(safe_divide(df['High'], df['High_Lag1'] + epsilon), np.log1p(df['Volume']))
+    df['G_Volume_Weighted_High_Ratio'] = safe_divide(safe_divide(df['High'], df['High_Lag1']), safe_log(df['Volume'] + 1))
     
-    # 8. High Price Momentum Indicator
-    df['G_High_Price_Momentum_Indicator'] = safe_divide(df['High'], (df['High_Lag1'] + df['High_Lag2']) / 2 + epsilon)
+    df['G_High_Price_Momentum_Indicator'] = safe_divide(df['High'], (df['High_Lag1'] + df['High_Lag2']) / 2)
     
-    # 9. Advanced Trend Synthesizer
     df['G_Advanced_Trend_Synthesizer'] = (
-        np.log(safe_divide(df['High_Lag1'] + df['High_Lag5'], df['High_Lag1'] + epsilon)) *
-        np.abs(np.log(safe_divide(df['High_Lag2'], df['High_Lag2'] + epsilon)) - df['High_Lag7']) *
-        safe_divide(df['Open_Lag2'], df['Close'] + epsilon)
+        safe_log(safe_divide(df['High_Lag1'] + df['High_Lag5'], df['High_Lag1'])) *
+        np.abs(safe_log(safe_divide(df['High_Lag2'], df['High_Lag2'])) - df['High_Lag7']) *
+        safe_divide(df['Open_Lag2'], df['Close'])
     )
     
-    # 10. Price Volatility Gauge
-    df['G_Price_Volatility_Gauge'] = safe_divide(np.abs(df['High_Lag2'] - df['High']), df['Open'] + epsilon)
+    df['G_Price_Volatility_Gauge'] = safe_divide(np.abs(df['High_Lag2'] - df['High']), df['Open'])
     
-    # 11. Multi-Point Price Analyzer
     df['G_Multi_Point_Price_Analyzer'] = np.abs(
         safe_divide(
-            safe_divide(np.log(safe_divide(df['High'], df['High_Lag2'] + epsilon)), safe_divide(df['Close'], df['High_Lag2'] + epsilon)),
-            safe_divide(df['Close'], df['High_Lag2'] + epsilon) * safe_divide(df['Close'], df['High_Lag1'] + epsilon)
+            safe_divide(safe_log(safe_divide(df['High'], df['High_Lag2'])), safe_divide(df['Close'], df['High_Lag2'])),
+            safe_divide(df['Close'], df['High_Lag2']) * safe_divide(df['Close'], df['High_Lag1'])
         )
     )
     
-    # 12. Logarithmic Trend Detector
-    df['G_Logarithmic_Trend_Detector'] = -np.log(safe_divide(df['High_Lag2'], df['High_Lag4'] + epsilon))
+    df['G_Logarithmic_Trend_Detector'] = -safe_log(safe_divide(df['High_Lag2'], df['High_Lag4']))
     
-    # 13. Complex Price Pattern Indicator
-    df['G_Complex_Price_Pattern_Indicator'] = np.log(
+    df['G_Complex_Price_Pattern_Indicator'] = safe_log(
         safe_divide(
             np.sqrt(np.sqrt(np.sqrt(np.sqrt(df['High_Lag7'] * df['High_Lag4'] + epsilon)))),
-            df['Close'] + epsilon
+            df['Close']
         )
     )
     
-    # 14. Log-Scaled Price Ratio
-    df['G_Log_Scaled_Price_Ratio'] = np.log(safe_divide(df['High'], (df['High_Lag1'] + df['High_Lag2']) / 2 + epsilon))
+    df['G_Log_Scaled_Price_Ratio'] = safe_log(safe_divide(df['High'], (df['High_Lag1'] + df['High_Lag2']) / 2))
     
-    # 15. Volume-Price Impact Indicator
     df['G_Volume_Price_Impact_Indicator'] = safe_divide(
-        -df['High_Lag1'] + safe_divide(df['High_Lag3'], df['Close'] + epsilon),
-        df['Volume'] + epsilon
+        -df['High_Lag1'] + safe_divide(df['High_Lag3'], df['Close']),
+        df['Volume']
     )
     
-    # 16. Volume Trend Analyzer
-    df['G_Volume_Trend_Analyzer'] = np.log(safe_divide(df['Volume'], df['Volume_Lag1'] + epsilon))
+    df['G_Volume_Trend_Analyzer'] = safe_log(safe_divide(df['Volume'], df['Volume_Lag1']))
     
-    # 17. Price-Open Ratio Indicator
     df['G_Price_Open_Ratio_Indicator'] = safe_divide(
-        safe_divide(np.log(safe_divide(df['High_Lag2'], df['High'] + epsilon)), safe_divide(df['High'], df['Open_Lag2'] + epsilon)),
-        safe_divide(df['High'], df['Open_Lag2'] + epsilon)
+        safe_divide(safe_log(safe_divide(df['High_Lag2'], df['High'])), safe_divide(df['High'], df['Open_Lag2'])),
+        safe_divide(df['High'], df['Open_Lag2'])
     )
     
-    # 18. Price Differential Analyzer
     df['G_Price_Differential_Analyzer'] = (0.1673 / (df['High'] + epsilon) - df['Low']) / (df['High'] + epsilon)
     
-    # 19. Lagged Price Volume Convergence
-    df['G_Lagged_Price_Volume_Convergence'] = safe_divide(df['Low_Lag2'], (df['High_Lag2'] + safe_divide(0.791, df['Low'] * df['High'] + epsilon)))
+    df['G_Lagged_Price_Volume_Convergence'] = safe_divide(df['Low_Lag2'], (df['High_Lag2'] + safe_divide(0.791, df['Low'] * df['High'])))
     
-    # 20. Price Volume Disparity Index
-    df['G_Price_Volume_Disparity_Index'] = np.abs(safe_divide(df['Low_Lag2'], df['High_Lag2'])) / (safe_divide(df['High_Lag5'], df['Low_Lag5'] + epsilon) / -0.2831)
+    df['G_Price_Volume_Disparity_Index'] = np.abs(safe_divide(df['Low_Lag2'], df['High_Lag2'])) / (safe_divide(df['High_Lag5'], df['Low_Lag5']) / -0.2831)
     
-    # 21. Price Volatility Trend Measure
-    df['G_Price_Volatility_Trend_Measure'] = 0.278 - np.abs(safe_divide(df['Low'], df['High'] + epsilon) / safe_divide(df['High_Lag5'], df['Low_Lag5'] + epsilon))
+    df['G_Price_Volatility_Trend_Measure'] = 0.278 - np.abs(safe_divide(df['Low'], df['High']) / safe_divide(df['High_Lag5'], df['Low_Lag5']))
 
-    # Drop all lagged columns after processing
     for i in range(1, 8):
         df = df.drop(columns=[f'High_Lag{i}', f'Low_Lag{i}', f'Volume_Lag{i}', f'Open_Lag{i}'])
 
@@ -1232,6 +1229,7 @@ def process_data_files(run_percent):
     print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.')
 
 if __name__ == "__main__":
+    setup_logging()
     parser = argparse.ArgumentParser(description="Process financial market data files.")
     parser.add_argument('--runpercent', type=int, default=100, help="Percentage of files to process from the input directory.")
     args = parser.parse_args()

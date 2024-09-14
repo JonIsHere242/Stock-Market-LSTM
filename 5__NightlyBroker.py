@@ -30,17 +30,63 @@ from functools import lru_cache
 import traceback
 from collections import Counter
 from Trading_Functions import *
+import sys
 
 
-def LoggingSetup():
-    loggerfile = "__BrokerLog.log"
-    logging.basicConfig(
-        filename=loggerfile,
-        level=logging.INFO,
-        format='%(asctime)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',
-        filemode='a'  # Append mode
-    )
+
+
+def setup_logging():
+    """Set up logging configuration with detailed error handling and debugging."""
+    try:
+        log_file = 'Data/logging/5__NightlyBroker.log'
+        log_dir = os.path.dirname(log_file)
+
+        print(f"Log directory path: {log_dir}")
+        print(f"Full log file path: {log_file}")
+        print(f"Current working directory: {os.getcwd()}")
+
+        print(f"Attempting to create log directory: {log_dir}")
+        os.makedirs(log_dir, exist_ok=True)
+        
+        if os.path.exists(log_dir):
+            print(f"Log directory created/exists: {log_dir}")
+        else:
+            print(f"Failed to create log directory: {log_dir}")
+
+        print(f"Setting up logging to file: {log_file}")
+        
+        logging.basicConfig(
+            filename=log_file,
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            datefmt='%Y-%m-%d %H:%M:%S',
+            filemode='a'  # Append mode
+        )
+        
+        # Test log write
+        logging.info("Logging setup completed successfully.")
+        
+        if os.path.exists(log_file):
+            print(f"Log file created successfully: {log_file}")
+            print(f"File size: {os.path.getsize(log_file)} bytes")
+        else:
+            print(f"Failed to create log file: {log_file}")
+
+        print("Logging setup completed. Check the log file for a test message.")
+    except Exception as e:
+        print(f"Error setting up logging: {str(e)}")
+        print(f"Error type: {type(e).__name__}")
+        print(f"Current working directory: {os.getcwd()}")
+        print(f"Python version: {sys.version}")
+        print(f"OS: {os.name}")
+        print("Directory contents:")
+        for root, dirs, files in os.walk('.'):
+            for name in files:
+                print(os.path.join(root, name))
+
+
+
+
 
 
 @njit
@@ -91,7 +137,7 @@ class ATRPercentage(bt.Indicator):
         self.lines.atr_percent[0] = (self.atr[0] / self.data.close[0]) * 100
 
 correlation_data = pd.read_parquet('Correlations.parquet').set_index('Ticker')
-buysignal_data = pd.read_parquet('trading_data.parquet').set_index('Symbol')
+buysignal_data = pd.read_parquet('_Buy_Signals.parquet').set_index('Symbol')
 
 class CustomPandasData(bt.feeds.PandasData):
     lines = ('dist_to_support', 'dist_to_resistance', 'UpProbability', 'UpPrediction')
@@ -133,7 +179,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ('rolling_period', 8),
         ('max_group_allocation', 0.4),
         ('correlation_data', None),
-        ('parquet_file', 'trading_data.parquet'),
+        ('parquet_file', '_Buy_Signals.parquet'),
     )
 
     def __init__(self):
@@ -600,7 +646,7 @@ class MovingAverageCrossoverStrategy2222(bt.Strategy):
         ('rolling_period', 8),
         ('max_group_allocation', 0.5),
         ('correlation_data', None),
-        ('parquet_file', 'trading_data.parquet'),  # Add this line
+        ('parquet_file', '_Buy_Signals.parquet'),  # Add this line
     )
 
     def __init__(self):
@@ -1131,7 +1177,9 @@ class FixedCommissionScheme(bt.CommInfoBase):
 
 
 def main():
-    LoggingSetup()
+
+    
+
     timer = time.time()
     cerebro = bt.Cerebro(maxcpus=None)
 
@@ -1205,7 +1253,7 @@ def main():
     # Call the strategy with correlation_data
     cerebro.addstrategy(MovingAverageCrossoverStrategy, 
                         correlation_data=correlation_data,
-                        parquet_file='trading_data.parquet')
+                        parquet_file='_Buy_Signals.parquet')
     
     strategies = cerebro.run()
     first_strategy = strategies[0]
@@ -1322,4 +1370,5 @@ def main():
 
 
 if __name__ == "__main__":
+    setup_logging()
     main()
