@@ -4,3 +4,16 @@
 2024-09-09 11:50:40,641 - INFO - Logging system initialized.
 2024-09-09 11:50:40,641 - INFO - Loading the trained model.
 2024-09-09 11:55:33,354 - INFO - Predictions saved to Data/RFpredictions
+2024-09-17 13:00:39,984 - INFO - Logging system initialized.
+2024-09-17 13:00:39,984 - INFO - Preparing new training data.
+2024-09-17 13:01:40,934 - INFO - Data preparation complete.
+2024-09-17 13:01:40,934 - INFO - Training Random Forest model.
+2024-09-17 13:18:20,437 - INFO - Accuracy: 0.5775090627931148
+2024-09-17 13:18:20,437 - INFO - F1 Score: 0.5015130997111187
+2024-09-17 13:18:20,437 - INFO - Precision: 0.7122460910989111
+2024-09-17 13:18:20,437 - INFO - Recall: 0.5775090627931148
+2024-09-17 13:18:20,631 - INFO - Model saved to Data/ModelData\random_forest_model.joblib
+2024-09-17 13:18:20,658 - INFO - Feature importances saved to Data/ModelData/FeatureImportances/feature_importance.parquet
+2024-09-17 13:18:49,379 - INFO - Logging system initialized.
+2024-09-17 13:18:49,379 - INFO - Loading the trained model.
+2024-09-17 13:23:33,168 - INFO - Predictions saved to Data/RFpredictions

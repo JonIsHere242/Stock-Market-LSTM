@@ -177,7 +177,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ('trailing_stop_percent', 5.0),
         ('expected_profit_per_day_percentage', 0.25),
         ('rolling_period', 8),
-        ('max_group_allocation', 0.4),
+        ('max_group_allocation', 0.45),
         ('correlation_data', None),
         ('parquet_file', '_Buy_Signals.parquet'),
     )
@@ -1164,7 +1164,7 @@ def parallel_load_data(file_paths):
 
 class FixedCommissionScheme(bt.CommInfoBase):
     params = (
-        ('commission', 1.5),  # Fixed commission per trade (average of $1 to $3)
+        ('commission', 3.0),  # Fixed commission per trade (average of $1 to $3)
         ('stocklike', True),
         ('commtype', bt.CommInfoBase.COMM_FIXED),  # Fixed commission type
     )

@@ -24,7 +24,7 @@ try {
 
     $scripts = @(
         @{Name="Ticker Downloader"; File="1__TickerDownloader.py"; Args=@("--ImmediateDownload")},
-        @{Name="Bulk Price Downloader"; File="2__BulkPriceDownloader.py"; Args=@("--ClearOldData", "--RefreshMode")},
+        @{Name="Bulk Price Downloader"; File="2__BulkPriceDownloader.py"; Args=@("--RefreshMode")},  # Changed arguments
         @{Name="Indicators script"; File="3__Indicators.py"; Args=@()},
         @{Name="Predictor script"; File="4__Predictor.py"; Args=@("--predict")},
         @{Name="Nightly broker script"; File="5__NightlyBroker.py"; Args=@("--RunStocks", "1")}
@@ -42,7 +42,7 @@ try {
             Write-Host "Output: $output"
         } else {
             Write-Host "$($script.Name) completed successfully."
-            Write-Host "Time elapsed: $($timer.Elapsed)"
+            Write-Host "Time elapsed: $([math]::Round($timer.Elapsed.TotalSeconds,2)) seconds."
         }
         Start-Sleep -Seconds 10
     }
