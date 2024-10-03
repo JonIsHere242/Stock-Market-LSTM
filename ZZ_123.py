@@ -40,15 +40,15 @@ CONFIG = {
     'output_directory': 'Results',
     'dataset_cache_path': 'cached_dataset.pkl',
     'use_cached_dataset': True,
-    'population_size': 2500,  # Reduced from 10000 to allow more generations
-    'generations': 10,  # Increased from 10 to allow for more evolution
-    'tournament_size': 5,  # Increased from 3 to apply more selection pressure
+    'population_size': 50000,  # Reduced from 10000 to allow more generations
+    'generations': 15,  # Increased from 10 to allow for more evolution
+    'tournament_size': 9,  # Increased from 3 to apply more selection pressure
     'stopping_criteria': -1e9,  # Set to a very low value to prevent early stopping
     'const_range': (-1, 1),  # Expanded range to allow for more diverse constants
     'init_depth': (2, 5),  # Increased max depth to allow for more complex initial programs
     'init_method': 'half and half',
     'function_set': ('add', 'sub', 'mul', 'div', 'abs'),  # Added 'abs'
-    'parsimony_coefficient': 0.05,  # Reduced to allow for more complex programs
+    'parsimony_coefficient': 0.03,  # Reduced to allow for more complex programs
     'p_crossover': 0.7,
     'p_subtree_mutation': 0.1,
     'p_hoist_mutation': 0.05,
@@ -336,79 +336,92 @@ def simple_randomness_filter(df, window_size=20, data_removal_target=0.10):
 ##====================[Working noise filter]====================##
 ##====================[Working noise filter]====================##
 
-def simple_randomness_filter(df, window_size=20, data_removal_target=0.10):
-    # Calculate returns
-    df['Return'] = df['Close'].pct_change()
+
+
+
+
+
+
+
+
+
+# Noise metric calculation functions
+def calculate_spectral_slope(y, fs=1.0):
+    freqs, psd = welch(y, fs=fs, nperseg=min(256, len(y)))
+    freqs = freqs[1:]
+    psd = psd[1:] + 1e-10  # Prevent log(0)
+    log_freqs = np.log(freqs)
+    log_psd = np.log(psd)
+    if len(log_freqs) < 2 or len(log_psd) < 2:
+        return np.nan
+    slope, _ = np.polyfit(log_freqs, log_psd, 1)
+    return slope
+
+def calculate_spectral_entropy(y, fs=1.0, nperseg=256):
+    freqs, psd = welch(y, fs=fs, nperseg=min(nperseg, len(y)))
+    psd_sum = np.sum(psd)
+    if psd_sum == 0:
+        return np.nan  # Cannot compute entropy if PSD sum is zero
+    psd_norm = psd / psd_sum + 1e-10
+    return entropy(psd_norm)
+
+
+def calculate_hurst_exponent(ts):
+    lags = range(2, min(100, len(ts)//2))
+    tau = [np.sqrt(np.std(ts[lag:] - ts[:-lag])) for lag in lags if np.std(ts[lag:] - ts[:-lag]) > 0]
+    tau = np.array(tau)
+    if len(tau) < 2:
+        return np.nan
+    return np.polyfit(np.log(lags[:len(tau)]), np.log(tau), 1)[0] * 2.0
+
+def calculate_autocorrelation(y, lag=1):
+    if len(y) <= lag or np.std(y) == 0 or np.std(y[lag:]) == 0:
+        return np.nan
+    return spearmanr(y[:-lag], y[lag:]).correlation
+
+
+# Enhanced randomness filter function
+def enhanced_randomness_filter(df, window_size=20):
+    df = df.copy()
+    df['Return'] = df['Close'].pct_change().replace([np.inf, -np.inf], np.nan).dropna()
+
+    metrics = {'Spectral_Slope': [], 'Spectral_Entropy': [], 'Hurst_Exponent': [], 'Autocorrelation': []}
     
-    # Handle any NaN or infinite values in returns
-    df['Return'].replace([np.inf, -np.inf], np.nan, inplace=True)
-    df.dropna(subset=['Return'], inplace=True)
-    
-    # Calculate rolling volatility (standard deviation of returns)
-    df['Volatility'] = df['Return'].rolling(window=window_size, min_periods=window_size).std()
-    
-    # Drop rows with NaN volatility values (due to insufficient data in rolling window)
-    df_filtered = df.dropna(subset=['Volatility']).copy()
-    
-    total_rows_before = len(df_filtered)
-    if total_rows_before == 0:
-        print("No data available after volatility calculation.")
-        return pd.DataFrame()  # Return empty DataFrame
-    
-    
-    # Determine the volatility threshold to remove the top 'data_removal_target' percentage of data
-    volatility_threshold = df_filtered['Volatility'].quantile(1 - data_removal_target)
-    
-    # Filter the data: keep data with volatility less than or equal to the threshold
-    df_filtered = df_filtered[df_filtered['Volatility'] <= volatility_threshold]
-    
-    total_rows_after = len(df_filtered)
-    percentage_removed = (1 - (total_rows_after / total_rows_before)) * 100
-    
-    # Drop intermediate columns
-    df_filtered = df_filtered.drop(columns=['Return', 'Volatility'])
-    
+    # Pad the metrics with NaN at the start
+    for key in metrics:
+        metrics[key] = [np.nan] * (window_size - 1)
+
+    # Iterate over the rolling window to calculate noise metrics
+    for i in range(window_size, len(df) + 1):
+        window = df['Return'].iloc[i - window_size:i].values
+        if np.all(np.isfinite(window)):
+            window_norm = MinMaxScaler().fit_transform(window.reshape(-1, 1)).flatten()
+            metrics['Spectral_Slope'].append(calculate_spectral_slope(window_norm))
+            metrics['Spectral_Entropy'].append(calculate_spectral_entropy(window_norm))
+            metrics['Hurst_Exponent'].append(calculate_hurst_exponent(window_norm))
+            metrics['Autocorrelation'].append(calculate_autocorrelation(window_norm))
+        else:
+            for key in metrics:
+                metrics[key].append(np.nan)
+
+    # Add the metrics back to the DataFrame
+    for key, values in metrics.items():
+        df[key] = values
+
+    # Filter the DataFrame based on the calculated metrics
+    df_filtered = df.dropna(subset=metrics.keys()).copy()
+
     return df_filtered
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_quantile=0.9):
+def load_and_prepare_data(file_paths, window_size=14):
     original_total_rows = 0
     filtered_total_rows = 0
     all_data = []
-    
+
     # Initialize tqdm progress bar
     for file_path in tqdm(file_paths, desc="Processing Files", unit="file"):
         try:
@@ -416,15 +429,15 @@ def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_
         except Exception as e:
             print(f"Error reading {file_path}: {e}")
             continue  # Skip this file and continue with the next
-        
+
         # Reset index if 'Date' is the index and not a column
         if 'Date' not in df.columns and df.index.name == 'Date':
             df = df.reset_index()
-        
+
         # Ensure 'Date' column is in datetime format
         df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
         df = df.dropna(subset=['Date'])  # Drop rows where 'Date' couldn't be parsed
-        
+
         # Skip files with insufficient data
         if len(df) < 100:
             continue
@@ -439,35 +452,56 @@ def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_
         )
 
         original_total_rows += len(df)
-        
-        # Apply composite complexity filter with dynamic parameters
-        df = simple_randomness_filter(df, window_size=20, data_removal_target=0.10)
 
-        filtered_total_rows += len(df)
+        # Apply enhanced randomness filter to calculate noise metrics
+        df_filtered = enhanced_randomness_filter(df, window_size=20)
+
+        # Proceed if df_filtered is not empty
+        if df_filtered.empty:
+            continue
+
+        # --- Add Custom Factor Features ---
+
+        # 1. Momentum Features (over custom horizons)
+        for horizon in [1, 5, 10]:
+            df_filtered[f'Momentum_{horizon}'] = df_filtered['Close'] - df_filtered['Close'].shift(horizon)
+
+        # 2. Volatility Features
+        df_filtered['True_Range'] = df_filtered['High'] - df_filtered['Low']
+        df_filtered['High_Low_Spread'] = df_filtered['High'] - df_filtered['Low']
+        
+        # 3. Directional Movement Features
+        df_filtered['Directional_Bias'] = df_filtered['Close'] - (df_filtered['High'] + df_filtered['Low']) / 2
+        
+        # 4. Volume-Based Metrics
+        df_filtered['Volume_Acceleration'] = df_filtered['Volume'].pct_change().shift(1)
+        df_filtered['Volume_Weighted_Price'] = (df_filtered['Close'] * df_filtered['Volume']) / df_filtered['Volume'].sum()
 
         # Create lagged features
         for col in ['High', 'Low', 'Volume']:
             lag_times = [1, 2, 3] if col == 'Volume' else [2, 5]
             for lag in lag_times:
-                df[f'{col}_Lag{lag}'] = df[col].shift(lag)
+                df_filtered[f'{col}_Lag{lag}'] = df_filtered[col].shift(lag)
 
         # Create additional features
-        df['High_Low'] = df['High'] - df['Low']
-        df['High_Close'] = df['High'] - df['Close']
-        df['Low_Close'] = df['Low'] - df['Close']
+        df_filtered['High_Low'] = df_filtered['High'] - df_filtered['Low']
+        df_filtered['High_Close'] = df_filtered['High'] - df_filtered['Close']
+        df_filtered['Low_Close'] = df_filtered['Low'] - df_filtered['Close']
 
         # Drop rows with NaN values resulting from lagging
-        df = df.dropna()
+        df_filtered = df_filtered.dropna()
 
         # Calculate dynamic weighted target
-        df = calculate_dynamic_weighted_target(df)
+        df_filtered = calculate_dynamic_weighted_target(df_filtered)
 
         # Replace infinite values and drop any remaining NaNs
-        df = df.replace([np.inf, -np.inf], np.nan).dropna()
-        
+        df_filtered = df_filtered.replace([np.inf, -np.inf], np.nan).dropna()
+
+        filtered_total_rows += len(df_filtered)
+
         # Append processed DataFrame to the list
-        all_data.append(df)
-    
+        all_data.append(df_filtered)
+
     if not all_data:
         raise ValueError("No data available after processing. Check your filters and input data.")
 
@@ -475,28 +509,45 @@ def load_and_prepare_data(file_paths, window_size=14, lower_quantile=0.1, upper_
     combined_data = pd.concat(all_data, ignore_index=True).drop_duplicates()
     combined_data = combined_data.dropna()
 
-    # Define feature columns
+    # Collect the noise metrics
+    noise_metrics = combined_data[['Spectral_Slope', 'Spectral_Entropy', 'Hurst_Exponent', 'Autocorrelation']]
+
+    # Calculate the 10th and 90th percentiles for Spectral_Entropy
+    lower_quantile = noise_metrics['Spectral_Entropy'].quantile(0.10)
+    upper_quantile = noise_metrics['Spectral_Entropy'].quantile(0.90)
+
+    # Filter out the top 10% and bottom 10% based on Spectral_Entropy
+    filtered_data = combined_data[
+        (combined_data['Spectral_Entropy'] >= lower_quantile) &
+        (combined_data['Spectral_Entropy'] <= upper_quantile)
+    ]
+
+    # Now proceed with creating features and target variable
     feature_columns = [
         'Open', 'High', 'Low', 'Close', 'Volume',
         'High_Lag2', 'High_Lag5', 'Low_Lag2', 'Low_Lag5',
         'Volume_Lag1', 'Volume_Lag2', 'Volume_Lag3',
-        'High_Low', 'High_Close', 'Low_Close'
+        'High_Low', 'High_Close', 'Low_Close',
+        # Include custom features
+        'Momentum_1', 'Momentum_5', 'Momentum_10',
+        'True_Range', 'High_Low_Spread', 'Directional_Bias',
+        'Volume_Acceleration', 'Volume_Weighted_Price'
     ]
 
-    # Verify that all feature columns exist in the combined data
-    missing_features = set(feature_columns) - set(combined_data.columns)
+    # Verify that all feature columns exist in the filtered data
+    missing_features = set(feature_columns) - set(filtered_data.columns)
     if missing_features:
         raise KeyError(f"The following feature columns are missing from the data: {missing_features}")
 
-    X = combined_data[feature_columns]
-    y = combined_data['Target']
-    
+    X = filtered_data[feature_columns]
+    y = filtered_data['Target']
+
     percentage_removed = ((original_total_rows - filtered_total_rows) / original_total_rows) * 100 if original_total_rows > 0 else 0
-    
+
     print(f"Original data shape: {original_total_rows} rows")
     print(f"Filtered data shape: {filtered_total_rows} rows")
     print(f"Percentage of data removed: {percentage_removed:.2f}%")
-    
+
     return X, y
 
 
@@ -600,7 +651,12 @@ def concordance(y, y_pred):
 
 
 
-def _custom_fitness(y, y_pred, w):
+
+
+
+
+
+def _custom_fitness3333(y, y_pred, w):
     """
     Custom fitness function focusing on IC and MI, optimized for speed.
     """
@@ -638,11 +694,59 @@ def _custom_fitness(y, y_pred, w):
         return 1e32
 
 # Register the optimized custom fitness function
+#custom_fitness = make_fitness(function=_custom_fitness, greater_is_better=False)
+
+
+
+
+def _custom_fitness(y, y_pred, w):
+    """
+    Custom fitness function focusing on Adjusted IC and MI, optimized for speed.
+    """
+    # Check for empty or identical predictions
+    if len(y) == 0 or len(y_pred) == 0:
+        return 1e10
+
+    if np.all(y_pred == y_pred[0]):
+        return 1e9
+
+    try:
+        # Spearman's rank correlation coefficient (IC)
+        ic = abs(spearmanr(y, y_pred)[0])
+
+        # Discretize y and y_pred using fewer bins to speed up MI calculation
+        y_discrete = y_true_discrete(y, bins=5)
+        y_pred_discrete = y_true_discrete(y_pred, bins=5)
+
+        # Mutual Information (MI)
+        mi = mutual_info_score(y_discrete, y_pred_discrete)
+
+        # Compute the entropy of y_discrete as a measure of problem difficulty
+        counts = np.bincount(y_discrete)
+        y_entropy = entropy(counts, base=2)
+
+        # Avoid division by zero
+        epsilon = 1e-10
+
+        # Adjust IC based on problem difficulty (entropy)
+        adjusted_ic = ic / (y_entropy + epsilon)
+
+        # Normalize MI
+        normalized_mi = mi / (y_entropy + epsilon)
+
+        # Combine adjusted IC and normalized MI with weights
+        ic_weight = 0.6
+        mi_weight = 0.4
+        combined_score = (ic_weight * adjusted_ic) + (mi_weight * normalized_mi)
+
+        # Return inverse of combined score (lower is better)
+        return 1 / combined_score if combined_score != 0 else 1e10
+
+    except Exception as e:
+        return 1e32
+
+# Register the optimized custom fitness function
 custom_fitness = make_fitness(function=_custom_fitness, greater_is_better=False)
-
-
-
-
 
 
 

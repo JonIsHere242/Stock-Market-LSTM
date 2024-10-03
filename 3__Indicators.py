@@ -54,25 +54,24 @@ Notes:
 
 def setup_logging():
     """Set up logging configuration."""
-    log_dir = os.path.dirname(CONFIG['log_file'])
+    log_file = CONFIG['log_file']
+    log_dir = os.path.dirname(log_file)
+    
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
-    logging.basicConfig(filename=CONFIG['log_file'],
-                        level=logging.INFO,
+    
+    logging.basicConfig(filename=log_file,
+                        level=logging.INFO,  # Adjust to DEBUG if needed
                         format='%(asctime)s - %(levelname)s - %(message)s')
-
-
 
 CONFIG = {
     'input_directory': 'Data/PriceData',
     'output_directory': 'Data/IndicatorData',
-    'log_file': 'data/logging/3__Indicators.log',
+    'log_file': os.path.join('Data', 'logging', '3__Indicators.log'),  # Use os.path.join for compatibility
     'log_lines_to_read': 500,
-    'core_count_division': True, 
+    'core_count_division': True,
 }
 
-warnings.filterwarnings('ignore', 'invalid value encountered in subtract', RuntimeWarning)
-warnings.filterwarnings('ignore', 'invalid value encountered in reduce', RuntimeWarning)
 
 ##===========================(Indicators)===========================##
 ##===========================(Indicators)===========================##
@@ -810,6 +809,25 @@ def safe_log(x, epsilon=1e-14):
     return np.log(np.maximum(x, epsilon))
 
 
+
+
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+##====================================[GENETIC INDICATORS]====================================##
+
+
+
 def calculate_genetic_indicators(df):
     epsilon = 1e-10
     
@@ -888,6 +906,28 @@ def calculate_genetic_indicators(df):
         df = df.drop(columns=[f'High_Lag{i}', f'Low_Lag{i}', f'Volume_Lag{i}', f'Open_Lag{i}'])
 
     return df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

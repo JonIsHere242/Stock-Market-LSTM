@@ -9,6 +9,9 @@ import argparse
 import glob
 import re
 from tqdm import tqdm
+from zoneinfo import ZoneInfo  # Requires Python 3.9+
+import pytz  # Add this line
+import sys
 
 """
 This script downloads stock data from Yahoo Finance based on the presence of ticker files in the output directory.
@@ -16,10 +19,10 @@ It supports both initial downloads (ColdStart) and refreshing existing data by a
 """
 
 # Directory and File Configurations
-FINAL_DATA_DIRECTORY = "Data/RFpredictions"
+FINAL_DATA_DIRECTORY = "Data\RFpredictions"
 DATA_DIRECTORY = 'Data/PriceData'
 TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
-LOG_FILE = "Data/logging/2__BulkPriceDownloader.log"
+LOG_FILE = "Data\logging\2__BulkPriceDownloader.log"
 RATE_LIMIT = 1.0  # seconds between downloads
 START_DATE = "2020-01-01"
 
@@ -31,9 +34,16 @@ def setup_logging():
     """Set up logging configuration."""
     logging.basicConfig(
         filename=LOG_FILE,
-        level=logging.INFO,  # Change to DEBUG for more detailed logs
+        level=logging.DEBUG,  # Change to DEBUG for more detailed logs
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
+    logging.debug(f"Data directory: {os.path.abspath(DATA_DIRECTORY)}")
+    logging.debug(f"Ticker CIK directory: {os.path.abspath(TICKERS_CIK_DIRECTORY)}")
+
+
+
+
+
 
 def get_existing_tickers(data_dir):
     """
@@ -64,39 +74,62 @@ def clear_old_data(data_dir):
             removed_files += 1
     logging.info(f"Cleared {removed_files} old data files from {data_dir}.")
 
-def get_last_trading_day(reference_date=None):
+
+
+
+def get_last_trading_day(reference_datetime=None):
     """
-    Returns the last trading day based on the reference_date.
-    If today is Saturday, returns Friday.
-    If today is Sunday, returns Friday.
-    Otherwise, returns the previous trading day.
+    Returns the last trading day based on the current time in US/Eastern timezone.
+    If the current time is after 4 PM ET on a weekday, returns today.
+    Otherwise, returns the most recent previous trading day.
     """
-    if reference_date is None:
-        reference_date = datetime.today()
+    eastern = pytz.timezone('US/Eastern')
+    
+    if reference_datetime is None:
+        # Get current time directly in US/Eastern timezone
+        reference_datetime = datetime.now(eastern)
     else:
-        reference_date = reference_date
+        # Ensure the reference_datetime is timezone-aware
+        if reference_datetime.tzinfo is None:
+            reference_datetime = eastern.localize(reference_datetime)
+        else:
+            reference_datetime = reference_datetime.astimezone(eastern)
 
-    # Weekday: Monday=0, Sunday=6
-    weekday = reference_date.weekday()
+    weekday = reference_datetime.weekday()  # Monday=0, Sunday=6
+    current_time = reference_datetime.time()
+    
+    # Define market close time
+    market_close_time = datetime.strptime("16:00", "%H:%M").time()
+    
+    logging.debug(f"Reference datetime (US/Eastern): {reference_datetime}")
+    logging.debug(f"Weekday: {weekday}, Current Time: {current_time}")
+    logging.debug(f"Market Close Time: {market_close_time}")
 
-    if weekday == 5:  # Saturday
-        last_trading_day = reference_date - timedelta(days=1)
-    elif weekday == 6:  # Sunday
-        last_trading_day = reference_date - timedelta(days=2)
+    if weekday < 5 and current_time >= market_close_time:
+        last_trading_day = reference_datetime.date()
     else:
-        last_trading_day = reference_date
+        # Adjust to previous day if it's weekend or before market close
+        last_trading_day = reference_datetime.date() - timedelta(days=1)
+        
+        # If the adjusted day is Saturday or Sunday, move back to Friday
+        while last_trading_day.weekday() >= 5:
+            last_trading_day -= timedelta(days=1)
+    
+    logging.debug(f"Determined last trading day as: {last_trading_day}")
+    return last_trading_day
 
-    # Ensure it's a weekday
-    if last_trading_day.weekday() >= 5:
-        # If it's Saturday or Sunday, adjust to Friday
-        last_trading_day -= timedelta(days=last_trading_day.weekday() - 4)
 
-    return last_trading_day.date()
+
+
+
+
+
+
 
 def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None, rate_limit=RATE_LIMIT, refresh=False):
     """
     Fetches stock data for given tickers and saves them as parquet files.
-    If refresh is True, appends missing recent data to existing files.
+    Validates that the data matches the most common end date after the first 10 files are downloaded.
     """
     download_count = 0
     wait_time = rate_limit
@@ -107,6 +140,11 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None,
     adjusted_end_date = expected_latest_date + timedelta(days=1)
 
     logging.info(f"Fetching data from {start_date} to {adjusted_end_date}")
+
+    # Track the end dates of the first 10 files to establish a baseline
+    end_dates = []
+    end_date_sample_size = 10  # Number of files to sample before enforcing the end date check
+    common_end_date = None  # Most common end date in the first 10 files
 
     for ticker in tqdm(tickers, desc="Downloading stock data", unit="ticker"):
         file_path = os.path.join(data_dir, f"{ticker}.parquet")
@@ -147,9 +185,25 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None,
                 logging.warning(f"No new data found for {ticker}.")
                 continue
 
-            # Add checks for the validity of data (optional)
-            if len(stock_data) < 5:  # Adjusted threshold for refresh mode
-                logging.warning(f"Fetched data for {ticker} is too short. Skipping.")
+            # Check if the file has a valid end date after sampling enough files
+            fetched_end_date = stock_data.index.max().date()
+
+            if download_count < end_date_sample_size:
+                # Add to the initial end date sample
+                end_dates.append(fetched_end_date)
+                if len(end_dates) == end_date_sample_size:
+                    # Determine the most common end date after sampling enough files
+                    common_end_date = max(set(end_dates), key=end_dates.count)
+                    logging.info(f"Most common end date after sampling: {common_end_date}")
+            elif fetched_end_date != common_end_date:
+                logging.warning(f"{ticker} has a different end date ({fetched_end_date}) than the most common ({common_end_date}). Skipping.")
+                continue
+
+            # Ensure the data has sufficient historical coverage (at least 400 days)
+            fetched_start_date = stock_data.index.min().date()
+            days_of_data = (fetched_end_date - fetched_start_date).days
+            if days_of_data < 400:
+                logging.warning(f"{ticker} has less than 400 days of data ({days_of_data} days). Skipping.")
                 continue
 
             stock_data = stock_data.round(5)
@@ -185,13 +239,22 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None,
 
     logging.info(f"Total tickers processed: {download_count}")
 
+
+
+
+
+
 if __name__ == "__main__":
     setup_logging()
     
+    logging.info(f"Python Version: {sys.version}")
+    logging.info(f"Timezone: {time.tzname}")
+
     parser = argparse.ArgumentParser(description="Download or refresh stock data from Yahoo Finance.")
     parser.add_argument("--ClearOldData", action='store_true', help="Clears any existing data in the output directory.")
     parser.add_argument("--RefreshMode", action='store_true', help="Refresh existing data by appending the latest missing data.")
-    parser.add_argument("--ColdStart", action='store_true', help="Initial download of all tickers from the CIK file run once when starting this in a new enviroment it will take aprox 2.5 hours with ratelimiting.")
+    parser.add_argument("--ColdStart", action='store_true', help="Initial download of all tickers from the CIK file.")
+    parser.add_argument("--TickerListFile", help="Path to a file containing a list of tickers to download.")
     
     args = parser.parse_args()
     
@@ -202,11 +265,24 @@ if __name__ == "__main__":
         logging.error("Cannot use both --RefreshMode and --ColdStart simultaneously. Exiting.")
         exit(1)
     
-    if args.RefreshMode:
-        logging.info("Running in Refresh Mode: Appending latest missing data to existing files.")
-        tickers = get_existing_tickers(FINAL_DATA_DIRECTORY)
-        if not tickers:
-            logging.warning(f"No tickers found in {FINAL_DATA_DIRECTORY}. Nothing to refresh.")
+    if args.TickerListFile:
+        if not os.path.exists(args.TickerListFile):
+            logging.error(f"Ticker list file {args.TickerListFile} does not exist. Exiting.")
+            exit(1)
+        with open(args.TickerListFile, 'r') as f:
+            tickers = [line.strip() for line in f if line.strip()]
+        logging.info(f"Loaded {len(tickers)} tickers from {args.TickerListFile}.")
+    elif args.RefreshMode:
+        logging.info("Running in Refresh Mode: Refreshing data for tickers from the latest TickerCIKs file.")
+        ticker_cik_file = find_latest_ticker_cik_file(TICKERS_CIK_DIRECTORY)
+        if ticker_cik_file is None:
+            logging.error("No TickerCIKs file found. Exiting.")
+            exit(1)
+        tickers_df = pd.read_parquet(ticker_cik_file)
+        if 'ticker' not in tickers_df.columns:
+            logging.error("The TickerCIKs file does not contain a 'ticker' column. Exiting.")
+            exit(1)
+        tickers = tickers_df['ticker'].dropna().unique().tolist()
     elif args.ColdStart:
         logging.info("Running in ColdStart Mode: Downloading data for all tickers from the CIK file.")
         ticker_cik_file = find_latest_ticker_cik_file(TICKERS_CIK_DIRECTORY)

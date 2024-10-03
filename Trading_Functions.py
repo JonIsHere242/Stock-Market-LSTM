@@ -49,15 +49,18 @@ def read_trading_data(is_live=False):
     if not os.path.exists(file):
         initialize_parquet(is_live)
         return pd.DataFrame(columns=COLUMNS)
+    
+    # Read the parquet file
     df = pd.read_parquet(file)
     
-    # Convert date columns to datetime
+    # Ensure date columns are converted to datetime64[ns]
     date_columns = ['LastBuySignalDate', 'LastTradedDate']
     for col in date_columns:
         if col in df.columns:
-            df[col] = pd.to_datetime(df[col])
+            df[col] = pd.to_datetime(df[col], errors='coerce')  # Safely convert to datetime64
     
     return df
+
 
 
 
@@ -65,17 +68,19 @@ def read_trading_data(is_live=False):
  
 
 def write_trading_data(df, is_live=False):
-    # Convert date columns to datetime
+    # Ensure date columns are datetime64[ns]
     date_columns = ['LastBuySignalDate', 'LastTradedDate']
     for col in date_columns:
         if col in df.columns:
-            df[col] = pd.to_datetime(df[col]).dt.date  # Convert to date
-
+            df[col] = pd.to_datetime(df[col], errors='coerce')  # Safely convert to datetime64[ns]
+    
     # Replace NaT with None for Parquet compatibility
-    for col in df.select_dtypes(include=['datetime64', 'object']).columns:
+    for col in df.select_dtypes(include=['datetime64[ns]']).columns:
         df[col] = df[col].where(pd.notnull(df[col]), None)
     
+    # Write to parquet file
     df.to_parquet(get_parquet_file(is_live), index=False)
+
 
 
 
@@ -222,8 +227,10 @@ def get_buy_signals(is_live=False):
         
         signals = df[
             (df['IsCurrentlyBought'] == False) & 
-            (df['LastBuySignalDate'] == previous_trading_day)
+            (df['LastBuySignalDate'].dt.date == current_date)
         ].to_dict('records')
+
+
         
         if not signals:
             logging.info(f"No buy signals found for the previous trading day ({previous_trading_day})")
@@ -239,25 +246,47 @@ def get_buy_signals(is_live=False):
 
 
 
+
+
+
 def get_previous_trading_day(current_date):
-    """Get the previous trading day using pandas_market_calendars."""
     nyse = mcal.get_calendar('NYSE')
-    
-    # Convert current_date to datetime if it's not already
-    if not isinstance(current_date, datetime):
-        current_date = pd.Timestamp(current_date)
-    
-    # Get the schedule for the past 10 days (arbitrary, but should be enough)
+    current_date = pd.Timestamp(current_date)  # Ensure it is a Timestamp
+
     end_date = current_date.date()
     start_date = end_date - timedelta(days=10)
     schedule = nyse.schedule(start_date=start_date, end_date=end_date)
-    
-    # Find the last trading day before or on the current date
+
     valid_days = schedule[schedule.index.date <= end_date]
     if valid_days.empty:
         raise ValueError(f"No trading days found in the 10 days before {end_date}")
-    
+
     return valid_days.index[-1].date()
+
+
+
+
+
+def get_next_trading_day(current_date):
+    nyse = mcal.get_calendar('NYSE')
+    current_date = pd.Timestamp(current_date)  # Ensure it is a Timestamp
+
+    start_date = current_date.date() + timedelta(days=1)
+    end_date = start_date + timedelta(days=10)
+    schedule = nyse.schedule(start_date=start_date, end_date=end_date)
+
+    if schedule.empty:
+        raise ValueError(f"No trading days found after {start_date}")
+
+    return schedule.index[0].date()
+
+
+
+
+
+
+
+
 
 
 def is_market_open():
