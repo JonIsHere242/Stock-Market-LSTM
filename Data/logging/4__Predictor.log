@@ -38,3 +38,6 @@
 2024-10-01 23:42:50,921 - INFO - Logging system initialized.
 2024-10-01 23:42:50,931 - INFO - Loading the trained model.
 2024-10-01 23:45:07,399 - INFO - Predictions saved to Data/RFpredictions
+2024-10-03 02:20:20,745 - INFO - Logging system initialized.
+2024-10-03 02:20:20,745 - INFO - Loading the trained model.
+2024-10-03 02:25:59,087 - INFO - Predictions saved to Data/RFpredictions

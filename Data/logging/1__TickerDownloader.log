@@ -1,0 +1,2 @@
+2024-10-02 22:05:42,365 - INFO - File downloaded and saved successfully in Parquet format.
+2024-10-02 22:08:20,684 - ERROR - Error occurred: HTTPSConnectionPool(host='www.sec.gov', port=443): Max retries exceeded with url: /files/company_tickers_exchange.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019329878AF0>: Failed to resolve 'www.sec.gov' ([Errno 11001] getaddrinfo failed)"))

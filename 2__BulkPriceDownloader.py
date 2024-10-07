@@ -19,10 +19,10 @@ It supports both initial downloads (ColdStart) and refreshing existing data by a
 """
 
 # Directory and File Configurations
-FINAL_DATA_DIRECTORY = "Data\RFpredictions"
-DATA_DIRECTORY = 'Data/PriceData'
-TICKERS_CIK_DIRECTORY = 'Data/TickerCikData'
-LOG_FILE = "Data\logging\2__BulkPriceDownloader.log"
+FINAL_DATA_DIRECTORY = os.path.join("Data", "RFpredictions")
+DATA_DIRECTORY = os.path.join('Data', 'PriceData')
+TICKERS_CIK_DIRECTORY = os.path.join('Data', 'TickerCikData')
+LOG_FILE = os.path.join("Data", "logging", "2__BulkPriceDownloader.log")
 RATE_LIMIT = 1.0  # seconds between downloads
 START_DATE = "2020-01-01"
 
@@ -34,7 +34,7 @@ def setup_logging():
     """Set up logging configuration."""
     logging.basicConfig(
         filename=LOG_FILE,
-        level=logging.DEBUG,  # Change to DEBUG for more detailed logs
+        level=logging.INFO,  # Change to DEBUG for more detailed logs
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
     logging.debug(f"Data directory: {os.path.abspath(DATA_DIRECTORY)}")
