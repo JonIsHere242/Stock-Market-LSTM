@@ -8,14 +8,11 @@ import scipy.stats as stats
 from scipy.stats import linregress
 import logging
 import argparse
-import warnings
 import traceback
 from pykalman import KalmanFilter
 from scipy.signal import find_peaks
 from scipy.stats import gaussian_kde, skew, kurtosis
 from scipy.signal import argrelextrema
-import cProfile
-import pstats
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import numba as nb
 from numba import njit, jit
@@ -57,12 +54,31 @@ def setup_logging():
     log_file = CONFIG['log_file']
     log_dir = os.path.dirname(log_file)
     
+    # Create the log directory if it doesn't exist
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     
-    logging.basicConfig(filename=log_file,
-                        level=logging.INFO,  # Adjust to DEBUG if needed
-                        format='%(asctime)s - %(levelname)s - %(message)s')
+    # Get the root logger
+    logger = logging.getLogger()
+    if len(logger.handlers) == 0:
+        # Set the logging level for the logger
+        logger.setLevel(logging.INFO)
+        
+        # Create a file handler that logs to the specified file
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setLevel(logging.INFO)
+    
+        # Create a formatter and set it for the handlers
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(formatter)
+    
+        # Add the file handler to the logger
+        logger.addHandler(file_handler)
+    
+    return logger
+
+
+
 
 CONFIG = {
     'input_directory': 'Data/PriceData',
@@ -71,6 +87,8 @@ CONFIG = {
     'log_lines_to_read': 500,
     'core_count_division': True,
 }
+
+logger = setup_logging()
 
 
 ##===========================(Indicators)===========================##
@@ -174,10 +192,8 @@ def hurst_exponent(time_series):
 
 def rolling_hurst_exponent(series, window_size):
     series_clean = series.dropna()
-
     def hurst_window(window):
         return hurst_exponent(window)
-
     return series_clean.rolling(window=window_size).apply(hurst_window, raw=True)
 
 
@@ -804,13 +820,10 @@ def safe_divide(a, b, fill_value=0):
     return result
 
 
-
 def safe_log(x, epsilon=1e-14):
     return np.log(np.maximum(x, epsilon))
 
 
-
-
 ##====================================[GENETIC INDICATORS]====================================##
 ##====================================[GENETIC INDICATORS]====================================##
 ##====================================[GENETIC INDICATORS]====================================##
@@ -825,8 +838,6 @@ def safe_log(x, epsilon=1e-14):
 ##====================================[GENETIC INDICATORS]====================================##
 ##====================================[GENETIC INDICATORS]====================================##
 ##====================================[GENETIC INDICATORS]====================================##
-
-
 
 def calculate_genetic_indicators(df):
     epsilon = 1e-10
@@ -1105,14 +1116,19 @@ def indicators(df):
 
     df['Distance to Support (%)'] = (df['Close'] - df['minima'].shift(1)) / df['minima'].shift(1) * 100
     df['Distance to Resistance (%)'] = (df['maxima'].shift(1) - df['Close']) / df['Close'] * 100
-    df['MA_200'] = df['Close'].rolling(window=200).mean()
+    df['MA_200'] = df['Close'].rolling(window=200, min_periods=200).mean()
     df['Perc_Diff'] = (df['Kalman'] - df['MA_200']) / df['MA_200'] * 100
-    std_perc_diff = df['Perc_Diff'].std()
-    df['skew'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: skew(x))
-    df['kurtosis'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: kurtosis(x))
-    df['mean'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: np.mean(x))
-    df['std'] = df['Perc_Diff'].rolling(window=200).apply(lambda x: np.std(x))
 
+    # Drop initial rows where 'Perc_Diff' is NaN
+    df = df[df['Perc_Diff'].notna()].copy()
+
+    # Adjust rolling calculations to avoid NaNs
+    df['skew'] = df['Perc_Diff'].rolling(window=200, min_periods=200).apply(lambda x: skew(x), raw=True)
+    df['kurtosis'] = df['Perc_Diff'].rolling(window=200, min_periods=200).apply(lambda x: kurtosis(x), raw=True)
+    df['mean'] = df['Perc_Diff'].rolling(window=200, min_periods=200).mean()
+    df['std'] = df['Perc_Diff'].rolling(window=200, min_periods=200).std()
+
+    
     epsilon = 0.001  # Small perturbation factor
     df['Perturbed_Kalman'] = df['Kalman'] * (1 + epsilon)
     df['Divergence'] = np.abs(df['Perturbed_Kalman'] - df['Kalman'])
@@ -1164,40 +1180,42 @@ def DataQualityCheck(df, all_dfs=None):
     if df.empty or len(df) < 201:
         logging.error("DataFrame is empty or too short to process.")
         return None
-    
+
     if df[['Open', 'High', 'Low', 'Close']].std().sum() < 0.01:
         logging.error("Data is flat. Variance in Open, High, Low, Close prices is too low.")
         return None
- 
+
     if len(df[df['Close'] < 1]) > len(df) / 3:
         logging.error("More than 1/3 of the data has a close price below 1. Skipping the data.")
         return None
-    
+
     if df['Date'].dtype != 'datetime64[ns]':
         df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-        
+
+    # **Ensure data goes back to at least 2022**
+    earliest_date = df['Date'].min()
+    if earliest_date > pd.Timestamp('2022-05-01'):
+        logging.error(f"Data does not go back to 2022. Earliest date in dataset: {earliest_date}")
+        return None
+
     # Check if the data is recent (has data in the current year)
     current_year = datetime.now().year
     if df['Date'].max().year < current_year:
         logging.error(f"Data is not recent. Last date in dataset: {df['Date'].max()}")
         return None
 
-    # Check if the data has enough trading days compared to the mean
-    if all_dfs is not None:
-        mean_trading_days = np.mean([len(d) for d in all_dfs])
-        if len(df) < 0.95 * mean_trading_days:
-            logging.error(f"Insufficient data. File has {len(df)} trading days, which is less than 95% of the mean ({mean_trading_days:.0f}).")
-            return None
-
-    sample_size = max(int(len(df) * 0.02), 1)  # Ensure at least one sample is taken
+    # Continue with other checks...
+    sample_size = max(int(len(df) * 0.02), 1)
     start_mean = df['Close'].head(sample_size).mean()
     end_mean = df['Close'].tail(sample_size).mean()
 
     if start_mean > 3000 or (start_mean / max(end_mean, 1e-10) > 20):
         logging.error(f"Signs of reverse stock splits detected or high initial prices: Start mean: {start_mean}, End mean: {end_mean}")
         return None
-    
+
     return df
+
+
 
 
 
@@ -1249,10 +1267,15 @@ def clear_output_directory(output_dir):
         if file.endswith('.parquet'):
             os.remove(os.path.join(output_dir, file))
 
+
+
+
+
 ##===========================(Main Function)===========================##
 
 def process_file_wrapper(file_path):
     return process_file(file_path, CONFIG['output_directory'])
+
 
 def process_data_files(run_percent):
     print(f"Processing {run_percent}% of files from {CONFIG['input_directory']}")
@@ -1263,13 +1286,16 @@ def process_data_files(run_percent):
     file_paths = [os.path.join(CONFIG['input_directory'], f) for f in os.listdir(CONFIG['input_directory']) if f.endswith('.parquet')]
     files_to_process = file_paths[:int(len(file_paths) * (run_percent / 100))]
     with ProcessPoolExecutor() as executor:
-        list(tqdm(executor.map(process_file_wrapper, files_to_process), total=len(files_to_process), desc="Processing files"))
+        futures = [executor.submit(process_file_wrapper, file_path) for file_path in files_to_process]
+        for _ in tqdm(as_completed(futures), total=len(futures), desc="Processing files"):
+            pass
 
     print(f"Processed {len(files_to_process)} files in {time.time() - StartTimer:.2f} seconds")
     print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.')
 
 if __name__ == "__main__":
-    setup_logging()
+    logger = setup_logging()
+    logger.info("Starting the process...")
     parser = argparse.ArgumentParser(description="Process financial market data files.")
     parser.add_argument('--runpercent', type=int, default=100, help="Percentage of files to process from the input directory.")
     args = parser.parse_args()

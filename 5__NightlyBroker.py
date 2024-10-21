@@ -11,16 +11,8 @@ import backtrader as bt
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta, timezone
 from tqdm import tqdm
-import json
-import csv
-import sqlite3
-import json
-import functools
 from numba import jit
-import concurrent.futures
 from functools import partial
-import asyncio
-import aiofiles
 import pyarrow.parquet as pq
 from tqdm.asyncio import tqdm_asyncio
 import multiprocessing
@@ -520,48 +512,9 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.close(data=data)
 
     def save_best_buy_signals(self, buy_candidates):
-       top_buy_candidates = buy_candidates[:5]
+       top_buy_candidates = buy_candidates[:3]
        for d, size, correlation in top_buy_candidates:
            self.save_buy_signal(d, self.datetime.date())
-
-
-
-
-
-
-
-    def save_buy_signal_lagging_by_1_day_oops(self, data, current_date):
-        current_irl_date = datetime.now().date()
-        days_diff = (current_irl_date - current_date).days
-        if days_diff <= 5:
-            symbol = data._name
-            price = data.close[0]
-
-            # Read existing data
-            df = read_trading_data()
-
-            # Update or add new signal
-            new_signal = pd.DataFrame({
-                'Symbol': [symbol],
-                'LastBuySignalDate': [current_date],
-                'LastBuySignalPrice': [price],
-                'IsCurrentlyBought': [False],
-                'ConsecutiveLosses': [0],
-                'LastTradedDate': [None],
-                'UpProbability': [data.UpProbability[0]]
-            })
-
-            # Remove existing entry for this symbol (if any)
-            df = df[df['Symbol'] != symbol]
-
-            # Append new signal
-            df = pd.concat([df, new_signal], ignore_index=True)
-
-            # Write updated data back to Parquet file
-            write_trading_data(df)
-
-            print(f"Buy signal saved for {symbol} at price {price} on {current_date}")
-            logging.info(f"Buy signal saved for {symbol} at price {price} on {current_date}")
 
 
     def save_buy_signal(self, data, current_date):
@@ -595,7 +548,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             # Write updated data back to Parquet file
             write_trading_data(df)
 
-            print(f"Buy signal saved for {symbol} at price {price} on {next_trading_date}")
+            print(f"Buy signal saved for {symbol} at price {price} on {next_trading_date}", flush=True)
             logging.info(f"Buy signal saved for {symbol} at price {price} on {next_trading_date}")
 
 
@@ -651,33 +604,22 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         lenDataFeeds = len(self.datas)
         for d in self.datas:
             if self.datetime.date() == datetime(2024, 9, 20).date():
-                
-                
-    
                 DatafeedCounter += 1
                 
         
         ##percentage of files that have the most up to date data
         PercentageDataFeeds = (DatafeedCounter / lenDataFeeds) * 100
         print(f"Percentage of data feeds with the most up to date data: {PercentageDataFeeds:.2f}%")
-
-
-
-        
         print(f"Strategy stopped. Last processed date: {self.datetime.date()}")
-
         print(f"Processed {self.day_count} days out of {self.total_bars} expected")
 
         if self.day_count < self.total_bars:
-
-
             print(f"Warning: Strategy stopped early. Processed {self.day_count}/{self.total_bars} days.")
 
         self.log_portfolio_state()
         logging.info("Strategy stopped. Final portfolio state logged.")
         logging.info(f"Processed {self.day_count} days out of {self.total_bars} expected")
-        ##close the progress bar 
-
+        
         if PercentageDataFeeds == 100:
             self.progress_bar.close()
 
@@ -696,9 +638,6 @@ def select_random_files(directory, percent):
     num_to_select = max(1, int(round(num_files * percent / 100)))
     selected_files = random.sample(all_files, num_to_select)
     return [os.path.join(directory, f) for f in selected_files]
-
-
-
 
 
 
@@ -823,6 +762,7 @@ class FixedCommissionScheme(bt.CommInfoBase):
 
 
 def main():
+    setup_logging()
     timer = time.time()
     cerebro = bt.Cerebro(maxcpus=None)
     cerebro = bt.Cerebro(cheat_on_open=False)
@@ -1072,5 +1012,4 @@ def main():
     print(f"Time taken: {time.time() - timer:.2f} seconds")
 
 if __name__ == "__main__":
-    setup_logging()
     main()

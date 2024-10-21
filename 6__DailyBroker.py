@@ -1,18 +1,15 @@
 #!/root/root/miniconda4/envs/tf/bin/python
 import backtrader as bt
 from backtrader_ib_insync import IBStore
-import threading
-import cmd
 import logging
 from logging.handlers import RotatingFileHandler
 
 import ib_insync as ibi
 import pandas as pd
-import sqlite3
 import numpy as np
-####Time related headaches
-from datetime import datetime, time
-import pytz
+from datetime import datetime
+import time
+import uuid
 
 from Trading_Functions import *
 import traceback
@@ -20,18 +17,11 @@ import traceback
 def setup_logging(log_to_console=True):
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-
-    # Create a rotating file handler
     file_handler = RotatingFileHandler('__BrokerLive.log', maxBytes=1024 * 1024, backupCount=5)
     file_handler.setLevel(logging.INFO)
-
-    # Create a formatter and add it to the handler
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     file_handler.setFormatter(formatter)
-
-    # Add the file handler to the logger
     logger.addHandler(file_handler)
-
     if log_to_console:
         # Create a console handler only if log_to_console is True
         console_handler = logging.StreamHandler()
@@ -39,27 +29,9 @@ def setup_logging(log_to_console=True):
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
-# You can now control logging to the console by setting this parameter when you call setup_logging
+
+
 setup_logging(log_to_console=True)  # Set to False to disable logging to the terminal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def get_open_positions(ib):
@@ -83,14 +55,7 @@ def get_open_positions(ib):
 
 
 
-
-
-
-
-
-
 class MyStrategy(bt.Strategy):
-
     params = (
         ('max_positions', 4),
         ('reserve_percent', 0.4),
@@ -100,11 +65,10 @@ class MyStrategy(bt.Strategy):
         ('expected_profit_per_day_percentage', 0.25),
         ('debug', True),
         ('assume_live', True),  # New parameter to control this behavior
-
     )
 
-
     def __init__(self):
+
         self.order_dict = {}
         self.market_open = True
         self.data_ready = {d: False for d in self.datas}
@@ -113,7 +77,6 @@ class MyStrategy(bt.Strategy):
         self.position_closed = {d._name: False for d in self.datas}  # Track if a position has been closed
         self.live_trades = pd.DataFrame()  # Initialize live_trades as an empty DataFrame
         self.position_data = self.load_position_data()
-
         # Add a timer for heartbeat
         self.add_timer(
             when=bt.Timer.SESSION_START,
@@ -123,11 +86,15 @@ class MyStrategy(bt.Strategy):
         )
 
 
+
+
+
+
+
+
     def load_position_data(self):
         df = read_trading_data(is_live=True)
         return {row['Symbol']: row.to_dict() for _, row in df.iterrows()}
-
-
 
     def initialize_order_dict(self):
         active_orders = self.fetch_active_orders()
@@ -149,11 +116,6 @@ class MyStrategy(bt.Strategy):
         for order_id in list(self.order_dict.keys()):
             if self.order_dict[order_id].status not in ['Submitted', 'PreSubmitted']:
                 del self.order_dict[order_id]
-
-
-
-
-
 
 
 
@@ -225,7 +187,6 @@ class MyStrategy(bt.Strategy):
 
 
 
-
     def next(self):
         self.barCounter += 1
         current_date = self.safe_get_date()
@@ -277,9 +238,6 @@ class MyStrategy(bt.Strategy):
 
             
             
-
-
-
     def evaluate_sell_conditions(self, data, current_date):
         symbol = data._name
         if symbol in self.order_dict or self.position_closed[symbol]:
@@ -304,18 +262,7 @@ class MyStrategy(bt.Strategy):
 
 
 
-
-
-
-
-
-
-
-    
     ###================[Update system to see orders on restart]=================#
-
-
-
     def handle_buy_order(self, order):
         symbol = order.data._name
         entry_price = order.executed.price
@@ -335,10 +282,6 @@ class MyStrategy(bt.Strategy):
             logging.info(f"Added {symbol} to active positions after buy order completion")
 
 
-
-
-
-
     def handle_sell_order(self, order):
         symbol = order.data._name
         exit_price = order.executed.price
@@ -353,11 +296,6 @@ class MyStrategy(bt.Strategy):
         if hasattr(self, 'active_positions') and symbol in self.active_positions:
             self.active_positions.remove(symbol)
             logging.info(f"Removed {symbol} from active positions after sell order completion")
-
-
-
-
-
 
 
     def calculate_position_size(self, data):
@@ -375,10 +313,6 @@ class MyStrategy(bt.Strategy):
 
 
 
-    #================[PLACE ORDER WITH TWS ]=================#
-    #================[PLACE ORDER WITH TWS ]=================#
-    #================[PLACE ORDER WITH TWS ]=================#
-    #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
@@ -404,11 +338,12 @@ class MyStrategy(bt.Strategy):
         currently_bought = self.live_trades[self.live_trades['IsCurrentlyBought'] == True]
         logging.info(f"Currently bought symbols: {currently_bought['Symbol'].tolist() if 'Symbol' in currently_bought.columns else 'Symbol column not found'}")
 
+
         if symbol not in currently_bought['Symbol'].values:
             size = self.calculate_position_size(data)
             if size > 0:
-                # Generate a unique OCO group ID
-                oco_id = f"OCO_{symbol}_{int(time.time())}"
+                # Generate a unique ocaGroup
+                oca_group = uuid.uuid4().hex
 
                 # Create the parent market buy order
                 parent_order = self.buy(
@@ -418,8 +353,11 @@ class MyStrategy(bt.Strategy):
                     transmit=False,
                     **{'goodTillCancel': True}
                 )
+                parent_order.ocaGroup = oca_group  # Set ocaGroup directly
+                self.broker.submit(parent_order)
+                logging.info(f"Parent order submitted for {symbol}, Order ID: {parent_order.orderId}")
 
-                # Estimate entry price (since it's a market order, use current price)
+                # Estimate entry price
                 entry_price = data.close[0]
                 take_profit_price = entry_price * 2.0  # 100% profit target
 
@@ -431,21 +369,27 @@ class MyStrategy(bt.Strategy):
                     price=take_profit_price,
                     parent=parent_order,
                     transmit=False,
-                    oco=oco_id,
+                    oco=parent_order,
                     **{'goodTillCancel': True}
                 )
+                take_profit_order.ocaGroup = oca_group  # Set ocaGroup
 
                 # Create the trailing stop sell order
                 trailing_stop_order = self.sell(
                     data=data,
                     size=size,
                     exectype=bt.Order.StopTrail,
-                    trailpercent=3.0,
+                    trailpercent=0.03,
                     parent=parent_order,
-                    transmit=True,  # Transmit=True on the last order to send all orders
-                    oco=oco_id,
+                    transmit=True,  # Transmit all orders now
+                    oco=parent_order,
                     **{'goodTillCancel': True}
                 )
+                trailing_stop_order.ocaGroup = oca_group  # Set ocaGroup
+
+                # Submit the child orders
+                self.broker.submit(take_profit_order)
+                self.broker.submit(trailing_stop_order)
 
                 # Store the orders
                 self.order_dict[parent_order.ref] = {
@@ -455,15 +399,14 @@ class MyStrategy(bt.Strategy):
                     'data': data
                 }
 
-                logging.info(f"Bracket order placed for {symbol}, position size: {size}")
+                logging.info(f"OCO orders placed for {symbol}, position size: {size}")
             else:
                 logging.info(f"Not enough capital to open position for {symbol}")
         else:
             logging.info(f"{symbol} is already bought, skipping buy signal")
 
 
-    ##=====================[CLOSE POSITION]====================##
-    ##=====================[CLOSE POSITION]====================##
+
     ##=====================[CLOSE POSITION]====================##
     ##=====================[CLOSE POSITION]====================##
     ##=====================[CLOSE POSITION]====================##
@@ -493,53 +436,11 @@ class MyStrategy(bt.Strategy):
 
 
 
-
     def stop(self):
         total_portfolio_value = self.broker.getvalue()
         logging.info(f'Final Portfolio Value: {total_portfolio_value}')
         print(f'Final Portfolio Value: {total_portfolio_value}')
         super().stop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

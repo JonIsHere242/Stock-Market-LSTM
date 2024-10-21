@@ -16,7 +16,6 @@ import datetime
 import time
 from numba import njit, prange
 import joblib 
-import antropy as ant 
 from tqdm import tqdm
 
 
@@ -32,15 +31,13 @@ import matplotlib.pyplot as plt
 
 
 
-
-# Updated CONFIG with Dataset Caching Options
 CONFIG = {
     'input_directory': 'Data/PriceData',
     'data_sample_percentage': 1,  # Increased from 3 to use more data
     'output_directory': 'Results',
     'dataset_cache_path': 'cached_dataset.pkl',
     'use_cached_dataset': True,
-    'population_size': 50000,  # Reduced from 10000 to allow more generations
+    'population_size': 500000,  # Reduced from 10000 to allow more generations
     'generations': 15,  # Increased from 10 to allow for more evolution
     'tournament_size': 9,  # Increased from 3 to apply more selection pressure
     'stopping_criteria': -1e9,  # Set to a very low value to prevent early stopping
@@ -61,6 +58,9 @@ CONFIG = {
     'random_state': 3301,
     'max_depth': 10  # Increased to allow for more complex programs
 }
+
+
+
 
 
 def safe_entropy(arr):
@@ -647,54 +647,6 @@ def concordance(y, y_pred):
     y_pred_change = np.diff(y_pred)
     return np.mean(np.sign(y_change) == np.sign(y_pred_change))
 
-
-
-
-
-
-
-
-
-
-def _custom_fitness3333(y, y_pred, w):
-    """
-    Custom fitness function focusing on IC and MI, optimized for speed.
-    """
-    # Check for empty or identical predictions
-    if len(y) == 0 or len(y_pred) == 0:
-        return 1e10
-
-    if np.all(y_pred == y_pred[0]):
-        return 1e9
-
-    try:
-        # Spearman's rank correlation coefficient (IC)
-        ic = abs(spearmanr(y, y_pred)[0])
-
-        # Discretize y and y_pred using fewer bins to speed up MI calculation
-        y_discrete = y_true_discrete(y, bins=5)
-        y_pred_discrete = y_true_discrete(y_pred, bins=5)
-
-        # Mutual Information (MI)
-        mi = mutual_info_score(y_discrete, y_pred_discrete)
-
-        # Normalize MI
-        y_entropy = mutual_info_score(y_discrete, y_discrete)
-        normalized_mi = mi / y_entropy if y_entropy != 0 else 0
-
-        # Combine IC and MI with adjusted weights
-        ic_weight = 0.6
-        mi_weight = 0.4
-        combined_score = (ic_weight * ic) + (mi_weight * normalized_mi)
-
-        # Return inverse of combined score (lower is better)
-        return 1 / combined_score if combined_score != 0 else 1e10
-
-    except Exception as e:
-        return 1e32
-
-# Register the optimized custom fitness function
-#custom_fitness = make_fitness(function=_custom_fitness, greater_is_better=False)
 
 
 

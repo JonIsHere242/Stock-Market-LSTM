@@ -223,8 +223,10 @@ def get_buy_signals(is_live=False):
         current_date = datetime.now(pytz.timezone('US/Eastern')).date()
         previous_trading_day = get_previous_trading_day(current_date)
         
-        df['LastBuySignalDate'] = pd.to_datetime(df['LastBuySignalDate']).dt.date
+        # Ensure 'LastBuySignalDate' is in datetime format
+        df['LastBuySignalDate'] = pd.to_datetime(df['LastBuySignalDate'], errors='coerce')
         
+        # Now you can safely use .dt.date
         signals = df[
             (df['IsCurrentlyBought'] == False) & 
             (df['LastBuySignalDate'].dt.date == current_date)
