@@ -1,0 +1,45 @@
+Log directory path: Data/logging
+Full log file path: Data/logging/5__NightlyBroker.log
+Current working directory: C:\Users\Masam\Desktop\Stock-Market-LSTM
+Attempting to create log directory: Data/logging
+Log directory created/exists: Data/logging
+Setting up logging to file: Data/logging/5__NightlyBroker.log
+Log file created successfully: Data/logging/5__NightlyBroker.log
+File size: 0 bytes
+Logging setup completed. Check the log file for a test message.
+Last trading date: 2024-10-28
+Number of datasets after alignment: 4301
+Number of trading days: 252
+Buy signal saved for DQ at price 22.0 on 2024-10-25
+Buy signal saved for LUNA at price 1.7799999713897705 on 2024-10-25
+Buy signal saved for LNZA at price 1.9299999475479126 on 2024-10-25
+Buy signal saved for ALGM at price 23.040000915527344 on 2024-10-28
+Buy signal saved for JKS at price 23.520000457763672 on 2024-10-28
+Buy signal saved for CDTX at price 12.600000381469727 on 2024-10-28
+Percentage of data feeds with the most up to date data: 0.00%
+Strategy stopped. Last processed date: 2024-10-28
+Processed 239 days out of 252 expected
+Warning: Strategy stopped early. Processed 239/252 days.
+Actually processed 239 days
+======== Trading Strategy Results ========
+Initial Starting Cash:        $5000.00
+Final Portfolio Value:        [38;2;0;235;0m13602.79[0m
+Max Drawdown Days:            [38;2;0;235;0m27.00[0m
+Max Drawdown percentage:      [38;2;0;235;0m9.62[0m
+Total Trades:                 [38;2;0;195;0m80.00[0m
+Profitable Trades %:          [38;2;227;0;0m42.50[0m
+Average Profitable Trade:     [38;2;0;235;0m360.01[0m
+Average Unprofitable Trade:   [38;2;0;235;0m-91.09[0m
+Total Profitable Trades:      [38;2;0;235;0m12240.29[0m
+Total Unprofitable Trades:    [38;2;0;235;0m4190.02[0m
+Largest Winning percent:      [38;2;0;235;0m9.27[0m
+Largest Winning Trade:        [38;2;0;235;0m1134.49[0m
+Largest Losing Trade:         [38;2;42;187;0m531.84[0m
+Sharpe Ratio:                 [38;2;223;0;0m1.17[0m
+SQN:                          [38;2;0;235;0m2.89[0m
+SQN Description:              Good
+Gain Per Trade %:             [38;2;0;235;0m2.15[0m
+Gain without Largest:         [38;2;0;235;0m1.87[0m
+Percentage Gain:              [38;2;0;235;0m172.06[0m
+No individual trades found in TradeAnalyzer.
+Time taken: 198.26 seconds

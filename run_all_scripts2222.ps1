@@ -115,61 +115,46 @@ foreach ($script in $scripts) {
         $command = "$pythonExe " + ($argList -join ' ')
         Write-Log "Executing: $command" -Color Gray
 
-        # Create a new process start info
-        $pinfo = New-Object System.Diagnostics.ProcessStartInfo
-        $pinfo.FileName = $pythonExe
-        $pinfo.Arguments = ($argList -join ' ')
-        $pinfo.UseShellExecute = $false
-        $pinfo.RedirectStandardOutput = $true
-        $pinfo.RedirectStandardError = $true
-        $pinfo.CreateNoWindow = $true
+        # Execute the Python script and capture output and errors
+        $process = Start-Process -FilePath $pythonExe `
+                                 -ArgumentList $argList `
+                                 -NoNewWindow `
+                                 -RedirectStandardOutput "$basePath\Data\logging\temp_stdout.txt" `
+                                 -RedirectStandardError "$basePath\Data\logging\temp_stderr.txt" `
+                                 -PassThru
 
-        # Create and start the process
-        $process = New-Object System.Diagnostics.Process
-        $process.StartInfo = $pinfo
-        
-        # Set up event handlers for output and error streams
-        $stdoutBuilder = New-Object System.Text.StringBuilder
-        $stderrBuilder = New-Object System.Text.StringBuilder
-        
-        $process.OutputDataReceived = {
-            param($sender, $e)
-            if ($null -ne $e.Data) {
-                $stdoutBuilder.AppendLine($e.Data)
-                Write-Host $e.Data
-                Add-Content -Path $logFile -Value $e.Data
-            }
-        }
-        
-        $process.ErrorDataReceived = {
-            param($sender, $e)
-            if ($null -ne $e.Data) {
-                $stderrBuilder.AppendLine($e.Data)
-                Write-Host $e.Data -ForegroundColor Red
-                Add-Content -Path $logFile -Value "ERROR: $($e.Data)"
-            }
-        }
-
-        # Start the process and begin reading output
-        $process.Start() | Out-Null
-        $process.BeginOutputReadLine()
-        $process.BeginErrorReadLine()
-        
         # Wait for the process to exit
         $process.WaitForExit()
 
+        # Read the outputs
+        $stdout = Get-Content "$basePath\Data\logging\temp_stdout.txt" -ErrorAction SilentlyContinue
+        $stderr = Get-Content "$basePath\Data\logging\temp_stderr.txt" -ErrorAction SilentlyContinue
+
         # Check the exit code
         if ($process.ExitCode -ne 0) {
-            throw "Script '$($script.Name)' exited with code $($process.ExitCode)"
+            throw "Script '$($script.Name)' exited with code $($process.ExitCode). Error Output:`n$stderr"
         }
 
         # Log successful execution
         Write-Log "'$($script.Name)' completed successfully." -Color Green
+
+        # Log the standard output
+        if ($stdout) {
+            Write-Log "Output:`n$stdout" -Color Gray
+        }
+
+        # Remove temporary files
+        Remove-Item "$basePath\Data\logging\temp_stdout.txt" -ErrorAction SilentlyContinue
+        Remove-Item "$basePath\Data\logging\temp_stderr.txt" -ErrorAction SilentlyContinue
     }
     catch {
         # Log the error details
         Write-Log "Error running '$($script.Name)'. Error details:" -Color Red
         Write-Log $_.Exception.Message -Color Red
+
+        # Optionally, you can choose to exit the script on error
+        # Uncomment the next line to enable this behavior
+        # exit 1
     }
     finally {
         # Stop the timer and log the elapsed time
