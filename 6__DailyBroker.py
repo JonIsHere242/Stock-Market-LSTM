@@ -316,94 +316,56 @@ class MyStrategy(bt.Strategy):
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
-
     def process_buy_signal(self, data):
+        """Process buy signals with proper trailing stop management"""
         symbol = data._name
         logging.info(f"Processing buy signal for {symbol}")
 
-        # Check if an order is already pending for this symbol
-        if any(order['data']._name == symbol for order in self.order_dict.values()):
+        # Check for existing orders/positions
+        if symbol in [getattr(order.contract, 'symbol', None) for order in self.order_dict.values()]:
             logging.info(f"Order already pending for {symbol}, skipping buy signal")
             return
 
-        # Check if the symbol is already in active positions
         if hasattr(self, 'active_positions') and symbol in self.active_positions:
             logging.info(f"{symbol} is already in active positions, skipping buy signal")
             return
 
-        if 'IsCurrentlyBought' not in self.live_trades.columns:
-            logging.warning("'IsCurrentlyBought' column not found in live_trades")
-            return
-
         currently_bought = self.live_trades[self.live_trades['IsCurrentlyBought'] == True]
-        logging.info(f"Currently bought symbols: {currently_bought['Symbol'].tolist() if 'Symbol' in currently_bought.columns else 'Symbol column not found'}")
-
 
         if symbol not in currently_bought['Symbol'].values:
             size = self.calculate_position_size(data)
             if size > 0:
-                # Generate a unique ocaGroup
-                oca_group = uuid.uuid4().hex
+                try:
+                    # Create main market buy order
+                    main_order = self.buy(
+                        data=data,
+                        size=size,
+                        exectype=bt.Order.Market,
+                        transmit=False  # Don't transmit until trail order is attached
+                    )
 
-                # Create the parent market buy order
-                parent_order = self.buy(
-                    data=data,
-                    size=size,
-                    exectype=bt.Order.Market,
-                    transmit=False,
-                    **{'goodTillCancel': True}
-                )
-                parent_order.ocaGroup = oca_group  # Set ocaGroup directly
-                self.broker.submit(parent_order)
-                logging.info(f"Parent order submitted for {symbol}, Order ID: {parent_order.orderId}")
+                    # Create trailing stop order as child of market order
+                    trail_stop = self.sell(
+                        data=data,
+                        size=size,
+                        exectype=bt.Order.StopTrail,
+                        trailpercent=0.03,  # 3% trailing stop
+                        parent=main_order,
+                        transmit=True  # This transmits both orders
+                    )
 
-                # Estimate entry price
-                entry_price = data.close[0]
-                take_profit_price = entry_price * 2.0  # 100% profit target
+                    # Store orders in dictionary with proper structure
+                    order_id = main_order.ref
+                    self.order_dict[order_id] = {
+                        'main_order': main_order,
+                        'trail_stop': trail_stop,
+                        'data': data
+                    }
 
-                # Create the take-profit limit sell order
-                take_profit_order = self.sell(
-                    data=data,
-                    size=size,
-                    exectype=bt.Order.Limit,
-                    price=take_profit_price,
-                    parent=parent_order,
-                    transmit=False,
-                    oco=parent_order,
-                    **{'goodTillCancel': True}
-                )
-                take_profit_order.ocaGroup = oca_group  # Set ocaGroup
+                    logging.info(f"Market buy order with 3% trailing stop placed for {symbol}")
 
-                # Create the trailing stop sell order
-                trailing_stop_order = self.sell(
-                    data=data,
-                    size=size,
-                    exectype=bt.Order.StopTrail,
-                    trailpercent=0.03,
-                    parent=parent_order,
-                    transmit=True,  # Transmit all orders now
-                    oco=parent_order,
-                    **{'goodTillCancel': True}
-                )
-                trailing_stop_order.ocaGroup = oca_group  # Set ocaGroup
-
-                # Submit the child orders
-                self.broker.submit(take_profit_order)
-                self.broker.submit(trailing_stop_order)
-
-                # Store the orders
-                self.order_dict[parent_order.ref] = {
-                    'main_order': parent_order,
-                    'take_profit_order': take_profit_order,
-                    'trailing_stop_order': trailing_stop_order,
-                    'data': data
-                }
-
-                logging.info(f"OCO orders placed for {symbol}, position size: {size}")
-            else:
-                logging.info(f"Not enough capital to open position for {symbol}")
-        else:
-            logging.info(f"{symbol} is already bought, skipping buy signal")
+                except Exception as e:
+                    logging.error(f"Error placing orders for {symbol}: {str(e)}")
 
 
 
@@ -412,28 +374,21 @@ class MyStrategy(bt.Strategy):
     ##=====================[CLOSE POSITION]====================##
 
     def close_position(self, data, reason):
-        """Close the position and cancel related take-profit and trailing stop orders."""
+        """Close position and cancel associated trailing stop."""
         symbol = data._name
         logging.info(f"Attempting to close position for {symbol} due to: {reason}")
 
-        try:
-            # Cancel any pending orders related to this position
-            for order_ref, order_info in list(self.order_dict.items()):
-                if order_info['data'] == data:
-                    if 'take_profit_order' in order_info and order_info['take_profit_order']:
-                        self.cancel(order_info['take_profit_order'])
-                        logging.info(f"Canceled take-profit order for {symbol}")
-                    if 'trailing_stop_order' in order_info and order_info['trailing_stop_order']:
-                        self.cancel(order_info['trailing_stop_order'])
-                        logging.info(f"Canceled trailing stop order for {symbol}")
+        # Find and cancel trailing stop first
+        for order_ref, order_info in list(self.order_dict.items()):
+            if order_info['data'] == data:
+                if 'trail_stop' in order_info and order_info['trail_stop']:
+                    self.cancel(order_info['trail_stop'])
+                    logging.info(f"Cancelled trailing stop for {symbol}")
+                del self.order_dict[order_ref]
 
-            # Close the position
-            order = self.close(data=data)
-            self.order_dict[order.ref] = order
-            logging.info(f"Sell order submitted for {symbol}, Order ID: {order.ref}")
-        except Exception as e:
-            logging.error(f"Failed to close position for {symbol}: {e}")
-
+        # Close the position
+        order = self.close(data=data)
+        logging.info(f"Closing order submitted for {symbol}")
 
 
     def stop(self):
