@@ -27,3 +27,9 @@
 2024-11-05 21:48:45,603 - ERROR - Data quality check failed for Data/PriceData\AREN.parquet.
 2024-11-05 21:49:32,790 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 26.32857142857143, End mean: 1.3142857142857143
 2024-11-05 21:49:32,790 - ERROR - Data quality check failed for Data/PriceData\CTHR.parquet.
+2024-11-06 21:48:12,921 - INFO - Starting the process...
+2024-11-06 21:51:22,666 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 46.296428571428564, End mean: 2.2970714285714284
+2024-11-06 21:51:22,666 - ERROR - Data quality check failed for Data/PriceData\MTNB.parquet.
+2024-11-07 21:47:43,769 - INFO - Starting the process...
+2024-11-07 21:52:16,013 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 11.546428571428574, End mean: 0.5663571428571429
+2024-11-07 21:52:16,013 - ERROR - Data quality check failed for Data/PriceData\SXTC.parquet.
