@@ -114,8 +114,8 @@ A comprehensive end-to-end stock market analysis, prediction, and automated trad
 
 ### Hardware
 - Recommended: 32GB+ RAM for full dataset processing
-- Multi-core CPU for parallel processing
-- SSD storage for data management
+- Multi-core CPU for parallel processing(15mins at 23 cores 5.15Ghz)
+- SSD storage for data management(aprox 5 gigs of data)
 
 ### Software
 - Python 3.8+
