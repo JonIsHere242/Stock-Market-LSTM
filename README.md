@@ -103,20 +103,12 @@ A comprehensive end-to-end stock market analysis, prediction, and automated trad
 ### Advanced Analytics
 - Genetic Programming for feature discovery
 - Asset clustering for risk management
-- Kalman filter-based trend detection
-- Custom technical indicators
-
-### Risk Management
-- Correlation-based portfolio diversification
-- Dynamic position sizing
-- Automated risk controls
-- Group-based exposure limits
-
-### System Integration
-- Complete Interactive Brokers integration
-- Real-time market data processing
+- Custom technical indicators normal/genetic
+- Complete Interactive Brokers integration (backtrader/ib_insync)
+- Real-time market data processing (tws datafeeds)
 - Automated execution pipeline
 - Portfolio synchronization
+
 
 ## Technical Requirements
 
@@ -137,9 +129,6 @@ A comprehensive end-to-end stock market analysis, prediction, and automated trad
   - ib_insync
   - pyarrow
 
-## Installation and Setup
-
-(Include installation instructions)
 
 ## Usage
 
@@ -152,11 +141,6 @@ A comprehensive end-to-end stock market analysis, prediction, and automated trad
 6. Backtest strategies with `5__NightlyBroker.py`
 7. Deploy live trading with `6__DailyBroker.py`
 
-
-
-## License
-
-meme license 
 
 ## Acknowledgments
 
