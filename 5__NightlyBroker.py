@@ -31,7 +31,8 @@ import math
 def setup_logging():
     """Set up logging configuration with detailed error handling and debugging."""
     try:
-        log_file = 'Data/logging/5__NightlyBroker.log'
+        # Use Windows-style path separators and normalize the path
+        log_file = os.path.normpath('Data\\logging\\5__NightlyBroker.log')
         log_dir = os.path.dirname(log_file)
 
         print(f"Log directory path: {log_dir}")
@@ -48,24 +49,53 @@ def setup_logging():
 
         print(f"Setting up logging to file: {log_file}")
         
-        logging.basicConfig(
-            filename=log_file,
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            datefmt='%Y-%m-%d %H:%M:%S',
-            filemode='a'  # Append mode
+        # Clear any existing handlers
+        for handler in logging.root.handlers[:]:
+            logging.root.removeHandler(handler)
+        
+        # Create a file handler
+        file_handler = logging.FileHandler(log_file, mode='a')
+        file_handler.setLevel(logging.INFO)
+        
+        # Create a console handler
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        
+        # Create a formatter
+        formatter = logging.Formatter(
+            '%(asctime)s - %(levelname)s - %(message)s',
+            datefmt='%Y-%m-%d %H:%M:%S'
         )
+        
+        # Set formatter for both handlers
+        file_handler.setFormatter(formatter)
+        console_handler.setFormatter(formatter)
+        
+        # Get the root logger
+        logger = logging.getLogger()
+        logger.setLevel(logging.INFO)
+        
+        # Add both handlers
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
         
         # Test log write
         logging.info("Logging setup completed successfully.")
+        logging.info("Testing logging configuration...")
         
         if os.path.exists(log_file):
             print(f"Log file created successfully: {log_file}")
             print(f"File size: {os.path.getsize(log_file)} bytes")
+            # Force flush the handlers
+            for handler in logger.handlers:
+                handler.flush()
         else:
             print(f"Failed to create log file: {log_file}")
 
         print("Logging setup completed. Check the log file for a test message.")
+        
+        return logger
+
     except Exception as e:
         print(f"Error setting up logging: {str(e)}")
         print(f"Error type: {type(e).__name__}")
@@ -76,7 +106,7 @@ def setup_logging():
         for root, dirs, files in os.walk('.'):
             for name in files:
                 print(os.path.join(root, name))
-
+        raise  # Re-raise the exception after printing debug info
 
 
 
@@ -173,6 +203,7 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         ('rolling_period', 8),
         ('max_group_allocation', 0.45),
         ('correlation_data', None),
+        ('lockup_days', 3),
         ('parquet_file', '_Buy_Signals.parquet'),
     )
 
@@ -189,8 +220,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.asset_groups = {}
         self.asset_correlations = {}
         self.group_allocations = {}
+
         self.total_groups = self.detect_total_groups()
-        self.correlation_data = self.params.correlation_data
+        self.correlation_df = pd.read_parquet('Correlations.parquet')
+        if 'Ticker' in self.correlation_df.columns:
+            self.correlation_df.set_index('Ticker', inplace=True)
         self.trading_data = read_trading_data()
 
         self.total_bars = 252
@@ -210,6 +244,18 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             self.inds[d]['dist_to_resistance'] = d.dist_to_resistance
             self.inds[d]['UpProbMA'] = bt.indicators.SimpleMovingAverage(d.UpProbability, period=self.p.fast_period)
 
+        self.last_trading_date = get_last_trading_date()
+        self.second_last_trading_date = get_previous_trading_day(self.last_trading_date)
+        self.positions_closed_for_signals = False
+        self.last_trading_date = get_last_trading_date()
+        self.trading_lockup_start = get_previous_trading_day(self.last_trading_date, self.p.lockup_days)
+        self.positions_cleared_for_lockup = False
+        self.trading_locked = False
+
+
+
+
+
     def next(self):
         self.day_count += 1
         self.progress_bar.update(1)
@@ -219,6 +265,27 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         if any(len(data) == 0 for data in self.datas):
             return
 
+        # Handle trading lockup period
+        if current_date >= self.trading_lockup_start:
+            if not self.positions_cleared_for_lockup:
+                logging.info(f"Entering lockup period on {current_date}. Clearing all positions.")
+                self.close_all_positions_for_lockup()
+                self.positions_cleared_for_lockup = True
+                self.trading_locked = True
+                return
+            
+            if current_date == self.last_trading_date:
+                logging.info(f"On last trading day ({current_date}). Generating final predictions.")
+                buy_candidates = self.get_buy_candidates(current_date)
+                if buy_candidates:
+                    self.save_best_buy_signals(buy_candidates)
+                return
+            
+            if self.trading_locked:
+                logging.info(f"Trading locked during pre-final period ({current_date})")
+                return
+
+        # Regular trading logic for non-lockup periods
         sell_data = [d for d in self.datas if self.getposition(d).size > 0]
         for d in sell_data:
             self.evaluate_sell_conditions(d, current_date)
@@ -228,16 +295,47 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
             if buy_candidates:
                 self.process_buy_candidates(buy_candidates, current_date)
 
-        if self.day_count == self.total_bars:
-            buy_candidates = self.get_buy_candidates(current_date)
-            if buy_candidates:
-                self.process_buy_candidates(buy_candidates, current_date)
 
 
 
 
+    def close_all_positions_for_lockup(self):
+        """Close all existing positions to prepare for the lockup period."""
+        positions_closed = False
+        for data in self.datas:
+            if self.getposition(data).size > 0:
+                self.close(data=data)
+                logging.info(f"Closing position in {data._name} for lockup period")
+                positions_closed = True
+        
+        if positions_closed:
+            self.open_positions = 0
+            self.buying_status = {}
+            self.entry_prices = {}
+            self.position_dates = {}
+            logging.info("All positions closed for lockup period")
+        else:
+            logging.info("No positions to close for lockup period")
 
 
+
+    def close_all_positions_for_signals(self):
+        """Close all existing positions to prepare for final day buy signals."""
+        positions_closed = False
+        for data in self.datas:
+            if self.getposition(data).size > 0:
+                self.close(data=data)
+                logging.info(f"Closing position in {data._name} to prepare for final day buy signals")
+                positions_closed = True
+        
+        if positions_closed:
+            self.open_positions = 0
+            self.buying_status = {}
+            self.entry_prices = {}
+            self.position_dates = {}
+            logging.info("All positions closed successfully")
+        else:
+            logging.info("No positions to close")
 
 
 
@@ -263,17 +361,34 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
 
 
     def update_group_data(self, order):
-        data = order.data
-        if hasattr(data, 'Cluster'):
-            self.asset_groups[data._name] = data.Cluster[0]
-            self.asset_correlations[data._name] = {
-                'mean_intragroup_correlation': getattr(data, 'mean_intragroup_correlation', [0])[0],
-                'diff_to_mean_group_corr': getattr(data, 'diff_to_mean_group_corr', [0])[0],
-                **{f'correlation_{i}': getattr(data, f'correlation_{i}', [0])[0] for i in range(8)}
-            }
-        else:
-            logging.warning(f"Cluster information not available for {data._name}")
-        self.update_group_allocations()
+        """
+        Update group allocation data for position management.
+        """
+        try:
+            data = order.data
+            ticker = data._name
+
+            if not hasattr(self, 'correlation_df'):
+                self.correlation_df = pd.read_parquet('Correlations.parquet')
+                if 'Ticker' in self.correlation_df.columns:
+                    self.correlation_df.set_index('Ticker', inplace=True)
+
+            if ticker in self.correlation_df.index:
+                row = self.correlation_df.loc[ticker]
+                self.asset_groups[ticker] = row.get('Cluster', None)
+                self.asset_correlations[ticker] = {
+                    'mean_correlation': row.mean(),
+                    'cluster': row.get('Cluster', None)
+                }
+            else:
+                logging.warning(f"No correlation/cluster data found for {ticker}")
+
+            self.update_group_allocations()
+
+        except Exception as e:
+            logging.error(f"Error updating group data: {str(e)}")
+
+
 
     def update_group_allocations(self):
         total_value = self.broker.getvalue()
@@ -285,23 +400,31 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                     position_value = self.getposition(data).size * data.close[0]
                     self.group_allocations[group] += position_value / total_value
 
+
+
     def handle_sell_execution(self, order):
         data = order.data
+        # Capture entry_price before it might be deleted
+        entry_price = self.entry_prices.get(data, None)
         self.open_positions -= 1
         self.buying_status[data._name] = False
         self.handle_position_closure(data, order)
         self.remove_asset_data(data)
 
-        # Check if the entry price exists for this data
-        if data in self.entry_prices:
-            is_loss = order.executed.price < self.entry_prices[data]
+        # Check if the entry price exists
+        if entry_price is not None:
+            is_loss = order.executed.price < entry_price
         else:
-            # If entry price is not found, assume it's not a loss
-            # You may want to log this occurrence for further investigation
             logging.warning(f"Entry price not found for {data._name}. Assuming no loss.")
             is_loss = False
-
         update_trade_result(data._name, is_loss)
+
+
+
+
+
+
+
 
     def handle_buy_execution(self, order):
         data = order.data
@@ -313,7 +436,6 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         self.order_list.append(order)
         self.order_cooldown[data] = self.datetime.date() + timedelta(days=1)
         self.update_group_data(order)
-        #mark_position_as_bought()
 
         position_size = order.executed.size  # Assuming you can get size from the executed order
         mark_position_as_bought(data._name, position_size)
@@ -365,15 +487,23 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                 self.can_buy_more_positions() and
                 self.is_buy_signal(data))
 
+
+
+
+
     def process_buy_candidates(self, buy_candidates, current_date):
-       if buy_candidates:
-           buy_candidates = self.sort_buy_candidates(buy_candidates)
-           self.save_best_buy_signals(buy_candidates)
-           for d, size, _ in buy_candidates:
-               if self.open_positions < self.params.max_positions:
-                   self.execute_buy(d, current_date, size)
-               else:
-                   break
+        """Process the buy candidates and execute trades"""
+        if buy_candidates:
+            buy_candidates = self.sort_buy_candidates(buy_candidates)
+            self.save_best_buy_signals(buy_candidates)  # Use the single implementation
+            for d, size, _ in buy_candidates:
+                if self.open_positions < self.params.max_positions:
+                    self.execute_buy(d, current_date, size)
+                else:
+                    break
+
+
+
 
     def calculate_position_size(self, data):
         return calculate_position_size(
@@ -385,64 +515,119 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         )
 
     def sort_buy_candidates(self, buy_candidates):
-        current_positions = [d._name for d in self.datas if self.getposition(d).size > 0]
+        """
+        Sort buy candidates by UpProbability and correlation.
+        """
         try:
+            current_positions = [d._name for d in self.datas if self.getposition(d).size > 0]
             candidates_with_correlation = []
+
             for candidate in buy_candidates:
                 try:
                     if len(candidate) == 2:
                         d, size = candidate
+                        correlation = 0
                     elif len(candidate) == 3:
-                        d, size, _ = candidate
+                        d, size, correlation = candidate
                     else:
                         logging.error(f"Unexpected candidate format: {candidate}")
                         continue
+                    
+                    # Get UpProbability value safely
+                    up_prob = d.UpProbability[0] if hasattr(d, 'UpProbability') else 0
 
-                    correlation_column = f'correlation_{size}'
-                    if correlation_column not in self.inds[d].lines:
-                        logging.error(f"Column {correlation_column} not found for {d._name}")
-                        continue
-
+                    # Calculate mean correlation with existing positions
                     correlation = self.get_mean_correlation(d._name, current_positions)
-                    candidates_with_correlation.append((d, size, correlation))
 
-                except ValueError as e:
-                    logging.error(f"Error unpacking candidate {candidate}: {e}")
+                    candidates_with_correlation.append((d, size, correlation, up_prob))
+
+                except Exception as e:
+                    logging.error(f"Error processing candidate {d._name if hasattr(d, '_name') else 'unknown'}: {str(e)}")
                     continue
                 
-            return sorted(
+            # Sort by UpProbability (highest) and correlation (lowest)
+            sorted_candidates = sorted(
                 candidates_with_correlation,
-                key=lambda x: (self.inds[x[0]]['up_prob'][0], -x[2]),
+                key=lambda x: (x[3], -x[2]),  # Sort by up_prob and negative correlation
                 reverse=True
             )
+
+            # Return in the expected format (without the up_prob used for sorting)
+            return [(d, size, corr) for d, size, corr, _ in sorted_candidates]
+
         except Exception as e:
-            logging.error(f"Error sorting buy candidates: {e}")
-            return sorted(buy_candidates, key=lambda x: self.inds[x[0]]['up_prob'][0], reverse=True)
+            logging.error(f"Error sorting buy candidates: {str(e)}")
+            # Fallback sorting just by UpProbability
+            return sorted(buy_candidates, key=lambda x: x[0].UpProbability[0], reverse=True)
+
+
+
+
+
+
+
+
+
+
+
 
     def get_mean_correlation(self, candidate_ticker, current_positions):
-        correlation_data = pd.read_parquet('Correlations.parquet')
-        if not current_positions:
-            return 0
-        candidate_data = correlation_data[correlation_data['Ticker'] == candidate_ticker]
-        if candidate_data.empty:
-            logging.warning(f"No correlation data found for ticker: {candidate_ticker}")
+        """
+        Calculate mean correlation between candidate and current positions using cluster-based correlations.
+        """
+        try:
+            if not hasattr(self, 'correlation_df'):
+                self.correlation_df = pd.read_parquet('Correlations.parquet')
+                self.correlation_df.set_index('Ticker', inplace=True)
+
+            if not current_positions:
+                return 0
+
+            if candidate_ticker not in self.correlation_df.index:
+                logging.warning(f"Ticker {candidate_ticker} not found in correlation data")
+                return 0
+
+            candidate_data = self.correlation_df.loc[candidate_ticker]
+            candidate_cluster = int(candidate_data['Cluster'])
+            candidate_diff = candidate_data['diff_to_mean_group_corr']
+
+            correlations = []
+
+            for pos in current_positions:
+                if pos not in self.correlation_df.index:
+                    logging.warning(f"Position {pos} not found in correlation data")
+                    continue
+                
+                pos_data = self.correlation_df.loc[pos]
+                pos_cluster = int(pos_data['Cluster'])
+                pos_diff = pos_data['diff_to_mean_group_corr']
+
+                # Get mean correlation between the clusters
+                cluster_corr_column = f'correlation_{pos_cluster}'
+                if cluster_corr_column in candidate_data:
+                    cluster_corr = candidate_data[cluster_corr_column]
+                else:
+                    logging.warning(f"No correlation data for clusters {candidate_cluster} and {pos_cluster}")
+                    cluster_corr = 0  # Default to 0 if data is missing
+
+                # Adjust the cluster correlation using the tickers' deviations from their cluster means
+                adjusted_corr = cluster_corr + (candidate_diff + pos_diff) / 2
+
+                correlations.append(adjusted_corr)
+
+            return np.mean(correlations) if correlations else 0
+
+        except Exception as e:
+            logging.error(f"Error calculating correlations: {str(e)}")
             return 0
 
-        correlations = []
-        for pos in current_positions:
-            pos_data = correlation_data[correlation_data['Ticker'] == pos]
-            if pos_data.empty:
-                logging.warning(f"No correlation data found for position: {pos}")
-                continue
-            
-            correlation_column = f'correlation_{pos_data.index[0]}'
-            if correlation_column not in candidate_data.columns:
-                logging.warning(f"Column {correlation_column} not found for {candidate_ticker}")
-                continue
-            
-            correlations.append(candidate_data.iloc[0][correlation_column])
 
-        return sum(correlations) / len(correlations) if correlations else 0
+
+
+
+
+
+
 
     def should_skip_buying(self, data, current_date):
         return (self.buying_status.get(data._name, False) or
@@ -461,6 +646,11 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
                        self.params.stop_loss_percent, self.params.take_profit_percent,
                        self.params.position_timeout, self.params.expected_profit_per_day_percentage):
             self.close_position(data, "Sell condition met")
+
+
+
+
+
 
     def get_high_up_prob(self, data):
         return np.percentile(self.inds[data]['up_prob'], 90)
@@ -511,45 +701,91 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         logging.info(f'Closing {data._name} due to {reason}')
         self.close(data=data)
 
+
+
+
     def save_best_buy_signals(self, buy_candidates):
-       top_buy_candidates = buy_candidates[:3]
-       for d, size, correlation in top_buy_candidates:
-           self.save_buy_signal(d, self.datetime.date())
-
-
-    def save_buy_signal(self, data, current_date):
-        next_trading_date = get_next_trading_day(current_date)
-        current_irl_date = datetime.now().date()
-        days_diff = (current_irl_date - current_date).days
-        if days_diff <= 5:
-            symbol = data._name
-            price = data.close[0]
-
-            # Read existing data
+        """Generate buy signals for the best candidates"""
+        current_date = self.datetime.date()
+        next_trading_day = get_next_trading_day(current_date)
+        
+        if current_date == self.second_last_trading_date:
             df = read_trading_data()
-
-            # Update or add new signal
-            new_signal = pd.DataFrame({
-                'Symbol': [symbol],
-                'LastBuySignalDate': [next_trading_date],  # Use next trading date
-                'LastBuySignalPrice': [price],
-                'IsCurrentlyBought': [False],
-                'ConsecutiveLosses': [0],
-                'LastTradedDate': [None],
-                'UpProbability': [data.UpProbability[0]]
-            })
-
-            # Remove existing entry for this symbol (if any)
-            df = df[df['Symbol'] != symbol]
-
-            # Append new signal
-            df = pd.concat([df, new_signal], ignore_index=True)
-
-            # Write updated data back to Parquet file
+            df['IsCurrentlyBought'] = False
+            df['LastTradedDate'] = None
             write_trading_data(df)
-
-            print(f"Buy signal saved for {symbol} at price {price} on {next_trading_date}", flush=True)
-            logging.info(f"Buy signal saved for {symbol} at price {price} on {next_trading_date}")
+            logging.info(f"Cleared positions on {current_date}")
+        
+        new_signals = []
+        top_buy_candidates = buy_candidates[:4]
+        
+        for d, size, correlation in top_buy_candidates:
+            ##round d.close[0] to 5 decimal places
+            d.close[0] = round(d.close[0], 3)
+            new_signals.append({
+                'Symbol': str(d._name),
+                'LastBuySignalDate': pd.Timestamp(next_trading_day),
+                'LastBuySignalPrice': float(d.close[0]),
+                'IsCurrentlyBought': False,
+                'ConsecutiveLosses': 0,
+                'LastTradedDate': pd.NaT,
+                'UpProbability': float(d.UpProbability[0]),
+                'LastSellPrice': pd.NA,
+                'PositionSize': pd.NA
+            })
+            logging.info(f"Prepared buy signal for {d._name} at {d.close[0]} for {next_trading_day}")
+        
+        if new_signals:
+            # Read existing data and ensure proper types
+            df = read_trading_data()
+            
+            # Create schema for both DataFrames
+            schema = {
+                'Symbol': 'string',
+                'LastBuySignalDate': 'datetime64[ns]',
+                'LastBuySignalPrice': 'float64',
+                'IsCurrentlyBought': 'bool',
+                'ConsecutiveLosses': 'int64',
+                'LastTradedDate': 'datetime64[ns]',
+                'UpProbability': 'float64',
+                'LastSellPrice': pd.Float64Dtype(),
+                'PositionSize': pd.Float64Dtype()
+            }
+            
+            # Create new signals DataFrame with schema
+            new_signals_df = pd.DataFrame(new_signals)
+            
+            # Ensure both DataFrames have the same schema
+            for col, dtype in schema.items():
+                if col in new_signals_df.columns:
+                    new_signals_df[col] = new_signals_df[col].astype(dtype)
+                if col in df.columns:
+                    df[col] = df[col].astype(dtype)
+            
+            # Remove existing entries for symbols we're about to add
+            symbols_to_add = [signal['Symbol'] for signal in new_signals]
+            df = df[~df['Symbol'].isin(symbols_to_add)]
+            
+            # Ensure columns match exactly
+            for col in new_signals_df.columns:
+                if col not in df.columns:
+                    df[col] = pd.Series(dtype=new_signals_df[col].dtype)
+            for col in df.columns:
+                if col not in new_signals_df.columns:
+                    new_signals_df[col] = pd.Series(dtype=df[col].dtype)
+            
+            # Sort columns to ensure they match
+            df = df[sorted(df.columns)]
+            new_signals_df = new_signals_df[sorted(new_signals_df.columns)]
+            
+            # Now concatenate with matched schemas
+            with pd.option_context('mode.chained_assignment', None):
+                df = pd.concat([df, new_signals_df], ignore_index=True, verify_integrity=True)
+            
+            # Write updated data
+            write_trading_data(df)
+            
+            logging.info(f"Successfully wrote {len(new_signals)} new buy signals")
 
 
 
@@ -593,33 +829,48 @@ class MovingAverageCrossoverStrategy(bt.Strategy):
         logging.info(f'Portfolio Value: {self.broker.getvalue():.2f}')
         logging.info(f'Cash: {self.broker.getcash():.2f}')
 
+
+
+
+
+
     def stop(self):
-
-
-        ##get the number of data feeds that have the day 2024-09-20 here expressed as a percentage 
-        ##of the total number of data feeds
-
         DatafeedCounter = 0
-        ##get the len of the number of data feeds
         lenDataFeeds = len(self.datas)
+        target_date = datetime(2024, 11, 29).date()
+
+        # Enhanced logging for data feed analysis
+        date_counts = {}
         for d in self.datas:
-            if self.datetime.date() == datetime(2024, 9, 20).date():
+            last_date = d.datetime.date()
+            date_counts[last_date] = date_counts.get(last_date, 0) + 1
+            if last_date == target_date:
                 DatafeedCounter += 1
-                
-        
-        ##percentage of files that have the most up to date data
+
+        # Log the distribution of end dates
+        logging.info("Data feed end date distribution:")
+        for date, count in sorted(date_counts.items()):
+            logging.info(f"{date}: {count} feeds ({(count/lenDataFeeds)*100:.2f}%)")
+
         PercentageDataFeeds = (DatafeedCounter / lenDataFeeds) * 100
-        print(f"Percentage of data feeds with the most up to date data: {PercentageDataFeeds:.2f}%")
-        print(f"Strategy stopped. Last processed date: {self.datetime.date()}")
-        print(f"Processed {self.day_count} days out of {self.total_bars} expected")
+        logging.info(f"Percentage of data feeds with target date {target_date}: {PercentageDataFeeds:.2f}%")
+        logging.info(f"Strategy stopped. Last processed date: {self.datetime.date()}")
+        logging.info(f"Processed {self.day_count} days out of {self.total_bars} expected")
 
         if self.day_count < self.total_bars:
-            print(f"Warning: Strategy stopped early. Processed {self.day_count}/{self.total_bars} days.")
+            logging.info(f"Strategy stopped early. Processed {self.day_count}/{self.total_bars} days")
+            logging.info("Analyzing early stop reason...")
+
+            # Check for data gaps
+            for d in self.datas:
+                if len(d) < self.day_count:
+                    logging.info(f"Data feed {d._name} has only {len(d)} bars")
+
+
+
+
 
         self.log_portfolio_state()
-        logging.info("Strategy stopped. Final portfolio state logged.")
-        logging.info(f"Processed {self.day_count} days out of {self.total_bars} expected")
-        
         if PercentageDataFeeds == 100:
             self.progress_bar.close()
 
@@ -761,8 +1012,21 @@ class FixedCommissionScheme(bt.CommInfoBase):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 def main():
-    setup_logging()
+    logger = setup_logging()
+    logger.info("Starting main execution")
     timer = time.time()
     cerebro = bt.Cerebro(maxcpus=None)
     cerebro = bt.Cerebro(cheat_on_open=False)
@@ -772,6 +1036,19 @@ def main():
     InitialStartingCash = 5000
     cerebro.broker.set_cash(InitialStartingCash)
     args = arg_parser()
+
+
+    ##read the buy signals parquet file    _Buy_Signals.parquet
+    buysignalparquet = pd.read_parquet('_Buy_Signals.parquet')
+    ##remove all the rows but keep the headers
+    buysignalparquet = buysignalparquet[0:0]
+    ##write the empty dataframe back to the parquet file
+    buysignalparquet.to_parquet('_Buy_Signals.parquet')
+
+
+
+
+
 
     if args.BrokerTest > 0:
         file_paths = select_random_files('Data/RFpredictions', args.BrokerTest)
@@ -867,7 +1144,7 @@ def main():
     won_max = trade_stats.get('won', {}).get('pnl', {}).get('max', 0)
     lost_max = trade_stats.get('lost', {}).get('pnl', {}).get('max', 0)
     net_total = trade_stats.get('pnl', {}).get('net', {}).get('total', 0)
-
+    prrofit_factor = trade_stats.get('won', {}).get('pnl', {}).get('total', 0) / abs(trade_stats.get('lost', {}).get('pnl', {}).get('total', 0))
     PercentGain = ((cerebro.broker.getvalue() / InitialStartingCash) * 100) - 100
     if won_total != 0 and lost_total != 0 and total_closed > 10:
         logging.info(f"====================== New Entry ===================")
@@ -876,7 +1153,7 @@ def main():
         logging.info(f"Profitable Trades: {trade_stats['won']['total']}")
         logging.info(f"Sharpe Ratio: {sharpe_ratio['sharperatio']:.2f}")
         logging.info(f"SQN: {sqn_value:.2f}")
-        logging.info(f"Profit Factor: {lost_total / won_total:.2f}")
+        logging.info(f"Profit Factor: {prrofit_factor:.2f}")
         logging.info(f"Average Trade: {net_total / total_closed:.2f}")
         logging.info(f"Average Winning Trade: {won_avg:.2f}")
         logging.info(f"Average Losing Trade: {lost_avg:.2f}")

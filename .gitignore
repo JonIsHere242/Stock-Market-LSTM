@@ -11,7 +11,7 @@ __Trading_Functions.log
 __BrokerLog.log
 real_trade_data.parquet
 data_gpr_export_interpolated.parquet
+API_Key.txt
 
-
-
+run_daily_broker.ps1
 bipitypobity.log

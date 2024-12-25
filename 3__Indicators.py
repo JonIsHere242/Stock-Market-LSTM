@@ -1,7 +1,6 @@
 #!/root/root/miniconda4/envs/tf/bin/python
 import os
 import pandas as pd
-from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 import time
 import scipy.stats as stats
@@ -14,7 +13,6 @@ from scipy.signal import find_peaks
 from scipy.stats import gaussian_kde, skew, kurtosis
 from scipy.signal import argrelextrema
 from concurrent.futures import ProcessPoolExecutor, as_completed
-import numba as nb
 from numba import njit, jit
 from scipy.stats import entropy
 from tqdm import tqdm
@@ -824,14 +822,7 @@ def safe_log(x, epsilon=1e-14):
     return np.log(np.maximum(x, epsilon))
 
 
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
-##====================================[GENETIC INDICATORS]====================================##
+
 ##====================================[GENETIC INDICATORS]====================================##
 ##====================================[GENETIC INDICATORS]====================================##
 ##====================================[GENETIC INDICATORS]====================================##
@@ -922,6 +913,84 @@ def calculate_genetic_indicators(df):
 
 
 
+def calculate_kalman_support_resistance(df, window=140):
+    """Calculate Kalman filter and support/resistance levels in a non-fragmented way"""
+    try:
+        # Initialize Kalman filter
+        kf = KalmanFilter(
+            transition_matrices=[1],
+            observation_matrices=[1],
+            initial_state_mean=df['Close'].values[0],
+            initial_state_covariance=1,
+            observation_covariance=1,
+            transition_covariance=.01
+        )
+        
+        # Calculate all values first
+        kalman_values = kf.filter(df['Close'].values)[0].flatten()  # Flatten the output array
+        
+        # Find extrema indices
+        minima_idx = argrelextrema(kalman_values, np.less_equal, order=window)[0]
+        maxima_idx = argrelextrema(kalman_values, np.greater_equal, order=window)[0]
+        
+        # Create arrays of NaN with same length as df
+        minima_values = np.full(len(df), np.nan)
+        maxima_values = np.full(len(df), np.nan)
+        
+        # Fill in the extrema values safely
+        if len(minima_idx) > 0:
+            minima_values[minima_idx] = kalman_values[minima_idx]
+        if len(maxima_idx) > 0:
+            maxima_values[maxima_idx] = kalman_values[maxima_idx]
+        
+        # Forward fill the values
+        minima_values = pd.Series(minima_values).ffill().values
+        maxima_values = pd.Series(maxima_values).ffill().values
+        
+        # Calculate support and resistance percentages safely
+        with np.errstate(divide='ignore', invalid='ignore'):
+            support_pct = np.where(
+                minima_values > 0,
+                (df['Close'].values - minima_values) / minima_values * 100,
+                np.nan
+            )
+            resistance_pct = np.where(
+                df['Close'].values > 0,
+                (maxima_values - df['Close'].values) / df['Close'].values * 100,
+                np.nan
+            )
+        
+        # Handle conversion window
+        conversion_window = 5
+        for i in range(conversion_window, len(df)):
+            if all(kalman_values[i-conversion_window:i+1] > maxima_values[i]):
+                minima_values[i] = maxima_values[i]
+                maxima_values[i] = np.nan
+            if all(kalman_values[i-conversion_window:i+1] < minima_values[i]):
+                maxima_values[i] = minima_values[i]
+                minima_values[i] = np.nan
+        
+        # Create new DataFrame with the calculated values
+        new_columns = {
+            'Kalman': kalman_values,
+            'minima': minima_values,
+            'maxima': maxima_values,
+            'Distance to Support (%)': support_pct,
+            'Distance to Resistance (%)': resistance_pct
+        }
+        
+        return pd.DataFrame(new_columns, index=df.index)
+    
+    except Exception as e:
+        logging.error(f"Error in calculate_kalman_support_resistance: {str(e)}")
+        # Return empty DataFrame with expected columns if calculation fails
+        return pd.DataFrame({
+            'Kalman': np.full(len(df), np.nan),
+            'minima': np.full(len(df), np.nan),
+            'maxima': np.full(len(df), np.nan),
+            'Distance to Support (%)': np.full(len(df), np.nan),
+            'Distance to Resistance (%)': np.full(len(df), np.nan)
+        }, index=df.index)
 
 
 
@@ -930,10 +999,42 @@ def calculate_genetic_indicators(df):
 
 
 
+def calculate_rolling_indicators(df, pct_change_close, rolling_14, rolling_20):
+    """Calculate all rolling and percentage-based indicators at once"""
+    new_columns = {
+        'percent_change_Close': pct_change_close,
+        'pct_change_std': rolling_20.std(),
+        'percent_change_Close_lag_1': pct_change_close.shift(1),
+        'percent_change_Close_lag_3': pct_change_close.shift(3),
+        'percent_change_Close_lag_5': pct_change_close.shift(5),
+        'percent_change_Close_lag_10': pct_change_close.shift(10),
+        'pct_change_std_rolling': rolling_20.mean(),
+    }
 
+    # Abnormal percentage change
+    threshold_multiplier = 0.65
+    abnormal_pct_change_threshold = rolling_20.mean() + threshold_multiplier * new_columns['pct_change_std']
+    new_columns['days_since_abnormal_pct_change'] = (pct_change_close > abnormal_pct_change_threshold).cumsum()
 
+    # Direction flipper calculations
+    direction_flipper = (pct_change_close > 0).astype(int)
+    new_columns['direction_flipper_count5'] = direction_flipper.rolling(window=5).sum()
+    new_columns['direction_flipper_count_10'] = direction_flipper.rolling(window=10).sum()
+    new_columns['direction_flipper_count_14'] = direction_flipper.rolling(window=14).sum()
 
+    # Keltner Channel calculations
+    keltner_central = df['Close'].ewm(span=20).mean()
+    keltner_range = df['ATR'] * 1.5
+    new_columns['KC_UPPER%'] = ((keltner_central + keltner_range) - df['Close']) / df['Close'] * 100
+    new_columns['KC_LOWER%'] = (df['Close'] - (keltner_central - keltner_range)) / df['Close'] * 100
 
+    # VWAP divergence
+    typical_price = (df['High'] + df['Low'] + df['Close']) / 3
+    vwap = (typical_price * df['Volume']).cumsum() / df['Volume'].cumsum()
+    new_columns['VWAP_Divergence'] = df['Close'] - vwap
+    new_columns['EFI'] = df['Close'].diff() * df['Volume']
+
+    return pd.DataFrame(new_columns, index=df.index)
 
 
 
@@ -968,10 +1069,12 @@ def indicators(df):
     delta = df['Close'].diff()
     gain = (delta.where(delta > 0, 0))
     loss = (-delta.where(delta < 0, 0))
-    avg_gain = gain.rolling(window=14, min_periods=1).mean() # min_periods=1 makes sure we have at least one value
+    avg_gain = gain.rolling(window=14, min_periods=1).mean() 
     avg_loss = loss.rolling(window=14, min_periods=1).mean()
     rs = avg_gain / avg_loss
     df['RSI'] = 100 - (100 / (1 + rs))
+    
+    # Calculate all other indicators
     df = calculate_genetic_indicators(df)
     calculate_apz(df)
     df = calculate_parabolic_SAR(df)
@@ -983,7 +1086,6 @@ def indicators(df):
     df = calculate_nvi(df)
     df = calculate_emv(df)
     df = VolumeADO(df)
-    #df = calculate_ema_volume_change(df)
 
     close_shift_1 = close.shift(1)
     true_range = np.maximum(high - low, np.maximum(np.abs(high - close_shift_1), np.abs(close_shift_1 - low)))
@@ -994,17 +1096,16 @@ def indicators(df):
     df['ATR%'] = (df['ATR'] / close) * 100
     df['ATR%_change'] = df['ATR%'].pct_change()
     df = AtrVolume(df)
+
+    # Moving averages
     df['200ma'] = close.rolling(window=200).mean()
     df['14ma'] = close.rolling(window=14).mean()
     df['14ma%'] = ((close - df['14ma']) / df['14ma']) * 100
     df['200ma%'] = ((close - df['200ma']) / df['200ma']) * 100
-
-
     df['SMA_200'] = close.rolling(window=200).mean()
     df['SMA_14'] = close.rolling(window=14).mean()
     df['std_14'] = close.rolling(window=14).std()
     df['Std_Devs_from_SMA'] = (df['SMA_200'] - df['SMA_14']) / df['std_14']
-
     df['14ma-200ma'] = df['14ma'] - df['200ma']
     df['14ma%_change'] = df['14ma%'].pct_change()
     df['14ma%_count'] = df['14ma%'].gt(0).rolling(window=14).sum()
@@ -1019,42 +1120,36 @@ def indicators(df):
     df['new_high'] = (close == close.cummax())
     df['days_since_high'] = (~df['new_high']).cumsum() - (~df['new_high']).cumsum().where(df['new_high']).ffill().fillna(0)
     df['percent_range'] = (high - low) / close * 100
+
+    # VWAP calculations
     typical_price = (high + low + close) / 3
     df['VWAP'] = (typical_price * volume).rolling(window=14).sum() / volume.rolling(window=14).sum()
     df['VWAP_std14'] = df['VWAP'].rolling(window=14).std()
     df['VWAP_std200'] = df['VWAP'].rolling(window=20).std()
     df['VWAP%'] = ((close - df['VWAP']) / df['VWAP']) * 100
     df['VWAP%_from_high'] = ((df['VWAP'] - close.cummax()) / close.cummax()) * 100
+    
+    # OBV
     obv_condition = df['Close'] > close_shift_1
     df['OBV'] = np.where(obv_condition, volume, -volume).cumsum()
 
-    # Start of Weighted Close Price Change Velocity
+    # Weighted Close Price Change Velocity
     window = 10
-    price_change = close.diff()
     price_change = close.diff().fillna(0)
     weights = np.linspace(1, 0, window)
     weights /= np.sum(weights)
     weighted_velocity = price_change.rolling(window=window).apply(lambda x: np.dot(x, weights), raw=True)
     df['Weighted_Close_Change_Velocity'] = weighted_velocity
-    # End of Weighted Close Price Change Velocity
-    pct_change_close = close.pct_change()
 
+    pct_change_close = close.pct_change()
     rolling_20 = df['Close'].rolling(window=20)
     rolling_14 = df['Close'].rolling(window=14)
 
-    df['percent_change_Close'] = pct_change_close
-    df['pct_change_std'] = rolling_20.std()
+    # Calculate all rolling indicators at once
+    rolling_indicators = calculate_rolling_indicators(df, pct_change_close, rolling_14, rolling_20)
+    df = pd.concat([df, rolling_indicators], axis=1)
 
-    # Replacing loop for shifts with direct assignments
-    df['percent_change_Close_lag_1'] = pct_change_close.shift(1)  # Lag by 1 period
-    df['percent_change_Close_lag_3'] = pct_change_close.shift(3)  # Lag by 3 periods
-    df['percent_change_Close_lag_5'] = pct_change_close.shift(5)  # Lag by 5 periods
-    df['percent_change_Close_lag_10'] = pct_change_close.shift(10)  # Lag by 10 periods
-
-    # Merged rolling std calculations
-    df['pct_change_std_rolling'] = rolling_14.mean()
-    df['pct_change_std_rolling'] = rolling_20.mean()
-
+    # Abnormal percentage change calculation
     threshold_multiplier = 0.65
     abnormal_pct_change_threshold = rolling_20.mean() + threshold_multiplier * df['pct_change_std']
     df['days_since_abnormal_pct_change'] = (pct_change_close > abnormal_pct_change_threshold).cumsum()
@@ -1063,97 +1158,66 @@ def indicators(df):
     typical_price = (df['High'] + df['Low'] + df['Close']) / 3
     vwap = (typical_price * df['Volume']).cumsum() / df['Volume'].cumsum()
     df['VWAP_Divergence'] = df['Close'] - vwap
-
-    # RSI Calculation
-    delta = df['Close'].diff()
-    gain = np.where(delta > 0, delta, 0)
-    loss = np.where(delta < 0, -delta, 0)
     df['EFI'] = df['Close'].diff() * df['Volume']
 
+    # Direction flipper calculations
     df['direction_flipper'] = (pct_change_close > 0).astype(int)
     df['direction_flipper_count5'] = df['direction_flipper'].rolling(window=5).sum()
     df['direction_flipper_count_10'] = df['direction_flipper'].rolling(window=10).sum()
     df['direction_flipper_count_14'] = df['direction_flipper'].rolling(window=14).sum()
-    ##drop the direction flipper too correlated
     df = df.drop(columns=['direction_flipper'])
 
-    # ATR calculation streamlined
+    # ATR and Keltner Channels
     df['ATR'] = rolling_14.apply(lambda x: np.mean(np.abs(np.diff(x))))
     keltner_central = df['Close'].ewm(span=20).mean()
     keltner_range = df['ATR'] * 1.5
     df['KC_UPPER%'] = ((keltner_central + keltner_range) - df['Close']) / df['Close'] * 100
     df['KC_LOWER%'] = (df['Close'] - (keltner_central - keltner_range)) / df['Close'] * 100
 
-    kf = KalmanFilter(transition_matrices=[1],
-                      observation_matrices=[1],
-                      initial_state_mean=df['Close'].values[0],
-                      initial_state_covariance=1,
-                      observation_covariance=1,
-                      transition_covariance=.01)
-    df['Kalman'] = kf.filter(df['Close'].values)[0]
+    # Calculate Kalman filter and support/resistance using the new function
+    kalman_df = calculate_kalman_support_resistance(df)
+    df = pd.concat([df, kalman_df], axis=1)
 
-    window = 140
-    df['minima'] = df.iloc[argrelextrema(df['Kalman'].values, np.less_equal, order=window)[0]]['Kalman']
-    df['maxima'] = df.iloc[argrelextrema(df['Kalman'].values, np.greater_equal, order=window)[0]]['Kalman']
-    df['minima'] = df['minima'].ffill()
-    df['maxima'] = df['maxima'].ffill()
+    # Additional Kalman calculations
+    epsilon = 0.001
+    df['Perturbed_Kalman'] = df['Kalman'] * (1 + epsilon)
+    df['Divergence'] = np.abs(df['Perturbed_Kalman'] - df['Kalman'])
+    df['Log_Divergence'] = np.log(df['Divergence'] + np.finfo(float).eps)
+    df['Lyapunov_Exponent'] = df['Log_Divergence'].diff() / np.log(1 + epsilon)
+    window_size = 14
+    df['Lyapunov_Exponent_MA'] = df['Lyapunov_Exponent'].rolling(window=window_size).mean()
 
-    conversion_window = 5
-    # Ensure index handling within bounds and prevent KeyError
-    for index in range(conversion_window, len(df)):
-        # Using df.iloc for position-based indexing which is generally safer within loops
-        if (df['Kalman'].iloc[index-conversion_window:index+1] > df['maxima'].iloc[index]).all():
-            df.at[index, 'minima'] = df.at[index, 'maxima']
-            df.at[index, 'maxima'] = np.nan  # Clear the old maxima
-        if (df['Kalman'].iloc[index-conversion_window:index+1] < df['minima'].iloc[index]).all():
-            df.at[index, 'maxima'] = df.at[index, 'minima']
-            df.at[index, 'minima'] = np.nan  # Clear the old minima
-    df['Distance to Support (%)'] = (df['Close'] - df['minima']) / df['minima'] * 100
-    df['Distance to Resistance (%)'] = (df['maxima'] - df['Close']) / df['Close'] * 100
-    df_temp = pd.DataFrame(index=df.index)
-    df_temp['kalman_diff'] = (df['Kalman'] - df['Close'].rolling(window=200).mean()) / df['Close'].rolling(window=200).mean() * 100
-    df = pd.concat([df, df_temp], axis=1)
-
-    df['Distance to Support (%)'] = (df['Close'] - df['minima'].shift(1)) / df['minima'].shift(1) * 100
-    df['Distance to Resistance (%)'] = (df['maxima'].shift(1) - df['Close']) / df['Close'] * 100
+    # Calculate MA and percentage difference
     df['MA_200'] = df['Close'].rolling(window=200, min_periods=200).mean()
     df['Perc_Diff'] = (df['Kalman'] - df['MA_200']) / df['MA_200'] * 100
 
-    # Drop initial rows where 'Perc_Diff' is NaN
-    df = df[df['Perc_Diff'].notna()].copy()
-
-    # Adjust rolling calculations to avoid NaNs
-    df['skew'] = df['Perc_Diff'].rolling(window=200, min_periods=200).apply(lambda x: skew(x), raw=True)
-    df['kurtosis'] = df['Perc_Diff'].rolling(window=200, min_periods=200).apply(lambda x: kurtosis(x), raw=True)
-    df['mean'] = df['Perc_Diff'].rolling(window=200, min_periods=200).mean()
-    df['std'] = df['Perc_Diff'].rolling(window=200, min_periods=200).std()
-
-    
-    epsilon = 0.001  # Small perturbation factor
-    df['Perturbed_Kalman'] = df['Kalman'] * (1 + epsilon)
-    df['Divergence'] = np.abs(df['Perturbed_Kalman'] - df['Kalman'])
-    df['Log_Divergence'] = np.log(df['Divergence'] + np.finfo(float).eps)  # Adding eps to handle log(0)
-    df['Lyapunov_Exponent'] = df['Log_Divergence'].diff() / np.log(1 + epsilon)
-    window_size = 14  # Adjust window size as needed
-    df['Lyapunov_Exponent_MA'] = df['Lyapunov_Exponent'].rolling(window=window_size).mean()
-
+    # Additional calculations
     df = add_kalman_and_entropy_metrics(df, window_size=70, bins=30)
     df = add_kalman_and_recurrence_metrics(df, epsilon_multiplier=0.01, window_size=70)
     df = add_complexity_metrics(df)
     df = calculate_poc_and_metrics(df, window_size=70)
     df = calculate_percentage_difference_from_ewma(df, 'Close', [14, 151, 269], adjust=False)
 
+    # Mean reversion scores
     windows = [28, 90, 151]
     std_multipliers = [1, 2, 3]
     df = add_multiple_mean_reversion_z_scores(df, 'Smoothed_Close', windows, std_multipliers)
 
-    columns_to_drop = ['Adj Close','ATZ_Upper','ATZ_Lower','VWAP', '200DAY_ATR-', '200DAY_ATR', 'ATR', 'OBV', '200ma', '14ma']
+    # Final cleanup
+    columns_to_drop = ['Adj Close', 'ATZ_Upper', 'ATZ_Lower', 'VWAP', '200DAY_ATR-', '200DAY_ATR', 'ATR', 'OBV', '200ma', '14ma']
     columns_to_drop = [col for col in columns_to_drop if col in df.columns]
-    df = interpolate_columns(df, max_gap_fill=50)  # updated argument name
+    df = interpolate_columns(df, max_gap_fill=50)
     df = df.iloc[200:]
-    df = df.drop(columns_to_drop, axis=1)
+    df = df.drop(columns=columns_to_drop, axis=1)
     df = df.round(8)
+
     return df
+
+
+
+
+
+
 
 
 ##===========================(File Processing)===========================##
@@ -1219,9 +1283,19 @@ def DataQualityCheck(df, all_dfs=None):
 
 
 
-def process_file(file_path, output_dir):
-    try:
 
+
+
+
+
+
+
+
+
+
+def process_file(file_path, output_dir):
+    """Process a single parquet file and return success status."""
+    try:
         file_path.endswith('.parquet')
         df = pd.read_parquet(file_path)
         if 'Date' not in df.columns:
@@ -1229,7 +1303,7 @@ def process_file(file_path, output_dir):
                 df = df.reset_index()
             else:
                 logging.error("The 'Date' column is missing from the DataFrame.")
-                return None
+                return False
 
         if df['Date'].dtype != 'datetime64[ns]':
             logging.info("Converting 'Date' column to datetime.")
@@ -1237,21 +1311,25 @@ def process_file(file_path, output_dir):
     
         if not validate_columns(df, ['Close', 'High', 'Low', 'Volume']):
             logging.error(f"File {file_path} does not contain all required columns.")
-            return
+            return False
 
         df = DataQualityCheck(df)
         if df is None:
             logging.error(f"Data quality check failed for {file_path}.")
-            return
+            return False
 
         df = indicators(df)
         df = clean_and_interpolate_data(df)
         SaveData(df, file_path, output_dir)
+        return True  # Explicitly return True on success
 
     except Exception as e:
         logging.error(f"Error processing {file_path}: {str(e)}")
         traceback_info = traceback.format_exc()
         logging.error(traceback_info)
+        return False
+    
+    
 
 def SaveData(df, file_path, output_dir):
     file_name = os.path.basename(file_path)
@@ -1271,6 +1349,21 @@ def clear_output_directory(output_dir):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+##===========================(Main Function)===========================##
+##===========================(Main Function)===========================##
+##===========================(Main Function)===========================##
 ##===========================(Main Function)===========================##
 
 def process_file_wrapper(file_path):
@@ -1280,18 +1373,52 @@ def process_file_wrapper(file_path):
 def process_data_files(run_percent):
     print(f"Processing {run_percent}% of files from {CONFIG['input_directory']}")
     StartTimer = time.time()
+    
     os.makedirs(CONFIG['output_directory'], exist_ok=True)
     clear_output_directory(CONFIG['output_directory'])
 
-    file_paths = [os.path.join(CONFIG['input_directory'], f) for f in os.listdir(CONFIG['input_directory']) if f.endswith('.parquet')]
+    file_paths = [os.path.join(CONFIG['input_directory'], f) 
+                 for f in os.listdir(CONFIG['input_directory']) 
+                 if f.endswith('.parquet')]
+    
     files_to_process = file_paths[:int(len(file_paths) * (run_percent / 100))]
-    with ProcessPoolExecutor() as executor:
-        futures = [executor.submit(process_file_wrapper, file_path) for file_path in files_to_process]
-        for _ in tqdm(as_completed(futures), total=len(futures), desc="Processing files"):
-            pass
+    num_workers = os.cpu_count()
+    
+    completed = 0
+    failed = 0
+    
+    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+        futures = [executor.submit(process_file_wrapper, file_path) 
+                  for file_path in files_to_process]
+        
+        with tqdm(total=len(futures), desc="Processing files") as pbar:
+            for future in as_completed(futures):
+                try:
+                    if future.result():  # This will now be True/False
+                        completed += 1
+                    else:
+                        failed += 1
+                except Exception:
+                    failed += 1
+                finally:
+                    pbar.update(1)
+                    pbar.set_description(
+                        f"Processing files (Success: {completed}, Failed: {failed})"
+                    )
 
-    print(f"Processed {len(files_to_process)} files in {time.time() - StartTimer:.2f} seconds")
-    print(f'Averaging {round((time.time() - StartTimer) / len(files_to_process), 2)} seconds per file.')
+    total_time = time.time() - StartTimer
+    files_per_second = len(files_to_process) / total_time
+    
+    print(f"\nProcessed {len(files_to_process)} files in {total_time:.2f} seconds")
+    print(f"Files per second: {files_per_second:.2f}")
+    print(f'Average time per file: {round(total_time / len(files_to_process), 2)} seconds')
+    print(f'Successfully processed: {completed}')
+    print(f'Failed to process: {failed}')
+
+
+
+
+
 
 if __name__ == "__main__":
     logger = setup_logging()

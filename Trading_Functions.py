@@ -1,6 +1,6 @@
 import os
 import logging
-
+import warnings
 
 
 #time headaches
@@ -48,18 +48,10 @@ def read_trading_data(is_live=False):
     file = get_parquet_file(is_live)
     if not os.path.exists(file):
         initialize_parquet(is_live)
-        return pd.DataFrame(columns=COLUMNS)
+        return ensure_trading_data_dtypes(pd.DataFrame(columns=COLUMNS))
     
-    # Read the parquet file
     df = pd.read_parquet(file)
-    
-    # Ensure date columns are converted to datetime64[ns]
-    date_columns = ['LastBuySignalDate', 'LastTradedDate']
-    for col in date_columns:
-        if col in df.columns:
-            df[col] = pd.to_datetime(df[col], errors='coerce')  # Safely convert to datetime64
-    
-    return df
+    return ensure_trading_data_dtypes(df)
 
 
 
@@ -67,16 +59,30 @@ def read_trading_data(is_live=False):
 
  
 
+
 def write_trading_data(df, is_live=False):
-    # Ensure date columns are datetime64[ns]
+    """Write trading data to parquet file with proper handling of data types and NA values."""
+    # Define the date columns
     date_columns = ['LastBuySignalDate', 'LastTradedDate']
+    
+    # Create a copy to avoid modifying the original
+    df = df.copy()
+    
+    # Convert date columns to datetime
     for col in date_columns:
         if col in df.columns:
-            df[col] = pd.to_datetime(df[col], errors='coerce')  # Safely convert to datetime64[ns]
+            df[col] = pd.to_datetime(df[col], errors='coerce')
     
-    # Replace NaT with None for Parquet compatibility
-    for col in df.select_dtypes(include=['datetime64[ns]']).columns:
-        df[col] = df[col].where(pd.notnull(df[col]), None)
+    # Handle NA values for datetime columns
+    datetime_cols = df.select_dtypes(include=['datetime64[ns]']).columns
+    for col in datetime_cols:
+        df[col] = df[col].astype('object').where(df[col].notnull(), None)
+    
+    # Ensure numeric columns are properly typed
+    numeric_cols = ['LastBuySignalPrice', 'UpProbability', 'LastSellPrice', 'PositionSize']
+    for col in numeric_cols:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
     
     # Write to parquet file
     df.to_parquet(get_parquet_file(is_live), index=False)
@@ -84,30 +90,92 @@ def write_trading_data(df, is_live=False):
 
 
 
-
 def update_buy_signal(symbol, date, price, up_probability, is_live=False):
     """Update or add a buy signal for a symbol."""
-    up_probability = round(up_probability, 4)
-    price = round(price, 4)
+    try:
+        # Round numeric values
+        price = round(float(price), 4)
+        up_probability = round(float(up_probability), 4)
+        
+        # Read existing data
+        df = read_trading_data(is_live)
+        
+        # Create new data with explicit types
+        new_data_df = pd.DataFrame([{
+            'Symbol': str(symbol),
+            'LastBuySignalDate': pd.Timestamp(date),
+            'LastBuySignalPrice': price,
+            'IsCurrentlyBought': False,
+            'ConsecutiveLosses': 0,
+            'LastTradedDate': pd.NaT,
+            'UpProbability': up_probability,
+            'LastSellPrice': pd.NA,
+            'PositionSize': pd.NA
+        }])
+        
+        # Set proper dtypes for the new DataFrame
+        new_data_df = new_data_df.astype({
+            'Symbol': 'string',
+            'LastBuySignalPrice': 'float64',
+            'IsCurrentlyBought': 'bool',
+            'ConsecutiveLosses': 'int64',
+            'UpProbability': 'float64',
+            'LastSellPrice': pd.Float64Dtype(),
+            'PositionSize': pd.Float64Dtype()
+        })
+        
+        # Convert dates properly
+        new_data_df['LastBuySignalDate'] = pd.to_datetime(new_data_df['LastBuySignalDate'])
+        new_data_df['LastTradedDate'] = pd.to_datetime(new_data_df['LastTradedDate'])
+        
+        # Remove existing entry if present
+        df = df[df['Symbol'] != symbol]
+        
+        # Ensure both DataFrames have the same column types before concatenation
+        for col in df.columns:
+            if col in new_data_df.columns:
+                df[col] = df[col].astype(new_data_df[col].dtype)
+        
+        # Concatenate with explicit dtypes preserved
+        df = pd.concat([df, new_data_df], ignore_index=True, verify_integrity=True)
+        
+        # Write back to file
+        write_trading_data(df, is_live)
+        
+        logging.info(f"Updated buy signal for {symbol} at price {price}")
+        
+    except Exception as e:
+        logging.error(f"Error in update_buy_signal for {symbol}: {str(e)}")
+        raise
 
-    df = read_trading_data(is_live)
-    new_data = pd.DataFrame({
-        'Symbol': [symbol],
-        'LastBuySignalDate': [pd.Timestamp(date)],  # Convert date to Timestamp
-        'LastBuySignalPrice': [price],
-        'IsCurrentlyBought': [False],
-        'ConsecutiveLosses': [0],
-        'LastTradedDate': [None],
-        'UpProbability': [up_probability]
-    })
-    df = pd.concat([df[df['Symbol'] != symbol], new_data], ignore_index=True)
+
+
+def ensure_trading_data_dtypes(df):
+    """Ensure consistent data types for trading data DataFrame."""
+    dtype_map = {
+        'Symbol': 'string',
+        'LastBuySignalPrice': 'float64',
+        'IsCurrentlyBought': 'bool',
+        'ConsecutiveLosses': 'int64',
+        'UpProbability': 'float64',
+        'LastSellPrice': pd.Float64Dtype(),
+        'PositionSize': pd.Float64Dtype()
+    }
     
-    # Ensure all date columns are converted to datetime
+    # Convert to specified dtypes
+    for col, dtype in dtype_map.items():
+        if col in df.columns:
+            df[col] = df[col].astype(dtype)
+    
+    # Handle datetime columns separately
     date_columns = ['LastBuySignalDate', 'LastTradedDate']
     for col in date_columns:
-        df[col] = pd.to_datetime(df[col])
-    
-    write_trading_data(df, is_live)
+        if col in df.columns:
+            df[col] = pd.to_datetime(df[col])
+            
+    return df
+
+
 
 
 
@@ -220,19 +288,17 @@ def update_trade_result(symbol, is_loss, exit_price=None, exit_date=None, is_liv
 def get_buy_signals(is_live=False):
     try:
         df = read_trading_data(is_live)
-        current_date = datetime.now(pytz.timezone('US/Eastern')).date()
-        previous_trading_day = get_previous_trading_day(current_date)
+        current_date = pd.Timestamp(datetime.now(pytz.timezone('US/Eastern')).date())
+        previous_trading_day = pd.Timestamp(get_previous_trading_day(current_date))
         
         # Ensure 'LastBuySignalDate' is in datetime format
         df['LastBuySignalDate'] = pd.to_datetime(df['LastBuySignalDate'], errors='coerce')
         
-        # Now you can safely use .dt.date
+        # Compare dates using Timestamp
         signals = df[
             (df['IsCurrentlyBought'] == False) & 
-            (df['LastBuySignalDate'].dt.date == current_date)
+            (df['LastBuySignalDate'].dt.strftime('%Y-%m-%d') == previous_trading_day.strftime('%Y-%m-%d'))
         ].to_dict('records')
-
-
         
         if not signals:
             logging.info(f"No buy signals found for the previous trading day ({previous_trading_day})")
@@ -251,19 +317,30 @@ def get_buy_signals(is_live=False):
 
 
 
-def get_previous_trading_day(current_date):
+def get_previous_trading_day(current_date, days_back=1):
+    """
+    Get the trading day that is a specified number of days before the given date.
+    
+    Args:
+        current_date: The reference date
+        days_back: Number of trading days to look back
+    
+    Returns:
+        datetime.date: The trading day that is days_back trading days before current_date
+    """
+    
     nyse = mcal.get_calendar('NYSE')
     current_date = pd.Timestamp(current_date)  # Ensure it is a Timestamp
 
     end_date = current_date.date()
-    start_date = end_date - timedelta(days=10)
+    start_date = end_date - timedelta(days=days_back * 2)  # Look back twice as many calendar days to ensure we find enough trading days
     schedule = nyse.schedule(start_date=start_date, end_date=end_date)
 
     valid_days = schedule[schedule.index.date <= end_date]
-    if valid_days.empty:
-        raise ValueError(f"No trading days found in the 10 days before {end_date}")
+    if len(valid_days) < days_back:
+        raise ValueError(f"Not enough trading days found before {end_date}")
 
-    return valid_days.index[-1].date()
+    return valid_days.index[-days_back].date()
 
 
 
@@ -335,6 +412,10 @@ def should_sell(current_price, entry_price, entry_date, current_date,
                stop_loss_percent=5.0, take_profit_percent=100.0, 
                max_hold_days=9, min_daily_return=0.25, verbose=False):
     """Determine if a position should be sold based on various criteria."""
+    # Convert dates to Timestamp objects for comparison
+    entry_date = pd.Timestamp(entry_date)
+    current_date = pd.Timestamp(current_date)
+    
     days_held = (current_date - entry_date).days
     profit_percent = (current_price - entry_price) / entry_price * 100
 

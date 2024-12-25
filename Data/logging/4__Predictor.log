@@ -141,3 +141,129 @@
 2024-11-07 21:53:27,300 - INFO - Logging system initialized.
 2024-11-07 21:53:27,300 - INFO - Loading the trained model.
 2024-11-07 21:57:00,950 - INFO - Predictions saved to Data/RFpredictions
+2024-11-08 21:53:16,125 - INFO - Logging system initialized.
+2024-11-08 21:53:16,125 - INFO - Loading the trained model.
+2024-11-08 21:56:46,823 - INFO - Predictions saved to Data/RFpredictions
+2024-11-09 21:53:15,693 - INFO - Logging system initialized.
+2024-11-09 21:53:15,694 - INFO - Loading the trained model.
+2024-11-09 21:56:49,223 - INFO - Predictions saved to Data/RFpredictions
+2024-11-11 23:04:25,283 - INFO - Logging system initialized.
+2024-11-11 23:04:25,283 - INFO - Loading the trained model.
+2024-11-11 23:07:53,104 - INFO - Predictions saved to Data/RFpredictions
+2024-11-12 21:53:04,492 - INFO - Logging system initialized.
+2024-11-12 21:53:04,492 - INFO - Loading the trained model.
+2024-11-12 21:56:37,965 - INFO - Predictions saved to Data/RFpredictions
+2024-11-13 21:53:39,150 - INFO - Logging system initialized.
+2024-11-13 21:53:39,150 - INFO - Loading the trained model.
+2024-11-13 21:57:07,851 - INFO - Predictions saved to Data/RFpredictions
+2024-11-14 21:53:10,164 - INFO - Logging system initialized.
+2024-11-14 21:53:10,164 - INFO - Loading the trained model.
+2024-11-14 21:56:34,375 - INFO - Predictions saved to Data/RFpredictions
+2024-11-15 21:53:09,698 - INFO - Logging system initialized.
+2024-11-15 21:53:09,698 - INFO - Loading the trained model.
+2024-11-15 21:56:34,224 - INFO - Predictions saved to Data/RFpredictions
+2024-11-16 21:53:42,254 - INFO - Logging system initialized.
+2024-11-16 21:53:42,254 - INFO - Loading the trained model.
+2024-11-16 21:57:16,819 - INFO - Predictions saved to Data/RFpredictions
+2024-11-18 13:56:43,117 - INFO - Logging system initialized.
+2024-11-18 13:56:43,117 - INFO - Preparing new training data.
+2024-11-18 13:57:22,837 - INFO - Data preparation complete.
+2024-11-18 13:57:22,838 - INFO - Training Random Forest model.
+2024-11-18 14:00:56,834 - INFO - Accuracy: 0.5315362470557445
+2024-11-18 14:00:56,834 - INFO - F1 Score: 0.3720587160256933
+2024-11-18 14:00:56,834 - INFO - Precision: 0.7201612457584068
+2024-11-18 14:00:56,834 - INFO - Recall: 0.5315362470557445
+2024-11-18 14:00:56,953 - INFO - Model saved to Data/ModelData\random_forest_model.joblib
+2024-11-18 14:00:56,974 - INFO - Feature importances saved to Data/ModelData/FeatureImportances/feature_importance.parquet
+2024-11-18 14:01:39,567 - INFO - Logging system initialized.
+2024-11-18 14:01:39,567 - INFO - Loading the trained model.
+2024-11-18 14:05:04,600 - INFO - Predictions saved to Data/RFpredictions
+2024-11-18 23:51:55,325 - INFO - Logging system initialized.
+2024-11-18 23:51:55,325 - INFO - Loading the trained model.
+2024-11-18 23:55:19,619 - INFO - Predictions saved to Data/RFpredictions
+2024-11-20 03:11:50,736 - INFO - Logging system initialized.
+2024-11-20 03:11:50,736 - INFO - Loading the trained model.
+2024-11-20 03:15:14,461 - INFO - Predictions saved to Data/RFpredictions
+2024-11-21 00:28:12,986 - INFO - Logging system initialized.
+2024-11-21 00:28:12,986 - INFO - Loading the trained model.
+2024-11-21 00:32:26,991 - INFO - Predictions saved to Data/RFpredictions
+2024-11-24 23:16:40,756 - INFO - Logging system initialized.
+2024-11-24 23:16:40,756 - INFO - Loading the trained model.
+2024-11-24 23:20:06,273 - INFO - Predictions saved to Data/RFpredictions
+2024-11-26 02:12:20,651 - INFO - Logging system initialized.
+2024-11-26 02:12:20,651 - INFO - Loading the trained model.
+2024-11-26 02:15:45,777 - INFO - Predictions saved to Data/RFpredictions
+2024-11-27 00:01:17,945 - INFO - Logging system initialized.
+2024-11-27 00:01:17,946 - INFO - Loading the trained model.
+2024-11-27 00:04:47,753 - INFO - Predictions saved to Data/RFpredictions
+2024-11-28 00:22:01,811 - INFO - Logging system initialized.
+2024-11-28 00:22:01,811 - INFO - Loading the trained model.
+2024-11-28 00:25:29,987 - INFO - Predictions saved to Data/RFpredictions
+2024-11-28 13:49:58,004 - INFO - Logging system initialized.
+2024-11-28 13:49:58,004 - INFO - Loading the trained model.
+2024-11-28 13:50:49,705 - INFO - Predictions saved to Data/RFpredictions
+2024-11-29 00:17:10,237 - INFO - Logging system initialized.
+2024-11-29 00:17:10,237 - INFO - Loading the trained model.
+2024-11-29 00:20:58,222 - INFO - Logging system initialized.
+2024-11-29 00:20:58,223 - INFO - Loading the trained model.
+2024-11-29 00:25:16,501 - INFO - Predictions saved to Data/RFpredictions
+2024-11-29 22:36:14,359 - INFO - Logging system initialized.
+2024-11-29 22:36:14,360 - INFO - Loading the trained model.
+2024-11-29 22:40:59,181 - INFO - Predictions saved to Data/RFpredictions
+2024-12-02 22:37:33,166 - INFO - Logging system initialized.
+2024-12-02 22:37:33,167 - INFO - Loading the trained model.
+2024-12-02 22:42:00,906 - INFO - Predictions saved to Data/RFpredictions
+2024-12-03 22:35:49,683 - INFO - Logging system initialized.
+2024-12-03 22:35:49,683 - INFO - Loading the trained model.
+2024-12-03 22:40:16,853 - INFO - Predictions saved to Data/RFpredictions
+2024-12-04 23:26:08,852 - INFO - Logging system initialized.
+2024-12-04 23:26:08,853 - INFO - Loading the trained model.
+2024-12-04 23:32:00,344 - INFO - Predictions saved to Data/RFpredictions
+2024-12-05 23:17:38,373 - INFO - Logging system initialized.
+2024-12-05 23:17:38,373 - INFO - Loading the trained model.
+2024-12-05 23:22:12,549 - INFO - Predictions saved to Data/RFpredictions
+2024-12-06 23:15:10,244 - INFO - Logging system initialized.
+2024-12-06 23:15:10,244 - INFO - Loading the trained model.
+2024-12-06 23:15:10,919 - INFO - Predictions saved to Data/RFpredictions
+2024-12-06 23:15:31,189 - INFO - Logging system initialized.
+2024-12-06 23:15:31,190 - INFO - Loading the trained model.
+2024-12-06 23:15:31,338 - INFO - Predictions saved to Data/RFpredictions
+2024-12-06 23:39:20,356 - INFO - Logging system initialized.
+2024-12-06 23:39:20,356 - INFO - Loading the trained model.
+2024-12-06 23:43:42,720 - INFO - Predictions saved to Data/RFpredictions
+2024-12-07 22:28:04,156 - INFO - Logging system initialized.
+2024-12-07 22:28:04,156 - INFO - Loading the trained model.
+2024-12-07 22:32:53,310 - INFO - Predictions saved to Data/RFpredictions
+2024-12-09 22:39:01,716 - INFO - Logging system initialized.
+2024-12-09 22:39:01,716 - INFO - Loading the trained model.
+2024-12-09 22:43:32,248 - INFO - Predictions saved to Data/RFpredictions
+2024-12-10 22:57:16,467 - INFO - Logging system initialized.
+2024-12-10 22:57:16,467 - INFO - Loading the trained model.
+2024-12-10 23:03:10,449 - INFO - Predictions saved to Data/RFpredictions
+2024-12-11 22:43:54,843 - INFO - Logging system initialized.
+2024-12-11 22:43:54,844 - INFO - Loading the trained model.
+2024-12-11 22:50:20,194 - INFO - Predictions saved to Data/RFpredictions
+2024-12-12 22:48:42,559 - INFO - Logging system initialized.
+2024-12-12 22:48:42,560 - INFO - Loading the trained model.
+2024-12-12 22:54:28,458 - INFO - Predictions saved to Data/RFpredictions
+2024-12-15 22:41:38,295 - INFO - Logging system initialized.
+2024-12-15 22:41:38,295 - INFO - Loading the trained model.
+2024-12-15 22:47:13,505 - INFO - Predictions saved to Data/RFpredictions
+2024-12-16 22:50:13,625 - INFO - Logging system initialized.
+2024-12-16 22:50:13,625 - INFO - Loading the trained model.
+2024-12-16 22:54:36,349 - INFO - Predictions saved to Data/RFpredictions
+2024-12-17 22:30:00,041 - INFO - Logging system initialized.
+2024-12-17 22:30:00,041 - INFO - Loading the trained model.
+2024-12-17 22:34:07,169 - INFO - Predictions saved to Data/RFpredictions
+2024-12-18 22:27:09,454 - INFO - Logging system initialized.
+2024-12-18 22:27:09,454 - INFO - Loading the trained model.
+2024-12-18 22:31:31,717 - INFO - Predictions saved to Data/RFpredictions
+2024-12-21 22:26:10,315 - INFO - Logging system initialized.
+2024-12-21 22:26:10,315 - INFO - Loading the trained model.
+2024-12-21 22:30:28,607 - INFO - Predictions saved to Data/RFpredictions
+2024-12-23 22:28:55,331 - INFO - Logging system initialized.
+2024-12-23 22:28:55,331 - INFO - Loading the trained model.
+2024-12-23 22:33:12,776 - INFO - Predictions saved to Data/RFpredictions
+2024-12-24 22:27:07,225 - INFO - Logging system initialized.
+2024-12-24 22:27:07,226 - INFO - Loading the trained model.
+2024-12-24 22:30:59,362 - INFO - Predictions saved to Data/RFpredictions

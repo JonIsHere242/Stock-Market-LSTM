@@ -54,7 +54,7 @@ config = {
     "file_selection_percentage": args.runpercent,
     "target_column": "percent_change_Close",
 
-    "n_estimators": 256,  # Increased to 64
+    "n_estimators": 256,  # Increased to 256
     "criterion": "entropy",
     "max_depth": 15,  # Increased depth
     "min_samples_split": 10,  # Adjusted for better performance
@@ -122,7 +122,7 @@ def prepare_training_data(input_directory, output_directory, file_selection_perc
 
 
 
-def train_random_forest(training_data, config, confidence_threshold_pos=0.70, confidence_threshold_neg=0.70):
+def train_random_forestOLDMETHOD(training_data, config, confidence_threshold_pos=0.70, confidence_threshold_neg=0.70):
     logging.info("Training Random Forest model.")
     
     #remove the old model file
@@ -230,6 +230,141 @@ def train_random_forest(training_data, config, confidence_threshold_pos=0.70, co
 
 
 
+
+
+##====================================[working method]====================================##
+##====================================[working method]====================================##
+##====================================[working method]====================================##
+##====================================[working method]====================================##
+##====================================[working method]====================================##
+##====================================[working method]====================================##
+
+
+
+def train_random_forest(training_data, config, confidence_threshold_pos=0.70, confidence_threshold_neg=0.70):
+    logging.info("Training Random Forest model.")
+    
+    # Remove the old model file
+    model_output_path = os.path.join(config['model_output_directory'], 'random_forest_model.joblib')
+    if os.path.exists(model_output_path):
+        os.remove(model_output_path)
+
+    # Sort data by date to ensure temporal order
+    training_data = training_data.sort_values('Date')
+    
+    # Separate features and target
+    X = training_data.drop(columns=[config['target_column']])
+    y = training_data[config['target_column']]
+    
+    # Binarize the target column
+    y = y.apply(lambda x: 1 if x > 0 else 0)
+    
+    # Get datetime columns before removing them from X
+    datetime_columns = X.select_dtypes(include=['datetime64']).columns
+    
+    # Calculate the split point based on dates
+    split_date = X['Date'].quantile(0.8)  # Using last 20% of dates for testing
+    logging.info(f"Split date: {split_date}")
+    
+    # Split based on date
+    X_train = X[X['Date'] < split_date]
+    X_test = X[X['Date'] >= split_date]
+    y_train = y[X['Date'] < split_date]
+    y_test = y[X['Date'] >= split_date]
+    
+    # Now remove datetime columns from both train and test
+    X_train = X_train.drop(columns=datetime_columns)
+    X_test = X_test.drop(columns=datetime_columns)
+
+    # Train the Random Forest classifier
+    clf = RandomForestClassifier(
+        n_estimators=config['n_estimators'],
+        criterion=config['criterion'],
+        max_depth=config['max_depth'],
+        min_samples_split=config['min_samples_split'],
+        min_samples_leaf=config['min_samples_leaf'],
+        min_weight_fraction_leaf=config['min_weight_fraction_leaf'],
+        max_features=config['max_features'],
+        max_leaf_nodes=config['max_leaf_nodes'],
+        min_impurity_decrease=config['min_impurity_decrease'],
+        bootstrap=config['bootstrap'],
+        oob_score=config['oob_score'],
+        random_state=config['random_state'],
+        verbose=config['verbose'],
+        warm_start=config['warm_start'],
+        class_weight=config['class_weight'],
+        ccp_alpha=config['ccp_alpha'],
+        max_samples=config['max_samples'],
+        n_jobs=-1  # Use all available processors
+    )
+    
+    clf.fit(X_train, y_train)
+    
+    # Make predictions with confidence thresholds for both classes
+    y_pred_proba = clf.predict_proba(X_test)
+    y_pred = np.where(
+        y_pred_proba[:, 1] >= confidence_threshold_pos, 1,
+        np.where(y_pred_proba[:, 0] >= confidence_threshold_neg, 0, -1)
+    )
+    
+    # Filter out undecided predictions
+    mask = y_pred != -1
+    y_test_filtered = y_test[mask]
+    y_pred_filtered = y_pred[mask]
+    
+    # Evaluate the model
+    accuracy = accuracy_score(y_test_filtered, y_pred_filtered)
+    f1 = f1_score(y_test_filtered, y_pred_filtered, average='weighted')
+    precision = precision_score(y_test_filtered, y_pred_filtered, average='weighted')
+    recall = recall_score(y_test_filtered, y_pred_filtered, average='weighted')
+    
+    logging.info(f"Accuracy: {accuracy}")
+    logging.info(f"F1 Score: {f1}")
+    logging.info(f"Precision: {precision}")
+    logging.info(f"Recall: {recall}")
+    
+    if len(y_test_filtered) == 0 or len(y_pred_filtered) == 0:
+        print("Warning: y_test_filtered or y_pred_filtered is empty")
+    else:
+        # Ensure there are unique labels in y_test_filtered
+        unique_labels = set(y_test_filtered)
+        if len(unique_labels) == 0:
+            print("Warning: No unique labels in y_test_filtered")
+        else:
+            # Ensure y_pred_filtered has corresponding predictions
+            unique_pred_labels = set(y_pred_filtered)
+            if len(unique_pred_labels) == 0:
+                print("Warning: No unique predictions in y_pred_filtered")
+            else:
+                print(classification_report(y_test_filtered, y_pred_filtered, zero_division=0))    
+
+    # Save the model
+    dump(clf, model_output_path)
+    logging.info(f"Model saved to {model_output_path}")
+    
+    # Save feature importances
+    feature_importances = pd.DataFrame({
+        'feature': X_train.columns,
+        'importance': clf.feature_importances_
+    }).sort_values(by='importance', ascending=False)
+    
+    feature_importances['importance'] = feature_importances['importance'].round(5)
+    feature_importances.to_parquet(config['feature_importance_output'], index=False)
+    logging.info(f"Feature importances saved to {config['feature_importance_output']}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def predict_and_save(input_directory, model_path, output_directory, target_column, date_column, confidence_threshold_pos=0.7, confidence_threshold_neg=0.7):
     logging.info("Loading the trained model.")
     
@@ -262,6 +397,10 @@ def predict_and_save(input_directory, model_path, output_directory, target_colum
         # Ensure the date column is in datetime format
         df[date_column] = pd.to_datetime(df[date_column])
         
+        ##check to see if file has more than 252 rows
+        if df.shape[0] < 252:
+            continue
+
         # Remove datetime and target columns from X
         datetime_columns = df.select_dtypes(include=['datetime64']).columns
         X = df.drop(columns=[date_column, target_column] + list(datetime_columns))

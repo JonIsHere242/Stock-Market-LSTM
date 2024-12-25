@@ -1,4 +1,4 @@
-#!/root/root/miniconda4/envs/tf/bin/python
+#!/usr/bin/env python
 import yfinance as yf
 import pandas as pd
 import os
@@ -19,11 +19,17 @@ It supports both initial downloads (ColdStart) and refreshing existing data by a
 Only high-quality data that extends back to at least January 1, 2022, is processed and saved.
 """
 
+# Determine the script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Set the working directory to the script's directory
+os.chdir(script_dir)
+
 # Directory and File Configurations
-FINAL_DATA_DIRECTORY = os.path.join("Data", "RFpredictions")
-DATA_DIRECTORY = os.path.join('Data', 'PriceData')
-TICKERS_CIK_DIRECTORY = os.path.join('Data', 'TickerCikData')
-LOG_FILE = os.path.join("Data", "logging", "2__BulkPriceDownloader.log")
+FINAL_DATA_DIRECTORY = os.path.join(script_dir, "Data", "RFpredictions")
+DATA_DIRECTORY = os.path.join(script_dir, 'Data', 'PriceData')
+TICKERS_CIK_DIRECTORY = os.path.join(script_dir, 'Data', 'TickerCikData')
+LOG_FILE = os.path.join(script_dir, "Data", "logging", "2__BulkPriceDownloader.log")
 RATE_LIMIT = 1.0  # seconds between downloads
 START_DATE = "2022-01-01"  # Updated start date to ensure data quality
 MIN_EARLIEST_DATE = datetime(2022, 3, 1).date()
@@ -77,8 +83,6 @@ def clear_old_data(data_dir):
             removed_files += 1
     logging.info(f"Cleared {removed_files} old data files from {data_dir}.")
 
-
-
 def get_last_trading_day(reference_datetime=None):
     eastern = pytz.timezone('US/Eastern')
     if reference_datetime is None:
@@ -92,7 +96,7 @@ def get_last_trading_day(reference_datetime=None):
     weekday = reference_datetime.weekday()  # Monday=0, Sunday=6
     current_time = reference_datetime.time()
     data_available_time = datetime.strptime("22:00", "%H:%M").time()  # Data available after 10 PM Eastern
-    
+
     logging.debug(f"Reference datetime (US/Eastern): {reference_datetime}")
     logging.debug(f"Weekday: {weekday}, Current Time: {current_time}")
     logging.debug(f"Data Availability Cutoff Time: {data_available_time}")
@@ -115,17 +119,10 @@ def get_last_trading_day(reference_datetime=None):
     logging.debug(f"Determined last trading day as: {last_trading_day}")
     return last_trading_day
 
-
-
-
-
-
 def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None, rate_limit=RATE_LIMIT, refresh=False):
-
     download_count = 0
     wait_time = rate_limit
-    Timer = time.time()
-
+    timer_start = time.time()
 
     logging.info(f"Fetching data from {start_date} to {end_date}")
 
@@ -156,7 +153,7 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None,
 
                 # Determine the start date for new data
                 new_start_date = latest_date + timedelta(days=1)
-                if new_start_date > expected_latest_date:
+                if new_start_date > end_date.date():
                     # No new data to fetch
                     logging.info(f"{ticker} is already up-to-date.")
                     continue
@@ -230,12 +227,11 @@ def fetch_and_save_stock_data(tickers, data_dir, start_date=None, end_date=None,
 
             # Save the combined data
             combined_data.to_parquet(file_path, index=False)
-            logging.info(f"Saved data for {ticker} up to {combined_data['Date'].max().date()}.")
 
             download_count += 1
 
             if download_count % 100 == 0:
-                elapsed_time = time.time() - Timer
+                elapsed_time = time.time() - timer_start
                 logging.info(f"Downloaded data for {download_count} tickers, taking {elapsed_time:.2f} seconds.")
 
         except Exception as e:
@@ -270,7 +266,6 @@ if __name__ == "__main__":
         logging.error("Cannot use both --RefreshMode and --ColdStart simultaneously. Exiting.")
         exit(1)
     
-
     if args.RefreshMode:
         logging.info("Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.")
         tickers = get_existing_tickers_final(FINAL_DATA_DIRECTORY)
@@ -305,6 +300,5 @@ if __name__ == "__main__":
         rate_limit=RATE_LIMIT,
         refresh=args.RefreshMode
     )
-
     
     logging.info("Data download and refresh process completed.")

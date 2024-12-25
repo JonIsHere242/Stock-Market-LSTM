@@ -1,0 +1,915 @@
+2024-12-07 20:26:05,977 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-07 20:26:05,977 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-07 20:26:06,803 - INFO - Cleared 5506 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-07 20:26:06,803 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-07 20:26:06,917 - INFO - Found 5506 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-07 20:26:07,051 - INFO - Fetching data from 2022-01-01 to 2024-12-07
+2024-12-07 20:26:07,135 - ERROR - 
+1 Failed download:
+2024-12-07 20:26:07,135 - ERROR - ['AA']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000015F0BBA3CA0>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-07 20:26:07,135 - WARNING - No new data found for AA.
+2024-12-07 20:28:04,088 - INFO - Downloaded data for 100 tickers, taking 117.04 seconds.
+2024-12-07 20:29:57,007 - INFO - Downloaded data for 200 tickers, taking 229.96 seconds.
+2024-12-07 20:31:49,438 - INFO - Downloaded data for 300 tickers, taking 342.39 seconds.
+2024-12-07 20:33:42,275 - INFO - Downloaded data for 400 tickers, taking 455.22 seconds.
+2024-12-07 20:35:34,997 - INFO - Downloaded data for 500 tickers, taking 567.95 seconds.
+2024-12-07 20:37:28,269 - INFO - Downloaded data for 600 tickers, taking 681.22 seconds.
+2024-12-07 20:39:21,327 - INFO - Downloaded data for 700 tickers, taking 794.28 seconds.
+2024-12-07 20:41:14,314 - INFO - Downloaded data for 800 tickers, taking 907.26 seconds.
+2024-12-07 20:43:07,214 - INFO - Downloaded data for 900 tickers, taking 1020.16 seconds.
+2024-12-07 20:45:00,373 - INFO - Downloaded data for 1000 tickers, taking 1133.32 seconds.
+2024-12-07 20:46:53,689 - INFO - Downloaded data for 1100 tickers, taking 1246.64 seconds.
+2024-12-07 20:48:46,971 - INFO - Downloaded data for 1200 tickers, taking 1359.92 seconds.
+2024-12-07 20:50:39,825 - INFO - Downloaded data for 1300 tickers, taking 1472.77 seconds.
+2024-12-07 20:52:33,143 - INFO - Downloaded data for 1400 tickers, taking 1586.09 seconds.
+2024-12-07 20:54:26,266 - INFO - Downloaded data for 1500 tickers, taking 1699.22 seconds.
+2024-12-07 20:56:18,983 - INFO - Downloaded data for 1600 tickers, taking 1811.93 seconds.
+2024-12-07 20:58:12,254 - INFO - Downloaded data for 1700 tickers, taking 1925.20 seconds.
+2024-12-07 21:00:05,702 - INFO - Downloaded data for 1800 tickers, taking 2038.65 seconds.
+2024-12-07 21:01:58,965 - INFO - Downloaded data for 1900 tickers, taking 2151.91 seconds.
+2024-12-07 21:03:51,755 - INFO - Downloaded data for 2000 tickers, taking 2264.70 seconds.
+2024-12-07 21:05:44,472 - INFO - Downloaded data for 2100 tickers, taking 2377.42 seconds.
+2024-12-07 21:07:37,873 - INFO - Downloaded data for 2200 tickers, taking 2490.82 seconds.
+2024-12-07 21:09:30,511 - INFO - Downloaded data for 2300 tickers, taking 2603.46 seconds.
+2024-12-07 21:11:23,756 - INFO - Downloaded data for 2400 tickers, taking 2716.70 seconds.
+2024-12-07 21:13:16,912 - INFO - Downloaded data for 2500 tickers, taking 2829.86 seconds.
+2024-12-07 21:15:09,632 - INFO - Downloaded data for 2600 tickers, taking 2942.58 seconds.
+2024-12-07 21:17:02,021 - INFO - Downloaded data for 2700 tickers, taking 3054.97 seconds.
+2024-12-07 21:18:55,229 - INFO - Downloaded data for 2800 tickers, taking 3168.18 seconds.
+2024-12-07 21:20:48,116 - INFO - Downloaded data for 2900 tickers, taking 3281.06 seconds.
+2024-12-07 21:22:40,719 - INFO - Downloaded data for 3000 tickers, taking 3393.67 seconds.
+2024-12-07 21:24:33,810 - INFO - Downloaded data for 3100 tickers, taking 3506.76 seconds.
+2024-12-07 21:26:26,979 - INFO - Downloaded data for 3200 tickers, taking 3619.93 seconds.
+2024-12-07 21:28:20,293 - INFO - Downloaded data for 3300 tickers, taking 3733.24 seconds.
+2024-12-07 21:30:14,081 - INFO - Downloaded data for 3400 tickers, taking 3847.03 seconds.
+2024-12-07 21:32:07,410 - INFO - Downloaded data for 3500 tickers, taking 3960.36 seconds.
+2024-12-07 21:34:00,173 - INFO - Downloaded data for 3600 tickers, taking 4073.12 seconds.
+2024-12-07 21:35:53,287 - INFO - Downloaded data for 3700 tickers, taking 4186.24 seconds.
+2024-12-07 21:37:46,072 - INFO - Downloaded data for 3800 tickers, taking 4299.02 seconds.
+2024-12-07 21:39:39,483 - INFO - Downloaded data for 3900 tickers, taking 4412.43 seconds.
+2024-12-07 21:41:32,612 - INFO - Downloaded data for 4000 tickers, taking 4525.56 seconds.
+2024-12-07 21:43:24,889 - INFO - Downloaded data for 4100 tickers, taking 4637.84 seconds.
+2024-12-07 21:45:17,484 - INFO - Downloaded data for 4200 tickers, taking 4750.43 seconds.
+2024-12-07 21:47:10,446 - INFO - Downloaded data for 4300 tickers, taking 4863.39 seconds.
+2024-12-07 21:49:03,323 - INFO - Downloaded data for 4400 tickers, taking 4976.27 seconds.
+2024-12-07 21:50:56,203 - INFO - Downloaded data for 4500 tickers, taking 5089.15 seconds.
+2024-12-07 21:52:48,909 - INFO - Downloaded data for 4600 tickers, taking 5201.86 seconds.
+2024-12-07 21:54:41,860 - INFO - Downloaded data for 4700 tickers, taking 5314.81 seconds.
+2024-12-07 21:56:34,679 - INFO - Downloaded data for 4800 tickers, taking 5427.63 seconds.
+2024-12-07 21:58:27,250 - INFO - Downloaded data for 4900 tickers, taking 5540.20 seconds.
+2024-12-07 22:00:20,740 - INFO - Downloaded data for 5000 tickers, taking 5653.69 seconds.
+2024-12-07 22:02:13,622 - INFO - Downloaded data for 5100 tickers, taking 5766.57 seconds.
+2024-12-07 22:04:06,536 - INFO - Downloaded data for 5200 tickers, taking 5879.49 seconds.
+2024-12-07 22:05:59,438 - INFO - Downloaded data for 5300 tickers, taking 5992.39 seconds.
+2024-12-07 22:07:53,307 - INFO - Downloaded data for 5400 tickers, taking 6106.26 seconds.
+2024-12-07 22:09:45,723 - INFO - Downloaded data for 5500 tickers, taking 6218.67 seconds.
+2024-12-07 22:09:52,256 - INFO - Total tickers processed: 5505
+2024-12-07 22:09:52,256 - INFO - Data download and refresh process completed.
+2024-12-09 20:26:06,469 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-09 20:26:06,469 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-09 20:26:07,372 - INFO - Cleared 5505 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-09 20:26:07,372 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-09 20:26:07,376 - INFO - Found 5505 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-09 20:26:07,734 - INFO - Fetching data from 2022-01-01 to 2024-12-10
+2024-12-09 20:28:00,498 - INFO - Downloaded data for 100 tickers, taking 112.76 seconds.
+2024-12-09 20:29:54,234 - INFO - Downloaded data for 200 tickers, taking 226.50 seconds.
+2024-12-09 20:31:47,179 - INFO - Downloaded data for 300 tickers, taking 339.45 seconds.
+2024-12-09 20:33:40,182 - INFO - Downloaded data for 400 tickers, taking 452.45 seconds.
+2024-12-09 20:35:33,405 - INFO - Downloaded data for 500 tickers, taking 565.67 seconds.
+2024-12-09 20:37:27,180 - INFO - Downloaded data for 600 tickers, taking 679.45 seconds.
+2024-12-09 20:39:20,466 - INFO - Downloaded data for 700 tickers, taking 792.73 seconds.
+2024-12-09 20:41:13,558 - INFO - Downloaded data for 800 tickers, taking 905.82 seconds.
+2024-12-09 20:43:06,567 - INFO - Downloaded data for 900 tickers, taking 1018.83 seconds.
+2024-12-09 20:45:00,228 - INFO - Downloaded data for 1000 tickers, taking 1132.49 seconds.
+2024-12-09 20:46:53,681 - INFO - Downloaded data for 1100 tickers, taking 1245.95 seconds.
+2024-12-09 20:48:47,387 - INFO - Downloaded data for 1200 tickers, taking 1359.65 seconds.
+2024-12-09 20:50:40,888 - INFO - Downloaded data for 1300 tickers, taking 1473.15 seconds.
+2024-12-09 20:52:34,514 - INFO - Downloaded data for 1400 tickers, taking 1586.78 seconds.
+2024-12-09 20:54:28,132 - INFO - Downloaded data for 1500 tickers, taking 1700.40 seconds.
+2024-12-09 20:56:21,358 - INFO - Downloaded data for 1600 tickers, taking 1813.62 seconds.
+2024-12-09 20:58:14,980 - INFO - Downloaded data for 1700 tickers, taking 1927.25 seconds.
+2024-12-09 21:00:08,580 - INFO - Downloaded data for 1800 tickers, taking 2040.85 seconds.
+2024-12-09 21:02:02,337 - INFO - Downloaded data for 1900 tickers, taking 2154.60 seconds.
+2024-12-09 21:03:55,752 - INFO - Downloaded data for 2000 tickers, taking 2268.02 seconds.
+2024-12-09 21:05:49,363 - INFO - Downloaded data for 2100 tickers, taking 2381.63 seconds.
+2024-12-09 21:07:42,650 - INFO - Downloaded data for 2200 tickers, taking 2494.92 seconds.
+2024-12-09 21:09:35,981 - INFO - Downloaded data for 2300 tickers, taking 2608.25 seconds.
+2024-12-09 21:11:29,532 - INFO - Downloaded data for 2400 tickers, taking 2721.80 seconds.
+2024-12-09 21:13:23,739 - INFO - Downloaded data for 2500 tickers, taking 2836.01 seconds.
+2024-12-09 21:15:17,329 - INFO - Downloaded data for 2600 tickers, taking 2949.59 seconds.
+2024-12-09 21:17:10,714 - INFO - Downloaded data for 2700 tickers, taking 3062.98 seconds.
+2024-12-09 21:19:04,622 - INFO - Downloaded data for 2800 tickers, taking 3176.89 seconds.
+2024-12-09 21:20:58,171 - INFO - Downloaded data for 2900 tickers, taking 3290.44 seconds.
+2024-12-09 21:22:51,412 - INFO - Downloaded data for 3000 tickers, taking 3403.68 seconds.
+2024-12-09 21:24:45,053 - INFO - Downloaded data for 3100 tickers, taking 3517.32 seconds.
+2024-12-09 21:26:38,624 - INFO - Downloaded data for 3200 tickers, taking 3630.89 seconds.
+2024-12-09 21:28:32,274 - INFO - Downloaded data for 3300 tickers, taking 3744.54 seconds.
+2024-12-09 21:30:26,107 - INFO - Downloaded data for 3400 tickers, taking 3858.37 seconds.
+2024-12-09 21:32:19,928 - INFO - Downloaded data for 3500 tickers, taking 3972.19 seconds.
+2024-12-09 21:34:13,374 - INFO - Downloaded data for 3600 tickers, taking 4085.64 seconds.
+2024-12-09 21:36:06,919 - INFO - Downloaded data for 3700 tickers, taking 4199.18 seconds.
+2024-12-09 21:37:59,986 - INFO - Downloaded data for 3800 tickers, taking 4312.25 seconds.
+2024-12-09 21:39:53,663 - INFO - Downloaded data for 3900 tickers, taking 4425.93 seconds.
+2024-12-09 21:41:47,654 - INFO - Downloaded data for 4000 tickers, taking 4539.92 seconds.
+2024-12-09 21:43:40,752 - INFO - Downloaded data for 4100 tickers, taking 4653.02 seconds.
+2024-12-09 21:45:33,775 - INFO - Downloaded data for 4200 tickers, taking 4766.04 seconds.
+2024-12-09 21:47:27,103 - INFO - Downloaded data for 4300 tickers, taking 4879.37 seconds.
+2024-12-09 21:49:20,756 - INFO - Downloaded data for 4400 tickers, taking 4993.02 seconds.
+2024-12-09 21:51:14,323 - INFO - Downloaded data for 4500 tickers, taking 5106.59 seconds.
+2024-12-09 21:53:07,611 - INFO - Downloaded data for 4600 tickers, taking 5219.88 seconds.
+2024-12-09 21:55:00,988 - INFO - Downloaded data for 4700 tickers, taking 5333.25 seconds.
+2024-12-09 21:56:54,401 - INFO - Downloaded data for 4800 tickers, taking 5446.67 seconds.
+2024-12-09 21:58:48,061 - INFO - Downloaded data for 4900 tickers, taking 5560.33 seconds.
+2024-12-09 22:00:42,102 - INFO - Downloaded data for 5000 tickers, taking 5674.37 seconds.
+2024-12-09 22:02:35,944 - INFO - Downloaded data for 5100 tickers, taking 5788.21 seconds.
+2024-12-09 22:04:29,527 - INFO - Downloaded data for 5200 tickers, taking 5901.79 seconds.
+2024-12-09 22:06:22,740 - INFO - Downloaded data for 5300 tickers, taking 6015.01 seconds.
+2024-12-09 22:08:16,942 - INFO - Downloaded data for 5400 tickers, taking 6129.21 seconds.
+2024-12-09 22:10:10,457 - INFO - Downloaded data for 5500 tickers, taking 6242.72 seconds.
+2024-12-09 22:10:17,083 - INFO - Total tickers processed: 5505
+2024-12-09 22:10:17,083 - INFO - Data download and refresh process completed.
+2024-12-10 20:26:06,013 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-10 20:26:06,013 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-10 20:26:06,684 - INFO - Cleared 5505 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-10 20:26:06,684 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-10 20:26:06,754 - INFO - Found 5504 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-10 20:26:06,913 - INFO - Fetching data from 2022-01-01 to 2024-12-11
+2024-12-10 20:28:01,201 - INFO - Downloaded data for 100 tickers, taking 114.29 seconds.
+2024-12-10 20:29:54,299 - INFO - Downloaded data for 200 tickers, taking 227.39 seconds.
+2024-12-10 20:31:46,736 - INFO - Downloaded data for 300 tickers, taking 339.82 seconds.
+2024-12-10 20:33:40,060 - INFO - Downloaded data for 400 tickers, taking 453.15 seconds.
+2024-12-10 20:35:33,247 - INFO - Downloaded data for 500 tickers, taking 566.33 seconds.
+2024-12-10 20:37:26,286 - INFO - Downloaded data for 600 tickers, taking 679.37 seconds.
+2024-12-10 20:39:19,400 - INFO - Downloaded data for 700 tickers, taking 792.49 seconds.
+2024-12-10 20:41:11,871 - INFO - Downloaded data for 800 tickers, taking 904.96 seconds.
+2024-12-10 20:43:04,927 - INFO - Downloaded data for 900 tickers, taking 1018.01 seconds.
+2024-12-10 20:44:57,895 - INFO - Downloaded data for 1000 tickers, taking 1130.98 seconds.
+2024-12-10 20:46:50,918 - INFO - Downloaded data for 1100 tickers, taking 1244.00 seconds.
+2024-12-10 20:48:44,032 - INFO - Downloaded data for 1200 tickers, taking 1357.12 seconds.
+2024-12-10 20:50:36,918 - INFO - Downloaded data for 1300 tickers, taking 1470.00 seconds.
+2024-12-10 20:52:30,088 - INFO - Downloaded data for 1400 tickers, taking 1583.17 seconds.
+2024-12-10 20:54:23,548 - INFO - Downloaded data for 1500 tickers, taking 1696.63 seconds.
+2024-12-10 20:56:06,234 - ERROR - 
+1 Failed download:
+2024-12-10 20:56:06,234 - ERROR - ['EBR-B']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001A29F59CD90>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-10 20:56:06,234 - WARNING - No new data found for EBR-B.
+2024-12-10 20:56:07,289 - ERROR - 
+1 Failed download:
+2024-12-10 20:56:07,289 - ERROR - ['EBR']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001A29F7F7EB0>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-10 20:56:07,289 - WARNING - No new data found for EBR.
+2024-12-10 20:56:19,927 - INFO - Downloaded data for 1600 tickers, taking 1813.01 seconds.
+2024-12-10 20:58:12,962 - INFO - Downloaded data for 1700 tickers, taking 1926.05 seconds.
+2024-12-10 21:00:06,680 - INFO - Downloaded data for 1800 tickers, taking 2039.77 seconds.
+2024-12-10 21:01:59,883 - INFO - Downloaded data for 1900 tickers, taking 2152.97 seconds.
+2024-12-10 21:03:52,700 - INFO - Downloaded data for 2000 tickers, taking 2265.79 seconds.
+2024-12-10 21:05:45,884 - INFO - Downloaded data for 2100 tickers, taking 2378.97 seconds.
+2024-12-10 21:07:39,377 - INFO - Downloaded data for 2200 tickers, taking 2492.46 seconds.
+2024-12-10 21:09:32,416 - INFO - Downloaded data for 2300 tickers, taking 2605.50 seconds.
+2024-12-10 21:11:25,648 - INFO - Downloaded data for 2400 tickers, taking 2718.74 seconds.
+2024-12-10 21:13:19,339 - INFO - Downloaded data for 2500 tickers, taking 2832.43 seconds.
+2024-12-10 21:15:12,110 - INFO - Downloaded data for 2600 tickers, taking 2945.20 seconds.
+2024-12-10 21:17:04,516 - INFO - Downloaded data for 2700 tickers, taking 3057.60 seconds.
+2024-12-10 21:18:58,071 - INFO - Downloaded data for 2800 tickers, taking 3171.16 seconds.
+2024-12-10 21:20:51,093 - INFO - Downloaded data for 2900 tickers, taking 3284.18 seconds.
+2024-12-10 21:22:44,116 - INFO - Downloaded data for 3000 tickers, taking 3397.20 seconds.
+2024-12-10 21:24:37,733 - INFO - Downloaded data for 3100 tickers, taking 3510.82 seconds.
+2024-12-10 21:26:31,361 - INFO - Downloaded data for 3200 tickers, taking 3624.45 seconds.
+2024-12-10 21:28:24,876 - INFO - Downloaded data for 3300 tickers, taking 3737.96 seconds.
+2024-12-10 21:30:18,278 - INFO - Downloaded data for 3400 tickers, taking 3851.37 seconds.
+2024-12-10 21:32:11,783 - INFO - Downloaded data for 3500 tickers, taking 3964.87 seconds.
+2024-12-10 21:34:05,080 - INFO - Downloaded data for 3600 tickers, taking 4078.17 seconds.
+2024-12-10 21:35:58,158 - INFO - Downloaded data for 3700 tickers, taking 4191.24 seconds.
+2024-12-10 21:37:51,234 - INFO - Downloaded data for 3800 tickers, taking 4304.32 seconds.
+2024-12-10 21:39:44,670 - INFO - Downloaded data for 3900 tickers, taking 4417.76 seconds.
+2024-12-10 21:41:37,810 - INFO - Downloaded data for 4000 tickers, taking 4530.90 seconds.
+2024-12-10 21:43:30,587 - INFO - Downloaded data for 4100 tickers, taking 4643.67 seconds.
+2024-12-10 21:45:23,137 - INFO - Downloaded data for 4200 tickers, taking 4756.22 seconds.
+2024-12-10 21:47:16,032 - INFO - Downloaded data for 4300 tickers, taking 4869.12 seconds.
+2024-12-10 21:49:09,292 - INFO - Downloaded data for 4400 tickers, taking 4982.38 seconds.
+2024-12-10 21:51:02,283 - INFO - Downloaded data for 4500 tickers, taking 5095.37 seconds.
+2024-12-10 21:52:55,601 - INFO - Downloaded data for 4600 tickers, taking 5208.69 seconds.
+2024-12-10 21:54:48,684 - INFO - Downloaded data for 4700 tickers, taking 5321.77 seconds.
+2024-12-10 21:56:41,755 - INFO - Downloaded data for 4800 tickers, taking 5434.84 seconds.
+2024-12-10 21:58:35,158 - INFO - Downloaded data for 4900 tickers, taking 5548.24 seconds.
+2024-12-10 22:00:28,584 - INFO - Downloaded data for 5000 tickers, taking 5661.67 seconds.
+2024-12-10 22:02:22,187 - INFO - Downloaded data for 5100 tickers, taking 5775.27 seconds.
+2024-12-10 22:04:15,419 - INFO - Downloaded data for 5200 tickers, taking 5888.51 seconds.
+2024-12-10 22:06:08,660 - INFO - Downloaded data for 5300 tickers, taking 6001.75 seconds.
+2024-12-10 22:08:02,297 - INFO - Downloaded data for 5400 tickers, taking 6115.38 seconds.
+2024-12-10 22:09:55,262 - INFO - Downloaded data for 5500 tickers, taking 6228.35 seconds.
+2024-12-10 22:09:58,521 - INFO - Total tickers processed: 5502
+2024-12-10 22:09:58,521 - INFO - Data download and refresh process completed.
+2024-12-11 20:26:05,676 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-11 20:26:05,676 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-11 20:26:06,220 - INFO - Cleared 5502 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-11 20:26:06,220 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-11 20:26:06,226 - INFO - Found 5500 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-11 20:26:06,383 - INFO - Fetching data from 2022-01-01 to 2024-12-12
+2024-12-11 20:27:59,223 - INFO - Downloaded data for 100 tickers, taking 112.84 seconds.
+2024-12-11 20:29:52,680 - INFO - Downloaded data for 200 tickers, taking 226.30 seconds.
+2024-12-11 20:31:45,830 - INFO - Downloaded data for 300 tickers, taking 339.45 seconds.
+2024-12-11 20:33:39,538 - INFO - Downloaded data for 400 tickers, taking 453.16 seconds.
+2024-12-11 20:35:33,007 - INFO - Downloaded data for 500 tickers, taking 566.62 seconds.
+2024-12-11 20:37:26,617 - INFO - Downloaded data for 600 tickers, taking 680.23 seconds.
+2024-12-11 20:39:20,496 - INFO - Downloaded data for 700 tickers, taking 794.11 seconds.
+2024-12-11 20:41:13,971 - INFO - Downloaded data for 800 tickers, taking 907.59 seconds.
+2024-12-11 20:43:07,573 - INFO - Downloaded data for 900 tickers, taking 1021.19 seconds.
+2024-12-11 20:45:01,587 - INFO - Downloaded data for 1000 tickers, taking 1135.20 seconds.
+2024-12-11 20:46:55,467 - INFO - Downloaded data for 1100 tickers, taking 1249.08 seconds.
+2024-12-11 20:48:49,321 - INFO - Downloaded data for 1200 tickers, taking 1362.94 seconds.
+2024-12-11 20:50:42,413 - INFO - Downloaded data for 1300 tickers, taking 1476.03 seconds.
+2024-12-11 20:52:36,228 - INFO - Downloaded data for 1400 tickers, taking 1589.85 seconds.
+2024-12-11 20:54:30,198 - INFO - Downloaded data for 1500 tickers, taking 1703.82 seconds.
+2024-12-11 20:56:24,009 - INFO - Downloaded data for 1600 tickers, taking 1817.63 seconds.
+2024-12-11 20:58:17,795 - INFO - Downloaded data for 1700 tickers, taking 1931.41 seconds.
+2024-12-11 21:00:11,301 - INFO - Downloaded data for 1800 tickers, taking 2044.92 seconds.
+2024-12-11 21:02:05,128 - INFO - Downloaded data for 1900 tickers, taking 2158.74 seconds.
+2024-12-11 21:03:58,966 - INFO - Downloaded data for 2000 tickers, taking 2272.58 seconds.
+2024-12-11 21:05:52,482 - INFO - Downloaded data for 2100 tickers, taking 2386.10 seconds.
+2024-12-11 21:07:45,934 - INFO - Downloaded data for 2200 tickers, taking 2499.55 seconds.
+2024-12-11 21:09:39,105 - INFO - Downloaded data for 2300 tickers, taking 2612.72 seconds.
+2024-12-11 21:11:32,547 - INFO - Downloaded data for 2400 tickers, taking 2726.16 seconds.
+2024-12-11 21:13:26,368 - INFO - Downloaded data for 2500 tickers, taking 2839.99 seconds.
+2024-12-11 21:15:19,536 - INFO - Downloaded data for 2600 tickers, taking 2953.15 seconds.
+2024-12-11 21:17:12,461 - INFO - Downloaded data for 2700 tickers, taking 3066.08 seconds.
+2024-12-11 21:19:06,217 - INFO - Downloaded data for 2800 tickers, taking 3179.83 seconds.
+2024-12-11 21:20:59,501 - INFO - Downloaded data for 2900 tickers, taking 3293.12 seconds.
+2024-12-11 21:22:52,675 - INFO - Downloaded data for 3000 tickers, taking 3406.29 seconds.
+2024-12-11 21:24:46,118 - INFO - Downloaded data for 3100 tickers, taking 3519.73 seconds.
+2024-12-11 21:26:39,841 - INFO - Downloaded data for 3200 tickers, taking 3633.46 seconds.
+2024-12-11 21:28:33,811 - INFO - Downloaded data for 3300 tickers, taking 3747.43 seconds.
+2024-12-11 21:30:27,771 - INFO - Downloaded data for 3400 tickers, taking 3861.39 seconds.
+2024-12-11 21:32:21,129 - INFO - Downloaded data for 3500 tickers, taking 3974.75 seconds.
+2024-12-11 21:34:14,435 - INFO - Downloaded data for 3600 tickers, taking 4088.05 seconds.
+2024-12-11 21:36:07,919 - INFO - Downloaded data for 3700 tickers, taking 4201.54 seconds.
+2024-12-11 21:38:00,866 - INFO - Downloaded data for 3800 tickers, taking 4314.48 seconds.
+2024-12-11 21:39:54,493 - INFO - Downloaded data for 3900 tickers, taking 4428.11 seconds.
+2024-12-11 21:41:47,921 - INFO - Downloaded data for 4000 tickers, taking 4541.54 seconds.
+2024-12-11 21:43:41,071 - INFO - Downloaded data for 4100 tickers, taking 4654.69 seconds.
+2024-12-11 21:45:33,739 - INFO - Downloaded data for 4200 tickers, taking 4767.36 seconds.
+2024-12-11 21:47:26,884 - INFO - Downloaded data for 4300 tickers, taking 4880.50 seconds.
+2024-12-11 21:49:20,397 - INFO - Downloaded data for 4400 tickers, taking 4994.01 seconds.
+2024-12-11 21:51:13,497 - INFO - Downloaded data for 4500 tickers, taking 5107.11 seconds.
+2024-12-11 21:51:30,260 - ERROR - 
+1 Failed download:
+2024-12-11 21:51:30,260 - ERROR - ['SITC']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026CCCCEFE80>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-11 21:51:30,260 - WARNING - No new data found for SITC.
+2024-12-11 21:53:09,343 - INFO - Downloaded data for 4600 tickers, taking 5222.96 seconds.
+2024-12-11 21:55:02,576 - INFO - Downloaded data for 4700 tickers, taking 5336.19 seconds.
+2024-12-11 21:56:55,672 - INFO - Downloaded data for 4800 tickers, taking 5449.29 seconds.
+2024-12-11 21:58:49,262 - INFO - Downloaded data for 4900 tickers, taking 5562.88 seconds.
+2024-12-11 22:00:43,052 - INFO - Downloaded data for 5000 tickers, taking 5676.67 seconds.
+2024-12-11 22:02:36,655 - INFO - Downloaded data for 5100 tickers, taking 5790.27 seconds.
+2024-12-11 22:04:30,024 - INFO - Downloaded data for 5200 tickers, taking 5903.64 seconds.
+2024-12-11 22:06:23,158 - INFO - Downloaded data for 5300 tickers, taking 6016.77 seconds.
+2024-12-11 22:08:17,165 - INFO - Downloaded data for 5400 tickers, taking 6130.78 seconds.
+2024-12-11 22:10:09,976 - INFO - Total tickers processed: 5499
+2024-12-11 22:10:09,976 - INFO - Data download and refresh process completed.
+2024-12-12 20:26:06,234 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-12 20:26:06,234 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-12 20:26:07,231 - INFO - Cleared 5499 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-12 20:26:07,231 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-12 20:26:07,328 - INFO - Found 5496 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-12 20:26:07,513 - INFO - Fetching data from 2022-01-01 to 2024-12-13
+2024-12-12 20:28:00,181 - INFO - Downloaded data for 100 tickers, taking 112.67 seconds.
+2024-12-12 20:29:53,627 - INFO - Downloaded data for 200 tickers, taking 226.11 seconds.
+2024-12-12 20:31:46,175 - INFO - Downloaded data for 300 tickers, taking 338.66 seconds.
+2024-12-12 20:33:39,463 - INFO - Downloaded data for 400 tickers, taking 451.95 seconds.
+2024-12-12 20:35:32,701 - INFO - Downloaded data for 500 tickers, taking 565.19 seconds.
+2024-12-12 20:37:26,200 - INFO - Downloaded data for 600 tickers, taking 678.69 seconds.
+2024-12-12 20:39:19,350 - INFO - Downloaded data for 700 tickers, taking 791.84 seconds.
+2024-12-12 20:41:13,179 - INFO - Downloaded data for 800 tickers, taking 905.67 seconds.
+2024-12-12 20:43:06,392 - INFO - Downloaded data for 900 tickers, taking 1018.88 seconds.
+2024-12-12 20:44:59,720 - INFO - Downloaded data for 1000 tickers, taking 1132.21 seconds.
+2024-12-12 20:46:53,006 - INFO - Downloaded data for 1100 tickers, taking 1245.49 seconds.
+2024-12-12 20:48:47,007 - INFO - Downloaded data for 1200 tickers, taking 1359.49 seconds.
+2024-12-12 20:50:40,596 - INFO - Downloaded data for 1300 tickers, taking 1473.08 seconds.
+2024-12-12 20:52:34,109 - INFO - Downloaded data for 1400 tickers, taking 1586.60 seconds.
+2024-12-12 20:54:27,687 - INFO - Downloaded data for 1500 tickers, taking 1700.17 seconds.
+2024-12-12 20:56:21,038 - INFO - Downloaded data for 1600 tickers, taking 1813.52 seconds.
+2024-12-12 20:58:14,836 - INFO - Downloaded data for 1700 tickers, taking 1927.32 seconds.
+2024-12-12 21:00:09,316 - INFO - Downloaded data for 1800 tickers, taking 2041.80 seconds.
+2024-12-12 21:01:53,396 - ERROR - 
+1 Failed download:
+2024-12-12 21:01:53,396 - ERROR - ['FFBC']: YFPricesMissingError('$%ticker%: possibly delisted; No price data found  (1d 2022-01-01 -> 2024-12-13)')
+2024-12-12 21:01:53,396 - WARNING - No new data found for FFBC.
+2024-12-12 21:02:06,089 - INFO - Downloaded data for 1900 tickers, taking 2158.58 seconds.
+2024-12-12 21:04:00,430 - INFO - Downloaded data for 2000 tickers, taking 2272.92 seconds.
+2024-12-12 21:05:54,051 - INFO - Downloaded data for 2100 tickers, taking 2386.54 seconds.
+2024-12-12 21:07:47,436 - INFO - Downloaded data for 2200 tickers, taking 2499.92 seconds.
+2024-12-12 21:09:40,888 - INFO - Downloaded data for 2300 tickers, taking 2613.37 seconds.
+2024-12-12 21:11:34,128 - INFO - Downloaded data for 2400 tickers, taking 2726.61 seconds.
+2024-12-12 21:13:28,532 - INFO - Downloaded data for 2500 tickers, taking 2841.02 seconds.
+2024-12-12 21:15:21,712 - INFO - Downloaded data for 2600 tickers, taking 2954.20 seconds.
+2024-12-12 21:17:14,540 - INFO - Downloaded data for 2700 tickers, taking 3067.03 seconds.
+2024-12-12 21:19:08,549 - INFO - Downloaded data for 2800 tickers, taking 3181.04 seconds.
+2024-12-12 21:21:01,786 - INFO - Downloaded data for 2900 tickers, taking 3294.27 seconds.
+2024-12-12 21:22:54,718 - INFO - Downloaded data for 3000 tickers, taking 3407.20 seconds.
+2024-12-12 21:24:48,061 - INFO - Downloaded data for 3100 tickers, taking 3520.55 seconds.
+2024-12-12 21:26:42,079 - INFO - Downloaded data for 3200 tickers, taking 3634.57 seconds.
+2024-12-12 21:28:36,021 - INFO - Downloaded data for 3300 tickers, taking 3748.51 seconds.
+2024-12-12 21:30:29,848 - INFO - Downloaded data for 3400 tickers, taking 3862.34 seconds.
+2024-12-12 21:32:23,116 - INFO - Downloaded data for 3500 tickers, taking 3975.60 seconds.
+2024-12-12 21:34:16,700 - INFO - Downloaded data for 3600 tickers, taking 4089.19 seconds.
+2024-12-12 21:36:10,094 - INFO - Downloaded data for 3700 tickers, taking 4202.58 seconds.
+2024-12-12 21:38:03,274 - INFO - Downloaded data for 3800 tickers, taking 4315.76 seconds.
+2024-12-12 21:39:57,121 - INFO - Downloaded data for 3900 tickers, taking 4429.61 seconds.
+2024-12-12 21:41:50,665 - INFO - Downloaded data for 4000 tickers, taking 4543.15 seconds.
+2024-12-12 21:43:43,550 - INFO - Downloaded data for 4100 tickers, taking 4656.04 seconds.
+2024-12-12 21:45:36,360 - INFO - Downloaded data for 4200 tickers, taking 4768.85 seconds.
+2024-12-12 21:47:29,745 - INFO - Downloaded data for 4300 tickers, taking 4882.23 seconds.
+2024-12-12 21:49:23,538 - INFO - Downloaded data for 4400 tickers, taking 4996.02 seconds.
+2024-12-12 21:51:16,760 - INFO - Downloaded data for 4500 tickers, taking 5109.25 seconds.
+2024-12-12 21:53:09,767 - INFO - Downloaded data for 4600 tickers, taking 5222.25 seconds.
+2024-12-12 21:55:03,613 - INFO - Downloaded data for 4700 tickers, taking 5336.10 seconds.
+2024-12-12 21:56:57,029 - INFO - Downloaded data for 4800 tickers, taking 5449.52 seconds.
+2024-12-12 21:58:50,520 - INFO - Downloaded data for 4900 tickers, taking 5563.01 seconds.
+2024-12-12 22:00:44,426 - INFO - Downloaded data for 5000 tickers, taking 5676.91 seconds.
+2024-12-12 22:02:38,188 - INFO - Downloaded data for 5100 tickers, taking 5790.67 seconds.
+2024-12-12 22:04:31,450 - INFO - Downloaded data for 5200 tickers, taking 5903.94 seconds.
+2024-12-12 22:06:24,799 - INFO - Downloaded data for 5300 tickers, taking 6017.29 seconds.
+2024-12-12 22:08:18,565 - INFO - Downloaded data for 5400 tickers, taking 6131.05 seconds.
+2024-12-12 22:10:06,781 - INFO - Total tickers processed: 5495
+2024-12-12 22:10:06,781 - INFO - Data download and refresh process completed.
+2024-12-13 20:26:06,716 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-13 20:26:06,716 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-13 20:26:07,419 - INFO - Cleared 5495 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-13 20:26:07,419 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-13 20:26:07,424 - INFO - Found 5493 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-13 20:26:07,611 - INFO - Fetching data from 2022-01-01 to 2024-12-14
+2024-12-13 20:26:07,709 - ERROR - 
+1 Failed download:
+2024-12-13 20:26:07,709 - ERROR - ['AACG']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B345264730>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-13 20:26:07,709 - WARNING - No new data found for AACG.
+2024-12-13 20:28:03,189 - INFO - Downloaded data for 100 tickers, taking 115.58 seconds.
+2024-12-13 20:29:55,989 - INFO - Downloaded data for 200 tickers, taking 228.38 seconds.
+2024-12-13 20:31:48,557 - INFO - Downloaded data for 300 tickers, taking 340.95 seconds.
+2024-12-13 20:33:41,400 - INFO - Downloaded data for 400 tickers, taking 453.79 seconds.
+2024-12-13 20:35:34,978 - INFO - Downloaded data for 500 tickers, taking 567.37 seconds.
+2024-12-13 20:37:28,545 - INFO - Downloaded data for 600 tickers, taking 680.93 seconds.
+2024-12-13 20:39:21,664 - INFO - Downloaded data for 700 tickers, taking 794.05 seconds.
+2024-12-13 20:41:14,828 - INFO - Downloaded data for 800 tickers, taking 907.22 seconds.
+2024-12-13 20:43:07,925 - INFO - Downloaded data for 900 tickers, taking 1020.31 seconds.
+2024-12-13 20:45:01,369 - INFO - Downloaded data for 1000 tickers, taking 1133.76 seconds.
+2024-12-13 20:46:54,630 - INFO - Downloaded data for 1100 tickers, taking 1247.02 seconds.
+2024-12-13 20:48:48,187 - INFO - Downloaded data for 1200 tickers, taking 1360.58 seconds.
+2024-12-13 20:50:41,076 - INFO - Downloaded data for 1300 tickers, taking 1473.46 seconds.
+2024-12-13 20:52:34,950 - INFO - Downloaded data for 1400 tickers, taking 1587.34 seconds.
+2024-12-13 20:54:28,529 - INFO - Downloaded data for 1500 tickers, taking 1700.92 seconds.
+2024-12-13 20:56:21,588 - INFO - Downloaded data for 1600 tickers, taking 1813.98 seconds.
+2024-12-13 20:58:14,982 - INFO - Downloaded data for 1700 tickers, taking 1927.37 seconds.
+2024-12-13 21:00:08,376 - INFO - Downloaded data for 1800 tickers, taking 2040.76 seconds.
+2024-12-13 21:02:01,764 - INFO - Downloaded data for 1900 tickers, taking 2154.15 seconds.
+2024-12-13 21:03:55,320 - INFO - Downloaded data for 2000 tickers, taking 2267.71 seconds.
+2024-12-13 21:05:48,928 - INFO - Downloaded data for 2100 tickers, taking 2381.32 seconds.
+2024-12-13 21:07:42,200 - INFO - Downloaded data for 2200 tickers, taking 2494.59 seconds.
+2024-12-13 21:09:35,577 - INFO - Downloaded data for 2300 tickers, taking 2607.97 seconds.
+2024-12-13 21:11:28,726 - INFO - Downloaded data for 2400 tickers, taking 2721.11 seconds.
+2024-12-13 21:13:22,647 - INFO - Downloaded data for 2500 tickers, taking 2835.04 seconds.
+2024-12-13 21:15:15,419 - INFO - Downloaded data for 2600 tickers, taking 2947.81 seconds.
+2024-12-13 21:17:08,170 - INFO - Downloaded data for 2700 tickers, taking 3060.56 seconds.
+2024-12-13 21:19:01,771 - INFO - Downloaded data for 2800 tickers, taking 3174.16 seconds.
+2024-12-13 21:20:55,018 - INFO - Downloaded data for 2900 tickers, taking 3287.41 seconds.
+2024-12-13 21:22:48,161 - INFO - Downloaded data for 3000 tickers, taking 3400.55 seconds.
+2024-12-13 21:24:41,494 - INFO - Downloaded data for 3100 tickers, taking 3513.88 seconds.
+2024-12-13 21:26:35,263 - INFO - Downloaded data for 3200 tickers, taking 3627.65 seconds.
+2024-12-13 21:28:28,515 - INFO - Downloaded data for 3300 tickers, taking 3740.90 seconds.
+2024-12-13 21:30:22,441 - INFO - Downloaded data for 3400 tickers, taking 3854.83 seconds.
+2024-12-13 21:32:17,200 - INFO - Downloaded data for 3500 tickers, taking 3969.59 seconds.
+2024-12-13 21:34:11,203 - INFO - Downloaded data for 3600 tickers, taking 4083.59 seconds.
+2024-12-13 21:36:03,888 - INFO - Downloaded data for 3700 tickers, taking 4196.28 seconds.
+2024-12-13 21:37:56,855 - INFO - Downloaded data for 3800 tickers, taking 4309.24 seconds.
+2024-12-13 21:39:50,914 - INFO - Downloaded data for 3900 tickers, taking 4423.30 seconds.
+2024-12-13 21:41:44,243 - INFO - Downloaded data for 4000 tickers, taking 4536.63 seconds.
+2024-12-13 21:43:37,195 - INFO - Downloaded data for 4100 tickers, taking 4649.58 seconds.
+2024-12-13 21:45:30,706 - INFO - Downloaded data for 4200 tickers, taking 4763.09 seconds.
+2024-12-13 21:47:23,671 - INFO - Downloaded data for 4300 tickers, taking 4876.06 seconds.
+2024-12-13 21:49:17,187 - INFO - Downloaded data for 4400 tickers, taking 4989.58 seconds.
+2024-12-13 21:51:10,788 - INFO - Downloaded data for 4500 tickers, taking 5103.18 seconds.
+2024-12-13 21:53:04,719 - INFO - Downloaded data for 4600 tickers, taking 5217.11 seconds.
+2024-12-13 21:54:58,168 - INFO - Downloaded data for 4700 tickers, taking 5330.56 seconds.
+2024-12-13 21:56:51,710 - INFO - Downloaded data for 4800 tickers, taking 5444.10 seconds.
+2024-12-13 21:58:44,702 - INFO - Downloaded data for 4900 tickers, taking 5557.09 seconds.
+2024-12-13 22:00:38,425 - INFO - Downloaded data for 5000 tickers, taking 5670.81 seconds.
+2024-12-13 22:02:31,736 - INFO - Downloaded data for 5100 tickers, taking 5784.12 seconds.
+2024-12-13 22:04:25,099 - INFO - Downloaded data for 5200 tickers, taking 5897.49 seconds.
+2024-12-13 22:06:18,970 - INFO - Downloaded data for 5300 tickers, taking 6011.36 seconds.
+2024-12-13 22:08:12,591 - INFO - Downloaded data for 5400 tickers, taking 6124.98 seconds.
+2024-12-13 22:09:57,354 - INFO - Total tickers processed: 5492
+2024-12-13 22:09:57,354 - INFO - Data download and refresh process completed.
+2024-12-15 20:26:06,376 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-15 20:26:06,377 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-15 20:26:09,134 - INFO - Cleared 5492 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-15 20:26:09,134 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-15 20:26:09,246 - INFO - Found 5493 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-15 20:26:09,423 - INFO - Fetching data from 2022-01-01 to 2024-12-14
+2024-12-15 20:26:09,742 - ERROR - 
+1 Failed download:
+2024-12-15 20:26:09,742 - ERROR - ['AACG']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FA68954790>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-15 20:26:09,742 - WARNING - No new data found for AACG.
+2024-12-15 20:28:04,730 - INFO - Downloaded data for 100 tickers, taking 115.31 seconds.
+2024-12-15 20:29:57,928 - INFO - Downloaded data for 200 tickers, taking 228.51 seconds.
+2024-12-15 20:31:51,106 - INFO - Downloaded data for 300 tickers, taking 341.68 seconds.
+2024-12-15 20:33:44,343 - INFO - Downloaded data for 400 tickers, taking 454.92 seconds.
+2024-12-15 20:35:37,488 - INFO - Downloaded data for 500 tickers, taking 568.07 seconds.
+2024-12-15 20:37:32,337 - INFO - Downloaded data for 600 tickers, taking 682.91 seconds.
+2024-12-15 20:39:26,254 - INFO - Downloaded data for 700 tickers, taking 796.83 seconds.
+2024-12-15 20:41:20,015 - INFO - Downloaded data for 800 tickers, taking 910.59 seconds.
+2024-12-15 20:43:13,639 - INFO - Downloaded data for 900 tickers, taking 1024.22 seconds.
+2024-12-15 20:45:07,431 - INFO - Downloaded data for 1000 tickers, taking 1138.01 seconds.
+2024-12-15 20:47:01,832 - INFO - Downloaded data for 1100 tickers, taking 1252.41 seconds.
+2024-12-15 20:48:55,488 - INFO - Downloaded data for 1200 tickers, taking 1366.07 seconds.
+2024-12-15 20:50:48,952 - INFO - Downloaded data for 1300 tickers, taking 1479.53 seconds.
+2024-12-15 20:52:42,445 - INFO - Downloaded data for 1400 tickers, taking 1593.02 seconds.
+2024-12-15 20:54:36,423 - INFO - Downloaded data for 1500 tickers, taking 1707.00 seconds.
+2024-12-15 20:56:29,780 - INFO - Downloaded data for 1600 tickers, taking 1820.36 seconds.
+2024-12-15 20:58:23,055 - INFO - Downloaded data for 1700 tickers, taking 1933.63 seconds.
+2024-12-15 21:00:17,381 - INFO - Downloaded data for 1800 tickers, taking 2047.96 seconds.
+2024-12-15 21:02:11,580 - INFO - Downloaded data for 1900 tickers, taking 2162.16 seconds.
+2024-12-15 21:04:04,796 - INFO - Downloaded data for 2000 tickers, taking 2275.37 seconds.
+2024-12-15 21:05:58,052 - INFO - Downloaded data for 2100 tickers, taking 2388.63 seconds.
+2024-12-15 21:07:51,452 - INFO - Downloaded data for 2200 tickers, taking 2502.03 seconds.
+2024-12-15 21:09:44,615 - INFO - Downloaded data for 2300 tickers, taking 2615.19 seconds.
+2024-12-15 21:11:38,985 - INFO - Downloaded data for 2400 tickers, taking 2729.56 seconds.
+2024-12-15 21:13:33,077 - INFO - Downloaded data for 2500 tickers, taking 2843.65 seconds.
+2024-12-15 21:15:26,420 - INFO - Downloaded data for 2600 tickers, taking 2957.00 seconds.
+2024-12-15 21:17:19,486 - INFO - Downloaded data for 2700 tickers, taking 3070.06 seconds.
+2024-12-15 21:19:13,560 - INFO - Downloaded data for 2800 tickers, taking 3184.14 seconds.
+2024-12-15 21:21:07,096 - INFO - Downloaded data for 2900 tickers, taking 3297.67 seconds.
+2024-12-15 21:23:00,523 - INFO - Downloaded data for 3000 tickers, taking 3411.10 seconds.
+2024-12-15 21:24:54,236 - INFO - Downloaded data for 3100 tickers, taking 3524.81 seconds.
+2024-12-15 21:26:48,520 - INFO - Downloaded data for 3200 tickers, taking 3639.10 seconds.
+2024-12-15 21:28:42,482 - INFO - Downloaded data for 3300 tickers, taking 3753.06 seconds.
+2024-12-15 21:30:36,877 - INFO - Downloaded data for 3400 tickers, taking 3867.45 seconds.
+2024-12-15 21:32:30,695 - INFO - Downloaded data for 3500 tickers, taking 3981.27 seconds.
+2024-12-15 21:34:24,179 - INFO - Downloaded data for 3600 tickers, taking 4094.76 seconds.
+2024-12-15 21:36:17,194 - INFO - Downloaded data for 3700 tickers, taking 4207.77 seconds.
+2024-12-15 21:38:11,013 - INFO - Downloaded data for 3800 tickers, taking 4321.59 seconds.
+2024-12-15 21:40:05,153 - INFO - Downloaded data for 3900 tickers, taking 4435.73 seconds.
+2024-12-15 21:41:59,182 - INFO - Downloaded data for 4000 tickers, taking 4549.76 seconds.
+2024-12-15 21:43:52,113 - INFO - Downloaded data for 4100 tickers, taking 4662.69 seconds.
+2024-12-15 21:45:45,361 - INFO - Downloaded data for 4200 tickers, taking 4775.94 seconds.
+2024-12-15 21:47:38,613 - INFO - Downloaded data for 4300 tickers, taking 4889.19 seconds.
+2024-12-15 21:49:32,098 - INFO - Downloaded data for 4400 tickers, taking 5002.68 seconds.
+2024-12-15 21:51:25,275 - INFO - Downloaded data for 4500 tickers, taking 5115.85 seconds.
+2024-12-15 21:53:18,365 - INFO - Downloaded data for 4600 tickers, taking 5228.94 seconds.
+2024-12-15 21:55:11,701 - INFO - Downloaded data for 4700 tickers, taking 5342.28 seconds.
+2024-12-15 21:57:04,955 - INFO - Downloaded data for 4800 tickers, taking 5455.53 seconds.
+2024-12-15 21:58:58,006 - INFO - Downloaded data for 4900 tickers, taking 5568.58 seconds.
+2024-12-15 22:00:51,838 - INFO - Downloaded data for 5000 tickers, taking 5682.41 seconds.
+2024-12-15 22:02:45,324 - INFO - Downloaded data for 5100 tickers, taking 5795.90 seconds.
+2024-12-15 22:04:38,828 - INFO - Downloaded data for 5200 tickers, taking 5909.41 seconds.
+2024-12-15 22:06:31,990 - INFO - Downloaded data for 5300 tickers, taking 6022.57 seconds.
+2024-12-15 22:08:26,127 - INFO - Downloaded data for 5400 tickers, taking 6136.70 seconds.
+2024-12-15 22:10:11,165 - INFO - Total tickers processed: 5492
+2024-12-15 22:10:11,165 - INFO - Data download and refresh process completed.
+2024-12-16 20:26:05,513 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-16 20:26:05,513 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-16 20:26:06,066 - INFO - Cleared 5492 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-16 20:26:06,066 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-16 20:26:06,071 - INFO - Found 5492 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-16 20:26:06,210 - INFO - Fetching data from 2022-01-01 to 2024-12-17
+2024-12-16 20:27:59,091 - INFO - Downloaded data for 100 tickers, taking 112.88 seconds.
+2024-12-16 20:29:52,859 - INFO - Downloaded data for 200 tickers, taking 226.65 seconds.
+2024-12-16 20:31:45,651 - INFO - Downloaded data for 300 tickers, taking 339.44 seconds.
+2024-12-16 20:33:39,254 - INFO - Downloaded data for 400 tickers, taking 453.04 seconds.
+2024-12-16 20:35:32,851 - INFO - Downloaded data for 500 tickers, taking 566.64 seconds.
+2024-12-16 20:37:26,744 - INFO - Downloaded data for 600 tickers, taking 680.53 seconds.
+2024-12-16 20:39:20,184 - INFO - Downloaded data for 700 tickers, taking 793.97 seconds.
+2024-12-16 20:41:13,702 - INFO - Downloaded data for 800 tickers, taking 907.49 seconds.
+2024-12-16 20:43:07,488 - INFO - Downloaded data for 900 tickers, taking 1021.28 seconds.
+2024-12-16 20:45:01,155 - INFO - Downloaded data for 1000 tickers, taking 1134.95 seconds.
+2024-12-16 20:46:55,029 - INFO - Downloaded data for 1100 tickers, taking 1248.82 seconds.
+2024-12-16 20:48:48,872 - INFO - Downloaded data for 1200 tickers, taking 1362.66 seconds.
+2024-12-16 20:50:42,588 - INFO - Downloaded data for 1300 tickers, taking 1476.38 seconds.
+2024-12-16 20:52:36,958 - INFO - Downloaded data for 1400 tickers, taking 1590.75 seconds.
+2024-12-16 20:54:30,848 - INFO - Downloaded data for 1500 tickers, taking 1704.64 seconds.
+2024-12-16 20:56:24,580 - INFO - Downloaded data for 1600 tickers, taking 1818.37 seconds.
+2024-12-16 20:58:18,683 - INFO - Downloaded data for 1700 tickers, taking 1932.47 seconds.
+2024-12-16 21:00:13,513 - INFO - Downloaded data for 1800 tickers, taking 2047.30 seconds.
+2024-12-16 21:02:08,387 - INFO - Downloaded data for 1900 tickers, taking 2162.18 seconds.
+2024-12-16 21:04:03,388 - INFO - Downloaded data for 2000 tickers, taking 2277.18 seconds.
+2024-12-16 21:05:57,528 - INFO - Downloaded data for 2100 tickers, taking 2391.32 seconds.
+2024-12-16 21:07:50,690 - INFO - Downloaded data for 2200 tickers, taking 2504.48 seconds.
+2024-12-16 21:09:44,780 - INFO - Downloaded data for 2300 tickers, taking 2618.57 seconds.
+2024-12-16 21:11:38,550 - INFO - Downloaded data for 2400 tickers, taking 2732.34 seconds.
+2024-12-16 21:13:33,123 - INFO - Downloaded data for 2500 tickers, taking 2846.91 seconds.
+2024-12-16 21:15:26,769 - INFO - Downloaded data for 2600 tickers, taking 2960.56 seconds.
+2024-12-16 21:17:19,911 - INFO - Downloaded data for 2700 tickers, taking 3073.70 seconds.
+2024-12-16 21:19:14,375 - INFO - Downloaded data for 2800 tickers, taking 3188.17 seconds.
+2024-12-16 21:21:07,840 - INFO - Downloaded data for 2900 tickers, taking 3301.63 seconds.
+2024-12-16 21:23:01,602 - INFO - Downloaded data for 3000 tickers, taking 3415.39 seconds.
+2024-12-16 21:24:55,527 - INFO - Downloaded data for 3100 tickers, taking 3529.32 seconds.
+2024-12-16 21:26:49,591 - INFO - Downloaded data for 3200 tickers, taking 3643.38 seconds.
+2024-12-16 21:28:43,548 - INFO - Downloaded data for 3300 tickers, taking 3757.34 seconds.
+2024-12-16 21:30:37,503 - INFO - Downloaded data for 3400 tickers, taking 3871.29 seconds.
+2024-12-16 21:32:31,095 - INFO - Downloaded data for 3500 tickers, taking 3984.89 seconds.
+2024-12-16 21:34:24,559 - INFO - Downloaded data for 3600 tickers, taking 4098.35 seconds.
+2024-12-16 21:36:17,711 - INFO - Downloaded data for 3700 tickers, taking 4211.50 seconds.
+2024-12-16 21:38:10,907 - INFO - Downloaded data for 3800 tickers, taking 4324.70 seconds.
+2024-12-16 21:40:04,970 - INFO - Downloaded data for 3900 tickers, taking 4438.76 seconds.
+2024-12-16 21:41:58,285 - INFO - Downloaded data for 4000 tickers, taking 4552.08 seconds.
+2024-12-16 21:43:51,354 - INFO - Downloaded data for 4100 tickers, taking 4665.14 seconds.
+2024-12-16 21:45:44,687 - INFO - Downloaded data for 4200 tickers, taking 4778.48 seconds.
+2024-12-16 21:47:38,038 - INFO - Downloaded data for 4300 tickers, taking 4891.83 seconds.
+2024-12-16 21:49:31,644 - INFO - Downloaded data for 4400 tickers, taking 5005.43 seconds.
+2024-12-16 21:51:25,278 - INFO - Downloaded data for 4500 tickers, taking 5119.07 seconds.
+2024-12-16 21:53:18,688 - INFO - Downloaded data for 4600 tickers, taking 5232.48 seconds.
+2024-12-16 21:55:11,897 - INFO - Downloaded data for 4700 tickers, taking 5345.69 seconds.
+2024-12-16 21:57:04,965 - INFO - Downloaded data for 4800 tickers, taking 5458.75 seconds.
+2024-12-16 21:58:58,132 - INFO - Downloaded data for 4900 tickers, taking 5571.92 seconds.
+2024-12-16 22:00:52,268 - INFO - Downloaded data for 5000 tickers, taking 5686.06 seconds.
+2024-12-16 22:02:45,854 - INFO - Downloaded data for 5100 tickers, taking 5799.64 seconds.
+2024-12-16 22:04:39,370 - INFO - Downloaded data for 5200 tickers, taking 5913.16 seconds.
+2024-12-16 22:06:32,834 - INFO - Downloaded data for 5300 tickers, taking 6026.62 seconds.
+2024-12-16 22:08:26,615 - INFO - Downloaded data for 5400 tickers, taking 6140.41 seconds.
+2024-12-16 22:10:11,923 - INFO - Total tickers processed: 5492
+2024-12-16 22:10:11,923 - INFO - Data download and refresh process completed.
+2024-12-17 20:26:05,979 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-17 20:26:05,980 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-17 20:26:08,342 - INFO - Cleared 5492 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-17 20:26:08,343 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-17 20:26:08,455 - INFO - Found 5490 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-17 20:26:08,597 - INFO - Fetching data from 2022-01-01 to 2024-12-18
+2024-12-17 20:26:09,025 - ERROR - 
+1 Failed download:
+2024-12-17 20:26:09,025 - ERROR - ['AADI']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000238B14E3D60>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-17 20:26:09,025 - WARNING - No new data found for AADI.
+2024-12-17 20:28:09,193 - INFO - Downloaded data for 100 tickers, taking 120.60 seconds.
+2024-12-17 20:30:03,275 - INFO - Downloaded data for 200 tickers, taking 234.68 seconds.
+2024-12-17 20:31:55,878 - INFO - Downloaded data for 300 tickers, taking 347.28 seconds.
+2024-12-17 20:33:49,380 - INFO - Downloaded data for 400 tickers, taking 460.78 seconds.
+2024-12-17 20:35:43,796 - INFO - Downloaded data for 500 tickers, taking 575.20 seconds.
+2024-12-17 20:37:37,449 - INFO - Downloaded data for 600 tickers, taking 688.85 seconds.
+2024-12-17 20:39:30,526 - INFO - Downloaded data for 700 tickers, taking 801.93 seconds.
+2024-12-17 20:41:23,619 - INFO - Downloaded data for 800 tickers, taking 915.02 seconds.
+2024-12-17 20:43:16,706 - INFO - Downloaded data for 900 tickers, taking 1028.11 seconds.
+2024-12-17 20:45:10,115 - INFO - Downloaded data for 1000 tickers, taking 1141.52 seconds.
+2024-12-17 20:47:03,490 - INFO - Downloaded data for 1100 tickers, taking 1254.89 seconds.
+2024-12-17 20:48:57,089 - INFO - Downloaded data for 1200 tickers, taking 1368.49 seconds.
+2024-12-17 20:50:51,017 - INFO - Downloaded data for 1300 tickers, taking 1482.42 seconds.
+2024-12-17 20:52:44,681 - INFO - Downloaded data for 1400 tickers, taking 1596.08 seconds.
+2024-12-17 20:54:38,766 - INFO - Downloaded data for 1500 tickers, taking 1710.17 seconds.
+2024-12-17 20:56:31,888 - INFO - Downloaded data for 1600 tickers, taking 1823.29 seconds.
+2024-12-17 20:58:25,770 - INFO - Downloaded data for 1700 tickers, taking 1937.17 seconds.
+2024-12-17 21:00:19,556 - INFO - Downloaded data for 1800 tickers, taking 2050.96 seconds.
+2024-12-17 21:02:13,388 - INFO - Downloaded data for 1900 tickers, taking 2164.79 seconds.
+2024-12-17 21:04:06,639 - INFO - Downloaded data for 2000 tickers, taking 2278.04 seconds.
+2024-12-17 21:06:00,163 - INFO - Downloaded data for 2100 tickers, taking 2391.56 seconds.
+2024-12-17 21:07:54,661 - INFO - Downloaded data for 2200 tickers, taking 2506.06 seconds.
+2024-12-17 21:09:48,254 - INFO - Downloaded data for 2300 tickers, taking 2619.66 seconds.
+2024-12-17 21:11:41,792 - INFO - Downloaded data for 2400 tickers, taking 2733.19 seconds.
+2024-12-17 21:13:34,994 - INFO - Downloaded data for 2500 tickers, taking 2846.40 seconds.
+2024-12-17 21:15:27,875 - INFO - Downloaded data for 2600 tickers, taking 2959.28 seconds.
+2024-12-17 21:17:20,805 - INFO - Downloaded data for 2700 tickers, taking 3072.21 seconds.
+2024-12-17 21:19:14,385 - INFO - Downloaded data for 2800 tickers, taking 3185.79 seconds.
+2024-12-17 21:21:07,729 - INFO - Downloaded data for 2900 tickers, taking 3299.13 seconds.
+2024-12-17 21:23:00,794 - INFO - Downloaded data for 3000 tickers, taking 3412.20 seconds.
+2024-12-17 21:24:53,992 - INFO - Downloaded data for 3100 tickers, taking 3525.39 seconds.
+2024-12-17 21:26:47,771 - INFO - Downloaded data for 3200 tickers, taking 3639.17 seconds.
+2024-12-17 21:28:41,642 - INFO - Downloaded data for 3300 tickers, taking 3753.04 seconds.
+2024-12-17 21:30:35,448 - INFO - Downloaded data for 3400 tickers, taking 3866.85 seconds.
+2024-12-17 21:32:29,207 - INFO - Downloaded data for 3500 tickers, taking 3980.61 seconds.
+2024-12-17 21:34:23,120 - INFO - Downloaded data for 3600 tickers, taking 4094.52 seconds.
+2024-12-17 21:36:16,373 - INFO - Downloaded data for 3700 tickers, taking 4207.78 seconds.
+2024-12-17 21:38:09,300 - INFO - Downloaded data for 3800 tickers, taking 4320.70 seconds.
+2024-12-17 21:40:03,542 - INFO - Downloaded data for 3900 tickers, taking 4434.94 seconds.
+2024-12-17 21:41:56,665 - INFO - Downloaded data for 4000 tickers, taking 4548.07 seconds.
+2024-12-17 21:43:49,816 - INFO - Downloaded data for 4100 tickers, taking 4661.22 seconds.
+2024-12-17 21:45:42,584 - INFO - Downloaded data for 4200 tickers, taking 4773.99 seconds.
+2024-12-17 21:47:35,944 - INFO - Downloaded data for 4300 tickers, taking 4887.35 seconds.
+2024-12-17 21:49:29,321 - INFO - Downloaded data for 4400 tickers, taking 5000.72 seconds.
+2024-12-17 21:51:22,308 - INFO - Downloaded data for 4500 tickers, taking 5113.71 seconds.
+2024-12-17 21:53:15,332 - INFO - Downloaded data for 4600 tickers, taking 5226.73 seconds.
+2024-12-17 21:55:08,604 - INFO - Downloaded data for 4700 tickers, taking 5340.01 seconds.
+2024-12-17 21:57:02,249 - INFO - Downloaded data for 4800 tickers, taking 5453.65 seconds.
+2024-12-17 21:58:56,717 - INFO - Downloaded data for 4900 tickers, taking 5568.12 seconds.
+2024-12-17 22:00:49,574 - INFO - Downloaded data for 5000 tickers, taking 5680.98 seconds.
+2024-12-17 22:02:42,947 - INFO - Downloaded data for 5100 tickers, taking 5794.35 seconds.
+2024-12-17 22:04:36,089 - INFO - Downloaded data for 5200 tickers, taking 5907.49 seconds.
+2024-12-17 22:06:29,254 - INFO - Downloaded data for 5300 tickers, taking 6020.66 seconds.
+2024-12-17 22:08:23,223 - INFO - Downloaded data for 5400 tickers, taking 6134.63 seconds.
+2024-12-17 22:10:04,305 - INFO - Total tickers processed: 5489
+2024-12-17 22:10:04,305 - INFO - Data download and refresh process completed.
+2024-12-18 20:26:05,849 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-18 20:26:05,850 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-18 20:26:06,838 - INFO - Cleared 5489 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-18 20:26:06,839 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-18 20:26:06,949 - INFO - Found 5486 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-18 20:26:07,088 - INFO - Fetching data from 2022-01-01 to 2024-12-19
+2024-12-18 20:27:59,438 - INFO - Downloaded data for 100 tickers, taking 112.35 seconds.
+2024-12-18 20:29:52,555 - INFO - Downloaded data for 200 tickers, taking 225.47 seconds.
+2024-12-18 20:31:45,357 - INFO - Downloaded data for 300 tickers, taking 338.27 seconds.
+2024-12-18 20:33:38,774 - INFO - Downloaded data for 400 tickers, taking 451.69 seconds.
+2024-12-18 20:35:31,859 - INFO - Downloaded data for 500 tickers, taking 564.77 seconds.
+2024-12-18 20:37:25,703 - INFO - Downloaded data for 600 tickers, taking 678.61 seconds.
+2024-12-18 20:39:18,864 - INFO - Downloaded data for 700 tickers, taking 791.78 seconds.
+2024-12-18 20:41:11,926 - INFO - Downloaded data for 800 tickers, taking 904.84 seconds.
+2024-12-18 20:43:04,968 - INFO - Downloaded data for 900 tickers, taking 1017.88 seconds.
+2024-12-18 20:44:58,145 - INFO - Downloaded data for 1000 tickers, taking 1131.06 seconds.
+2024-12-18 20:46:51,647 - INFO - Downloaded data for 1100 tickers, taking 1244.56 seconds.
+2024-12-18 20:48:44,980 - INFO - Downloaded data for 1200 tickers, taking 1357.89 seconds.
+2024-12-18 20:50:38,278 - INFO - Downloaded data for 1300 tickers, taking 1471.19 seconds.
+2024-12-18 20:52:31,648 - INFO - Downloaded data for 1400 tickers, taking 1584.56 seconds.
+2024-12-18 20:54:25,352 - INFO - Downloaded data for 1500 tickers, taking 1698.26 seconds.
+2024-12-18 20:56:18,123 - INFO - Downloaded data for 1600 tickers, taking 1811.03 seconds.
+2024-12-18 20:58:11,717 - INFO - Downloaded data for 1700 tickers, taking 1924.63 seconds.
+2024-12-18 21:00:05,539 - INFO - Downloaded data for 1800 tickers, taking 2038.45 seconds.
+2024-12-18 21:01:59,170 - INFO - Downloaded data for 1900 tickers, taking 2152.08 seconds.
+2024-12-18 21:03:52,421 - INFO - Downloaded data for 2000 tickers, taking 2265.33 seconds.
+2024-12-18 21:05:45,795 - INFO - Downloaded data for 2100 tickers, taking 2378.71 seconds.
+2024-12-18 21:07:38,915 - INFO - Downloaded data for 2200 tickers, taking 2491.83 seconds.
+2024-12-18 21:09:32,257 - INFO - Downloaded data for 2300 tickers, taking 2605.17 seconds.
+2024-12-18 21:11:25,636 - INFO - Downloaded data for 2400 tickers, taking 2718.55 seconds.
+2024-12-18 21:13:19,866 - INFO - Downloaded data for 2500 tickers, taking 2832.78 seconds.
+2024-12-18 21:15:12,837 - INFO - Downloaded data for 2600 tickers, taking 2945.75 seconds.
+2024-12-18 21:17:05,490 - INFO - Downloaded data for 2700 tickers, taking 3058.40 seconds.
+2024-12-18 21:18:59,275 - INFO - Downloaded data for 2800 tickers, taking 3172.19 seconds.
+2024-12-18 21:20:52,601 - INFO - Downloaded data for 2900 tickers, taking 3285.51 seconds.
+2024-12-18 21:22:45,657 - INFO - Downloaded data for 3000 tickers, taking 3398.57 seconds.
+2024-12-18 21:24:39,249 - INFO - Downloaded data for 3100 tickers, taking 3512.16 seconds.
+2024-12-18 21:26:32,965 - INFO - Downloaded data for 3200 tickers, taking 3625.88 seconds.
+2024-12-18 21:28:26,902 - INFO - Downloaded data for 3300 tickers, taking 3739.81 seconds.
+2024-12-18 21:30:21,035 - INFO - Downloaded data for 3400 tickers, taking 3853.95 seconds.
+2024-12-18 21:32:14,419 - INFO - Downloaded data for 3500 tickers, taking 3967.33 seconds.
+2024-12-18 21:34:08,116 - INFO - Downloaded data for 3600 tickers, taking 4081.03 seconds.
+2024-12-18 21:36:01,152 - INFO - Downloaded data for 3700 tickers, taking 4194.06 seconds.
+2024-12-18 21:37:54,256 - INFO - Downloaded data for 3800 tickers, taking 4307.17 seconds.
+2024-12-18 21:39:48,168 - INFO - Downloaded data for 3900 tickers, taking 4421.08 seconds.
+2024-12-18 21:41:41,526 - INFO - Downloaded data for 4000 tickers, taking 4534.44 seconds.
+2024-12-18 21:43:34,198 - INFO - Downloaded data for 4100 tickers, taking 4647.11 seconds.
+2024-12-18 21:45:27,078 - INFO - Downloaded data for 4200 tickers, taking 4759.99 seconds.
+2024-12-18 21:47:20,448 - INFO - Downloaded data for 4300 tickers, taking 4873.36 seconds.
+2024-12-18 21:49:14,072 - INFO - Downloaded data for 4400 tickers, taking 4986.98 seconds.
+2024-12-18 21:51:07,307 - INFO - Downloaded data for 4500 tickers, taking 5100.22 seconds.
+2024-12-18 21:53:00,125 - INFO - Downloaded data for 4600 tickers, taking 5213.04 seconds.
+2024-12-18 21:54:53,576 - INFO - Downloaded data for 4700 tickers, taking 5326.49 seconds.
+2024-12-18 21:56:47,135 - INFO - Downloaded data for 4800 tickers, taking 5440.05 seconds.
+2024-12-18 21:58:40,287 - INFO - Downloaded data for 4900 tickers, taking 5553.20 seconds.
+2024-12-18 22:00:33,928 - INFO - Downloaded data for 5000 tickers, taking 5666.84 seconds.
+2024-12-18 22:02:27,220 - INFO - Downloaded data for 5100 tickers, taking 5780.13 seconds.
+2024-12-18 22:04:20,715 - INFO - Downloaded data for 5200 tickers, taking 5893.63 seconds.
+2024-12-18 22:06:13,772 - INFO - Downloaded data for 5300 tickers, taking 6006.68 seconds.
+2024-12-18 22:08:07,749 - INFO - Downloaded data for 5400 tickers, taking 6120.66 seconds.
+2024-12-18 22:09:45,724 - INFO - Total tickers processed: 5486
+2024-12-18 22:09:45,724 - INFO - Data download and refresh process completed.
+2024-12-19 20:26:06,157 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-19 20:26:06,157 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-19 20:26:06,936 - INFO - Cleared 5486 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-19 20:26:06,936 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-19 20:26:06,940 - INFO - Found 5479 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-19 20:26:07,084 - INFO - Fetching data from 2022-01-01 to 2024-12-20
+2024-12-19 20:26:07,168 - ERROR - 
+1 Failed download:
+2024-12-19 20:26:07,168 - ERROR - ['AAL']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000127843E3C10>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-19 20:26:07,168 - WARNING - No new data found for AAL.
+2024-12-19 20:28:00,969 - INFO - Downloaded data for 100 tickers, taking 113.89 seconds.
+2024-12-19 20:29:54,090 - INFO - Downloaded data for 200 tickers, taking 227.01 seconds.
+2024-12-19 20:31:46,645 - INFO - Downloaded data for 300 tickers, taking 339.56 seconds.
+2024-12-19 20:33:39,884 - INFO - Downloaded data for 400 tickers, taking 452.80 seconds.
+2024-12-19 20:35:32,863 - INFO - Downloaded data for 500 tickers, taking 565.78 seconds.
+2024-12-19 20:37:26,678 - INFO - Downloaded data for 600 tickers, taking 679.59 seconds.
+2024-12-19 20:39:19,976 - INFO - Downloaded data for 700 tickers, taking 792.89 seconds.
+2024-12-19 20:41:13,158 - INFO - Downloaded data for 800 tickers, taking 906.07 seconds.
+2024-12-19 20:43:06,346 - INFO - Downloaded data for 900 tickers, taking 1019.26 seconds.
+2024-12-19 20:44:59,526 - INFO - Downloaded data for 1000 tickers, taking 1132.44 seconds.
+2024-12-19 20:46:52,991 - INFO - Downloaded data for 1100 tickers, taking 1245.91 seconds.
+2024-12-19 20:48:46,669 - INFO - Downloaded data for 1200 tickers, taking 1359.59 seconds.
+2024-12-19 20:50:40,199 - INFO - Downloaded data for 1300 tickers, taking 1473.12 seconds.
+2024-12-19 20:52:33,677 - INFO - Downloaded data for 1400 tickers, taking 1586.59 seconds.
+2024-12-19 20:54:26,987 - INFO - Downloaded data for 1500 tickers, taking 1699.90 seconds.
+2024-12-19 20:56:20,251 - INFO - Downloaded data for 1600 tickers, taking 1813.17 seconds.
+2024-12-19 20:58:13,635 - INFO - Downloaded data for 1700 tickers, taking 1926.55 seconds.
+2024-12-19 21:00:07,218 - INFO - Downloaded data for 1800 tickers, taking 2040.13 seconds.
+2024-12-19 21:02:00,658 - INFO - Downloaded data for 1900 tickers, taking 2153.57 seconds.
+2024-12-19 21:03:54,145 - INFO - Downloaded data for 2000 tickers, taking 2267.06 seconds.
+2024-12-19 21:05:47,027 - INFO - Downloaded data for 2100 tickers, taking 2379.94 seconds.
+2024-12-19 21:07:39,882 - INFO - Downloaded data for 2200 tickers, taking 2492.80 seconds.
+2024-12-19 21:09:32,785 - INFO - Downloaded data for 2300 tickers, taking 2605.70 seconds.
+2024-12-19 21:11:25,873 - INFO - Downloaded data for 2400 tickers, taking 2718.79 seconds.
+2024-12-19 21:13:19,403 - INFO - Downloaded data for 2500 tickers, taking 2832.32 seconds.
+2024-12-19 21:15:12,090 - INFO - Downloaded data for 2600 tickers, taking 2945.01 seconds.
+2024-12-19 21:17:04,275 - INFO - Downloaded data for 2700 tickers, taking 3057.19 seconds.
+2024-12-19 21:18:57,527 - INFO - Downloaded data for 2800 tickers, taking 3170.44 seconds.
+2024-12-19 21:20:50,442 - INFO - Downloaded data for 2900 tickers, taking 3283.36 seconds.
+2024-12-19 21:22:42,819 - INFO - Downloaded data for 3000 tickers, taking 3395.74 seconds.
+2024-12-19 21:24:35,749 - INFO - Downloaded data for 3100 tickers, taking 3508.67 seconds.
+2024-12-19 21:26:29,067 - INFO - Downloaded data for 3200 tickers, taking 3621.98 seconds.
+2024-12-19 21:28:22,391 - INFO - Downloaded data for 3300 tickers, taking 3735.31 seconds.
+2024-12-19 21:30:15,649 - INFO - Downloaded data for 3400 tickers, taking 3848.57 seconds.
+2024-12-19 21:32:08,938 - INFO - Downloaded data for 3500 tickers, taking 3961.85 seconds.
+2024-12-19 21:34:01,870 - INFO - Downloaded data for 3600 tickers, taking 4074.79 seconds.
+2024-12-19 21:35:54,717 - INFO - Downloaded data for 3700 tickers, taking 4187.63 seconds.
+2024-12-19 21:37:47,329 - INFO - Downloaded data for 3800 tickers, taking 4300.25 seconds.
+2024-12-19 21:39:40,510 - INFO - Downloaded data for 3900 tickers, taking 4413.43 seconds.
+2024-12-19 21:41:33,198 - INFO - Downloaded data for 4000 tickers, taking 4526.11 seconds.
+2024-12-19 21:43:25,367 - INFO - Downloaded data for 4100 tickers, taking 4638.28 seconds.
+2024-12-19 21:45:17,843 - INFO - Downloaded data for 4200 tickers, taking 4750.76 seconds.
+2024-12-19 21:47:10,893 - INFO - Downloaded data for 4300 tickers, taking 4863.81 seconds.
+2024-12-19 21:49:04,127 - INFO - Downloaded data for 4400 tickers, taking 4977.04 seconds.
+2024-12-19 21:50:57,041 - INFO - Downloaded data for 4500 tickers, taking 5089.96 seconds.
+2024-12-19 21:52:49,500 - INFO - Downloaded data for 4600 tickers, taking 5202.42 seconds.
+2024-12-19 21:54:42,113 - INFO - Downloaded data for 4700 tickers, taking 5315.03 seconds.
+2024-12-19 21:56:34,948 - INFO - Downloaded data for 4800 tickers, taking 5427.86 seconds.
+2024-12-19 21:58:27,571 - INFO - Downloaded data for 4900 tickers, taking 5540.49 seconds.
+2024-12-19 22:00:20,462 - INFO - Downloaded data for 5000 tickers, taking 5653.38 seconds.
+2024-12-19 22:02:13,734 - INFO - Downloaded data for 5100 tickers, taking 5766.65 seconds.
+2024-12-19 22:04:06,673 - INFO - Downloaded data for 5200 tickers, taking 5879.59 seconds.
+2024-12-19 22:05:59,139 - INFO - Downloaded data for 5300 tickers, taking 5992.06 seconds.
+2024-12-19 22:07:52,592 - INFO - Downloaded data for 5400 tickers, taking 6105.51 seconds.
+2024-12-19 22:09:21,033 - INFO - Total tickers processed: 5478
+2024-12-19 22:09:21,033 - INFO - Data download and refresh process completed.
+2024-12-21 20:26:06,095 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-21 20:26:06,096 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-21 20:26:06,848 - INFO - Cleared 5478 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-21 20:26:06,848 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-21 20:26:06,852 - INFO - Found 5479 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-21 20:26:06,963 - INFO - Fetching data from 2022-01-01 to 2024-12-21
+2024-12-21 20:27:59,846 - INFO - Downloaded data for 100 tickers, taking 112.88 seconds.
+2024-12-21 20:29:53,366 - INFO - Downloaded data for 200 tickers, taking 226.40 seconds.
+2024-12-21 20:31:45,905 - INFO - Downloaded data for 300 tickers, taking 338.94 seconds.
+2024-12-21 20:33:39,080 - INFO - Downloaded data for 400 tickers, taking 452.12 seconds.
+2024-12-21 20:35:32,197 - INFO - Downloaded data for 500 tickers, taking 565.23 seconds.
+2024-12-21 20:37:25,941 - INFO - Downloaded data for 600 tickers, taking 678.98 seconds.
+2024-12-21 20:39:19,077 - INFO - Downloaded data for 700 tickers, taking 792.11 seconds.
+2024-12-21 20:41:12,537 - INFO - Downloaded data for 800 tickers, taking 905.57 seconds.
+2024-12-21 20:43:05,631 - INFO - Downloaded data for 900 tickers, taking 1018.67 seconds.
+2024-12-21 20:44:59,097 - INFO - Downloaded data for 1000 tickers, taking 1132.13 seconds.
+2024-12-21 20:46:52,617 - INFO - Downloaded data for 1100 tickers, taking 1245.65 seconds.
+2024-12-21 20:48:46,172 - INFO - Downloaded data for 1200 tickers, taking 1359.21 seconds.
+2024-12-21 20:50:39,736 - INFO - Downloaded data for 1300 tickers, taking 1472.77 seconds.
+2024-12-21 20:52:33,144 - INFO - Downloaded data for 1400 tickers, taking 1586.18 seconds.
+2024-12-21 20:54:26,674 - INFO - Downloaded data for 1500 tickers, taking 1699.71 seconds.
+2024-12-21 20:56:20,016 - INFO - Downloaded data for 1600 tickers, taking 1813.05 seconds.
+2024-12-21 20:58:13,691 - INFO - Downloaded data for 1700 tickers, taking 1926.73 seconds.
+2024-12-21 21:00:07,586 - INFO - Downloaded data for 1800 tickers, taking 2040.62 seconds.
+2024-12-21 21:02:01,367 - INFO - Downloaded data for 1900 tickers, taking 2154.40 seconds.
+2024-12-21 21:03:54,807 - INFO - Downloaded data for 2000 tickers, taking 2267.84 seconds.
+2024-12-21 21:05:48,260 - INFO - Downloaded data for 2100 tickers, taking 2381.30 seconds.
+2024-12-21 21:07:41,360 - INFO - Downloaded data for 2200 tickers, taking 2494.40 seconds.
+2024-12-21 21:09:34,873 - INFO - Downloaded data for 2300 tickers, taking 2607.91 seconds.
+2024-12-21 21:11:28,689 - INFO - Downloaded data for 2400 tickers, taking 2721.73 seconds.
+2024-12-21 21:13:23,273 - INFO - Downloaded data for 2500 tickers, taking 2836.31 seconds.
+2024-12-21 21:15:16,512 - INFO - Downloaded data for 2600 tickers, taking 2949.55 seconds.
+2024-12-21 21:17:09,331 - INFO - Downloaded data for 2700 tickers, taking 3062.37 seconds.
+2024-12-21 21:19:03,289 - INFO - Downloaded data for 2800 tickers, taking 3176.33 seconds.
+2024-12-21 21:20:56,749 - INFO - Downloaded data for 2900 tickers, taking 3289.79 seconds.
+2024-12-21 21:22:49,839 - INFO - Downloaded data for 3000 tickers, taking 3402.88 seconds.
+2024-12-21 21:24:43,500 - INFO - Downloaded data for 3100 tickers, taking 3516.54 seconds.
+2024-12-21 21:26:37,721 - INFO - Downloaded data for 3200 tickers, taking 3630.76 seconds.
+2024-12-21 21:28:31,420 - INFO - Downloaded data for 3300 tickers, taking 3744.46 seconds.
+2024-12-21 21:30:25,103 - INFO - Downloaded data for 3400 tickers, taking 3858.14 seconds.
+2024-12-21 21:32:18,512 - INFO - Downloaded data for 3500 tickers, taking 3971.55 seconds.
+2024-12-21 21:34:12,021 - INFO - Downloaded data for 3600 tickers, taking 4085.06 seconds.
+2024-12-21 21:36:04,986 - INFO - Downloaded data for 3700 tickers, taking 4198.02 seconds.
+2024-12-21 21:37:58,342 - INFO - Downloaded data for 3800 tickers, taking 4311.38 seconds.
+2024-12-21 21:39:51,908 - INFO - Downloaded data for 3900 tickers, taking 4424.94 seconds.
+2024-12-21 21:41:45,171 - INFO - Downloaded data for 4000 tickers, taking 4538.21 seconds.
+2024-12-21 21:43:37,935 - INFO - Downloaded data for 4100 tickers, taking 4650.97 seconds.
+2024-12-21 21:45:30,942 - INFO - Downloaded data for 4200 tickers, taking 4763.98 seconds.
+2024-12-21 21:47:24,088 - INFO - Downloaded data for 4300 tickers, taking 4877.12 seconds.
+2024-12-21 21:49:17,829 - INFO - Downloaded data for 4400 tickers, taking 4990.87 seconds.
+2024-12-21 21:51:10,684 - INFO - Downloaded data for 4500 tickers, taking 5103.72 seconds.
+2024-12-21 21:53:03,612 - INFO - Downloaded data for 4600 tickers, taking 5216.65 seconds.
+2024-12-21 21:54:56,772 - INFO - Downloaded data for 4700 tickers, taking 5329.81 seconds.
+2024-12-21 21:56:49,838 - INFO - Downloaded data for 4800 tickers, taking 5442.87 seconds.
+2024-12-21 21:58:43,028 - INFO - Downloaded data for 4900 tickers, taking 5556.06 seconds.
+2024-12-21 22:00:37,198 - INFO - Downloaded data for 5000 tickers, taking 5670.24 seconds.
+2024-12-21 22:02:30,819 - INFO - Downloaded data for 5100 tickers, taking 5783.86 seconds.
+2024-12-21 22:04:24,328 - INFO - Downloaded data for 5200 tickers, taking 5897.36 seconds.
+2024-12-21 22:06:17,465 - INFO - Downloaded data for 5300 tickers, taking 6010.50 seconds.
+2024-12-21 22:08:11,163 - INFO - Downloaded data for 5400 tickers, taking 6124.20 seconds.
+2024-12-21 22:09:41,014 - INFO - Total tickers processed: 5479
+2024-12-21 22:09:41,014 - INFO - Data download and refresh process completed.
+2024-12-23 20:26:06,079 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-23 20:26:06,079 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-23 20:26:07,051 - INFO - Cleared 5479 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-23 20:26:07,052 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-23 20:26:07,057 - INFO - Found 5476 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-23 20:26:07,193 - INFO - Fetching data from 2022-01-01 to 2024-12-24
+2024-12-23 20:27:59,890 - INFO - Downloaded data for 100 tickers, taking 112.70 seconds.
+2024-12-23 20:29:53,203 - INFO - Downloaded data for 200 tickers, taking 226.01 seconds.
+2024-12-23 20:31:46,178 - INFO - Downloaded data for 300 tickers, taking 338.98 seconds.
+2024-12-23 20:33:39,216 - INFO - Downloaded data for 400 tickers, taking 452.02 seconds.
+2024-12-23 20:35:32,513 - INFO - Downloaded data for 500 tickers, taking 565.32 seconds.
+2024-12-23 20:37:26,602 - INFO - Downloaded data for 600 tickers, taking 679.41 seconds.
+2024-12-23 20:39:20,156 - INFO - Downloaded data for 700 tickers, taking 792.96 seconds.
+2024-12-23 20:41:13,424 - INFO - Downloaded data for 800 tickers, taking 906.23 seconds.
+2024-12-23 20:43:06,426 - INFO - Downloaded data for 900 tickers, taking 1019.23 seconds.
+2024-12-23 20:44:59,781 - INFO - Downloaded data for 1000 tickers, taking 1132.59 seconds.
+2024-12-23 20:46:53,098 - INFO - Downloaded data for 1100 tickers, taking 1245.90 seconds.
+2024-12-23 20:48:46,592 - INFO - Downloaded data for 1200 tickers, taking 1359.40 seconds.
+2024-12-23 20:50:40,500 - INFO - Downloaded data for 1300 tickers, taking 1473.31 seconds.
+2024-12-23 20:52:33,896 - INFO - Downloaded data for 1400 tickers, taking 1586.70 seconds.
+2024-12-23 20:54:27,563 - INFO - Downloaded data for 1500 tickers, taking 1700.37 seconds.
+2024-12-23 20:56:21,267 - INFO - Downloaded data for 1600 tickers, taking 1814.07 seconds.
+2024-12-23 20:58:14,753 - INFO - Downloaded data for 1700 tickers, taking 1927.56 seconds.
+2024-12-23 21:00:08,103 - INFO - Downloaded data for 1800 tickers, taking 2040.91 seconds.
+2024-12-23 21:01:16,578 - ERROR - 
+1 Failed download:
+2024-12-23 21:01:16,578 - ERROR - ['FCO']: YFPricesMissingError('$%ticker%: possibly delisted; No price data found  (1d 2022-01-01 -> 2024-12-24)')
+2024-12-23 21:01:16,578 - WARNING - No new data found for FCO.
+2024-12-23 21:02:04,252 - INFO - Downloaded data for 1900 tickers, taking 2157.06 seconds.
+2024-12-23 21:03:57,688 - INFO - Downloaded data for 2000 tickers, taking 2270.49 seconds.
+2024-12-23 21:05:51,168 - INFO - Downloaded data for 2100 tickers, taking 2383.97 seconds.
+2024-12-23 21:07:44,566 - INFO - Downloaded data for 2200 tickers, taking 2497.37 seconds.
+2024-12-23 21:09:37,819 - INFO - Downloaded data for 2300 tickers, taking 2610.63 seconds.
+2024-12-23 21:11:31,556 - INFO - Downloaded data for 2400 tickers, taking 2724.36 seconds.
+2024-12-23 21:13:25,497 - INFO - Downloaded data for 2500 tickers, taking 2838.30 seconds.
+2024-12-23 21:15:18,391 - INFO - Downloaded data for 2600 tickers, taking 2951.20 seconds.
+2024-12-23 21:17:11,482 - INFO - Downloaded data for 2700 tickers, taking 3064.29 seconds.
+2024-12-23 21:19:05,065 - INFO - Downloaded data for 2800 tickers, taking 3177.87 seconds.
+2024-12-23 21:20:58,470 - INFO - Downloaded data for 2900 tickers, taking 3291.28 seconds.
+2024-12-23 21:22:51,557 - INFO - Downloaded data for 3000 tickers, taking 3404.36 seconds.
+2024-12-23 21:24:45,241 - INFO - Downloaded data for 3100 tickers, taking 3518.05 seconds.
+2024-12-23 21:26:39,306 - INFO - Downloaded data for 3200 tickers, taking 3632.11 seconds.
+2024-12-23 21:28:32,837 - INFO - Downloaded data for 3300 tickers, taking 3745.64 seconds.
+2024-12-23 21:30:26,790 - INFO - Downloaded data for 3400 tickers, taking 3859.60 seconds.
+2024-12-23 21:32:20,124 - INFO - Downloaded data for 3500 tickers, taking 3972.93 seconds.
+2024-12-23 21:34:13,428 - INFO - Downloaded data for 3600 tickers, taking 4086.23 seconds.
+2024-12-23 21:36:06,197 - INFO - Downloaded data for 3700 tickers, taking 4199.00 seconds.
+2024-12-23 21:37:59,705 - INFO - Downloaded data for 3800 tickers, taking 4312.51 seconds.
+2024-12-23 21:39:53,280 - INFO - Downloaded data for 3900 tickers, taking 4426.09 seconds.
+2024-12-23 21:41:46,439 - INFO - Downloaded data for 4000 tickers, taking 4539.25 seconds.
+2024-12-23 21:43:38,891 - INFO - Downloaded data for 4100 tickers, taking 4651.70 seconds.
+2024-12-23 21:45:31,399 - INFO - Downloaded data for 4200 tickers, taking 4764.21 seconds.
+2024-12-23 21:47:24,637 - INFO - Downloaded data for 4300 tickers, taking 4877.44 seconds.
+2024-12-23 21:49:18,123 - INFO - Downloaded data for 4400 tickers, taking 4990.93 seconds.
+2024-12-23 21:51:10,994 - INFO - Downloaded data for 4500 tickers, taking 5103.80 seconds.
+2024-12-23 21:53:03,896 - INFO - Downloaded data for 4600 tickers, taking 5216.70 seconds.
+2024-12-23 21:54:57,042 - INFO - Downloaded data for 4700 tickers, taking 5329.85 seconds.
+2024-12-23 21:56:50,953 - INFO - Downloaded data for 4800 tickers, taking 5443.76 seconds.
+2024-12-23 21:58:43,809 - INFO - Downloaded data for 4900 tickers, taking 5556.62 seconds.
+2024-12-23 22:00:37,211 - INFO - Downloaded data for 5000 tickers, taking 5670.02 seconds.
+2024-12-23 22:02:31,004 - INFO - Downloaded data for 5100 tickers, taking 5783.81 seconds.
+2024-12-23 22:04:23,991 - INFO - Downloaded data for 5200 tickers, taking 5896.80 seconds.
+2024-12-23 22:06:16,929 - INFO - Downloaded data for 5300 tickers, taking 6009.74 seconds.
+2024-12-23 22:08:10,477 - INFO - Downloaded data for 5400 tickers, taking 6123.28 seconds.
+2024-12-23 22:09:35,970 - INFO - Total tickers processed: 5475
+2024-12-23 22:09:35,970 - INFO - Data download and refresh process completed.
+2024-12-24 20:26:06,326 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2024-12-24 20:26:06,326 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2024-12-24 20:26:06,981 - INFO - Cleared 5475 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2024-12-24 20:26:06,981 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2024-12-24 20:26:06,986 - INFO - Found 5474 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2024-12-24 20:26:07,200 - INFO - Fetching data from 2022-01-01 to 2024-12-25
+2024-12-24 20:28:09,291 - INFO - Downloaded data for 100 tickers, taking 122.09 seconds.
+2024-12-24 20:30:11,039 - INFO - Downloaded data for 200 tickers, taking 243.84 seconds.
+2024-12-24 20:32:13,176 - INFO - Downloaded data for 300 tickers, taking 365.98 seconds.
+2024-12-24 20:34:12,338 - INFO - Downloaded data for 400 tickers, taking 485.14 seconds.
+2024-12-24 20:36:11,397 - INFO - Downloaded data for 500 tickers, taking 604.20 seconds.
+2024-12-24 20:38:14,029 - INFO - Downloaded data for 600 tickers, taking 726.83 seconds.
+2024-12-24 20:40:09,468 - INFO - Downloaded data for 700 tickers, taking 842.27 seconds.
+2024-12-24 20:42:02,459 - INFO - Downloaded data for 800 tickers, taking 955.26 seconds.
+2024-12-24 20:43:55,867 - INFO - Downloaded data for 900 tickers, taking 1068.67 seconds.
+2024-12-24 20:45:49,442 - INFO - Downloaded data for 1000 tickers, taking 1182.24 seconds.
+2024-12-24 20:47:43,053 - INFO - Downloaded data for 1100 tickers, taking 1295.85 seconds.
+2024-12-24 20:49:36,676 - INFO - Downloaded data for 1200 tickers, taking 1409.48 seconds.
+2024-12-24 20:51:30,123 - INFO - Downloaded data for 1300 tickers, taking 1522.92 seconds.
+2024-12-24 20:53:23,505 - INFO - Downloaded data for 1400 tickers, taking 1636.31 seconds.
+2024-12-24 20:55:16,713 - INFO - Downloaded data for 1500 tickers, taking 1749.51 seconds.
+2024-12-24 20:57:09,953 - INFO - Downloaded data for 1600 tickers, taking 1862.75 seconds.
+2024-12-24 20:59:03,099 - INFO - Downloaded data for 1700 tickers, taking 1975.90 seconds.
+2024-12-24 21:00:56,732 - INFO - Downloaded data for 1800 tickers, taking 2089.53 seconds.
+2024-12-24 21:02:50,579 - INFO - Downloaded data for 1900 tickers, taking 2203.38 seconds.
+2024-12-24 21:04:44,668 - INFO - Downloaded data for 2000 tickers, taking 2317.47 seconds.
+2024-12-24 21:06:38,581 - INFO - Downloaded data for 2100 tickers, taking 2431.38 seconds.
+2024-12-24 21:08:32,030 - INFO - Downloaded data for 2200 tickers, taking 2544.83 seconds.
+2024-12-24 21:10:25,427 - INFO - Downloaded data for 2300 tickers, taking 2658.23 seconds.
+2024-12-24 21:12:18,834 - INFO - Downloaded data for 2400 tickers, taking 2771.63 seconds.
+2024-12-24 21:14:12,540 - INFO - Downloaded data for 2500 tickers, taking 2885.34 seconds.
+2024-12-24 21:16:05,659 - INFO - Downloaded data for 2600 tickers, taking 2998.46 seconds.
+2024-12-24 21:17:58,599 - INFO - Downloaded data for 2700 tickers, taking 3111.40 seconds.
+2024-12-24 21:19:51,860 - INFO - Downloaded data for 2800 tickers, taking 3224.66 seconds.
+2024-12-24 21:21:45,061 - INFO - Downloaded data for 2900 tickers, taking 3337.86 seconds.
+2024-12-24 21:23:37,928 - INFO - Downloaded data for 3000 tickers, taking 3450.73 seconds.
+2024-12-24 21:25:31,940 - INFO - Downloaded data for 3100 tickers, taking 3564.74 seconds.
+2024-12-24 21:27:25,758 - INFO - Downloaded data for 3200 tickers, taking 3678.56 seconds.
+2024-12-24 21:29:19,255 - INFO - Downloaded data for 3300 tickers, taking 3792.05 seconds.
+2024-12-24 21:31:13,334 - INFO - Downloaded data for 3400 tickers, taking 3906.13 seconds.
+2024-12-24 21:33:06,723 - INFO - Downloaded data for 3500 tickers, taking 4019.52 seconds.
+2024-12-24 21:35:00,014 - INFO - Downloaded data for 3600 tickers, taking 4132.81 seconds.
+2024-12-24 21:36:53,363 - INFO - Downloaded data for 3700 tickers, taking 4246.16 seconds.
+2024-12-24 21:38:47,031 - INFO - Downloaded data for 3800 tickers, taking 4359.83 seconds.
+2024-12-24 21:40:41,026 - INFO - Downloaded data for 3900 tickers, taking 4473.83 seconds.
+2024-12-24 21:42:34,596 - INFO - Downloaded data for 4000 tickers, taking 4587.40 seconds.
+2024-12-24 21:44:27,312 - INFO - Downloaded data for 4100 tickers, taking 4700.11 seconds.
+2024-12-24 21:45:19,184 - ERROR - 
+1 Failed download:
+2024-12-24 21:45:19,184 - ERROR - ['RCFA-UN']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001C039DBAA60>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2024-12-24 21:45:19,184 - WARNING - No new data found for RCFA-UN.
+2024-12-24 21:46:22,610 - INFO - Downloaded data for 4200 tickers, taking 4815.41 seconds.
+2024-12-24 21:48:15,824 - INFO - Downloaded data for 4300 tickers, taking 4928.62 seconds.
+2024-12-24 21:50:09,189 - INFO - Downloaded data for 4400 tickers, taking 5041.99 seconds.
+2024-12-24 21:52:03,742 - INFO - Downloaded data for 4500 tickers, taking 5156.54 seconds.
+2024-12-24 21:53:57,602 - INFO - Downloaded data for 4600 tickers, taking 5270.40 seconds.
+2024-12-24 21:55:51,097 - INFO - Downloaded data for 4700 tickers, taking 5383.90 seconds.
+2024-12-24 21:57:45,004 - INFO - Downloaded data for 4800 tickers, taking 5497.80 seconds.
+2024-12-24 21:59:38,039 - INFO - Downloaded data for 4900 tickers, taking 5610.84 seconds.
+2024-12-24 22:01:31,567 - INFO - Downloaded data for 5000 tickers, taking 5724.37 seconds.
+2024-12-24 22:03:24,908 - INFO - Downloaded data for 5100 tickers, taking 5837.71 seconds.
+2024-12-24 22:05:18,345 - INFO - Downloaded data for 5200 tickers, taking 5951.15 seconds.
+2024-12-24 22:07:11,836 - INFO - Downloaded data for 5300 tickers, taking 6064.64 seconds.
+2024-12-24 22:09:05,222 - INFO - Downloaded data for 5400 tickers, taking 6178.02 seconds.
+2024-12-24 22:10:28,522 - INFO - Total tickers processed: 5473
+2024-12-24 22:10:28,522 - INFO - Data download and refresh process completed.

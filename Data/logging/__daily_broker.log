@@ -1,0 +1,27 @@
+[2024-11-11 07:30:07] =========================================
+[2024-11-11 07:30:07] Daily Broker execution started. Base path: C:\Users\Masam\Desktop\Stock-Market-LSTM
+[2024-11-11 07:30:07] =========================================
+[2024-11-11 07:30:07] Preparing to run 'Daily Broker Script'...
+[2024-11-11 07:30:07] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\6__DailyBroker.py
+[2024-12-04 07:30:07] =========================================
+[2024-12-04 07:30:07] Daily Broker execution started. Base path: C:\Users\Masam\Desktop\Stock-Market-LSTM
+[2024-12-04 07:30:07] =========================================
+[2024-12-04 07:30:07] Preparing to run 'Daily Broker Script'...
+[2024-12-04 07:30:07] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\6__DailyBroker.py
+[2024-12-04 07:30:10] Error running 'Daily Broker Script'. Error details:
+[2024-12-04 07:30:10] Script 'Daily Broker Script' exited with code . Error Output:
+2024-12-04 07:30:08,255 - INFO - ============================[ Starting new trading session ]============== 2024-12-04 07:30:08,258 - INFO - Connecting to Interactive Brokers TWS... 2024-12-04 07:30:08,260 - INFO - Connecting to 127.0.0.1:7497 with clientId 1... 2024-12-04 07:30:10,317 - INFO - Disconnecting 2024-12-04 07:30:10,328 - ERROR - API connection failed: ConnectionRefusedError(22, 'The remote computer refused the network connection', None, 1225, None) 2024-12-04 07:30:10,331 - ERROR - Make sure API port on TWS/IBG is open 2024-12-04 07:30:10,333 - ERROR - Error during execution: [WinError 1225] The remote computer refused the network connection 2024-12-04 07:30:10,338 - ERROR - Traceback: Traceback (most recent call last):   File "C:\Users\Masam\Desktop\Stock-Market-LSTM\6__DailyBroker.py", line 551, in start     ib.connect('127.0.0.1', 7497, clientId=1)   File "C:\Users\Masam\miniconda3\envs\tf\lib\site-packages\ib_insync\ib.py", line 279, in connect     return self._run(self.connectAsync(   File "C:\Users\Masam\miniconda3\envs\tf\lib\site-packages\ib_insync\ib.py", line 318, in _run     return util.run(*awaitables, timeout=self.RequestTimeout)   File "C:\Users\Masam\miniconda3\envs\tf\lib\site-packages\ib_insync\util.py", line 341, in run     result = loop.run_until_complete(task)   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\base_events.py", line 647, in run_until_complete     return future.result()   File "C:\Users\Masam\miniconda3\envs\tf\lib\site-packages\ib_insync\ib.py", line 1748, in connectAsync     await self.client.connectAsync(host, port, clientId, timeout)   File "C:\Users\Masam\miniconda3\envs\tf\lib\site-packages\ib_insync\client.py", line 211, in connectAsync     await asyncio.wait_for(self.conn.connectAsync(host, port), timeout)   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\tasks.py", line 479, in wait_for     return fut.result()   File "C:\Users\Masam\miniconda3\envs\tf\lib\site-packages\ib_insync\connection.py", line 39, in connectAsync     self.transport, _ = await loop.create_connection(   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\base_events.py", line 1065, in create_connection     raise exceptions[0]   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\base_events.py", line 1050, in create_connection     sock = await self._connect_sock(   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\base_events.py", line 961, in _connect_sock     await self.sock_connect(sock, address)   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\proactor_events.py", line 703, in sock_connect     return await self._proactor.connect(sock, address)   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\windows_events.py", line 817, in _poll     value = callback(transferred, key, ov)   File "C:\Users\Masam\miniconda3\envs\tf\lib\asyncio\windows_events.py", line 604, in finish_connect     ov.getresult() ConnectionRefusedError: [WinError 1225] The remote computer refused the network connection 
+[2024-12-04 07:30:10] Time elapsed for 'Daily Broker Script': 3.36 seconds.
+[2024-12-04 07:30:10] -----------------------------------------
+[2024-12-04 07:30:10] Daily Broker execution completed.
+[2024-12-04 07:30:10] =========================================
+[2024-12-06 07:30:07] =========================================
+[2024-12-06 07:30:07] Daily Broker execution started. Base path: C:\Users\Masam\Desktop\Stock-Market-LSTM
+[2024-12-06 07:30:07] =========================================
+[2024-12-06 07:30:07] Preparing to run 'Daily Broker Script'...
+[2024-12-06 07:30:07] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\6__DailyBroker.py
+[2024-12-06 07:31:08] 'Daily Broker Script' completed successfully.
+[2024-12-06 07:31:08] Time elapsed for 'Daily Broker Script': 61.1 seconds.
+[2024-12-06 07:31:08] -----------------------------------------
+[2024-12-06 07:31:08] Daily Broker execution completed.
+[2024-12-06 07:31:08] =========================================
