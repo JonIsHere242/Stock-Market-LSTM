@@ -16,7 +16,7 @@ import traceback
 import sys
 import time
 import socket
-
+import exchange_calendars as ec
 
 
 DEBUG_MODE = True 
@@ -27,7 +27,7 @@ def dprint(message):
     """Debug print function that can be toggled on/off."""
     if DEBUG_MODE:
         print(f"[DEBUG] {message}")
-
+        logging.debug(message)
 
 
 def setup_logging(log_to_console=True):
@@ -111,6 +111,63 @@ def wait_for_tws(max_attempts=5, wait_time=10):
     print(final_message)
     logging.error(final_message)
     return False
+
+
+nyse = ec.get_calendar('XNYS')
+
+def wait_for_market_open(tz='America/New_York', max_wait_minutes=60):
+    """
+    Blocks execution until the market is open, or until max_wait_minutes is reached.
+    Returns True if the market opened within that time, False otherwise.
+    """
+    logging.info("Checking if the market is currently open...")
+
+    # We convert 'now' to the exchange time zone
+    now = pd.Timestamp.now(tz)
+
+    # If the market is open right now, return True immediately
+    if nyse.is_session(now.floor('D')):
+        current_session = nyse.session_date(now)
+        current_open = nyse.session_open(current_session)
+        current_close = nyse.session_close(current_session)
+
+        if current_open <= now <= current_close:
+            logging.info("Market is open.")
+            return True
+
+    # If the market is not open, figure out the next open time
+    next_open = nyse.next_open(now)
+    # Edge case: if next_open is very late in the day, might be a half day or no session
+    # But let's proceed with the simple approach
+    if not next_open:
+        logging.warning("No upcoming market open found. Possibly a holiday.")
+        return False
+
+    # We'll keep waiting until next_open or max_wait_minutes has passed
+    wait_seconds = 0
+    interval = 30  # check every 30 seconds
+    max_wait_seconds = max_wait_minutes * 60
+
+    logging.info(f"Waiting for the market to open at {next_open}...")
+
+    while wait_seconds < max_wait_seconds:
+        now = pd.Timestamp.now(tz)
+        if now >= next_open:
+            logging.info("Market has opened.")
+            return True
+        time.sleep(interval)
+        wait_seconds += interval
+
+    logging.warning("Market did not open within the expected wait time.")
+    return False
+
+
+
+
+
+
+
+
 
 
 
@@ -488,6 +545,9 @@ class MyStrategy(bt.Strategy):
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
     #================[PLACE ORDER WITH TWS ]=================#
+
+
+
     def process_buy_signalNOTAJUSTEDTOCONTRACT(self, data):
         """Process buy signals with proper price rounding and order handling"""
         symbol = data._name
@@ -1109,5 +1169,8 @@ def start():
 
 if __name__ == '__main__':
     setup_logging(log_to_console=True)
+    if not wait_for_market_open(max_wait_minutes=180):
+        logging.error("Skipping today's run because the market didn't open within the expected time.")
+    sys.exit(1)
     start()
 

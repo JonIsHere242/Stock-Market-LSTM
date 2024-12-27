@@ -233,3 +233,9 @@
 2024-12-24 20:25:34,817 - WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001802568A0A0>: Failed to resolve 'www.sec.gov' ([Errno 11001] getaddrinfo failed)")': /files/company_tickers_exchange.json
 2024-12-24 20:25:35,592 - INFO - File saved successfully: Data/TickerCikData/TickerCIKs_20241224.parquet
 2024-12-24 20:25:35,592 - INFO - Script completed
+2024-12-25 20:25:34,511 - INFO - Script started
+2024-12-25 20:25:34,511 - INFO - Immediate download requested
+2024-12-25 20:25:34,563 - WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FCC6F3A0A0>: Failed to resolve 'www.sec.gov' ([Errno 11001] getaddrinfo failed)")': /files/company_tickers_exchange.json
+2024-12-25 20:25:34,797 - WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FCC6EDFA60>: Failed to resolve 'www.sec.gov' ([Errno 11001] getaddrinfo failed)")': /files/company_tickers_exchange.json
+2024-12-25 20:25:35,384 - INFO - File saved successfully: Data/TickerCikData/TickerCIKs_20241225.parquet
+2024-12-25 20:25:35,384 - INFO - Script completed
