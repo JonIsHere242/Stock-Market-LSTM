@@ -8296,3 +8296,810 @@
 2024-12-25 22:35:13 - INFO - Final Portfolio Value: $61347.11
 2024-12-25 22:35:13 - INFO - Percentage Gain: 1126.94%
 2024-12-25 22:35:13 - INFO - Cash: $61347.11
+2024-12-26 22:52:51 - INFO - Logging setup completed successfully.
+2024-12-26 22:52:51 - INFO - Testing logging configuration...
+2024-12-26 22:52:51 - INFO - Starting main execution
+2024-12-26 22:52:57 - INFO - Skipping AGR due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping AMNA due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping AMND due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping AMTR due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping ARC due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping AY due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping BCSA due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping BCSAU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping BOCN due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping BOCNU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping CTLT due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping DCF due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping DJCB due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping ENV due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping EQC-PD due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping ESUS due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping EVE due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping FEDL due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping GHIXU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping HAYN due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping HIE due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping IHTA due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping INAQU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping IVCP due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping IVCPU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping LBPH due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping LUMO due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping MRO due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping NAPA due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping NDP due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping NOVV due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping NOVVU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping NTG due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping PIRS due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping ROCL due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping ROCLU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping SCE-PH due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping SITC-PA due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping TBC due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping THCP due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping THCPU due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping TTP due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping VSTO due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping VZIO due to insufficient data or not up to last trading date.
+2024-12-26 22:52:57 - INFO - Skipping ZIONL due to insufficient data or not up to last trading date.
+2024-12-26 22:55:22 - INFO - Prepared buy signal for TIL at 9.015 for 2024-01-18
+2024-12-26 22:55:22 - INFO - Prepared buy signal for AVIR at 3.56 for 2024-01-18
+2024-12-26 22:55:22 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:55:22 - INFO - Updated buy signal for TIL at price 9.4657
+2024-12-26 22:55:24 - INFO - Updated buy signal for AVIR at price 3.738
+2024-12-26 22:55:25 - INFO - Prepared buy signal for PLCE at 24.02 for 2024-01-24
+2024-12-26 22:55:25 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:25 - INFO - Closing AVIR due to Sell condition met
+2024-12-26 22:55:26 - INFO - Closing TIL due to Sell condition met
+2024-12-26 22:55:27 - INFO - Prepared buy signal for PRM at 4.74 for 2024-01-30
+2024-12-26 22:55:27 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:28 - INFO - Updated buy signal for PLCE at price 23.121
+2024-12-26 22:55:28 - INFO - Updated buy signal for PRM at price 4.977
+2024-12-26 22:55:28 - INFO - Closing PLCE due to Sell condition met
+2024-12-26 22:55:28 - INFO - Closing PRM due to Sell condition met
+2024-12-26 22:55:29 - INFO - Prepared buy signal for MOGO at 1.66 for 2024-02-02
+2024-12-26 22:55:29 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:32 - INFO - Updated buy signal for MOGO at price 1.68
+2024-12-26 22:55:32 - INFO - Prepared buy signal for BBAI at 1.85 for 2024-02-12
+2024-12-26 22:55:32 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:32 - INFO - Updated buy signal for BBAI at price 1.9425
+2024-12-26 22:55:33 - INFO - Closing BBAI due to Sell condition met
+2024-12-26 22:55:33 - INFO - Closing MOGO due to Sell condition met
+2024-12-26 22:55:34 - INFO - Prepared buy signal for RCAT at 0.704 for 2024-02-15
+2024-12-26 22:55:34 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:34 - INFO - Prepared buy signal for SSSS at 4.23 for 2024-02-16
+2024-12-26 22:55:34 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:36 - INFO - Prepared buy signal for HPKEW at 8.13 for 2024-02-21
+2024-12-26 22:55:36 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:36 - INFO - Updated buy signal for HPKEW at price 8.5365
+2024-12-26 22:55:36 - INFO - Updated buy signal for RCAT at price 0.715
+2024-12-26 22:55:37 - INFO - Closing RCAT due to Sell condition met
+2024-12-26 22:55:39 - INFO - Prepared buy signal for VMEO at 4.56 for 2024-02-29
+2024-12-26 22:55:39 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:39 - INFO - Updated buy signal for VMEO at price 4.788
+2024-12-26 22:55:40 - INFO - Closing HPKEW due to Sell condition met
+2024-12-26 22:55:41 - INFO - Closing VMEO due to Sell condition met
+2024-12-26 22:55:42 - INFO - Prepared buy signal for VMEO at 4.64 for 2024-03-07
+2024-12-26 22:55:42 - INFO - Prepared buy signal for AQMS at 10.94 for 2024-03-07
+2024-12-26 22:55:42 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:55:42 - INFO - Updated buy signal for VMEO at price 4.872
+2024-12-26 22:55:43 - INFO - Prepared buy signal for CLAR at 6.55 for 2024-03-11
+2024-12-26 22:55:43 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:43 - INFO - Updated buy signal for CLAR at price 6.8775
+2024-12-26 22:55:43 - INFO - Closing CLAR due to Sell condition met
+2024-12-26 22:55:43 - INFO - Updated buy signal for AQMS at price 10.29
+2024-12-26 22:55:43 - INFO - Closing AQMS due to Sell condition met
+2024-12-26 22:55:44 - INFO - Prepared buy signal for GETY at 5.6 for 2024-03-14
+2024-12-26 22:55:44 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:45 - INFO - Updated buy signal for GETY at price 5.56
+2024-12-26 22:55:45 - INFO - Closing GETY due to Sell condition met
+2024-12-26 22:55:45 - INFO - Closing VMEO due to Sell condition met
+2024-12-26 22:55:46 - INFO - Updated buy signal for SSSS at price 4.4415
+2024-12-26 22:55:48 - INFO - Prepared buy signal for ILLR at 0.853 for 2024-03-26
+2024-12-26 22:55:48 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:48 - INFO - Updated buy signal for ILLR at price 0.8956
+2024-12-26 22:55:49 - INFO - Prepared buy signal for RDUS at 20.65 for 2024-03-28
+2024-12-26 22:55:49 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:50 - INFO - Closing ILLR due to Sell condition met
+2024-12-26 22:55:50 - INFO - Closing SSSS due to Sell condition met
+2024-12-26 22:55:51 - INFO - Prepared buy signal for ILLR at 0.769 for 2024-04-03
+2024-12-26 22:55:51 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:52 - INFO - Updated buy signal for ILLR at price 0.8005
+2024-12-26 22:55:52 - INFO - Closing ILLR due to Sell condition met
+2024-12-26 22:55:52 - INFO - Prepared buy signal for WAVE at 1.25 for 2024-04-05
+2024-12-26 22:55:52 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:52 - INFO - Updated buy signal for RDUS at price 20.5905
+2024-12-26 22:55:52 - INFO - Updated buy signal for WAVE at price 1.3125
+2024-12-26 22:55:53 - INFO - Closing WAVE due to Sell condition met
+2024-12-26 22:55:53 - INFO - Closing RDUS due to Sell condition met
+2024-12-26 22:55:54 - INFO - Prepared buy signal for SSRM at 5.26 for 2024-04-11
+2024-12-26 22:55:54 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:55 - INFO - Updated buy signal for SSRM at price 5.523
+2024-12-26 22:55:55 - INFO - Closing SSRM due to Sell condition met
+2024-12-26 22:55:55 - INFO - Prepared buy signal for ILLR at 0.909 for 2024-04-15
+2024-12-26 22:55:55 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:57 - INFO - Prepared buy signal for CSTE at 5.45 for 2024-04-17
+2024-12-26 22:55:57 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:57 - INFO - Updated buy signal for ILLR at price 0.8482
+2024-12-26 22:55:57 - INFO - Closing ILLR due to Sell condition met
+2024-12-26 22:55:58 - INFO - Updated buy signal for CSTE at price 5.74
+2024-12-26 22:55:59 - INFO - Prepared buy signal for MYFW at 16.29 for 2024-04-23
+2024-12-26 22:55:59 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:55:59 - INFO - Prepared buy signal for DOYU at 8.39 for 2024-04-24
+2024-12-26 22:55:59 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:00 - INFO - Prepared buy signal for GDC at 0.691 for 2024-04-25
+2024-12-26 22:56:00 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:00 - INFO - Updated buy signal for GDC at price 0.7255
+2024-12-26 22:56:00 - INFO - Updated buy signal for MYFW at price 16.6845
+2024-12-26 22:56:00 - INFO - Closing GDC due to Sell condition met
+2024-12-26 22:56:01 - INFO - Prepared buy signal for LXU at 9.3 for 2024-05-01
+2024-12-26 22:56:01 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:01 - INFO - Updated buy signal for DOYU at price 8.81
+2024-12-26 22:56:01 - INFO - Closing CSTE due to Sell condition met
+2024-12-26 22:56:03 - INFO - Prepared buy signal for AKRO at 22.11 for 2024-05-07
+2024-12-26 22:56:03 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:03 - INFO - Updated buy signal for LXU at price 8.8935
+2024-12-26 22:56:03 - INFO - Closing LXU due to Sell condition met
+2024-12-26 22:56:03 - INFO - Closing MYFW due to Sell condition met
+2024-12-26 22:56:04 - INFO - Prepared buy signal for UI at 127.19 for 2024-05-13
+2024-12-26 22:56:04 - INFO - Prepared buy signal for HROW at 11.6 for 2024-05-13
+2024-12-26 22:56:04 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:04 - INFO - Updated buy signal for AKRO at price 20.6325
+2024-12-26 22:56:04 - INFO - Updated buy signal for UI at price 133.5495
+2024-12-26 22:56:04 - INFO - Updated buy signal for HROW at price 12.18
+2024-12-26 22:56:04 - INFO - Closing DOYU due to Sell condition met
+2024-12-26 22:56:06 - INFO - Closing AKRO due to Sell condition met
+2024-12-26 22:56:07 - INFO - Prepared buy signal for ERAS at 2.24 for 2024-05-21
+2024-12-26 22:56:07 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:07 - INFO - Updated buy signal for ERAS at price 2.352
+2024-12-26 22:56:08 - INFO - Closing HROW due to Sell condition met
+2024-12-26 22:56:08 - INFO - Closing UI due to Sell condition met
+2024-12-26 22:56:08 - INFO - Prepared buy signal for DOCS at 27.41 for 2024-05-24
+2024-12-26 22:56:08 - INFO - Prepared buy signal for HNRG at 6.835 for 2024-05-24
+2024-12-26 22:56:08 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:09 - INFO - Updated buy signal for DOCS at price 28.7805
+2024-12-26 22:56:10 - INFO - Closing DOCS due to Sell condition met
+2024-12-26 22:56:11 - INFO - Closing ERAS due to Sell condition met
+2024-12-26 22:56:15 - INFO - Prepared buy signal for NTGR at 14.91 for 2024-06-14
+2024-12-26 22:56:15 - INFO - Prepared buy signal for MXL at 18.14 for 2024-06-14
+2024-12-26 22:56:15 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:17 - INFO - Updated buy signal for MXL at price 19.047
+2024-12-26 22:56:17 - INFO - Prepared buy signal for RCAT at 1.01 for 2024-06-21
+2024-12-26 22:56:17 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:17 - INFO - Updated buy signal for RCAT at price 1.0605
+2024-12-26 22:56:17 - INFO - Closing RCAT due to Sell condition met
+2024-12-26 22:56:19 - INFO - Prepared buy signal for BEST at 2.74 for 2024-06-26
+2024-12-26 22:56:19 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:20 - INFO - Prepared buy signal for ERAS at 2.31 for 2024-06-28
+2024-12-26 22:56:20 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:20 - INFO - Updated buy signal for NTGR at price 15.078
+2024-12-26 22:56:20 - INFO - Updated buy signal for ERAS at price 2.4255
+2024-12-26 22:56:20 - INFO - Closing MXL due to Sell condition met
+2024-12-26 22:56:20 - INFO - Closing ERAS due to Sell condition met
+2024-12-26 22:56:20 - INFO - Closing NTGR due to Sell condition met
+2024-12-26 22:56:22 - INFO - Prepared buy signal for BHR at 2.91 for 2024-07-08
+2024-12-26 22:56:22 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:22 - INFO - Prepared buy signal for RVNC at 2.795 for 2024-07-09
+2024-12-26 22:56:22 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:22 - INFO - Updated buy signal for RVNC at price 2.9347
+2024-12-26 22:56:23 - INFO - Prepared buy signal for CLPT at 6.58 for 2024-07-10
+2024-12-26 22:56:23 - INFO - Prepared buy signal for COMM at 1.25 for 2024-07-10
+2024-12-26 22:56:23 - INFO - Prepared buy signal for EVRI at 8.94 for 2024-07-10
+2024-12-26 22:56:23 - INFO - Successfully wrote 3 new buy signals
+2024-12-26 22:56:23 - INFO - Updated buy signal for CLPT at price 6.909
+2024-12-26 22:56:23 - INFO - Updated buy signal for BHR at price 3.0555
+2024-12-26 22:56:24 - INFO - Closing RVNC due to Sell condition met
+2024-12-26 22:56:24 - INFO - Closing BHR due to Sell condition met
+2024-12-26 22:56:24 - INFO - Closing CLPT due to Sell condition met
+2024-12-26 22:56:25 - INFO - Prepared buy signal for RVNC at 4.01 for 2024-07-23
+2024-12-26 22:56:25 - INFO - Prepared buy signal for LUMN at 1.43 for 2024-07-23
+2024-12-26 22:56:25 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:25 - INFO - Updated buy signal for RVNC at price 4.2105
+2024-12-26 22:56:25 - INFO - Prepared buy signal for LUMN at 1.49 for 2024-07-24
+2024-12-26 22:56:25 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:25 - INFO - Updated buy signal for LUMN at price 1.62
+2024-12-26 22:56:26 - INFO - Closing LUMN due to Sell condition met
+2024-12-26 22:56:26 - INFO - Closing RVNC due to Sell condition met
+2024-12-26 22:56:26 - INFO - Prepared buy signal for LUMN at 1.64 for 2024-07-26
+2024-12-26 22:56:26 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:27 - INFO - Updated buy signal for LUMN at price 1.722
+2024-12-26 22:56:29 - INFO - Closing LUMN due to Sell condition met
+2024-12-26 22:56:30 - INFO - Prepared buy signal for CTDD at 11.99 for 2024-08-07
+2024-12-26 22:56:30 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:30 - INFO - Updated buy signal for CTDD at price 12.92
+2024-12-26 22:56:31 - INFO - Closing CTDD due to Sell condition met
+2024-12-26 22:56:32 - INFO - Prepared buy signal for CEVA at 20.18 for 2024-08-13
+2024-12-26 22:56:32 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:32 - INFO - Updated buy signal for CEVA at price 21.189
+2024-12-26 22:56:34 - INFO - Prepared buy signal for JD at 29.29 for 2024-08-19
+2024-12-26 22:56:34 - INFO - Prepared buy signal for CGTX at 0.71 for 2024-08-19
+2024-12-26 22:56:34 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:34 - INFO - Updated buy signal for CGTX at price 0.7455
+2024-12-26 22:56:35 - INFO - Closing CEVA due to Sell condition met
+2024-12-26 22:56:35 - INFO - Closing CGTX due to Sell condition met
+2024-12-26 22:56:35 - INFO - Prepared buy signal for ZLAB at 19.03 for 2024-08-27
+2024-12-26 22:56:35 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:36 - INFO - Updated buy signal for ZLAB at price 19.698
+2024-12-26 22:56:37 - INFO - Prepared buy signal for WRBY at 14.96 for 2024-08-30
+2024-12-26 22:56:37 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:37 - INFO - Updated buy signal for JD at price 27.34
+2024-12-26 22:56:37 - INFO - Closing JD due to Sell condition met
+2024-12-26 22:56:37 - INFO - Closing ZLAB due to Sell condition met
+2024-12-26 22:56:39 - INFO - Updated buy signal for WRBY at price 13.755
+2024-12-26 22:56:41 - INFO - Prepared buy signal for PLUG at 1.96 for 2024-09-16
+2024-12-26 22:56:41 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:41 - INFO - Updated buy signal for PLUG at price 2.058
+2024-12-26 22:56:42 - INFO - Prepared buy signal for CBRL at 42.34 for 2024-09-18
+2024-12-26 22:56:42 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:42 - INFO - Updated buy signal for CBRL at price 43.99
+2024-12-26 22:56:42 - INFO - Closing CBRL due to Sell condition met
+2024-12-26 22:56:42 - INFO - Closing WRBY due to Sell condition met
+2024-12-26 22:56:42 - INFO - Closing PLUG due to Sell condition met
+2024-12-26 22:56:43 - INFO - Prepared buy signal for ALGT at 45.81 for 2024-09-23
+2024-12-26 22:56:43 - INFO - Prepared buy signal for AREC at 0.65 for 2024-09-23
+2024-12-26 22:56:43 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:43 - INFO - Prepared buy signal for JD at 29.76 for 2024-09-24
+2024-12-26 22:56:43 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:43 - INFO - Updated buy signal for ALGT at price 48.1005
+2024-12-26 22:56:43 - INFO - Updated buy signal for AREC at price 0.6825
+2024-12-26 22:56:43 - INFO - Updated buy signal for JD at price 32.49
+2024-12-26 22:56:45 - INFO - Closing ALGT due to Sell condition met
+2024-12-26 22:56:45 - INFO - Closing AREC due to Sell condition met
+2024-12-26 22:56:45 - INFO - Closing JD due to Sell condition met
+2024-12-26 22:56:45 - INFO - Prepared buy signal for SGHC at 3.86 for 2024-10-08
+2024-12-26 22:56:45 - INFO - Prepared buy signal for WKSP at 0.515 for 2024-10-08
+2024-12-26 22:56:45 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:45 - INFO - Updated buy signal for WKSP at price 0.556
+2024-12-26 22:56:45 - INFO - Closing WKSP due to Sell condition met
+2024-12-26 22:56:46 - INFO - Prepared buy signal for MYND at 1.11 for 2024-10-09
+2024-12-26 22:56:46 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:46 - INFO - Updated buy signal for MYND at price 1.24
+2024-12-26 22:56:47 - INFO - Updated buy signal for SGHC at price 4.053
+2024-12-26 22:56:47 - INFO - Prepared buy signal for RIOT at 8.41 for 2024-10-14
+2024-12-26 22:56:47 - INFO - Prepared buy signal for TVGN at 0.38 for 2024-10-14
+2024-12-26 22:56:47 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:47 - INFO - Updated buy signal for RIOT at price 8.8305
+2024-12-26 22:56:47 - INFO - Closing SGHC due to Sell condition met
+2024-12-26 22:56:48 - INFO - Prepared buy signal for KOD at 3.0 for 2024-10-17
+2024-12-26 22:56:48 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:48 - INFO - Updated buy signal for KOD at price 3.15
+2024-12-26 22:56:48 - INFO - Closing MYND due to Sell condition met
+2024-12-26 22:56:49 - INFO - Prepared buy signal for UPXI at 4.11 for 2024-10-23
+2024-12-26 22:56:49 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:49 - INFO - Updated buy signal for UPXI at price 3.654
+2024-12-26 22:56:49 - INFO - Closing RIOT due to Sell condition met
+2024-12-26 22:56:49 - INFO - Closing UPXI due to Sell condition met
+2024-12-26 22:56:50 - INFO - Prepared buy signal for CCRD at 13.63 for 2024-10-28
+2024-12-26 22:56:50 - INFO - Prepared buy signal for NWL at 8.73 for 2024-10-28
+2024-12-26 22:56:50 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:50 - INFO - Updated buy signal for NWL at price 9.1665
+2024-12-26 22:56:50 - INFO - Closing KOD due to Sell condition met
+2024-12-26 22:56:51 - INFO - Prepared buy signal for BKSY at 7.14 for 2024-10-30
+2024-12-26 22:56:51 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:51 - INFO - Updated buy signal for CCRD at price 14.72
+2024-12-26 22:56:51 - INFO - Closing NWL due to Sell condition met
+2024-12-26 22:56:51 - INFO - Updated buy signal for BKSY at price 6.636
+2024-12-26 22:56:52 - INFO - Prepared buy signal for NARI at 48.74 for 2024-11-04
+2024-12-26 22:56:52 - INFO - Prepared buy signal for NWL at 8.79 for 2024-11-04
+2024-12-26 22:56:52 - INFO - Prepared buy signal for TASK at 13.18 for 2024-11-04
+2024-12-26 22:56:52 - INFO - Prepared buy signal for SFIX at 3.25 for 2024-11-04
+2024-12-26 22:56:52 - INFO - Successfully wrote 4 new buy signals
+2024-12-26 22:56:52 - INFO - Updated buy signal for NARI at price 51.56
+2024-12-26 22:56:53 - INFO - Closing BKSY due to Sell condition met
+2024-12-26 22:56:53 - INFO - Closing CCRD due to Sell condition met
+2024-12-26 22:56:53 - INFO - Closing NARI due to Sell condition met
+2024-12-26 22:56:53 - INFO - Prepared buy signal for SSYS at 8.39 for 2024-11-13
+2024-12-26 22:56:53 - INFO - Prepared buy signal for OPRX at 5.84 for 2024-11-13
+2024-12-26 22:56:53 - INFO - Prepared buy signal for FBRX at 5.677 for 2024-11-13
+2024-12-26 22:56:53 - INFO - Successfully wrote 3 new buy signals
+2024-12-26 22:56:53 - INFO - Updated buy signal for SSYS at price 10.3
+2024-12-26 22:56:53 - INFO - Updated buy signal for OPRX at price 6.132
+2024-12-26 22:56:54 - INFO - Prepared buy signal for RIVN at 12.03 for 2024-11-14
+2024-12-26 22:56:54 - INFO - Prepared buy signal for QMCO at 4.68 for 2024-11-14
+2024-12-26 22:56:54 - INFO - Prepared buy signal for FBRX at 5.67 for 2024-11-14
+2024-12-26 22:56:54 - INFO - Successfully wrote 3 new buy signals
+2024-12-26 22:56:54 - INFO - Closing OPRX due to Sell condition met
+2024-12-26 22:56:54 - INFO - Closing SSYS due to Sell condition met
+2024-12-26 22:56:54 - INFO - Prepared buy signal for SSYS at 9.26 for 2024-11-18
+2024-12-26 22:56:54 - INFO - Prepared buy signal for FBRX at 5.84 for 2024-11-18
+2024-12-26 22:56:54 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:56:54 - INFO - Updated buy signal for RIVN at price 10.563
+2024-12-26 22:56:55 - INFO - Updated buy signal for FBRX at price 6.132
+2024-12-26 22:56:55 - INFO - Closing RIVN due to Sell condition met
+2024-12-26 22:56:55 - INFO - Closing FBRX due to Sell condition met
+2024-12-26 22:56:55 - INFO - Prepared buy signal for CDTX at 15.63 for 2024-11-20
+2024-12-26 22:56:55 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:55 - INFO - Updated buy signal for CDTX at price 16.4115
+2024-12-26 22:56:55 - INFO - Closing CDTX due to Sell condition met
+2024-12-26 22:56:56 - INFO - Prepared buy signal for MCRB at 0.814 for 2024-11-21
+2024-12-26 22:56:56 - INFO - Successfully wrote 1 new buy signals
+2024-12-26 22:56:56 - INFO - Updated buy signal for SSYS at price 9.5865
+2024-12-26 22:56:56 - INFO - Updated buy signal for MCRB at price 0.8547
+2024-12-26 22:56:56 - INFO - Closing MCRB due to Sell condition met
+2024-12-26 22:56:57 - INFO - Prepared buy signal for PROC at 0.92 for 2024-11-25
+2024-12-26 22:56:57 - INFO - Prepared buy signal for MCRB at 0.769 for 2024-11-25
+2024-12-26 22:56:57 - INFO - Prepared buy signal for AQMS at 2.16 for 2024-11-25
+2024-12-26 22:56:57 - INFO - Successfully wrote 3 new buy signals
+2024-12-26 22:56:57 - INFO - Updated buy signal for PROC at price 0.97
+2024-12-26 22:56:57 - INFO - Updated buy signal for MCRB at price 0.8075
+2024-12-26 22:56:57 - INFO - Closing SSYS due to Sell condition met
+2024-12-26 22:56:57 - INFO - Closing PROC due to Sell condition met
+2024-12-26 22:56:57 - INFO - Prepared buy signal for WB at 9.46 for 2024-11-29
+2024-12-26 22:56:57 - INFO - Prepared buy signal for RIVN at 12.22 for 2024-11-29
+2024-12-26 22:56:57 - INFO - Prepared buy signal for TTEC at 5.14 for 2024-11-29
+2024-12-26 22:56:57 - INFO - Prepared buy signal for INVZ at 0.71 for 2024-11-29
+2024-12-26 22:56:57 - INFO - Successfully wrote 4 new buy signals
+2024-12-26 22:56:58 - INFO - Prepared buy signal for YI at 0.83 for 2024-12-02
+2024-12-26 22:56:58 - INFO - Prepared buy signal for RIVN at 12.23 for 2024-12-02
+2024-12-26 22:56:58 - INFO - Prepared buy signal for MIST at 1.99 for 2024-12-02
+2024-12-26 22:56:58 - INFO - Prepared buy signal for INVZ at 0.76 for 2024-12-02
+2024-12-26 22:56:58 - INFO - Successfully wrote 4 new buy signals
+2024-12-26 22:56:58 - INFO - Updated buy signal for WB at price 9.933
+2024-12-26 22:56:59 - INFO - Closing MCRB due to Sell condition met
+2024-12-26 22:56:59 - INFO - Closing WB due to Sell condition met
+2024-12-26 22:56:59 - INFO - Updated buy signal for YI at price 0.7875
+2024-12-26 22:56:59 - INFO - Closing YI due to Sell condition met
+2024-12-26 22:56:59 - INFO - Prepared buy signal for CRMT at 53.0 for 2024-12-06
+2024-12-26 22:56:59 - INFO - Prepared buy signal for QURE at 6.59 for 2024-12-06
+2024-12-26 22:56:59 - INFO - Prepared buy signal for NFE at 11.96 for 2024-12-06
+2024-12-26 22:56:59 - INFO - Prepared buy signal for CTMX at 1.16 for 2024-12-06
+2024-12-26 22:56:59 - INFO - Successfully wrote 4 new buy signals
+2024-12-26 22:56:59 - INFO - Updated buy signal for QURE at price 6.9195
+2024-12-26 22:57:00 - INFO - Prepared buy signal for OILD at 15.6 for 2024-12-09
+2024-12-26 22:57:00 - INFO - Prepared buy signal for NFE at 12.41 for 2024-12-09
+2024-12-26 22:57:00 - INFO - Successfully wrote 2 new buy signals
+2024-12-26 22:57:00 - INFO - Updated buy signal for CRMT at price 55.65
+2024-12-26 22:57:00 - INFO - Closing QURE due to Sell condition met
+2024-12-26 22:57:00 - INFO - Prepared buy signal for WKEY at 2.4 for 2024-12-12
+2024-12-26 22:57:00 - INFO - Prepared buy signal for NXPL at 1.25 for 2024-12-12
+2024-12-26 22:57:00 - INFO - Prepared buy signal for LXRX at 0.89 for 2024-12-12
+2024-12-26 22:57:00 - INFO - Successfully wrote 3 new buy signals
+2024-12-26 22:57:01 - INFO - Updated buy signal for WKEY at price 2.55
+2024-12-26 22:57:01 - INFO - Updated buy signal for OILD at price 16.2645
+2024-12-26 22:57:01 - INFO - Closing CRMT due to Sell condition met
+2024-12-26 22:57:01 - INFO - Closing WKEY due to Sell condition met
+2024-12-26 22:57:01 - INFO - Prepared buy signal for CGTX at 0.451 for 2024-12-17
+2024-12-26 22:57:01 - INFO - Prepared buy signal for NXPL at 0.91 for 2024-12-17
+2024-12-26 22:57:01 - INFO - Prepared buy signal for RDZN at 1.25 for 2024-12-17
+2024-12-26 22:57:01 - INFO - Successfully wrote 3 new buy signals
+2024-12-26 22:57:02 - INFO - Updated buy signal for NXPL at price 0.9555
+2024-12-26 22:57:02 - INFO - Updated buy signal for CGTX at price 1.15
+2024-12-26 22:57:02 - INFO - Closing CGTX due to Sell condition met
+2024-12-26 22:57:02 - INFO - Prepared buy signal for ZSL at 41.61 for 2024-12-20
+2024-12-26 22:57:02 - INFO - Prepared buy signal for CGTX at 0.634 for 2024-12-20
+2024-12-26 22:57:02 - INFO - Prepared buy signal for ABAT at 1.11 for 2024-12-20
+2024-12-26 22:57:02 - INFO - Prepared buy signal for EVOK at 5.49 for 2024-12-20
+2024-12-26 22:57:02 - INFO - Successfully wrote 4 new buy signals
+2024-12-26 22:57:03 - INFO - Entering lockup period on 2024-12-23. Clearing all positions.
+2024-12-26 22:57:03 - INFO - Closing position in NXPL for lockup period
+2024-12-26 22:57:03 - INFO - Closing position in OILD for lockup period
+2024-12-26 22:57:03 - INFO - All positions closed for lockup period
+2024-12-26 22:57:03 - WARNING - Entry price not found for NXPL. Assuming no loss.
+2024-12-26 22:57:03 - WARNING - Entry price not found for OILD. Assuming no loss.
+2024-12-26 22:57:03 - INFO - Trading locked during pre-final period (2024-12-24)
+2024-12-26 22:57:03 - INFO - On last trading day (2024-12-26). Generating final predictions.
+2024-12-26 22:57:03 - INFO - Cleared positions on 2024-12-26
+2024-12-26 22:57:03 - INFO - Prepared buy signal for ACXP at 0.9 for 2024-12-27
+2024-12-26 22:57:03 - INFO - Prepared buy signal for AEHR at 16.29 for 2024-12-27
+2024-12-26 22:57:03 - INFO - Prepared buy signal for AERT at 0.874 for 2024-12-27
+2024-12-26 22:57:03 - INFO - Prepared buy signal for ALTO at 1.66 for 2024-12-27
+2024-12-26 22:57:03 - INFO - Successfully wrote 4 new buy signals
+2024-12-26 22:57:03 - INFO - Data feed end date distribution:
+2024-12-26 22:57:03 - INFO - 2024-12-26: 5414 feeds (100.00%)
+2024-12-26 22:57:03 - INFO - Percentage of data feeds with target date 2024-11-29: 0.00%
+2024-12-26 22:57:03 - INFO - Strategy stopped. Last processed date: 2024-12-26
+2024-12-26 22:57:03 - INFO - Processed 239 days out of 252 expected
+2024-12-26 22:57:03 - INFO - Strategy stopped early. Processed 239/252 days
+2024-12-26 22:57:03 - INFO - Analyzing early stop reason...
+2024-12-26 22:57:03 - INFO - Open Positions: -2
+2024-12-26 22:57:03 - INFO - Group Allocations: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0.7490349073904148, 6: 0.1685410634252843, 7: 0}
+2024-12-26 22:57:03 - INFO - ====================== New Entry ===================
+2024-12-26 22:57:03 - INFO - Max Drawdown: 22.98%
+2024-12-26 22:57:03 - INFO - Total Trades: 78
+2024-12-26 22:57:03 - INFO - Profitable Trades: 36
+2024-12-26 22:57:03 - INFO - Sharpe Ratio: 0.99
+2024-12-26 22:57:03 - INFO - SQN: 1.53
+2024-12-26 22:57:03 - INFO - Profit Factor: 3.18
+2024-12-26 22:57:03 - INFO - Average Trade: 874.27
+2024-12-26 22:57:03 - INFO - Average Winning Trade: 2762.76
+2024-12-26 22:57:03 - INFO - Average Losing Trade: -744.44
+2024-12-26 22:57:03 - INFO - Largest Winning Trade: 33682.35
+2024-12-26 22:57:03 - INFO - Largest Losing Trade: -22626.41
+2024-12-26 22:57:03 - INFO - Time taken: 252.85 seconds
+2024-12-26 22:57:03 - INFO - Initial Portfolio funding: $5000.00
+2024-12-26 22:57:03 - INFO - Final Portfolio Value: $73192.76
+2024-12-26 22:57:03 - INFO - Percentage Gain: 1363.86%
+2024-12-26 22:57:03 - INFO - Cash: $73192.76
+2024-12-30 22:39:28 - INFO - Logging setup completed successfully.
+2024-12-30 22:39:28 - INFO - Testing logging configuration...
+2024-12-30 22:39:28 - INFO - Starting main execution
+2024-12-30 22:39:33 - INFO - Skipping AGR due to insufficient data or not up to last trading date.
+2024-12-30 22:39:33 - INFO - Skipping AMNA due to insufficient data or not up to last trading date.
+2024-12-30 22:39:33 - INFO - Skipping AMND due to insufficient data or not up to last trading date.
+2024-12-30 22:39:33 - INFO - Skipping AMTR due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping AY due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping BOCN due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping BOCNU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping CTLT due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping DCF due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping DJCB due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping EQC-PD due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping ESUS due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping EVE due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping FEDL due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping GHIXU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping IHTA due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping INAQU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping IVCP due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping IVCPU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping IVR-PB due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping LBPH due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping LUMO due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping NAPA due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping NDP due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping NOVV due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping NOVVU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping NTG due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping PIRS due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping ROCL due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping ROCLU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping SACC due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping SCE-PH due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping SITC-PA due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping TBC due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping THCP due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping THCPU due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping TTP due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping VSTO due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping VZIO due to insufficient data or not up to last trading date.
+2024-12-30 22:39:34 - INFO - Skipping ZIONL due to insufficient data or not up to last trading date.
+2024-12-30 22:41:59 - INFO - Prepared buy signal for TIL at 9.57 for 2024-01-22
+2024-12-30 22:41:59 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:41:59 - INFO - Updated buy signal for TIL at price 10.0485
+2024-12-30 22:42:00 - INFO - Prepared buy signal for PLCE at 24.02 for 2024-01-24
+2024-12-30 22:42:00 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:03 - INFO - Prepared buy signal for PRM at 4.74 for 2024-01-30
+2024-12-30 22:42:03 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:03 - INFO - Updated buy signal for PLCE at price 23.121
+2024-12-30 22:42:04 - INFO - Updated buy signal for PRM at price 4.977
+2024-12-30 22:42:04 - INFO - Closing PLCE due to Sell condition met
+2024-12-30 22:42:04 - INFO - Closing PRM due to Sell condition met
+2024-12-30 22:42:04 - INFO - Closing TIL due to Sell condition met
+2024-12-30 22:42:05 - INFO - Prepared buy signal for MOGO at 1.66 for 2024-02-02
+2024-12-30 22:42:05 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:07 - INFO - Updated buy signal for MOGO at price 1.68
+2024-12-30 22:42:08 - INFO - Prepared buy signal for BBAI at 1.85 for 2024-02-12
+2024-12-30 22:42:08 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:08 - INFO - Updated buy signal for BBAI at price 1.9425
+2024-12-30 22:42:09 - INFO - Closing BBAI due to Sell condition met
+2024-12-30 22:42:09 - INFO - Closing MOGO due to Sell condition met
+2024-12-30 22:42:10 - INFO - Prepared buy signal for RCAT at 0.704 for 2024-02-15
+2024-12-30 22:42:10 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:10 - INFO - Prepared buy signal for SSSS at 4.23 for 2024-02-16
+2024-12-30 22:42:10 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:12 - INFO - Prepared buy signal for HPKEW at 8.13 for 2024-02-21
+2024-12-30 22:42:12 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:12 - INFO - Updated buy signal for HPKEW at price 8.5365
+2024-12-30 22:42:12 - INFO - Updated buy signal for RCAT at price 0.715
+2024-12-30 22:42:13 - INFO - Closing RCAT due to Sell condition met
+2024-12-30 22:42:15 - INFO - Prepared buy signal for VMEO at 4.56 for 2024-02-29
+2024-12-30 22:42:15 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:15 - INFO - Updated buy signal for VMEO at price 4.788
+2024-12-30 22:42:16 - INFO - Closing HPKEW due to Sell condition met
+2024-12-30 22:42:17 - INFO - Closing VMEO due to Sell condition met
+2024-12-30 22:42:18 - INFO - Prepared buy signal for VMEO at 4.64 for 2024-03-07
+2024-12-30 22:42:18 - INFO - Prepared buy signal for AQMS at 10.94 for 2024-03-07
+2024-12-30 22:42:18 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:42:18 - INFO - Updated buy signal for VMEO at price 4.872
+2024-12-30 22:42:19 - INFO - Prepared buy signal for CLAR at 6.55 for 2024-03-11
+2024-12-30 22:42:19 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:19 - INFO - Updated buy signal for CLAR at price 6.8775
+2024-12-30 22:42:19 - INFO - Closing CLAR due to Sell condition met
+2024-12-30 22:42:20 - INFO - Updated buy signal for AQMS at price 10.29
+2024-12-30 22:42:20 - INFO - Closing AQMS due to Sell condition met
+2024-12-30 22:42:20 - INFO - Prepared buy signal for GETY at 5.6 for 2024-03-14
+2024-12-30 22:42:20 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:21 - INFO - Updated buy signal for GETY at price 5.56
+2024-12-30 22:42:21 - INFO - Closing GETY due to Sell condition met
+2024-12-30 22:42:21 - INFO - Closing VMEO due to Sell condition met
+2024-12-30 22:42:22 - INFO - Updated buy signal for SSSS at price 4.4415
+2024-12-30 22:42:24 - INFO - Prepared buy signal for ILLR at 0.853 for 2024-03-26
+2024-12-30 22:42:24 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:25 - INFO - Updated buy signal for ILLR at price 0.8956
+2024-12-30 22:42:26 - INFO - Prepared buy signal for RDUS at 20.65 for 2024-03-28
+2024-12-30 22:42:26 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:26 - INFO - Closing ILLR due to Sell condition met
+2024-12-30 22:42:26 - INFO - Closing SSSS due to Sell condition met
+2024-12-30 22:42:27 - INFO - Prepared buy signal for ILLR at 0.769 for 2024-04-03
+2024-12-30 22:42:27 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:28 - INFO - Updated buy signal for ILLR at price 0.8005
+2024-12-30 22:42:28 - INFO - Closing ILLR due to Sell condition met
+2024-12-30 22:42:28 - INFO - Prepared buy signal for WAVE at 1.25 for 2024-04-05
+2024-12-30 22:42:28 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:29 - INFO - Updated buy signal for RDUS at price 20.5905
+2024-12-30 22:42:29 - INFO - Updated buy signal for WAVE at price 1.3125
+2024-12-30 22:42:29 - INFO - Closing WAVE due to Sell condition met
+2024-12-30 22:42:30 - INFO - Closing RDUS due to Sell condition met
+2024-12-30 22:42:31 - INFO - Prepared buy signal for SSRM at 5.26 for 2024-04-11
+2024-12-30 22:42:31 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:31 - INFO - Updated buy signal for SSRM at price 5.523
+2024-12-30 22:42:31 - INFO - Closing SSRM due to Sell condition met
+2024-12-30 22:42:32 - INFO - Prepared buy signal for ILLR at 0.909 for 2024-04-15
+2024-12-30 22:42:32 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:33 - INFO - Prepared buy signal for CSTE at 5.45 for 2024-04-17
+2024-12-30 22:42:33 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:33 - INFO - Updated buy signal for ILLR at price 0.8482
+2024-12-30 22:42:34 - INFO - Closing ILLR due to Sell condition met
+2024-12-30 22:42:35 - INFO - Updated buy signal for CSTE at price 5.74
+2024-12-30 22:42:35 - INFO - Prepared buy signal for MYFW at 16.29 for 2024-04-23
+2024-12-30 22:42:35 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:36 - INFO - Prepared buy signal for DOYU at 8.39 for 2024-04-24
+2024-12-30 22:42:36 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:36 - INFO - Prepared buy signal for GDC at 0.691 for 2024-04-25
+2024-12-30 22:42:36 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:37 - INFO - Updated buy signal for GDC at price 0.7255
+2024-12-30 22:42:37 - INFO - Updated buy signal for MYFW at price 16.6845
+2024-12-30 22:42:37 - INFO - Closing GDC due to Sell condition met
+2024-12-30 22:42:38 - INFO - Prepared buy signal for LXU at 9.3 for 2024-05-01
+2024-12-30 22:42:38 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:38 - INFO - Updated buy signal for DOYU at price 8.81
+2024-12-30 22:42:38 - INFO - Closing CSTE due to Sell condition met
+2024-12-30 22:42:39 - INFO - Prepared buy signal for AKRO at 22.11 for 2024-05-07
+2024-12-30 22:42:39 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:39 - INFO - Updated buy signal for LXU at price 8.8935
+2024-12-30 22:42:39 - INFO - Closing LXU due to Sell condition met
+2024-12-30 22:42:40 - INFO - Closing MYFW due to Sell condition met
+2024-12-30 22:42:41 - INFO - Prepared buy signal for UI at 127.19 for 2024-05-13
+2024-12-30 22:42:41 - INFO - Prepared buy signal for HROW at 11.6 for 2024-05-13
+2024-12-30 22:42:41 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:42:41 - INFO - Updated buy signal for AKRO at price 20.6325
+2024-12-30 22:42:41 - INFO - Updated buy signal for UI at price 133.5495
+2024-12-30 22:42:41 - INFO - Updated buy signal for HROW at price 12.18
+2024-12-30 22:42:41 - INFO - Closing DOYU due to Sell condition met
+2024-12-30 22:42:42 - INFO - Closing AKRO due to Sell condition met
+2024-12-30 22:42:43 - INFO - Prepared buy signal for ERAS at 2.24 for 2024-05-21
+2024-12-30 22:42:43 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:44 - INFO - Updated buy signal for ERAS at price 2.352
+2024-12-30 22:42:45 - INFO - Closing HROW due to Sell condition met
+2024-12-30 22:42:45 - INFO - Closing UI due to Sell condition met
+2024-12-30 22:42:45 - INFO - Prepared buy signal for DOCS at 27.41 for 2024-05-24
+2024-12-30 22:42:45 - INFO - Prepared buy signal for HNRG at 6.835 for 2024-05-24
+2024-12-30 22:42:45 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:42:46 - INFO - Updated buy signal for DOCS at price 28.7805
+2024-12-30 22:42:47 - INFO - Closing DOCS due to Sell condition met
+2024-12-30 22:42:47 - INFO - Closing ERAS due to Sell condition met
+2024-12-30 22:42:52 - INFO - Prepared buy signal for NTGR at 14.91 for 2024-06-14
+2024-12-30 22:42:52 - INFO - Prepared buy signal for MXL at 18.14 for 2024-06-14
+2024-12-30 22:42:52 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:42:54 - INFO - Updated buy signal for MXL at price 19.047
+2024-12-30 22:42:54 - INFO - Prepared buy signal for RCAT at 1.01 for 2024-06-21
+2024-12-30 22:42:54 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:54 - INFO - Updated buy signal for RCAT at price 1.0605
+2024-12-30 22:42:54 - INFO - Closing RCAT due to Sell condition met
+2024-12-30 22:42:56 - INFO - Prepared buy signal for BEST at 2.74 for 2024-06-26
+2024-12-30 22:42:56 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:57 - INFO - Prepared buy signal for ERAS at 2.31 for 2024-06-28
+2024-12-30 22:42:57 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:57 - INFO - Updated buy signal for NTGR at price 15.078
+2024-12-30 22:42:57 - INFO - Updated buy signal for ERAS at price 2.4255
+2024-12-30 22:42:57 - INFO - Closing MXL due to Sell condition met
+2024-12-30 22:42:57 - INFO - Closing ERAS due to Sell condition met
+2024-12-30 22:42:57 - INFO - Closing NTGR due to Sell condition met
+2024-12-30 22:42:59 - INFO - Prepared buy signal for BHR at 2.91 for 2024-07-08
+2024-12-30 22:42:59 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:59 - INFO - Prepared buy signal for RVNC at 2.795 for 2024-07-09
+2024-12-30 22:42:59 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:42:59 - INFO - Updated buy signal for RVNC at price 2.9347
+2024-12-30 22:43:00 - INFO - Prepared buy signal for CLPT at 6.58 for 2024-07-10
+2024-12-30 22:43:00 - INFO - Prepared buy signal for COMM at 1.25 for 2024-07-10
+2024-12-30 22:43:00 - INFO - Prepared buy signal for EVRI at 8.94 for 2024-07-10
+2024-12-30 22:43:00 - INFO - Successfully wrote 3 new buy signals
+2024-12-30 22:43:00 - INFO - Updated buy signal for CLPT at price 6.909
+2024-12-30 22:43:00 - INFO - Updated buy signal for BHR at price 3.0555
+2024-12-30 22:43:01 - INFO - Closing RVNC due to Sell condition met
+2024-12-30 22:43:01 - INFO - Closing BHR due to Sell condition met
+2024-12-30 22:43:01 - INFO - Closing CLPT due to Sell condition met
+2024-12-30 22:43:02 - INFO - Prepared buy signal for RVNC at 4.01 for 2024-07-23
+2024-12-30 22:43:02 - INFO - Prepared buy signal for LUMN at 1.43 for 2024-07-23
+2024-12-30 22:43:02 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:02 - INFO - Updated buy signal for RVNC at price 4.2105
+2024-12-30 22:43:02 - INFO - Prepared buy signal for LUMN at 1.49 for 2024-07-24
+2024-12-30 22:43:02 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:02 - INFO - Updated buy signal for LUMN at price 1.62
+2024-12-30 22:43:02 - INFO - Closing LUMN due to Sell condition met
+2024-12-30 22:43:02 - INFO - Closing RVNC due to Sell condition met
+2024-12-30 22:43:03 - INFO - Prepared buy signal for LUMN at 1.64 for 2024-07-26
+2024-12-30 22:43:03 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:04 - INFO - Updated buy signal for LUMN at price 1.722
+2024-12-30 22:43:06 - INFO - Closing LUMN due to Sell condition met
+2024-12-30 22:43:07 - INFO - Prepared buy signal for CTDD at 11.99 for 2024-08-07
+2024-12-30 22:43:07 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:07 - INFO - Updated buy signal for CTDD at price 12.92
+2024-12-30 22:43:08 - INFO - Closing CTDD due to Sell condition met
+2024-12-30 22:43:09 - INFO - Prepared buy signal for CEVA at 20.18 for 2024-08-13
+2024-12-30 22:43:09 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:09 - INFO - Updated buy signal for CEVA at price 21.189
+2024-12-30 22:43:11 - INFO - Prepared buy signal for JD at 29.29 for 2024-08-19
+2024-12-30 22:43:11 - INFO - Prepared buy signal for CGTX at 0.71 for 2024-08-19
+2024-12-30 22:43:11 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:11 - INFO - Updated buy signal for CGTX at price 0.7455
+2024-12-30 22:43:12 - INFO - Closing CEVA due to Sell condition met
+2024-12-30 22:43:12 - INFO - Closing CGTX due to Sell condition met
+2024-12-30 22:43:12 - INFO - Prepared buy signal for ZLAB at 19.03 for 2024-08-27
+2024-12-30 22:43:12 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:13 - INFO - Updated buy signal for ZLAB at price 19.698
+2024-12-30 22:43:14 - INFO - Prepared buy signal for WRBY at 14.96 for 2024-08-30
+2024-12-30 22:43:14 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:14 - INFO - Updated buy signal for JD at price 27.34
+2024-12-30 22:43:14 - INFO - Closing JD due to Sell condition met
+2024-12-30 22:43:14 - INFO - Closing ZLAB due to Sell condition met
+2024-12-30 22:43:16 - INFO - Updated buy signal for WRBY at price 13.755
+2024-12-30 22:43:18 - INFO - Prepared buy signal for PLUG at 1.96 for 2024-09-16
+2024-12-30 22:43:18 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:18 - INFO - Updated buy signal for PLUG at price 2.058
+2024-12-30 22:43:19 - INFO - Prepared buy signal for CBRL at 42.34 for 2024-09-18
+2024-12-30 22:43:19 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:19 - INFO - Updated buy signal for CBRL at price 43.99
+2024-12-30 22:43:19 - INFO - Closing CBRL due to Sell condition met
+2024-12-30 22:43:19 - INFO - Closing WRBY due to Sell condition met
+2024-12-30 22:43:19 - INFO - Closing PLUG due to Sell condition met
+2024-12-30 22:43:20 - INFO - Prepared buy signal for ALGT at 45.81 for 2024-09-23
+2024-12-30 22:43:20 - INFO - Prepared buy signal for AREC at 0.65 for 2024-09-23
+2024-12-30 22:43:20 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:20 - INFO - Prepared buy signal for JD at 29.76 for 2024-09-24
+2024-12-30 22:43:20 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:20 - INFO - Updated buy signal for ALGT at price 48.1005
+2024-12-30 22:43:20 - INFO - Updated buy signal for AREC at price 0.6825
+2024-12-30 22:43:21 - INFO - Updated buy signal for JD at price 32.49
+2024-12-30 22:43:22 - INFO - Closing ALGT due to Sell condition met
+2024-12-30 22:43:22 - INFO - Closing AREC due to Sell condition met
+2024-12-30 22:43:22 - INFO - Closing JD due to Sell condition met
+2024-12-30 22:43:22 - INFO - Prepared buy signal for SGHC at 3.86 for 2024-10-08
+2024-12-30 22:43:22 - INFO - Prepared buy signal for WKSP at 0.515 for 2024-10-08
+2024-12-30 22:43:22 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:23 - INFO - Updated buy signal for WKSP at price 0.556
+2024-12-30 22:43:23 - INFO - Closing WKSP due to Sell condition met
+2024-12-30 22:43:23 - INFO - Prepared buy signal for MYND at 1.11 for 2024-10-09
+2024-12-30 22:43:23 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:23 - INFO - Updated buy signal for MYND at price 1.24
+2024-12-30 22:43:24 - INFO - Updated buy signal for SGHC at price 4.053
+2024-12-30 22:43:24 - INFO - Prepared buy signal for RIOT at 8.41 for 2024-10-14
+2024-12-30 22:43:24 - INFO - Prepared buy signal for TVGN at 0.38 for 2024-10-14
+2024-12-30 22:43:24 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:25 - INFO - Updated buy signal for RIOT at price 8.8305
+2024-12-30 22:43:25 - INFO - Closing SGHC due to Sell condition met
+2024-12-30 22:43:25 - INFO - Prepared buy signal for KOD at 3.0 for 2024-10-17
+2024-12-30 22:43:25 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:25 - INFO - Updated buy signal for KOD at price 3.15
+2024-12-30 22:43:26 - INFO - Closing MYND due to Sell condition met
+2024-12-30 22:43:26 - INFO - Prepared buy signal for UPXI at 4.11 for 2024-10-23
+2024-12-30 22:43:26 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:27 - INFO - Updated buy signal for UPXI at price 3.654
+2024-12-30 22:43:27 - INFO - Closing RIOT due to Sell condition met
+2024-12-30 22:43:27 - INFO - Closing UPXI due to Sell condition met
+2024-12-30 22:43:27 - INFO - Prepared buy signal for CCRD at 13.63 for 2024-10-28
+2024-12-30 22:43:27 - INFO - Prepared buy signal for NWL at 8.73 for 2024-10-28
+2024-12-30 22:43:27 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:27 - INFO - Updated buy signal for NWL at price 9.1665
+2024-12-30 22:43:27 - INFO - Closing KOD due to Sell condition met
+2024-12-30 22:43:28 - INFO - Prepared buy signal for BKSY at 7.14 for 2024-10-30
+2024-12-30 22:43:28 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:28 - INFO - Updated buy signal for CCRD at price 14.72
+2024-12-30 22:43:28 - INFO - Closing NWL due to Sell condition met
+2024-12-30 22:43:28 - INFO - Updated buy signal for BKSY at price 6.636
+2024-12-30 22:43:29 - INFO - Prepared buy signal for NARI at 48.74 for 2024-11-04
+2024-12-30 22:43:29 - INFO - Prepared buy signal for NWL at 8.79 for 2024-11-04
+2024-12-30 22:43:29 - INFO - Prepared buy signal for TASK at 13.18 for 2024-11-04
+2024-12-30 22:43:29 - INFO - Prepared buy signal for SFIX at 3.25 for 2024-11-04
+2024-12-30 22:43:29 - INFO - Successfully wrote 4 new buy signals
+2024-12-30 22:43:29 - INFO - Updated buy signal for NARI at price 51.56
+2024-12-30 22:43:30 - INFO - Closing BKSY due to Sell condition met
+2024-12-30 22:43:30 - INFO - Closing CCRD due to Sell condition met
+2024-12-30 22:43:30 - INFO - Closing NARI due to Sell condition met
+2024-12-30 22:43:30 - INFO - Prepared buy signal for SSYS at 8.39 for 2024-11-13
+2024-12-30 22:43:30 - INFO - Prepared buy signal for OPRX at 5.84 for 2024-11-13
+2024-12-30 22:43:30 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:30 - INFO - Updated buy signal for SSYS at price 10.3
+2024-12-30 22:43:30 - INFO - Updated buy signal for OPRX at price 6.132
+2024-12-30 22:43:31 - INFO - Prepared buy signal for DAN at 8.55 for 2024-11-14
+2024-12-30 22:43:31 - INFO - Prepared buy signal for RIVN at 12.03 for 2024-11-14
+2024-12-30 22:43:31 - INFO - Prepared buy signal for QMCO at 4.68 for 2024-11-14
+2024-12-30 22:43:31 - INFO - Successfully wrote 3 new buy signals
+2024-12-30 22:43:31 - INFO - Closing OPRX due to Sell condition met
+2024-12-30 22:43:31 - INFO - Closing SSYS due to Sell condition met
+2024-12-30 22:43:32 - INFO - Prepared buy signal for SSYS at 9.26 for 2024-11-18
+2024-12-30 22:43:32 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:32 - INFO - Prepared buy signal for CDTX at 14.96 for 2024-11-19
+2024-12-30 22:43:32 - INFO - Prepared buy signal for AOSL at 30.62 for 2024-11-19
+2024-12-30 22:43:32 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:32 - INFO - Updated buy signal for CDTX at price 15.708
+2024-12-30 22:43:32 - INFO - Closing CDTX due to Sell condition met
+2024-12-30 22:43:33 - INFO - Updated buy signal for DAN at price 8.2635
+2024-12-30 22:43:33 - INFO - Updated buy signal for SSYS at price 9.5865
+2024-12-30 22:43:33 - INFO - Prepared buy signal for MCRB at 0.732 for 2024-11-22
+2024-12-30 22:43:33 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:33 - INFO - Updated buy signal for MCRB at price 0.7686
+2024-12-30 22:43:33 - INFO - Closing SSYS due to Sell condition met
+2024-12-30 22:43:34 - INFO - Prepared buy signal for WB at 9.46 for 2024-11-29
+2024-12-30 22:43:34 - INFO - Prepared buy signal for RIVN at 12.22 for 2024-11-29
+2024-12-30 22:43:34 - INFO - Prepared buy signal for TTEC at 5.14 for 2024-11-29
+2024-12-30 22:43:34 - INFO - Prepared buy signal for INVZ at 0.71 for 2024-11-29
+2024-12-30 22:43:34 - INFO - Successfully wrote 4 new buy signals
+2024-12-30 22:43:34 - INFO - Closing DAN due to Sell condition met
+2024-12-30 22:43:34 - INFO - Closing MCRB due to Sell condition met
+2024-12-30 22:43:34 - INFO - Updated buy signal for WB at price 9.933
+2024-12-30 22:43:35 - INFO - Prepared buy signal for QURE at 6.41 for 2024-12-04
+2024-12-30 22:43:35 - INFO - Prepared buy signal for TRAW at 5.18 for 2024-12-04
+2024-12-30 22:43:35 - INFO - Prepared buy signal for INVZ at 0.671 for 2024-12-04
+2024-12-30 22:43:35 - INFO - Prepared buy signal for RZLV at 2.3 for 2024-12-04
+2024-12-30 22:43:35 - INFO - Successfully wrote 4 new buy signals
+2024-12-30 22:43:35 - INFO - Closing WB due to Sell condition met
+2024-12-30 22:43:35 - INFO - Updated buy signal for QURE at price 6.6045
+2024-12-30 22:43:36 - INFO - Prepared buy signal for CRMT at 53.0 for 2024-12-06
+2024-12-30 22:43:36 - INFO - Successfully wrote 1 new buy signals
+2024-12-30 22:43:36 - INFO - Updated buy signal for CRMT at price 55.65
+2024-12-30 22:43:36 - INFO - Updated buy signal for TRAW at price 5.0085
+2024-12-30 22:43:36 - INFO - Closing QURE due to Sell condition met
+2024-12-30 22:43:37 - INFO - Prepared buy signal for WKEY at 2.4 for 2024-12-12
+2024-12-30 22:43:37 - INFO - Prepared buy signal for LXRX at 0.89 for 2024-12-12
+2024-12-30 22:43:37 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:37 - INFO - Updated buy signal for WKEY at price 2.55
+2024-12-30 22:43:37 - INFO - Closing TRAW due to Sell condition met
+2024-12-30 22:43:37 - INFO - Closing CRMT due to Sell condition met
+2024-12-30 22:43:37 - INFO - Closing WKEY due to Sell condition met
+2024-12-30 22:43:37 - INFO - Prepared buy signal for ACXP at 0.855 for 2024-12-16
+2024-12-30 22:43:37 - INFO - Prepared buy signal for NMTC at 0.76 for 2024-12-16
+2024-12-30 22:43:37 - INFO - Prepared buy signal for CGTX at 0.478 for 2024-12-16
+2024-12-30 22:43:37 - INFO - Successfully wrote 3 new buy signals
+2024-12-30 22:43:38 - INFO - Prepared buy signal for OILD at 17.4 for 2024-12-17
+2024-12-30 22:43:38 - INFO - Prepared buy signal for CGTX at 0.451 for 2024-12-17
+2024-12-30 22:43:38 - INFO - Successfully wrote 2 new buy signals
+2024-12-30 22:43:38 - INFO - Updated buy signal for ACXP at price 0.8662
+2024-12-30 22:43:38 - INFO - Updated buy signal for OILD at price 18.27
+2024-12-30 22:43:38 - INFO - Closing ACXP due to Sell condition met
+2024-12-30 22:43:39 - INFO - Prepared buy signal for ZSL at 41.61 for 2024-12-20
+2024-12-30 22:43:39 - INFO - Prepared buy signal for ABAT at 1.11 for 2024-12-20
+2024-12-30 22:43:39 - INFO - Prepared buy signal for EVOK at 5.49 for 2024-12-20
+2024-12-30 22:43:39 - INFO - Prepared buy signal for EQC at 1.74 for 2024-12-20
+2024-12-30 22:43:39 - INFO - Successfully wrote 4 new buy signals
+2024-12-30 22:43:39 - INFO - Closing OILD due to Sell condition met
+2024-12-30 22:43:39 - INFO - Entering lockup period on 2024-12-26. Clearing all positions.
+2024-12-30 22:43:39 - INFO - No positions to close for lockup period
+2024-12-30 22:43:39 - INFO - Trading locked during pre-final period (2024-12-27)
+2024-12-30 22:43:40 - INFO - Updated buy signal for ZSL at price 41.2545
+2024-12-30 22:43:40 - INFO - On last trading day (2024-12-30). Generating final predictions.
+2024-12-30 22:43:40 - INFO - Cleared positions on 2024-12-30
+2024-12-30 22:43:40 - INFO - Prepared buy signal for ALRN at 2.32 for 2024-12-31
+2024-12-30 22:43:40 - INFO - Prepared buy signal for APRE at 3.48 for 2024-12-31
+2024-12-30 22:43:40 - INFO - Prepared buy signal for AQMS at 2.56 for 2024-12-31
+2024-12-30 22:43:40 - INFO - Prepared buy signal for ASPS at 0.71 for 2024-12-31
+2024-12-30 22:43:40 - INFO - Successfully wrote 4 new buy signals
+2024-12-30 22:43:40 - INFO - Data feed end date distribution:
+2024-12-30 22:43:40 - INFO - 2024-12-30: 5405 feeds (100.00%)
+2024-12-30 22:43:40 - INFO - Percentage of data feeds with target date 2024-11-29: 0.00%
+2024-12-30 22:43:40 - INFO - Strategy stopped. Last processed date: 2024-12-30
+2024-12-30 22:43:40 - INFO - Processed 239 days out of 252 expected
+2024-12-30 22:43:40 - INFO - Strategy stopped early. Processed 239/252 days
+2024-12-30 22:43:40 - INFO - Analyzing early stop reason...
+2024-12-30 22:43:40 - INFO - Open Positions: 3
+2024-12-30 22:43:40 - INFO - Group Allocations: {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0.22915701322346474, 7: 0}
+2024-12-30 22:43:40 - INFO - Position: ZSL, Size: 395, Entry Price: 41.25450096130371
+2024-12-30 22:43:40 - INFO - ====================== New Entry ===================
+2024-12-30 22:43:40 - INFO - Max Drawdown: 11.50%
+2024-12-30 22:43:40 - INFO - Total Trades: 73
+2024-12-30 22:43:40 - INFO - Profitable Trades: 34
+2024-12-30 22:43:40 - INFO - Sharpe Ratio: 0.99
+2024-12-30 22:43:40 - INFO - SQN: 2.15
+2024-12-30 22:43:40 - INFO - Profit Factor: 7.97
+2024-12-30 22:43:40 - INFO - Average Trade: 916.87
+2024-12-30 22:43:40 - INFO - Average Winning Trade: 2251.06
+2024-12-30 22:43:40 - INFO - Average Losing Trade: -246.27
+2024-12-30 22:43:40 - INFO - Largest Winning Trade: 28128.90
+2024-12-30 22:43:40 - INFO - Largest Losing Trade: -2481.66
+2024-12-30 22:43:40 - INFO - Time taken: 252.65 seconds
+2024-12-30 22:43:40 - INFO - Initial Portfolio funding: $5000.00
+2024-12-30 22:43:40 - INFO - Final Portfolio Value: $72171.69
+2024-12-30 22:43:40 - INFO - Percentage Gain: 1343.43%
+2024-12-30 22:43:40 - INFO - Cash: $55633.04

@@ -8,15 +8,16 @@ import ib_insync as ibi
 import pandas as pd
 import numpy as np
 from datetime import datetime
-import time
-import uuid
 
 from Trading_Functions import *
 import traceback
 import sys
 import time
+from zoneinfo import ZoneInfo
+
 import socket
 import exchange_calendars as ec
+
 
 
 DEBUG_MODE = True 
@@ -45,7 +46,6 @@ def setup_logging(log_to_console=True):
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
-setup_logging(log_to_console=True)  # Set to False to disable logging to the terminal
 
 def get_open_positions(ib):
     try:
@@ -115,41 +115,50 @@ def wait_for_tws(max_attempts=5, wait_time=10):
 
 nyse = ec.get_calendar('XNYS')
 
-def wait_for_market_open(tz='America/New_York', max_wait_minutes=60):
+
+
+def wait_for_market_open(tz=ZoneInfo('America/New_York'), max_wait_minutes=180):
     """
-    Blocks execution until the market is open, or until max_wait_minutes is reached.
+    Blocks execution until the NYSE is open or until max_wait_minutes is reached.
     Returns True if the market opened within that time, False otherwise.
     """
     logging.info("Checking if the market is currently open...")
 
-    # We convert 'now' to the exchange time zone
+    # Get the current time in NYSE timezone
     now = pd.Timestamp.now(tz)
 
-    # If the market is open right now, return True immediately
-    if nyse.is_session(now.floor('D')):
-        current_session = nyse.session_date(now)
-        current_open = nyse.session_open(current_session)
-        current_close = nyse.session_close(current_session)
+    # Extract the date as a timezone-naive date object
+    current_date = now.date()
 
-        if current_open <= now <= current_close:
+    # Check if today is a trading day
+    if nyse.is_session(current_date):
+        try:
+            # Get market open and close times
+            market_open = nyse.session_open(current_date)
+            market_close = nyse.session_close(current_date)
+        except Exception as e:
+            logging.error(f"Error fetching session times for {current_date}: {e}")
+            return False
+
+        # Check if the current time is within trading hours
+        if market_open <= now <= market_close:
             logging.info("Market is open.")
             return True
 
-    # If the market is not open, figure out the next open time
+    # If the market is not open, determine the next open time
     next_open = nyse.next_open(now)
-    # Edge case: if next_open is very late in the day, might be a half day or no session
-    # But let's proceed with the simple approach
     if not next_open:
         logging.warning("No upcoming market open found. Possibly a holiday.")
         return False
 
-    # We'll keep waiting until next_open or max_wait_minutes has passed
-    wait_seconds = 0
-    interval = 30  # check every 30 seconds
-    max_wait_seconds = max_wait_minutes * 60
-
     logging.info(f"Waiting for the market to open at {next_open}...")
 
+    # Calculate maximum wait time in seconds
+    max_wait_seconds = max_wait_minutes * 60
+    wait_seconds = 0
+    interval = 30  # Check every 30 seconds
+
+    # Wait loop
     while wait_seconds < max_wait_seconds:
         now = pd.Timestamp.now(tz)
         if now >= next_open:
@@ -162,6 +171,36 @@ def wait_for_market_open(tz='America/New_York', max_wait_minutes=60):
     return False
 
 
+
+
+def is_nyse_open():
+    """
+    Returns True if the NYSE is currently open, False otherwise.
+    """
+    tz_nyse = ZoneInfo('America/New_York')
+    now_nyse = pd.Timestamp.now(tz_nyse)
+    current_date = now_nyse.date()
+
+    # Check if today is a trading day
+    if not nyse.is_session(current_date):
+        logging.info("Today is not a trading day.")
+        return False
+
+    # Get market open and close times for the current date
+    try:
+        market_open = nyse.session_open(current_date)
+        market_close = nyse.session_close(current_date)
+    except Exception as e:
+        logging.error(f"Error fetching session times for {current_date}: {e}")
+        return False
+
+    # Check if current time is within trading hours
+    if market_open <= now_nyse <= market_close:
+        logging.info("NYSE is currently open.")
+        return True
+    else:
+        logging.info("NYSE is currently closed.")
+        return False
 
 
 
@@ -932,15 +971,14 @@ class MyStrategy(bt.Strategy):
 
 
 
-def finalize_positions_sync(ib, trading_data_path='live_trading_data.parquet'):
+def finalize_positions_sync(ib, trading_data_path='_Live_trades.parquet'):
     """
-    Fetch IB's official open positions, then update local data to reflect 
-    any mismatches so the next session starts with the correct state.
+    Fetch IB's official open positions and update local data to reflect any mismatches.
     """
     try:
         # 1. Get real open positions from IB
         ib_positions = ib.positions()
-        real_positions = {}  # { 'AAPL': 100, 'TSLA': 50, ... }
+        real_positions = {}  # e.g., { 'AAPL': 100, 'TSLA': 50, ... }
         for pos in ib_positions:
             if pos.position != 0:
                 symbol = pos.contract.symbol
@@ -950,8 +988,9 @@ def finalize_positions_sync(ib, trading_data_path='live_trading_data.parquet'):
         # 2. Read your local trades DataFrame
         df = pd.read_parquet(trading_data_path)
 
-        # Just in case the columns differ, double-check you have 'Symbol' & 'IsCurrentlyBought' columns
-        if 'Symbol' not in df.columns or 'IsCurrentlyBought' not in df.columns:
+        # Ensure required columns exist
+        required_columns = {'Symbol', 'IsCurrentlyBought'}
+        if not required_columns.issubset(df.columns):
             logging.warning("DataFrame missing required columns (Symbol, IsCurrentlyBought).")
         
         # Convert local positions to a dictionary for easy comparison
@@ -959,32 +998,24 @@ def finalize_positions_sync(ib, trading_data_path='live_trading_data.parquet'):
             df[df['IsCurrentlyBought'] == True]
             .set_index('Symbol')['PositionSize']
             .to_dict()
-        )  # e.g. { 'AAPL': 100, 'TSLA': 50 }
+        )  # e.g., { 'AAPL': 100, 'TSLA': 50 }
 
         # 3. Reconcile differences
-        # ----------------------------------------------------
-        # Case A: Symbol in IB but not in local -> Mark it as bought
-        # Case B: Symbol in local but not in IB -> Mark it as closed
-        # Case C: Position size mismatch -> Correct local data
-        # ----------------------------------------------------
-
-        # A: Symbol in IB but not in local or mismatch in size
+        # Case A: Symbol in IB but not in local -> Mark as bought
         for symbol, real_size in real_positions.items():
             if symbol not in local_positions:
                 logging.info(f"{symbol} is open in IB but not marked locally; updating local data.")
-                # Append or update a row in df to reflect this new open position
                 new_data = {
                     'Symbol': symbol,
                     'IsCurrentlyBought': True,
                     'PositionSize': real_size,
-                    'LastBuySignalDate': pd.Timestamp.now(),  # or unknown
-                    'LastBuySignalPrice': 0,  # or unknown
+                    'LastBuySignalDate': pd.Timestamp.now(),
+                    'LastBuySignalPrice': 0,  # Adjust as needed
                 }
-                # If the symbol doesn't exist at all, append row
+                # Append or update the DataFrame
                 if symbol not in df['Symbol'].values:
                     df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
                 else:
-                    # If row for symbol exists but was previously closed
                     for col, val in new_data.items():
                         df.loc[df['Symbol'] == symbol, col] = val
             else:
@@ -995,7 +1026,7 @@ def finalize_positions_sync(ib, trading_data_path='live_trading_data.parquet'):
                     )
                     df.loc[df['Symbol'] == symbol, 'PositionSize'] = real_size
         
-        # B: Symbol in local but not in IB -> Mark as closed
+        # Case B: Symbol in local but not in IB -> Mark as closed
         for symbol, local_size in local_positions.items():
             if symbol not in real_positions:
                 logging.info(f"{symbol} is locally open but not in IB; marking as closed in local data.")
@@ -1051,56 +1082,68 @@ def start():
         return
 
     ib = None
+    store = None
     try:
-        # Connect to Interactive Brokers TWS
-        logging.info('Initializing IB connection...')
-        ib = ibi.IB()
-        try:
-            ib.connect('127.0.0.1', 7497, clientId=1)
-        except ConnectionRefusedError:
-            logging.error("TWS refused connection. Please check if TWS is running and configured properly.")
-            return
-        except Exception as conn_err:
-            logging.error(f"Unexpected error during IB connection: {conn_err}")
+        # ============================== IB Connection ==============================
+
+        logging.info('Initializing ib_insync connection...')
+        max_retries = 3
+        client_id = 100  # Use a unique clientId to prevent conflicts
+
+        for attempt in range(max_retries):
+            try:
+                ib = ibi.IB()
+                logging.info(f"Attempt {attempt + 1}/{max_retries}: Connecting to TWS with clientId={client_id}...")
+                ib.connect('127.0.0.1', 7497, clientId=client_id, timeout=30)  # Increased timeout
+                if ib.isConnected():
+                    logging.info(f"Successfully connected to TWS via ib_insync with clientId={client_id}")
+                    break
+            except Exception as e:
+                logging.error(f"Attempt {attempt + 1}/{max_retries} - Failed to connect ib_insync: {e}")
+                ib = None
+                time.sleep(5)  # Wait before retrying
+
+        if not ib or not ib.isConnected():
+            logging.error("Failed to establish stable ib_insync connection with TWS after retries")
             return
 
+        # ============================== IBStore Initialization ==============================
+
         try:
-            store = IBStore(port=7497)
+            logging.info('Initializing Backtrader IBStore connection with ib_insync instance...')
+            store = IBStore(ib=ib, reconnect=True, timeoffset=False, timeout=30, notifyall=True)
+            if store.isconnected():
+                logging.info('Successfully initialized Backtrader IBStore with ib_insync instance')
+            else:
+                logging.error("IBStore did not connect successfully with the provided ib_insync instance")
+                return
         except Exception as store_err:
-            logging.error(f"Failed to initialize IBStore: {store_err}")
+            logging.error(f"Failed to initialize IBStore with ib_insync instance: {store_err}")
             return
 
-        connection_attempts = 0
-        while not ib.isConnected() and connection_attempts < 5:
-            logging.info('Waiting for IB connection to stabilize...')
-            time.sleep(3)
-            connection_attempts += 1
-            
-        if not ib.isConnected():
-            logging.error("Failed to establish stable connection with TWS")
-            return
+        # ============================== Data Collection Phase ==============================
 
-        # Data Collection Phase
         try:
             open_positions = get_open_positions(ib)
             buy_signals_backtesting = get_buy_signals(is_live=False)
             buy_signals_live = get_buy_signals(is_live=True)
             buy_signals = buy_signals_backtesting + buy_signals_live
-            
+
             all_symbols = set(open_positions + [signal.get('Symbol') for signal in buy_signals if 'Symbol' in signal])
-            
+
             if not all_symbols:
                 logging.warning("No symbols found to trade")
                 return
-                
+
             logging.info(f'Buy signals: {buy_signals}')
             logging.info(f'Total symbols to trade: {len(all_symbols)}')
-            
+
         except Exception as data_err:
             logging.error(f"Error collecting trading data: {data_err}")
             return
 
-        # Data Feed Setup Phase
+        # ============================== Data Feed Setup Phase ==============================
+
         failed_symbols = []
         for symbol in sorted(all_symbols, key=lambda x: x in open_positions, reverse=True):
             try:
@@ -1129,7 +1172,7 @@ def start():
                 )
                 resampled_data._name = symbol
                 logging.info(f'Successfully added live data feed for {symbol}')
-                
+
             except Exception as feed_err:
                 logging.error(f'Failed to add data feed for {symbol}: {feed_err}')
                 failed_symbols.append(symbol)
@@ -1139,38 +1182,63 @@ def start():
             logging.error("Failed to add data feeds for all symbols")
             return
 
-        # Strategy Execution Phase
+        # ============================== Strategy Execution Phase ==============================
+
         try:
             broker = store.getbroker()
             cerebro.setbroker(broker)
             cerebro.addstrategy(MyStrategy)
             cerebro.run()
-            
+
         except Exception as strat_err:
             logging.error(f"Strategy execution failed: {strat_err}")
             logging.error(traceback.format_exc())
-            
+
     except Exception as e:
         logging.error(f"Unexpected error in main execution loop: {e}")
         logging.error(traceback.format_exc())
-        
+
     finally:
+        # ============================== Final Data Sync ==============================
+
         try:
-            finalize_positions_sync(ib, 'live_trading_data.parquet')
+            if ib and ib.isConnected():
+                finalize_positions_sync(ib, '_Live_trades.parquet')
         except Exception as sync_err:
             logging.error(f"Error during final data sync: {sync_err}")
+
+        # ============================== Cleanup Connections ==============================
+
+        try:
+            if store and store.isconnected():
+                store.disconnect()
+                logging.info('Successfully disconnected from Backtrader IBStore')
+        except Exception as disconnect_err:
+            logging.error(f"Error during IBStore disconnection: {disconnect_err}")
 
         try:
             if ib and ib.isConnected():
                 ib.disconnect()
-                logging.info('Successfully disconnected from Interactive Brokers TWS')
+                logging.info('Successfully disconnected from ib_insync')
         except Exception as disconnect_err:
-            logging.error(f"Error during TWS disconnection: {disconnect_err}")
+            logging.error(f"Error during ib_insync disconnection: {disconnect_err}")
 
-if __name__ == '__main__':
-    setup_logging(log_to_console=True)
-    if not wait_for_market_open(max_wait_minutes=180):
-        logging.error("Skipping today's run because the market didn't open within the expected time.")
-    sys.exit(1)
-    start()
 
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    setup_logging(log_to_console=False)
+
+    if is_nyse_open():
+        logging.info("NYSE is currently open. Proceeding with trading operations.")
+        start()
+    else:
+        logging.error("Skipping today's run because the NYSE is currently closed.")
+        sys.exit(1)

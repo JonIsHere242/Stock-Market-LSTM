@@ -576,3 +576,67 @@
 [2024-12-25 22:35:15] This Days's Buy Signals Saved to trading_data.parquet
 [2024-12-25 22:35:15] Script execution completed.
 [2024-12-25 22:35:15] =========================================
+[2024-12-26 20:25:03] =========================================
+[2024-12-26 20:25:03] Script execution started. Base path: C:\Users\Masam\Desktop\Stock-Market-LSTM
+[2024-12-26 20:25:03] =========================================
+[2024-12-26 20:25:03] Preparing to run 'Ticker Downloader'...
+[2024-12-26 20:25:33] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\1__TickerDownloader.py --ImmediateDownload
+[2024-12-26 20:25:35] 'Ticker Downloader' completed successfully.
+[2024-12-26 20:25:35] Time elapsed for 'Ticker Downloader': 1.39 seconds.
+[2024-12-26 20:25:35] -----------------------------------------
+[2024-12-26 20:25:35] Preparing to run 'Bulk Price Downloader'...
+[2024-12-26 20:26:05] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\2__BulkPriceDownloader.py --RefreshMode --ClearOldData
+[2024-12-26 22:09:24] 'Bulk Price Downloader' completed successfully.
+[2024-12-26 22:09:24] Time elapsed for 'Bulk Price Downloader': 6199.53 seconds.
+[2024-12-26 22:09:24] -----------------------------------------
+[2024-12-26 22:09:24] Preparing to run 'Indicators Script'...
+[2024-12-26 22:09:54] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\3__Indicators.py
+[2024-12-26 22:47:31] 'Indicators Script' completed successfully.
+[2024-12-26 22:47:31] Time elapsed for 'Indicators Script': 2256.61 seconds.
+[2024-12-26 22:47:31] -----------------------------------------
+[2024-12-26 22:47:31] Preparing to run 'Predictor Script'...
+[2024-12-26 22:48:01] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\4__Predictor.py --predict
+[2024-12-26 22:52:19] 'Predictor Script' completed successfully.
+[2024-12-26 22:52:19] Time elapsed for 'Predictor Script': 258.48 seconds.
+[2024-12-26 22:52:19] -----------------------------------------
+[2024-12-26 22:52:19] Preparing to run 'Nightly Broker Script'...
+[2024-12-26 22:52:49] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\5__NightlyBroker.py --RunStocks 1
+[2024-12-26 22:57:06] 'Nightly Broker Script' completed successfully.
+[2024-12-26 22:57:06] Time elapsed for 'Nightly Broker Script': 256.3 seconds.
+[2024-12-26 22:57:06] -----------------------------------------
+[2024-12-26 22:57:06] All scripts have been executed.
+[2024-12-26 22:57:06] This Days's Buy Signals Saved to trading_data.parquet
+[2024-12-26 22:57:06] Script execution completed.
+[2024-12-26 22:57:06] =========================================
+[2024-12-30 20:25:03] =========================================
+[2024-12-30 20:25:03] Script execution started. Base path: C:\Users\Masam\Desktop\Stock-Market-LSTM
+[2024-12-30 20:25:03] =========================================
+[2024-12-30 20:25:03] Preparing to run 'Ticker Downloader'...
+[2024-12-30 20:25:33] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\1__TickerDownloader.py --ImmediateDownload
+[2024-12-30 20:25:35] 'Ticker Downloader' completed successfully.
+[2024-12-30 20:25:35] Time elapsed for 'Ticker Downloader': 1.39 seconds.
+[2024-12-30 20:25:35] -----------------------------------------
+[2024-12-30 20:25:35] Preparing to run 'Bulk Price Downloader'...
+[2024-12-30 20:26:05] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\2__BulkPriceDownloader.py --RefreshMode --ClearOldData
+[2024-12-30 22:10:03] 'Bulk Price Downloader' completed successfully.
+[2024-12-30 22:10:03] Time elapsed for 'Bulk Price Downloader': 6238.45 seconds.
+[2024-12-30 22:10:03] -----------------------------------------
+[2024-12-30 22:10:03] Preparing to run 'Indicators Script'...
+[2024-12-30 22:10:33] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\3__Indicators.py
+[2024-12-30 22:34:08] 'Indicators Script' completed successfully.
+[2024-12-30 22:34:08] Time elapsed for 'Indicators Script': 1414.46 seconds.
+[2024-12-30 22:34:08] -----------------------------------------
+[2024-12-30 22:34:08] Preparing to run 'Predictor Script'...
+[2024-12-30 22:34:38] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\4__Predictor.py --predict
+[2024-12-30 22:38:56] 'Predictor Script' completed successfully.
+[2024-12-30 22:38:56] Time elapsed for 'Predictor Script': 258.65 seconds.
+[2024-12-30 22:38:56] -----------------------------------------
+[2024-12-30 22:38:56] Preparing to run 'Nightly Broker Script'...
+[2024-12-30 22:39:26] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\5__NightlyBroker.py --RunStocks 1
+[2024-12-30 22:43:42] 'Nightly Broker Script' completed successfully.
+[2024-12-30 22:43:42] Time elapsed for 'Nightly Broker Script': 256.12 seconds.
+[2024-12-30 22:43:42] -----------------------------------------
+[2024-12-30 22:43:42] All scripts have been executed.
+[2024-12-30 22:43:42] This Days's Buy Signals Saved to trading_data.parquet
+[2024-12-30 22:43:42] Script execution completed.
+[2024-12-30 22:43:42] =========================================

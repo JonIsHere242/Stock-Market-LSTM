@@ -270,3 +270,9 @@
 2024-12-25 22:26:20,380 - INFO - Logging system initialized.
 2024-12-25 22:26:20,380 - INFO - Loading the trained model.
 2024-12-25 22:30:33,028 - INFO - Predictions saved to Data/RFpredictions
+2024-12-26 22:48:02,268 - INFO - Logging system initialized.
+2024-12-26 22:48:02,268 - INFO - Loading the trained model.
+2024-12-26 22:52:19,845 - INFO - Predictions saved to Data/RFpredictions
+2024-12-30 22:34:39,102 - INFO - Logging system initialized.
+2024-12-30 22:34:39,103 - INFO - Loading the trained model.
+2024-12-30 22:38:56,732 - INFO - Predictions saved to Data/RFpredictions

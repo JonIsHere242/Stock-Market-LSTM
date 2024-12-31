@@ -370,21 +370,39 @@ def get_next_trading_day(current_date):
 
 def is_market_open():
     """Check if the U.S. stock market is currently open using pandas_market_calendars."""
-    nyse = mcal.get_calendar('NYSE')
-    eastern = pytz.timezone('US/Eastern')
-    now = datetime.now(eastern)
-    
-    # Get today's schedule
-    schedule = nyse.schedule(start_date=now.date(), end_date=now.date())
-    
-    if schedule.empty:
-        return False  # Market is closed (weekend or holiday)
-    
-    market_open = schedule.iloc[0]['market_open'].tz_convert(eastern)
-    market_close = schedule.iloc[0]['market_close'].tz_convert(eastern)
-    
-    return market_open <= now <= market_close
+    try:
+        nyse = mcal.get_calendar('NYSE')
+        eastern = pytz.timezone('US/Eastern')
+        now = datetime.now(eastern)
+        
+        # Get today's schedule
+        schedule = nyse.schedule(
+            start_date=now.date(),
+            end_date=now.date()
+        )
+        
+        # Check if we got any schedule
+        if len(schedule) == 0:
+            logging.info("No market schedule found for today - assuming market closed")
+            return False
+        
+        # Extract market hours
+        market_open = pd.Timestamp(schedule.iloc[0]['market_open']).tz_convert(eastern)
+        market_close = pd.Timestamp(schedule.iloc[0]['market_close']).tz_convert(eastern)
+        
+        is_open = market_open <= now <= market_close
+        
+        logging.debug(f"Market hours: {market_open} to {market_close}")
+        logging.debug(f"Current time: {now}")
+        logging.debug(f"Market is {'open' if is_open else 'closed'}")
+        
+        return is_open
 
+    except Exception as e:
+        logging.error(f"Error checking market status: {e}")
+        # If there's an error checking market status, assume it's open
+        # Better to continue trading than disconnect incorrectly
+        return True
 
 
 def get_open_positions(is_live=False):
