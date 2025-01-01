@@ -93,3 +93,10 @@
 2024-12-30 22:28:35,955 - ERROR - Data quality check failed for Data/PriceData\SCLX.parquet.
 2024-12-30 22:28:39,355 - ERROR - More than 1/3 of the data has a close price below 1. Skipping the data.
 2024-12-30 22:28:39,355 - ERROR - Data quality check failed for Data/PriceData\SEATW.parquet.
+2024-12-31 22:09:40,302 - INFO - Starting the process...
+2024-12-31 22:10:32,014 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 58.27935933333334, End mean: 2.888
+2024-12-31 22:10:32,014 - ERROR - Data quality check failed for Data/PriceData\AGEN.parquet.
+2024-12-31 22:12:09,886 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 46.78999999999999, End mean: 2.3
+2024-12-31 22:12:09,886 - ERROR - Data quality check failed for Data/PriceData\BIVI.parquet.
+2024-12-31 22:18:57,624 - ERROR - Signs of reverse stock splits detected or high initial prices: Start mean: 8.290000000000001, End mean: 0.40128571428571425
+2024-12-31 22:18:57,624 - ERROR - Data quality check failed for Data/PriceData\MHUA.parquet.

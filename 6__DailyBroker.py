@@ -8,7 +8,7 @@ import ib_insync as ibi
 import pandas as pd
 import numpy as np
 from datetime import datetime
-
+import random  # <---------------- only used for client id's rest of the system is fully deterministic
 from Trading_Functions import *
 import traceback
 import sys
@@ -68,60 +68,85 @@ def get_open_positions(ib):
 
 
 
-def check_tws_connection(host='127.0.0.1', port=7497, timeout=5):
+def check_tws_with_time():
+    """Minimal TWS connection check based on working example"""
+    dprint("Starting TWS connection check...")
+    
     try:
-        # Try to establish a socket connection to TWS
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(timeout)
-        result = sock.connect_ex((host, port))
-        sock.close()
-        return result == 0
-    except Exception:
+        dprint("Creating new IB instance...")
+        ib = ibi.IB()
+        dprint("IB instance created successfully")
+        
+        client_id = random.randint(1000, 9999)
+        dprint(f"Generated client ID: {client_id}")
+        
+        dprint(f"Attempting to connect to TWS (127.0.0.1:7497) with client ID {client_id}...")
+        
+        ib.connect(
+            host='127.0.0.1', 
+            port=7497, 
+            clientId=client_id
+        )
+        
+        dprint("Connect call completed")
+        
+        if ib.isConnected():
+            dprint("Connection verified active")
+            time.sleep(0.1)  # Brief stabilization
+            ib.disconnect()
+            dprint("Clean disconnect completed")
+            return True
+            
+        dprint("Connection check failed - isConnected() returned False")
+        return False
+        
+    except Exception as e:
+        dprint(f"Critical error during connection attempt: {str(e)}")
+        dprint(traceback.format_exc())
+        if 'ib' in locals() and ib:
+            try:
+                ib.disconnect()
+                dprint("Cleaned up after error")
+            except:
+                pass
         return False
 
 
 
-def wait_for_tws(max_attempts=5, wait_time=10):
-    for attempt in range(max_attempts):
-        if check_tws_connection():
-            logging.info("Successfully connected to TWS")
-            return True
-        else:
-            remaining_attempts = max_attempts - attempt - 1
-            message = (
-                "\n=== TWS Connection Error ===\n"
-                "Interactive Brokers Trader Workstation (TWS) is not running or not accessible.\n"
-                f"Please ensure TWS is:\n"
-                "1. Launched and running\n"
-                "2. Properly logged in\n"
-                "3. API connections are enabled\n"
-                "4. Port 7497 is open and configured\n"
-                f"\nRetrying in {wait_time} seconds... ({remaining_attempts} attempts remaining)\n"
-            )
-            print(message)
-            logging.warning(message)
-            time.sleep(wait_time)
-    
-    final_message = (
-        "\n=== Connection Failed ===\n"
-        "Could not connect to TWS after multiple attempts.\n"
-        "Please start TWS and run this program again.\n"
-        "Exiting...\n"
-    )
-    print(final_message)
-    logging.error(final_message)
-    return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 nyse = ec.get_calendar('XNYS')
 
 
-
-def wait_for_market_open(tz=ZoneInfo('America/New_York'), max_wait_minutes=180):
+def wait_for_market_open(tz=ZoneInfo('America/New_York'), max_wait_minutes=180, manual_override=False):
     """
     Blocks execution until the NYSE is open or until max_wait_minutes is reached.
     Returns True if the market opened within that time, False otherwise.
+    
+    Parameters:
+    - manual_override: If True, bypasses all checks and returns True
     """
+    if manual_override:
+        logging.info("Manual override enabled - bypassing market open check")
+        return True
+        
     logging.info("Checking if the market is currently open...")
 
     # Get the current time in NYSE timezone
@@ -173,10 +198,17 @@ def wait_for_market_open(tz=ZoneInfo('America/New_York'), max_wait_minutes=180):
 
 
 
-def is_nyse_open():
+def is_nyse_open(manual_override=False):
     """
     Returns True if the NYSE is currently open, False otherwise.
+    
+    Parameters:
+    - manual_override: If True, bypasses all checks and returns True
     """
+    if manual_override:
+        logging.info("Manual override enabled - reporting market as open")
+        return True
+        
     tz_nyse = ZoneInfo('America/New_York')
     now_nyse = pd.Timestamp.now(tz_nyse)
     current_date = now_nyse.date()
@@ -1071,80 +1103,166 @@ def finalize_positions_sync(ib, trading_data_path='_Live_trades.parquet'):
 
 ###==============================================[INITALIZATION]==================================================###
 ###==============================================[INITALIZATION]==================================================###
-###==============================================[INITALIZATION]==================================================###
-###==============================================[INITALIZATION]==================================================###
 
-def start():
-    logging.info('============================[ Starting new trading session ]==============')
+def start(manual_override=False):
+    start_time = datetime.now()
+    dprint(f"===== Entering start() at {start_time.isoformat()} =====")
+
     cerebro = bt.Cerebro()
-
-    if not wait_for_tws():
+    if not check_tws_with_time():
+        dprint("[start()] TWS connection minimal check failed. Exiting immediately.")
         return
 
     ib = None
     store = None
+
     try:
-        # ============================== IB Connection ==============================
-
-        logging.info('Initializing ib_insync connection...')
+        dprint("[start()] Initializing ib_insync connection with robust error handling...")
         max_retries = 3
-        client_id = 100  # Use a unique clientId to prevent conflicts
 
-        for attempt in range(max_retries):
+        client_id = random.randint(1000, 9999)
+        dprint(f"[start()] Generated unique clientId={client_id} for this session.")
+
+        for attempt in range(1, max_retries + 1):
+            attempt_start = datetime.now()
+            dprint(f"[start()] Beginning connection attempt {attempt}/{max_retries} at {attempt_start.strftime('%H:%M:%S')}")
+
+            if ib is not None:
+                try:
+                    ib.disconnect()
+                    dprint("[start()] Disconnected stale ib_insync instance before new attempt.")
+                except Exception as e:
+                    dprint(f"[start()] Failed to disconnect stale ib instance: {e}")
+                ib = None
+
             try:
                 ib = ibi.IB()
-                logging.info(f"Attempt {attempt + 1}/{max_retries}: Connecting to TWS with clientId={client_id}...")
-                ib.connect('127.0.0.1', 7497, clientId=client_id, timeout=30)  # Increased timeout
-                if ib.isConnected():
-                    logging.info(f"Successfully connected to TWS via ib_insync with clientId={client_id}")
-                    break
+                dprint("[start()] Created new ibi.IB() instance. Attempting to connect...")
+
+                ib.connect(
+                    host='127.0.0.1',
+                    port=7497,
+                    clientId=client_id,
+                    timeout=60,
+                    readonly=False
+                )
+
+                dprint("[start()] Connection command issued. Checking isConnected() status...")
+
+                # Wait up to 10 seconds for the connection to stabilize
+                stable_wait = 10
+                for i in range(stable_wait):
+                    if ib.isConnected():
+                        dprint(f"[start()] Connection stabilized after {i} second(s).")
+                        break
+                    dprint(f"[start()] Waiting for connection to stabilize... {i+1}/{stable_wait}")
+                    time.sleep(1)
+
+                if not ib.isConnected():
+                    dprint(f"[start()] Attempt {attempt}/{max_retries} timed out; not connected after {stable_wait} seconds.")
+                    continue
+
+                # Test by requesting server time
+                try:
+                    current_time = ib.reqCurrentTime()
+                    dprint(f"[start()] Verified TWS server time: {current_time}")
+                except Exception as time_err:
+                    dprint(f"[start()] Attempt {attempt}/{max_retries} - Could not fetch server time: {time_err}")
+                    ib.disconnect()
+                    ib = None
+                    continue
+
+                dprint(f"[start()] SUCCESS: Connected to TWS via ib_insync with clientId={client_id} on attempt {attempt}/{max_retries}")
+                break
+
             except Exception as e:
-                logging.error(f"Attempt {attempt + 1}/{max_retries} - Failed to connect ib_insync: {e}")
-                ib = None
-                time.sleep(5)  # Wait before retrying
+                attempt_end = datetime.now()
+                duration = (attempt_end - attempt_start).total_seconds()
+                dprint(f"[start()] Attempt {attempt}/{max_retries} FAILED after {duration:.2f} seconds: {e}")
+                dprint(traceback.format_exc())
+
+                if ib:
+                    try:
+                        ib.disconnect()
+                        dprint("[start()] Disconnected ib_insync after failed attempt.")
+                    except:
+                        pass
+                    ib = None
+
+                if attempt < max_retries:
+                    dprint("[start()] Will retry connection in 5 seconds...")
+                    time.sleep(5)
+                else:
+                    dprint("[start()] Max connection attempts reached. Failing.")
 
         if not ib or not ib.isConnected():
-            logging.error("Failed to establish stable ib_insync connection with TWS after retries")
-            return
-
-        # ============================== IBStore Initialization ==============================
-
-        try:
-            logging.info('Initializing Backtrader IBStore connection with ib_insync instance...')
-            store = IBStore(ib=ib, reconnect=True, timeoffset=False, timeout=30, notifyall=True)
-            if store.isconnected():
-                logging.info('Successfully initialized Backtrader IBStore with ib_insync instance')
-            else:
-                logging.error("IBStore did not connect successfully with the provided ib_insync instance")
-                return
-        except Exception as store_err:
-            logging.error(f"Failed to initialize IBStore with ib_insync instance: {store_err}")
+            dprint(f"[start()] CRITICAL: Failed to establish stable connection after {max_retries} retries. Exiting.")
             return
 
         # ============================== Data Collection Phase ==============================
+        dprint("[start()] Proceeding to data collection phase...")
 
         try:
+            dprint("[start()] Gathering open positions...")
             open_positions = get_open_positions(ib)
-            buy_signals_backtesting = get_buy_signals(is_live=False)
-            buy_signals_live = get_buy_signals(is_live=True)
-            buy_signals = buy_signals_backtesting + buy_signals_live
+            dprint(f"[start()] Open positions found: {open_positions}")
 
-            all_symbols = set(open_positions + [signal.get('Symbol') for signal in buy_signals if 'Symbol' in signal])
+            dprint("[start()] Gathering buy signals (backtesting)...")
+            buy_signals_backtesting = get_buy_signals(is_live=False)
+            dprint(f"[start()] Backtesting buy signals: {buy_signals_backtesting}")
+
+            dprint("[start()] Gathering buy signals (live)...")
+            buy_signals_live = get_buy_signals(is_live=True)
+            dprint(f"[start()] Live buy signals: {buy_signals_live}")
+
+            buy_signals = buy_signals_backtesting + buy_signals_live
+            all_symbols = set(open_positions + [s.get('Symbol') for s in buy_signals if 'Symbol' in s])
+            dprint(f"[start()] Found {len(all_symbols)} unique symbol(s) from positions and signals.")
 
             if not all_symbols:
-                logging.warning("No symbols found to trade")
+                dprint("[start()] No symbols found to trade. Exiting early.")
                 return
 
-            logging.info(f'Buy signals: {buy_signals}')
-            logging.info(f'Total symbols to trade: {len(all_symbols)}')
+            for symbol in sorted(all_symbols):
+                sources = []
+                if symbol in open_positions:
+                    sources.append("open position")
+                if symbol in [s.get('Symbol') for s in buy_signals_backtesting]:
+                    sources.append("backtesting signal")
+                if symbol in [s.get('Symbol') for s in buy_signals_live]:
+                    sources.append("live signal")
+                dprint(f"[start()] Symbol '{symbol}' found in: {', '.join(sources)}")
+
+            dprint("[start()] Data collection phase completed successfully.")
 
         except Exception as data_err:
-            logging.error(f"Error collecting trading data: {data_err}")
+            dprint(f"[start()] Error collecting trading data: {data_err}")
+            dprint(traceback.format_exc())
             return
 
-        # ============================== Data Feed Setup Phase ==============================
-
+        # ============================== Data Feed Initialization ==============================
         failed_symbols = []
+        try:
+            store = IBStore(host='127.0.0.1', port=7497, clientId=client_id)
+            dprint("[start()] Created IBStore instance for data feed and broker access.")
+        except Exception as store_err:
+            dprint(f"[start()] Failed to create IBStore: {store_err}")
+            dprint(traceback.format_exc())
+            return
+
+
+
+
+        if manual_override:
+            dprint("[start()] Manual override enabled; skipping data feed initialization")
+            return
+        else:
+            dprint("[start()] Manual override disabled; proceeding with data feed initialization")
+
+
+
+
+
         for symbol in sorted(all_symbols, key=lambda x: x in open_positions, reverse=True):
             try:
                 contract = ibi.Stock(symbol, 'SMART', 'USD')
@@ -1166,67 +1284,75 @@ def start():
                     live=True,
                 )
                 resampled_data = cerebro.resampledata(
-                    data, 
-                    timeframe=bt.TimeFrame.Seconds, 
+                    data,
+                    timeframe=bt.TimeFrame.Seconds,
                     compression=30
                 )
                 resampled_data._name = symbol
-                logging.info(f'Successfully added live data feed for {symbol}')
+                dprint(f"[start()] Successfully added live data feed for '{symbol}'.")
 
             except Exception as feed_err:
-                logging.error(f'Failed to add data feed for {symbol}: {feed_err}')
+                dprint(f"[start()] Failed to add data feed for '{symbol}': {feed_err}")
+                dprint(traceback.format_exc())
                 failed_symbols.append(symbol)
                 continue
 
         if len(failed_symbols) == len(all_symbols):
-            logging.error("Failed to add data feeds for all symbols")
+            dprint("[start()] All symbol data feeds failed; cannot proceed. Exiting.")
             return
 
-        # ============================== Strategy Execution Phase ==============================
-
+        # ============================== Run the Strategy ==============================
         try:
             broker = store.getbroker()
             cerebro.setbroker(broker)
             cerebro.addstrategy(MyStrategy)
+            dprint(f"[start()] About to run Cerebro with MyStrategy on {len(all_symbols)} symbol(s).")
+
             cerebro.run()
+            dprint("[start()] Cerebro run completed successfully.")
 
         except Exception as strat_err:
-            logging.error(f"Strategy execution failed: {strat_err}")
-            logging.error(traceback.format_exc())
+            dprint(f"[start()] Strategy execution failed: {strat_err}")
+            dprint(traceback.format_exc())
 
     except Exception as e:
-        logging.error(f"Unexpected error in main execution loop: {e}")
-        logging.error(traceback.format_exc())
+        dprint(f"[start()] CRITICAL: Unexpected error in main execution loop: {e}")
+        dprint(traceback.format_exc())
 
     finally:
-        # ============================== Final Data Sync ==============================
+        dprint("[start()] Entering final cleanup stage...")
 
+        # 1) Finalize positions sync
         try:
             if ib and ib.isConnected():
+                dprint("[start()] Attempting to finalize position sync with TWS...")
                 finalize_positions_sync(ib, '_Live_trades.parquet')
+                dprint("[start()] Final data sync completed.")
         except Exception as sync_err:
-            logging.error(f"Error during final data sync: {sync_err}")
+            dprint(f"[start()] Error during final data sync: {sync_err}")
+            dprint(traceback.format_exc())
 
-        # ============================== Cleanup Connections ==============================
-
+        # 2) Disconnect from IBStore
         try:
             if store and store.isconnected():
                 store.disconnect()
-                logging.info('Successfully disconnected from Backtrader IBStore')
+                dprint("[start()] Successfully disconnected from Backtrader IBStore.")
         except Exception as disconnect_err:
-            logging.error(f"Error during IBStore disconnection: {disconnect_err}")
+            dprint(f"[start()] Error during IBStore disconnection: {disconnect_err}")
+            dprint(traceback.format_exc())
 
+        # 3) Disconnect from ib_insync
         try:
             if ib and ib.isConnected():
                 ib.disconnect()
-                logging.info('Successfully disconnected from ib_insync')
+                dprint("[start()] Successfully disconnected ib_insync.")
         except Exception as disconnect_err:
-            logging.error(f"Error during ib_insync disconnection: {disconnect_err}")
+            dprint(f"[start()] Error during ib_insync disconnection: {disconnect_err}")
+            dprint(traceback.format_exc())
 
-
-
-
-
+        end_time = datetime.now()
+        total_duration = (end_time - start_time).total_seconds()
+        dprint(f"===== Exiting start() at {end_time.isoformat()} (total duration: {total_duration:.2f} sec) =====")
 
 
 
@@ -1234,11 +1360,13 @@ def start():
 
 
 if __name__ == "__main__":
-    setup_logging(log_to_console=False)
+    setup_logging(log_to_console=True)  # Enable console logging for testing
+    logging.info('============================[ Starting new trading session ]==============')
 
-    if is_nyse_open():
-        logging.info("NYSE is currently open. Proceeding with trading operations.")
-        start()
+    if is_nyse_open(manual_override=True):
+        logging.info("NYSE is open (or override enabled). Starting trading operations.")
+        # Increase wait time and attempts for testing
+        start(manual_override=True)
     else:
-        logging.error("Skipping today's run because the NYSE is currently closed.")
+        logging.error("NYSE is closed.")
         sys.exit(1)

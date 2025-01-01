@@ -214,3 +214,39 @@ Test Metrics:
     Poor: Random noise
 Raw Formula: div(add(higher_order_moments_Kurtosis, emd_features_IMF_3_Energy), sub(wavelet_energy_WaveletEnergy_Lv2, higher_order_moments_Skewness))
 ================================================================================
+Timestamp: 2024-12-31 17:23:14
+Formula: div(add(higher_order_moments_Kurtosis, emd_features_IMF_3_Energy), sub(wavelet_energy_WaveletEnergy_Lv2, higher_order_moments_Skewness))
+Train Metrics:
+  - Expected Value: 0.7939
+    Good: Shows promise
+  - Profit Factor: 0.8179
+    Weak: Significant losses
+  - IC: 0.0545
+    Weak: Barely above noise
+Test Metrics:
+  - Expected Value: 0.8840
+    Good: Shows promise
+  - Profit Factor: 0.9457
+    Mediocre: Slight losses
+  - IC: 0.0126
+    Poor: Random noise
+Raw Formula: div(add(higher_order_moments_Kurtosis, emd_features_IMF_3_Energy), sub(wavelet_energy_WaveletEnergy_Lv2, higher_order_moments_Skewness))
+================================================================================
+Timestamp: 2024-12-31 17:23:14
+Formula: div(add(higher_order_moments_Kurtosis, emd_features_IMF_3_Energy), sub(wavelet_energy_WaveletEnergy_Lv2, higher_order_moments_Skewness))
+Train Metrics:
+  - Expected Value: 0.8718
+    Good: Shows promise
+  - Profit Factor: 0.9936
+    Mediocre: Slight losses
+  - IC: 0.0006
+    Poor: Random noise
+Test Metrics:
+  - Expected Value: 0.8718
+    Good: Shows promise
+  - Profit Factor: 0.9936
+    Mediocre: Slight losses
+  - IC: 0.0006
+    Poor: Random noise
+Raw Formula: div(add(higher_order_moments_Kurtosis, emd_features_IMF_3_Energy), sub(wavelet_energy_WaveletEnergy_Lv2, higher_order_moments_Skewness))
+================================================================================

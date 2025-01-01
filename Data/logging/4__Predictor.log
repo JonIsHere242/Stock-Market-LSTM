@@ -276,3 +276,48 @@
 2024-12-30 22:34:39,102 - INFO - Logging system initialized.
 2024-12-30 22:34:39,103 - INFO - Loading the trained model.
 2024-12-30 22:38:56,732 - INFO - Predictions saved to Data/RFpredictions
+2024-12-31 17:57:28,851 - INFO - Logging system initialized.
+2024-12-31 17:57:28,853 - INFO - Preparing new training data.
+2024-12-31 17:58:10,991 - INFO - Data preparation complete.
+2024-12-31 17:58:10,991 - INFO - Training Random Forest model.
+2024-12-31 17:58:12,011 - INFO - Split date: 2024-07-23 00:00:00
+2024-12-31 18:06:22,170 - INFO - Accuracy: 0.568995643361368
+2024-12-31 18:06:22,170 - INFO - F1 Score: 0.484368438147987
+2024-12-31 18:06:22,170 - INFO - Precision: 0.7319036625270103
+2024-12-31 18:06:22,170 - INFO - Recall: 0.568995643361368
+2024-12-31 18:06:22,329 - INFO - Model saved to Data/ModelData\random_forest_model.joblib
+2024-12-31 18:06:22,368 - INFO - Feature importances saved to Data/ModelData/FeatureImportances/feature_importance.parquet
+2024-12-31 18:07:11,075 - INFO - Logging system initialized.
+2024-12-31 18:07:11,075 - INFO - Loading the trained model.
+2024-12-31 18:11:35,974 - INFO - Predictions saved to Data/RFpredictions
+2024-12-31 18:29:40,208 - INFO - Logging system initialized.
+2024-12-31 18:29:40,208 - INFO - Preparing new training data.
+2024-12-31 18:29:52,695 - INFO - Data preparation complete.
+2024-12-31 18:29:52,695 - INFO - Training Random Forest model.
+2024-12-31 18:29:53,082 - INFO - Split date: 2024-07-23 00:00:00
+2024-12-31 18:33:00,560 - INFO - Accuracy: 0.8697528442526481
+2024-12-31 18:33:00,560 - INFO - F1 Score: 0.84907521111006
+2024-12-31 18:33:00,560 - INFO - Precision: 0.8497384539182511
+2024-12-31 18:33:00,560 - INFO - Recall: 0.8697528442526481
+2024-12-31 18:33:00,657 - INFO - Model saved to Data/ModelData\random_forest_model.joblib
+2024-12-31 18:33:00,697 - INFO - Feature importances saved to Data/ModelData/FeatureImportances/feature_importance.parquet
+2024-12-31 18:33:12,274 - INFO - Logging system initialized.
+2024-12-31 18:33:12,274 - INFO - Loading the trained model.
+2024-12-31 18:37:26,519 - INFO - Predictions saved to Data/RFpredictions
+2024-12-31 18:39:02,458 - INFO - Logging system initialized.
+2024-12-31 18:39:02,458 - INFO - Preparing new training data.
+2024-12-31 18:39:51,123 - INFO - Data preparation complete.
+2024-12-31 18:39:51,124 - INFO - Training Random Forest model.
+2024-12-31 18:39:52,829 - INFO - Split date: 2024-07-23 00:00:00
+2024-12-31 18:54:03,278 - INFO - Accuracy: 0.5428410151074455
+2024-12-31 18:54:03,278 - INFO - F1 Score: 0.42678125946040435
+2024-12-31 18:54:03,278 - INFO - Precision: 0.724609116680859
+2024-12-31 18:54:03,278 - INFO - Recall: 0.5428410151074455
+2024-12-31 18:54:03,513 - INFO - Model saved to Data/ModelData\random_forest_model.joblib
+2024-12-31 18:54:03,541 - INFO - Feature importances saved to Data/ModelData/FeatureImportances/feature_importance.parquet
+2024-12-31 18:54:12,364 - INFO - Logging system initialized.
+2024-12-31 18:54:12,364 - INFO - Loading the trained model.
+2024-12-31 18:58:30,626 - INFO - Predictions saved to Data/RFpredictions
+2024-12-31 22:26:02,117 - INFO - Logging system initialized.
+2024-12-31 22:26:02,118 - INFO - Loading the trained model.
+2024-12-31 22:30:24,149 - INFO - Predictions saved to Data/RFpredictions
