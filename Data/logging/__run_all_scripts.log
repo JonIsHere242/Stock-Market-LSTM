@@ -672,3 +672,27 @@
 [2024-12-31 22:34:47] This Days's Buy Signals Saved to trading_data.parquet
 [2024-12-31 22:34:47] Script execution completed.
 [2024-12-31 22:34:47] =========================================
+[2025-01-01 20:25:03] =========================================
+[2025-01-01 20:25:03] Script execution started. Base path: C:\Users\Masam\Desktop\Stock-Market-LSTM
+[2025-01-01 20:25:03] =========================================
+[2025-01-01 20:25:03] Preparing to run 'Ticker Downloader'...
+[2025-01-01 20:25:33] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\1__TickerDownloader.py --ImmediateDownload
+[2025-01-01 20:25:34] 'Ticker Downloader' completed successfully.
+[2025-01-01 20:25:34] Time elapsed for 'Ticker Downloader': 1.07 seconds.
+[2025-01-01 20:25:34] -----------------------------------------
+[2025-01-01 20:25:34] Preparing to run 'Bulk Price Downloader'...
+[2025-01-01 20:26:04] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\2__BulkPriceDownloader.py --RefreshMode --ClearOldData
+[2025-01-01 22:09:06] 'Bulk Price Downloader' completed successfully.
+[2025-01-01 22:09:06] Time elapsed for 'Bulk Price Downloader': 6181.88 seconds.
+[2025-01-01 22:09:06] -----------------------------------------
+[2025-01-01 22:09:06] Preparing to run 'Indicators Script'...
+[2025-01-01 22:09:36] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\3__Indicators.py
+[2025-01-01 22:09:43] 'Indicators Script' completed successfully.
+[2025-01-01 22:09:43] Time elapsed for 'Indicators Script': 7.2 seconds.
+[2025-01-01 22:09:43] -----------------------------------------
+[2025-01-01 22:09:43] Preparing to run 'Predictor Script'...
+[2025-01-01 22:10:13] Executing: C:\Users\Masam\miniconda3\envs\tf\python.exe C:\Users\Masam\Desktop\Stock-Market-LSTM\4__Predictor.py --predict
+[2025-01-01 22:10:16] 'Predictor Script' completed successfully.
+[2025-01-01 22:10:16] Time elapsed for 'Predictor Script': 2.38 seconds.
+[2025-01-01 22:10:16] -----------------------------------------
+[2025-01-01 22:10:16] Preparing to run 'Nightly Broker Script'...

@@ -68,30 +68,51 @@ def get_open_positions(ib):
 
 
 
-
-
-
-
-def check_tws_port(host='127.0.0.1', port=7497, timeout=2):
-    """
-    Minimal TWS port check via socket.
-    Returns True if the port is open (TWS is likely running), False if not.
-    """
-    dprint(f"Starting TWS port check via socket at {host}:{port}...")
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.settimeout(timeout)
+def check_tws_with_time():
+    """Minimal TWS connection check based on working example"""
+    dprint("Starting TWS connection check...")
+    
     try:
-        result = sock.connect_ex((host, port))
-        sock.close()
-        if result == 0:
-            dprint("Port check successful. TWS is likely running.")
+        dprint("Creating new IB instance...")
+        ib = ibi.IB()
+        dprint("IB instance created successfully")
+        
+        client_id = random.randint(1000, 9999)
+        dprint(f"Generated client ID: {client_id}")
+        
+        dprint(f"Attempting to connect to TWS (127.0.0.1:7497) with client ID {client_id}...")
+        
+        ib.connect(
+            host='127.0.0.1', 
+            port=7497, 
+            clientId=client_id
+        )
+        
+        dprint("Connect call completed")
+        
+        if ib.isConnected():
+            dprint("Connection verified active")
+            time.sleep(0.1)  # Brief stabilization
+            ib.disconnect()
+            dprint("Clean disconnect completed")
             return True
-        else:
-            dprint(f"Port {port} on {host} is not open. Check if TWS/IB Gateway is running.")
-            return False
-    except Exception as e:
-        dprint(f"Socket error checking TWS port: {e}")
+            
+        dprint("Connection check failed - isConnected() returned False")
         return False
+        
+    except Exception as e:
+        dprint(f"Critical error during connection attempt: {str(e)}")
+        dprint(traceback.format_exc())
+        if 'ib' in locals() and ib:
+            try:
+                ib.disconnect()
+                dprint("Cleaned up after error")
+            except:
+                pass
+        return False
+
+
+
 
 
 
@@ -678,123 +699,248 @@ class MyStrategy(bt.Strategy):
     ##=====================[GET CONTRACT LIMITATIONS FOR DYNAMIC TRADE BASED ON STOCK]====================##
 
 
+    def get_contract_limitations(self, data):
+        """Get contract details and market rules for a symbol"""
+        dprint("Entering get_contract_limitations method.")
+        dprint(f"data object: {data}")
+        try:
+            dprint("Inside try block of get_contract_limitations.")
+
+            # Get contract details
+            symbol = data._name
+            dprint(f"Extracted symbol from data._name: {symbol}")
+
+            contract = self.broker.store.makecontract(data)  # Get IB contract object
+            dprint(f"IB contract created: {contract}")
+
+            details_list = self.broker.store.reqContractDetails(contract)
+            dprint(f"Contract details list fetched: {details_list}")
+
+            details = details_list[0]  # Get first contract detail
+            dprint(f"Details extracted (first item): {details}")
+
+            # Get order types allowed
+            dprint("Determining order types from details.orderTypes.")
+            order_types = {
+                'allowMarketOrders': details.orderTypes.find('MKT') != -1,
+                'allowLimitOrders': details.orderTypes.find('LMT') != -1,
+                'allowStopOrders': details.orderTypes.find('STP') != -1,
+                'allowTrailingStop': details.orderTypes.find('TRAIL') != -1
+            }
+            dprint(f"order_types derived: {order_types}")
+
+            # Get lot size requirements
+            dprint("Extracting min_tick from details.")
+            min_tick = details.minTick
+            dprint(f"min_tick = {min_tick}")
+
+            dprint("Checking if details has 'minSize' attribute for min_size.")
+            min_size = details.minSize if hasattr(details, 'minSize') else 1
+            dprint(f"min_size = {min_size}")
+
+            # Get market rule for precise price increments
+            dprint("Splitting marketRuleIds to retrieve the first market rule ID.")
+            market_rule_id = details.marketRuleIds.split(',')[0]  # Get first market rule
+            dprint(f"market_rule_id = {market_rule_id}")
+
+            result_dict = {
+                'order_types': order_types,
+                'min_tick': min_tick,
+                'min_size': min_size,
+                'market_rule_id': market_rule_id
+            }
+            dprint(f"Returning result from get_contract_limitations: {result_dict}")
+            return result_dict
+
+        except Exception as e:
+            dprint(f"Caught exception in get_contract_limitations: {str(e)}")
+            logging.error(f"Error getting contract limitations for {data._name}: {str(e)}")
+            return None
+
+    def adjust_order_size(self, size, min_size):
+        """Adjust order size to meet minimum lot requirements"""
+        dprint("Entering adjust_order_size method.")
+        dprint(f"Received parameters -> size: {size}, min_size: {min_size}")
+        if min_size > 1:
+            dprint("min_size > 1, performing integer division to find largest multiple.")
+            # Round down to nearest lot size
+            adjusted_size = (size // min_size) * min_size
+            dprint(f"adjusted_size after integer division: {adjusted_size}")
+
+            if adjusted_size < min_size:
+                dprint(f"adjusted_size < min_size ({min_size}), returning 0.")
+                return 0  # Can't meet minimum lot requirement
+
+            dprint(f"Returning adjusted_size: {adjusted_size}")
+            return adjusted_size
+
+        dprint("min_size <= 1, returning original size.")
+        return size
 
 
 
 
+    def create_optimized_order(self, data, size, contract_limits):
+        """Create the most appropriate order type based on contract limitations"""
+        dprint("Entering create_optimized_order method.")
+        dprint(f"Parameters -> data: {data}, size: {size}, contract_limits: {contract_limits}")
 
-    def place_bracket_buy(self, data, size, limit_price, stop_trailpercent, take_profit_price):
-        """
-        Manually create a 3-order bracket:
-          1) Main buy at limit_price (transmit=False)
-          2) Low-side trailing stop (transmit=False, parent=main)
-          3) High-side limit (transmit=True, parent=main)
+        current_price = data.close[0]
+        dprint(f"current_price = {current_price}")
 
-        If the main buy is filled, the children become active.
-        If the trailing stop is hit, the take-profit is canceled (OCO).
-        If the take-profit is hit, the trailing stop is canceled (OCO).
-        If the main buy expires/cancels, the children also cancel automatically.
-        """
-        # -- Main Limit Buy Order (parent, transmit=False) --
-        main_order = self.buy(
-            data      = data,
-            size      = size,
-            exectype  = bt.Order.Limit,
-            price     = limit_price,
-            transmit  = False  # Do NOT transmit yet, so we can attach children
-        )
-        dprint(f"Main buy order created for {data._name} @ {limit_price} (ref={main_order.ref})")
+        # Adjust size for minimum lot requirements
+        adjusted_size = self.adjust_order_size(size, contract_limits['min_size'])
+        dprint(f"adjusted_size from adjust_order_size: {adjusted_size}")
 
-        # -- Low-Side Trailing Stop (child, transmit=False) --
-        stop_order = self.sell(
-            data          = data,
-            size          = size,
-            exectype      = bt.Order.StopTrail,
-            trailpercent  = stop_trailpercent,   # e.g. 0.03 = 3% below
-            parent        = main_order,
-            transmit      = False  # Wait to transmit with the last child
-        )
-        dprint(f"Trailing stop order created @ {stop_trailpercent*100:.1f}% below (ref={stop_order.ref})")
+        if adjusted_size == 0:
+            dprint(f"adjusted_size == 0, logging warning and returning (None, None).")
+            logging.warning(f"Order size {size} too small for minimum lot size {contract_limits['min_size']}")
+            return None, None
 
-        # -- High-Side Take-Profit Limit (child, transmit=True) --
-        # Setting transmit=True triggers sending *all* orders (the bracket).
-        limit_order = self.sell(
-            data      = data,
-            size      = size,
-            exectype  = bt.Order.Limit,
-            price     = take_profit_price,
-            parent    = main_order,
-            transmit  = True  # Transmit everything now
-        )
-        dprint(f"Take-profit limit order created @ {take_profit_price} (ref={limit_order.ref})")
+        try:
+            dprint("Attempting to create main_order and (possibly) trail_stop.")
+            main_order = None
+            trail_stop = None
+            order_types = contract_limits['order_types']
+            dprint(f"Parsed order_types from contract_limits: {order_types}")
 
-        # Keep references together if desired
-        return main_order, stop_order, limit_order
+            if order_types['allowMarketOrders'] and order_types['allowTrailingStop']:
+                dprint("allowMarketOrders and allowTrailingStop both True. Using Market order + trailing stop.")
+                # Preferred method: Market order with trailing stop
+                main_order = self.buy(
+                    data=data,
+                    size=adjusted_size,
+                    exectype=bt.Order.Market,
+                    transmit=True
+                )
+                dprint(f"Market buy order created: {main_order}")
 
+            elif order_types['allowLimitOrders']:
+                dprint("Falling back to limit order since market+trailing not possible.")
+                # Fallback: Limit order at slight premium
+                tick_size = contract_limits['min_tick']
+                dprint(f"tick_size from contract_limits: {tick_size}")
+                limit_price_raw = current_price * 1.001
+                dprint(f"Raw limit price (1.001 * current_price): {limit_price_raw}")
 
+                # Round limit_price to the nearest multiple of tick_size
+                limit_price = round(limit_price_raw / tick_size) * tick_size
+                dprint(f"limit_price after rounding: {limit_price}")
+
+                main_order = self.buy(
+                    data=data,
+                    size=adjusted_size,
+                    exectype=bt.Order.Limit,
+                    price=limit_price,
+                    transmit=True
+                )
+                dprint(f"Limit buy order created: {main_order}")
+            else:
+                dprint("No suitable order type found, logging error and returning (None, None).")
+                logging.error(f"No suitable order type found for {data._name}")
+                return None, None
+
+            # Create trailing stop if main order is valid
+            if main_order and main_order.ref and order_types['allowTrailingStop']:
+                dprint("Main order valid and trailing stop allowed. Creating trailing stop.")
+                trail_stop = self.sell(
+                    data=data,
+                    size=adjusted_size,
+                    exectype=bt.Order.StopTrail,
+                    trailpercent=0.03,
+                    parent=main_order,
+                    transmit=True
+                )
+                dprint(f"Trailing stop order created: {trail_stop}")
+
+            dprint(f"Returning main_order and trail_stop: {main_order}, {trail_stop}")
+            return main_order, trail_stop
+
+        except Exception as e:
+            dprint(f"Caught exception in create_optimized_order: {str(e)}")
+            logging.error(f"Error creating optimized order: {str(e)}")
+            return None, None
 
     def process_buy_signal(self, data):
-        """
-        Issues a bracket order:
-          - Main buy: limit at close[0] + tick
-          - Low side: trailing stop at 3% behind
-          - High side: limit take-profit at +100% from current price
-        """
+        """Enhanced process_buy_signal with contract limitation checks"""
+        dprint("Entering process_buy_signal method.")
         symbol = data._name
+        dprint(f"Symbol extracted: {symbol}")
         logging.info(f"Processing buy signal for {symbol}")
 
-        # 1) Prevent duplicates
-        current_order_symbols = [o.get('data_name') for o in self.order_dict.values()]
+        # Check for existing orders/positions
+        current_order_symbols = [order_info.get('data_name') for order_info in self.order_dict.values()]
+        dprint(f"Symbols with pending orders: {current_order_symbols}")
+
         if symbol in current_order_symbols:
+            dprint(f"{symbol} in current_order_symbols, skipping buy signal.")
             logging.info(f"Order already pending for {symbol}, skipping")
             return
 
-        # 2) Skip if we already own it
+        dprint("Checking if symbol is in active_positions attribute (if exists).")
+        if hasattr(self, 'active_positions') and symbol in self.active_positions:
+            dprint(f"{symbol} found in self.active_positions, skipping.")
+            logging.info(f"{symbol} already in active positions, skipping")
+            return
+
         currently_bought = self.live_trades[self.live_trades['IsCurrentlyBought'] == True]
+        dprint(f"Currently bought DataFrame subset:\n{currently_bought}")
+
         if symbol in currently_bought['Symbol'].values:
-            logging.info(f"{symbol} is marked as already owned, skipping buy signal.")
+            dprint(f"{symbol} found in currently_bought['Symbol'], returning.")
             return
 
-        # 3) Figure out how many shares we want
+        # Get contract limitations
+        dprint("Requesting contract limitations from get_contract_limitations.")
+        contract_limits = self.get_contract_limitations(data)
+        dprint(f"contract_limits received: {contract_limits}")
+
+        if not contract_limits:
+            dprint("contract_limits is None, logging error and returning.")
+            logging.error(f"Unable to get contract limitations for {symbol}")
+            return
+
+        # Calculate position size
+        dprint(f"Calculating position size via self.calculate_position_size(data).")
         size = self.calculate_position_size(data)
+        dprint(f"Position size calculated: {size}")
+
         if size <= 0:
-            logging.info(f"Size for {symbol} is {size}. Not placing bracket.")
+            dprint(f"Size <= 0, returning without placing orders.")
             return
 
-        # 4) Build bracket parameters
-        tick = 0.01
-        # e.g. "ask + min tick" 
-        limit_price = round(data.close[0] + tick, 2)
+        try:
+            dprint("Attempting to create optimized orders.")
+            main_order, trail_stop = self.create_optimized_order(data, size, contract_limits)
+            dprint(f"main_order: {main_order}, trail_stop: {trail_stop}")
 
-        # trailing stop at 3% below
-        # you can pick your own trailing logic
-        stop_trailpercent = 0.03
+            if main_order and main_order.ref:
+                dprint("main_order valid, storing orders in order_dict.")
+                self.order_dict[main_order.ref] = {
+                    'order': main_order,
+                    'trail_stop': trail_stop,
+                    'data_name': symbol,
+                    'status': 'SUBMITTED'
+                }
+                dprint(f"order_dict updated for order ref: {main_order.ref}")
+                logging.info(f"Orders placed successfully for {symbol}")
+            else:
+                dprint("main_order invalid or missing ref, logging error.")
+                logging.error(f"Failed to create orders for {symbol}")
 
-        # take-profit at +100% from current price (just an example)
-        take_profit_price = round(data.close[0] * 2.0, 2)
+        except Exception as e:
+            dprint(f"Caught exception in process_buy_signal: {str(e)}")
+            logging.error(f"Error in process_buy_signal for {symbol}: {str(e)}")
 
-        # 5) Place the bracket
-        main_order, stop_order, limit_order = self.place_bracket_buy(
-            data             = data,
-            size             = size,
-            limit_price      = limit_price,
-            stop_trailpercent= stop_trailpercent,
-            take_profit_price= take_profit_price
-        )
+            # Cancel any partial orders if there was an error
+            if 'main_order' in locals() and main_order:
+                dprint("Canceling main_order due to exception.")
+                self.cancel(main_order)
+            if 'trail_stop' in locals() and trail_stop:
+                dprint("Canceling trail_stop due to exception.")
+                self.cancel(trail_stop)
 
-        # 6) Track references
-        if main_order and main_order.ref:
-            self.order_dict[main_order.ref] = {
-                'order': main_order,
-                'data_name': symbol,
-                'status': 'SUBMITTED',
-                'stop_child': stop_order,
-                'limit_child': limit_order
-            }
-            logging.info(f"Bracket order placed for {symbol}; parentRef={main_order.ref} "
-                         f"stopRef={stop_order.ref}, limitRef={limit_order.ref}")
-        else:
-            logging.error(f"Failed to create bracket for {symbol}")
+
 
 
 
@@ -961,68 +1107,107 @@ def finalize_positions_sync(ib, trading_data_path='_Live_trades.parquet'):
 ###==============================================[INITALIZATION]==================================================###
 ###==============================================[INITALIZATION]==================================================###
 
-
-
-
-
-
-
-
-
-
-
 def start(manual_override=False):
-    """
-    Main entry point for the trading session.
-    Uses IBStore as the sole connection to IB/TWS,
-    avoiding duplicate connections and clientId conflicts.
-    """
     start_time = datetime.now()
     dprint(f"===== Entering start() at {start_time.isoformat()} =====")
 
     cerebro = bt.Cerebro()
+    if not check_tws_with_time():
+        dprint("[start()] TWS connection minimal check failed. Exiting immediately.")
+        return
 
- 
-    store = None
     ib = None
+    store = None
+
     try:
-        # ============================== Create IBStore Once ==============================
-        dprint("[start()] Creating IBStore instance (this will connect to TWS).")
-        #
-        # clientId=None lets IBStore pick a random clientId,
-        # or you can specify your own if you prefer:
-        #
-        #   clientId=1234,
-        #   host='127.0.0.1',
-        #   port=7497,
-        #   etc.
-        #
-        # See docstring for more arguments, e.g. reconnect=-1, timeoffset=True, etc.
-        #
-        store = IBStore(
-            host='127.0.0.1',
-            port=7497,
-            clientId=None,   # Let IBStore pick a random client ID
-            reconnect=3,     # Attempt reconnect if needed
-            timeout=3.0,     # Timeout between reconnect attempts
-            notifyall=False, # Only error messages
-            _debug=False     # Turn on/off debug prints from IBStore
-        )
+        dprint("[start()] Initializing ib_insync connection with robust error handling...")
+        max_retries = 3
 
-        # The store instance has an `ib` attribute that is the actual ib_insync.IB object
-        ib = store.ib
+        client_id = random.randint(1000, 9999)
+        dprint(f"[start()] Generated unique clientId={client_id} for this session.")
 
-        # Confirm store/ib is actually connected
-        if not ib.isConnected():
-            dprint("[start()] CRITICAL: IBStore could not connect to TWS. Exiting.")
+        for attempt in range(1, max_retries + 1):
+            attempt_start = datetime.now()
+            dprint(f"[start()] Beginning connection attempt {attempt}/{max_retries} at {attempt_start.strftime('%H:%M:%S')}")
+
+            if ib is not None:
+                try:
+                    ib.disconnect()
+                    dprint("[start()] Disconnected stale ib_insync instance before new attempt.")
+                except Exception as e:
+                    dprint(f"[start()] Failed to disconnect stale ib instance: {e}")
+                ib = None
+
+            try:
+                ib = ibi.IB()
+                dprint("[start()] Created new ibi.IB() instance. Attempting to connect...")
+
+                ib.connect(
+                    host='127.0.0.1',
+                    port=7497,
+                    clientId=client_id,
+                    timeout=60,
+                    readonly=False
+                )
+
+                dprint("[start()] Connection command issued. Checking isConnected() status...")
+
+                # Wait up to 10 seconds for the connection to stabilize
+                stable_wait = 10
+                for i in range(stable_wait):
+                    if ib.isConnected():
+                        dprint(f"[start()] Connection stabilized after {i} second(s).")
+                        break
+                    dprint(f"[start()] Waiting for connection to stabilize... {i+1}/{stable_wait}")
+                    time.sleep(1)
+
+                if not ib.isConnected():
+                    dprint(f"[start()] Attempt {attempt}/{max_retries} timed out; not connected after {stable_wait} seconds.")
+                    continue
+
+                # Test by requesting server time
+                try:
+                    current_time = ib.reqCurrentTime()
+                    dprint(f"[start()] Verified TWS server time: {current_time}")
+                except Exception as time_err:
+                    dprint(f"[start()] Attempt {attempt}/{max_retries} - Could not fetch server time: {time_err}")
+                    ib.disconnect()
+                    ib = None
+                    continue
+
+                dprint(f"[start()] SUCCESS: Connected to TWS via ib_insync with clientId={client_id} on attempt {attempt}/{max_retries}")
+                break
+
+            except Exception as e:
+                attempt_end = datetime.now()
+                duration = (attempt_end - attempt_start).total_seconds()
+                dprint(f"[start()] Attempt {attempt}/{max_retries} FAILED after {duration:.2f} seconds: {e}")
+                dprint(traceback.format_exc())
+
+                if ib:
+                    try:
+                        ib.disconnect()
+                        dprint("[start()] Disconnected ib_insync after failed attempt.")
+                    except:
+                        pass
+                    ib = None
+
+                if attempt < max_retries:
+                    dprint("[start()] Will retry connection in 5 seconds...")
+                    time.sleep(5)
+                else:
+                    dprint("[start()] Max connection attempts reached. Failing.")
+
+        if not ib or not ib.isConnected():
+            dprint(f"[start()] CRITICAL: Failed to establish stable connection after {max_retries} retries. Exiting.")
             return
 
-        dprint("[start()] IBStore created and connected successfully. Proceeding...")
-
         # ============================== Data Collection Phase ==============================
+        dprint("[start()] Proceeding to data collection phase...")
+
         try:
-            dprint("[start()] Gathering open positions from IB...")
-            open_positions = get_open_positions(ib)  # your function uses ib.positions()
+            dprint("[start()] Gathering open positions...")
+            open_positions = get_open_positions(ib)
             dprint(f"[start()] Open positions found: {open_positions}")
 
             dprint("[start()] Gathering buy signals (backtesting)...")
@@ -1059,19 +1244,31 @@ def start(manual_override=False):
             return
 
         # ============================== Data Feed Initialization ==============================
+        failed_symbols = []
+        try:
+            store = IBStore(host='127.0.0.1', port=7497, clientId=client_id)
+            dprint("[start()] Created IBStore instance for data feed and broker access.")
+        except Exception as store_err:
+            dprint(f"[start()] Failed to create IBStore: {store_err}")
+            dprint(traceback.format_exc())
+            return
+
+
+
+
         if manual_override:
-            dprint("[start()] Manual override enabled; skipping data feed initialization.")
+            dprint("[start()] Manual override enabled; skipping data feed initialization")
             return
         else:
-            dprint("[start()] Manual override disabled; proceeding with data feed initialization.")
+            dprint("[start()] Manual override disabled; proceeding with data feed initialization")
 
-        failed_symbols = []
-        for symbol in sorted(all_symbols):
+
+
+
+
+        for symbol in sorted(all_symbols, key=lambda x: x in open_positions, reverse=True):
             try:
-                # Create an ib_insync Stock contract
                 contract = ibi.Stock(symbol, 'SMART', 'USD')
-                
-                # Get a backtrader "DataFeed" from IBStore
                 data = store.getdata(
                     dataname=symbol,
                     contract=contract,
@@ -1089,12 +1286,10 @@ def start(manual_override=False):
                     compression=5,
                     live=True,
                 )
-
-                # Optionally resample if you want a 30-second timeframe
                 resampled_data = cerebro.resampledata(
                     data,
                     timeframe=bt.TimeFrame.Seconds,
-                    compression=6
+                    compression=30
                 )
                 resampled_data._name = symbol
                 dprint(f"[start()] Successfully added live data feed for '{symbol}'.")
@@ -1111,7 +1306,7 @@ def start(manual_override=False):
 
         # ============================== Run the Strategy ==============================
         try:
-            broker = store.getbroker()  # IBStore also provides the broker
+            broker = store.getbroker()
             cerebro.setbroker(broker)
             cerebro.addstrategy(MyStrategy)
             dprint(f"[start()] About to run Cerebro with MyStrategy on {len(all_symbols)} symbol(s).")
@@ -1124,58 +1319,43 @@ def start(manual_override=False):
             dprint(traceback.format_exc())
 
     except Exception as e:
-        dprint(f"[start()] CRITICAL: Unexpected error: {e}")
+        dprint(f"[start()] CRITICAL: Unexpected error in main execution loop: {e}")
         dprint(traceback.format_exc())
 
     finally:
         dprint("[start()] Entering final cleanup stage...")
 
-        # 1) Finalize positions sync if the store is connected
+        # 1) Finalize positions sync
         try:
-            if store and store.ib and store.ib.isConnected():
+            if ib and ib.isConnected():
                 dprint("[start()] Attempting to finalize position sync with TWS...")
-                finalize_positions_sync(store.ib, '_Live_trades.parquet')
+                finalize_positions_sync(ib, '_Live_trades.parquet')
                 dprint("[start()] Final data sync completed.")
         except Exception as sync_err:
             dprint(f"[start()] Error during final data sync: {sync_err}")
             dprint(traceback.format_exc())
 
-        # 2) Disconnect from store.ib_insync (the store or the ib reference)
+        # 2) Disconnect from IBStore
         try:
-            if store and store.ib and store.ib.isConnected():
-                store.ib.disconnect()
+            if store and store.isconnected():
+                store.disconnect()
+                dprint("[start()] Successfully disconnected from Backtrader IBStore.")
+        except Exception as disconnect_err:
+            dprint(f"[start()] Error during IBStore disconnection: {disconnect_err}")
+            dprint(traceback.format_exc())
+
+        # 3) Disconnect from ib_insync
+        try:
+            if ib and ib.isConnected():
+                ib.disconnect()
                 dprint("[start()] Successfully disconnected ib_insync.")
         except Exception as disconnect_err:
             dprint(f"[start()] Error during ib_insync disconnection: {disconnect_err}")
             dprint(traceback.format_exc())
 
-        # If you manually want to tear down the store object, you can do so,
-        # but there's no method like store.isconnected() so just rely on
-        # store.ib.isConnected() if needed.
-
         end_time = datetime.now()
         total_duration = (end_time - start_time).total_seconds()
-        dprint(f"===== Exiting start() at {end_time.isoformat()} "
-               f"(total duration: {total_duration:.2f} sec) =====")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        dprint(f"===== Exiting start() at {end_time.isoformat()} (total duration: {total_duration:.2f} sec) =====")
 
 
 

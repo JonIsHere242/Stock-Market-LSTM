@@ -1264,7 +1264,8 @@ def DataQualityCheck(df, all_dfs=None):
 
     # Check if the data is recent (has data in the current year)
     current_year = datetime.now().year
-    if df['Date'].max().year < current_year:
+    previous_year = current_year - 1
+    if df['Date'].max().year < previous_year:
         logging.error(f"Data is not recent. Last date in dataset: {df['Date'].max()}")
         return None
 

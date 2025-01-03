@@ -321,3 +321,9 @@
 2024-12-31 22:26:02,117 - INFO - Logging system initialized.
 2024-12-31 22:26:02,118 - INFO - Loading the trained model.
 2024-12-31 22:30:24,149 - INFO - Predictions saved to Data/RFpredictions
+2025-01-01 22:10:14,684 - INFO - Logging system initialized.
+2025-01-01 22:10:14,685 - INFO - Loading the trained model.
+2025-01-01 22:10:16,004 - INFO - Predictions saved to Data/RFpredictions
+2025-01-01 23:14:08,407 - INFO - Logging system initialized.
+2025-01-01 23:14:08,407 - INFO - Loading the trained model.
+2025-01-01 23:18:20,502 - INFO - Predictions saved to Data/RFpredictions

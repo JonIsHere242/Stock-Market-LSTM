@@ -1174,3 +1174,69 @@
 2024-12-31 22:08:00,870 - INFO - Downloaded data for 5400 tickers, taking 6114.36 seconds.
 2024-12-31 22:09:09,410 - INFO - Total tickers processed: 5460
 2024-12-31 22:09:09,410 - INFO - Data download and refresh process completed.
+2025-01-01 20:26:05,321 - INFO - Python Version: 3.9.18 (main, Sep 11 2023, 14:09:26) [MSC v.1916 64 bit (AMD64)]
+2025-01-01 20:26:05,321 - INFO - Timezone: ('Mountain Standard Time', 'Mountain Daylight Time')
+2025-01-01 20:26:06,046 - INFO - Cleared 5460 old data files from C:\Users\Masam\Desktop\Stock-Market-LSTM\Data\PriceData.
+2025-01-01 20:26:06,046 - INFO - Running in Refresh Mode: Refreshing data for tickers from FINAL_DATA_DIRECTORY.
+2025-01-01 20:26:06,052 - INFO - Found 5457 existing tickers in FINAL_DATA_DIRECTORY for RefreshMode.
+2025-01-01 20:26:06,171 - INFO - Fetching data from 2022-01-01 to 2025-01-02
+2025-01-01 20:26:06,231 - ERROR - 
+1 Failed download:
+2025-01-01 20:26:06,231 - ERROR - ['AAOI']: ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'fc.yahoo.com\', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001788511FF70>: Failed to resolve \'fc.yahoo.com\' ([Errno 11001] getaddrinfo failed)"))'))
+2025-01-01 20:26:06,231 - WARNING - No new data found for AAOI.
+2025-01-01 20:28:03,153 - INFO - Downloaded data for 100 tickers, taking 116.98 seconds.
+2025-01-01 20:29:56,385 - INFO - Downloaded data for 200 tickers, taking 230.21 seconds.
+2025-01-01 20:31:49,073 - INFO - Downloaded data for 300 tickers, taking 342.90 seconds.
+2025-01-01 20:33:42,030 - INFO - Downloaded data for 400 tickers, taking 455.86 seconds.
+2025-01-01 20:35:35,056 - INFO - Downloaded data for 500 tickers, taking 568.88 seconds.
+2025-01-01 20:37:28,777 - INFO - Downloaded data for 600 tickers, taking 682.61 seconds.
+2025-01-01 20:39:21,826 - INFO - Downloaded data for 700 tickers, taking 795.66 seconds.
+2025-01-01 20:41:14,753 - INFO - Downloaded data for 800 tickers, taking 908.58 seconds.
+2025-01-01 20:43:07,987 - INFO - Downloaded data for 900 tickers, taking 1021.82 seconds.
+2025-01-01 20:45:00,925 - INFO - Downloaded data for 1000 tickers, taking 1134.75 seconds.
+2025-01-01 20:46:54,114 - INFO - Downloaded data for 1100 tickers, taking 1247.94 seconds.
+2025-01-01 20:48:47,325 - INFO - Downloaded data for 1200 tickers, taking 1361.15 seconds.
+2025-01-01 20:50:40,589 - INFO - Downloaded data for 1300 tickers, taking 1474.42 seconds.
+2025-01-01 20:52:33,842 - INFO - Downloaded data for 1400 tickers, taking 1587.67 seconds.
+2025-01-01 20:54:27,493 - INFO - Downloaded data for 1500 tickers, taking 1701.32 seconds.
+2025-01-01 20:56:20,775 - INFO - Downloaded data for 1600 tickers, taking 1814.60 seconds.
+2025-01-01 20:58:14,898 - INFO - Downloaded data for 1700 tickers, taking 1928.73 seconds.
+2025-01-01 21:00:08,465 - INFO - Downloaded data for 1800 tickers, taking 2042.29 seconds.
+2025-01-01 21:02:02,067 - INFO - Downloaded data for 1900 tickers, taking 2155.90 seconds.
+2025-01-01 21:03:55,294 - INFO - Downloaded data for 2000 tickers, taking 2269.12 seconds.
+2025-01-01 21:05:48,757 - INFO - Downloaded data for 2100 tickers, taking 2382.59 seconds.
+2025-01-01 21:07:41,992 - INFO - Downloaded data for 2200 tickers, taking 2495.82 seconds.
+2025-01-01 21:09:35,097 - INFO - Downloaded data for 2300 tickers, taking 2608.93 seconds.
+2025-01-01 21:11:28,516 - INFO - Downloaded data for 2400 tickers, taking 2722.35 seconds.
+2025-01-01 21:13:22,168 - INFO - Downloaded data for 2500 tickers, taking 2836.00 seconds.
+2025-01-01 21:15:14,953 - INFO - Downloaded data for 2600 tickers, taking 2948.78 seconds.
+2025-01-01 21:17:07,744 - INFO - Downloaded data for 2700 tickers, taking 3061.57 seconds.
+2025-01-01 21:19:00,959 - INFO - Downloaded data for 2800 tickers, taking 3174.79 seconds.
+2025-01-01 21:20:54,341 - INFO - Downloaded data for 2900 tickers, taking 3288.17 seconds.
+2025-01-01 21:22:47,085 - INFO - Downloaded data for 3000 tickers, taking 3400.91 seconds.
+2025-01-01 21:24:40,489 - INFO - Downloaded data for 3100 tickers, taking 3514.32 seconds.
+2025-01-01 21:26:34,072 - INFO - Downloaded data for 3200 tickers, taking 3627.90 seconds.
+2025-01-01 21:28:27,722 - INFO - Downloaded data for 3300 tickers, taking 3741.55 seconds.
+2025-01-01 21:30:21,162 - INFO - Downloaded data for 3400 tickers, taking 3854.99 seconds.
+2025-01-01 21:32:14,456 - INFO - Downloaded data for 3500 tickers, taking 3968.28 seconds.
+2025-01-01 21:34:07,833 - INFO - Downloaded data for 3600 tickers, taking 4081.66 seconds.
+2025-01-01 21:36:00,629 - INFO - Downloaded data for 3700 tickers, taking 4194.46 seconds.
+2025-01-01 21:37:53,706 - INFO - Downloaded data for 3800 tickers, taking 4307.53 seconds.
+2025-01-01 21:39:47,102 - INFO - Downloaded data for 3900 tickers, taking 4420.93 seconds.
+2025-01-01 21:41:39,886 - INFO - Downloaded data for 4000 tickers, taking 4533.72 seconds.
+2025-01-01 21:43:32,645 - INFO - Downloaded data for 4100 tickers, taking 4646.47 seconds.
+2025-01-01 21:45:25,522 - INFO - Downloaded data for 4200 tickers, taking 4759.35 seconds.
+2025-01-01 21:47:18,534 - INFO - Downloaded data for 4300 tickers, taking 4872.36 seconds.
+2025-01-01 21:49:11,716 - INFO - Downloaded data for 4400 tickers, taking 4985.54 seconds.
+2025-01-01 21:51:05,051 - INFO - Downloaded data for 4500 tickers, taking 5098.88 seconds.
+2025-01-01 21:52:57,904 - INFO - Downloaded data for 4600 tickers, taking 5211.73 seconds.
+2025-01-01 21:54:50,862 - INFO - Downloaded data for 4700 tickers, taking 5324.69 seconds.
+2025-01-01 21:56:43,944 - INFO - Downloaded data for 4800 tickers, taking 5437.77 seconds.
+2025-01-01 21:58:36,631 - INFO - Downloaded data for 4900 tickers, taking 5550.46 seconds.
+2025-01-01 22:00:30,057 - INFO - Downloaded data for 5000 tickers, taking 5663.89 seconds.
+2025-01-01 22:02:23,084 - INFO - Downloaded data for 5100 tickers, taking 5776.91 seconds.
+2025-01-01 22:04:15,729 - INFO - Downloaded data for 5200 tickers, taking 5889.56 seconds.
+2025-01-01 22:06:09,212 - INFO - Downloaded data for 5300 tickers, taking 6003.04 seconds.
+2025-01-01 22:08:02,525 - INFO - Downloaded data for 5400 tickers, taking 6116.35 seconds.
+2025-01-01 22:09:06,349 - INFO - Total tickers processed: 5456
+2025-01-01 22:09:06,349 - INFO - Data download and refresh process completed.
